@@ -1,6 +1,6 @@
 # Derivations, Starting with And
 
-The previous section stated a slogan: a proof is a chain in which every line is a premise, an assumption, or one application of a rule. This section makes the premises and the rule steps exact (assumptions wait until Section 1.4): what a derivation is, how each line carries its reason, and how anyone can check one. Then it gives the first two rules of logic, the rules for "and".
+The previous section stated a slogan: a proof is a chain in which every line is a premise, an assumption, or one application of a rule. This section makes the premises and the rule steps exact: what a derivation is, how each line carries its reason, and how anyone can check one. Assumptions wait until Section 1.4. Then it gives the first two rules of logic, the rules for "and".
 
 ## Why check by matching
 
@@ -57,11 +57,11 @@ In three points:
 
 An instance first. Take \( i = 3 \), \( j = 5 \), \( k = 6 \), and replace \( a \) by \( 0 \), \( b \) by \( \tfrac12 \), and \( c \) by \( 1 \). The pattern becomes: line 3 is \( 0 < \tfrac12 \), line 5 is \( \tfrac12 < 1 \), and line 6 is \( 0 < 1 \), justified "\( \mathrm{Tr} \ 3, 5 \)".
 
-Now a noninstance, by a minimal change. Keep line 3 as \( 0 < \tfrac12 \), and let line 5 be \( \tfrac13 < 1 \). Is "6. \( 0 < 1 \), \( \mathrm{Tr} \ 3, 5 \)" justified? Line 3 forces \( b \) to be \( \tfrac12 \), and line 5 forces it to be \( \tfrac13 \), so these lines are not an instance of the schema. Line 6 is true, but \( \mathrm{Tr} \) was not applied, so the line has no justification.
+Now change one line so that the pattern no longer fits. Keep line 3 as \( 0 < \tfrac12 \), and let line 5 be \( \tfrac13 < 1 \). Is "6. \( 0 < 1 \), \( \mathrm{Tr} \ 3, 5 \)" justified? Line 3 forces \( b \) to be \( \tfrac12 \), and line 5 forces it to be \( \tfrac13 \), so these lines are not an instance of the schema. Line 6 is true, but \( \mathrm{Tr} \) was not applied, so the line has no justification.
 
 *Why define rules this way?* Because a rule applied by matching can be checked by someone who knows nothing about the subject. The schema turns "this step is obviously fine" into "this step matches that pattern", a claim anyone can test.
 
-From the rules of logic on, the letters in a schema are Greek: \( \varphi \), \( \psi \), \( \chi \) (phi, psi, chi). A Greek letter is a hole in a rule's pattern; a capital \( P \) is a statement we are reasoning about. A pattern works like the formula \( (a + b)^2 = a^2 + 2ab + b^2 \), whose \( a \) and \( b \) are holes to be filled with any expression, the same one wherever the hole appears. Filling the holes of a schema works the same way, with parentheses put around a compound statement where they are needed. For example, if a schema has the given lines \( \varphi \) and \( \psi \) and the new line \( \varphi \wedge \psi \), then the three lines \( P \to Q \), \( R \), and \( (P \to Q) \wedge R \) are an instance of it, with \( \varphi \) replaced by \( P \to Q \) and \( \psi \) by \( R \).
+From the rules of logic on, the letters in a schema are Greek: \( \varphi \), \( \psi \), \( \chi \) (phi, psi, chi). A Greek letter is a hole in a rule's pattern; a capital \( P \) is a statement we are reasoning about. A pattern works like the formula \( (a + b)^2 = a^2 + 2ab + b^2 \), whose \( a \) and \( b \) are holes to be filled with any expression, the same one wherever the hole appears. Filling the holes of a schema works the same way, with parentheses put around a compound statement where they are needed. For example, take a schema with the given lines \( \varphi \) and \( \psi \) and the new line \( \varphi \wedge \psi \). The three lines \( P \to Q \), \( R \), and \( (P \to Q) \wedge R \) are an instance of it, with \( \varphi \) replaced by \( P \to Q \) and \( \psi \) by \( R \).
 
 ::: {.warning}
 The middle expression must match **exactly**, symbol for symbol. The step "\( 0 < \tfrac24 \) and \( \tfrac12 < 1 \), so \( 0 < 1 \)" is tempting, because \( \tfrac24 = \tfrac12 \) and every line in it is true, but it is not an application of \( \mathrm{Tr} \): the two middle expressions are different strings. A checker who had to notice that they are equal would need arithmetic, and the point of a schema is that a checker needs nothing. Compare symbols, not values.
@@ -137,7 +137,7 @@ $\begin{nd}
 The search could have started instead from \( w < z \), the premise ending in \( z \): with \( m = w \) it needs \( u < w \), which is \( \mathrm{Tr} \ 1, 3 \), and then \( u < z \) is \( \mathrm{Tr} \ 4, 2 \). That is a different correct derivation. The same premises and conclusion usually have many derivations, and any one of them shows that the conclusion follows from the premises.
 :::
 
-Part (b) was found backwards, from the goal; part (a) forwards. The rest of this section names the two directions.
+Part (b) was found backwards, from the goal; part (a) forwards. Both directions come back, with names, once the rules for "and" are in place.
 
 ::: {.check}
 Line 1 of a derivation is \( 0 < x \) and line 3 is \( x < 1 \). Which is correct: "4. \( 0 < 1 \), \( \mathrm{Tr} \ 1, 3 \)" or "4. \( 0 < 1 \), \( \mathrm{Tr} \ 3, 1 \)"?
@@ -152,7 +152,7 @@ The first. With the citation "1, 3", line 1 plays \( a < b \) and line 3 plays \
 Finding a derivation may need an idea, as part (b) of @exm-chaining-derivation did. Checking one never does. For each line after the premises, ask three questions.
 
 1. **Which rule?** Name the rule the justification cites, and check that it is on the list of rules.
-2. **Do the cited lines and this line form an instance of that rule's schema?** Find the replacement of the letters: read it off the cited lines in the order the citation gives them (or, for a rule whose lines may be cited in either order, try both: the new line decides), and check that every letter gets the same expression each time it occurs, and that the new line is what the pattern then says.
+2. **Do the cited lines and this line form an instance of that rule's schema?** Find the replacement of the letters by reading it off the cited lines, in the order the citation gives them. For a rule whose lines may be cited in either order, try both orders; the new line decides. Then check that every letter gets the same expression each time it occurs, and that the new line is what the pattern then says.
 3. **Are the cited lines earlier?** Each cited number must be smaller than the number of the line doing the citing.
 
 A line that passes all three is correct, whatever it says and whether or not it is true. Here is the check run on part (a) of @exm-chaining-derivation.
@@ -163,7 +163,9 @@ A line that passes all three is correct, whatever it says and whether or not it 
 | 4 | \( \mathrm{Tr} \) | 1, 2 | \( a \): \( 0 \); \( b \): \( x \); \( c \): \( y \) | 1, 2 < 4: yes |
 | 5 | \( \mathrm{Tr} \) | 4, 3 | \( a \): \( 0 \); \( b \): \( y \); \( c \): \( 1 \) | 4, 3 < 5: yes |
 
-Every line passes, so the list is a derivation. Section 1.4 extends this table, when "earlier" becomes "available".
+Every line passes, so the list is a derivation. In Section 1.4 the third question changes: "earlier" becomes "available".
+
+The check used nothing about numbers, only comparisons of symbols.
 
 *Finding a derivation may need an idea; checking one never does.*
 
@@ -235,11 +237,11 @@ In words, three remarks.
 
 1. *Which derivations?* Until Section 1.4, "derivation" means a box-free derivation (@def-box-free-derivation). Section 1.4 widens the word to allow boxes; nothing proved before changes, since a box-free derivation is still a derivation.
 2. *Not every premise must be used.* A derivation may ignore some statements of \( \Gamma \), and it may even have no premise lines at all. It may not use a premise that is **not** in \( \Gamma \).
-3. *Relative to a list of rules.* The symbol \( \vdash \) always refers to a list of rules. From "The rules for and" below on, it is the rules of logic introduced so far; adding a rule never destroys a derivation, so a sequent once derived stays derived. Before that, we name the rule: "\( \Gamma \vdash \psi \) **with** \( \mathrm{Tr} \)".
+3. *Relative to a list of rules.* The symbol \( \vdash \) always refers to a list of rules. Once the rules for "and" are given below, it means the rules of logic introduced so far; adding a rule never destroys a derivation, so a sequent once derived stays derived. Before that, we name the rule: "\( \Gamma \vdash \psi \) **with** \( \mathrm{Tr} \)".
 
 For instance, part (a) of @exm-chaining-derivation shows \( 0 < x, \ x < y, \ y < 1 \vdash 0 < 1 \) with \( \mathrm{Tr} \).
 
-In the derivations from here on, the capital letters \( P \), \( Q \), \( R \), \( S \) stand for arbitrary statements, as in Section 1.1. A derivation written with them proves not one sequent but infinitely many at once, one for each way of putting statements in for the letters. So a line written with letters is justified only if it is an instance of the rule whatever statements the letters stand for, different statements for different letters included. When we ask whether such a line is an instance, we therefore compare the lines as written, with different letters counted as different symbols: \( Q \) is not a conjunct of \( (P \wedge Q) \wedge R \), even though it would be one if \( R \) happened to be \( Q \).
+In the derivations from here on, the capital letters \( P \), \( Q \), \( R \), \( S \) stand for arbitrary statements, as in Section 1.1. A derivation written with them proves not one sequent but infinitely many at once, one for each way of putting statements in for the letters. So a line written with letters is justified only if it is an instance of the rule whatever statements the letters stand for, different statements for different letters included. So, to decide whether such a line is an instance, we compare the lines as written, and count different letters as different symbols. For example, \( Q \) is not a conjunct of \( (P \wedge Q) \wedge R \), even though it would be one if \( R \) happened to be \( Q \).
 
 ::: {.check}
 What sequent "with \( \mathrm{Tr} \)" does part (b) of @exm-chaining-derivation show?
@@ -264,13 +266,13 @@ Decide whether each of the following is a derivation, and if so, what it shows.
 ::: {.solution}
 (a) Yes. Its only line is a premise, so clause (i) of @def-box-free-derivation holds, and clause (ii) has no lines to speak about. Its last line is \( P \). It shows \( P \vdash P \): every statement is derivable from itself. No rule was used, so this holds whatever the list of rules is.
 
-Parts (b) and (c) are answered in the fold below.
+Part (b), the empty list, and part (c) are answered just below.
 :::
 
-::: {.second-reading title="Edge cases"}
-**A derivation of one line.** The degenerate case is worth a look. A single premise line, with nothing after it, satisfies both clauses of @def-box-free-derivation: clause (i) holds, and clause (ii) has no lines to speak about. So it is a derivation, and its premise is its conclusion.
+::: {.second-reading title="Parts (b) and (c): one line, no lines, and a full check"}
+**A derivation of one line.** This smallest case is worth a look. A single premise line, with nothing after it, satisfies both clauses of @def-box-free-derivation: clause (i) holds, and clause (ii) has no lines to speak about. So it is a derivation, and its premise is its conclusion.
 
-**Part (b) of @exm-derivations.** No. The definition asks for \( n \ge 1 \) lines, and a derivation must have a last line to be its conclusion. So the empty list derives nothing. In the same way, a list with no premises can never get started with \( \mathrm{Tr} \), or any rule that cites a line: its first line would have to cite an earlier line, and there is none. Every rule met before Section 1.4 cites at least one line, so until then \( \vdash \psi \) holds for no \( \psi \). Section 1.4 changes that.
+**Part (b) of @exm-derivations.** No. The definition asks for \( n \ge 1 \) lines, and a derivation must have a last line to be its conclusion. So the empty list derives nothing. In the same way, a list with no premises can never get started with \( \mathrm{Tr} \), or with any rule that cites a line. Its first line would have to cite an earlier line, and there is none. Every rule met before Section 1.4 cites at least one line, so until then \( \vdash \psi \) holds for no \( \psi \). Section 1.4 changes that.
 
 **Part (c) of @exm-derivations.** Yes. Lines 1–3 are premises, with the rule drawn under line 3: clause (i). Line 4 cites lines 1 and 2, which are earlier, and lines 1, 2, 4 are an instance of \( \mathrm{Tr} \) with \( a \), \( b \), \( c \) replaced by \( 0 \), \( x \), \( y \). Line 5 cites lines 4 and 3, which are earlier, and lines 4, 3, 5 are an instance with \( a \), \( b \), \( c \) replaced by \( 0 \), \( y \), \( 1 \). So clause (ii) holds for both later lines. The premises are the three premise lines and the conclusion is \( 0 < 1 \).
 :::
@@ -281,7 +283,7 @@ A premise is **given**, not proved: from the false premises \( 1 < 0 \) and \( 0
 
 ## The rules for and
 
-Analysis is full of chains such as \( 0 < x < 1 \), which says \( 0 < x \) **and** \( x < 1 \). A proof that **uses** it often needs one half: "in particular \( x > 0 \), so we may divide by \( x \)." A proof that **proves** it must prove both halves; one half is not the whole claim. Section 1.1 previewed these two moves informally. Here they become rules, checked by matching, as \( \mathrm{Tr} \) was.
+Analysis is full of chains such as \( 0 < x < 1 \), which says \( 0 < x \) **and** \( x < 1 \). A proof that **uses** it often needs one half: "in particular \( x > 0 \), so we may divide by \( x \)." A proof that **proves** it must prove both halves; one half is not the whole claim. Section 1.1 met these two steps informally. Here they become rules, checked by matching, as \( \mathrm{Tr} \) was.
 
 *To prove "\( \varphi \) and \( \psi \)", prove each; to use it, take either.*
 
@@ -314,20 +316,20 @@ The first schema is the rule \( \rulename{\wedge I} \) (**and-introduction**). I
 
 **\( \rulename{\wedge I} \).**
 
-- *Schema:* the first one in the block above.
+- *Schema:* the first of the three schemas above.
 - *Reading:* two lines in hand, anywhere above and cited in either order; write their conjunction.
 - *Example:* from line 2, \( P \), and line 5, \( Q \), "\( \rulename{\wedge I} \) 5, 2" (or "2, 5") writes \( Q \wedge P \).
 
 **\( \rulename{\wedge E} \).**
 
-- *Schema:* the other two in the block.
+- *Schema:* the other two schemas above.
 - *Reading:* one line whose **main connective** (@def-main-connective) is \( \wedge \); write either side, one layer at a time.
 - *Example:* from \( (P \wedge Q) \wedge R \) it writes \( P \wedge Q \) or \( R \), never \( P \).
 
 If \( \varphi \) and \( \psi \) are true, so is \( \varphi \wedge \psi \); if \( \varphi \wedge \psi \) is true, so is each side.
 
 ::: {.warning}
-\( \rulename{\wedge E} \) reaches one layer at a time. From line 1, \( (P \wedge Q) \wedge R \), the line "\( Q \) — \( \rulename{\wedge E} \) 1" is not an instance of either \( \rulename{\wedge E} \) schema, because line 1's conjuncts are \( P \wedge Q \) and \( R \). The line is wrong even though \( Q \) does follow; the repair costs one line: \( P \wedge Q \) by \( \rulename{\wedge E} \) 1 first, then \( Q \) from it.
+\( \rulename{\wedge E} \) reaches one layer at a time. From line 1, \( (P \wedge Q) \wedge R \), the line "\( Q \) — \( \rulename{\wedge E} \) 1" is not an instance of either \( \rulename{\wedge E} \) schema, because line 1's conjuncts are \( P \wedge Q \) and \( R \). The line is wrong even though \( Q \) does follow; the repair takes one more line: \( P \wedge Q \) by \( \rulename{\wedge E} \) 1 first, then \( Q \) from it.
 :::
 
 ::: {.check}
@@ -358,9 +360,9 @@ A derivation has premises at the top and its goal, the conclusion we want, at th
 
 The derivation is finished when the two ends meet. Part (b) of @exm-chaining-derivation already worked backwards, with \( \mathrm{Tr} \) in the part that introduction rules play from now on.
 
-Scratch work for a search fits in a two-column table: the **Givens**, what is in hand (premises and lines derived so far), and the **Goal**, what is still needed. A goal-directed step replaces a goal by its subgoals; a premise-directed step adds to the Givens. The search is finished when every goal is among the Givens. The search for \( P \wedge Q \vdash Q \wedge P \), one row per step:
+Scratch work for a search fits in a two-column table. The column **We know** lists what is in hand: the premises and the lines derived so far. The column **We want** lists what is still needed. A goal-directed step replaces a wanted statement by its subgoals; a premise-directed step adds to what we know. The search is finished when everything we want is among what we know. The search for \( P \wedge Q \vdash Q \wedge P \), one row per step:
 
-| Givens | Goal |
+| We know | We want |
 |---|---|
 | \( P \wedge Q \) | \( Q \wedge P \) |
 | \( P \wedge Q \) | \( Q \), \( P \) (\( \rulename{\wedge I} \) splits the goal) |
@@ -368,7 +370,7 @@ Scratch work for a search fits in a two-column table: the **Givens**, what is in
 
 The derivation this search finds is @prp-and-commutes below.
 
-A goal line may carry its rule before its citation is known. When the goal \( Q \wedge P \) is written at the bottom and the plan is \( \rulename{\wedge I} \), write "\( \rulename{\wedge I} \)" beside it and leave the line numbers blank, to be filled when the subgoals stand on lines; the left picture in the Idea of @prp-and-commutes does this.
+A goal line may carry its rule before its citation is known. Suppose the goal \( Q \wedge P \) is written at the bottom and the plan is \( \rulename{\wedge I} \). Then write "\( \rulename{\wedge I} \)" beside it and leave the line numbers blank, to be filled in when the subgoals stand on lines. The left picture before the proof of @prp-and-commutes does this.
 
 ## First derivations with and
 
@@ -412,10 +414,10 @@ $\begin{nd}
 Line 2 is the second form of \( \rulename{\wedge E} \), with \( \varphi \coloneqq P \) and \( \psi \coloneqq Q \).
 :::
 
-The two derivations are box-free derivations in the sense of @def-box-free-derivation, with \( \rulename{\wedge I} \) and \( \rulename{\wedge E} \) as the list of rules: premises first, and every later line an instance of a schema whose given lines are earlier. By @def-derivable they show the two sequents. When the goal is a letter, as in (b), only the premises can suggest a step; when every subgoal is a premise, as in (a), the premises need no taking apart. The first proposition below needs both ends.
+The two derivations are box-free derivations in the sense of @def-box-free-derivation, with \( \rulename{\wedge I} \) and \( \rulename{\wedge E} \) as the list of rules. Premises come first, and every later line is an instance of a schema whose given lines are earlier. By @def-derivable they show the two sequents. When the goal is a letter, as in (b), only the premises can suggest a step; when every subgoal is a premise, as in (a), the premises need no taking apart. The first proposition below needs both ends.
 
-::: {.second-reading title="Edge cases for and-introduction"}
-**One line cited twice.** Nothing in the schema of \( \rulename{\wedge I} \) says that \( i \) and \( j \) are different lines. With \( i = j \), the letters \( \varphi \) and \( \psi \) are replaced by the same statement, and the rule writes \( \varphi \wedge \varphi \). It is a silly line, and a legal one. For instance, \( P \vdash P \wedge P \): the goal is a conjunction, so \( \rulename{\wedge I} \), with the subgoals \( P \) and \( P \), and the one premise meets both.
+::: {.second-reading title="One line cited twice"}
+Nothing in the schema of \( \rulename{\wedge I} \) says that \( i \) and \( j \) are different lines. With \( i = j \), the letters \( \varphi \) and \( \psi \) are replaced by the same statement, and the rule writes \( \varphi \wedge \varphi \). It is a silly line, and a legal one. For instance, \( P \vdash P \wedge P \): the goal is a conjunction, so \( \rulename{\wedge I} \), with the subgoals \( P \) and \( P \), and the one premise meets both.
 
 ```{=latex}
 \begin{center}
@@ -436,7 +438,7 @@ The first result is that the order of a conjunction does not matter.
 :::
 
 ::: {.idea}
-Write the premise at the top, the goal at the bottom, and leave a gap, and write \( \rulename{\wedge I} \) beside the goal, with its citation still blank (left picture; the lines carry the numbers they will have at the end). Start from the goal. Its main connective is \( \wedge \), so the last line will be \( \rulename{\wedge I} \), and we need \( P \) and \( Q \) on earlier lines (right picture: two subgoals, not yet justified). Now start from the premise. Its main connective is \( \wedge \), so \( \rulename{\wedge E} \) gives \( P \) and gives \( Q \). That closes the gap: the pieces the goal asks for are the pieces the premise supplies. (This is the search of the Givens/Goal table above.)
+Write the premise at the top and the goal at the bottom, with a gap between them. Write \( \rulename{\wedge I} \) beside the goal, with its citation still blank; this is the left picture. Its lines already carry the numbers they will have at the end. Start from the goal. Its main connective is \( \wedge \), so the last line will be \( \rulename{\wedge I} \), and we need \( P \) and \( Q \) on earlier lines. The right picture shows these two subgoals, not yet justified. Now start from the premise. Its main connective is \( \wedge \), so \( \rulename{\wedge E} \) gives \( P \) and gives \( Q \). That closes the gap: the pieces the goal asks for are the pieces the premise supplies. This is the search recorded in the "We know | We want" table above.
 
 ```{=latex}
 % schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
@@ -490,7 +492,7 @@ The second result is that the grouping of a conjunction does not matter either. 
 ::: {.idea}
 From the goal: its main connective is the **outer** \( \wedge \), so the last line is \( \rulename{\wedge I} \) with the subgoals \( P \) and \( Q \wedge R \), and the second splits again into \( Q \) and \( R \). From the premise: \( \rulename{\wedge E} \) gives \( P \wedge Q \) and \( R \), and again, on \( P \wedge Q \), gives \( P \) and \( Q \). Both searches stop at the three letters, and the ends meet there. Since \( \rulename{\wedge E} \) reaches one layer at a time, the premise must be peeled in two rounds.
 
-In pictures: the goal below a gap; then the first round of \( \rulename{\wedge E} \) as lines 2–3, a gap for lines 4–5, and the subgoal \( Q \wedge R \) as line 6, lines 6 and 7 not yet justified (line 7 will be \( \rulename{\wedge I} \) 4, 6).
+The left picture shows the goal below a gap. The right picture adds the first round of \( \rulename{\wedge E} \) as lines 2–3, a gap for lines 4–5, and the subgoal \( Q \wedge R \) as line 6. Lines 6 and 7 are not yet justified; line 7 will be \( \rulename{\wedge I} \) 4, 6.
 
 ```{=latex}
 % schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
@@ -546,7 +548,7 @@ A line of a derivation is a statement that has been established. Citing it does 
 ::: {.idea}
 From the goal: \( \rulename{\wedge I} \) at the bottom, with subgoals \( P \wedge R \) and \( Q \wedge R \), each split again by \( \rulename{\wedge I} \). From the premises: \( \rulename{\wedge E} \) on line 1 gives \( P \) and \( Q \), and \( R \) is already a premise. Both subgoals that need \( R \) cite the same line 2.
 
-In pictures: the goal below a gap; then the subgoals as lines 5–6, not yet justified.
+The left picture shows the goal below a gap; the right one adds the subgoals as lines 5–6, not yet justified.
 
 ```{=latex}
 % schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
@@ -650,7 +652,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Lines 7 and 8 are justified "algebra": each is a step by a fact about numbers used as a rule, exactly as Tr was used above, and not a rule of logic. Line 7 uses "a product of two positive numbers is positive"; line 8 uses "if \( 0 < a \), \( a < 1 \) and \( b < 1 \), then \( ab < 1 \)", one fact about numbers (it holds because multiplying \( b < 1 \) by the positive \( a \) gives \( ab < a \), and \( a < 1 \)).
+Lines 7 and 8 are justified "algebra": each is a step by a fact about numbers used as a rule, exactly as Tr was used above, and not a rule of logic. Line 7 uses "a product of two positive numbers is positive". Line 8 uses one fact about numbers, "if \( 0 < a \), \( a < 1 \) and \( b < 1 \), then \( ab < 1 \)". It holds because multiplying \( b < 1 \) by the positive \( a \) gives \( ab < a \), and \( a < 1 \).
 :::
 
 The facts about numbers supply the content of the solution; the rules supply the joints, taking statements apart and putting the pieces back together. The goal-directed reading is visible in the prose too: "show \( 0 < xy < 1 \)" is a conjunction, so the solution sets itself two subgoals, and it says "finally" when the two meet.
@@ -703,22 +705,26 @@ Before the card, the two rules once more, matched against statements larger than
 **Not an instance (\( \rulename{\wedge E} \)).** From \( P \wedge (Q \vee R) \), the line \( Q \) is not written by \( \rulename{\wedge E} \): the right conjunct is \( Q \vee R \), and \( Q \) sits inside a disjunction, which no rule of this section takes apart.
 :::
 
-The card gives each rule of logic so far, its shape, the sentence that uses it in a written proof and, for readers who meet a proof assistant, the Lean code that performs it (`h.1` names the left half of a hypothesis `h`). Nothing later depends on the last column.
+The card gives each rule of logic so far, its shape, and the sentence that uses it in a written proof.
 
 | Rule | Shape | You write | Lean |
 |------|------------------|--------------------------------------|------------------------|
 | \( \rulename{\wedge I} \) | \( \varphi \), \( \psi \) \( \Longrightarrow \) \( \varphi \wedge \psi \) | "We show \( P \), and we show \( Q \)." | `constructor` |
 | \( \rulename{\wedge E} \) | \( \varphi \wedge \psi \) \( \Longrightarrow \) \( \varphi \) (or \( \psi \)) | "In particular, \( P \)." | `h.1` (and `h.2`) |
 
+::: {.second-reading title="For instructors"}
+The last column of the card gives the Lean code that performs each rule, for readers who meet a proof assistant. There `h.1` names the left half of a hypothesis `h`. Nothing later depends on this column.
+:::
+
 ::: {.warning}
 [Not allowed: \( \rulename{\wedge I} \), \( \rulename{\wedge E} \)]
 
 Each line below is a wrong step, with its reason and the clause of @def-box-free-derivation it breaks.
 
-- "\( Q \) from \( (P \wedge Q) \wedge R \) by \( \rulename{\wedge E} \)": reaches through two layers; \( \rulename{\wedge E} \) writes a conjunct of the cited line's main connective (clause (ii): no instance).
-- "\( P \) from \( (P \wedge Q) \to R \) by \( \rulename{\wedge E} \)": the main connective is \( \to \), not \( \wedge \) (clause (ii): no instance).
-- "\( P \wedge R \) from \( P \wedge Q \) and \( R \) by \( \rulename{\wedge I} \)": \( \rulename{\wedge I} \) joins whole cited lines; \( P \) is not a line (clause (ii): no instance).
-- "line 4, \( Q \wedge P \), \( \rulename{\wedge I} \) 2, 6": cites line 6, which is not earlier (clause (ii): a later line cited).
+- "\( Q \) from \( (P \wedge Q) \wedge R \) by \( \rulename{\wedge E} \)". It reaches through two layers, but \( \rulename{\wedge E} \) writes a conjunct of the cited line's main connective. There is no instance, so clause (ii) fails.
+- "\( P \) from \( (P \wedge Q) \to R \) by \( \rulename{\wedge E} \)". The main connective is \( \to \), not \( \wedge \). There is no instance, so clause (ii) fails.
+- "\( P \wedge R \) from \( P \wedge Q \) and \( R \) by \( \rulename{\wedge I} \)". \( \rulename{\wedge I} \) joins whole cited lines, and \( P \) is not a line. There is no instance, so clause (ii) fails.
+- "line 4, \( Q \wedge P \), \( \rulename{\wedge I} \) 2, 6". It cites line 6, which is not earlier. Clause (ii) allows only earlier lines.
 :::
 
 ::: {.check}
@@ -732,7 +738,7 @@ No: \( \rulename{\wedge I} \) cites two lines (or one line twice, which gives a 
 ::: {.remark}
 [Looking ahead]
 
-Chapter 4 checks, for every rule of Chapters 1 and 2 at once, that no rule leads from true lines to a false one. Until then each rule comes with the one-sentence reason it is safe, as the sentence after the bullets for "and" did.
+Chapter 4 checks, for every rule of Chapters 1 and 2 at once, that no rule leads from true lines to a false one. Until then each rule comes with a one-sentence reason it is safe, such as "if \( \varphi \) and \( \psi \) are true, so is \( \varphi \wedge \psi \)" for \( \rulename{\wedge I} \).
 :::
 
 ## Exercises
@@ -766,15 +772,26 @@ Chapter 4 checks, for every rule of Chapters 1 and 2 at once, that no rule leads
 :::
 
 ::: {.solution}
-(a) A box-free derivation, relative to a list of rules, is a finite list of numbered lines, at least one, each with a statement and a justification, in which the first lines, possibly none and possibly all, are premises, justified by nothing, and every later line is justified by one rule of the list, citing earlier lines, so that it and the cited lines form an instance of a schema of that rule (@def-box-free-derivation). And \( \Gamma \vdash \psi \) means that there is a derivation, using the rules of logic (or a named list of rules, as in "with \( \mathrm{Tr} \)"), whose premises all belong to \( \Gamma \) and whose last line is \( \psi \) (@def-derivable). For the schemas see @def-rules-conjunction: \( \rulename{\wedge I} \) has given lines \( i \): \( \varphi \) and \( j \): \( \psi \) and new line \( k \): \( \varphi \wedge \psi \), cited "\( \rulename{\wedge I} \) \( i, j \)" (or \( j, i \)); the two forms of \( \rulename{\wedge E} \) each have the given line \( i \): \( \varphi \wedge \psi \) and the new line \( k \): \( \varphi \), respectively \( \psi \), cited "\( \rulename{\wedge E} \) \( i \)".
+(a) Fix a list of rules. A box-free derivation is a finite list of numbered lines, at least one, each with a statement and a justification. The first lines, possibly none and possibly all, are premises, justified by nothing. Every later line is justified by one rule of the list, citing earlier lines, so that it and the cited lines form an instance of a schema of that rule (@def-box-free-derivation).
+
+Next, \( \Gamma \vdash \psi \) means that there is a derivation whose premises all belong to \( \Gamma \) and whose last line is \( \psi \) (@def-derivable). The derivation uses the rules of logic, or a named list of rules, as in "with \( \mathrm{Tr} \)".
+
+The schemas are those of @def-rules-conjunction. \( \rulename{\wedge I} \) has the given lines \( i \): \( \varphi \) and \( j \): \( \psi \) and the new line \( k \): \( \varphi \wedge \psi \), cited "\( \rulename{\wedge I} \) \( i, j \)" or "\( \rulename{\wedge I} \) \( j, i \)". The two forms of \( \rulename{\wedge E} \) each have the given line \( i \): \( \varphi \wedge \psi \). Their new lines are \( k \): \( \varphi \) and \( k \): \( \psi \), each cited "\( \rulename{\wedge E} \) \( i \)".
 
 (b) \( P \), or \( Q \wedge R \). The main connective is the first \( \wedge \), so \( \varphi \) is \( P \) and \( \psi \) is \( Q \wedge R \).
 
 (c) Line 4 is \( P \), obtained by \( \rulename{\wedge E} \) from line 2, \( P \wedge Q \). A rule may cite only earlier lines (@def-box-free-derivation), and \( P \) cannot be obtained from line 1 in one step, since line 1's conjuncts are \( P \wedge Q \) and \( R \).
 
-(d) (i) \( \rulename{\wedge E} \) 1; (ii) \( \rulename{\wedge E} \) 1; (iii) \( \rulename{\wedge E} \) 3; (iv) \( \rulename{\wedge I} \) 4, 2. "\( \rulename{\wedge I} \) 2, 4" is equally right: the line \( R \wedge P \) shows which conjunct is on the left.
+(d) The four justifications are:
 
-(e) True. \( \mathrm{Tr} \) leads from true lines to a true line: if \( a < b \) and \( b < c \) are true, so is \( a < c \). Go down the derivation: the premises are in \( \Gamma \), so they are true, and each later line comes from earlier, true lines by \( \mathrm{Tr} \), so it is true too. Hence the last line, \( \psi \), is true. This is the property the Looking-ahead box of this section promises for the rules of logic.
+- (i) \( \rulename{\wedge E} \) 1,
+- (ii) \( \rulename{\wedge E} \) 1,
+- (iii) \( \rulename{\wedge E} \) 3,
+- (iv) \( \rulename{\wedge I} \) 4, 2.
+
+"\( \rulename{\wedge I} \) 2, 4" is equally right: the line \( R \wedge P \) shows which conjunct is on the left.
+
+(e) True. \( \mathrm{Tr} \) leads from true lines to a true line: if \( a < b \) and \( b < c \) are true, so is \( a < c \). Go down the derivation: the premises are in \( \Gamma \), so they are true, and each later line comes from earlier, true lines by \( \mathrm{Tr} \), so it is true too. Hence the last line, \( \psi \), is true. Chapter 4 proves the same property for the rules of logic.
 
 (f) \( P \wedge (Q \wedge R) \vdash R \wedge P \): its only premise is line 1, and its last line is \( R \wedge P \).
 :::
@@ -808,12 +825,18 @@ Answer each part in a line or two.
 7. The premises are 1 \( 0 < x \), 2 \( x < 3 \), 3 \( 3 < y \). Is "4. \( 0 < y \) — \( \mathrm{Tr} \) 1, 3" justified?
 8. In the list "1 \( 0 < 1 \), premise; 2 \( 1 < 2 \), premise; 3 \( 0 < 2 \) — \( \mathrm{Tr} \) 2, 1", which of the three questions of "Reading a derivation" fails?
 9. May \( \rulename{\wedge E} \) be applied to the line \( \neg P \wedge Q \)?
-10. Lines 1 \( P \wedge (Q \wedge R) \), 2 \( S \) and 3 \( Q \wedge R \) (\( \rulename{\wedge E} \) 1) are given. Which of the following can be line 4? (i) \( (Q \wedge R) \wedge S \), \( \rulename{\wedge I} \) 3, 2; (ii) \( Q \wedge S \), \( \rulename{\wedge I} \) 3, 2; (iii) \( R \), \( \rulename{\wedge E} \) 1; (iv) \( R \), \( \rulename{\wedge E} \) 3.
+10. Lines 1 \( P \wedge (Q \wedge R) \), 2 \( S \) and 3 \( Q \wedge R \) (\( \rulename{\wedge E} \) 1) are given. Which of the following can be line 4?
+
+    - (i) \( (Q \wedge R) \wedge S \), \( \rulename{\wedge I} \) 3, 2
+    - (ii) \( Q \wedge S \), \( \rulename{\wedge I} \) 3, 2
+    - (iii) \( R \), \( \rulename{\wedge E} \) 1
+    - (iv) \( R \), \( \rulename{\wedge E} \) 3
+
 11. Write \( 0 < \tfrac14 < \tfrac13 < \tfrac12 \) as a derivation of \( 0 < \tfrac12 \) from its three links with \( \mathrm{Tr} \).
 12. Derive \( P \wedge Q, \ R \vdash R \wedge P \).
 13. Derive \( (P \wedge Q) \wedge R \vdash Q \).
 14. Derive \( P \wedge Q, \ R \wedge S \vdash S \wedge P \).
-15. Fill in the Givens/Goal table for \( P \wedge (Q \wedge R) \vdash R \), one row per step.
+15. Fill in the "We know | We want" table for \( P \wedge (Q \wedge R) \vdash R \), one row per step.
 :::
 :::
 
@@ -826,7 +849,15 @@ Answer each part in a line or two.
 
 (d) \( R \to S \). Line 6 has the left conjunct \( R \to S \) and the right conjunct \( P \); line 4 supplies \( P \), so line 2 must supply \( R \to S \).
 
-(e) 2 \( \rulename{\wedge E} \) 1; 3 \( \rulename{\wedge E} \) 1; 4 \( \rulename{\wedge E} \) 2; 5 \( \rulename{\wedge I} \) 3, 4 (or 4, 3); 6 \( \rulename{\wedge I} \) 5, 2. Line 2 is cited twice.
+(e) The justifications are:
+
+- line 2: \( \rulename{\wedge E} \) 1,
+- line 3: \( \rulename{\wedge E} \) 1,
+- line 4: \( \rulename{\wedge E} \) 2,
+- line 5: \( \rulename{\wedge I} \) 3, 4, or 4, 3,
+- line 6: \( \rulename{\wedge I} \) 5, 2.
+
+Line 2 is cited twice.
 
 (f) No: the middles \( 3 \) and \( 4 \) differ, so the lines are no instance of \( \mathrm{Tr} \), although \( u < v \) does follow (since \( 3 < 4 \)).
 
@@ -848,7 +879,7 @@ Answer each part in a line or two.
 
 (o)
 
-| Givens | Goal |
+| We know | We want |
 |---|---|
 | \( P \wedge (Q \wedge R) \) | \( R \) |
 | \( P \wedge (Q \wedge R) \), \( P \), \( Q \wedge R \) (\( \rulename{\wedge E} \)) | \( R \) |
@@ -904,7 +935,7 @@ As a derivation it has the same shape as the one in @exm-product-in-unit-interva
 ::: {#exr-derivations-b3}
 [B3: Two layers, then rebuild]
 
-A search for \( P \wedge (Q \wedge R), \ S \vdash (R \wedge P) \wedge S \) has reached the stage below. *Name the move, then complete it.*
+A search for \( P \wedge (Q \wedge R), \ S \vdash (R \wedge P) \wedge S \) has reached the stage below. *Say which method this is, then complete it.*
 
 ```{=latex}
 % schema (partial derivation: the gap is unnumbered, lines carry their final numbers)
@@ -920,7 +951,7 @@ $\begin{nd}
 :::
 
 ::: {.solution}
-The move is *work from both ends* ("Two directions of reasoning"). From the goal: its main connective is \( \wedge \), so line 7 is \( \rulename{\wedge I} \) with the subgoals \( R \wedge P \) and \( S \); \( S \) is line 2, and \( R \wedge P \) splits again, by \( \rulename{\wedge I} \), into \( R \) and \( P \). From the premise: \( \rulename{\wedge E} \) in two layers, first \( P \) and \( Q \wedge R \) from line 1, then \( R \) from \( Q \wedge R \).
+The method is *work from both ends*: take the premises apart, and build the goal from its parts. From the goal: its main connective is \( \wedge \), so line 7 is \( \rulename{\wedge I} \) with the subgoals \( R \wedge P \) and \( S \); \( S \) is line 2, and \( R \wedge P \) splits again, by \( \rulename{\wedge I} \), into \( R \) and \( P \). From the premise: \( \rulename{\wedge E} \) in two layers, first \( P \) and \( Q \wedge R \) from line 1, then \( R \) from \( Q \wedge R \).
 
 ```{=latex}
 \begin{center}
@@ -966,7 +997,7 @@ $\begin{nd}
 
 (b) Line 1 is a premise. Line 2 names a rule on the list, cites line 1, which is earlier, and lines 1, 2 are an instance of the schema of \( \mathrm{Flip} \) with \( a \) replaced by \( 0 \) and \( b \) by \( 1 \). All three questions pass. The checker never asks whether a line is true, only whether it matches a rule, so a bad rule is invisible to it.
 
-(c) \( \mathrm{Tr} \) never leads from true lines to a false one (A1(e)). \( \mathrm{Flip} \) does: from the true line \( 0 < 1 \) it writes the false line \( 1 < 0 \). With such a rule, a derivation from true premises could end anywhere, so checking is only as good as the rules checked against. The rules of logic are chosen to have it; this section's Looking-ahead box says where that is checked.
+(c) \( \mathrm{Tr} \) never leads from true lines to a false one, as part (e) of Exercise A1 showed. \( \mathrm{Flip} \) does: from the true line \( 0 < 1 \) it writes the false line \( 1 < 0 \). With such a rule, a derivation from true premises could end anywhere, so checking is only as good as the rules checked against. The rules of logic are chosen to have it, and Chapter 4 checks that they do.
 :::
 
 ::: {#exr-derivations-c2}
@@ -1020,12 +1051,13 @@ Each later line cites earlier lines and is an instance of \( \mathrm{Tr} \), wit
 
 (c) Line 1 cites line 2 twice, and line 2 cites line 1 twice. Each is an instance of \( \mathrm{Tr} \) with \( a \), \( b \), \( c \) all replaced by \( 0 \): from \( 0 < 0 \) and \( 0 < 0 \), write \( 0 < 0 \). So if lines could cite later lines, these two lines would justify each other, in a loop that rests on no premise, and the false statement \( 0 < 0 \) would be derivable from nothing. Requiring cited lines to be earlier rules out every such loop: following the citations backwards from any line, the numbers go down, so they must end, and they can end only at premises.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 - 3: says the conclusion is derivable and gives a correct derivation (every line an instance, every citation earlier).
 - 3: names line 5 as the faulty line and the broken clause: a cited line must be earlier.
 - 1: notes that the other lines are instances of \( \mathrm{Tr} \), so the order is the only fault.
 - 3: explains with the loop why later citations cannot be allowed: the two lines justify each other, rest on no premise, and give a false line.
-Fatal errors (0 for the step): calling the list a derivation because its conclusion is true; blaming line 7, which cites line 5, an earlier line.
+
+Slips that lose the step: calling the list a derivation because its conclusion is true; blaming line 7, which cites line 5, an earlier line.
 :::
 
 ::: {#exr-derivations-c3}
@@ -1070,7 +1102,7 @@ $\begin{nd}
 \end{center}
 ```
 
-(c) A derivation is checked by matching each line against the schemas of the rules on the list, and line 2 matches none. A checker that also accepted steps that "obviously follow" would need to understand the statements, and then its verdict would be only as reliable as that understanding. The steps that seem obvious are the ones nobody looks at twice, and they are where unnoticed errors live. (This item is not a find-the-error exercise in the usual sense: the step has no counterexample, since it never leads from truth to falsehood. It is simply not a step of this calculus.)
+(c) A derivation is checked by matching each line against the schemas of the rules on the list, and line 2 matches none. A checker that also accepted steps that "obviously follow" would need to understand the statements, and then its verdict would be only as reliable as that understanding. The steps that seem obvious are the ones nobody looks at twice, and they are where unnoticed errors live. The step has no counterexample, since it never leads from truth to falsehood. It is rejected only because it is not a step of these rules.
 
 (d) One such rule, in schema form:
 
@@ -1084,9 +1116,9 @@ $\begin{nd}[schema]
 \end{center}
 ```
 
-Suppose line \( k \) of a derivation is \( \psi \), justified "\( \wedge\mathrm{E}^{*} \) \( i \)", with line \( i \) the statement \( \varphi \wedge (\psi \wedge \chi) \). Replace line \( k \) by two lines: first \( \psi \wedge \chi \), justified \( \rulename{\wedge E} \) \( i \) (the second form, with the conjuncts \( \varphi \) and \( \psi \wedge \chi \)), then \( \psi \), justified by \( \rulename{\wedge E} \) citing that new line (the first form, with the conjuncts \( \psi \) and \( \chi \)). Renumber the later lines, and every citation of them, up by one; a later citation of line \( k \) now cites the second new line, which carries the same statement \( \psi \). Every other line is unchanged and still cites earlier lines. Doing this for each \( \wedge\mathrm{E}^{*} \) line, one at a time, gives a derivation with the same premises and last line that uses only \( \rulename{\wedge E} \) and \( \rulename{\wedge I} \). A rule that can always be replaced in this way adds convenience and no new power; Section 2.3 calls such a rule a derived rule.
+Suppose line \( k \) of a derivation is \( \psi \), justified "\( \wedge\mathrm{E}^{*} \) \( i \)", with line \( i \) the statement \( \varphi \wedge (\psi \wedge \chi) \). Replace line \( k \) by two lines. The first is \( \psi \wedge \chi \), justified \( \rulename{\wedge E} \) \( i \); this is the second form, with the conjuncts \( \varphi \) and \( \psi \wedge \chi \). The second is \( \psi \), justified by \( \rulename{\wedge E} \) citing that new line; this is the first form, with the conjuncts \( \psi \) and \( \chi \). Renumber the later lines, and every citation of them, up by one; a later citation of line \( k \) now cites the second new line, which carries the same statement \( \psi \). Every other line is unchanged and still cites earlier lines. Doing this for each \( \wedge\mathrm{E}^{*} \) line, one at a time, gives a derivation with the same premises and last line that uses only \( \rulename{\wedge E} \) and \( \rulename{\wedge I} \). A rule that can always be replaced in this way adds convenience and no new power; Section 2.3 calls such a rule a derived rule.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 2: (a) no, reading \( \varphi \) and \( \psi \) off the main connective of line 1.
 - 2: (b) yes, with a correct derivation.
@@ -1094,7 +1126,7 @@ Suppose line \( k \) of a derivation is \( \psi \), justified "\( \wedge\mathrm{
 - 2: (d) a correct schema, one given line and one new line.
 - 2: (d) the replacement by two \( \rulename{\wedge E} \) lines, with the renumbering of later citations.
 
-Fatal errors (0 for the step): claiming the conclusion is not derivable; offering a counterexample to line 2.
+Slips that lose the step: claiming the conclusion is not derivable; offering a counterexample to line 2.
 :::
 
 ::: {#exr-derivations-c4}
@@ -1128,17 +1160,17 @@ Either way line \( k \) does not contain \( R \), which contradicts the choice o
 
 The hypothesis on the letters matters. If \( R \) were the same statement as \( P \), the sequent would be \( P \wedge Q \vdash P \wedge P \), which \( \rulename{\wedge E} \) followed by \( \rulename{\wedge I} \) 2, 2 derives (as in "One line cited twice"). What the argument shows is that no single derivation works for every choice of \( R \).
 
-The argument, "look at the first bad line; it cannot be a premise, and no rule can create it from good lines", is an induction on the lines of a derivation; Chapter 4 makes such arguments exact.
+The argument looks at the first bad line. That line cannot be a premise, and no rule can create it from good lines. Such an argument is an induction on the lines of a derivation, and Chapter 4 makes it exact.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
-- 2: considers a first line containing \( R \), and says why a first one exists (finitely many lines); or, equally, goes down the derivation line by line, showing each line free of \( R \) because every line it cites is.
+- 2: considers a first line containing \( R \), and says why a first one exists: there are finitely many lines. Equally good: goes down the derivation line by line, showing each line free of \( R \) because every line it cites is.
 - 2: rules out a premise (\( P \wedge Q \) does not contain \( R \), since \( P \), \( Q \), \( R \) are different letters).
 - 2: \( \rulename{\wedge I} \) case: the new line is built from the statements of two earlier, \( R \)-free lines.
 - 2: \( \rulename{\wedge E} \) case: the new line is part of an earlier, \( R \)-free line.
 - 2: concludes that no line contains \( R \), and so that \( P \wedge R \) is never a last line.
 
-Fatal errors (0 for the step): arguing about one particular derivation instead of every derivation; arguing that \( R \) is "not true" instead of about which symbols the rules can write.
+Slips that lose the step: arguing about one particular derivation instead of every derivation; arguing that \( R \) is "not true" instead of about which symbols the rules can write.
 :::
 
 <!-- dependency ledger
@@ -1152,7 +1184,7 @@ exm-product-in-unit-interval (solution): a product of two positive reals is posi
 exm-product-in-unit-interval (example): 0 < 1/(n+1) < 1/n <= 1 for integers n >= 1; from a < b and b <= c infer a < c | school algebra; AN1.1 (promised)
 def-rules-conjunction (example): the Common-errors warning's instance: (x > 0 and x > 1) implies x^2 > 1 for every real x, and x > 0 fails at x = -1 | school algebra -> AN1.1 (promised); checked by verify/ch01/exm-product-in-unit-interval.py
 def-rules-conjunction (claim): the safety sentence (if phi and psi are true so is phi and psi; if phi and psi is true so is each side) | the reading of "and" in the first section, stated, not used as a reason in a proof; the general proof is the Looking-ahead box's promise
-exr-derivations-a1 (solution): Tr leads from true lines to a true line; going down the derivation line by line is an induction | school algebra, AN1.1 (promised); the induction is F1.3 (promised)
+exr-derivations-a1 (solution): Tr leads from true lines to a true line; going down the derivation line by line is an induction | school algebra, AN1.1 (promised); the induction is F1.3 (promised); the closing pointer "Chapter 4 proves the same property for the rules of logic" (and C1 (c)'s "Chapter 4 checks that they do") restates the Looking-ahead promise (F1.3, thm-soundness), used in no proof
 exr-derivations-a2 (solution): 0 < 1/4 < 1/3 < 1/2; 3 < 4; the precedence convention (not binds most tightly) | inline arithmetic, checked by verify/ch01/exr-derivations-a2.py; F1.1 (the precedence conventions, before def-main-connective), recalled in prose
 exr-derivations-b2 (solution): two inequalities in the same direction may be added | school algebra -> AN1.1 (promised); checked by verify/ch01/exm-product-in-unit-interval.py
 exr-derivations-c1 (solution): 0 < 1 is true and 1 < 0 is false | inline arithmetic

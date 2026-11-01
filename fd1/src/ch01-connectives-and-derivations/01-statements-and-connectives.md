@@ -20,7 +20,7 @@ Seeing this is easy once it is pointed out. Saying in general what went wrong is
 
 ## Statements
 
-A proof is written in sentences, but not every sentence can appear in one. "Is 91 prime?" asserts nothing, so it cannot serve as a premise or a conclusion; neither can "Let us now turn to the case \( n = 0 \)." The sentences a proof asserts are the ones that make a claim. A proof also has steps of another kind, such as "Suppose \( n \) is odd", which assert nothing but set up a temporary hypothesis; their rules come in Section 1.4.
+A proof is written in sentences, but not every sentence can appear in one. "Is 91 prime?" asserts nothing, so it cannot serve as a premise, that is, a claim an argument starts from, or as its conclusion. Neither can "Let us now turn to the case \( n = 0 \)." The sentences a proof asserts are the ones that make a claim. A proof also has steps of another kind, such as "Suppose \( n \) is odd", which assert nothing but set up a temporary hypothesis; their rules come in Section 1.4.
 
 *A statement is a sentence that is either true or false.*
 
@@ -61,10 +61,10 @@ Decide which of the following are statements.
 (f) This is the sentence of (e) with \( x \) replaced by \( 3 \), and it is a true statement.
 :::
 
-Items (e) and (f) differ by one symbol, and the difference is the whole point. The open sentence \( x > 2 \) becomes a statement in two ways. We can put a number in for \( x \), as in (f). Or we can say which \( x \) we mean in some other way, as in "for every real number \( x \), \( x > 2 \)" (a false statement) or "for some real number \( x \), \( x > 2 \)" (a true one). The words "for every" and "for some" are the **quantifiers**.
+Items (e) and (f) differ by one symbol, and the difference is the whole point. The open sentence \( x > 2 \) becomes a statement in two ways. We can put a number in for \( x \), as in (f). Or we can say which \( x \) we mean in some other way. "For every real number \( x \), \( x > 2 \)" is a false statement, and "for some real number \( x \), \( x > 2 \)" is a true one. The words "for every" and "for some" are the **quantifiers**.
 
 ::: {.remark}
-**Convention: a fixed but arbitrary number.** When an example says "let \( x \) be a real number" and then talks about \( x \), the letter names **one** number, fixed for the whole example, that we are not told. Every sentence about \( x \) is then a statement, true or false according to which number \( x \) is: with \( x = 3 \), "\( x > 2 \)" is true; with \( x = 0 \), it is false; and the example does not know which \( x \) it has. So an argument about \( x \) may use only what holds whatever \( x \) is, and an argument that never peeks at \( x \) works for \( x = 3 \), for \( x = 0 \), and for every other number at once.
+**Convention: a fixed but arbitrary number.** When an example says "let \( x \) be a real number" and then talks about \( x \), the letter names **one** number, fixed for the whole example, that we are not told. Every sentence about \( x \) is then a statement, true or false according to which number \( x \) is. With \( x = 3 \), "\( x > 2 \)" is true; with \( x = 0 \), it is false; and the example does not know which \( x \) it has. So an argument about \( x \) may use only what holds whatever \( x \) is, and an argument that never peeks at \( x \) works for \( x = 3 \), for \( x = 0 \), and for every other number at once.
 :::
 
 ::: {.check}
@@ -75,7 +75,7 @@ Let \( x \) be a real number. Is "\( x > 2 \) or \( x \le 2 \)" a statement? Is 
 Yes: by the convention it is a claim about one fixed number \( x \). And it is true whatever \( x \) is, since every real number is either greater than \( 2 \) or at most \( 2 \).
 :::
 
-::: {.second-reading title="Statements or propositions?"}
+::: {.second-reading title="For instructors"}
 ::: {.remark}
 The book reserves the words "proposition" and "theorem" for proved results, so it calls the sentences of logic **statements**. Other books call them propositions, which is where the name **propositional logic**, for what this chapter and the next study, comes from.
 :::
@@ -97,13 +97,13 @@ We write \( P \), \( Q \), \( R \), \( S \) for statements whose inner structure
 
 To the five connectives we add one statement with no parts at all, written \( \bot \) and read "contradiction". It stands for a statement that is false however things stand: \( 0 = 1 \) will do. A proof that reaches \( \bot \) has shown that the situation it was working in cannot occur. That is the heart of proof by contradiction, and the rules for \( \bot \) come with those for "not".
 
-In \( P \to Q \), the statement \( P \) is the **hypothesis** (or antecedent) and \( Q \) the **conclusion** (or consequent). "If and only if" is often shortened to **iff**.
+In \( P \to Q \), the statement \( P \) is the **hypothesis**, also called the antecedent. The statement \( Q \) is the **conclusion**, also called the consequent. "If and only if" is often shortened to **iff**.
 
-Several English words become \( \wedge \): "but", "although", and "while" all assert both parts, and add a tone of contrast that logic ignores. "\( 2 \) is prime but not odd" is a conjunction. So is "neither … nor", in disguise: "\( 9 \) is neither even nor prime" asserts that \( 9 \) is not even **and** that \( 9 \) is not prime, which is \( \neg P \wedge \neg Q \) with \( P \): "\( 9 \) is even" and \( Q \): "\( 9 \) is prime".
+Several English words become \( \wedge \): "but", "although", and "while" all assert both parts, and add a tone of contrast that logic ignores. "\( 2 \) is prime but not odd" is a conjunction. So is "neither … nor", in disguise: "\( 9 \) is neither even nor prime" asserts that \( 9 \) is not even **and** that \( 9 \) is not prime. With \( P \): "\( 9 \) is even" and \( Q \): "\( 9 \) is prime", that is \( \neg P \wedge \neg Q \).
 
 Chained inequalities are conjunctions in disguise too. \( 0 < x < 1 \) abbreviates \( (0 < x) \wedge (x < 1) \), and \( a \le b \le c \) abbreviates \( (a \le b) \wedge (b \le c) \). The symbol \( \le \) itself hides a disjunction: \( a \le b \) means \( (a < b) \vee (a = b) \). And \( a \ne b \) is the negation \( \neg(a = b) \). All three facts are used often in the sections that follow.
 
-In theorem statements the book writes \( \Rightarrow \) and \( \iff \), as mathematicians usually do, and in running prose it says "implies" and "if and only if". The arrows \( \to \) and \( \leftrightarrow \) are kept for statements written in logical symbols, as in this section, whether built from letters like \( P \to Q \) or from formulas like \( (x > 1) \to (x^2 > 1) \), and for the formal derivations that start in the next. Nothing but typography separates the two pairs.
+In theorem statements the book writes \( \Rightarrow \) and \( \iff \), as mathematicians usually do, and in running prose it says "implies" and "if and only if". The arrows \( \to \) and \( \leftrightarrow \) are kept for statements written in logical symbols, as in this section, and for the formal derivations that start in the next. Such a statement may be built from letters, like \( P \to Q \), or from formulas, like \( (x > 1) \to (x^2 > 1) \). Nothing but typography separates the two pairs.
 
 ::: {.warning}
 In everyday English, "or" is often exclusive: "soup or salad" on a menu means one but not both. In mathematics, \( P \vee Q \) is **inclusive**: it is true when \( P \) is true, when \( Q \) is true, and when both are. For a real number \( x \), "\( x \ge 0 \) or \( x \le 0 \)" is true whatever \( x \) is; at \( x = 0 \) both parts are true, and that does not spoil it. An exclusive "or" must be said in full: "\( P \) or \( Q \), but not both", which is \( (P \vee Q) \wedge \neg (P \wedge Q) \).
@@ -161,7 +161,7 @@ English has many ways of saying \( P \to Q \): "\( P \) implies \( Q \)", "\( Q 
 
 Translating into symbols is a skill of its own, best learned slowly, in three steps. Find the atomic statements, the smallest pieces that make a claim, and give each a letter. Find the connectives, whatever English words carry them. Then decide how the pieces group.
 
-Take "if \( 12 \) is divisible by \( 3 \) and by \( 4 \), then \( 12 \) is divisible by \( 6 \)". The atomic statements are \( P \): "\( 12 \) is divisible by \( 3 \)", \( Q \): "\( 12 \) is divisible by \( 4 \)" and \( R \): "\( 12 \) is divisible by \( 6 \)". English lets "\( 12 \) is divisible by" be said once and shared; logic writes each piece in full. The words "if … then" carry \( \to \), and "and" carries \( \wedge \). The hypothesis is everything between "if" and "then", so the statement is \( (P \wedge Q) \to R \), not \( P \wedge (Q \to R) \). The second reading would claim \( P \) outright, and the English sentence claims nothing outright: it only says what follows from what.
+Take "if \( 12 \) is divisible by \( 3 \) and by \( 4 \), then \( 12 \) is divisible by \( 6 \)". The atomic statements are \( P \): "\( 12 \) is divisible by \( 3 \)", \( Q \): "\( 12 \) is divisible by \( 4 \)" and \( R \): "\( 12 \) is divisible by \( 6 \)". English lets "\( 12 \) is divisible by" be said once and shared; logic writes each piece in full. The words "if … then" carry \( \to \), and "and" carries \( \wedge \). The hypothesis is everything between "if" and "then", so the statement is \( (P \wedge Q) \to R \), not \( P \wedge (Q \to R) \). The grouping \( P \wedge (Q \to R) \) would claim \( P \) outright, and the English sentence claims nothing outright: it only says what follows from what.
 
 A second example shows a connective hidden inside a word. Let \( x \) be a real number, and read "\( x \) is non-zero, and if \( x \) is positive, then so is \( x^3 \)". With \( Z \): "\( x = 0 \)", \( P \): "\( x > 0 \)" and \( C \): "\( x^3 > 0 \)", "non-zero" is \( \neg Z \), and the whole sentence is \( \neg Z \wedge (P \to C) \). Letters that recall their statements, as here, often help; a letter is only a name.
 
@@ -169,7 +169,7 @@ In both examples the English word order is a poor guide to the grouping. When in
 
 ## A phrase book
 
-Many English phrases carry a connective in disguise. The table collects the common ones; in each row, ask the question of "Only if": when is the sentence broken? In the examples, \( n \) is an integer and \( x \) is a real number.
+Many English phrases carry a connective in disguise. The table collects the common ones. In each row, ask: when is the sentence broken? In the examples, \( n \) is an integer and \( x \) is a real number.
 
 | English | paraphrase | symbols | example |
 |---|---|---|---|
@@ -204,8 +204,8 @@ By contrast, "\( 12 \) is a positive even number" is the conjunction of "\( 12 >
 ::: {.remark}
 **Everyday readings.** Four kinds of word mean something different in mathematics from what they mean in conversation, and the everyday reading translates wrongly.
 
-- "Or" is inclusive: the first warning of "The connectives" above.
-- In a definition, "if" is read more strongly, as "if and only if": the second warning there.
+- "Or" is inclusive: \( P \vee Q \) is true when both parts are true.
+- In a definition, "if" is read more strongly, as "if and only if": a number that is not twice an integer is not called even.
 - "Some" never says "not all". "Some solutions of \( x^2 = x \) are non-negative" is true, although every solution (\( 0 \) and \( 1 \)) is non-negative.
 - A word without a sharp boundary makes no statement. "\( x \) is large" is not a statement until a bound is fixed, as in "\( x > 10^6 \)".
 :::
@@ -229,7 +229,7 @@ When parentheses in a chain of arrows are dropped, they group to the right: \( P
 
 In this chapter we parse by eye.
 
-The conventions only decide where parentheses may be dropped. The next definition names the one piece of information that reading a statement is for.
+The conventions only decide where parentheses may be dropped. Reading a statement comes down to one question: which connective was applied last?
 
 ::: {#def-main-connective}
 [Main Connective]
@@ -241,7 +241,7 @@ The main connective is found by undoing the construction from the outside. Take
 \[
 \neg(P \wedge Q) \to R .
 \]
-By convention (1), the \( \neg \) applies only to the parenthesized \( P \wedge Q \). That leaves a single connective outside the parentheses, the \( \to \), joining \( \neg(P \wedge Q) \) on its left and \( R \) on its right. So the last step joined \( \neg(P \wedge Q) \) and \( R \) with \( \to \), and \( \to \) is the main connective. Its hypothesis \( \neg(P \wedge Q) \) has main connective \( \neg \), applied to \( P \wedge Q \), whose main connective is \( \wedge \). The construction can be drawn as a tree, with the main connective at the root and the letters at the leaves.
+Convention (1) says that \( \neg \) binds most tightly, so here the \( \neg \) applies only to the parenthesized \( P \wedge Q \). That leaves a single connective outside the parentheses, the \( \to \), joining \( \neg(P \wedge Q) \) on its left and \( R \) on its right. So the last step joined \( \neg(P \wedge Q) \) and \( R \) with \( \to \), and \( \to \) is the main connective. Its hypothesis \( \neg(P \wedge Q) \) has main connective \( \neg \), applied to \( P \wedge Q \), whose main connective is \( \wedge \). The construction can be drawn as a tree, with the main connective at the root and the letters at the leaves.
 
 \begin{center}
 \begin{tikzpicture}[level distance=11mm, sibling distance=26mm, every node/.style={font=\normalsize}]
@@ -286,11 +286,11 @@ Here are two short arguments, one about integers and one about real numbers.
 
 > If \( x > 2 \), then \( x^2 > 4 \). And \( x > 2 \). So \( x^2 > 4 \).
 
-They are about different things, and yet they are the same argument. Write \( P \) for "\( n \) is odd" and \( Q \) for "\( n^2 \) is odd" in the first, and \( P \) for "\( x > 2 \)" and \( Q \) for "\( x^2 > 4 \)" in the second. Both then read: from \( P \to Q \) and \( P \), conclude \( Q \). What makes the step correct has nothing to do with odd numbers or squares. It depends only on the shape of the premises, on the fact that one of them is an implication and the other is its hypothesis. That shape is the argument's **form**, and the part of the argument that lives in the letters is its **content**.
+They are about different things, and yet they are the same argument. Write \( P \) for "\( n \) is odd" and \( Q \) for "\( n^2 \) is odd" in the first, and \( P \) for "\( x > 2 \)" and \( Q \) for "\( x^2 > 4 \)" in the second. Both then read: from \( P \to Q \) and \( P \), conclude \( Q \). What makes the step correct has nothing to do with odd numbers or squares. It depends only on the shape of the premises, on the fact that one of them is an implication and the other is its hypothesis. That shape is the argument's **form**. What the letters stand for, claims about odd integers in one argument and about real numbers in the other, is its **content**.
 
 *Logic studies the forms of arguments, not their content.*
 
-Separating the two has a payoff. Once a form has been shown to be correct, every argument of that form is correct, whatever its content; we check the form once and use it forever. An argument form is written with its premises above a line and its conclusion below it:
+Separating the two saves work. Once a form has been shown to be correct, every argument of that form is correct, whatever its content; we check the form once and use it forever. An argument form is written with its premises above a line and its conclusion below it:
 \[
 \begin{array}{l}
 P \to Q \\
@@ -303,12 +303,12 @@ In running text the same form is written "from \( P \to Q \) and \( P \), conclu
 
 ## Try to break it
 
-Breaking a form means making several statements true at once, and the list of them deserves a name.
+Breaking a form means making several statements true at once. The list of those statements has a name.
 
 ::: {#def-counterexample-set}
 [Counterexample Set]
 
-The **counterexample set** of an argument form is the list of its premises together with the negation of its conclusion. A **counterexample** to the form is an argument of that form whose premises are **all** true and whose conclusion is false, that is, a choice of statements for the letters that makes **every** member of the counterexample set true. A form is **bad** if it has a counterexample, and **good** if no choice of statements can break it.
+The **counterexample set** of an argument form is the list of its premises together with the negation of its conclusion. A **counterexample** to the form is an argument of that form whose premises are **all** true and whose conclusion is false. In other words, it is a choice of statements for the letters that makes **every** member of the counterexample set true. A form is **bad** if it has a counterexample, and **good** if no choice of statements can break it.
 :::
 
 For "from \( P \to Q \) and \( Q \), conclude \( P \)" the counterexample set is \( P \to Q \), \( Q \), \( \neg P \).
@@ -351,7 +351,11 @@ Breaking the last step of Argument B shows that the step proves nothing. It does
 ::: {.second-reading title="Valid, or only convincing?"}
 Many true cases are evidence, not a proof. The number \( n^2 + n + 41 \) is prime for \( n = 0 \), \( 1 \), \( 2 \), and so on all the way to \( n = 39 \): forty cases without a failure. At \( n = 40 \) it is \( 1600 + 40 + 41 = 1681 = 41^2 \). An argument from many checked cases can be strong, but it is not of a good form: its premises can all be true while its conclusion is false. Logic books call a good form **valid**, and logic studies only form. That is why this book asks of every step not "is it convincing?" but "could this form be broken?"
 
-A list of checked cases says something about the cases checked, and perhaps about most cases; a proof says something about every case. A scientist who reasons "if the hypothesis is right, we shall observe this; we observe it; so the hypothesis is right" uses the bad form of Quick check (i), "from \( P \to Q \) and \( Q \), conclude \( P \)" (Section 1.3 names it *affirming the consequent*). The reasoning is a sensible guide to what to test next, and it is not a proof. Some books call an argument of a good form with true premises *sound*; this book keeps that word for a property of rules.
+A list of checked cases says something about the cases checked, and perhaps about most cases; a proof says something about every case. A scientist may reason: "if the hypothesis is right, we shall observe this; we observe it; so the hypothesis is right". That is the bad form of Quick check (i), "from \( P \to Q \) and \( Q \), conclude \( P \)", which Section 1.3 names *affirming the consequent*. The reasoning is a sensible guide to what to test next, and it is not a proof.
+:::
+
+::: {.second-reading title="For instructors"}
+Some books call an argument of a good form with true premises *sound*; this book keeps that word for a property of rules.
 :::
 
 ## Good form, false sentences
@@ -360,14 +364,14 @@ Argument B has true claims and a bad form. The opposite happens too:
 
 > If \( 6 \) is even, then \( 6 \) is prime. And \( 6 \) is even. So \( 6 \) is prime.
 
-Its form, "from \( P \to Q \) and \( P \), conclude \( Q \)", is good (Quick check (ii) above), and its conclusion is false. The fault is the first premise, false since \( 6 \) is even and not prime. Form and truth are separate questions; all four combinations occur.
+Its form is "from \( P \to Q \) and \( P \), conclude \( Q \)", the good form of Quick check (ii) above. Yet its conclusion is false. The fault is the first premise, false since \( 6 \) is even and not prime. Form and truth are separate questions; all four combinations occur.
 
 | | every claim true | some claim false |
 |---|---|---|
 | form good | "If \( 3 \) is odd, then \( 9 \) is odd. \( 3 \) is odd. So \( 9 \) is odd." | the argument about \( 6 \) above |
 | form bad | Argument B, by its last step "from \( P \to Q \), conclude \( Q \to P \)" | "If \( 2 \) is divisible by \( 4 \), then \( 2 \) is even. \( 2 \) is even. So \( 2 \) is divisible by \( 4 \)." |
 
-The top left is the odd-square argument at \( n = 3 \); the bottom right is the Quick check's (i) at \( n = 2 \). Argument A is not placed. One bad step puts an argument in the bottom row, which is how B got there, but the top row needs every step shown good. A's steps argue from a supposition ("Suppose \( n \) is odd ...") and use "some" (an integer \( k \) with \( n = 2k + 1 \)), and a form written as premises above a line cannot yet express either. Section 1.4 gives the rules for a supposition, and Chapter 5 those for "some".
+The top left is the odd-square argument at \( n = 3 \); the bottom right is the Quick check's (i) at \( n = 2 \). Argument A is not placed. One bad step puts an argument in the bottom row, which is how B got there, but the top row needs every step shown good. A's steps argue from a supposition, "Suppose \( n \) is odd ...". They also use "some": some integer \( k \) has \( n = 2k + 1 \). A form written as premises above a line cannot yet express either. Section 1.4 gives the rules for a supposition, and Chapter 5 those for "some".
 
 *A good form guarantees only that true premises give a true conclusion.*
 
@@ -399,12 +403,12 @@ Failing to break a step is not the "no" answer: the arrow down from the first qu
 
 ## Each connective, two rules
 
-We now come to the idea that organizes this chapter and the next. Think about what a mathematician does with the word "and". There are exactly two things to do with it.
+Proofs handle each connective in two ways, one to prove it and one to use it. Think about what a mathematician does with the word "and". There are exactly two things to do with it.
 
 - To **prove** a statement of the form \( P \wedge Q \), prove \( P \) and prove \( Q \).
 - To **use** a statement of the form \( P \wedge Q \) that is already known, take either half.
 
-Nobody needs to be taught these two moves. They are also, and this is the point, **all** there is to know about "and" for the purpose of writing proofs. Every other fact about \( \wedge \), such as that \( P \wedge Q \) and \( Q \wedge P \) say the same thing, follows from the two moves, as Section 1.2 shows. The first move is called the **introduction rule** for \( \wedge \), written \( \rulename{\wedge I} \), because it is how a \( \wedge \) gets into a proof. The second is the **elimination rule**, \( \rulename{\wedge E} \), because it is how a \( \wedge \) is taken apart.
+Nobody needs to be taught these two steps. They are also **all** there is to know about "and" for the purpose of writing proofs. Every other fact about \( \wedge \), such as that \( P \wedge Q \) and \( Q \wedge P \) say the same thing, follows from these two, as Section 1.2 shows. The first is called the **introduction rule** for \( \wedge \), written \( \rulename{\wedge I} \), because it is how a \( \wedge \) gets into a proof. The second is the **elimination rule**, \( \rulename{\wedge E} \), because it is how a \( \wedge \) is taken apart.
 
 The table below is an informal preview. Section 1.2 states these two rules exactly, as patterns of lines.
 
@@ -421,7 +425,7 @@ Every connective works the same way. Each comes with introduction rules, saying 
 
 The second slogan is what makes a proof possible to check. Finding a proof may need an idea. Checking one needs none: go through it line by line and ask of each line which rule produced it and whether that rule was applied to lines that really are there. A reader who has lost the thread of a long argument can always fall back on that question, and it is the question to ask of Argument B.
 
-Section 1.4 names exactly what B did wrong; the test *try to break it* has already shown, at \( n = 2 \) in its Quick check (i), that B's tempting repair, "from \( P \to Q \) and \( Q \), conclude \( P \)", is a bad form.
+Section 1.4 names exactly what B did wrong. Trying to break B's tempting repair, "from \( P \to Q \) and \( Q \), conclude \( P \)", has already shown that it is a bad form: \( n = 2 \) breaks it, in Quick check (i).
 
 ## What comes next
 
@@ -451,7 +455,7 @@ Chapter 5 gives "for every" its rules and explains why an argument about a fixed
 :::
 
 ::: {.solution}
-(a) A statement is a declarative sentence that is either true or false, and not both (@def-statement). Yes: \( 10^{100} + 1 \) is a definite integer, so it either is prime or is not. The definition does not ask us to know which. With \( x \) fixed, by the convention of the box in "Statements", "\( x^2 - 1 = 0 \)" is a statement about that one number: true if \( x \) is \( 1 \) or \( -1 \), false otherwise. Without the convention it would be an open sentence. The sentence "\( 0^2 - 1 = 0 \)" is a statement outright, and it is false, since \( 0^2 - 1 = -1 \).
+(a) A statement is a declarative sentence that is either true or false, and not both (@def-statement). Yes: \( 10^{100} + 1 \) is a definite integer, so it either is prime or is not. The definition does not ask us to know which. With \( x \) fixed, by the convention of a fixed but arbitrary number, "\( x^2 - 1 = 0 \)" is a statement about that one number: true if \( x \) is \( 1 \) or \( -1 \), false otherwise. Without the convention it would be an open sentence. The sentence "\( 0^2 - 1 = 0 \)" is a statement outright, and it is false, since \( 0^2 - 1 = -1 \).
 
 (b) \( Q \wedge \neg P \). The word "but" is a conjunction.
 
@@ -469,7 +473,7 @@ Q \wedge P
 \]
 Section 1.2 derives it.
 
-(f) \( \wedge \): each parenthesized part is complete, and the last step joins them with "and". So a proof of it has two parts: it proves \( P \vee Q \), and it proves \( Q \to R \). The rule that puts the two parts together is \( \rulename{\wedge I} \). This is the first question of "What comes next", asked before any rule has been stated exactly: the goal's main connective decides the last step.
+(f) \( \wedge \): each parenthesized part is complete, and the last step joins them with "and". So a proof of it has two parts: it proves \( P \vee Q \), and it proves \( Q \to R \). The rule that puts the two parts together is \( \rulename{\wedge I} \). Even before any rule has been stated exactly, the goal's main connective decides the last step.
 :::
 
 ::: {#exr-statements-and-connectives-a2}
@@ -640,7 +644,7 @@ Let \( x \) be a real number.
 ::: {#exr-statements-and-connectives-b4}
 [B4: Break it or explain why not]
 
-For each form, either find statements about a real number \( x \) that make every premise true and the conclusion false, or explain, by checking every case, why no choice of statements can (use the meaning of each connective; for \( \to \), the table of "When is an implication broken?").
+For each form, either find statements about a real number \( x \) that make every premise true and the conclusion false, or explain why no choice of statements can. To explain, check every case, using the meaning of each connective; for \( \to \), use the table of "When is an implication broken?".
 
 ::: {.enumerate options="label=(\alph*)"}
 1. From \( P \to Q \) and \( \neg P \), conclude \( \neg Q \).

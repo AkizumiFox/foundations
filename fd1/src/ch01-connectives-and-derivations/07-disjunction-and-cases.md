@@ -1,6 +1,6 @@
 # Using Or: Proof by Cases
 
-The previous section met a goal the rules could not reach: from \( P \vee Q \), derive \( Q \vee P \). The rules could build a disjunction (\( \rulename{\vee I} \), @def-rule-disjunction-introduction), but none of them could use one. This section gives the rule that uses a disjunction, \( \rulename{\vee E} \). It is the most familiar move in mathematics after "suppose": the split into cases, "if \( x \ge 0 \), then …; if \( x < 0 \), then …". It is also the last rule of this chapter. We use it to reach the stalled goal, to prove the laws that let "and" and "or" be rearranged, and to prove three facts about absolute values; the section ends with all the rules of the chapter on one page.
+The previous section met a goal the rules could not reach: from \( P \vee Q \), derive \( Q \vee P \). The rules could build a disjunction (\( \rulename{\vee I} \), @def-rule-disjunction-introduction), but none of them could use one. This section gives the rule that uses a disjunction, \( \rulename{\vee E} \). It is the most familiar step in mathematics after "suppose": the split into cases, "if \( x \ge 0 \), then …; if \( x < 0 \), then …". It is also the last rule of this chapter. We use it to reach the stalled goal and to prove the laws that let "and" and "or" be rearranged. We also prove three facts about absolute values. The section ends with all the rules of the chapter on one page.
 
 ## A proof that needs two cases
 
@@ -14,13 +14,13 @@ x & \text{if } x \ge 0, \\
 \]
 Suppose we want to prove that \( \abs{xy} = \abs{x}\abs{y} \) for all real numbers \( x \) and \( y \). There is no single computation to do. Which formula gives \( \abs{xy} \) depends on the sign of \( xy \), and that depends on the signs of \( x \) and \( y \). Yet once the signs are fixed, each case is one line: if \( x > 0 \) and \( y < 0 \), for instance, then \( \abs{xy} = -xy = x \cdot (-y) = \abs{x}\abs{y} \).
 
-So the proof we want has the shape "every real number is \( \ge 0 \) or \( < 0 \); in the first case …; in the second case …; so in every case …". The rules so far cannot say this. The attempt at \( P \vee Q \vdash Q \vee P \) in Section 1.5 met the same wall from the other side. It derived that each side of the premise, assumed in a box, leads to the goal: lines 4 and 7 there were \( P \to (Q \vee P) \) and \( Q \to (Q \vee P) \). What it lacked was a rule to say "one of \( P \), \( Q \) holds, and either one leads to \( Q \vee P \); so \( Q \vee P \)": a rule that takes "\( \varphi \) or \( \psi \)", which does not say **which** side holds, and still reaches a definite conclusion. That is the job of the elimination rule for "or".
+So the proof we want has the shape "every real number is \( \ge 0 \) or \( < 0 \); in the first case …, and in the second case …; so in every case …". The rules so far cannot say this. The attempt at \( P \vee Q \vdash Q \vee P \) in Section 1.5 met the same wall from the other side. It derived that each side of the premise, assumed in a box, leads to the goal: lines 4 and 7 there were \( P \to (Q \vee P) \) and \( Q \to (Q \vee P) \). What it lacked was a rule to say "one of \( P \), \( Q \) holds, and either one leads to \( Q \vee P \); so \( Q \vee P \)". Such a rule takes "\( \varphi \) or \( \psi \)", which does not say **which** side holds, and still reaches a definite conclusion. That is the job of the elimination rule for "or".
 
 ## The rule of or-elimination
 
 *To use "\( \varphi \) or \( \psi \)", reach your goal from \( \varphi \), and reach it again from \( \psi \).*
 
-The definition block states both rules for disjunction, so that the pair stands in one place: the new rule first, then the two schemas of \( \rulename{\vee I} \) recalled from Section 1.5. As in every schema (@def-rule-schema), the Greek letters stand for arbitrary statements and \( i, j, k, l, m, n \) for line numbers.
+In other words, a disjunction is used by deriving the goal once from each of its two sides. Here are both rules for disjunction in one place: the new rule first, then the two schemas of \( \rulename{\vee I} \) from Section 1.5. As in every schema (@def-rule-schema), the Greek letters stand for arbitrary statements and \( i, j, k, l, m, n \) for line numbers.
 
 ::: {#def-rules-disjunction}
 [Rules for Disjunction]
@@ -58,16 +58,16 @@ $\begin{nd}[schema]
 The first schema is the rule \( \rulename{\vee E} \) (**or-elimination**, or **proof by cases**); the other two are \( \rulename{\vee I} \), as in @def-rule-disjunction-introduction. In \( \rulename{\vee E} \), each line \( \chi \) (line \( k \) and line \( m \)) is a line of its box itself, not of a box inside it.
 :::
 
-This rule has conditions that matter; read each one.
+Each of the rule's five conditions matters.
 
 - **The disjunction.** Line \( i \) holds a disjunction \( \varphi \vee \psi \), available at line \( n \). The cases are not ours to invent: they are the two sides of a disjunction we already have, as a premise, an assumption, or a line derived earlier. Writing "Case 1 … Case 2 …" does not create it.
 - **Two boxes.** The first box opens with the left side \( \varphi \) as its assumption, the second with the right side \( \psi \). They are separate: the second opens after the first has closed, and the drawing shows a break in the vertical bar between them. So, by the scope rule of @def-derivation, no line of the second box may cite a line of the first. The disjunction does not tell us which side holds, so we must be ready for both, and each case's assumption is in force only inside its own box. Each case box's assumption is printed "asm, for \( \rulename{\vee E} \)"; read it as "Case 1: …" and "Case 2: …".
 - **The same last line.** Both boxes end in the **same** statement \( \chi \), and in each box \( \chi \) is a line of that box itself, not of a box opened inside it. The rule then writes \( \chi \) a third time, outside both boxes, where neither \( \varphi \) nor \( \psi \) is assumed. That is honest only because \( \chi \) was reached whichever case holds.
 - **Three citations.** The justification "\( \rulename{\vee E} \) \( i, \lines{j}{k}, \lines{l}{m} \)" cites the disjunction first, then the box of the left side, then the box of the right side, each box as a range. Both boxes must be available at line \( n \): closed, and sitting directly in the part of the derivation where line \( n \) is (@def-derivation).
-- **Any conclusion.** The statement \( \chi \) need not mention \( \varphi \) or \( \psi \). It is whatever we are trying to reach. The next subsection says how to choose it.
+- **Any conclusion.** The statement \( \chi \) need not mention \( \varphi \) or \( \psi \). It is whatever we are trying to reach.
 
 ::: {.second-reading title="A box of one line"}
-The degenerate case is a box of one line, whose assumption is already \( \chi \). Nothing in the rule asks a box to contain more than its assumption, just as nothing in \( \rulename{{\to}I} \) did (@exm-first-boxes). The second derivation below has two such boxes.
+A box may consist of one line, its assumption, when that assumption is already \( \chi \). Nothing in the rule asks a box to contain more than its assumption, just as nothing in \( \rulename{{\to}I} \) did (@exm-first-boxes). The second derivation below has two such boxes.
 :::
 
 ::: {.warning}
@@ -84,9 +84,9 @@ What should the two boxes end in? The rule leaves \( \chi \) to us, and the choi
 
 The two habits fit together. Faced with a goal \( \varphi \vee \psi \) and an available disjunction \( \alpha \vee \beta \), do not choose a side of the goal yet: split on \( \alpha \vee \beta \) first. Inside each case the current goal is still \( \varphi \vee \psi \), but now a new line is in hand, the case's assumption, and it may be one side of the goal. Then choose, and the choice may be different in the two boxes. This is exactly how the stalled goal of Section 1.5 goes.
 
-In the Givens/Goal table, each case of a split adds its assumption to the Givens and keeps the same Goal. For the stalled goal:
+In a table of what we know and what we want, each case of a split adds its assumption to what we know and keeps the same goal. For the stalled goal:
 
-| Givens | Goal |
+| We know | We want |
 |---|---|
 | \( P \vee Q \) | \( Q \vee P \) |
 | \( P \vee Q \), \( P \) (first case) | \( Q \vee P \) |
@@ -170,7 +170,7 @@ $\begin{nd}
 \end{center}
 ```
 
-This is the degenerate case split, in which the two cases are the same case. The box \( \lines{2}{2} \) is a legal box whose last line is \( P \), a line of that box itself, and so is \( \lines{3}{3} \).
+Here the two cases are the same case, and each box has only one line. The box \( \lines{2}{2} \) is a legal box whose last line is \( P \), a line of that box itself, and so is \( \lines{3}{3} \).
 :::
 
 ::: {.second-reading title="One line short"}
@@ -309,7 +309,7 @@ Show that \( (P \to R) \wedge (Q \to S), \ P \vee Q \vdash R \vee S \).
 :::
 
 ::: {.solution}
-*Idea.* The goal \( R \vee S \) is a disjunction with no side in hand: postpone. The premise \( P \vee Q \) is a disjunction: split, both cases ending in \( R \vee S \). In each case \( \rulename{\wedge E} \) takes out the implication that fits the case, \( \rulename{{\to}E} \) fires on the case's assumption, and \( \rulename{\vee I} \) weakens the result to the goal, on the left in one case and on the right in the other. The pictures show the two case boxes opened, each ending in the goal; then the first box filled.
+*Idea.* The goal \( R \vee S \) is a disjunction with no side in hand: postpone. The premise \( P \vee Q \) is a disjunction: split, both cases ending in \( R \vee S \). In each case, \( \rulename{\wedge E} \) takes out the implication that fits the case, and \( \rulename{{\to}E} \) fires on the case's assumption. Then \( \rulename{\vee I} \) weakens the result to the goal, on the left in one case and on the right in the other. The pictures show the two case boxes opened, each ending in the goal; then the first box filled.
 
 ```{=latex}
 % schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
@@ -374,7 +374,7 @@ $\begin{nd}
 With numbers: let \( x \) be a real number with \( x \ge 1 \) or \( x \le -1 \). Since \( x \ge 1 \) gives \( x^3 \ge 1 \), and \( x \le -1 \) gives \( x^3 \le -1 \), the derivation shows that \( x^3 \ge 1 \) or \( x^3 \le -1 \).
 :::
 
-The pattern is called the **constructive dilemma**. When \( R \) and \( S \) are the same statement there is nothing to weaken: the skeleton of "From a skeleton to a proof about numbers" below reaches \( R \) itself.
+The pattern is called the **constructive dilemma**. When \( R \) and \( S \) are the same statement there is nothing to weaken, and both cases end in \( R \) itself. The proofs about numbers later in this section have that shape.
 
 ## Laws of "or"
 
@@ -485,9 +485,9 @@ $\begin{nd}
 This proves both sequents.
 :::
 
-The answer to the prompt: the boxes end on lines 6 and 9, both \( (P \wedge Q) \vee (P \wedge R) \). They must be the same statement because line 10 writes that statement outside both boxes, where neither \( Q \) nor \( R \) is assumed, and that is honest only if it was reached in each case.
+In the first derivation, the boxes end on lines 6 and 9, both \( (P \wedge Q) \vee (P \wedge R) \). They must be the same statement because line 10 writes that statement outside both boxes, where neither \( Q \) nor \( R \) is assumed, and that is honest only if it was reached in each case.
 
-In the second derivation, line 8 derives \( P \) a second time instead of citing line 3. It has to: line 3 lies in the box \( \lines{2}{6} \), which has closed, so line 3 is not available at line 8. Each case must earn its own \( P \).
+In the second derivation, line 8 derives \( P \) a second time instead of citing line 3. It has to: line 3 lies in the box \( \lines{2}{6} \), which has closed, so line 3 is not available at line 8. Each case must derive its own \( P \).
 
 ::: {.second-reading title="Distributivity in words"}
 For a real number \( x \), take \( P \): "\( x \ne 0 \)", \( Q \): "\( x > 0 \)" and \( R \): "\( x < 0 \)". The first sequent then reads: a non-zero number that is positive or negative is a positive non-zero number or a negative non-zero number. The law is dull in words, which is as it should be. Its use is in derivations, where it moves a case split from inside a conjunction to the outside, and in the laws of sets, where "and" and "or" become intersection and union.
@@ -705,7 +705,7 @@ The number \( x \) satisfies \( x \ge 0 \) or \( x < 0 \), and we argue by cases
 Each inner case split reaches \( \abs{xy} = \abs{x}\abs{y} \), so each outer case does, and hence the equation holds.
 :::
 
-The structure is two uses of \( \rulename{\vee E} \), one inside each box of the other: two outer boxes (the sign of \( x \)), each containing two inner boxes (the sign of \( y \)), and every one of the four inner boxes ending in the same equation, the current goal. The second and third cases needed the remark about \( a \le 0 \). When \( x = 0 \) and \( y < 0 \), the product is \( 0 \), not negative, and without the remark the case would have a hole at exactly that point.
+The structure is two uses of \( \rulename{\vee E} \), one inside each box of the other. There are two outer boxes, for the sign of \( x \), and each contains two inner boxes, for the sign of \( y \). Every one of the four inner boxes ends in the same equation, the current goal. The second and third cases needed the remark about \( a \le 0 \). When \( x = 0 \) and \( y < 0 \), the product is \( 0 \), not negative, and without the remark the case would have a hole at exactly that point.
 
 A case split need not be the obvious one. The triangle inequality has an equally short proof with two cases, if we split on the sign of the right quantity.
 
@@ -727,7 +727,7 @@ Now \( x + y \ge 0 \) or \( x + y < 0 \), and we argue by cases \( [\rulename{\v
 Both cases reach \( \abs{x + y} \le \abs{x} + \abs{y} \), so it holds.
 :::
 
-Two case splits appear here, one after the other rather than one inside the other. The first proves a small lemma for an arbitrary number \( a \), both halves at once, and its first half, \( a \le \abs{a} \), is @exm-abs-at-least-x again. The second uses both halves of the lemma, for \( a = x \) and for \( a = y \). Splitting on the sign of \( x + y \) instead of the signs of \( x \) and \( y \) is what saves two cases: the absolute value in the goal is \( \abs{x + y} \), and its sign is the only one the goal's left side cares about.
+Two case splits appear here, one after the other rather than one inside the other. The first proves a small lemma for an arbitrary number \( a \), both halves at once, and its first half, \( a \le \abs{a} \), is @exm-abs-at-least-x again. The second uses both halves of the lemma, for \( a = x \) and for \( a = y \). Splitting on the sign of \( x + y \) instead of the signs of \( x \) and \( y \) saves two cases. The absolute value in the goal is \( \abs{x + y} \), and its sign is the only one the goal's left side cares about.
 
 ::: {.warning}
 A case split must cover every possibility. A common faulty proof of the triangle inequality treats "\( x \ge 0 \) and \( y \ge 0 \)" and "\( x < 0 \) and \( y < 0 \)", checks both, and stops. The disjunction of these two cases is not a fact: \( x = 1 \), \( y = -1 \) satisfies neither. So there is no line \( \varphi \vee \psi \) for \( \rulename{\vee E} \) to cite, and the rule was never legally applied. The missing mixed-sign cases are the interesting ones: at \( x = 1 \), \( y = -1 \) the inequality reads \( 0 \le 2 \), and it is strict.
@@ -775,17 +775,31 @@ First, as for each rule before it, the newest rule matched against statements la
 
 This chapter has introduced six rules, one or two at a time, and the structural clause \( \rulename{R} \). Here is the whole chapter on one page.
 
-| Rule | Shape | You write | Lean |
-|---|---|---|---|
-| \( \rulename{\wedge I} \) | \( \varphi \), \( \psi \) \( \Longrightarrow \) \( \varphi \wedge \psi \) | "We show \( P \), and we show \( Q \)." | `constructor` |
-| \( \rulename{\wedge E} \) | \( \varphi \wedge \psi \) \( \Longrightarrow \) \( \varphi \) (or \( \psi \)) | "In particular, \( P \)." | `h.1` (and `h.2`) |
-| \( \rulename{{\to}E} \) | \( \varphi \to \psi \), \( \varphi \) \( \Longrightarrow \) \( \psi \) | "Since \( P \) implies \( Q \), and \( P \) holds, \( Q \)." | `exact h hp` |
-| \( \rulename{{\to}I} \) | box \( \varphi \) … \( \psi \) \( \Longrightarrow \) \( \varphi \to \psi \) | "Assume \( P \). … Hence \( Q \)." | `intro hp` |
-| \( \rulename{R} \) | \( \varphi \) (available) \( \Longrightarrow \) \( \varphi \), copied | "As shown above, \( P \)." | `exact hp` |
-| \( \rulename{\vee I} \) | \( \varphi \) \( \Longrightarrow \) \( \varphi \vee \psi \) (or \( \psi \vee \varphi \)) | "So \( P \) or \( Q \) holds." | `left` (or `Or.inl hp`); `right` |
-| \( \rulename{\vee E} \) | \( \varphi \vee \psi \), box \( \varphi \) … \( \chi \), box \( \psi \) … \( \chi \) \( \Longrightarrow \) \( \chi \) | "Case 1: \( P \). … so \( R \). Case 2: \( Q \). … so \( R \). In either case, \( R \)." | `Or.elim h` (or `cases h`) |
+| Rule | Shape | You write |
+|---|---|---|
+| \( \rulename{\wedge I} \) | \( \varphi \), \( \psi \) \( \Longrightarrow \) \( \varphi \wedge \psi \) | "We show \( P \), and we show \( Q \)." |
+| \( \rulename{\wedge E} \) | \( \varphi \wedge \psi \) \( \Longrightarrow \) \( \varphi \) (or \( \psi \)) | "In particular, \( P \)." |
+| \( \rulename{{\to}E} \) | \( \varphi \to \psi \), \( \varphi \) \( \Longrightarrow \) \( \psi \) | "Since \( P \) implies \( Q \), and \( P \) holds, \( Q \)." |
+| \( \rulename{{\to}I} \) | box \( \varphi \) … \( \psi \) \( \Longrightarrow \) \( \varphi \to \psi \) | "Assume \( P \). … Hence \( Q \)." |
+| \( \rulename{R} \) | \( \varphi \) (available) \( \Longrightarrow \) \( \varphi \), copied | "As shown above, \( P \)." |
+| \( \rulename{\vee I} \) | \( \varphi \) \( \Longrightarrow \) \( \varphi \vee \psi \) (or \( \psi \vee \varphi \)) | "So \( P \) or \( Q \) holds." |
+| \( \rulename{\vee E} \) | \( \varphi \vee \psi \), box \( \varphi \) … \( \chi \), box \( \psi \) … \( \chi \) \( \Longrightarrow \) \( \chi \) | "Case 1: \( P \). … so \( R \). Case 2: \( Q \). … so \( R \). In either case, \( R \)." |
 
-A written proof often drops the first part of the phrase for \( \rulename{\vee E} \), saying "we argue by cases" without naming the disjunction; when that is not a standard fact such as "\( x \ge 0 \) or \( x < 0 \)", ask for it, since it is the line the rule cites first. Nothing depends on the Lean column.
+A written proof often drops the first part of the phrase for \( \rulename{\vee E} \): it says "we argue by cases" without naming the disjunction. When that disjunction is not a standard fact such as "\( x \ge 0 \) or \( x < 0 \)", ask for it, since it is the line the rule cites first.
+
+::: {.second-reading title="For instructors"}
+In the proof assistant Lean, the rules of this chapter are performed by the following code. Nothing in this book depends on it.
+
+| Rule | Lean |
+|---|---|
+| \( \rulename{\wedge I} \) | `constructor` |
+| \( \rulename{\wedge E} \) | `h.1` (and `h.2`) |
+| \( \rulename{{\to}E} \) | `exact h hp` |
+| \( \rulename{{\to}I} \) | `intro hp` |
+| \( \rulename{R} \) | `exact hp` |
+| \( \rulename{\vee I} \) | `left` (or `Or.inl hp`); `right` |
+| \( \rulename{\vee E} \) | `Or.elim h` (or `cases h`) |
+:::
 
 ::: {.warning}
 [Not allowed: \( \rulename{\vee E} \)]
@@ -794,8 +808,8 @@ Each step breaks the clause of the rule named after it.
 
 - "Close the split with one case box": the clause "Two boxes".
 - "Close it when the boxes end in \( R \) and in \( S \)": the clause "The same last line".
-- "In the second box, cite a line of the first": the clause "Two boxes" and the scope rule; the boxes are separate (the warning after the rule).
-- "Split on 'case \( x > 0 \), case \( x < 0 \)'": the clause "The disjunction"; the cases must be the sides of an available disjunction, and \( (x > 0) \vee (x < 0) \) is not one (the warning on exhaustive cases).
+- "In the second box, cite a line of the first": the clause "Two boxes" and the scope rule. The boxes are separate, and a case may use only its own assumption.
+- "Split on 'case \( x > 0 \), case \( x < 0 \)'": the clause "The disjunction". The cases must be the sides of an available disjunction, and \( (x > 0) \vee (x < 0) \) is not one, since \( x = 0 \) satisfies neither side.
 - "Cite the boxes' lines one by one": the clause "Three citations"; each box is cited as a range.
 
 Here is the third step as a derivation, wrong on the left and right on the right, with premises \( (P \wedge Q) \vee R \) and \( R \to Q \) and goal \( Q \).
@@ -861,7 +875,7 @@ $\begin{nd}[schema]
 \end{center}
 ```
 
-**Implication** (@def-rules-implication): \( \rulename{{\to}E} \) and \( \rulename{{\to}I} \); and **repetition**, clause (D3) of @def-derivation.
+**Implication** (@def-rules-implication): \( \rulename{{\to}E} \) and \( \rulename{{\to}I} \). Then **repetition**, the clause of @def-derivation that copies an available line, (D3).
 
 ```{=latex}
 % schema
@@ -921,7 +935,7 @@ $\begin{nd}[schema]
 \end{center}
 ```
 
-Each rule is also a move in the search for a derivation. Read by the goal's main connective, the introduction rules say how a goal is built: that is the move *read the skeleton off the goal*. Read by an available line's main connective, the elimination rules say how that line is used: *use a premise by its main connective*.
+Each rule is also a step in the search for a derivation. Read by the goal's main connective, the introduction rules say how a goal is built: this is the method *read the skeleton off the goal*. Read by an available line's main connective, the elimination rules say how that line is used: this is the method *use a premise by its main connective*.
 
 | Main connective | As the goal (goal-directed) | As an available line (premise-directed) |
 |---|---|---|
@@ -929,7 +943,7 @@ Each rule is also a move in the search for a derivation. Read by the goal's main
 | \( \to \) | open a box with the hypothesis; the new goal is the conclusion; close with \( \rulename{{\to}I} \) | fire it with \( \rulename{{\to}E} \) once its hypothesis is on a line, or make the hypothesis a subgoal |
 | \( \vee \) | postpone; choose a side with \( \rulename{\vee I} \) when that side is in hand | split with \( \rulename{\vee E} \); both boxes end in the current goal |
 
-The table of moves as an order in which to try them:
+The same table, as an order in which to try the steps:
 
 ```{=latex}
 \begin{center}
@@ -960,9 +974,9 @@ The table of moves as an order in which to try them:
 \end{center}
 ```
 
-The chart uses only this chapter's rules, and following it never writes an illegal line. It is a guide, not a rule: after asking whether the goal is already in hand, it reads the table's goal column and then its premise column, each from the top, except that it leaves out two moves. When an available implication ends in the goal but its hypothesis is on no line, make the hypothesis the current goal and start the chart again; items 3, 8 and 10 of @exr-disjunction-and-cases-b7 need this. When the goal is a disjunction and neither side is in hand, make one side the current goal; item 14 of @exr-disjunction-and-cases-b7 does this in each case. ("Unsplit" at the test for \( \vee \) means not already split by a case box you are inside; without that word the chart would split \( P \vee Q \) again in each case of item 14 and never stop.) So when the chart stops, try these moves. A claim the chart cannot finish may still be derivable: stopping is no evidence that the claim breaks.
+The chart uses only this chapter's rules, and following it never writes an illegal line. It is a guide, not a rule. After asking whether the goal is already in hand, it reads the table's goal column and then its premise column, each from the top. But it leaves out two steps. When an available implication ends in the goal but its hypothesis is on no line, make the hypothesis the current goal and start the chart again; items 3, 8 and 10 of @exr-disjunction-and-cases-b7 need this. When the goal is a disjunction and neither side is in hand, make one side the current goal; item 14 of @exr-disjunction-and-cases-b7 does this in each case. "Unsplit" at the test for \( \vee \) means not already split by a case box you are inside. Without that word the chart would split \( P \vee Q \) again in each case of item 14 and never stop. So when the chart stops, try these two steps. A claim the chart cannot finish may still be derivable: stopping is no evidence that the claim breaks.
 
-### Named moves
+### Proof methods in this chapter
 
 - **Try to break it.** To test a form, put statements in for the letters that make every premise true and the conclusion false; one such choice shows the form is bad. (Section 1.1)
 - **Two ways to attack an argument.** Show a premise false, or show a step's form bad; the two attacks are independent. (Section 1.1)
@@ -976,7 +990,7 @@ The chart uses only this chapter's rules, and following it never writes an illeg
 ::: {.remark}
 [Looking ahead]
 
-The rules for "not", for \( \bot \), and for "if and only if", and the rule for proof by contradiction, are the subject of Chapter 2; the method that turns the table of moves above into a way of finding derivations is the subject of Chapter 3.
+The rules for "not", for \( \bot \), and for "if and only if", and the rule for proof by contradiction, are the subject of Chapter 2. Chapter 3 turns the table of steps above into a method for finding derivations.
 :::
 
 ## Exercises
@@ -1013,7 +1027,7 @@ The rules for "not", for \( \bot \), and for "if and only if", and the rule for 
 :::
 
 ::: {.solution}
-(a) The schema is the first one of @def-rules-disjunction: from a line \( i \) holding \( \varphi \vee \psi \), a box \( \lines{j}{k} \) opened by \( \varphi \), and a box \( \lines{l}{m} \) opened by \( \psi \), each ending in the same statement \( \chi \) as a line of its own, a line \( n \) holding \( \chi \). The justification "\( \rulename{\vee E} \) \( i, \lines{j}{k}, \lines{l}{m} \)" cites the disjunction and the two boxes.
+(a) The schema is the first one of @def-rules-disjunction. The rule writes a line \( n \) holding \( \chi \). It needs a line \( i \) holding \( \varphi \vee \psi \), a box \( \lines{j}{k} \) opened by \( \varphi \), and a box \( \lines{l}{m} \) opened by \( \psi \). Each box ends in the same statement \( \chi \), as a line of its own. The justification "\( \rulename{\vee E} \) \( i, \lines{j}{k}, \lines{l}{m} \)" cites the disjunction and the two boxes.
 
 (b) In the first, the disjunction is "\( n \) is even or \( n \) is odd", and both cases end in "\( n^2 + n \) is even". In the second, it is "\( t \ge 0 \) or \( t < 0 \)" (the sentence does not say it, and a careful reader supplies it), and both cases end in \( t^2 \ge 0 \).
 
@@ -1021,9 +1035,9 @@ The rules for "not", for \( \bot \), and for "if and only if", and the rule for 
 
 (d) Line 5. \( \rulename{\vee E} \) needs two boxes, one opened by each side of the disjunction (the clause "two boxes"); line 5 cites only the box opened by \( P \), and no box opened by \( Q \) exists. Nor can a box opened by \( Q \) simply be added: nothing available reaches \( R \) from \( Q \). In fact the sequent's form is bad, so no correct argument should be expected to reach \( R \) from these premises. Try to break it: for a real number \( x \), take \( P \): "\( x > 1 \)", \( Q \): "\( x < 1 \)", \( R \): "\( x > 0 \)". At \( x = -1 \) both premises hold and \( R \) does not.
 
-(e) Line 3, \( Q \vee R \), obtained from the premise by \( \rulename{\wedge E} \). Each box must end in the current goal, \( (P \wedge Q) \vee (P \wedge R) \), because line 10 writes one statement, the same one that ends both boxes; boxes ending in \( P \wedge Q \) and \( P \wedge R \) would end in different statements, and \( \rulename{\vee E} \) could not be applied to them.
+(e) Line 3, \( Q \vee R \), obtained from the premise by \( \rulename{\wedge E} \). Each box must end in the current goal, \( (P \wedge Q) \vee (P \wedge R) \), because line 10 writes one statement, the same one that ends both boxes. Boxes ending in \( P \wedge Q \) and \( P \wedge R \) would end in different statements, and \( \rulename{\vee E} \) could not be applied to them.
 
-(f) Line 6 must be the current goal exactly, since both boxes end in it and line 10 writes it. The goal \( (P \wedge Q) \vee (P \wedge R) \) has \( P \wedge Q \) as its **left** side, so line 6 uses the first schema of \( \rulename{\vee I} \). The line \( (P \wedge R) \vee (P \wedge Q) \) is also an instance of \( \rulename{\vee I} \) on line 5 (the second schema), but it is a different statement: the first box would then end differently from the second, whose last line 9 is \( (P \wedge Q) \vee (P \wedge R) \), and \( \rulename{\vee E} \) could not cite both boxes.
+(f) Line 6 must be the current goal exactly, since both boxes end in it and line 10 writes it. The goal \( (P \wedge Q) \vee (P \wedge R) \) has \( P \wedge Q \) as its **left** side, so line 6 uses the first schema of \( \rulename{\vee I} \). The line \( (P \wedge R) \vee (P \wedge Q) \) is also an instance of \( \rulename{\vee I} \) on line 5, by the second schema. But it is a different statement. The first box would then end differently from the second, whose last line 9 is \( (P \wedge Q) \vee (P \wedge R) \), and \( \rulename{\vee E} \) could not cite both boxes.
 :::
 
 ::: {#exr-disjunction-and-cases-a2}
@@ -1037,7 +1051,7 @@ Each part takes a line or two. The parts run from reading a split, through a mis
 3. Inside a box whose current goal is \( S \), the available line \( Q \vee R \) is split. What do the two case boxes end in?
 4. Line 1 is \( (P \wedge Q) \vee R \); a box \( \lines{2}{4} \) runs from \( P \wedge Q \) to \( S \vee P \), and a box \( \lines{5}{7} \) from \( R \) to \( S \vee P \). What does "\( \rulename{\vee E} \) 1, 2–4, 5–7" write?
 5. Line 9 is \( Q \), justified "\( \rulename{\vee E} \) 2, 3–5, 6–8", with line 3 \( P \to Q \) and line 6 \( R \). What are lines 2, 5 and 8?
-6. Justify each line: 1 \( P \vee (Q \wedge R) \), 2 \( P \to S \), 3 \( R \to S \), premises; 4 \( P \); 5 \( S \); 6 \( Q \wedge R \); 7 \( R \); 8 \( S \); 9 \( S \). The boxes are \( \lines{4}{5} \) and \( \lines{6}{8} \).
+6. Lines 1 \( P \vee (Q \wedge R) \), 2 \( P \to S \) and 3 \( R \to S \) are premises. Justify each of the other lines: 4 \( P \), 5 \( S \), 6 \( Q \wedge R \), 7 \( R \), 8 \( S \), 9 \( S \). The boxes are \( \lines{4}{5} \) and \( \lines{6}{8} \).
 7. Two case boxes end in \( R \wedge S \) and \( S \wedge R \). May \( \rulename{\vee E} \) close the split?
 8. Find the illegal line.
    ```{=latex}
@@ -1080,7 +1094,7 @@ Each part takes a line or two. The parts run from reading a split, through a mis
 
 (e) Line 2 is \( (P \to Q) \vee R \), the disjunction whose sides open the boxes at lines 3 and 6; lines 5 and 8 are both \( Q \), the last line of each box.
 
-(f) 4 assumption, for \( \rulename{\vee E} \); 5 \( \rulename{{\to}E} \) 2, 4; 6 assumption, for \( \rulename{\vee E} \); 7 \( \rulename{\wedge E} \) 6; 8 \( \rulename{{\to}E} \) 3, 7; 9 \( \rulename{\vee E} \) 1, 4–5, 6–8.
+(f) Line 4: assumption, for \( \rulename{\vee E} \). Line 5: \( \rulename{{\to}E} \) 2, 4. Line 6: assumption, for \( \rulename{\vee E} \). Line 7: \( \rulename{\wedge E} \) 6. Line 8: \( \rulename{{\to}E} \) 3, 7. Line 9: \( \rulename{\vee E} \) 1, 4–5, 6–8.
 
 (g) No: both boxes must end in the same statement. Add \( \rulename{\wedge E} \) and \( \rulename{\wedge I} \) lines so that both end in the current goal, say \( R \wedge S \).
 
@@ -1165,7 +1179,7 @@ Adding the two inequalities gives \( 2\max(a, b) \ge a + b \), and dividing by \
 [B3: Two cases, two conclusions]
 
 ::: {.enumerate options="label=(\alph*)"}
-1. A search for \( P \vee Q, \; P \to R, \; Q \to (S \wedge T) \vdash R \vee T \) has reached the stage below. *Name the move, then complete it.*
+1. A search for \( P \vee Q, \; P \to R, \; Q \to (S \wedge T) \vdash R \vee T \) has reached the stage below. *Name the method, then complete it.*
    ```{=latex}
    % schema (partial derivation: the gaps are unnumbered, lines carry their final numbers)
    \begin{center}
@@ -1192,7 +1206,7 @@ Adding the two inequalities gives \( 2\max(a, b) \ge a + b \), and dividing by \
 :::
 
 ::: {.solution}
-(a) The move is to **split on the premise** \( P \vee Q \), each case ending in the current goal: *cases end in the current goal*. The goal \( R \vee T \) is a disjunction with no side in hand, so it is postponed, and line 11 will be \( \rulename{\vee E} \) citing line 1 and the two case boxes. In the case \( P \), line 2 fires and \( \rulename{\vee I} \) weakens \( R \) to the goal. In the case \( Q \), line 3 fires, \( \rulename{\wedge E} \) takes out \( T \), and \( \rulename{\vee I} \) weakens it to the goal on the other side.
+(a) The method is to **split on the premise** \( P \vee Q \), each case ending in the current goal: *cases end in the current goal*. The goal \( R \vee T \) is a disjunction with no side in hand, so it is postponed, and line 11 will be \( \rulename{\vee E} \) citing line 1 and the two case boxes. In the case \( P \), line 2 fires and \( \rulename{\vee I} \) weakens \( R \) to the goal. In the case \( Q \), line 3 fires, \( \rulename{\wedge E} \) takes out \( T \), and \( \rulename{\vee I} \) weakens it to the goal on the other side.
 
 ```{=latex}
 \begin{center}
@@ -1450,13 +1464,13 @@ $\begin{nd}
 
 (b) The sequent is \( P \to R, \ Q \to R, \ R \vdash P \vee Q \), and its form breaks: it affirms the consequent of two implications at once. Keep \( P \) and \( Q \), and replace \( R \) by "\( x \ne 0 \)". Both implications then hold for every \( x \), and at \( x = \tfrac12 \) the premise \( R \) is true and \( P \vee Q \) is false, so the counterexample set \( P \to R \), \( Q \to R \), \( R \), \( \neg(P \vee Q) \) is true.
 
-With the argument's own content no number breaks it, because \( x^2 > 1 \) does imply \( x > 1 \) or \( x < -1 \) (@exr-statements-and-connectives-b3, part (c)). Adding that fact as the premise \( R \to (P \vee Q) \) gives a one-step derivation, \( \rulename{{\to}E} \) on it and the premise \( R \), and makes the other two premises unnecessary. A true conclusion, a bad form: the argument proves nothing until the missing premise is written.
+With the argument's own content no number breaks it, because \( x^2 > 1 \) does imply \( x > 1 \) or \( x < -1 \). Part (c) of @exr-statements-and-connectives-b3 proves this. Adding that fact as the premise \( R \to (P \vee Q) \) gives a one-step derivation, \( \rulename{{\to}E} \) on it and the premise \( R \), and makes the other two premises unnecessary. A true conclusion, a bad form: the argument proves nothing until the missing premise is written.
 :::
 
 ::: {#exr-disjunction-and-cases-b7}
 [B7: Fifteen standard sequents]
 
-Derive each sequent. They are grouped by the move that does the main work.
+Derive each sequent. They are grouped by the method that does the main work.
 
 *Read the skeleton off the goal.*
 
@@ -1531,7 +1545,7 @@ $\begin{nd}
 \end{center}
 ```
 
-**3.** Two boxes from the goal; inside, \( \rulename{\vee I} \) manufactures the premise's hypothesis. The assumption \( S \) is never cited.
+**3.** Two boxes from the goal; inside, \( \rulename{\vee I} \) builds the premise's hypothesis. The assumption \( S \) is never cited.
 
 ```{=latex}
 \begin{center}
@@ -1844,7 +1858,7 @@ In the case \( \abs{x} \ge \abs{y} \), the left side is \( \abs{x} - \abs{y} \).
 :::
 
 ::: {.solution}
-We use two school facts: for real numbers \( a \), \( b \), either \( a \ge b \) or \( a < b \); and \( \abs{-a} = \abs{a} \) for every real \( a \) (if \( a \ge 0 \) then \( -a \le 0 \), so \( \abs{-a} = -(-a) = a = \abs{a} \), using, as in @exm-abs-product-cases, that \( \abs{b} = -b \) whenever \( b \le 0 \); if \( a < 0 \) then \( -a > 0 \), so \( \abs{-a} = -a = \abs{a} \)).
+We use two school facts. First, for real numbers \( a \), \( b \), either \( a \ge b \) or \( a < b \). Second, \( \abs{-a} = \abs{a} \) for every real \( a \), by cases on the sign of \( a \). If \( a \ge 0 \) then \( -a \le 0 \), so \( \abs{-a} = -(-a) = a = \abs{a} \); this uses, as in @exm-abs-product-cases, that \( \abs{b} = -b \) whenever \( b \le 0 \). If \( a < 0 \) then \( -a > 0 \), so \( \abs{-a} = -a = \abs{a} \).
 
 By the first fact, \( \abs{x} \ge \abs{y} \) or \( \abs{x} < \abs{y} \), and we argue by cases \( [\rulename{\vee E}] \).
 
@@ -1866,15 +1880,16 @@ The two cases exhaust all possibilities because they are the two sides of the di
 
 A split on signs would decide \( \abs{x} \) and \( \abs{y} \) separately: \( x \ge 0 \) or \( x < 0 \) gives the formula for \( \abs{x} \), and inside each case \( y \ge 0 \) or \( y < 0 \) gives the formula for \( \abs{y} \). That is a case split inside each box of another, with \( 2 \cdot 2 = 4 \) inner boxes, as in @exm-abs-product-cases. Fewer would not do for that method: with only the sign of \( x \) fixed, \( \abs{y} \) still has no formula.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 2: states the disjunction \( \abs{x} \ge \abs{y} \) or \( \abs{x} < \abs{y} \) and says it holds for all reals.
 - 3: in the first case, removes the outer absolute value correctly and derives \( \abs{x} - \abs{y} \le \abs{x - y} \) from the triangle inequality for \( (x - y) + y \).
 - 3: in the second case, the same with the roles exchanged, including \( \abs{y - x} = \abs{x - y} \).
 - 2: explains the four sign cases as a split inside each case of another.
 
-Fatal errors (0 for the step): using \( \bigl\lvert \abs{x} - \abs{y} \bigr\rvert = \abs{x} - \abs{y} \) in both cases; applying the triangle inequality to a difference as if \( \abs{u - v} \le \abs{u} - \abs{v} \).
 A proof that squares both sides instead, or splits on signs, earns the 6 points of the two middle lines if every case is complete.
+
+Slips that lose the step (0 points for it): using \( \bigl\lvert \abs{x} - \abs{y} \bigr\rvert = \abs{x} - \abs{y} \) in both cases; applying the triangle inequality to a difference as if \( \abs{u - v} \le \abs{u} - \abs{v} \).
 :::
 
 ::: {#exr-disjunction-and-cases-c2}
@@ -1905,9 +1920,9 @@ Here is a proof, by four cases, that \( \abs{x - y} \le \abs{x} + \abs{y} \) for
 :::
 
 ::: {.solution}
-(a) Yes. For instance, it follows from @exm-triangle-inequality-cases applied to \( x \) and \( -y \), since \( \abs{-y} = \abs{y} \) (shown in the solution of @exr-disjunction-and-cases-c1). So the question is not whether the conclusion holds but whether this argument proves it.
+(a) Yes. For instance, it follows from @exm-triangle-inequality-cases applied to \( x \) and \( -y \), since \( \abs{-y} = \abs{y} \). The solution of @exr-disjunction-and-cases-c1 shows that \( \abs{-y} = \abs{y} \). So the question is not whether the conclusion holds but whether this argument proves it.
 
-(b) The sentence "Since \( x \ge 0 \) and \( y < 0 \), we have \( x - y > 0 \)" in Case 2b. The assumption \( x \ge 0 \) is the assumption of Case 1. In derivation terms, it opens the first box of the outer \( \rulename{\vee E} \), and Case 2b lies inside the **second** box, which is opened by \( x < 0 \). Once the first box has closed, its lines are not available (the scope rule of @def-derivation), so Case 2b may not cite \( x \ge 0 \): the rule broken is \( \rulename{\vee E} \), each of whose boxes may cite only lines available at it by the scope rule: its own assumption, what has been derived inside it, and what was available before the box opened; so nothing from the first box, which has closed. The sentence is the reasoning of Case 1b copied into Case 2b, where its assumption is no longer in force. So the box of Case 2 does not reach the goal from the lines available to it, and the final \( \rulename{\vee E} \) has no right to cite it.
+(b) The sentence "Since \( x \ge 0 \) and \( y < 0 \), we have \( x - y > 0 \)" in Case 2b. The assumption \( x \ge 0 \) is the assumption of Case 1. In derivation terms, it opens the first box of the outer \( \rulename{\vee E} \), and Case 2b lies inside the **second** box, which is opened by \( x < 0 \). Once the first box has closed, its lines are not available, by the scope rule of @def-derivation. So Case 2b may not cite \( x \ge 0 \), and the rule broken is \( \rulename{\vee E} \). Each box of \( \rulename{\vee E} \) may cite only lines available at it by the scope rule: its own assumption, what has been derived inside it, and what was available before the box opened. So it may cite nothing from the first box, which has closed. The sentence is the reasoning of Case 1b copied into Case 2b, where its assumption is no longer in force. So the box of Case 2 does not reach the goal from the lines available to it, and the final \( \rulename{\vee E} \) has no right to cite it.
 
 (c) Take \( x = -3 \) and \( y = -1 \), which is Case 2b. Then \( x - y = -2 \), which is not \( > 0 \), and \( \abs{x - y} = 2 \ne -2 = x - y \). The conclusion of Case 2b still holds here (\( 2 \le 3 + 1 \)), but the step used to reach it is false.
 
@@ -1915,7 +1930,7 @@ Here is a proof, by four cases, that \( \abs{x - y} \le \abs{x} + \abs{y} \) for
 :::
 
 ::: {#exr-disjunction-and-cases-c3}
-[C3: Exit check: a distributive law, rule by rule]
+[C3: Chapter check: a distributive law, rule by rule]
 
 Derive \( (P \wedge Q) \vee (R \wedge Q) \vdash (P \vee R) \wedge Q \), naming the rule and the cited lines on every line. Then say which steps would change if the premise were \( (P \wedge Q) \vee (P \wedge R) \) and the goal \( P \wedge (Q \vee R) \), and which would stay the same.
 :::
@@ -1946,27 +1961,46 @@ $\begin{nd}
 \end{center}
 ```
 
-Line by line: 1 is the premise; 2 is the assumption of the first case; 3 and 4 are \( \rulename{\wedge E} \) on line 2; 5 is \( \rulename{\vee I} \) on line 3, first schema; 6 is \( \rulename{\wedge I} \) on lines 5 and 4, written with \( P \vee R \) as the left conjunct; 7 is the assumption of the second case; 8 and 9 are \( \rulename{\wedge E} \) on line 7; 10 is \( \rulename{\vee I} \) on line 8, second schema; 11 is \( \rulename{\wedge I} \) on lines 10 and 9; 12 is \( \rulename{\vee E} \), citing the disjunction on line 1 and the boxes \( \lines{2}{6} \) and \( \lines{7}{11} \), both of which end in the goal as lines of their own. No line of the second box cites the first.
+Line by line:
 
-With premise \( (P \wedge Q) \vee (P \wedge R) \) and goal \( P \wedge (Q \vee R) \), the shape stays the same: a split on the premise, \( \rulename{\wedge E} \) twice in each box, one \( \rulename{\vee I} \) and one \( \rulename{\wedge I} \) in each box, and \( \rulename{\vee E} \) at the end. What changes is which part is weakened and where it goes. The common conjunct is now \( P \), and the parts that differ between the cases are \( Q \) and \( R \); so the \( \rulename{\vee I} \) lines build \( Q \vee R \) (from \( Q \) in the first box, first schema; from \( R \) in the second, second schema), and the \( \rulename{\wedge I} \) lines write \( P \) as the left conjunct, as in the goal. That derivation is the second one of @prp-distributivity.
+- 1 is the premise.
+- 2 is the assumption of the first case.
+- 3 and 4 are \( \rulename{\wedge E} \) on line 2.
+- 5 is \( \rulename{\vee I} \) on line 3, first schema.
+- 6 is \( \rulename{\wedge I} \) on lines 5 and 4, written with \( P \vee R \) as the left conjunct.
+- 7 is the assumption of the second case.
+- 8 and 9 are \( \rulename{\wedge E} \) on line 7.
+- 10 is \( \rulename{\vee I} \) on line 8, second schema.
+- 11 is \( \rulename{\wedge I} \) on lines 10 and 9.
+- 12 is \( \rulename{\vee E} \), citing the disjunction on line 1 and the boxes \( \lines{2}{6} \) and \( \lines{7}{11} \), both of which end in the goal as lines of their own.
 
-**Marking scheme.** (10 points)
+No line of the second box cites the first.
+
+With premise \( (P \wedge Q) \vee (P \wedge R) \) and goal \( P \wedge (Q \vee R) \), the shape stays the same: a split on the premise, \( \rulename{\wedge E} \) twice in each box, one \( \rulename{\vee I} \) and one \( \rulename{\wedge I} \) in each box, and \( \rulename{\vee E} \) at the end. What changes is which part is weakened and where it goes. The common conjunct is now \( P \), and the parts that differ between the cases are \( Q \) and \( R \). So the \( \rulename{\vee I} \) lines build \( Q \vee R \): from \( Q \) in the first box, by the first schema, and from \( R \) in the second, by the second schema. The \( \rulename{\wedge I} \) lines write \( P \) as the left conjunct, as in the goal. That derivation is the second one of @prp-distributivity.
+
+**What a complete answer needs.** (10 points)
 
 - 2: splits on the premise by \( \rulename{\vee E} \), with two boxes opened by its two sides.
 - 2: in each box, takes the assumption apart by \( \rulename{\wedge E} \) into both conjuncts.
 - 2: in each box, uses \( \rulename{\vee I} \) to build \( P \vee R \) from the side in hand, with the correct schema.
 - 2: in each box, builds the goal by \( \rulename{\wedge I} \), so that both boxes end in the same line, the goal.
-- 2: the \( \rulename{\vee E} \) line cites the disjunction and both boxes as ranges, and the final sentences name the changed steps (the \( \rulename{\vee I} \) lines, now building \( Q \vee R \), and the \( \rulename{\wedge I} \) lines, now with \( P \) on the left).
+- 2: the \( \rulename{\vee E} \) line cites the disjunction and both boxes as ranges. The final sentences name the changed steps: the \( \rulename{\vee I} \) lines, now building \( Q \vee R \), and the \( \rulename{\wedge I} \) lines, now with \( P \) on the left.
 
-Fatal errors (0 for the step): a line in one box citing a line of the other box; a conclusion drawn inside one box only and then used outside it.
+A second route is also correct: split the premise twice, once ending both boxes in \( P \vee R \) and once ending both in \( Q \), and then join the two results by \( \rulename{\wedge I} \) outside every box (14 lines). Its points map as follows.
 
-A second route is also correct: split the premise twice, once ending both boxes in \( P \vee R \) and once ending both in \( Q \), and then join the two results by \( \rulename{\wedge I} \) outside every box (14 lines). Its points map as follows: 2 for either split with two boxes opened by the premise's sides; 2 for the \( \rulename{\wedge E} \) lines in the boxes; 2 for the \( \rulename{\vee I} \) sides; 2 for the final \( \rulename{\wedge I} \), with the boxes of each split ending in the same line; 2 for the citations and the final sentences.
+- 2 for either split with two boxes opened by the premise's sides.
+- 2 for the \( \rulename{\wedge E} \) lines in the boxes.
+- 2 for the \( \rulename{\vee I} \) sides.
+- 2 for the final \( \rulename{\wedge I} \), with the boxes of each split ending in the same line.
+- 2 for the citations and the final sentences.
+
+Slips that lose the step (0 points for it): a line in one box citing a line of the other box; a conclusion drawn inside one box only and then used outside it.
 :::
 
 ::: {#exr-disjunction-and-cases-c4}
 [C4: The second half]
 
-A search for \( Q \vee R, \ Q \to (P \to S), \ R \to S \vdash P \to S \) has written the premises and opened one box; the rest is blank. The finished derivation has 11 lines. *Name the move, then complete it.*
+A search for \( Q \vee R, \ Q \to (P \to S), \ R \to S \vdash P \to S \) has written the premises and opened one box; the rest is blank. The finished derivation has 11 lines. *Name the method, then complete it.*
 
 ```{=latex}
 % schema
@@ -1997,7 +2031,7 @@ Line 5 is \( Q \), the assumption of a first case box opened inside the box of \
 :::
 
 ::: {.solution}
-The moves are two. First, the box of line 4 was read off the goal: \( P \to S \) is an implication, so the box opened with \( P \), and its current goal is \( S \); it will be closed by \( \rulename{{\to}I} \). Second, inside it, the available disjunction \( Q \vee R \) (line 1, in no box, so available inside the box) is split, and **both case boxes end in the current goal \( S \)**. In the case \( Q \), line 2 fires to give \( P \to S \), which fires on line 4; in the case \( R \), line 3 fires.
+Two methods are at work. First, the box of line 4 was read off the goal: \( P \to S \) is an implication, so the box opened with \( P \), and its current goal is \( S \); it will be closed by \( \rulename{{\to}I} \). Second, inside it, the available disjunction \( Q \vee R \) (line 1, in no box, so available inside the box) is split, and **both case boxes end in the current goal \( S \)**. In the case \( Q \), line 2 fires to give \( P \to S \), which fires on line 4; in the case \( R \), line 3 fires.
 
 ```{=latex}
 \begin{center}
@@ -2023,7 +2057,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 7 cites line 4, the assumption of the outer box, which contains line 7. Line 10 is a line of the box \( \lines{4}{10} \) itself (the case boxes have closed), so \( \rulename{{\to}I} \) may cite that box at line 11. Splitting outside the box instead, with both case boxes ending in \( P \to S \), is also a correct derivation of the sequent; it does not complete the lines given, because it would split before line 4, not after.
+Line 7 cites line 4, the assumption of the outer box, which contains line 7. Line 10 is a line of the box \( \lines{4}{10} \) itself (the case boxes have closed), so \( \rulename{{\to}I} \) may cite that box at line 11. Splitting outside the box instead, with both case boxes ending in \( P \to S \), is also a correct derivation of the sequent. It does not complete the lines given, because it would split before line 4, not after.
 :::
 
 ### R. Review
@@ -2035,7 +2069,7 @@ Let \( f \) be a function and \( [a, b] \) an interval. Take the atomic statemen
 :::
 
 ::: {.solution}
-The sequent is \( (C \wedge B) \to I, \ B, \ C \vdash I \wedge B \): three premises and a conclusion, as in @def-sequent. The goal is a conjunction, so it splits into the subgoals \( I \) and \( B \). \( B \) is a premise. The only line that mentions \( I \) is the first premise, whose hypothesis \( C \wedge B \) is built by \( \rulename{\wedge I} \) (@def-rules-conjunction) from two premises; then \( \rulename{{\to}E} \) (@def-rule-implication-elimination) gives \( I \).
+The sequent is \( (C \wedge B) \to I, \ B, \ C \vdash I \wedge B \): three premises and a conclusion, as in @def-sequent. The goal is a conjunction, so it splits into the subgoals \( I \) and \( B \). \( B \) is a premise. The only line that mentions \( I \) is the first premise. Its hypothesis \( C \wedge B \) is built by \( \rulename{\wedge I} \) from two premises, and then \( \rulename{{\to}E} \) gives \( I \).
 
 ```{=latex}
 \begin{center}
@@ -2051,6 +2085,10 @@ $\begin{nd}
 ```
 
 Line 4 writes \( C \wedge B \), with \( C \) on the left as in the hypothesis of line 1 (\( \rulename{\wedge I} \) may cite 3, 2 or 2, 3); the hypothesis must match exactly. Line 2 is cited twice, at lines 4 and 6: a line is not used up by being cited.
+
+::: {.uses}
+@def-rules-conjunction (\( \rulename{\wedge I} \)); @def-rule-implication-elimination (\( \rulename{{\to}E} \)).
+:::
 :::
 
 ::: {#exr-disjunction-and-cases-r2}
@@ -2060,7 +2098,7 @@ Show that \( (P \to Q) \wedge (Q \to R), \ P \wedge S \vdash R \wedge S \), and 
 :::
 
 ::: {.solution}
-Premise-directed, both premises are conjunctions and are taken apart by \( \rulename{\wedge E} \) (@def-rules-conjunction); goal-directed, the goal \( R \wedge S \) splits into \( R \) and \( S \), and \( S \) is already in hand. For \( R \), work backwards as in @exm-implication-chains: \( Q \to R \) is available, so \( Q \) becomes the subgoal; \( P \to Q \) is available, so \( P \) does; and \( P \) is in hand.
+Premise-directed, both premises are conjunctions and are taken apart by \( \rulename{\wedge E} \); goal-directed, the goal \( R \wedge S \) splits into \( R \) and \( S \), and \( S \) is already in hand. For \( R \), work backwards as in @exm-implication-chains: \( Q \to R \) is available, so \( Q \) becomes the subgoal; \( P \to Q \) is available, so \( P \) does; and \( P \) is in hand.
 
 ```{=latex}
 \begin{center}
@@ -2079,6 +2117,10 @@ $\begin{nd}
 ```
 
 The chain of lines 7 and 8 was found backwards, from the subgoal \( R \) to \( Q \) to \( P \), and written forwards.
+
+::: {.uses}
+@def-rules-conjunction (\( \rulename{\wedge E} \)).
+:::
 :::
 
 ::: {#exr-disjunction-and-cases-r3}
@@ -2088,7 +2130,7 @@ Is \( \vdash (P \wedge (P \to Q)) \to (Q \vee R) \)? Justify your answer.
 :::
 
 ::: {.solution}
-Yes. The goal's main connective is the outer \( \to \), so the move is to open a box with its hypothesis \( P \wedge (P \to Q) \) (@def-rules-implication). Inside, the current goal is \( Q \vee R \), which we postpone. The assumption is a conjunction, so \( \rulename{\wedge E} \) gives \( P \) and \( P \to Q \); \( \rulename{{\to}E} \) gives \( Q \); now the left side of the goal is in hand, and \( \rulename{\vee I} \) (@def-rule-disjunction-introduction) takes it.
+Yes. The goal's main connective is the outer \( \to \), so the first step is to open a box with its hypothesis \( P \wedge (P \to Q) \). Inside, the current goal is \( Q \vee R \), which we postpone. The assumption is a conjunction, so \( \rulename{\wedge E} \) gives \( P \) and \( P \to Q \); \( \rulename{{\to}E} \) gives \( Q \); now the left side of the goal is in hand, and \( \rulename{\vee I} \) takes it.
 
 ```{=latex}
 \begin{center}
@@ -2105,7 +2147,11 @@ $\begin{nd}
 \end{center}
 ```
 
-The derivation has no premises, so it shows \( \vdash (P \wedge (P \to Q)) \to (Q \vee R) \). The look-alike start fails: the statement contains \( \vee \), and one might begin with \( \rulename{\vee I} \) on the whole goal. But the goal's main connective is \( \to \), not \( \vee \), so \( \rulename{\vee I} \) cannot produce it; and even inside the box, choosing the side \( R \) of \( Q \vee R \) would have left the subgoal \( R \), which nothing supplies; the side \( Q \) is the one lines 2–4 supply.
+The derivation has no premises, so it shows \( \vdash (P \wedge (P \to Q)) \to (Q \vee R) \). The look-alike start fails: the statement contains \( \vee \), and one might begin with \( \rulename{\vee I} \) on the whole goal. But the goal's main connective is \( \to \), not \( \vee \), so \( \rulename{\vee I} \) cannot produce it. Even inside the box, choosing the side \( R \) of \( Q \vee R \) would have left the subgoal \( R \), which nothing supplies. The side \( Q \) is the one lines 2–4 supply.
+
+::: {.uses}
+@def-rules-implication (opening the box, \( \rulename{{\to}I} \)); @def-rule-disjunction-introduction (\( \rulename{\vee I} \)).
+:::
 :::
 
 <!-- dependency ledger
@@ -2125,7 +2171,7 @@ exr-disjunction-and-cases-b6 (solution): (b) x > 1 and x < -1 each imply x != 0;
 exr-disjunction-and-cases-b4 (solution): a >= b or a < b; -a > -b when a < b; -a <= -b when a >= b, written out as (-a < -b) or (-a = -b); the checks at (3, -5) and (2, 2) | school algebra, taken as known; AN1.1 (promised); checked by verify/ch01/exr-disjunction-and-cases-b4.py
 exr-disjunction-and-cases-c1 (solution): a >= b or a < b; |-a| = |a|; |u| = u for u >= 0 and |u| = -u for u < 0 (removing the outer absolute value); subtracting |y| (resp. |x|) from both sides of an inequality; y - x = -(x - y) | school algebra, taken as known; AN1.1 (promised); |-a| = |a| proved inline by cases, using |b| = -b for b <= 0 from exm-abs-product-cases
 exr-disjunction-and-cases-c2 (solution): order facts for x, y < 0 | school algebra, taken as known; AN1.1 (promised)
-def-rules-disjunction (claim): (the exhaust warning and the paragraph after it) every real x satisfies x > 0, or x = 0, or x < 0 (trichotomy); every real x satisfies x >= 0 or x <= 0, both holding at x = 0; x = 0 satisfies neither x > 0 nor x < 0 | school algebra, taken as known; AN1.1 (promised); the unfolding of >= and <= is F1.1 §01
+def-rules-disjunction (claim): (the exhaust warning, the paragraph after it, and the fourth item of the Not-allowed block) every real x satisfies x > 0, or x = 0, or x < 0 (trichotomy); every real x satisfies x >= 0 or x <= 0, both holding at x = 0; x = 0 satisfies neither x > 0 nor x < 0 | school algebra, taken as known; AN1.1 (promised); the unfolding of >= and <= is F1.1 §01
 def-rules-disjunction (claim): (the affirming-a-disjunct warning) 6 is even and a multiple of 3 | inline arithmetic; checked by verify/ch01/def-rules-disjunction.py
 def-rules-disjunction (claim): (the Not-allowed block) at x = -1: -1 < 0, and -1 > 1 fails | inline; checked by verify/ch01/def-rules-disjunction.py
 def-rules-disjunction (solution): (the quick check on x^2 >= 0) every real is >= 0 or < 0; every real is >= 0 or <= 0; 0 is neither > 0 nor < 0; 0^2 = 0 | school algebra, taken as known; AN1.1 (promised)

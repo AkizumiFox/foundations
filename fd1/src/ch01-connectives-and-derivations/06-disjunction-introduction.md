@@ -13,18 +13,18 @@ The step turns a statement into a disjunction of which it is one side.
 The step loses something. "\( x > 0 \)" tells us that \( x \) is not \( 0 \); "\( x \ge 0 \)" no longer does. A proof that takes the step throws information away, and it does so on purpose: the definition asks for the weaker statement, and the stronger one is not in the form it asks for.
 
 ::: {.remark}
-**Convention: inequalities written out.** When a rule has to see the disjunction inside \( a \le b \), a derivation writes it out as \( (a < b) \vee (a = b) \), and \( a \ge b \) as \( (a > b) \vee (a = b) \): a checker compares symbols, so \( \rulename{\vee I} \) can write "\( x \ge 0 \)" from "\( x > 0 \)", and \( \rulename{\vee E} \) can split on it, only in the written-out form. Otherwise \( a \le b \) may stand in a derivation as one statement, and prose keeps the short forms.
+**Convention: inequalities written out.** Sometimes a rule has to see the disjunction inside \( a \le b \). Then a derivation writes \( a \le b \) out as \( (a < b) \vee (a = b) \), and \( a \ge b \) as \( (a > b) \vee (a = b) \). A checker compares symbols. So \( \rulename{\vee I} \) can write "\( x \ge 0 \)" from "\( x > 0 \)", and \( \rulename{\vee E} \) can split on it, only in the written-out form. Otherwise \( a \le b \) may stand in a derivation as one statement, and prose keeps the short forms.
 :::
 
-The same move appears whenever a known fact has a disjunction as its hypothesis. School algebra says that if \( a = 0 \) or \( b = 0 \), then \( a \cdot b = 0 \). To use this on a product whose first factor we know to be \( 0 \), we must hand the fact its hypothesis, "\( a = 0 \) or \( b = 0 \)". What we have is only "\( a = 0 \)". So again the step goes from one side to the whole disjunction, and only then does the fact fire.
+The same step appears whenever a known fact has a disjunction as its hypothesis. School algebra says that if \( a = 0 \) or \( b = 0 \), then \( a \cdot b = 0 \). To use this on a product whose first factor we know to be \( 0 \), we must hand the fact its hypothesis, "\( a = 0 \) or \( b = 0 \)". What we have is only "\( a = 0 \)". So again the step goes from one side to the whole disjunction, and only then does the fact fire.
 
-Both steps are instances of one rule. This section states it as a pattern, reads it in three bullets, and then uses it in two ways: when the goal is a disjunction, and when a premise needs one.
+Both steps are instances of one rule. It is used in two ways: when the goal is a disjunction, and when a premise needs one.
 
 ## The rule of or-introduction
 
 *To prove a disjunction, it is enough to prove one of its two sides.*
 
-The rule is defined, like every rule since Section 1.2, by its schema (@def-rule-schema). The Greek letters stand for arbitrary statements, and \( i \), \( k \) for line numbers. The rule has two forms, one for each side, so it is printed as two schemas.
+The rule is defined, like every rule since Section 1.2, by its schema (@def-rule-schema). The Greek letters stand for arbitrary statements, and \( i \), \( k \) for line numbers. The rule has two forms, one for each side, so it has two schemas.
 
 ::: {#def-rule-disjunction-introduction}
 [Or-Introduction]
@@ -47,18 +47,18 @@ $\begin{nd}[schema]
 The rule given by these two schemas is called \( \rulename{\vee I} \) (**or-introduction**).
 :::
 
-- *Schema:* the two in the block above, one for each side.
-- *Reading:* one available line (an earlier line, not inside a box that has closed), cited alone; write a disjunction with that line's statement as one **whole** side, left or right, and **any** statement as the other side: true or false, related or not.
+- *Schema:* the two above, one for each side.
+- *Reading:* cite one available line alone. An available line is an earlier line, not inside a box that has closed. Write a disjunction with that line's statement as one **whole** side, left or right. The other side may be **any** statement: true or false, related or not.
 - *Example:* if line 4 is \( x > 0 \), then "\( \rulename{\vee I} \) 4" may write \( (x > 0) \vee (x = 0) \), or \( (x = 0) \vee (x > 0) \), or the silly but correct \( (x > 0) \vee (x < -7) \).
 
 In mathematics "or" is inclusive (Section 1.1): \( \varphi \vee \psi \) is true when \( \varphi \) is true, when \( \psi \) is true, and when both are. So \( \varphi \vee \psi \) is true whenever \( \varphi \) is, whatever \( \psi \) says. The rule is this first clause read as a permission.
 
 *\( \rulename{\vee I} \) loses information, never truth.*
 
-::: {.second-reading title="Edge cases and near misses"}
-The degenerate case is \( \psi \) equal to \( \varphi \). From \( P \) the rule writes \( P \vee P \), and then the two schemas give the same line. It is a legal step, and the next section uses the statement \( P \vee P \) once.
+In plain words: the new line is true whenever the cited line is, but it says less.
 
-The near misses, steps that look like \( \rulename{\vee I} \) and are not, are listed after the rule card at the end of this section.
+::: {.second-reading title="When the two sides are the same, or both true"}
+The other side may be the cited statement itself: \( \psi \) may equal \( \varphi \). From \( P \) the rule writes \( P \vee P \), and then the two schemas give the same line. It is a correct step, and the next section uses the statement \( P \vee P \) once.
 
 ::: {.warning}
 Do not read "or" as "one but not both" when checking a step. From \( x = 2 \), \( \rulename{\vee I} \) gives "\( x = 2 \) or \( x \le 5 \)", although at \( x = 2 \) both sides are true. The step is correct: the disjunction is inclusive, and the rule never claims that the added side is false.
@@ -81,16 +81,16 @@ Let \( x \) be a real number, and suppose line 1 of a derivation is \( x = 2 \).
 :::
 
 ::: {.solution}
-(i) Yes, by the first schema, with \( \psi \) replaced by \( x = 3 \). (ii) Yes, by the second schema. (iii) Yes, by the first schema, with \( \psi \) replaced by the false statement \( 1 = 0 \). The line is true, since its left side is, and it is useless; the rule allows it. (iv) Only once \( x \ge 2 \) is written out as \( (x > 2) \vee (x = 2) \), as the convention on inequalities above asks when a rule must see the disjunction. In that form it is an instance of the second schema, with \( \varphi \) replaced by \( x = 2 \). A checker who matches symbols sees the difference.
+(i) Yes, by the first schema, with \( \psi \) replaced by \( x = 3 \). (ii) Yes, by the second schema. (iii) Yes, by the first schema, with \( \psi \) replaced by the false statement \( 1 = 0 \). The line is true, since its left side is, and it is useless; the rule allows it. (iv) Only once \( x \ge 2 \) is written out as \( (x > 2) \vee (x = 2) \), the form a derivation uses when a rule must see the disjunction. In that form it is an instance of the second schema, with \( \varphi \) replaced by \( x = 2 \). A checker who matches symbols sees the difference.
 :::
 
 ## A disjunction as a goal
 
-Section 1.2 asked two questions before writing any line: *what is the goal's main connective?* (goal-directed reasoning, from the bottom up) and *what are the available lines' main connectives?* (premise-directed reasoning, from the top down). Each rule so far added an answer. A conjunction as a goal splits into two subgoals, both needed (\( \rulename{\wedge I} \)); an implication as a goal opens a box (\( \rulename{{\to}I} \), @def-rules-implication).
+Section 1.2 asked two questions before writing any line. The first is *what is the goal's main connective?* This is goal-directed reasoning, from the bottom up. The second is *what are the available lines' main connectives?* This is premise-directed reasoning, from the top down. Each rule so far added an answer. A conjunction as a goal splits into two subgoals, both needed (\( \rulename{\wedge I} \)); an implication as a goal opens a box (\( \rulename{{\to}I} \), @def-rules-implication).
 
-Now \( \vee \) joins the list of goals. If the goal is \( \varphi \vee \psi \), its last line can be \( \rulename{\vee I} \), and then the subgoal is \( \varphi \) **or** \( \psi \): one of the two, of our choosing. That choice is new, and a wrong choice can leave us working towards a statement that does not follow from what we have. Suppose the premise is \( x > 1 \) and the goal is \( (x > 3) \vee (x > 0) \). Choose the left side, and the new goal \( x > 3 \) does not follow from the premise: try to break the step, and \( x = 2 \) does, since there \( x > 1 \) holds and \( x > 3 \) fails. Choose the right side, and \( x > 0 \) follows from \( x > 1 \).
+Now \( \vee \) joins the list of goals. If the goal is \( \varphi \vee \psi \), its last line can be \( \rulename{\vee I} \), and then the subgoal is \( \varphi \) **or** \( \psi \): one of the two, of our choosing. That choice is new, and a wrong choice can leave us working towards a statement that does not follow from what we have. Suppose the premise is \( x > 1 \) and the goal is \( (x > 3) \vee (x > 0) \). Choose the left side, and the new goal \( x > 3 \) does not follow from the premise. Try to break the step: at \( x = 2 \), \( x > 1 \) holds and \( x > 3 \) fails. Choose the right side, and \( x > 0 \) follows from \( x > 1 \).
 
-In the Givens/Goal table, \( \rulename{\vee I} \) replaces the goal \( \varphi \vee \psi \) by the side you choose.
+In a table of what we know and what we want, \( \rulename{\vee I} \) replaces the goal \( \varphi \vee \psi \) by the side you choose.
 
 So the goal-directed step for \( \vee \) comes with a caution:
 
@@ -194,7 +194,7 @@ The habit of this section as a picture:
 \end{center}
 ```
 
-Here are four derivations, in order of difficulty. Each Idea says, for each rule, whether it was chosen by the goal or by a premise.
+Here are four derivations, in order of difficulty. In each, watch whether the goal or a premise chooses the next rule.
 
 ::: {#exm-disjunction-introduction-derivations}
 [Derivations with or-introduction]
@@ -226,7 +226,7 @@ $\begin{nd}
 \end{center}
 ```
 
-In the first, line 2 is the first schema with \( \varphi \) replaced by \( P \) and \( \psi \) by \( Q \); in the second, it is the second schema with the same replacement. The letter \( Q \) appears in no premise. That is the Reading's "**any** statement" at work.
+In the first, line 2 is the first schema with \( \varphi \) replaced by \( P \) and \( \psi \) by \( Q \); in the second, it is the second schema with the same replacement. The letter \( Q \) appears in no premise. The rule allows this, since the other side may be **any** statement.
 
 (b) *Idea.* The goal \( P \vee Q \) is a disjunction, and neither side stands on a line yet, so we postpone it. Premise-directed: the premise's main connective is \( \wedge \), so \( \rulename{\wedge E} \) takes it apart. After that, **both** sides of the goal are in hand, and either choice finishes.
 
@@ -350,7 +350,7 @@ This derivation uses every rule of the chapter so far except \( \rulename{\wedge
 :::
 
 ::: {.warning}
-Choosing the wrong side of a disjunctive goal too early can leave a goal that does not follow. Derivation (c) is where postponing pays. Had we committed at once, inside the box, to the goal's right side, planning to reach \( Q \vee R \) from \( R \), the box would need \( R \) itself, from the premise \( P \to Q \) and the assumption \( P \) alone. With \( x \) a real number, \( P \): "\( x > 2 \)", \( Q \): "\( x > 1 \)" and \( R \): "\( x > 3 \)", the premise and the assumption hold at \( x = 2.5 \), and \( R \) fails there, so \( R \) does not follow. Keep the goal as the whole disjunction until one side appears on a line.
+Choosing the wrong side of a disjunctive goal too early can leave a goal that does not follow. Derivation (c) shows why postponing matters. Had we committed at once, inside the box, to the goal's right side, planning to reach \( Q \vee R \) from \( R \), the box would need \( R \) itself, from the premise \( P \to Q \) and the assumption \( P \) alone. With \( x \) a real number, \( P \): "\( x > 2 \)", \( Q \): "\( x > 1 \)" and \( R \): "\( x > 3 \)", the premise and the assumption hold at \( x = 2.5 \), and \( R \) fails there, so \( R \) does not follow. Keep the goal as the whole disjunction until one side appears on a line.
 :::
 
 ## Manufacturing a hypothesis
@@ -429,7 +429,7 @@ $\begin{nd}
 Line 3 uses the first schema of @def-rule-disjunction-introduction (\( P \) on the left), line 7 the second (\( Q \) on the right). Both produce the same statement \( P \vee Q \), the one the premise asks for. The two boxes are separate: the second opens after the first has closed, and nothing in it cites a line of the first. Line 10 cites lines 5 and 9, which lie in no box.
 :::
 
-The product example below, and several exercises, use \( \rulename{\vee I} \) the same way. Weakening is how a strong fact is fed to a rule, or a theorem, that asks for a weaker one.
+The product example below, and several exercises, use \( \rulename{\vee I} \) the same way. Weakening is how a strong fact is used by a rule, or a theorem, that asks for a weaker one.
 
 In mathematical terms, the derivation says that a theorem with a hypothesis "\( P \) or \( Q \)" splits into two theorems. Let \( x \) be a real number, and suppose we know "if \( x \ge 0 \), then \( x^3 \ge 0 \)", that is, "if \( x > 0 \) or \( x = 0 \), then \( x^3 \ge 0 \)". Then we know "if \( x > 0 \), then \( x^3 \ge 0 \)" and "if \( x = 0 \), then \( x^3 \ge 0 \)". The way back, from the two implications to the single one with the disjunctive hypothesis, needs the rule of the next section; it is derived there.
 
@@ -469,7 +469,7 @@ $\begin{nd}
 
 This derivation is correct, but it shows \( P \vee Q \vdash Q \to (Q \vee P) \), and line 1 is never cited. (A derivation need not use every premise, @def-derivable.) What we would like is to put the three lines 1, 4, and 7 together: *one of \( P \), \( Q \) holds, and either one leads to \( Q \vee P \); so \( Q \vee P \)*. That is a proof by cases, and none of the rules so far performs it. With them we cannot find a derivation of \( P \vee Q \vdash Q \vee P \).
 
-The missing move is to **use** a disjunction, as \( \rulename{\wedge E} \) uses a conjunction and \( \rulename{{\to}E} \) uses an implication. The next section gives the rule that does this, and with it the six-line derivation that this attempt lacks.
+What is missing is a way to **use** a disjunction, as \( \rulename{\wedge E} \) uses a conjunction and \( \rulename{{\to}E} \) uses an implication. The next section gives the rule that does this, and with it the six-line derivation that this attempt lacks.
 
 ## Derive it or break it
 
@@ -477,7 +477,7 @@ From here on, some exercises list claims \( \Gamma \vdash \varphi \) without say
 
 For instance, \( P \wedge (Q \vee R) \vdash Q \) breaks. Let \( x \) be a real number, and take \( P \): "\( x > 0 \)", \( Q \): "\( x > 2 \)", \( R \): "\( x < 3 \)". At \( x = 1 \) the set \( P \wedge (Q \vee R) \), \( \neg Q \) is true: \( 1 > 0 \), \( 1 < 3 \), and \( 1 > 2 \) fails.
 
-A claim can also be of neither kind *yet*. \( P \vee Q \vdash Q \vee P \) cannot be broken: if \( P \vee Q \) is true, one of its sides is, and that side makes \( Q \vee P \) true. And with the rules so far no derivation of it has been found: the attempt in "A goal we cannot reach yet" stalls, and the claim waits for the next section's rule. The lists in this section's exercises contain only claims that the rules so far settle.
+A claim can also be of neither kind *yet*. \( P \vee Q \vdash Q \vee P \) cannot be broken: if \( P \vee Q \) is true, one of its sides is, and that side makes \( Q \vee P \) true. And with the rules so far no derivation of it has been found: the attempt above stalls, and the claim waits for the next section's rule. The lists in this section's exercises contain only claims that the rules so far settle.
 
 ## How this looks in a mathematical proof
 
@@ -530,7 +530,7 @@ Every "so \( x \ge 0 \)" after \( x > 0 \), every "so \( \abs{t} \le 1 \)" after
 
 ## The rule card
 
-Before the card, the new rule at work on statements larger than single letters. The schema sees only the whole cited line; how much is inside it does not matter.
+Here is the new rule at work on statements larger than single letters. The schema sees only the whole cited line; how much is inside it does not matter.
 
 ::: {#exm-disjunction-introduction-instances}
 [Instances of \( \rulename{\vee I} \)]
@@ -544,7 +544,7 @@ Before the card, the new rule at work on statements larger than single letters. 
 **Not an instance.** From \( P \vee Q \), the line \( P \vee (Q \vee R) \) is not written by \( \rulename{\vee I} \): the rule adds a side to the **whole** cited line, giving \( (P \vee Q) \vee R \) or \( R \vee (P \vee Q) \); it never reaches inside.
 :::
 
-The card grows by one row. *Shape* shows the given lines (or box), then the new line.
+Here are the rules so far, with \( \rulename{\vee I} \) added. *Shape* shows the given lines, or the box, then the new line.
 
 | Rule | Shape | You write | Lean |
 |---|---|---|---|
@@ -560,13 +560,13 @@ The phrase is different from the "in particular" of \( \rulename{\wedge E} \) on
 ::: {.warning}
 [Not allowed: \( \rulename{\vee I} \)]
 
-Each step is offered as one application of \( \rulename{\vee I} \); each breaks the Reading of the rule where shown.
+Each step is offered as one application of \( \rulename{\vee I} \), and each breaks the rule in the way shown.
 
 - "\( P \) from \( P \vee Q \)": it runs the rule backwards. The cited line is a side of the new line, never the other way round.
 - "\( P \wedge Q \) from \( P \)": the new line must be a disjunction.
 - "\( Q \vee P \) from \( P \vee Q \)": the cited line must be one **whole** side of the new line.
 - "\( P \vee (Q \vee R) \) from \( P \vee Q \)": the rule never reaches inside the cited line.
-- "\( x \ge 0 \) from \( x > 0 \), as written": a checker compares symbols. Write \( x \ge 0 \) out first, as the convention on inequalities at the start of this section asks.
+- "\( x \ge 0 \) from \( x > 0 \), as written": a checker compares symbols. Write \( x \ge 0 \) out first, as \( (x > 0) \vee (x = 0) \).
 :::
 
 ::: {.check}
@@ -607,9 +607,9 @@ Chapter 4 proves that a claim that breaks has no derivation, with any of the rul
 
 (b) The first uses \( \rulename{\vee I} \): \( x \le 3 \) is \( (x < 3) \vee (x = 3) \), and its left side is in hand. The second uses \( \rulename{\vee I} \) to build "\( a = 0 \) or \( b = 0 \)" from its left side, and then \( \rulename{{\to}E} \) on the fact about products, as in @exm-product-zero. The third uses \( \rulename{\wedge E} \): \( 0 < x < 1 \) is \( (0 < x) \wedge (x < 1) \), and the sentence takes out its right half. The fourth uses \( \rulename{{\to}E} \), with the implication first and its hypothesis second.
 
-(c) True. The added side \( \psi \) may be any statement, false ones included, as in the line \( (x = 2) \vee (1 = 0) \) of the Quick check after the definition. The new line is still true whenever the cited line is, because "or" is inclusive: one true side is enough.
+(c) True. The added side \( \psi \) may be any statement, false ones included, as in the line \( (x = 2) \vee (1 = 0) \), which \( \rulename{\vee I} \) writes from \( x = 2 \). The new line is still true whenever the cited line is, because "or" is inclusive: one true side is enough.
 
-(d) The rule is \( \rulename{\vee I} \), by its second schema, and line 3 is \( P \vee Q \), from line 1. It is used because a premise's hypothesis is a disjunction. The goal \( R \) occurs only in the premise \( (P \vee Q) \to (Q \to R) \), and \( \rulename{{\to}E} \) fires on that premise only when \( P \vee Q \) itself stands on a line. Only its right side \( Q \) is on a line, and \( \rulename{\vee I} \) turns it into \( P \vee Q \). Then \( Q \to R \) follows by \( \rulename{{\to}E} \) 2, 3, and \( R \) by \( \rulename{{\to}E} \) 4, 1. The move is the one of @exm-or-hypothesis-split, where \( \rulename{\vee I} \) builds a premise's hypothesis.
+(d) The rule is \( \rulename{\vee I} \), by its second schema, and line 3 is \( P \vee Q \), from line 1. It is used because a premise's hypothesis is a disjunction. The goal \( R \) occurs only in the premise \( (P \vee Q) \to (Q \to R) \), and \( \rulename{{\to}E} \) fires on that premise only when \( P \vee Q \) itself stands on a line. Only its right side \( Q \) is on a line, and \( \rulename{\vee I} \) turns it into \( P \vee Q \). Then \( Q \to R \) follows by \( \rulename{{\to}E} \) 2, 3, and \( R \) by \( \rulename{{\to}E} \) 4, 1. This is the step of @exm-or-hypothesis-split, where \( \rulename{\vee I} \) builds a premise's hypothesis.
 :::
 
 ::: {#exr-disjunction-introduction-a2}
@@ -620,8 +620,8 @@ Each part takes a line or two. The parts run from single steps, through a missin
 ::: {.enumerate options="label=(\alph*)"}
 1. Line 2 is \( (P \to Q) \wedge R \). Write two lines that "\( \rulename{\vee I} \) 2" can give, one by each schema.
 2. Line 6 is \( (R \wedge S) \vee (P \to Q) \), justified "\( \rulename{\vee I} \) 4". What can line 4 be?
-3. Justify each line: 1 \( P \wedge Q \), premise; 2 \( R \), premise; 3 \( Q \); 4 \( Q \vee R \); 5 \( (Q \vee R) \wedge R \); 6 \( S \vee ((Q \vee R) \wedge R) \).
-4. Line 1 is \( x = 5 \). Which of these may be written as "\( \rulename{\vee I} \) 1"? (i) \( (x = 5) \vee (x = 6) \); (ii) \( (x > 4) \vee (x = 5) \); (iii) \( x \ge 5 \), as written; (iv) \( (x = 5) \wedge (x \ge 0) \).
+3. Justify each line. Line 1: \( P \wedge Q \), premise. Line 2: \( R \), premise. Line 3: \( Q \). Line 4: \( Q \vee R \). Line 5: \( (Q \vee R) \wedge R \). Line 6: \( S \vee ((Q \vee R) \wedge R) \).
+4. Line 1 is \( x = 5 \). Which of these may be written as "\( \rulename{\vee I} \) 1"? (i) \( (x = 5) \vee (x = 6) \). (ii) \( (x > 4) \vee (x = 5) \). (iii) \( x \ge 5 \), as written. (iv) \( (x = 5) \wedge (x \ge 0) \).
 5. Line 1 is \( P \wedge Q \). Is "\( P \vee Q \) — \( \rulename{\vee I} \) 1" legal?
 6. Line 1 is \( Q \vee P \). Is "\( P \vee Q \) — \( \rulename{\vee I} \) 1" legal?
 7. Is "\( x > 0 \), so \( x \ge 0 \)" one step of \( \rulename{\vee I} \)?
@@ -641,7 +641,7 @@ Each part takes a line or two. The parts run from single steps, through a missin
 
 (b) \( R \wedge S \) (first schema) or \( P \to Q \) (second schema): line 4 is one whole side of line 6.
 
-(c) 3 \( \rulename{\wedge E} \) 1; 4 \( \rulename{\vee I} \) 3 (first schema); 5 \( \rulename{\wedge I} \) 4, 2; 6 \( \rulename{\vee I} \) 5 (second schema).
+(c) Line 3 is \( \rulename{\wedge E} \) 1. Line 4 is \( \rulename{\vee I} \) 3, by the first schema. Line 5 is \( \rulename{\wedge I} \) 4, 2. Line 6 is \( \rulename{\vee I} \) 5, by the second schema.
 
 (d) (i) Yes, by the first schema. (ii) Yes, by the second schema: \( x = 5 \) is the right side. (iii) No: as written, \( x \ge 5 \) is one statement. Written out as \( (x > 5) \vee (x = 5) \), it is the second schema. (iv) No: the new line is not a disjunction.
 
@@ -651,21 +651,21 @@ Each part takes a line or two. The parts run from single steps, through a missin
 
 (g) Yes, once \( x \ge 0 \) is written out as \( (x > 0) \vee (x = 0) \): it is the first schema.
 
-(h) No. The new line of \( \rulename{\vee I} \) is a disjunction with line 4 as one whole side; this line is a conjunction, and it reaches inside line 4. It takes four lines: 5 \( P \), \( \rulename{\wedge E} \) 4; 6 \( Q \), \( \rulename{\wedge E} \) 4; 7 \( P \vee R \), \( \rulename{\vee I} \) 5; 8 \( (P \vee R) \wedge Q \), \( \rulename{\wedge I} \) 7, 6.
+(h) No. The new line of \( \rulename{\vee I} \) is a disjunction with line 4 as one whole side; this line is a conjunction, and it reaches inside line 4. It takes four lines. Line 5 is \( P \), by \( \rulename{\wedge E} \) 4. Line 6 is \( Q \), by \( \rulename{\wedge E} \) 4. Line 7 is \( P \vee R \), by \( \rulename{\vee I} \) 5. Line 8 is \( (P \vee R) \wedge Q \), by \( \rulename{\wedge I} \) 7, 6.
 
 (i) Two steps: algebra (\( 4 = 2 \cdot 2 \), so \( n \) is even), then \( \rulename{\vee I} \). From "\( n = 4 \)" itself, \( \rulename{\vee I} \) gives only "\( n = 4 \) or …".
 
 (j) The right side, \( x < 0 \), which follows from \( x < -1 \). The left side fails at \( x = -2 \), where the premise holds and \( x < -5 \) does not.
 
-(k) 2 \( P \vee Q \), \( \rulename{\vee I} \) 1; 3 \( R \vee P \), \( \rulename{\vee I} \) 1; 4 \( (P \vee Q) \wedge (R \vee P) \), \( \rulename{\wedge I} \) 2, 3.
+(k) Line 2 is \( P \vee Q \), by \( \rulename{\vee I} \) 1. Line 3 is \( R \vee P \), by \( \rulename{\vee I} \) 1. Line 4 is \( (P \vee Q) \wedge (R \vee P) \), by \( \rulename{\wedge I} \) 2, 3.
 
-(l) 2 \( Q \), \( \rulename{\wedge E} \) 1; 3 \( Q \vee R \), \( \rulename{\vee I} \) 2.
+(l) Line 2 is \( Q \), by \( \rulename{\wedge E} \) 1. Line 3 is \( Q \vee R \), by \( \rulename{\vee I} \) 2.
 
-(m) A box opened with \( P \): 2 \( P \), assumption, for \( \rulename{{\to}I} \); 3 \( Q \), \( \rulename{{\to}E} \) 1, 2; 4 \( R \vee Q \), \( \rulename{\vee I} \) 3; then 5 \( P \to (R \vee Q) \), \( \rulename{{\to}I} \) 2–4.
+(m) Open a box with \( P \). Line 2 is \( P \), the assumption, for \( \rulename{{\to}I} \). Line 3 is \( Q \), by \( \rulename{{\to}E} \) 1, 2. Line 4 is \( R \vee Q \), by \( \rulename{\vee I} \) 3. Then line 5 is \( P \to (R \vee Q) \), by \( \rulename{{\to}I} \) 2–4.
 
-(n) 3 \( P \vee Q \), \( \rulename{\vee I} \) 2; 4 \( R \), \( \rulename{{\to}E} \) 1, 3.
+(n) Line 3 is \( P \vee Q \), by \( \rulename{\vee I} \) 2. Line 4 is \( R \), by \( \rulename{{\to}E} \) 1, 3.
 
-(o) A box opened with \( P \): 2 \( P \), assumption, for \( \rulename{{\to}I} \); 3 \( Q \wedge R \), \( \rulename{{\to}E} \) 1, 2; 4 \( R \), \( \rulename{\wedge E} \) 3; 5 \( S \vee R \), \( \rulename{\vee I} \) 4; then 6 \( P \to (S \vee R) \), \( \rulename{{\to}I} \) 2–5.
+(o) Open a box with \( P \). Line 2 is \( P \), the assumption, for \( \rulename{{\to}I} \). Line 3 is \( Q \wedge R \), by \( \rulename{{\to}E} \) 1, 2. Line 4 is \( R \), by \( \rulename{\wedge E} \) 3. Line 5 is \( S \vee R \), by \( \rulename{\vee I} \) 4. Then line 6 is \( P \to (S \vee R) \), by \( \rulename{{\to}I} \) 2–5.
 :::
 
 ### B. Practice
@@ -714,7 +714,7 @@ Line 2 uses the second schema (\( P \) on the right) and line 3 the first, with 
 ::: {#exr-disjunction-introduction-b2}
 [B2: The last line]
 
-A search for \( P \to Q, \ Q \to R \vdash P \to (S \vee R) \) has reached the stage below; only the last line is missing. *Name the move, then complete it.*
+A search for \( P \to Q, \ Q \to R \vdash P \to (S \vee R) \) has reached the stage below; only the last line is missing. *Say which rule finishes it, then write the last line.*
 
 ```{=latex}
 \begin{center}
@@ -734,7 +734,7 @@ $\begin{nd}
 :::
 
 ::: {.solution}
-The move is the one read off the goal: an implication goal opens a box with its hypothesis, and the box is closed by \( \rulename{{\to}I} \) once its last line is the implication's conclusion. The box opened with \( P \) at line 3, and its last line, line 6, is \( S \vee R \), the conclusion of the goal. So line 7 closes the box:
+The rule is read off the goal: an implication goal opens a box with its hypothesis, and the box is closed by \( \rulename{{\to}I} \) once its last line is the implication's conclusion. The box opened with \( P \) at line 3, and its last line, line 6, is \( S \vee R \), the conclusion of the goal. So line 7 closes the box:
 
 ```{=latex}
 \begin{center}
@@ -891,14 +891,14 @@ Suppose someone proposes new rules for the derivations of this chapter. Let \( x
 
 (c) No. The new line \( \varphi \wedge \psi \) is true only when both sides are, and \( \psi \) is arbitrary. With \( \varphi \) replaced by \( x = -1 \) and \( \psi \) by \( x \ge 0 \), at \( x = -1 \) the cited line is true and the new line, "\( x = -1 \) and \( x \ge 0 \)", is false. The contrast with (b) is the whole difference between \( \vee \) and \( \wedge \): a disjunction needs one true side, so an arbitrary second side is harmless; a conjunction needs both, so it is not. That is why \( \rulename{\wedge I} \) asks for both sides on lines.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 3: (a) applies the proposed rule to the premise to get \( x \ge 0 \), and checks at \( x = -1 \) that the premise is true and the new line false.
 - 3: (b) argues from the inclusive meaning of "or": one true side makes the disjunction true, whatever the other side is.
 - 3: (c) answers no, with an instance in which \( \varphi \) is true and \( \varphi \wedge \psi \) is false.
 - 1: (c) names the difference: a conjunction needs both sides true.
 
-Fatal errors (0 for the step): in (a), a premise that is false at \( x = -1 \); in (b), an argument that assumes \( \psi \) is true; in (c), "safe" on the grounds that \( \varphi \) is true.
+Slips that lose the step: in (a), a premise that is false at \( x = -1 \); in (b), an argument that assumes \( \psi \) is true; in (c), "safe" on the grounds that \( \varphi \) is true.
 :::
 
 ::: {#exr-disjunction-introduction-c2}
@@ -948,7 +948,7 @@ $\begin{nd}
 
 Taking \( Q \) at line 3 instead, and building \( P \vee Q \) by the second schema, works equally well.
 
-(c) In both, \( \rulename{\vee I} \) built the hypothesis (line 3 in (a), line 4 in (b)), and in both it could be predicted. The premise's main connective is \( \to \), so the premise is used by \( \rulename{{\to}E} \), which needs its hypothesis \( P \vee Q \) on a line of its own, exactly. That disjunction occurs only inside the premise, as its hypothesis, and no rule takes the hypothesis out of an implication (\( \rulename{{\to}E} \) gives the conclusion). So it had to be built, and the only rule of the chapter so far that builds a disjunction is \( \rulename{\vee I} \). The one question left was which side would be in hand; in (b) the conjunction \( P \wedge Q \) offered both.
+(c) In both, \( \rulename{\vee I} \) built the hypothesis: at line 3 in (a) and at line 4 in (b). In both it could be predicted. The premise's main connective is \( \to \), so the premise is used by \( \rulename{{\to}E} \), which needs its hypothesis \( P \vee Q \) on a line of its own, exactly. That disjunction occurs only inside the premise, as its hypothesis, and no rule takes the hypothesis out of an implication (\( \rulename{{\to}E} \) gives the conclusion). So it had to be built, and the only rule of the chapter so far that builds a disjunction is \( \rulename{\vee I} \). The one question left was which side would be in hand; in (b) the conjunction \( P \wedge Q \) offered both.
 :::
 
 <!-- dependency ledger

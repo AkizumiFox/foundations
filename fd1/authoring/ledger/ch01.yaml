@@ -411,7 +411,7 @@ items:
   kind: def
   file: 01-statements-and-connectives.md
   line: 308
-  hash: 02ab4e6bee54
+  hash: 5f308907f608
   verdicts:
   - stage: S5a
     verdict: correct
@@ -430,6 +430,25 @@ items:
     evidence: '01:308-318: block is verbatim the blueprint 4.1 item 2 and matches NOTATION''s counterexample-set
       row; the example set P->Q, Q, not P is right; the ''Where to look first'' break at x=1/2 checks
       (sidecar passes)'
+  - stage: S5e
+    verdict: minor
+    by: s5e-01-statements-and-connectives
+    hash: 5f308907f608
+    date: '2026-11-01'
+    evidence: statement unchanged; 39-word sentence at L311 kept (check_beginner long)
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 5f308907f608
+    date: '2026-11-01'
+    evidence: 'wording only: ''whose conclusion is false, that is, a choice'' split into two sentences
+      (''In other words, it is a choice''); same definition'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 5f308907f608
+    date: '2026-11-01'
+    evidence: L311 split; meaning identical, check_beginner long finding gone
 - key: check:01-statements-and-connectives:5
   kind: check
   file: 01-statements-and-connectives.md
@@ -475,8 +494,8 @@ items:
 - key: exr-statements-and-connectives-a1
   kind: exr
   file: 01-statements-and-connectives.md
-  line: 440
-  hash: e7c00cb4ecfe
+  line: 444
+  hash: 11231faa887d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -583,10 +602,17 @@ items:
       up. (a) quotes def-statement exactly as line 30 has it, and the convention box it cites is at lines
       66-68. (c) applies conventions (1) and (2) (lines 219ff) to get (P ∧ Q) → (¬R), main connective
       →. (d) false, sinc'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-statements-and-connectives
+    hash: 11231faa887d
+    date: '2026-11-01'
+    evidence: 'wording only: solution (a) points to the fixed-but-arbitrary-number convention, (f) drops
+      a section-title pointer; statement and numbers unchanged'
 - key: exr-statements-and-connectives-a2
   kind: exr
   file: 01-statements-and-connectives.md
-  line: 475
+  line: 479
   hash: 770f85dc8eb4
   verdicts:
   - stage: S5a
@@ -645,7 +671,7 @@ items:
 - key: exr-statements-and-connectives-b1
   kind: exr
   file: 01-statements-and-connectives.md
-  line: 533
+  line: 537
   hash: e0e35134ed29
   verdicts:
   - stage: S5a
@@ -723,7 +749,7 @@ items:
 - key: exr-statements-and-connectives-b2
   kind: exr
   file: 01-statements-and-connectives.md
-  line: 556
+  line: 560
   hash: 68543bf4e969
   verdicts:
   - stage: S5a
@@ -808,7 +834,7 @@ items:
 - key: exr-statements-and-connectives-b3
   kind: exr
   file: 01-statements-and-connectives.md
-  line: 620
+  line: 624
   hash: 05c6352afe7a
   verdicts:
   - stage: S5a
@@ -905,8 +931,8 @@ items:
 - key: exr-statements-and-connectives-b4
   kind: exr
   file: 01-statements-and-connectives.md
-  line: 640
-  hash: 56b771d38aa1
+  line: 644
+  hash: 6af76293bdbf
   verdicts:
   - stage: S5a
     verdict: minor
@@ -971,10 +997,16 @@ items:
     date: '2026-10-13'
     model: claude-opus-5-5
     evidence: '01:640-663; truth tables: (a),(c) bad, (b),(d) good; counterexamples x=-3 and x=-1 verified'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-statements-and-connectives
+    hash: 6af76293bdbf
+    date: '2026-11-01'
+    evidence: 'wording only: instruction sentence split in two, forms (a)-(e) unchanged; sidecar passes'
 - key: exr-statements-and-connectives-b5
   kind: exr
   file: 01-statements-and-connectives.md
-  line: 665
+  line: 669
   hash: 3a6f3f07a50c
   verdicts:
   - stage: S5a
@@ -1021,7 +1053,7 @@ items:
 - key: exr-statements-and-connectives-b6
   kind: exr
   file: 01-statements-and-connectives.md
-  line: 711
+  line: 715
   hash: 3148fa7d1b41
   verdicts:
   - stage: S5a
@@ -1062,7 +1094,7 @@ items:
 - key: exr-statements-and-connectives-c1
   kind: exr
   file: 01-statements-and-connectives.md
-  line: 744
+  line: 748
   hash: c0d024ebb918
   verdicts:
   - stage: S5a
@@ -1214,6 +1246,12 @@ items:
     model: claude-opus-5-5
     evidence: 02:33-50; schema of Tr, consistent replacement, instance/noninstance at 58-60 checked; ledger
       1143-1145 covers Tr, 2/4=1/2, (a+b)^2 analogy
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-derivations
+    hash: 66f788138587
+    date: '2026-11-01'
+    evidence: 'wording only: surrounding prose reworded; definition block, instance and non-instance unchanged'
 - key: def-box-free-derivation
   kind: def
   file: 02-derivations.md
@@ -1347,6 +1385,12 @@ items:
     model: claude-opus-5-5
     evidence: 02:95-138; both derivations and the alternative (Tr 1,3 then Tr 4,2) checked; check_fitch
       0 errors; sidecar passes
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-derivations
+    hash: e3a296d36204
+    date: '2026-11-01'
+    evidence: 'wording only: follow-up line reworded; example and solution unchanged'
 - key: check:02-derivations:1
   kind: check
   file: 02-derivations.md
@@ -1415,7 +1459,7 @@ items:
 - key: exm-not-a-derivation
   kind: exm
   file: 02-derivations.md
-  line: 173
+  line: 175
   hash: 568b2725766b
   verdicts:
   - stage: S5a
@@ -1488,7 +1532,7 @@ items:
 - key: def-derivable
   kind: def
   file: 02-derivations.md
-  line: 214
+  line: 216
   hash: 7d9204972b4d
   verdicts:
   - stage: S5a
@@ -1546,7 +1590,7 @@ items:
 - key: def-sequent
   kind: def
   file: 02-derivations.md
-  line: 226
+  line: 228
   hash: ad30a12e5043
   verdicts:
   - stage: S5a
@@ -1601,10 +1645,16 @@ items:
     date: '2026-10-13'
     model: claude-opus-5-5
     evidence: 02:226-230; consistent with def-derivable
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-derivations
+    hash: ad30a12e5043
+    date: '2026-11-01'
+    evidence: 'wording only: remark 3 and capital-letters paragraph reworded/split; definition unchanged'
 - key: check:02-derivations:2
   kind: check
   file: 02-derivations.md
-  line: 244
+  line: 246
   hash: abc6ff184cf6
   verdicts:
   - stage: S5a
@@ -1667,8 +1717,8 @@ items:
 - key: exm-derivations
   kind: exm
   file: 02-derivations.md
-  line: 252
-  hash: 78adc3287f65
+  line: 254
+  hash: e032c1ec9b38
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1726,10 +1776,16 @@ items:
     model: claude-opus-5-5
     evidence: 02:252-276; 'every rule met before Section 1.4 cites at least one line' true (∧I, ∧E, →E,
       Tr); ledger 1147
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-derivations
+    hash: e032c1ec9b38
+    date: '2026-11-01'
+    evidence: 'wording only: pointer and box title reworded; answers unchanged'
 - key: def-rules-conjunction
   kind: def
   file: 02-derivations.md
-  line: 288
+  line: 290
   hash: ae99241728cb
   verdicts:
   - stage: S5a
@@ -1796,10 +1852,16 @@ items:
     model: claude-opus-5-5
     evidence: 02:288-313; three schemas, either-order ∧I matches STYLE §12.11; §12.2 three bullets; safety
       sentence ledgered 1152
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-derivations
+    hash: ae99241728cb
+    date: '2026-11-01'
+    evidence: 'wording only: bullet pointers reworded; schemas, def text and safety sentence unchanged'
 - key: check:02-derivations:3
   kind: check
   file: 02-derivations.md
-  line: 333
+  line: 335
   hash: 031b3dfb3963
   verdicts:
   - stage: S5a
@@ -1833,7 +1895,7 @@ items:
 - key: check:02-derivations:4
   kind: check
   file: 02-derivations.md
-  line: 341
+  line: 343
   hash: 7b46759e96c3
   verdicts:
   - stage: S5a
@@ -1868,7 +1930,7 @@ items:
 - key: exm-conjunction-warm-ups
   kind: exm
   file: 02-derivations.md
-  line: 375
+  line: 377
   hash: f4333cb1d4d8
   verdicts:
   - stage: S5a
@@ -1937,10 +1999,16 @@ items:
     date: '2026-10-13'
     model: claude-opus-5-5
     evidence: 02:375-413; both derivations check; φ≔P, ψ≔Q second form right
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-derivations
+    hash: f4333cb1d4d8
+    date: '2026-11-01'
+    evidence: 'wording only: closing paragraph split, box title renamed; solutions unchanged'
 - key: prp-and-commutes
   kind: prp
   file: 02-derivations.md
-  line: 432
+  line: 434
   hash: d1ea8434c568
   verdicts:
   - stage: S5a
@@ -1998,7 +2066,7 @@ items:
 - key: proof:prp-and-commutes
   kind: proof
   file: 02-derivations.md
-  line: 461
+  line: 463
   hash: d0c433cd3d0b
   verdicts:
   - stage: S5a
@@ -2062,10 +2130,16 @@ items:
     model: claude-opus-5-5
     evidence: 02:461-476; derivation checked by check_fitch; read-back 478 has four sentences for four
       lines
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-derivations
+    hash: d0c433cd3d0b
+    date: '2026-11-01'
+    evidence: 'wording only: Idea split, table renamed We know/We want; derivation byte-identical'
 - key: prp-and-associative
   kind: prp
   file: 02-derivations.md
-  line: 484
+  line: 486
   hash: c89de699e424
   verdicts:
   - stage: S5a
@@ -2124,7 +2198,7 @@ items:
 - key: proof:prp-and-associative
   kind: proof
   file: 02-derivations.md
-  line: 516
+  line: 518
   hash: ac9b3bdcf1ea
   verdicts:
   - stage: S5a
@@ -2187,11 +2261,17 @@ items:
     date: '2026-10-13'
     model: claude-opus-5-5
     evidence: 02:516-534; substitutions right; 536 'line 3 used only at line 6' true
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-derivations
+    hash: ac9b3bdcf1ea
+    date: '2026-11-01'
+    evidence: 'wording only: picture description split; line numbers and derivation unchanged'
 - key: exm-product-in-unit-interval
   kind: exm
   file: 02-derivations.md
-  line: 622
-  hash: 24216c29b86b
+  line: 624
+  hash: 109edd3a7283
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2274,10 +2354,16 @@ items:
       8 ('algebra' 3,4,6) now uses one stated fact, 'if 0<a, a<1 and b<1 then ab<1', with a:=x, b:=y.
       Lines 3, 4 and 6 supply exactly its three hypotheses, and the parenthetical reason (ab<a from b<1
       and a>0,
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-derivations
+    hash: 109edd3a7283
+    date: '2026-11-01'
+    evidence: 'wording only: parenthetical split into sentences, same fact ab<1; sidecar passes'
 - key: exm-derivations-instances
   kind: exm
   file: 02-derivations.md
-  line: 692
+  line: 694
   hash: 84a737ab2164
   verdicts:
   - stage: S5a
@@ -2299,7 +2385,7 @@ items:
 - key: check:02-derivations:5
   kind: check
   file: 02-derivations.md
-  line: 724
+  line: 730
   hash: 77a84814fba5
   verdicts:
   - stage: S5a
@@ -2319,8 +2405,8 @@ items:
 - key: exr-derivations-a1
   kind: exr
   file: 02-derivations.md
-  line: 742
-  hash: c555768b6f4a
+  line: 748
+  hash: e8dad36083d7
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2432,11 +2518,18 @@ items:
     model: claude-opus-5-5
     evidence: 02:742-780; definitions match def-box-free-derivation/def-derivable; (d) ∧E1, ∧E1, ∧E3,
       ∧I 4,2; (e) true by induction down lines
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-derivations
+    hash: e8dad36083d7
+    date: '2026-11-01'
+    evidence: 'wording only: (a) split, (d) displayed list, (e) pointer to Chapter 4; refs kept; sidecar
+      passes'
 - key: exr-derivations-a2
   kind: exr
   file: 02-derivations.md
-  line: 782
-  hash: 273cbd1cbf27
+  line: 799
+  hash: 4a45f4826905
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2510,10 +2603,17 @@ items:
       Q, R need further steps, as the solution says. The other spot checks also match. (e): line 6 is
       ∧I 5,2 and line 2 is cited twice (by lines 4 and 6). (h): Tr 2,1 makes b equal both 2 and 0, so
       question 2 fails. (j'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-derivations
+    hash: 4a45f4826905
+    date: '2026-11-01'
+    evidence: 'wording only: (j),(e) displayed lists, We know/We want header; rows unchanged; sidecar
+      passes'
 - key: exr-derivations-b1
   kind: exr
   file: 02-derivations.md
-  line: 860
+  line: 891
   hash: 74bce8feaa76
   verdicts:
   - stage: S5a
@@ -2593,7 +2693,7 @@ items:
 - key: exr-derivations-b2
   kind: exr
   file: 02-derivations.md
-  line: 886
+  line: 917
   hash: bac7135efdbd
   verdicts:
   - stage: S5a
@@ -2682,8 +2782,8 @@ items:
 - key: exr-derivations-b3
   kind: exr
   file: 02-derivations.md
-  line: 904
-  hash: 68fa98b80594
+  line: 935
+  hash: 16f2fd770bca
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2732,11 +2832,17 @@ items:
     date: '2026-10-13'
     model: claude-opus-5-5
     evidence: 02:904-940; derivation lines 3-7 checked; move 'work from both ends' named in section
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-derivations
+    hash: 16f2fd770bca
+    date: '2026-11-01'
+    evidence: 'wording only: ''Name the move'' -> ''Say which method this is''; derivation unchanged'
 - key: exr-derivations-c1
   kind: exr
   file: 02-derivations.md
-  line: 944
-  hash: 1d5a166a00ff
+  line: 975
+  hash: 50fb922e4ed1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2822,11 +2928,17 @@ items:
     date: '2026-10-13'
     model: claude-opus-5-5
     evidence: 02:944-970; Flip derivation passes all three questions; property = never true-to-false
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-derivations
+    hash: 50fb922e4ed1
+    date: '2026-11-01'
+    evidence: 'wording only: (c) pointers reworded, same targets; sidecar passes'
 - key: exr-derivations-c2
   kind: exr
   file: 02-derivations.md
-  line: 972
-  hash: a748531cd079
+  line: 1003
+  hash: e78218ea947b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2908,11 +3020,17 @@ items:
     model: claude-opus-5-5
     evidence: 02:972-1029; only fault is line 5 citing 6 (lines 5,6,7 all Tr instances with middles 2,1,3);
       repaired order valid; loop 0<0 argument right; scheme accepts other derivations (e.g. via 2<4)
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-derivations
+    hash: e78218ea947b
+    date: '2026-11-01'
+    evidence: 'wording only: marking-scheme headings renamed (B4); points 3/3/1/3 unchanged; sidecar passes'
 - key: exr-derivations-c3
   kind: exr
   file: 02-derivations.md
-  line: 1031
-  hash: 66c4ba6cd752
+  line: 1063
+  hash: 77f7a9635788
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3003,11 +3121,17 @@ items:
     model: claude-opus-5-5
     evidence: 02:1031-1098; (a) conjuncts P and Q∧R; (d) ∧E* replacement with renumbering correct; 'Section
       2.3 ... derived rule' matches layout-final 2.3
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-derivations
+    hash: 77f7a9635788
+    date: '2026-11-01'
+    evidence: 'wording only: parenthetical split, headings renamed; points unchanged'
   renamed_from: exr-conjunction-c2
 - key: exr-derivations-c4
   kind: exr
   file: 02-derivations.md
-  line: 1100
+  line: 1132
   hash: bb15bd3d59e8
   verdicts:
   - stage: S5a
@@ -3121,12 +3245,18 @@ items:
       may stand for compound statements. The premise step now says why P∧Q contains no R ('P and Q being
       letters other than R'), so the S5a gap is resolved. The proof says 'every premise is P∧Q', which
       covers a
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-derivations
+    hash: bb15bd3d59e8
+    date: '2026-11-01'
+    evidence: 'wording only: argument split into sentences, same steps; points and slips unchanged'
   renamed_from: exr-conjunction-c1
 - key: exm-wason-selection
   kind: exm
   file: 04-using-an-implication.md
   line: 9
-  hash: 13ee4fe9d28e
+  hash: dc541724b8c8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3197,10 +3327,24 @@ items:
       hypothesis holds and its conclusion fails''). 7 is odd. The red card cannot break the claim. The
       answer is the 6 and the green card. 04:33''s meta-claim (the 6 shows the hypothesis, the red card
       the conclusion) is true. Ledger line present; the sidecar passes.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: dc541724b8c8
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 04): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: dc541724b8c8
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: def-rule-implication-elimination
   kind: def
   file: 04-using-an-implication.md
-  line: 39
+  line: 41
   hash: 259a4bc78771
   verdicts:
   - stage: S5a
@@ -3278,7 +3422,7 @@ items:
 - key: check:04-using-an-implication:1
   kind: check
   file: 04-using-an-implication.md
-  line: 89
+  line: 91
   hash: 68bfb6024ad2
   verdicts:
   - stage: S5a
@@ -3355,7 +3499,7 @@ items:
 - key: check:04-using-an-implication:2
   kind: check
   file: 04-using-an-implication.md
-  line: 109
+  line: 111
   hash: 5a82740c8042
   verdicts:
   - stage: S5a
@@ -3428,7 +3572,7 @@ items:
 - key: check:04-using-an-implication:3
   kind: check
   file: 04-using-an-implication.md
-  line: 119
+  line: 121
   hash: 8c7e1af4ac2d
   verdicts:
   - stage: S5a
@@ -3465,7 +3609,7 @@ items:
 - key: check:04-using-an-implication:4
   kind: check
   file: 04-using-an-implication.md
-  line: 153
+  line: 155
   hash: 2f94bb05abad
   verdicts:
   - stage: S5a
@@ -3488,8 +3632,8 @@ items:
 - key: exm-implication-chains
   kind: exm
   file: 04-using-an-implication.md
-  line: 179
-  hash: 4429bbaf7618
+  line: 181
+  hash: 2ceeef879d92
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3579,10 +3723,24 @@ items:
       line in this chapter where →E fires on a line written by →E'') is true: the earlier mention at 04:114
       is prose, not a line. 04:322''s Section 1.4 pointer is paid by prp-curry (05:630-633). 04:246 ''B3
       much shorter'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 2ceeef879d92
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 04): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 2ceeef879d92
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: exm-chains-about-numbers
   kind: exm
   file: 04-using-an-implication.md
-  line: 393
+  line: 395
   hash: f2176d145f03
   verdicts:
   - stage: S5a
@@ -3608,7 +3766,7 @@ items:
 - key: check:04-using-an-implication:5
   kind: check
   file: 04-using-an-implication.md
-  line: 541
+  line: 543
   hash: 4364e337d315
   verdicts:
   - stage: S5a
@@ -3629,7 +3787,7 @@ items:
 - key: exm-using-an-implication-instances
   kind: exm
   file: 04-using-an-implication.md
-  line: 602
+  line: 604
   hash: c518fd81852f
   verdicts:
   - stage: S5a
@@ -3654,8 +3812,8 @@ items:
 - key: exr-using-an-implication-a1
   kind: exr
   file: 04-using-an-implication.md
-  line: 646
-  hash: 6e8df13ca3c1
+  line: 652
+  hash: b5401fb2f96b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3748,11 +3906,25 @@ items:
     date: '2026-10-13'
     model: claude-opus-5-5
     evidence: 04:646-665; only Q∧R; red card; P→R needs →I (Section 1.4)
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: b5401fb2f96b
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 04): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: b5401fb2f96b
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: exr-using-an-implication-a2
   kind: exr
   file: 04-using-an-implication.md
-  line: 667
-  hash: 4e1c0314900e
+  line: 673
+  hash: b16d2a84a258
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3806,10 +3978,24 @@ items:
     date: '2026-10-13'
     model: claude-opus-5-5
     evidence: 04:667-721; all parts agree; (d) line 4 = (P→Q)→(R∧S); (k) n=3 checked by script
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: b16d2a84a258
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 04): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: b16d2a84a258
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: exr-using-an-implication-b1
   kind: exr
   file: 04-using-an-implication.md
-  line: 725
+  line: 731
   hash: f527bf4b1741
   verdicts:
   - stage: S5a
@@ -3905,7 +4091,7 @@ items:
 - key: exr-using-an-implication-b2
   kind: exr
   file: 04-using-an-implication.md
-  line: 771
+  line: 777
   hash: 417f591a7d00
   verdicts:
   - stage: S5a
@@ -3988,8 +4174,8 @@ items:
 - key: exr-using-an-implication-b3
   kind: exr
   file: 04-using-an-implication.md
-  line: 795
-  hash: 1126004f9b08
+  line: 801
+  hash: 8075ff4f73f5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4072,11 +4258,25 @@ items:
     date: '2026-10-13'
     model: claude-opus-5-5
     evidence: 04:795-826; uses 1,2,6; forward search writes Q,R,S,U,T (5 lines, 3 useless) as stated
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 8075ff4f73f5
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 04): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 8075ff4f73f5
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: exr-using-an-implication-b4
   kind: exr
   file: 04-using-an-implication.md
-  line: 828
-  hash: 37f676d630f4
+  line: 834
+  hash: 1d108f4a9628
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4125,10 +4325,24 @@ items:
     date: '2026-10-13'
     model: claude-opus-5-5
     evidence: 04:828-865; lines 4-7 checked; R∧P order matches line 2's hypothesis
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 1d108f4a9628
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 04): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 1d108f4a9628
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: exr-using-an-implication-b5
   kind: exr
   file: 04-using-an-implication.md
-  line: 867
+  line: 873
   hash: 9cdc9cf23b2a
   verdicts:
   - stage: S5a
@@ -4160,8 +4374,8 @@ items:
 - key: exr-using-an-implication-c1
   kind: exr
   file: 04-using-an-implication.md
-  line: 934
-  hash: f5ee3d88d666
+  line: 940
+  hash: b82c7a4e603f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4284,10 +4498,24 @@ items:
       as its second cited line, but line 2 is E. The solution's answer is right. (b) 6k = 2(3k), 10 =
       2*5, and 6k <= 6 for k <= 1 while 6k >= 12 for k >= 2, so the premises are true and the conclusion
       is false. The arithme
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: b82c7a4e603f
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 04): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: b82c7a4e603f
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: exr-using-an-implication-c2
   kind: exr
   file: 04-using-an-implication.md
-  line: 969
+  line: 975
   hash: 18d22c96168b
   verdicts:
   - stage: S5a
@@ -4522,7 +4750,7 @@ items:
   kind: proof
   file: 05-proving-an-implication.md
   line: 130
-  hash: 6ac5f75c9705
+  hash: 51534e4b5772
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4582,10 +4810,24 @@ items:
     model: claude-opus-5-5
     evidence: '05:133-148: check_fitch reports it clean; →E is cited implication first (NOTATION); ''By
       @def-derivable'' is correct.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 51534e4b5772
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 05): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 51534e4b5772
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: check:05-proving-an-implication:1
   kind: check
   file: 05-proving-an-implication.md
-  line: 230
+  line: 234
   hash: 10bd5c39b287
   verdicts:
   - stage: S5a
@@ -4663,7 +4905,7 @@ items:
 - key: exm-errors-that-cancel
   kind: exm
   file: 05-proving-an-implication.md
-  line: 239
+  line: 243
   hash: df2263c29dfe
   verdicts:
   - stage: S5a
@@ -4685,8 +4927,8 @@ items:
 - key: check:05-proving-an-implication:2
   kind: check
   file: 05-proving-an-implication.md
-  line: 356
-  hash: 62fa211a6281
+  line: 364
+  hash: 308932d006dd
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4752,10 +4994,24 @@ items:
     evidence: '05:357-362: line 10 is in B; lines 1 and 5 are in no box, lines 6 and 9 are in B, A and
       C are closed; box 7-8 has surrounding boxes {B} = boxes of line 10. Figure coordinates match boxes
       A=2-4, B=6-10, C=7-8 and every arrow''s mark.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 308932d006dd
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 05): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 308932d006dd
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: def-derivation
   kind: def
   file: 05-proving-an-implication.md
-  line: 366
+  line: 374
   hash: 7157ac99a525
   verdicts:
   - stage: S5a
@@ -4835,8 +5091,8 @@ items:
 - key: exm-illegal-citation
   kind: exm
   file: 05-proving-an-implication.md
-  line: 457
-  hash: 33c67489ac01
+  line: 465
+  hash: 99e54e306b3a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4893,10 +5149,24 @@ items:
     model: claude-opus-5-5
     evidence: '05:460-484: line 5 is in box 3-5, which does not contain 7; the instance x>3, x>2, x>1
       at x=0 is correct; ledger 1470.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 99e54e306b3a
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 05): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 99e54e306b3a
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: check:05-proving-an-implication:3
   kind: check
   file: 05-proving-an-implication.md
-  line: 490
+  line: 498
   hash: 62dd664aee71
   verdicts:
   - stage: S5a
@@ -4933,8 +5203,8 @@ items:
 - key: exm-first-boxes
   kind: exm
   file: 05-proving-an-implication.md
-  line: 516
-  hash: 4f3388271666
+  line: 524
+  hash: 41f16469b08a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5018,10 +5288,24 @@ items:
       so far (@def-rules-conjunction, @def-rule-implication-elimination, and R of @def-derivation)''.
       Each of these cites at least one earlier line (D3 is defined at l.375-397). So the first line is
       a premise (D1) or an a'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 41f16469b08a
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 05): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 41f16469b08a
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: prp-curry
   kind: prp
   file: 05-proving-an-implication.md
-  line: 630
+  line: 642
   hash: 3a0b6bab11f7
   verdicts:
   - stage: S5a
@@ -5080,8 +5364,8 @@ items:
 - key: proof:prp-curry
   kind: proof
   file: 05-proving-an-implication.md
-  line: 704
-  hash: 5a7a3cf09bca
+  line: 716
+  hash: fe1b270141d6
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5152,10 +5436,24 @@ items:
     model: claude-opus-5-5
     evidence: '05:707-745: both derivations check clean; the availability sentences at 725 and 745 are
       correct.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: fe1b270141d6
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 05): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: fe1b270141d6
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: check:05-proving-an-implication:4
   kind: check
   file: 05-proving-an-implication.md
-  line: 748
+  line: 764
   hash: 78696878bfcf
   verdicts:
   - stage: S5a
@@ -5193,7 +5491,7 @@ items:
 - key: check:05-proving-an-implication:5
   kind: check
   file: 05-proving-an-implication.md
-  line: 760
+  line: 776
   hash: 9a249d12c819
   verdicts:
   - stage: S5a
@@ -5215,7 +5513,7 @@ items:
 - key: exm-proving-an-implication-instances
   kind: exm
   file: 05-proving-an-implication.md
-  line: 793
+  line: 809
   hash: a2b3e58d3d63
   verdicts:
   - stage: S5a
@@ -5239,7 +5537,7 @@ items:
 - key: exr-proving-an-implication-a1
   kind: exr
   file: 05-proving-an-implication.md
-  line: 872
+  line: 888
   hash: 65f4be6b9bf4
   verdicts:
   - stage: S5a
@@ -5357,8 +5655,8 @@ items:
 - key: exr-proving-an-implication-a2
   kind: exr
   file: 05-proving-an-implication.md
-  line: 916
-  hash: e2c317c9f04e
+  line: 932
+  hash: f29dbca61f19
   verdicts:
   - stage: S5a
     verdict: minor
@@ -5433,11 +5731,25 @@ items:
       figure (box A 2-4, B 6-10, C 7-8): line 5 is in no box; box A stands in no box while line 9 is in
       B; line 6 is in B, which closed after 10. (h) is right: 3-4 is not a box. (j) is right. (k): the
       derivation c'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: f29dbca61f19
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 05): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: f29dbca61f19
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: exr-proving-an-implication-b1
   kind: exr
   file: 05-proving-an-implication.md
-  line: 1020
-  hash: 5fc92bb9ccc8
+  line: 1059
+  hash: c8de9e7c02e3
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5498,10 +5810,24 @@ items:
     date: '2026-10-13'
     model: claude-opus-5-5
     evidence: 05:1020-1069; 9-line derivation and availability claims checked
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: c8de9e7c02e3
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 05): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: c8de9e7c02e3
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: exr-proving-an-implication-b2
   kind: exr
   file: 05-proving-an-implication.md
-  line: 1072
+  line: 1111
   hash: 6972675d1bab
   verdicts:
   - stage: S5a
@@ -5581,7 +5907,7 @@ items:
 - key: exr-proving-an-implication-b3
   kind: exr
   file: 05-proving-an-implication.md
-  line: 1124
+  line: 1163
   hash: b342b2187aac
   verdicts:
   - stage: S5a
@@ -5674,8 +6000,8 @@ items:
 - key: exr-proving-an-implication-b4
   kind: exr
   file: 05-proving-an-implication.md
-  line: 1159
-  hash: 96f58253d781
+  line: 1198
+  hash: 65f30de7a1d1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5770,11 +6096,25 @@ items:
       The uniqueness argument holds: (vi) forces the Q box to end at (i), and (i) forces the P box inside
       it to end at (iii). Line (iii) cites (viii), and (viii) needs (ix), which fixes their order. Swapping
       the boxes wo'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 65f30de7a1d1
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 05): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 65f30de7a1d1
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: exr-proving-an-implication-c1
   kind: exr
   file: 05-proving-an-implication.md
-  line: 1189
-  hash: 14862d6bd445
+  line: 1228
+  hash: 10b7d3b27ebf
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5860,10 +6200,24 @@ items:
     model: claude-opus-5-5
     evidence: 05:1189-1288; line 10 is the only illegal line; repair checked; x=0 instance verified (premise
       true, x>1 false)
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 10b7d3b27ebf
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 05): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 10b7d3b27ebf
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: exr-proving-an-implication-c2
   kind: exr
   file: 05-proving-an-implication.md
-  line: 1290
+  line: 1329
   hash: 38a1015c4ed2
   verdicts:
   - stage: S5a
@@ -5968,8 +6322,8 @@ items:
 - key: exr-proving-an-implication-c3
   kind: exr
   file: 05-proving-an-implication.md
-  line: 1351
-  hash: 75fcf62d0fb3
+  line: 1390
+  hash: e274882fe784
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6071,11 +6425,25 @@ items:
     model: claude-opus-5-5
     evidence: 05:1351-1398; derivation checked; premises true on the grid (script); scheme covers the
       Q→S route
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: e274882fe784
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 05): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: e274882fe784
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: exr-proving-an-implication-c4
   kind: exr
   file: 05-proving-an-implication.md
-  line: 1400
-  hash: 1f00b397380b
+  line: 1439
+  hash: a875a6be2ec6
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6104,6 +6472,20 @@ items:
     model: claude-opus-5-5
     evidence: 05:1400-1460; sets {1},{1,2},{1,2,3}x3,{1,2},{1}; (c) containment from the scope rule; →I
       set = last line's set minus the assumption
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: a875a6be2ec6
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 05): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: a875a6be2ec6
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: def-rule-disjunction-introduction
   kind: def
   file: 06-disjunction-introduction.md
@@ -6190,7 +6572,7 @@ items:
   kind: check
   file: 06-disjunction-introduction.md
   line: 72
-  hash: 4ce898e2b04d
+  hash: 9e0e1bab221e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6256,6 +6638,20 @@ items:
     evidence: '06:72-85: (i) first schema, (ii) second schema, (iii) psi := 1=0, (iv) needs x>=2 written
       out as (x>2) or (x=2), then the second schema with phi := x=2. This matches the convention box at
       06:16 and A2(d)(iii)/(g)'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 9e0e1bab221e
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 06): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 9e0e1bab221e
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: check:06-disjunction-introduction:2
   kind: check
   file: 06-disjunction-introduction.md
@@ -6389,7 +6785,7 @@ items:
   kind: exm
   file: 06-disjunction-introduction.md
   line: 199
-  hash: c2f61a22a32b
+  hash: 6860b153cb40
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6470,6 +6866,20 @@ items:
       right side by the second. (d) uses ∧I, →E, ∨I, →I, so the claim at 06:349 that it uses every rule
       so far except ∧E and R is true. The availability remarks at 06:292 and 06:349 are correct. The warning
       at 06:353 checks: x>2 implies x>1, and at x=2.5 the assumption holds while x>3 fails'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 6860b153cb40
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 06): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 6860b153cb40
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: exm-or-hypothesis-split
   kind: exm
   file: 06-disjunction-introduction.md
@@ -6711,7 +7121,7 @@ items:
   kind: exr
   file: 06-disjunction-introduction.md
   line: 590
-  hash: 7e7b0f2b0f0d
+  hash: a8f86450dd9b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6827,11 +7237,25 @@ items:
     evidence: '06:590-613. (a) schemas and free letter psi right; (b) four sentences: vI, vI then ->E,
       ^E, ->E, all right; (c) True, with the (x=2) v (1=0) line, which is Quick check (iii) at 06:78/84;
       (d) line 3 P v Q by the second schema from line 1 (Q), then ->E 2,3 and ->E 4,1, checked by hand.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: a8f86450dd9b
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 06): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: a8f86450dd9b
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: exr-disjunction-introduction-a2
   kind: exr
   file: 06-disjunction-introduction.md
   line: 615
-  hash: e1b96a5b3614
+  hash: b80a827f09ef
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6908,6 +7332,20 @@ items:
       3 ∧E 1, 4 ∨I 3, 5 ∧I 4,2 and 6 ∨I 5 (second schema) cite the right lines. (d): (ii) is the second
       schema with x = 5 as the right side; (iii) agrees with the inequality-convention remark (line 15).
       (e)-(h) are rig'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: b80a827f09ef
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 06): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: b80a827f09ef
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: exr-disjunction-introduction-b1
   kind: exr
   file: 06-disjunction-introduction.md
@@ -7009,7 +7447,7 @@ items:
   kind: exr
   file: 06-disjunction-introduction.md
   line: 714
-  hash: 00cf8396297d
+  hash: 7180311a2fcc
   verdicts:
   - stage: S5a
     verdict: correct
@@ -7088,6 +7526,20 @@ items:
     model: claude-opus-5-5
     evidence: 06:714-756. The move is named (close the ->I box) and line 7 is (P -> (S v R)) by ->I 3-6,
       which passes check_fitch. This is the faded triple's 'last step blank' item.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 7180311a2fcc
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 06): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 7180311a2fcc
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: exr-disjunction-introduction-b3
   kind: exr
   file: 06-disjunction-introduction.md
@@ -7218,7 +7670,7 @@ items:
   kind: exr
   file: 06-disjunction-introduction.md
   line: 875
-  hash: 0cba9208864c
+  hash: 5547f7325e41
   verdicts:
   - stage: S5a
     verdict: correct
@@ -7301,11 +7753,25 @@ items:
     evidence: '06:875-902. (a) x=-1 instance right; (b) inclusive-or argument right; (c) the instance
       x=-1 with psi: x>=0 is right. The marking scheme sums to 10 and accepts my alternative (b), a case
       split on psi true or false, and an alternative (c) instance such as phi: 1=1, psi: 1=0.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 5547f7325e41
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 06): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 5547f7325e41
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: exr-disjunction-introduction-c2
   kind: exr
   file: 06-disjunction-introduction.md
   line: 904
-  hash: 23aef049b0f8
+  hash: f5e8082bcb1a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -7387,6 +7853,20 @@ items:
     evidence: 06:904-952. (a) and (b) pass check_fitch and are valid. In (c), the prediction argument
       (->E needs the hypothesis exactly; no rule extracts it; vI is the only disjunction builder so far)
       is sound.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: f5e8082bcb1a
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 06): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: f5e8082bcb1a
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: def-rules-disjunction
   kind: def
   file: 07-disjunction-and-cases.md
@@ -7456,7 +7936,7 @@ items:
   kind: exm
   file: 07-disjunction-and-cases.md
   line: 95
-  hash: f1db5a7a2958
+  hash: eb16b06aa94e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -7524,6 +8004,20 @@ items:
     model: claude-opus-5-5
     evidence: 07:101-173 check_fitch clean; comparison with 1.5 boxes 2-3 and 5-6 (06:452-466) is accurate;
       one-line boxes 2-2, 3-3 legal
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: eb16b06aa94e
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 07): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: eb16b06aa94e
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: check:07-disjunction-and-cases:1
   kind: check
   file: 07-disjunction-and-cases.md
@@ -7740,7 +8234,7 @@ items:
   kind: exm
   file: 07-disjunction-and-cases.md
   line: 305
-  hash: 7a59e40a65dc
+  hash: df88294fa0e5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -7769,6 +8263,20 @@ items:
       x^3≤-1) matches the form. The pointer to the subsection ''From a skeleton to a proof about numbers''
       is right: it exists at 07:604 and reaches R itself. On the chart order, see exm-cases-on-hypothesis:
       this is no'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: df88294fa0e5
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 07): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: df88294fa0e5
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: prp-distributivity
   kind: prp
   file: 07-disjunction-and-cases.md
@@ -8270,8 +8778,8 @@ items:
 - key: exr-disjunction-and-cases-a1
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 986
-  hash: 3ee7e9c79349
+  line: 1000
+  hash: ac1af602aa87
   verdicts:
   - stage: S5a
     verdict: correct
@@ -8390,11 +8898,25 @@ items:
     evidence: '07:986-1027. (c) is false, with n=1. (d) line 5 lacks the Q box, and the witness P: x>1,
       Q: x<1, R: x>0 at x=-1 was checked. (e)/(f) match prp-distributivity at 07:440-458 (line 3 is Q
       v R by ^E; line 9 is (P^Q) v (P^R)).'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: ac1af602aa87
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 07): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: ac1af602aa87
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: exr-disjunction-and-cases-a2
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 1029
-  hash: 5ab62079ee71
+  line: 1043
+  hash: 25a9f4f87530
   verdicts:
   - stage: S5a
     verdict: correct
@@ -8468,10 +8990,24 @@ items:
       line 1 is no disjunction'' still stands. I solved all 15 parts myself and they match. In (b), six
       inner and outer boxes, eight with the a≤0 remark, agrees with 07:692-704. In (e), line 2 is (P→Q)∨R
       and lines 5 and'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 25a9f4f87530
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 07): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 25a9f4f87530
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: exr-disjunction-and-cases-b1
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 1106
+  line: 1120
   hash: e5abf1a14510
   verdicts:
   - stage: S5a
@@ -8552,7 +9088,7 @@ items:
 - key: exr-disjunction-and-cases-b2
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 1146
+  line: 1160
   hash: 0c99303b71f9
   verdicts:
   - stage: S5a
@@ -8632,8 +9168,8 @@ items:
 - key: exr-disjunction-and-cases-b3
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 1164
-  hash: 7d853547b64d
+  line: 1178
+  hash: 541b0ce1b6ae
   verdicts:
   - stage: S5a
     verdict: correct
@@ -8711,10 +9247,24 @@ items:
     model: claude-opus-5-5
     evidence: 07:1164-1222. (a) the derivation passes check_fitch. (b) (2k+1)^2=4k(k+1)+1=8m+1 is right.
       A script confirms n^2 = 0 mod 4 or 1 mod 8 for |n|<=200, and 36=4*9 and 49=8*6+1.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 541b0ce1b6ae
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 07): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 541b0ce1b6ae
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: exr-disjunction-and-cases-b4
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 1224
+  line: 1238
   hash: b3700f3c7584
   verdicts:
   - stage: S5a
@@ -8770,7 +9320,7 @@ items:
 - key: exr-disjunction-and-cases-b5
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 1245
+  line: 1259
   hash: 83aa015d3e4c
   verdicts:
   - stage: S5a
@@ -8801,8 +9351,8 @@ items:
 - key: exr-disjunction-and-cases-b6
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 1416
-  hash: 817d117ccc24
+  line: 1430
+  hash: ca6bd2a31e75
   verdicts:
   - stage: S5a
     verdict: correct
@@ -8829,11 +9379,25 @@ items:
     evidence: 07:1416-1454. (a) the sequent and derivation are right. (b) the break with R replaced by
       x!=0 at x=1/2 was checked, and both implications hold on a grid. The cited exr-statements-and-connectives-b3(c)
       does prove x^2>1 => x>1 or x<-1 (01:637).
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: ca6bd2a31e75
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 07): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: ca6bd2a31e75
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: exr-disjunction-and-cases-b7
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 1456
-  hash: fdb92f921f28
+  line: 1470
+  hash: cc5291db1095
   verdicts:
   - stage: S5a
     verdict: correct
@@ -8881,10 +9445,24 @@ items:
       it: make the hypothesis the goal for items 3, 8 and 10, make one side the goal for item 14. The
       solution-14 commentary (07:1763) agrees with the derivation: the split comes first, and line 10
       needs the box''s S.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: cc5291db1095
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 07): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: cc5291db1095
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: exr-disjunction-and-cases-c1
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 1824
+  line: 1838
   hash: 195286ed7245
   verdicts:
   - stage: S5a
@@ -8981,8 +9559,8 @@ items:
 - key: exr-disjunction-and-cases-c2
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 1880
-  hash: 4b9bbce1e4c9
+  line: 1895
+  hash: 50ca08d17377
   verdicts:
   - stage: S5a
     verdict: correct
@@ -9086,11 +9664,25 @@ items:
     evidence: '07:1880-1915. I checked every case of the flawed proof: 1a, 1b and 2a are valid, and only
       Case 2b''s ''Since x>=0 and y<0'' cites Case 1''s assumption. The witness x=-3, y=-1 gives x-y=-2,
       which defeats the step x-y>0. The repair in (d) is correct. The conclusion is true (grid check).'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 50ca08d17377
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 07): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 50ca08d17377
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: exr-disjunction-and-cases-c3
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 1917
-  hash: bd2bbb7b4502
+  line: 1932
+  hash: be4090056728
   verdicts:
   - stage: S5a
     verdict: correct
@@ -9188,11 +9780,25 @@ items:
       1 is a disjunction and ∧E does not apply. It notes that this works and is the second route, and
       gives one-split-first as a choice rather than as a condition the chart lacks. I traced the chart
       and counted the second'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: be4090056728
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 07): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: be4090056728
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: exr-disjunction-and-cases-c4
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 1966
-  hash: 24987aadbfb5
+  line: 2000
+  hash: 39d4abbfb2ca
   verdicts:
   - stage: S5a
     verdict: correct
@@ -9296,11 +9902,25 @@ items:
     evidence: 07:1966-2027. The 11-line derivation passes check_fitch and the sequent is valid. The moves
       are named (box from the goal, then a split inside it ending in S). Hint 2 gives the first line (line
       5 Q). The split-first alternative is correctly noted.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 39d4abbfb2ca
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 07): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 39d4abbfb2ca
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: exr-disjunction-and-cases-r1
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 2031
-  hash: 781be5860f7b
+  line: 2065
+  hash: b74a7215ab88
   verdicts:
   - stage: S5a
     verdict: correct
@@ -9377,11 +9997,25 @@ items:
     model: claude-opus-5-5
     evidence: 07:2031-2054. The problem names no source. The solution cites @def-sequent, @def-rules-conjunction
       and @def-rule-implication-elimination. The derivation passes check_fitch.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: b74a7215ab88
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 07): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: b74a7215ab88
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: exr-disjunction-and-cases-r2
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 2056
-  hash: b66f974ca194
+  line: 2094
+  hash: 4e0ad71869b8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -9456,11 +10090,25 @@ items:
     model: claude-opus-5-5
     evidence: 07:2056-2082. The derivation passes check_fitch. The solution names the source @exm-implication-chains
       and the backward-found chain (lines 7-8).
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 4e0ad71869b8
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 07): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 4e0ad71869b8
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
 - key: exr-disjunction-and-cases-r3
   kind: exr
   file: 07-disjunction-and-cases.md
-  line: 2084
-  hash: f6e3d007706e
+  line: 2126
+  hash: 327e43850098
   verdicts:
   - stage: S5a
     verdict: correct
@@ -9551,10 +10199,24 @@ items:
     evidence: 07:2084-2106. The answer is yes and the derivation passes check_fitch. The solution cites
       @def-rules-implication and @def-rule-disjunction-introduction, and explains why the look-alike start
       (vI on the whole goal, or the side R) fails.
-- key: check:index:1
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 327e43850098
+    date: '2026-11-01'
+    evidence: 'wording only (checked against 9f9dbb8, section file 07): sentences split, Givens/Goal and
+      marking-scheme names per B4, inline refs moved to Uses lines; statements, derivations, line numbers
+      and points unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 327e43850098
+    date: '2026-11-01'
+    evidence: equivalence checked by the chapter finisher; new sentences true
+- key: check:review:1
   kind: check
-  file: index.md
-  line: 9
+  file: review.md
+  line: 60
   hash: 372613c1b13d
   verdicts:
   - stage: S5a
@@ -9589,3 +10251,17 @@ items:
       if" means P->Q, which is true; the converse fails at n=2. (3) The line x^2>4 is available only inside
       its box, and it fails at x=0. (4) 5>=0 is (5>0) v (5=0), and 5>0 is true. (5) At x=3/2 both premises
       hold
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 372613c1b13d
+    date: '2026-11-01'
+    evidence: moved unchanged from index.md:9 (check:index:1, verdict history carried over) to review.md:56
+      under 'Five tempting misreadings'; items and answers byte-identical, only the lead-in sentence reworded
+      for a reader who has finished the chapter
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 372613c1b13d
+    date: '2026-11-01'
+    evidence: 'review page check: five misreadings and answers still true of Sections 1.1-1.6 as rewritten'

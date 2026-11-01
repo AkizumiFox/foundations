@@ -57,17 +57,17 @@ The left schema is the rule \( \rulename{{\to}I} \) (**implication-introduction*
 As in every schema (@def-rule-schema), \( \varphi \) and \( \psi \) stand for any statements, replaced consistently, and \( i, j, k \) for line numbers. This rule has conditions that matter; read each one.
 
 1. **Open a box** whose first line is the assumption \( \varphi \). The assumption may be **any** statement: true or false, related to the premises or not. Its justification is "assumption", printed **"asm, for \( \rulename{{\to}I} \)"**: the annotation names the rule that will close the box. The price of assuming anything we like is the box.
-2. **Inside the box**, work as usual. Every rule may be used. A line inside may cite the assumption and every earlier line that is not inside a box that has already closed: the premises, the lines above the box that are still in force, and the lines derived inside the box so far.
+2. **Inside the box**, work as usual. Every rule may be used. A line inside may cite the assumption and every earlier line that is not inside a box that has already closed. These are the premises, the lines above the box that are still in force, and the lines derived inside the box so far.
 3. **The last line** of the box is \( \psi \). It must be a line of this box itself, not a line of some further box opened inside it. (The drawing cannot show this, which is why the definition says it in words.)
 4. **Close the box**, and write \( \varphi \to \psi \) on a later line outside it, in practice the very next line. The justification cites the **whole box** as the range \( \lines{i}{j} \), from its assumption to its last line, not its lines one by one.
 5. **After the box closes**, nothing inside it may be cited again. The assumption is discharged, and everything derived under it goes with it. Only the implication leaves.
 
-Clause 5 is the boundary of the temporary world. The subsection "Which lines a line may cite" below turns clause 5 into an exact rule.
+Clause 5 is the boundary of the temporary world. Later in this section, the scope rule makes it exact: it says which earlier lines a line may cite.
 
-**What each box is for.** From now on every assumption says, in its justification column, what its box is for. "asm, for \( \rulename{{\to}I} \)" says that the box was opened to prove an implication, and that a \( \rulename{{\to}I} \) line will close it. In a written proof the same line is the word "suppose". While a derivation is still growing and its closing line is not yet written, the annotation records the plan.
+**What each box is for.** From now on every assumption says, in its justification column, what its box is for. The annotation "asm, for \( \rulename{{\to}I} \)" says that the box was opened to prove an implication, and that a \( \rulename{{\to}I} \) line will close it. In a written proof the same line is the word "suppose". While a derivation is still growing and its closing line is not yet written, the annotation records the plan.
 
 ::: {.second-reading title="A box of one line"}
-The **degenerate case** is \( i = j \): a box of one line, whose assumption is also its last line. Then \( \psi \) is \( \varphi \), and the rule writes \( \varphi \to \varphi \). Nothing in the rule asks the box to contain more than its assumption.
+The smallest case is \( i = j \): a box of one line, whose assumption is also its last line. Then \( \psi \) is \( \varphi \), and the rule writes \( \varphi \to \varphi \). Nothing in the rule asks the box to contain more than its assumption.
 :::
 
 *Why the rule is right.* The implication \( \varphi \to \psi \) claims only that \( \psi \) holds whenever \( \varphi \) does. The box shows exactly that: starting from \( \varphi \), and from facts that hold anyway, the rules lead to \( \psi \).
@@ -87,16 +87,16 @@ The first result proved with a box is the chaining of implications. Section 1.3 
 ::: {.idea}
 Start from the goal. Its main connective is \( \to \), so the last line will be \( \rulename{{\to}I} \), and that needs a box that opens with \( P \) and ends with \( R \). Inside the box, the new goal is \( R \). Reason backwards: \( R \) is the conclusion of the premise \( Q \to R \), so \( \rulename{{\to}E} \) gives it once \( Q \) is on a line. And \( Q \) is the conclusion of \( P \to Q \), so \( \rulename{{\to}E} \) gives it from \( P \), which the box has just assumed.
 
-In the Givens/Goal table, \( \rulename{{\to}I} \) moves the hypothesis into the Givens and makes the conclusion the goal.
+In the table, \( \rulename{{\to}I} \) adds the hypothesis to what we know, and its conclusion becomes what we want.
 
-| Givens | Goal |
+| We know | We want |
 |---|---|
 | \( P \to Q \), \( Q \to R \) | \( P \to R \) |
 | \( P \to Q \), \( Q \to R \), \( P \) (box opened) | \( R \) |
 | \( P \to Q \), \( Q \to R \), \( P \), \( Q \) (\( \rulename{{\to}E} \)) | \( R \) |
 | \( P \to Q \), \( Q \to R \), \( P \), \( Q \), \( R \) (\( \rulename{{\to}E} \)) | \( R \) ✓ |
 
-The same search as a growing derivation: the box opened, its goal \( R \) at the bottom (left); then line 4 written forwards (right).
+Here is the same search as a growing derivation. On the left, the box is open and its goal \( R \) sits at the bottom. On the right, line 4 has been written forwards.
 
 ```{=latex}
 % schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
@@ -146,6 +146,10 @@ $\begin{nd}
 ```
 
 Line 3 opens a box with the assumption \( P \). Lines 4 and 5 apply \( \rulename{{\to}E} \) inside it, each citing a premise and a line of the box. Line 5, \( R \), is the last line of the box. Line 6 closes it and writes \( P \to R \), citing the box \( \lines{3}{5} \). By @def-derivable, this proves the proposition.
+
+::: {.uses}
+@def-rules-implication (\( \rulename{{\to}E} \), \( \rulename{{\to}I} \)).
+:::
 :::
 
 Read the drawing once more. The bar that starts at line 3 stops after line 5. The statements \( P \), \( Q \), and \( R \) on lines 3–5 were never established outright; they hold inside the temporary world where \( P \) is assumed. Only \( P \to R \) stands outside, next to the premises.
@@ -286,13 +290,17 @@ $\begin{nd}
 
 A checker reads the box \( \lines{2}{2} \): its assumption is \( Q \), and its last line is \( Q \). So \( \rulename{{\to}I} \) may write only \( Q \to Q \) from it, and line 3 is rejected. The statement \( P \) stands on line 1, outside the inner box, and clause 3 asks for \( \psi \) as a line **of the box itself**.
 
-The fix is bookkeeping: copy \( P \) into the inner box. Copying an available line is the rule \( \rulename{R} \) (**repetition**), made official as clause (D3) of the definition below. The copy "\( P \), R 1" then ends the inner box.
+The fix is bookkeeping: copy \( P \) into the inner box. Copying an available line is the rule \( \rulename{R} \) (**repetition**). The definition of a derivation below makes it official, as its clause (D3). The copy "\( P \), R 1" then ends the inner box.
 
-Some books let a box end on any line available inside it. This book copies the line in, so that every \( \rulename{{\to}I} \) line can be checked by looking only at the box it cites. The corrected derivation is @exm-first-boxes (b) below.
+Because the line is copied in, every \( \rulename{{\to}I} \) line can be checked by looking only at the box it cites. The corrected derivation is @exm-first-boxes (b) below.
+
+::: {.second-reading title="For instructors"}
+Some books let a box end on any line available inside it. This book copies the line in instead, by repetition.
+:::
 
 ## Which lines a line may cite
 
-In a derivation without boxes (@def-box-free-derivation), a line may cite any **earlier** line. With boxes that is no longer enough: after the derivation of @prp-implication-transitive, a line 7 citing line 5 would write \( R \) outside the box, the "\( x^2 > 4 \) for every \( x \)" error of the first subsection. What matters is which earlier lines are still **available**, and the bars show it.
+In a derivation without boxes (@def-box-free-derivation), a line may cite any **earlier** line. With boxes that is no longer enough: after the derivation of @prp-implication-transitive, a line 7 citing line 5 would write \( R \) outside the box. That is the error of concluding "\( x^2 > 4 \) for every \( x \)". What matters is which earlier lines are still **available**, and the bars show it.
 
 **A line inside a box may be cited only from inside that box. Once a box has closed above you, nothing inside it can be cited; the boxes you are in may be left across their tops, and passing beside a closed box is fine.**
 
@@ -358,7 +366,7 @@ In the figure, which of lines 1–9 may line 10 cite?
 :::
 
 ::: {.solution}
-Lines 1, 5, 6 and 9. Lines 1 and 5 are in no box; lines 6 and 9 are in box B, which contains line 10. Lines 2–4 are not available (box A has closed), and neither are lines 7–8 (box C has closed). It may also cite the whole box 7–8, which, like line 10, stands in box B alone.
+Lines 1, 5, 6 and 9. Lines 1 and 5 are in no box; lines 6 and 9 are in box B, which contains line 10. Lines 2–4 are not available, since box A has closed. Neither are lines 7–8, since box C has closed. It may also cite the whole box 7–8, which, like line 10, stands in box B alone.
 :::
 
 Here is the official version, the one a checker uses.
@@ -397,7 +405,7 @@ where line \( i \) must be available at line \( k \).
 
 (D1)–(D4) say: given, assumed, copied, or one step of one rule, always from what is still available.
 
-The scope rule is the definition's real content: line \( i \) is available at line \( k \) when every assumption that line \( i \) was derived under is still in force at line \( k \): the picture rule above, in words a checker can apply.
+The scope rule is the heart of the definition. Line \( i \) is available at line \( k \) when every assumption that line \( i \) was derived under is still in force at line \( k \). This is the picture rule above, in words a checker can apply.
 
 ::: {.second-reading title="Why checking stays mechanical"}
 *Well defined.* Whether a line is available is decided by looking at the boxes; nothing about the meaning of the statements enters. Checking a derivation stays mechanical.
@@ -438,7 +446,7 @@ Section 1.2 checked a line by asking which rule it uses, which lines it cites, a
 2. **Which lines or boxes does it cite, and do they form an instance of the rule's schema?** \( \rulename{{\to}E} \) cites an implication and exactly its hypothesis; \( \rulename{{\to}I} \) cites one box, whose assumption and last line must be the two sides of the implication written.
 3. **Are they available here?** Apply the scope rule to each cited line and box.
 
-*Finding a derivation may need an idea; checking one never does.* Here is the check run on the derivation of @prp-implication-transitive.
+*Finding a derivation may need an idea; checking one never does.* The three questions can always be answered by looking at the lines and the bars. Here is the check run on the derivation of @prp-implication-transitive.
 
 | Line | Which rule? | Cites | Available? |
 |---|---|---|---|
@@ -478,7 +486,7 @@ $\begin{nd}
 :::
 
 ::: {.solution}
-No. Lines 1–6 are the derivation of @prp-implication-transitive, and line 7 claims to be a repetition (D3). Line 5 lies inside the box \( \lines{3}{5} \), and that box does not contain line 7. By the scope rule, line 5 is not available at line 7, and (D3) repeats only an available line. So line 7 is illegal.
+No. Lines 1–6 are the derivation of @prp-implication-transitive, and line 7 claims to be a repetition (D3). Line 5 lies inside the box \( \lines{3}{5} \), and that box does not contain line 7. By the scope rule, line 5 is not available at line 7, and repetition, (D3), copies only an available line. So line 7 is illegal.
 
 If it were allowed, the list would show \( P \to Q, \ Q \to R \vdash R \), and that would be a disaster. Let \( x \) be a real number, and take \( P \): "\( x > 3 \)", \( Q \): "\( x > 2 \)", \( R \): "\( x > 1 \)". Both premises are true whatever \( x \) is. At \( x = 0 \) the conclusion \( x > 1 \) is false. A step that leads from true premises to a false conclusion cannot be a step of proof.
 :::
@@ -539,9 +547,9 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 1 is an assumption (D2) and opens the box \( \lines{1}{1} \), whose last line is \( P \). Line 2 cites that box, which ended before line 2 and, like line 2, lies in no other box. There are no premises, so this shows \( \vdash P \to P \). It is the first statement in the book derivable from **no** premises by the rules of logic alone. Argument B's box in "Argument B, diagnosed" also began without premises, but it used a step of algebra. Every other rule so far (@def-rules-conjunction, @def-rule-implication-elimination, and \( \rulename{R} \) of @def-derivation) cites at least one earlier line, so without a box a derivation must start with a premise. A box is what escapes: its first line is an assumption, and the assumption is discharged before the end.
+Line 1 is an assumption (D2) and opens the box \( \lines{1}{1} \), whose last line is \( P \). Line 2 cites that box, which ended before line 2 and, like line 2, lies in no other box. There are no premises, so this shows \( \vdash P \to P \). It is the first statement in the book derivable from **no** premises by the rules of logic alone. Argument B's box also began without premises, but it used a step of algebra. Every other rule so far, \( \rulename{\wedge I} \), \( \rulename{\wedge E} \), \( \rulename{{\to}E} \) and \( \rulename{R} \), cites at least one earlier line. So without a box a derivation must start with a premise. A box is what escapes: its first line is an assumption, and the assumption is discharged before the end.
 
-(b) *Idea.* This is the derivation the checker accepted after the fix in "A box must end on a line of its own": line 3 copies \( P \) into the inner box.
+(b) *Idea.* This is the earlier attempt at \( \vdash P \to (Q \to P) \), with the fix: line 3 copies \( P \) into the inner box.
 
 ```{=latex}
 \begin{center}
@@ -563,7 +571,7 @@ Line 3 is legal: the only box containing line 1, the box \( \lines{1}{4} \), als
 
 (c) *Idea.* The goal \( Q \to (P \to R) \) asks for a box with \( Q \) and, inside it, a box with \( P \) ending in \( R \). Inside both boxes, work from the premise: its main connective is the first \( \to \), with hypothesis \( P \), so \( \rulename{{\to}E} \) fires on the assumption \( P \) and gives \( Q \to R \). That implication fires on the assumption \( Q \) and gives \( R \), the inner goal.
 
-Both boxes opened, goals at their feet (left); then the inner lines written, and only line 7 still to justify (right).
+On the left, both boxes are open, each with its goal at the bottom. On the right, the inner lines are written, and only line 7 is still to be justified.
 
 ```{=latex}
 % schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
@@ -619,9 +627,13 @@ $\begin{nd}
 ```
 
 Line 5 cites line 2 from inside the inner box: every box containing line 2 (only \( \lines{2}{6} \)) contains line 5. So the order of two hypotheses does not matter. For real numbers \( a \) and \( x \), the derivation turns "if \( a > 0 \), then (if \( x > 1 \), then \( ax > a \))" into "if \( x > 1 \), then (if \( a > 0 \), then \( ax > a \))".
+
+::: {.uses}
+@def-rules-conjunction (\( \rulename{\wedge I} \), \( \rulename{\wedge E} \) cite lines); @def-rule-implication-elimination (\( \rulename{{\to}E} \) cites lines); @def-derivation (\( \rulename{R} \), the scope rule).
+:::
 :::
 
-In (b) and (c) the goal told us which boxes to open, and in which order: the outermost \( \to \) of the goal gives the outermost box. This is the goal-directed move of this section. *An implication goal opens a box with its hypothesis; the new goal is its conclusion.*
+In (b) and (c) the goal told us which boxes to open, and in which order: the outermost \( \to \) of the goal gives the outermost box. This is goal-directed reasoning for an implication. *An implication goal opens a box with its hypothesis; the new goal is its conclusion.*
 
 ## Two hypotheses, or one at a time
 
@@ -636,9 +648,9 @@ A theorem with two hypotheses, "if \( x > 0 \) and \( y > 0 \), then \( xy > 0 \
 *Try it first (ten minutes): for the first claim, which boxes will you open, and in which order?*
 
 ::: {.idea}
-The tempting first move is premise-directed: use \( (P \wedge Q) \to R \) at once. But \( \rulename{{\to}E} \) needs \( P \wedge Q \) on a line, and at the start nothing is on a line except the premise. So start from the goal. Its main connective is the first \( \to \), so open a box with \( P \); the new goal \( Q \to R \) is again an implication, so open a box with \( Q \) inside the first. Now both \( P \) and \( Q \) are available, \( \rulename{\wedge I} \) builds \( P \wedge Q \), and the premise fires. For the second claim the goal \( (P \wedge Q) \to R \) asks for one box, with \( P \wedge Q \); take the assumption apart and feed the halves to the premise one at a time, \( P \) first because it is the premise's outer hypothesis.
+The tempting first step is premise-directed: use \( (P \wedge Q) \to R \) at once. But \( \rulename{{\to}E} \) needs \( P \wedge Q \) on a line, and at the start nothing is on a line except the premise. So start from the goal. Its main connective is the first \( \to \), so open a box with \( P \); the new goal \( Q \to R \) is again an implication, so open a box with \( Q \) inside the first. Now both \( P \) and \( Q \) are available, \( \rulename{\wedge I} \) builds \( P \wedge Q \), and the premise fires. For the second claim, the goal \( (P \wedge Q) \to R \) asks for one box, with \( P \wedge Q \). Take the assumption apart and feed the halves to the premise one at a time. \( P \) goes first, because it is the premise's outer hypothesis.
 
-The first claim: the outer box opened (left), then the inner one, with goal \( R \) (right).
+For the first claim, the left drawing opens the outer box; the right one opens the inner box, with goal \( R \).
 
 ```{=latex}
 % schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
@@ -669,7 +681,7 @@ $\begin{nd}
 \end{center}
 ```
 
-The second claim: the box opened (left), then the assumption taken apart (right).
+For the second claim, the left drawing opens the box; the right one takes the assumption apart.
 
 ```{=latex}
 % schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
@@ -722,7 +734,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 4 may cite lines 1, 2, and 3: line 1 lies in no box, the only box containing line 2 (the box \( \lines{2}{6} \)) contains line 4, and both boxes containing line 3 contain line 4. Line 6 may cite the box \( \lines{3}{5} \), because that box has ended and both it and line 6 lie in the box \( \lines{2}{6} \) and in no other. Line 6 may not cite line 5 on its own, because the box \( \lines{3}{5} \) contains line 5 and not line 6.
+Line 4 may cite lines 1, 2, and 3. Line 1 lies in no box. The only box containing line 2, the box \( \lines{2}{6} \), contains line 4. Both boxes containing line 3 contain line 4. Line 6 may cite the box \( \lines{3}{5} \), because that box has ended and both it and line 6 lie in the box \( \lines{2}{6} \) and in no other. Line 6 may not cite line 5 on its own, because the box \( \lines{3}{5} \) contains line 5 and not line 6.
 
 For the second claim, the following is a derivation with premise \( P \to (Q \to R) \) and last line \( (P \wedge Q) \to R \).
 
@@ -743,6 +755,10 @@ $\begin{nd}
 ```
 
 Lines 3–6 cite line 1, which lies in no box, or earlier lines of the box \( \lines{2}{6} \), from inside that box. Line 7 cites the box \( \lines{2}{6} \), which has ended, and neither that box nor line 7 lies in any other box. By @def-derivable, the two derivations prove the two claims.
+
+::: {.uses}
+@def-derivation (the scope rule); @def-rules-conjunction (\( \rulename{\wedge I} \), \( \rulename{\wedge E} \)); @def-rules-implication (\( \rulename{{\to}E} \), \( \rulename{{\to}I} \)).
+:::
 :::
 
 ::: {.check}
@@ -802,7 +818,7 @@ Before the card, the rule at work on large statements. Each row is one use of \(
 **Not an instance.** A box opens with \( Q \) and ends with \( P \), copied in by \( \rulename{R} \). The line "\( P \to Q \) — \( \rulename{{\to}I} \)" is not an instance: \( \rulename{{\to}I} \) writes the assumption first, \( Q \to P \). This is Argument B's step.
 :::
 
-The card grows by two rows. In *Shape*, "box \( \varphi \) … \( \psi \)" is a closed box from the assumption \( \varphi \) to its last line \( \psi \).
+The table below adds \( \rulename{{\to}I} \) and \( \rulename{R} \) to the rules so far. In the column *Shape*, "box \( \varphi \) … \( \psi \)" is a closed box from the assumption \( \varphi \) to its last line \( \psi \).
 
 | Rule | Shape | You write | Lean |
 |---|---|---|---|
@@ -817,15 +833,15 @@ In the Lean column, `intro hp` opens the box and names its assumption `hp`.
 ::: {.warning}
 [Not allowed: \( \rulename{{\to}I} \)]
 
-Each step below is wrong; the tag names the clause of the rule's reading that it breaks.
+Each step below is wrong, and breaks the clause of \( \rulename{{\to}I} \) named after it.
 
 - Close the box on a line of a box inside it: clause 3, the last line must be a line of the box itself ("A box must end on a line of its own").
 - Write \( \psi \to \varphi \) from a box that runs from \( \varphi \) to \( \psi \): clause 4, the box opens with the hypothesis (Argument B).
 - Cite a line inside a closed box: clause 5 (@exm-illegal-citation).
-- End the derivation inside an open box: clause 4, the box must close (the warning on a box that is never closed).
+- End the derivation inside an open box: clause 4, the box must close (a box that never closes proves nothing).
 - Cite the box's lines one by one: clause 4, the box is cited whole, as a range.
 
-The discharge is where the rule bites, so here is one wrong step beside the right one, with premises \( (P \wedge R) \to Q \) and \( R \). On the left, line 6 carries \( Q \) out of the box by repetition, as if \( P \) had been proved. On the right, line 6 closes the box with \( \rulename{{\to}I} \).
+Most errors with \( \rulename{{\to}I} \) happen at the discharge. Here is one wrong step beside the right one, with premises \( (P \wedge R) \to Q \) and \( R \). On the left, line 6 carries \( Q \) out of the box by repetition, as if \( P \) had been proved. On the right, line 6 closes the box with \( \rulename{{\to}I} \).
 
 ```{=latex}
 \begin{center}
@@ -1006,13 +1022,36 @@ $\begin{nd}
 
 In prose: *Assume \( P \) and \( Q \). In particular, \( P \) holds. In particular, \( Q \) holds. Hence \( Q \) and \( P \) both hold. This proves that if \( P \) and \( Q \), then \( Q \) and \( P \).* Compared with @prp-and-commutes, the premise \( P \wedge Q \) has become an assumption, and the conclusion has become an implication that depends on nothing.
 
-(l) 2 \( P \wedge R \), assumption, for \( \rulename{{\to}I} \); 3 \( P \), \( \rulename{\wedge E} \) 2; 4 \( Q \), \( \rulename{{\to}E} \) 1, 3; 5 \( (P \wedge R) \to Q \), \( \rulename{{\to}I} \) \( \lines{2}{4} \).
+(l) After the premise on line 1:
 
-(m) 2 \( P \wedge R \), assumption, for \( \rulename{{\to}I} \); 3 \( R \), \( \rulename{\wedge E} \) 2; 4 \( Q \wedge R \), \( \rulename{\wedge I} \) 1, 3; 5 \( (P \wedge R) \to (Q \wedge R) \), \( \rulename{{\to}I} \) \( \lines{2}{4} \).
+- 2 \( P \wedge R \), assumption, for \( \rulename{{\to}I} \);
+- 3 \( P \), \( \rulename{\wedge E} \) 2;
+- 4 \( Q \), \( \rulename{{\to}E} \) 1, 3;
+- 5 \( (P \wedge R) \to Q \), \( \rulename{{\to}I} \) \( \lines{2}{4} \).
 
-(n) The box of \( P \wedge Q \) opens first, since the goal's main connective is its first \( \to \): 1 \( P \wedge Q \), assumption, for \( \rulename{{\to}I} \); 2 \( R \), assumption, for \( \rulename{{\to}I} \), opening a box inside the first; 3 \( P \), \( \rulename{\wedge E} \) 1; 4 \( R \to P \), \( \rulename{{\to}I} \) \( \lines{2}{3} \); 5 \( (P \wedge Q) \to (R \to P) \), \( \rulename{{\to}I} \) \( \lines{1}{4} \).
+(m) After the premise on line 1:
 
-(o) 2 \( P \), assumption, for \( \rulename{{\to}I} \); 3 \( P \to Q \), \( \rulename{\wedge E} \) 1; 4 \( Q \), \( \rulename{{\to}E} \) 3, 2; 5 \( R \), \( \rulename{\wedge E} \) 1; 6 \( Q \wedge R \), \( \rulename{\wedge I} \) 4, 5; 7 \( P \to (Q \wedge R) \), \( \rulename{{\to}I} \) \( \lines{2}{6} \).
+- 2 \( P \wedge R \), assumption, for \( \rulename{{\to}I} \);
+- 3 \( R \), \( \rulename{\wedge E} \) 2;
+- 4 \( Q \wedge R \), \( \rulename{\wedge I} \) 1, 3;
+- 5 \( (P \wedge R) \to (Q \wedge R) \), \( \rulename{{\to}I} \) \( \lines{2}{4} \).
+
+(n) The box of \( P \wedge Q \) opens first, since the goal's main connective is its first \( \to \). The lines are:
+
+- 1 \( P \wedge Q \), assumption, for \( \rulename{{\to}I} \);
+- 2 \( R \), assumption, for \( \rulename{{\to}I} \), opening a box inside the first;
+- 3 \( P \), \( \rulename{\wedge E} \) 1;
+- 4 \( R \to P \), \( \rulename{{\to}I} \) \( \lines{2}{3} \);
+- 5 \( (P \wedge Q) \to (R \to P) \), \( \rulename{{\to}I} \) \( \lines{1}{4} \).
+
+(o) After the premise on line 1:
+
+- 2 \( P \), assumption, for \( \rulename{{\to}I} \);
+- 3 \( P \to Q \), \( \rulename{\wedge E} \) 1;
+- 4 \( Q \), \( \rulename{{\to}E} \) 3, 2;
+- 5 \( R \), \( \rulename{\wedge E} \) 1;
+- 6 \( Q \wedge R \), \( \rulename{\wedge I} \) 4, 5;
+- 7 \( P \to (Q \wedge R) \), \( \rulename{{\to}I} \) \( \lines{2}{6} \).
 :::
 
 ### B. Practice
@@ -1020,7 +1059,7 @@ In prose: *Assume \( P \) and \( Q \). In particular, \( P \) holds. In particul
 ::: {#exr-proving-an-implication-b1}
 [B1: Two boxes, one inside the other]
 
-A search for \( (P \wedge Q) \to R, \ S \to Q \vdash S \to (P \to R) \) has reached the stage below. *Name the move, then complete it.*
+A search for \( (P \wedge Q) \to R, \ S \to Q \vdash S \to (P \to R) \) has reached the stage below. *Name the kind of reasoning, then complete it.*
 
 ```{=latex}
 % schema (partial derivation: the gaps are unnumbered, lines carry their final numbers)
@@ -1043,7 +1082,7 @@ $\begin{nd}
 :::
 
 ::: {.solution}
-The move is goal-directed, twice: an implication goal opens a box with its hypothesis, and the new goal is its conclusion. The goal \( S \to (P \to R) \) gave the outer box, with \( S \), and its conclusion \( P \to R \) gave the inner box, with \( P \); the inner goal is \( R \). Inside both boxes, work backwards from the first premise: \( R \) is its conclusion, so it suffices to build its hypothesis \( P \wedge Q \) exactly. \( P \) is line 4, and \( Q \) comes from the second premise and the assumption \( S \).
+The reasoning is goal-directed, twice: an implication goal opens a box with its hypothesis, and the new goal is its conclusion. The goal \( S \to (P \to R) \) gave the outer box, with \( S \), and its conclusion \( P \to R \) gave the inner box, with \( P \); the inner goal is \( R \). Inside both boxes, work backwards from the first premise: \( R \) is its conclusion, so it suffices to build its hypothesis \( P \wedge Q \) exactly. \( P \) is line 4, and \( Q \) comes from the second premise and the assumption \( S \).
 
 ```{=latex}
 \begin{center}
@@ -1177,9 +1216,9 @@ Here are nine lines, each a statement with its justification. Seven of them, in 
 ::: {.solution}
 The order is (v), (ii), (ix), (viii), (iii), (i), (vi), with one box opened by (ii) and closed after (i), and a second box inside it, opened by (ix) and closed after (iii). This is the derivation of @exm-first-boxes (c).
 
-It is the only admissible order. The premise (v) comes first. The last line (vi) needs a box from \( Q \) to \( P \to R \), so (ii) opens a box whose last line is (i). Line (i) needs a box from \( P \) to \( R \), which must lie inside the box of \( Q \), since (i) is a line of that box; so (ix) opens the inner box, whose last line is (iii). Inside it, (viii) needs the premise and (ix), and (iii) needs (viii) and (ii). Opening the box of \( P \) first and the box of \( Q \) inside it would not do: the inner \( \rulename{{\to}I} \) would then give \( Q \to R \), and the outer one \( P \to (Q \to R) \), the premise again.
+It is the only admissible order. The premise (v) comes first. The last line (vi) needs a box from \( Q \) to \( P \to R \), so (ii) opens a box whose last line is (i). Line (i) needs a box from \( P \) to \( R \). That box must lie inside the box of \( Q \), since (i) is a line of the box of \( Q \). So (ix) opens the inner box, whose last line is (iii). Inside it, (viii) needs the premise and (ix), and (iii) needs (viii) and (ii). Opening the box of \( P \) first and the box of \( Q \) inside it would not do: the inner \( \rulename{{\to}I} \) would then give \( Q \to R \), and the outer one \( P \to (Q \to R) \), the premise again.
 
-(iv) cannot be used where it is placed. Directly below (i), the inner box has closed, and line (iii) lies inside it; so (iii) is not available there, and (D3) repeats only an available line (the scope rule of @def-derivation). It is the error of @exm-illegal-citation.
+(iv) cannot be used where it is placed. Directly below (i), the inner box has closed, and line (iii) lies inside it. So (iii) is not available there, by the scope rule of @def-derivation, and repetition, (D3), copies only an available line. It is the error of @exm-illegal-citation.
 
 (vii) cannot be used. \( \rulename{{\to}I} \) proves \( P \to R \) from a box opened by \( P \), the **hypothesis**. A box opened by \( R \) would prove an implication with hypothesis \( R \): the converse error of Argument B.
 :::
@@ -1187,7 +1226,7 @@ It is the only admissible order. The premise (v) comes first. The last line (vi)
 ### C. Going deeper
 
 ::: {#exr-proving-an-implication-c1}
-[C1: Exit check: a line from a closed box]
+[C1: Chapter check: a line from a closed box]
 
 A student wants to show \( (P \wedge Q) \to R \vdash (P \to (Q \to R)) \wedge (Q \to (P \to R)) \), and offers the following derivation. Lines 1–7 are the first derivation in the proof of @prp-curry.
 
@@ -1240,7 +1279,7 @@ For (b), inside the box of \( P \) at line 9, the assumptions \( Q \) (line 8) a
 :::
 
 ::: {.solution}
-(a) Line 10 is the first illegal line. It claims to repeat line 5 by (D3), but line 5 lies in the boxes \( \lines{2}{6} \) and \( \lines{3}{5} \), and neither contains line 10. So line 5 is not available at line 10, and (D3) allows repeating only an available line. Lines 1–9 are correct, and lines 11–13 would be correct if line 10 were.
+(a) Line 10 is the first illegal line. It claims to be a repetition of line 5, (D3), but line 5 lies in the boxes \( \lines{2}{6} \) and \( \lines{3}{5} \), and neither contains line 10. So line 5 is not available at line 10, and repetition copies only an available line. Lines 1–9 are correct, and lines 11–13 would be correct if line 10 were.
 
 (b) Yes: the sequent is derivable. Replace line 10 by two lines that do inside the new boxes what lines 4 and 5 did inside the old ones.
 
@@ -1277,14 +1316,14 @@ Every box containing line 8 or line 9 contains line 10, and line 1 lies in no bo
 
 (c) Availability is about **boxes**, not about which statements happen to be assumed. The boxes \( \lines{8}{11} \) and \( \lines{9}{10} \) of the student's derivation are new boxes; that their assumptions repeat those of the old boxes gives line 10 no access to what was derived inside the old ones. And the move, once allowed, can be used anywhere. Used outside every box, as a line 8 "\( R \), R 5" after lines 1–7, it would derive \( (P \wedge Q) \to R \vdash R \). Let \( x \) be a real number, and take \( P \): "\( x > 2 \)", \( Q \): "\( x > 3 \)" and \( R \): "\( x > 1 \)". The premise "if \( x > 2 \) and \( x > 3 \), then \( x > 1 \)" is true whatever \( x \) is, and at \( x = 0 \) the conclusion \( x > 1 \) is false. A move that leads from a true premise to a false conclusion cannot be a step of proof.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 3: names line 10, because line 5 lies in boxes that do not contain it.
 - 3: gives any correct derivation of the sequent, every citation available.
 - 1: says the conclusion is derivable although the argument is wrong.
 - 3: explains that availability depends on boxes, not on repeated assumptions, with an instance where the move leads from a true premise to a false conclusion.
 
-Fatal errors (0 for the step): naming line 5 or line 9; claiming the sequent is not derivable; refuting the conclusion instead of the move.
+Slips that lose the step: naming line 5 or line 9; claiming the sequent is not derivable; refuting the conclusion instead of the move.
 :::
 
 ::: {#exr-proving-an-implication-c2}
@@ -1333,11 +1372,11 @@ $\begin{nd}
 
 Line 5 is a legal repetition: both boxes containing line 3 contain line 5. Line 8 may cite line 2 because the box \( \lines{2}{9} \), the only box containing line 2, contains line 8.
 
-The sentence: the premise fires only on an available line \( P \to Q \), and no available line is \( P \to Q \) or has it as a conjunct or as the conclusion of an implication, so it can come only from \( \rulename{{\to}I} \), which needs a box of its own.
+The sentence: the premise needs an available line \( P \to Q \), and no available line is \( P \to Q \) or contains it as a conjunct or as an implication's conclusion; only \( \rulename{{\to}I} \), with its own box, can supply it.
 
 Line 1 does not help, since \( \rulename{{\to}E} \) on it would need \( P \to Q \) already. The third box assumes \( P \) again although line 2 already did: \( \rulename{{\to}I} \) needs the box, not new information.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 2: opens a box with \( P \) and inside it a box with \( Q \), read off the goal.
 - 3: derives \( P \to Q \) inside the box of \( Q \) by a box whose last line is \( Q \).
@@ -1345,11 +1384,11 @@ Line 1 does not help, since \( \rulename{{\to}E} \) on it would need \( P \to Q 
 - 2: closes the boxes inner first, each \( \rulename{{\to}I} \) citing an available box.
 - 1: the sentence says \( P \to Q \) must be a line that no elimination rule can supply, hence needs a box.
 
-Fatal errors (0 for the step): citing a line outside the box that contains it; writing \( P \to Q \) with no box.
+Slips that lose the step: citing a line outside the box that contains it; writing \( P \to Q \) with no box.
 :::
 
 ::: {#exr-proving-an-implication-c3}
-[C3: Exit check: a derivation and its prose]
+[C3: Chapter check: a derivation and its prose]
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Write a derivation of \( P \to Q, \ (Q \to R) \wedge (R \to S) \vdash P \to S \), with every line justified.
@@ -1384,7 +1423,7 @@ Lines 1–4 lie in no box, so they are available inside the box \( \lines{5}{8} 
 
 In prose: *We know that \( x > 5 \) implies \( x > 4 \), and that \( x > 4 \) implies \( x^2 > 16 \) and \( x^2 > 16 \) implies \( x^2 > 9 \). In particular, \( x > 4 \) implies \( x^2 > 16 \). In particular, \( x^2 > 16 \) implies \( x^2 > 9 \). Suppose \( x > 5 \). Then \( x > 4 \). Hence \( x^2 > 16 \). So \( x^2 > 9 \). This proves that if \( x > 5 \), then \( x^2 > 9 \).*
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 2: takes the conjunctive premise apart by two \( \rulename{\wedge E} \) lines (inside or outside the box).
 - 2: opens a box with \( P \) (not \( S \)) and closes it on \( S \), a line of that box.
@@ -1392,9 +1431,9 @@ In prose: *We know that \( x > 5 \) implies \( x > 4 \), and that \( x > 4 \) im
 - 1: each closing \( \rulename{{\to}I} \) cites its box as a range.
 - 3: prose with one sentence per step, "suppose" for the assumption, and a closing sentence stating the implication.
 
-A route that first derives \( Q \to S \) in a box of \( Q \) (as in @prp-implication-transitive) and then uses it in the box of \( P \) earns the same points: its \( \rulename{{\to}E} \) steps in both boxes count for the third line, and its two \( \rulename{{\to}I} \) steps for the fourth.
+Another route first derives \( Q \to S \) in a box of \( Q \), as in @prp-implication-transitive, and then uses it in the box of \( P \). It gets the same points. Its \( \rulename{{\to}E} \) steps in both boxes count for the third item, and its two \( \rulename{{\to}I} \) steps for the fourth.
 
-Fatal errors (0 for the step): a box opened with the conclusion \( S \) (the converse error); citing a line of the box after it has closed.
+Slips that lose the step: a box opened with the conclusion \( S \) (the converse error); citing a line of the box after it has closed.
 :::
 
 ::: {#exr-proving-an-implication-c4}
@@ -1410,7 +1449,7 @@ Each line of a derivation depends on the premises and on the assumptions of the 
 :::
 
 ::: {.solution}
-(a) Line 1: \( \{1\} \). Line 2: \( \{1, 2\} \). Lines 3, 4 and 5: \( \{1, 2, 3\} \). Line 6: \( \{1, 2\} \). Line 7: \( \{1\} \). The premise is in every set; the assumption of line 3 only in the sets of lines 3–5, the lines of its box; the assumption of line 2 in the sets of lines 2–6.
+(a) Line 1: \( \{1\} \). Line 2: \( \{1, 2\} \). Lines 3, 4 and 5: \( \{1, 2, 3\} \). Line 6: \( \{1, 2\} \). Line 7: \( \{1\} \). The premise is in every set. The assumption of line 3 is only in the sets of lines 3–5, the lines of its box. The assumption of line 2 is in the sets of lines 2–6.
 
 (b) Line 5 gives \( (P \wedge Q) \to R, \ P, \ Q \vdash R \):
 
@@ -1449,14 +1488,14 @@ In each, the lines down to the chosen one, with the assumptions of the boxes sti
 
 For \( \rulename{{\to}I} \): the box's last line is a line of the box itself, so it lies in the cited box and in the boxes around it. The \( \rulename{{\to}I} \) line lies in exactly the boxes around the cited box (the condition for a box to be available). So the set of the \( \rulename{{\to}I} \) line is the set of the box's last line with one member removed: the line number of the box's assumption. That is the discharge, seen as a set.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 3: all seven sets correct (the premise in every set; line 3's assumption only in the sets of lines 3–5).
 - 2: line 5's sequent, with a correct derivation.
 - 2: line 6's sequent, with the box of \( Q \) kept.
 - 3: (c) uses the scope rule for the containment, and names the one assumption that a \( \rulename{{\to}I} \) line drops.
 
-Fatal errors (0 for the step): putting line 3 in the set of line 6 or line 7; treating an assumption as a premise of the whole derivation.
+Slips that lose the step: putting line 3 in the set of line 6 or line 7; treating an assumption as a premise of the whole derivation.
 :::
 
 <!-- dependency ledger
