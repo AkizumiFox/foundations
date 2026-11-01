@@ -15,7 +15,7 @@ What makes the step correct is what \( = \) means: \( a \) and \( b \) are names
 1. Every term names the same object as itself. Nothing needs to be assumed to write \( t = t \).
 2. If \( t_1 \) and \( t_2 \) name the same object, then a statement about \( t_1 \) may be rewritten as the same statement about \( t_2 \).
 
-The first rule is unusual: it cites no earlier line at all. A rule schema, as Section 1.2 defined it, may have no given lines at all (@def-rule-schema). This is the first rule of that kind.
+The first rule is unusual: it cites no earlier line at all. Chapter 1 planned for this in Section 1.2. The definition of a rule schema (@def-rule-schema) was worded so that a rule of Chapter 5 could have no given lines at all. This is that rule.
 
 ## The rules for equality
 
@@ -426,12 +426,12 @@ In the proof assistant Lean, the rules of the table are performed by the followi
 | =E | `rw [h]`, chains `calc` |
 :::
 
-Five derived rules of Chapter 2 have rows of their own. Modus tollens, the contrapositive and disjunctive syllogism (\( \rulename{MT} \), \( \rulename{CP} \), \( \rulename{DS} \)) have their rows in Section 2.3. Double negation elimination and excluded middle (\( \rulename{\neg\neg E} \), \( \rulename{LEM} \)) have theirs in Section 2.5. The derived sequents that searches use most are collected in Section 3.1. With the two equality rows, every rule of the calculus has its phrase.
+Some of the rules Chapter 2 derived have rows of their own. Modus tollens, the contrapositive and disjunctive syllogism (\( \rulename{MT} \), \( \rulename{CP} \), \( \rulename{DS} \)) have their rows in Section 2.3. Double negation elimination and excluded middle (\( \rulename{\neg\neg E} \), \( \rulename{LEM} \)) have theirs in Section 2.5. The derived sequents that searches use most are collected in Section 3.1. With the two equality rows, every rule of the calculus has its phrase.
 
 ::: {.warning}
 [Not allowed: \( \rulename{{=}E} \)]
 
-Each step below breaks a condition of @def-rules-equality, named after it.
+Each step below breaks a condition of @def-rules-equality or one of the two warnings above ("A bound variable is not a place to substitute" and "Words about knowledge are not formulas"). The condition or warning is named after the step.
 
 - "From \( c = f(b) \) and \( Q(f(b)) \), write \( Q(c) \)": the equation is read left to right and rewrites \( c \) into \( f(b) \). Turn it round first, by (sym).
 - "From \( x = 0 \) and \( \forall x\, (x \ge x) \), write \( \forall x\, (0 \ge 0) \)": only free occurrences are replaced, and both \( x \)'s of \( x \ge x \) are bound.

@@ -40,6 +40,13 @@ items:
     evidence: 01:128-134. Checked against Figure W (arrows a->b, b->c, c->c, d->a). Q holds of b and c,
       and both have an arrow to c; no arrow ends at d, so d is a witness for the second sentence. Both
       answers are true as the solution says.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 64827ac77369
+    date: '2026-11-01'
+    evidence: The check text is unchanged. Only the paragraph before it (l.128) lost a trailing pointer.
+      No mathematical change.
 - key: check:01-predicates-and-quantifiers:2
   kind: check
   file: 01-predicates-and-quantifiers.md
@@ -160,6 +167,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: solution (a) split in three, same school fact; pointers to bounded quantifiers
       keep the same target; statement and readings unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: c88a1c6b8cb3
+    date: '2026-11-01'
+    evidence: 'Solution (a), l.193: the sentence is split in three, with the same school fact about signs.
+      l.199: "The next subsection makes this a rule" becomes "Bounded quantifiers, below, make this a
+      rule", the same target. l.202: "we return to it ...'
 - key: def-bounded-quantifier
   kind: def
   file: 01-predicates-and-quantifiers.md
@@ -210,6 +225,29 @@ items:
     date: '2026-11-01'
     evidence: 'coordinator: split the trailing ''and likewise'' clause into its own sentence; statement
       means the same (STYLE 13 B6)'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 3f9d19fa28a9
+    date: '2026-11-01'
+    evidence: 'The statement is word for word unchanged (l.211-222). The new unlabeled instance at l.207
+      checks out: over R with A={1,2}, the implication holds at 1 and 2 and is vacuously true elsewhere,
+      and 2 is a witness for "in A and >1". It is ...'
+  - stage: S5e
+    verdict: minor
+    by: s5e-referee
+    hash: 3f9d19fa28a9
+    date: '2026-11-01'
+    evidence: check_beginner still flags 39 words at l.215. The checker joins "The bounded quantifiers
+      are the abbreviations [display]" with "In the same way, ... likewise with >=, <, <= in place of
+      >". The text is unchanged statement wording, and ...
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 3f9d19fa28a9
+    date: '2026-11-01'
+    evidence: '01:221-222: the trailing "likewise with >=,<,<=" is already its own sentence; check_beginner
+      0 findings on ch05; statement mathematics unchanged'
 - key: exm-quantifier-order-sum
   kind: exm
   file: 01-predicates-and-quantifiers.md
@@ -280,6 +318,14 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: f→c rename is consistent through the key/lock table; sidecar a2 updated and passes
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 3712b40f62e2
+    date: '2026-11-01'
+    evidence: Only the duplicated bold heading inside the fold is removed, because the fold title attribute
+      already carries it. The body text, @exm-quantifier-order-sum and the Section 5.4/5.6 pointers are
+      unchanged.
 - key: check:01-predicates-and-quantifiers:5
   kind: check
   file: 01-predicates-and-quantifiers.md
@@ -310,6 +356,14 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: '361: Key(c) false because the lock c is not a key; the formula is true in every building'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: c4635b5b99e0
+    date: '2026-11-01'
+    evidence: '"It is the warning after @def-bounded-quantifier again" becomes "an ∃ with an implication
+      inside, the slip shown after @def-bounded-quantifier", which is accurate: the warning box at l.239
+      is exactly that slip. The analysis paragraph is ...'
 - key: exr-predicates-and-quantifiers-a1
   kind: exr
   file: 01-predicates-and-quantifiers.md
@@ -351,6 +405,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: semicolon separators of (i)-(v) became commas; five formulas identical; a1
       sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 50e3da551f23
+    date: '2026-11-01'
+    evidence: 'l.388, item 1: the semicolon separators between (i)-(v) become commas and "and". All five
+      formulas are identical. The a1 sidecar passes.'
 - key: exr-predicates-and-quantifiers-a2
   kind: exr
   file: 01-predicates-and-quantifiers.md
@@ -509,6 +570,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: (d) ''By convention'' = the non-empty-domain convention; rubric renamed per
       STYLE 13 B4; points unchanged; b3 sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b319f22315b1
+    date: '2026-11-01'
+    evidence: 'l.533, (d): "(the convention of ''Quantifiers and the domain'')" becomes "By convention".
+      It is the same non-empty-domain convention stated earlier in the section, and the argument is unchanged.
+      The worked-examples line is reworded with ...'
 - key: exr-predicates-and-quantifiers-c1
   kind: exr
   file: 01-predicates-and-quantifiers.md
@@ -601,6 +670,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: rubric headings renamed; parentheticals split; points 2/2/3/3 and zero-score
       slips unchanged; c2 sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: a7dfd7f58f4f
+    date: '2026-11-01'
+    evidence: 'l.591-598: the rubric headings are renamed as in b3, and a blank line is added before the
+      list. In the last two bullets the parentheticals become separate sentences: the same number/witness
+      for every A or by cases, and the reason ...'
 - key: def-term
   kind: def
   file: 02-terms-formulas-substitution.md
@@ -651,6 +728,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: (Tm3) split, ''suitable'' added, same list condition; new instance x,1 ->
       x+1 -> (x+1)^2 uses listed symbols; codes named in words'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: fc51b7e993aa
+    date: '2026-11-01'
+    evidence: (Tm3) at l.45 is split into two sentences and gains 'suitable'. It still says the string
+      is the last entry of a finite list whose entries are variables, constants or f(s_1..s_n) of earlier
+      entries. The examples at l.56-59 now name the ...
 - key: def-first-order-formula
   kind: def
   file: 02-terms-formulas-substitution.md
@@ -712,6 +797,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: (Fm5) same clause list; new instance P(x+1), x=2, conjunction, exists x valid
       by (Fm1),(Fm3),(Fm4); induction/recursion refs kept'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: de893128f52a
+    date: '2026-11-01'
+    evidence: '(Fm5) at l.102: ''built from earlier entries by the clause for ¬ (Fm2), for the connectives
+      (Fm3) or for the quantifiers (Fm4)'' means the same as the old ''built by (Fm2), (Fm3) or (Fm4)
+      from earlier entries''. The new instance at l.85 is ...'
 - key: check:02-terms-formulas-substitution:1
   kind: check
   file: 02-terms-formulas-substitution.md
@@ -775,6 +868,14 @@ items:
     date: '2026-10-10'
     model: claude-opus-5-5
     evidence: 159-163; the degenerate cases at 169 are right (∀x P(c) has no occurrence of x).
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b9577afe2cf3
+    date: '2026-11-01'
+    evidence: In the fold at l.206-224, 'These are the degenerate cases' became 'In these there is nothing
+      to check' (l.213). In the recursive description of 'free', only sentence splits changed (l.224).
+      The four clauses are word for word the same.
 - key: exm-free-and-bound-limit
   kind: exm
   file: 02-terms-formulas-substitution.md
@@ -816,6 +917,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: conventions sentence split; L=0 works and L=1 fails for 1/(n+1), none for
       (-1)^n kept; ''the book avoids'' -> ''we avoid'''
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b0c957f556a5
+    date: '2026-11-01'
+    evidence: 'Statement l.231: ''With the conventions of Section 5.1 (domain R, the sequence as a function
+      symbol a)'' became ''Use the conventions of Section 5.1: the domain is R, and the sequence is a
+      function symbol a. Then ...''. The meaning is the ...'
 - key: check:02-terms-formulas-substitution:2
   kind: check
   file: 02-terms-formulas-substitution.md
@@ -882,6 +991,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: ''the rule in the slogan above'' replaced by the slogan written out; parts
       (a)-(d) unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d65bbfa9143a
+    date: '2026-11-01'
+    evidence: 'Statement l.281 changed ''by the rule in the slogan above'' to the slogan written out:
+      ''put the term in for every free occurrence of the variable, and change nothing else''. This matches
+      the italic slogan at l.276 word for word. Parts ...'
 - key: def-substitution
   kind: def
   file: 02-terms-formulas-substitution.md
@@ -924,6 +1041,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: recursion clauses identical; reading sentence split; fold title and well-definedness
       sentence reworded, same claim'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b1624f9582f8
+    date: '2026-11-01'
+    evidence: 'Definition l.309-316: the semicolon became a sentence break. ''For a formula φ, the formula
+      φ[t/x], read ..., is defined'' became ''We read φ[t/x] as ... For a formula φ, the formula φ[t/x]
+      is defined by recursion''. All recursion clauses ...'
 - key: proof:def-substitution
   kind: proof
   file: 02-terms-formulas-substitution.md
@@ -956,6 +1081,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: term part split into sentences, same steps; Uses line @def-substitution,
       @def-free-variable (both earlier in the section)'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: c43d44c099fc
+    date: '2026-11-01'
+    evidence: In the term part (l.356), the parenthetical became two sentences, and the steps and their
+      order are the same. A new Uses line at l.365, '@def-substitution (its recursion clauses); @def-free-variable
+      (the recursive description of free)', ...
 - key: check:02-terms-formulas-substitution:3
   kind: check
   file: 02-terms-formulas-substitution.md
@@ -1023,6 +1156,14 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: '410: ∀E, ∃I and =E carry the side condition, which matches the rules'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 54a2a2275e4b
+    date: '2026-11-01'
+    evidence: 'In the fold at l.430: ''variable and ...; each lies'' became ''variable, and ... . Each
+      lies'', and the argument is the same. In ''Before you substitute'' (l.438), ''first (next subsection),''
+      became ''first, as explained next,''. The definition ...'
 - key: check:02-terms-formulas-substitution:4
   kind: check
   file: 02-terms-formulas-substitution.md
@@ -1070,6 +1211,14 @@ items:
     model: claude-opus-5-5
     evidence: '02:444-452: ∀z(y+1<z) is safe. ∀y(y+1<y) is captured and is a sentence (''larger than its
       own successor''), false. Consistent with the def-free-for special cases.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6781a2711c3f
+    date: '2026-11-01'
+    evidence: 'The check itself is unchanged. The main-line text in this item''s span changes only its
+      wording. Renaming (l.470): ''derive it when the quantifier is at the front of a formula''. In the
+      status fold (l.472-474), sentences are split, and ...'
 - key: exr-terms-formulas-substitution-a1
   kind: exr
   file: 02-terms-formulas-substitution.md
@@ -1119,6 +1268,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: separators '';'' -> '',''; clause codes expanded in words; answers unchanged;
       a1 sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 5c2709a2010f
+    date: '2026-11-01'
+    evidence: In the statement (l.535-536), the separators between (i) and (iv) changed from ';' to ','.
+      In the solution (a)(i), '(no quantifier on y)' became 'since no quantifier is on y'. In (b), clause
+      codes were expanded ('two uses of the clause ...
 - key: exr-terms-formulas-substitution-a2
   kind: exr
   file: 02-terms-formulas-substitution.md
@@ -1249,6 +1406,13 @@ items:
     hash: c1ee8a48ea12
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: c1ee8a48ea12
+    date: '2026-11-01'
+    evidence: In solution (e) (l.~632), the semicolon and parenthetical became sentences. The free-for
+      reasoning and the result ∃y(y>x) ∧ Q(x+1) are unchanged, and sidecar b1 passes.
 - key: exr-terms-formulas-substitution-b2
   kind: exr
   file: 02-terms-formulas-substitution.md
@@ -1333,6 +1497,14 @@ items:
     hash: a6400c9a9fc6
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: a6400c9a9fc6
+    date: '2026-11-01'
+    evidence: 'Statement (a) l.~638 is split into two instructions: Var by recursion on terms with one
+      clause per case of @def-term, then FV with one clause per case of @def-first-order-formula. The
+      task is the same and both refs are kept. The ...'
 - key: exr-terms-formulas-substitution-b3
   kind: exr
   file: 02-terms-formulas-substitution.md
@@ -1380,6 +1552,14 @@ items:
     hash: 3cb42f26b4c7
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 3cb42f26b4c7
+    date: '2026-11-01'
+    evidence: 'Solution (a) l.~684 now reads ''Read both over N, with R as < and with x, y naming 2, 0.
+      Then the swap is true (z = 1), while the computed formula ... is false''. This is the same instance,
+      and it checks out: 0<1<2 holds, and 2<z<2 is ...'
 - key: exr-terms-formulas-substitution-c1
   kind: exr
   file: 02-terms-formulas-substitution.md
@@ -1479,6 +1659,14 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: hint and the quantifier case with x not free agree with the claim of the text
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 00b7c3222c6b
+    date: '2026-11-01'
+    evidence: In the quantifier case (l.~741), the justification '(the recursive description of "free
+      for")' moved in front of its conclusion, and the step order is the same. A new Uses line at l.756,
+      '@def-substitution (the quantifier clauses); ...
 - key: exr-terms-formulas-substitution-c2
   kind: exr
   file: 02-terms-formulas-substitution.md
@@ -1576,6 +1764,14 @@ items:
     model: claude-opus-5-5
     evidence: 'clause 1 gloss is right: ∧E extracts a ∀ conjunct, and a ∀ in an implication''s hypothesis
       cannot be instantiated'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 2deaa300686b
+    date: '2026-11-01'
+    evidence: 'Lines 39-47, the text after the definition block. ''Schema: the block above'' became ''the
+      two lines displayed above''. ''Read the definition clause by clause; exercises cite the clauses
+      by number'' became ''In detail, the rule has five ...'
 - key: check:03-universal-elimination:1
   kind: check
   file: 03-universal-elimination.md
@@ -1629,6 +1825,14 @@ items:
     model: claude-opus-5-5
     evidence: '03:55-61: 3+0=3 and y+0=y are φ[3/x], φ[y/x] (no quantifier, so free-for is automatic);
       3+0=x breaks clause 3. Ledger 771 covers it.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 8c3859e33880
+    date: '2026-11-01'
+    evidence: In its span, only the 'Why free for' paragraph (line 71) changed. 'the subsection on common
+      errors below shows the rule going wrong without it' became 'Without it, the rule could lead from
+      a true line to a false one, as the capture ...
 - key: check:03-universal-elimination:2
   kind: check
   file: 03-universal-elimination.md
@@ -1653,6 +1857,14 @@ items:
     evidence: '03:73-79: the only quantifier above the free x in ∃z(z>x+y) is ∃z, so t is free for x iff
       z is not in t. That matches def-free-for''s recursive description (02:423). The y instance, the
       z+1 capture, and the renaming to w (convention 02:458-465, ledger 759) all check.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d690c252919a
+    date: '2026-11-01'
+    evidence: In its span, only the 'Four derivations' lead-in (line 85) changed. 'worked derivations...
+      Each has an Idea that says why... continuing the search method' became 'Each solution first says
+      why each rule was chosen, by the search method ...
 - key: exm-universal-elimination-derivations
   kind: exm
   file: 03-universal-elimination.md
@@ -1702,6 +1914,14 @@ items:
     hash: 5c8ad59d1c7b
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 5c8ad59d1c7b
+    date: '2026-11-01'
+    evidence: The derivation blocks are byte-identical, and the sidecar plus check_fitch both pass. In
+      (a), the parenthetical about 'Section 5.1 wrote S' became its own sentence. In (c) and (d), 'fire'
+      became 'use it' or 'applying →E', which says the ...
 - key: check:03-universal-elimination:3
   kind: check
   file: 03-universal-elimination.md
@@ -1733,6 +1953,14 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: a counter-reading now includes values for free variables
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: a8ddd962cfaf
+    date: '2026-11-01'
+    evidence: '''A stall'' (line 285): the sentence with ⊥E and RAA was split, one reference per sentence,
+      and both @def-rules-contradiction and @def-rule-raa are still inline. The claim is unchanged: apart
+      from these two, a ∀-line can only be taken out ...'
 - key: exm-universal-elimination-instances
   kind: exm
   file: 03-universal-elimination.md
@@ -1771,6 +1999,13 @@ items:
     hash: cb93bb90e587
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: cb93bb90e587
+    date: '2026-11-01'
+    evidence: 'Line 302: ''(clause 4)'' became '', which breaks clause 4, free for x''. That name for
+      the clause matches the definition''s clause list. Nothing else changed.'
 - key: check:03-universal-elimination:4
   kind: check
   file: 03-universal-elimination.md
@@ -1793,6 +2028,14 @@ items:
     model: claude-opus-5-5
     evidence: '03:307-313: the instance at 2 is 2<f(2) ∨ f(2)=2·2. The given line leaves x free in its
       second disjunct, which breaks clause 3.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 3f58076eb592
+    date: '2026-11-01'
+    evidence: The Lean paragraph moved into a 'For instructors' second-reading fold (lines 323-325, B9
+      retained per the author), and its text was only split. The Lean column of the table is unchanged.
+      In the warning, 'the tag names the numbered ...
 - key: exr-universal-elimination-a1
   kind: exr
   file: 03-universal-elimination.md
@@ -1842,6 +2085,14 @@ items:
     hash: 6ab8051eadc2
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6ab8051eadc2
+    date: '2026-11-01'
+    evidence: 'Solution (iii) was split into sentences. The reading is the same: over ℕ, P(x) is x≥1,
+      c is 0 and a is 1. Line 1 is true because its hypothesis is false, and line 2 is false. The sidecar
+      passes.'
 - key: exr-universal-elimination-a2
   kind: exr
   file: 03-universal-elimination.md
@@ -1896,6 +2147,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'spelling only: judgement -> judgment (American spelling, build.py check)'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 2259635fdd3a
+    date: '2026-11-01'
+    evidence: Part 5's line list is now a nested bullet list with the same five lines and justifications.
+      In solution (d), 'the degenerate ∀x(P(g(c))→Q(c))' became '..., with no free x, whose quantifier
+      binds nothing', which is true. Solution (i) now ...
 - key: exr-universal-elimination-b1
   kind: exr
   file: 03-universal-elimination.md
@@ -1941,6 +2200,13 @@ items:
     hash: de64e7d988b0
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: de64e7d988b0
+    date: '2026-11-01'
+    evidence: The solution's first sentence was split at the semicolon. The backward chain R(a)←Q(a)←P(a)
+      and the line numbers 4 and 6 are unchanged.
 - key: exr-universal-elimination-b2
   kind: exr
   file: 03-universal-elimination.md
@@ -2050,6 +2316,13 @@ items:
     hash: 6fb9c005d2dd
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6fb9c005d2dd
+    date: '2026-11-01'
+    evidence: The task 'Name the move, then complete it' became 'Name the step to take, then complete
+      the derivation', and the solution's 'The move is' became 'The step is to'. The derivation is unchanged.
 - key: exr-universal-elimination-b5
   kind: exr
   file: 03-universal-elimination.md
@@ -2124,6 +2397,14 @@ items:
     hash: fbd675662777
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: fbd675662777
+    date: '2026-11-01'
+    evidence: The statement was split. A counter-reading still gives a domain, a meaning for each symbol
+      and a value for each constant, making the counterexample set true. 'Marking scheme' became 'What
+      a complete answer needs', as across fd1. 'Fatal ...
 - key: exr-universal-elimination-c1
   kind: exr
   file: 03-universal-elimination.md
@@ -2159,6 +2440,14 @@ items:
       The counterexample {(0,0)} on {0,1} is checked, and every symmetric, transitive relation on {0,1,2}
       satisfies R(a,b) -> R(a,a) (brute force). The hints do not execute the idea. The scheme accepts
       any line order.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 4e3824acd0d1
+    date: '2026-11-01'
+    evidence: '''fires the transitivity instance'' became ''applies →E to the transitivity instance''.
+      ''Fatal errors (0 for the step)'' became ''Slips that lose the step'', with the same two errors
+      listed. The points (2 ×5 = 10) are unchanged, and the ...'
 - key: exr-universal-elimination-c2
   kind: exr
   file: 03-universal-elimination.md
@@ -2273,6 +2562,14 @@ items:
     hash: e7c40d6a643d
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e7c40d6a643d
+    date: '2026-11-01'
+    evidence: In the marking scheme, the parenthetical list of the five clauses moved into a following
+      sentence with the same five clauses, and 6 and 4 points are unchanged. 'Fatal error (0 for the step)'
+      became 'A slip that loses the step', with the ...
 - key: def-rules-universal
   kind: def
   file: 04-universal-introduction.md
@@ -2441,6 +2738,14 @@ items:
     hash: e454b3ac6d55
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e454b3ac6d55
+    date: '2026-11-01'
+    evidence: 'Wording only. (a): the semicolon after ''R(c, c)'' became sentence breaks, and the claims
+      about constant vs flag are unchanged. (b): the table header ''Givens | Goal'' became ''We know |
+      We want'', which matches the other fd1 sections that ...'
 - key: check:04-universal-introduction:2
   kind: check
   file: 04-universal-introduction.md
@@ -2515,6 +2820,14 @@ items:
     hash: e72bc664af39
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e72bc664af39
+    date: '2026-11-01'
+    evidence: 'Solution split into three sentences with the same content: the inner box ends R(x0,x0),
+      the closing line must be ∀x R(x,x0), and the third clause fails. In the ledger range that follows,
+      the ''The front renaming, derived'' fold (new line ...'
 - key: prp-forall-and
   kind: prp
   file: 04-universal-introduction.md
@@ -2576,6 +2889,14 @@ items:
     hash: ca81849821a1
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ca81849821a1
+    date: '2026-11-01'
+    evidence: 'Wording only. New line 578: the reuse of x0 was split into sentences, with the same reason
+      (the side condition asks only about the premise, open assumptions and ∀x Q(x), and the earlier box
+      has closed). In the fine print, the three ...'
 - key: check:04-universal-introduction:4
   kind: check
   file: 04-universal-introduction.md
@@ -2637,6 +2958,14 @@ items:
     hash: 522b79bcd459
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 522b79bcd459
+    date: '2026-11-01'
+    evidence: 'Only change: ''The box earns ∀x (x ≤ x+1)'' became ''What the box does prove is ∀x (x ≤
+      x+1)''. This is true: replacing every x0 in x0 ≤ x0+1 gives that formula, and the side condition
+      holds. The derivation and all other sentences are ...'
 - key: exm-universal-introduction-instances
   kind: exm
   file: 04-universal-introduction.md
@@ -2775,6 +3104,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'spelling only: judgement -> judgment (American spelling, build.py check)'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ecb3ed1ad24c
+    date: '2026-11-01'
+    evidence: '(d): the semicolon run became a list, with the same five line justifications (2 ∀E 1 at
+      x0; 3,4 ∧E 2; 5 ∧I 3,4; 6 ∀I 2–5). (k): a list of lines 3–5, then line 6, with the same justifications
+      and range 3–5. (l): one new phrase, ''still ...'
 - key: exr-universal-introduction-b1
   kind: exr
   file: 04-universal-introduction.md
@@ -2845,6 +3182,14 @@ items:
     hash: 43b2516c01e5
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 43b2516c01e5
+    date: '2026-11-01'
+    evidence: The task 'Name the move' became 'Say which method this is'. In the solution, 'fire twice'
+      became 'apply →E twice', which matches lines 5 and 7 (→E 4,3 and →E 6,5), so the sentence is true
+      and more precise. Small wording nit, not ...
 - key: exr-universal-introduction-b2
   kind: exr
   file: 04-universal-introduction.md
@@ -3002,6 +3347,14 @@ items:
     hash: 7d75de37fe6c
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 7d75de37fe6c
+    date: '2026-11-01'
+    evidence: Only the marking block changed. 'Marking scheme' became 'What a complete answer needs'.
+      'Fatal errors (0 for the step)' became 'Slips that lose the step', with the same two listed errors.
+      Point values 3/3/2/2 = 10 are unchanged. (a) and ...
 - key: exr-universal-introduction-b5
   kind: exr
   file: 04-universal-introduction.md
@@ -3067,6 +3420,14 @@ items:
     hash: 8b0c83918177
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 8b0c83918177
+    date: '2026-11-01'
+    evidence: 'The closing paragraph was split into sentences: ''(e) repairs it…'' and ''Exercise C1 of
+      Section 5.3 shows…'' (the old parenthetical), with the same content. The marking heading was renamed.
+      ''Fatal errors (0 for the claim)'' became ''Slips ...'
 - key: exr-universal-introduction-c1
   kind: exr
   file: 04-universal-introduction.md
@@ -3115,6 +3476,14 @@ items:
       side condition is checked clause by clause, correctly. (c) at :681 is right: line 3 lies in no box,
       so it is available inside the box and R 3 is legal. The earlier finding is resolved. :679 no longer
       says that only p'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: bdc08d2671f5
+    date: '2026-11-01'
+    evidence: '(b): reworded (''The side condition looks only at premises and open assumptions because…'').
+      The parenthetical about renaming to z0 became a trailing clause with the same lines 4–5 formulas.
+      (c): ''With line 5 justified R 3 (and line 4 ...'
 - key: exr-universal-introduction-c2
   kind: exr
   file: 04-universal-introduction.md
@@ -3210,6 +3579,14 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: the reference to 'A first flagged box' and the reworded (b) are accurate
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 03b17b38bcd4
+    date: '2026-11-01'
+    evidence: '(d): ''The derivation under "A first flagged box" … is one'' was split into three sentences
+      with the same content (∀E at x0−1, arith to x0²−2x0+1 ≥ 0, which is φ[x0/x]). The marking block
+      was renamed with the same points, and ''Fatal ...'
 - key: def-rule-existential-introduction
   kind: def
   file: 05-existential-introduction.md
@@ -3246,6 +3623,14 @@ items:
       after a quantifier. Under that hypothesis every x in phi is a replaced occurrence and is free, so
       phi[t/x] gives back the line (def-substitution). The counterexample is right: from R(x,c), marking
       c gives R(x,'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b9e7a9a137fc
+    date: '2026-11-01'
+    evidence: 'Lines 39, 43-47, 66: the Schema bullet, ''Which occurrences?'' and the unmarked-row paragraph
+      are re-split only. ''The last row is the degenerate choice'' became ''This row marks no occurrence
+      at all'', and inside the fold it still points at ...'
 - key: check:05-existential-introduction:1
   kind: check
   file: 05-existential-introduction.md
@@ -3380,6 +3765,14 @@ items:
     hash: f40110f9e3be
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: f40110f9e3be
+    date: '2026-11-01'
+    evidence: 'The derivation and the prose steps are unchanged. A new Uses block (lines 136-138) sits
+      inside the proof: @def-rule-universal-elimination, @def-free-for, @def-rule-existential-introduction.
+      All three are accurate (∀E at x, x free for x, ...'
 - key: check:05-existential-introduction:3
   kind: check
   file: 05-existential-introduction.md
@@ -3486,6 +3879,14 @@ items:
     hash: 80bac66fffbd
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 80bac66fffbd
+    date: '2026-11-01'
+    evidence: 'Lines 196, 231, 273-281, 315, 318: sentences are split and ''(left)/(right)'' became ''On
+      the left/On the right''. ''Givens/Goal'' became ''We know | We want'', matching the rewritten Section
+      3.1. ''"first and third rows of the table above"'' ...'
 - key: exm-existential-introduction-instances
   kind: exm
   file: 05-existential-introduction.md
@@ -3524,6 +3925,14 @@ items:
     hash: 11006cbcfe01
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 11006cbcfe01
+    date: '2026-11-01'
+    evidence: 'Line 369: the parenthetical about the third row is split into sentences, with the same
+      content. Line 358, just before the item: ''Before the card,'' became ''Here is''. No mathematics
+      changed.'
 - key: check:05-existential-introduction:4
   kind: check
   file: 05-existential-introduction.md
@@ -3591,6 +4000,14 @@ items:
     hash: 8c429af225d8
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 8c429af225d8
+    date: '2026-11-01'
+    evidence: 'Statement line 418: the semicolons between (i)-(v) became commas plus ''and (v)''. Solution
+      lines 428-432: the parenthetical reading became sentences, and ''(v) ... true but not by this step''
+      became ''which is true but does not follow by ...'
 - key: exr-existential-introduction-a2
   kind: exr
   file: 05-existential-introduction.md
@@ -3639,6 +4056,14 @@ items:
     hash: 6457689beb7f
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6457689beb7f
+    date: '2026-11-01'
+    evidence: 'Part 5 (line 449): the semicolon list ''Justify each line: 1 ..., premise; 2 ..., premise;
+      3 ...'' became ''Lines 1 and 2 are the premises ... Line 3 is ...''. The formulas and the premise
+      status are the same. Solution (e) and (l) (lines ...'
 - key: exr-existential-introduction-b1
   kind: exr
   file: 05-existential-introduction.md
@@ -3709,6 +4134,14 @@ items:
     hash: 194be2939428
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 194be2939428
+    date: '2026-11-01'
+    evidence: 'Lines 491, 507: ''Name the move, then complete it'' became ''Name the method, then complete
+      the derivation'', and ''The move is'' became ''The method is''. The answer (postpone the witness)
+      and the derivation are unchanged.'
 - key: exr-existential-introduction-b2
   kind: exr
   file: 05-existential-introduction.md
@@ -3836,6 +4269,14 @@ items:
     hash: 66e87cd6f588
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 66e87cd6f588
+    date: '2026-11-01'
+    evidence: 'Lines 664-672: the pairs sentence is split. ''@exm-...; @prp-forall-implies-exists'' became
+      ''see @exm-... and that proposition'', and @prp-forall-implies-exists is still inline in the same
+      paragraph (''Claim (b) is the converse of ...'
 - key: exr-existential-introduction-c1
   kind: exr
   file: 05-existential-introduction.md
@@ -3925,6 +4366,14 @@ items:
     hash: 21e08b7a5499
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 21e08b7a5499
+    date: '2026-11-01'
+    evidence: 'Lines 680, 716-723: the statement is split at the colon, and the three clauses are word
+      for word. ''turning the leaked name into a witness'' became ''it uses the flag that survived into
+      line 3 as a witness'', which is accurate: line 4 is ∃I ...'
 - key: exr-existential-introduction-c2
   kind: exr
   file: 05-existential-introduction.md
@@ -4029,6 +4478,14 @@ items:
     hash: 1032eb3455b8
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 1032eb3455b8
+    date: '2026-11-01'
+    evidence: 'Lines 735-760: the inline list of the rules that could write P(c) and the list of lines
+      with ''nowhere to come from'' became bullet lists with the same members (∧E, →E, ↔E, ∨E, ∀E, ¬E,
+      ⊥E, RAA, R; conjunction, implication, biconditional, ...'
 - key: def-rules-existential
   kind: def
   file: 06-existential-elimination.md
@@ -4076,6 +4533,14 @@ items:
     hash: af77d1975adf
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: af77d1975adf
+    date: '2026-11-01'
+    evidence: 'wording only: the rule statement (line 47) only splits sentences (''variable. The box''s
+      first line ... Line h and the box must be available''), and the clauses, side condition and @def-derivation
+      are unchanged. Clause 3''s pointer now ...'
 - key: check:06-existential-elimination:1
   kind: check
   file: 06-existential-elimination.md
@@ -4147,6 +4612,14 @@ items:
     date: '2026-10-11'
     model: claude-opus-5-5
     evidence: 'Line 169: the statement matches the blueprint, and the Idea at line 173 matches the proof.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 175f2b54ac4c
+    date: '2026-11-01'
+    evidence: 'wording only: the statement is unchanged. The new B5 lead-in at line 183 (''over Z, some
+      integer is even and positive, witness 2; forget that ... some integer is even, and some integer
+      is positive'') is true and has a ledger source line. ...'
 - key: proof:prp-exists-and
   kind: proof
   file: 06-existential-elimination.md
@@ -4185,6 +4658,14 @@ items:
     hash: 1a342df1f70c
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 1a342df1f70c
+    date: '2026-11-01'
+    evidence: 'wording only: at line 243 the side-condition check for line 8 lists the same places (line
+      7, line 1 = the only premise, no open box), now as ''No box is open, so no open assumption contains
+      it.'' The steps and the line count of 8 are ...'
 - key: check:06-existential-elimination:2
   kind: check
   file: 06-existential-elimination.md
@@ -4247,6 +4728,13 @@ items:
     hash: 53013f529257
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 53013f529257
+    date: '2026-11-01'
+    evidence: 'wording only: at line 253 the boxes x0/y0 are opened while the first is open, the search
+      stalls, and the even/odd counter-reading over Z is unchanged. Only the sentence order changed.'
 - key: check:06-existential-elimination:3
   kind: check
   file: 06-existential-elimination.md
@@ -4270,6 +4758,14 @@ items:
     model: claude-opus-5-5
     evidence: '06:306-312: line 3 is to blame; line 4 is a copy of it and is false when x_0 names 0; line
       5 does pass every clause of the forall-I side condition'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: cb8031fa7593
+    date: '2026-11-01'
+    evidence: 'wording only: in the ''Three ways to break the rule'' prose before it, line 258 swaps ''the
+      fold after it'' for the box''s title. The new clause at line 289, ''it closes the box on a line
+      that mentions the witness'', is true: line 3 is x0 > 5 ...'
 - key: exm-existential-elimination-derivations
   kind: exm
   file: 06-existential-elimination.md
@@ -4324,6 +4820,14 @@ items:
     evidence: '06:404-608: all three derivations pass check_fitch; the side-condition checks at lines
       10, 6, 11 and 9 are right; the pointers to Section 1.6 (or-E) and Section 2.2 (not-I) are right;
       the Z reading in (b) is right'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 87b67313cc2a
+    date: '2026-11-01'
+    evidence: 'wording only: the statement is unchanged. The new lead-in at line 402, ''both directions
+      of an equivalence, and one sequent whose goal is a negation'', matches (a) ⊣⊢ and (b) ⊢ ¬∀x Q(x).
+      The surrounding prose (374 figure caption, 377 ...'
 - key: prp-exists-forall-swap
   kind: prp
   file: 06-existential-elimination.md
@@ -4346,6 +4850,14 @@ items:
     model: claude-opus-5-5
     evidence: Line 316 matches the blueprint. The Before-reading-on prompt is at line 328, as the blueprint
       asks.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: cb2ec9db372b
+    date: '2026-11-01'
+    evidence: 'wording only: the statement is unchanged. The new lead-in at line 612 (over N, R as x ≤
+      y, 0 is at most every number, so every number has some number at most it) is a true instance of
+      ∃x∀y R ⊢ ∀y∃x R and has a ledger source line. The ...'
 - key: proof:prp-exists-forall-swap
   kind: proof
   file: 06-existential-elimination.md
@@ -4386,6 +4898,14 @@ items:
     hash: fa41f5b1281a
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: fa41f5b1281a
+    date: '2026-11-01'
+    evidence: 'wording only: lines 690/692 keep the side condition of line 5 (χ, the existential = premise,
+      the open y0 box has no assumption) and line 6 by ∀I (@def-rules-universal kept, range from line
+      2 by the Section 5.4 convention). The ...'
 - key: exm-sum-of-evens
   kind: exm
   file: 06-existential-elimination.md
@@ -4441,6 +4961,14 @@ items:
     hash: 71035930c92a
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 71035930c92a
+    date: '2026-11-01'
+    evidence: 'wording only: line 880 lists the same places for l0 at line 7 (the outer assumption at
+      line 3, premises 1 and 2, line 6), with the parenthesis moved after a semicolon. The 8 lines and
+      the three-sentence written proof are unchanged.'
 - key: check:06-existential-elimination:4
   kind: check
   file: 06-existential-elimination.md
@@ -4519,6 +5047,14 @@ items:
     evidence: S7 leftover resolved by the coordinator per the re-referee's fix (stem narrowed to the paid
       pairings / b0 rename / ledger citation wording / Idea reordered / front-lock constant c); re-read
       after the edit
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: f70a1df05e93
+    date: '2026-11-01'
+    evidence: 'wording only: the statement ⊢ ¬∃y∀x(R(x,y)↔¬R(x,x)) is unchanged. The new two-villager
+      lead-in at line 895 checks: if Ann shaves Ann, she shaves a self-shaver; if not, she misses a non-self-shaver.
+      It is informal, has a ledger source ...'
 - key: proof:thm-barber
   kind: proof
   file: 06-existential-elimination.md
@@ -4594,6 +5130,13 @@ items:
     hash: 0aa661b17f6f
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 0aa661b17f6f
+    date: '2026-11-01'
+    evidence: 'wording only: line 976 keeps clause 3 (⊥ has no y0) and clauses 4 and 5 (no premise, no
+      open assumption, not in the existential of line 1 whose y is bound). The parentheses became sentences.'
 - key: exm-existential-elimination-instances
   kind: exm
   file: 06-existential-elimination.md
@@ -4639,6 +5182,14 @@ items:
     hash: 3bd892bc0dbb
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 3bd892bc0dbb
+    date: '2026-11-01'
+    evidence: 'wording only: line 1053 keeps the three boxes'' routes in the same order (arith m+1 = 2(k0+1)
+      and ∃I; ∧E, ∀E at u0, ∃I; arith from 0<δ0<ε). The prose and warning list nearby (981 ''as in the
+      bounded sequence below'', the same box the old ...'
 - key: exr-existential-elimination-a1
   kind: exr
   file: 06-existential-elimination.md
@@ -4736,6 +5287,14 @@ items:
     hash: 801c0ed41fa9
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 801c0ed41fa9
+    date: '2026-11-01'
+    evidence: 'wording only: statement item 3 reads ''Before reading on question'' for ''prompt''. In
+      the solution, (a) is re-punctuated. (b) gives the same side-condition checks. (c) turns the four
+      places at line 5 into a bulleted list with the same ...'
 - key: exr-existential-elimination-a2
   kind: exr
   file: 06-existential-elimination.md
@@ -4797,6 +5356,14 @@ items:
     hash: e09b114e0f8e
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e09b114e0f8e
+    date: '2026-11-01'
+    evidence: 'wording only: statement items 3 and 9 list the same lines, formulas and justifications
+      (1–10 and 1–4, with ∃E 1, 2–2), now as sentences. Solution (c) is a Line|Justification table with
+      identical entries 3–10, and (j), (k), (l) keep ...'
 - key: exr-existential-elimination-b1
   kind: exr
   file: 06-existential-elimination.md
@@ -4876,6 +5443,14 @@ items:
     hash: cf6930ca65ce
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: cf6930ca65ce
+    date: '2026-11-01'
+    evidence: 'wording only: the statement at 1262 ''Name the move, then complete it'' became ''Say which
+      rule the missing line uses, then write it''. The solution answers with ∀I closing the x0 box plus
+      the ''fix'', so the expected answer is unchanged. The ...'
 - key: exr-existential-elimination-b3
   kind: exr
   file: 06-existential-elimination.md
@@ -4922,6 +5497,13 @@ items:
     hash: c99efc7874bf
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: c99efc7874bf
+    date: '2026-11-01'
+    evidence: 'wording only: line 1327 only replaces a semicolon with a full stop. The arithmetic and
+      witness 2k0l0+k0+l0 are unchanged, and the sidecar passes.'
 - key: exr-existential-elimination-b4
   kind: exr
   file: 06-existential-elimination.md
@@ -4984,6 +5566,14 @@ items:
     hash: ebb086329e47
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ebb086329e47
+    date: '2026-11-01'
+    evidence: 'wording only: line 1434 re-punctuates the pairs, and the worked-example list keeps the
+      same four items, including @prp-exists-and, @exm-existential-elimination-derivations (b) and @exm-sum-of-evens.
+      ''Marking scheme'' became ''What a ...'
 - key: exr-existential-elimination-c1
   kind: exr
   file: 06-existential-elimination.md
@@ -5028,6 +5618,14 @@ items:
       3-9. The side-condition checks at l.806-808 are correct. The reading is now R(x,y) := ''x·y = 0'',
       and the S5b/S6 errors are resolved. The symmetry premise is true. The first premise holds with 0
       and only with'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 133fa8f32c7e
+    date: '2026-11-01'
+    evidence: 'wording only: the line 9 check at 1499 and the reading over Z with x·y=0 at 1503 are re-punctuated.
+      The marking-scheme rename keeps 10 points, and the three slips at 0 points became a list with the
+      same items. The sidecar passes.'
 - key: exr-existential-elimination-c2
   kind: exr
   file: 06-existential-elimination.md
@@ -5100,6 +5698,13 @@ items:
       Lines 1-3 and 5 are otherwise legal. In (c), the copy of P(x0) into a fresh flagged box followed
       by ∀I meets all three ∀I clauses, and the reading over ℤ (P = even) defeats the step. Hint 2 gives
       the start, not the ∀I trick. Scheme adds to 10.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 7bc161c507c3
+    date: '2026-11-01'
+    evidence: 'wording only: the marking-scheme heading was renamed. The three slips at 0 points (answering
+      ''no'', a counterexample to the conclusion, blaming line 5) are unchanged. The sidecar passes.'
 - key: exr-existential-elimination-c3
   kind: exr
   file: 06-existential-elimination.md
@@ -5141,6 +5746,14 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: ledger comment for prp-exists-and only
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: c2fcfbc95769
+    date: '2026-11-01'
+    evidence: 'wording only: ''Fatal error (0 for (a))'' became ''A slip that loses all of part (a)'',
+      and the error (instantiating at a number other than m) and the 10 points are unchanged. The sidecar
+      passes.'
 - key: def-rules-equality
   kind: def
   file: 07-equality-and-uniqueness.md
@@ -5182,6 +5795,14 @@ items:
       first primitive rule of the book with no given lines' and names LEM (Section 2.5, which cites nothing;
       ch02/05:535) as an earlier derived rule. This matches def-rule-schema ('possibly none', ch01/02:39)
       and the pro
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ef62a86efdf7
+    date: '2026-11-01'
+    evidence: 'The definition block is unchanged. In the reading, clause 4 now says ''Without it, a variable
+      of the new term can be captured, as in the nonexample on capture below''. That is true and points
+      to the existing ''A nonexample: capture'' at ...'
 - key: check:07-equality-and-uniqueness:1
   kind: check
   file: 07-equality-and-uniqueness.md
@@ -5261,6 +5882,13 @@ items:
     model: claude-opus-5-5
     evidence: '07:92-98: the second and third a are boxed, phi=(a*z=z+1); phi[a/z] is a*a=a+1 and phi[b/z]
       is a*b=b+1. Checked.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6a5046f7edff
+    date: '2026-11-01'
+    evidence: The fold 'Why no choice of the hole works' (about line 122) splits one 53-word sentence
+      into two explicit cases. The case analysis and the conclusion are identical.
 - key: prp-equality-symmetric-transitive
   kind: prp
   file: 07-equality-and-uniqueness.md
@@ -5293,6 +5921,13 @@ items:
       an =E; after (sym), just one)'' matches what reading the equation backwards actually needs: from
       a=b and P(b), write b=b by =I, then b=a by =E, then P(a) by =E. With (sym), that is the (sym) line
       plus the =E. The statement for arbitrary terms is correct.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: eff8bc8e6eec
+    date: '2026-11-01'
+    evidence: 'The statement is unchanged. The lead-in sentence was split, and the line counts stay the
+      same: two extra lines (=I and =E), or one after (sym).'
 - key: proof:prp-equality-symmetric-transitive
   kind: proof
   file: 07-equality-and-uniqueness.md
@@ -5339,6 +5974,14 @@ items:
     hash: 66369badffef
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 66369badffef
+    date: '2026-11-01'
+    evidence: 'The idea paragraph only turns a parenthesis into ''since ...''. The Fitch derivations are
+      unchanged. The new Uses line (line 173) reads ''@def-rules-equality; @def-substitution''. Both are
+      earlier: def-rules-equality is at line 24 of this ...'
 - key: prp-leibniz-law
   kind: prp
   file: 07-equality-and-uniqueness.md
@@ -5361,6 +6004,14 @@ items:
     model: claude-opus-5-5
     evidence: '07:194-201: the statement matches the blueprint word for word; ''seven-line derivation''
       matches the 7 lines in the fold; the meaning sentence is on the main line.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 03c32db28b94
+    date: '2026-11-01'
+    evidence: 'The statement is unchanged. ''the seven-line derivation is in the fold below'' became ''The
+      law has a seven-line derivation, given next.'' That is still true: the derivation is in the second-reading
+      fold right after, and it has 7 lines.'
 - key: proof:prp-leibniz-law
   kind: proof
   file: 07-equality-and-uniqueness.md
@@ -5408,6 +6059,14 @@ items:
     hash: 81415e5f192b
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 81415e5f192b
+    date: '2026-11-01'
+    evidence: 'The ''Finding it'' text and the side-condition text were split into shorter sentences with
+      the same claims: no premises, the boxes on lines 1-2 are closed, and the name is not in the conclusion.
+      The derivation is unchanged. The new Uses ...'
 - key: exm-extensionality-logical-half
   kind: exm
   file: 07-equality-and-uniqueness.md
@@ -5456,6 +6115,14 @@ items:
     hash: fb9bef609adb
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: fb9bef609adb
+    date: '2026-11-01'
+    evidence: '''(shorthand rule 1 of Section 5.2)'' became ''as Section 5.2 allows''. The statement and
+      derivation are unchanged. The solution prose was split at the semicolons and says the same thing.
+      The sidecar ...'
 - key: check:07-equality-and-uniqueness:3
   kind: check
   file: 07-equality-and-uniqueness.md
@@ -5529,6 +6196,13 @@ items:
     hash: 44f0a5a94553
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 44f0a5a94553
+    date: '2026-11-01'
+    evidence: The solution was split into sentences. The phi choices (a + 1 = z + 1), (a + 1 = z) and
+      (z <= 4), and the claim that the last link is about order, are unchanged.
 - key: exm-equality-and-uniqueness-instances
   kind: exm
   file: 07-equality-and-uniqueness.md
@@ -5573,6 +6247,13 @@ items:
     hash: e462f6dff344
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e462f6dff344
+    date: '2026-11-01'
+    evidence: 'The ''Not an instance'' paragraph was split into four sentences with the same content:
+      32 is one constant, so phi = (z^5 = 32) gives only (1+1)^5 = 32.'
 - key: exr-equality-and-uniqueness-a1
   kind: exr
   file: 07-equality-and-uniqueness.md
@@ -5695,6 +6376,14 @@ items:
     hash: 90a5b6882c4d
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 90a5b6882c4d
+    date: '2026-11-01'
+    evidence: 'Item 6 now lists the premises in prose, with the same lines 1-8. Solution (e): ''the degenerate
+      f(b)+b=7'' became ''Line 6 itself ... also works, with a phi that has no hole''. That is the same
+      and true. (f), (l): the same line ...'
 - key: exr-equality-and-uniqueness-b1
   kind: exr
   file: 07-equality-and-uniqueness.md
@@ -5824,6 +6513,14 @@ items:
     hash: a1ce993dbada
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: a1ce993dbada
+    date: '2026-11-01'
+    evidence: '''Name the move'' became ''Name the search step''. The solution''s ''The move is the search
+      step An equation'' became ''It is the search step for an equation, from this section''. ''with the
+      abbreviation of the text'' became ''With the abbreviation ...'
 - key: exr-equality-and-uniqueness-b5
   kind: exr
   file: 07-equality-and-uniqueness.md
@@ -5887,6 +6584,14 @@ items:
     hash: 4b0fde257ccb
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 4b0fde257ccb
+    date: '2026-11-01'
+    evidence: 'The solutions (a)-(h) are unchanged. ''Worked example types: ...'' became ''The derivations
+      follow three worked examples: ...'', with the same three references and @prp-equality-symmetric-transitive
+      kept. The marking scheme is now a ''What a ...'
 - key: exr-equality-and-uniqueness-c3
   kind: exr
   file: 07-equality-and-uniqueness.md
@@ -5952,6 +6657,13 @@ items:
     hash: c65b43eee9de
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: c65b43eee9de
+    date: '2026-11-01'
+    evidence: The marking scheme is now a bulleted list with the same weights, 2+2+3+1+2 = 10. The RAA
+      alternative and the two 0-for-the-step slips are unchanged. The solution text is unchanged.
 - key: def-unique-existence
   kind: def
   file: 08-counting-and-descriptions.md
@@ -6010,6 +6722,14 @@ items:
       exists-I reads line 5 as psi[c/x] with the stated occurrence choice. check_fitch reports 0 errors
       and check_structure 0 fatal. The ledger advisory on line 689 is the same format advisory the neighbouring
       lines get.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 7d79f7771137
+    date: '2026-11-01'
+    evidence: 'wording only: the definition block is word for word. New lead-in (x+1=4 over N: 3 works
+      and y+1=4 forces y=3) is true and has a ledger line. ''fold below'' dropped. ''Nonexample by minimal
+      change'' became ''When uniqueness fails''. ...'
 - key: check:08-counting-and-descriptions:1
   kind: check
   file: 08-counting-and-descriptions.md
@@ -6031,6 +6751,13 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: '08:37-43: over N only 0<1; over Z 0 and -1 both <1; matches def-unique-existence.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ed966c079591
+    date: '2026-11-01'
+    evidence: Question and solution are unchanged. Only the second-reading title after it was renamed
+      ('a degenerate case' became 'the formula x = c'), with the same content.
 - key: prp-unique-existence-use
   kind: prp
   file: 08-counting-and-descriptions.md
@@ -6063,6 +6790,14 @@ items:
     evidence: '07:314-321. The statement is correct. y is other than x and does not appear in φ, which
       is the same proviso as the definition and the blueprint (S2 recheck #13). ∧ binds tighter than →,
       so the right-hand side parses as intended.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: f87094368c5f
+    date: '2026-11-01'
+    evidence: 'Statement is word for word. New lead-in (the two halves for x+2=5 over R) is a true reading
+      of the RHS, with a ledger line. Idea block: ''searches as in Section 3.1, now with the quantifier
+      steps''; the ''third point'' phrase became ''the ...'
 - key: proof:prp-unique-existence-use
   kind: proof
   file: 08-counting-and-descriptions.md
@@ -6124,6 +6859,14 @@ items:
     hash: eab1efd8a24c
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: eab1efd8a24c
+    date: '2026-11-01'
+    evidence: 'wording only: the Fitch derivations are byte-identical. The commentary sentences were split
+      at semicolons. The side conditions for line 17 (v_0 not in a premise, not in line 17, not in the
+      open line 2), line 13 and line 16 are all still ...'
 - key: def-counting-with-equality
   kind: def
   file: 08-counting-and-descriptions.md
@@ -6177,6 +6920,14 @@ items:
     hash: 880defa6bbf5
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 880defa6bbf5
+    date: '2026-11-01'
+    evidence: The three bullet clauses are word for word. The 'For n >= 2' clause was split into three
+      sentences with the same content (n variables, n(n-1)/2 inequalities, among n+1 two equal, both).
+      New lead-in over N (numbers below 2 are 0 and 1; ...
 - key: exm-exactly-two-solutions
   kind: exm
   file: 08-counting-and-descriptions.md
@@ -6280,6 +7031,21 @@ items:
     hash: 5033697f1ec1
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: minor
+    by: s5e-referee
+    hash: 5033697f1ec1
+    date: '2026-11-01'
+    evidence: 'Line 244 (Russell''s unpacking): the new ''as defined in the previous subsection'' is FALSE
+      (check 5). Max is defined in ''How uniqueness is used and proved'' (line 183), two subsections back.
+      The previous subsection is ''Counting with ...'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 5033697f1ec1
+    date: '2026-11-01'
+    evidence: '08:244: pointer now reads "as defined earlier in this section" (Max defined in "How uniqueness
+      is used and proved"), which is true'
 - key: check:08-counting-and-descriptions:3
   kind: check
   file: 08-counting-and-descriptions.md
@@ -6316,6 +7082,13 @@ items:
     hash: d39af1919b8a
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d39af1919b8a
+    date: '2026-11-01'
+    evidence: 'The question is unchanged. The solution''s parentheses became sentences: ''school fact
+      of Section 5.1 that sqrt 2 exists. Uniqueness holds ...: if 0 <= u < v, then u*u < v*v.'' Same facts.'
 - key: check:08-counting-and-descriptions:4
   kind: check
   file: 08-counting-and-descriptions.md
@@ -6358,6 +7131,14 @@ items:
     model: claude-opus-5-5
     evidence: '08:276-285: hypotheses (P not in Γ, ψ, φ; c not in Γ, φ, ψ; φ has only x free) are each
       used in the fold; matches blueprint item 6.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d0f02233abba
+    date: '2026-11-01'
+    evidence: Statement is word for word. The new lead-in (Even(4) from 4=2*2 via the definition; exists
+      k (4=2k) by exists-I alone) is true and has a ledger line. The back-pointer 'as the subsection on
+      the x such that phi said' was dropped from the ...
 - key: proof:prp-definitional-extension
   kind: proof
   file: 08-counting-and-descriptions.md
@@ -6415,6 +7196,14 @@ items:
     hash: bd3fe50d9c92
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: bd3fe50d9c92
+    date: '2026-11-01'
+    evidence: 'wording only: (b) and (a) keep every step in order (fresh x_0, replacing c, the three reasons
+      each line stays correct, the exists-E box with @def-rules-existential, the closing conditions; renaming,
+      replacing P(t), the commutation, the ...'
 - key: exr-counting-and-descriptions-a1
   kind: exr
   file: 08-counting-and-descriptions.md
@@ -6461,6 +7250,14 @@ items:
     hash: 1c5039c091af
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 1c5039c091af
+    date: '2026-11-01'
+    evidence: 'Only (e) changed. It was split into sentences: ''Run lines 3-7 of that derivation again
+      ... They now sit inside flagged boxes ...''. The antecedent is the B1 (Section 5.7) derivation named
+      in the question, as before. The steps are the same.'
 - key: exr-counting-and-descriptions-a2
   kind: exr
   file: 08-counting-and-descriptions.md
@@ -6552,6 +7349,14 @@ items:
     hash: 127b1fe90711
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 127b1fe90711
+    date: '2026-11-01'
+    evidence: 'Only the rubric heading changed: ''Marking scheme'' became ''What a complete answer needs'',
+      and ''Fatal error (0 for the half)'' became ''Slips that lose the step, scoring 0 for the half''.
+      The points (3/3/4) and the failing item are ...'
 - key: exr-equality-and-uniqueness-b2
   kind: exr
   file: 08-counting-and-descriptions.md
@@ -6597,6 +7402,14 @@ items:
     hash: d4a9f5b5c7a2
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d4a9f5b5c7a2
+    date: '2026-11-01'
+    evidence: The four rule correspondences, which ran on as semicolon-separated text, became a bullet
+      list with the same content. The parenthetical became 'That box gives y = 0 directly, while not-I
+      would give only not(y != 0)', with the same claim. ...
 - key: exr-equality-and-uniqueness-b3
   kind: exr
   file: 08-counting-and-descriptions.md
@@ -6687,6 +7500,14 @@ items:
     hash: 7fa4fdf48258
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 7fa4fdf48258
+    date: '2026-11-01'
+    evidence: '(c): the parenthesis became ''; wedge-E gives the two premises''. Two inline @prp-unique-existence-use
+      became ''that proposition'' and ''unique existence'', and one inline @prp-unique-existence-use is
+      still there. The new Uses line lists ...'
 - key: exr-counting-and-descriptions-b5
   kind: exr
   file: 08-counting-and-descriptions.md
@@ -6732,6 +7553,13 @@ items:
     hash: a4fba0af9752
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: a4fba0af9752
+    date: '2026-11-01'
+    evidence: '''the move'' became ''the method'' (instantiate at the term you need). Rubric renamed,
+      with points 2/4/2/2 and the failing item unchanged.'
 - key: exr-equality-and-uniqueness-c1
   kind: exr
   file: 08-counting-and-descriptions.md
@@ -6816,6 +7644,14 @@ items:
       ∧E at ⊢ lines 5-6, ∧I at ⊣ line 4 and the ¬E clash 6,1 (which follows the schema order φ, ¬φ of
       ch02/02:31-33) are valid rule instances, and check_fitch reports 0 errors. I checked the ∃E freshness
       at lines'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 0d181cc4c5d4
+    date: '2026-11-01'
+    evidence: The grouping sentence was reworded with the same meaning ('by default, a longer conjunction
+      groups to the right (Section 4.5)'). 'step 5 of the method' became 'the step for a stuck search
+      applies (Section 3.1)'. I checked that ch03 §01 ...
 - key: exr-counting-and-descriptions-c3
   kind: exr
   file: 08-counting-and-descriptions.md
@@ -6888,6 +7724,14 @@ items:
     hash: 5f8825b1f32e
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 5f8825b1f32e
+    date: '2026-11-01'
+    evidence: The statement changed from 'Show that from A, B, C it follows that exactly two x satisfy'
+      to 'Assume A, B, C. Show that exactly two x then satisfy', with the same premises and the same displayed
+      conclusion. That is the same meaning. In ...
 - key: exr-counting-and-descriptions-r1
   kind: exr
   file: 08-counting-and-descriptions.md
@@ -6934,6 +7778,14 @@ items:
     hash: bce132f79bff
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: bce132f79bff
+    date: '2026-11-01'
+    evidence: The inline 'the method of @thm-structural-induction (Section 4.3)' became 'as in Section
+      4.3'. A new Uses line has @thm-structural-induction, and the ledger line was moved to match. Base
+      case, step and check are unchanged. Rubric ...
 - key: exr-counting-and-descriptions-r2
   kind: exr
   file: 08-counting-and-descriptions.md
@@ -6996,6 +7848,14 @@ items:
     hash: 746d8382d359
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 746d8382d359
+    date: '2026-11-01'
+    evidence: The rubric sentence was split. not-I + notnot-E earns the 4 box points, and so does @prp-contrapositive-converse
+      as a derived rule. The classical line of either route earns the naming 2. Same allocation, and the
+      failing item is ...
 - key: exr-counting-and-descriptions-r3
   kind: exr
   file: 08-counting-and-descriptions.md
@@ -7056,6 +7916,13 @@ items:
     hash: cdddec5c88e3
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: cdddec5c88e3
+    date: '2026-11-01'
+    evidence: Only the rubric heading and the 'Fatal error' label were renamed. Points 3/4/3 and the failing
+      item are unchanged.
 - key: exr-counting-and-descriptions-r4
   kind: exr
   file: 08-counting-and-descriptions.md
@@ -7108,3 +7975,11 @@ items:
     hash: 3d7b0861ee2e
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 3d7b0861ee2e
+    date: '2026-11-01'
+    evidence: '''The tools: ...'' became ''Two tools do the work. The first ... (@def-rule-universal-elimination,
+      Section 5.3). The second is =I (@def-rules-equality, Section 5.7), which proves the hypothesis of
+      line 3 from no premises.'' This is true: ...'
