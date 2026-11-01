@@ -1889,6 +1889,13 @@ items:
     hash: 5cd04fee42c5
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 2259635fdd3a
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'spelling only: judgement -> judgment (American spelling, build.py check)'
 - key: exr-universal-elimination-b1
   kind: exr
   file: 03-universal-elimination.md
@@ -2761,6 +2768,13 @@ items:
     hash: 3a22837c9705
     date: '2026-11-01'
     evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: ecb3ed1ad24c
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'spelling only: judgement -> judgment (American spelling, build.py check)'
 - key: exr-universal-introduction-b1
   kind: exr
   file: 04-universal-introduction.md

@@ -1137,7 +1137,7 @@ thm-square-even-implies-even (proof): instantiating (E1)-(E3) at n and n^2; nami
 prp-vacuous-implication (example): "Two sequents that sound wrong": 7 is odd and not even; no square is negative (x^2 >= 0); 3 is not a multiple of 4 and not even | school arithmetic and algebra
 prp-vacuous-implication (example): vacuous-truth warning: an even n > 2 has the divisor 2 with 1 < 2 < n, so is not prime | school arithmetic
 prp-vacuous-implication (example): "Two sequents that sound wrong": 4k = 2(2k), so every multiple of 4 is even | inline arithmetic
-prp-vacuous-implication (claim): some logics drop bot-E (relevance and paraconsistent logics; none named) | remark about other logics, used in no proof, now in the "For instructors" fold after "Two sequents that sound wrong" (STYLE §13 B9); 2.5 B3 derives bot-E from RAA and repetition
+prp-vacuous-implication (claim): some logics drop bot-E (relevance and paraconsistent logics; none named) | remark about other logics, used in no proof, now in the "For instructors" fold after "Two sequents that sound wrong" (STYLE section 13 B9); 2.5 B3 derives bot-E from RAA and repetition
 prp-vacuous-implication (solution): Quick check on the paradoxes: x^2 < 0 fails for every real x; x^2 + 1 > 0 for every real x | school algebra; AN1.1 (promised)
 prp-vacuous-implication (example): fold on the counterfactual: 7 is not divisible by 2 and not divisible by 3 | arithmetic
 exr-contradiction-and-vacuous-truth-a2 (solution): (j) x >= 1 and x <= 1 both hold at x = 1; (l) x > 1 is not(x <= 1), and x <= 1 is written (x < 1) or (x = 1) | arithmetic; the convention box

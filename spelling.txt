@@ -474,3 +474,6 @@ l’hôpital
 l'hôpital
 summable
 unshifted
+Kleene
+unsplit
+another

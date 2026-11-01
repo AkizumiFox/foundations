@@ -877,7 +877,7 @@ $\begin{nd}
 ::: {#exr-universal-introduction-a2}
 [A2: Drill]
 
-Each part takes a line or two. The parts run from single steps, through a missing line, a justification column and a judgement on one step, to whole derivations.
+Each part takes a line or two. The parts run from single steps, through a missing line, a justification column and a judgment on one step, to whole derivations.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. What does opening a flagged box say, in the words of a proof?

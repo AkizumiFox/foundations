@@ -385,7 +385,7 @@ Instantiating is always **safe**, in the sense of Section 3.1: the new line is a
 ::: {#exr-universal-elimination-a2}
 [A2: Drill]
 
-Each part takes a line or two. The parts run from single steps, through a missing premise, a justification column and a judgement on one step, to whole derivations.
+Each part takes a line or two. The parts run from single steps, through a missing premise, a justification column and a judgment on one step, to whole derivations.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Line 1 is \( \forall x\, (x^2 \ge 0) \). Write its instance at \( a + 1 \).

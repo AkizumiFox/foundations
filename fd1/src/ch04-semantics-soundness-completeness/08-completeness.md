@@ -1473,7 +1473,7 @@ exr-completeness-c4 (solution): prp-excluded-middle is derived with or-I; De Mor
 exr-completeness-c5 (solution): each case's sequents are derivable | verify/ch04/exr-completeness-c5.py (one tools/check_fitch.py derivation per case, schematic letters)
 exr-completeness-c5 (solution): strong induction on the number of nodes below X | thm-strong-induction (F1.3 §02), cited
 exr-completeness-c5 (solution): lem-atom-splitting holds for any formula in place of the atom | the remark after lem-atom-splitting (this section); the solution now gives the reason inline (its proof never uses that p is an atom) instead of pointing to the remark
-lem-connective-rows (proof): prp-vacuous-implication, exm-double-negation-introduction | moved from the sentence to the proof's Uses line (STYLE §13 B1); exr-proving-an-implication-b2 (a) is named as the same derivation, not relied on
+lem-connective-rows (proof): prp-vacuous-implication, exm-double-negation-introduction | moved from the sentence to the proof's Uses line (STYLE section 13 B1); exr-proving-an-implication-b2 (a) is named as the same derivation, not relied on
 lem-truth-table-line (proof): weakening and chaining | lem-weakening-cut (a), (c): named once inline, also in the proof's Uses line
 thm-completeness (proof): weakening and chaining in the Claim of Step 2 | lem-weakening-cut (a), (c): moved to the claim's Uses line
 lem-atom-splitting (idea): the rule or-E | def-rules-disjunction, in the idea's Uses line

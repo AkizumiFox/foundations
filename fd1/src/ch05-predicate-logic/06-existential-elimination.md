@@ -1665,7 +1665,7 @@ exr-existential-elimination-c1 (solution): over Z, x * y = y * x, 0 * y = 0, and
 exr-existential-elimination-c2 (solution): over Z some integer is even and not every integer is | school arithmetic
 def-rules-existential (claim): the purpose annotation: the engine prints "asm, for exists-E" | the book's printing convention (fitch-purposes: infer), not a fact used in any proof
 def-rules-existential (example): A first witness: n = 2k_0 gives n + 2 = 2(k_0 + 1); the side condition at line 5 | arith line (school algebra); verify/ch05/def-rules-existential.py
-prp-exists-and (claim): lead-in instance: over Z, 2 is even and positive, so some integer is even and some integer is positive | school arithmetic; informal truth, F1.4 §01 (unlabelled instance before the proposition, STYLE §13 B5)
+prp-exists-and (claim): lead-in instance: over Z, 2 is even and positive, so some integer is even and some integer is positive | school arithmetic; informal truth, F1.4 §01 (unlabelled instance before the proposition, STYLE section 13 B5)
 prp-exists-forall-swap (claim): lead-in instance: over N with R as "x <= y", 0 <= y for every y, so every y has some x with x <= y | school arithmetic; informal truth, F1.4 §01 (unlabelled instance, B5)
 thm-barber (claim): lead-in instance: in a village of two, neither villager shaves exactly those who do not shave themselves (ask whether she shaves herself; both answers clash) | case split on the one instance x = the candidate; informal, no rule cited (unlabelled instance before the theorem, B5)
 def-rules-existential (example): the twin: P(m) or P(n) as the long "or" of exists x P(x) over two named elements; or-E with two case boxes | def-rules-disjunction (cited); informal expansion over two named elements, F1.4 §01
