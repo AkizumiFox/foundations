@@ -329,17 +329,17 @@ prp-complex-square-roots (proof): s^2 = 1; s|b| = b by cases on the sign of b; p
 prp-complex-square-roots (proof): (u - w)(u + w) = u^2 - w^2 in a commutative ring | prp-complex-arithmetic-laws with fd3:prp-ring-algebra (c); inline
 prp-complex-square-roots (proof): 2 = 1 + 1 is non-zero in C | fd3:prp-ordered-ring-rules (h) in R, prp-reals-embed-complex (injective, preserves sums), cited
 prp-complex-square-roots (claim): Chapter 7 proves the FTA from square roots in this form | prose pointer (F5.5, lem-complex-direction-negative-real-part); nothing depends on it
-exm-complex-square-root (solution): |5 - 12i| = 13; x = 3, y = -2 | inline; verify/ch01/exm-complex-square-root.py
-prp-complex-square-roots (example): quick check, square roots of -4 and 2i | inline; verify/ch01/prp-complex-square-roots.py
+exm-complex-square-root (solution): |5 - 12i| = 13; x = 3, y = -2 | inline; verify/ch03/exm-complex-square-root.py
+prp-complex-square-roots (example): quick check, square roots of -4 and 2i | inline; verify/ch03/prp-complex-square-roots.py
 cor-complex-quadratic-formula (proof): 4a(az^2 + bz + c) = (2az + b)^2 - (b^2 - 4ac); 4 != 0 in C | prp-complex-arithmetic-laws, fd3:prp-ring-algebra (d); 4 = 4 * 1 > 0 in R by fd3:prp-ordered-ring-rules (h) and prp-reals-embed-complex
-cor-complex-quadratic-formula (example): z^2 - (3 + i)z + (2 + 2i) = 0 has the solutions 2 and 1 + i; discriminant -2i; (1 - i)^2 = -2i | inline; verify/ch01/cor-complex-quadratic-formula.py
+cor-complex-quadratic-formula (example): z^2 - (3 + i)z + (2 + 2i) = 0 has the solutions 2 and 1 + i; discriminant -2i; (1 - i)^2 = -2i | inline; verify/ch03/cor-complex-quadratic-formula.py
 prp-complex-not-orderable (proof): i * i = -1 | prp-reals-embed-complex, cited
 prp-complex-not-orderable (claim): n * 1 in C is the real n * 1 > 0 | fd1:ax-induction on n with prp-reals-embed-complex (iota preserves sums, iota(1) = 1, injective), so n * 1 = iota(n * 1) != 0; fd3:prp-ordered-ring-rules (h); inline
 prp-complex-not-orderable (claim): pays fd3 F3.9 Section 4.1 Exercise C1's prose pointer | backward pointer
-prp-complex-not-orderable (solution): quick check, i = ((1 + i)/sqrt 2)^2 | prp-complex-square-roots; verify/ch01/prp-complex-square-roots.py
-exr-square-roots-and-order-a1 (solution): run of the formula on -4 | verify/ch01/exr-square-roots-and-order-a1.py
-exr-square-roots-and-order-b1 (solution): roots +-(1 + 2i); solutions 2i, -2 - 2i | verify/ch01/exr-square-roots-and-order-b1.py
-exr-square-roots-and-order-b3 (solution): d = i sqrt(4ac - b^2), d^2 = b^2 - 4ac; example z^2 - 2z + 5 | inline; verify/ch01/exr-square-roots-and-order-b3.py
+prp-complex-not-orderable (solution): quick check, i = ((1 + i)/sqrt 2)^2 | prp-complex-square-roots; verify/ch03/prp-complex-square-roots.py
+exr-square-roots-and-order-a1 (solution): run of the formula on -4 | verify/ch03/exr-square-roots-and-order-a1.py
+exr-square-roots-and-order-b1 (solution): roots +-(1 + 2i); solutions 2i, -2 - 2i | verify/ch03/exr-square-roots-and-order-b1.py
+exr-square-roots-and-order-b3 (solution): d = i sqrt(4ac - b^2), d^2 = b^2 - 4ac; example z^2 - 2z + 5 | inline; verify/ch03/exr-square-roots-and-order-b3.py
 exr-square-roots-and-order-c2 (solution): -1 != 0 in a field | fd3:prp-ring-algebra (a); inline
-exr-square-roots-and-order-c2 (solution): squares in Z/3Z are [0], [1]; -[1] = [2] | fd2:prp-congruence-arithmetic (class arithmetic, [4] = [1]); fd2:prp-integers-mod-n (three classes); [1] + [1] + [1] = [0] against fd3:prp-ordered-ring-rules (b), (e); inline; verify/ch01/exr-square-roots-and-order-c2.py
+exr-square-roots-and-order-c2 (solution): squares in Z/3Z are [0], [1]; -[1] = [2] | fd2:prp-congruence-arithmetic (class arithmetic, [4] = [1]); fd2:prp-integers-mod-n (three classes); [1] + [1] + [1] = [0] against fd3:prp-ordered-ring-rules (b), (e); inline; verify/ch03/exr-square-roots-and-order-c2.py
 -->

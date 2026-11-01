@@ -1894,6 +1894,14 @@ items:
       uses T2 in (a), and T1, T3 in (b) through e^{i0} = 1 and e^{i theta} in T; prp-polar-form uses T4
       in (a), and T1, T3 in (b), plus T2 through thm-polar-multiplication; thm-de-moivre uses them through
       thm-polar-multiplication. prp-unit-circle (lines 19-41) comes before the box and uses none of them.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: a017cac18f73
+    date: '2026-11-01'
+    evidence: 05:64 now points to '*Integration, Series, and Function Spaces*, Chapter 7'. series.py lists
+      an2 Ch 7 as AN1.10 (Power Series, Taylor Series, and the Elementary Functions), and an1 Ch 10 is
+      AN1.11. The 05:473 ledger line and blueprint deviation (e) match.
 - key: def-polar-form
   kind: def
   file: 05-polar-form.md
@@ -1928,6 +1936,13 @@ items:
       e^{-i theta}, e^{2 pi i}, e^{in theta} and e^{-2 pi i}. It justifies this: theta is the imaginary
       part of i theta. That covers e^{-6i pi/3} (B1, line 339), e^{i*6pi/6} and e^{i*8pi/4}. Line 110
       gets |e^{i theta}'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 197dec99a428
+    date: '2026-11-01'
+    evidence: The only change is the pointer at 05:108, and it matches series.py. The e^{iθ} abbreviation
+      and its conventions are unchanged.
 - key: thm-polar-multiplication
   kind: thm
   file: 05-polar-form.md
@@ -2050,7 +2065,7 @@ items:
   kind: proof
   file: 05-polar-form.md
   line: 220
-  hash: 0633e4a7ccc8
+  hash: 619648e8624a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2096,6 +2111,15 @@ items:
     evidence: 05-polar-form.md:228 says 'by the remark after @prp-power-laws-commutative-ring in Section
       3.1'. That label now lives in Chapter 1, Section 1.1, so the 'remark after' it in Section 3.1 is
       a pre-merge leftover.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 619648e8624a
+    date: '2026-11-01'
+    evidence: 05:227 says r^n agrees in ℝ and ℂ 'since the embedding of ℝ in ℂ preserves powers (Section
+      3.1)'. That is the induction paragraph at 01:215, ι(a^{n+1}) = ι(a^n)ι(a) by prp-reals-embed-complex.
+      The ledger line at 05:486 was updated to match. prp-power-laws-commutative-ring (c) gives (re^{iθ})^n
+      = r^n(e^{iθ})^n.
 - key: exm-special-angles
   kind: exm
   file: 05-polar-form.md
@@ -2322,7 +2346,7 @@ items:
   kind: exr
   file: 05-polar-form.md
   line: 384
-  hash: f377cdad0b21
+  hash: eb7114adf295
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2399,6 +2423,25 @@ items:
     date: '2026-11-01'
     evidence: 05-polar-form.md:404 says 'the definition in (b) is for practice only'. Part (b) now cites
       @def-integer-power from Chapter 1 and defines nothing. The ledger marks this item STALE.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: eb7114adf295
+    date: '2026-11-01'
+    evidence: 'Statement (b) now binds θ ∈ ℝ and n ∈ ℕ. The solution to (b) still holds: thm-polar-multiplication
+      (b) (line 127) gives (e^{iθ})^{-1} = e^{-iθ}, and def-integer-power gives z^{-n} = (z^{-1})^n. thm-de-moivre
+      at -θ then gives e^{in(-θ)} = e^{-inθ}. The closing remark at line 405 is accurate and matches line
+      230. The solution to (a) is unchanged and correct. The claims-table rows for c1 now point to the
+      existing verify/ch03/exr-polar-form-c1.py.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: eb7114adf295
+    date: '2026-11-01'
+    evidence: (b) now quantifies over every θ and n. The solution gets (e^{iθ})^{-1} = e^{-iθ} from thm-polar-multiplication
+      (b), applies de Moivre at −θ, and so (e^{iθ})^{-n} = ((e^{iθ})^{-1})^n = e^{-inθ} by def-integer-power
+      (ch01/05:142). The closing sentence 'Nothing else in this chapter uses negative powers' agrees with
+      05:230.
 - key: exr-polar-form-c2
   kind: exr
   file: 05-polar-form.md
@@ -2441,6 +2484,13 @@ items:
       Re u is cited to thm-conjugate-properties (a), (c). (2) Line 460 now derives u_t = ((1-t^2) + 2ti)/(1+t^2),
       so rational t gives rational coordinates. (3) The marking scheme no longer requires the book's route
       (line 4
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: d14522208cc4
+    date: '2026-11-01'
+    evidence: 'The only change in the claims comment after c2 is a path correction: its row now cites
+      verify/ch03/exr-polar-form-c2.py, which exists. The statement and solution text are unchanged.'
 - key: thm-complex-nth-roots
   kind: thm
   file: 06-roots-of-unity.md
@@ -2467,7 +2517,7 @@ items:
   kind: proof
   file: 06-roots-of-unity.md
   line: 36
-  hash: 20e52c5fe6c1
+  hash: f244e2941622
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2497,6 +2547,14 @@ items:
     evidence: 06-roots-of-unity.md:37 (also :286 in the C1 solution) cites @lem-reals-nth-root (b) for
       the root being > 0. Part (b) of the Chapter 1 lemma (ch01/05:18) only gives b >= 0. Positivity is
       in Chapter 1's prose (05:88), not in the statement.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: f244e2941622
+    date: '2026-11-01'
+    evidence: '06:37: lem-reals-nth-root (b) (ch01/05:18) gives only a root ≥ 0, and positivity now follows
+      from 0^n = 0 ≠ ρ for n ≥ 1. 06:43 uses the uniqueness among non-negative roots, with r > 0. The
+      new ledger line at 06:~401 records the step.'
 - key: exm-roots-of-unity
   kind: exm
   file: 06-roots-of-unity.md
@@ -2767,7 +2825,7 @@ items:
   kind: exr
   file: 06-roots-of-unity.md
   line: 279
-  hash: 89bf82a06c08
+  hash: bc3c3f4cb70c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2803,6 +2861,13 @@ items:
       some z_k. The equivalence via @thm-de-moivre (which states r^n e^{in theta} is a polar form) and
       @prp-polar-form (b) checks out, and @lem-reals-nth-root (b) handles the modulus. The step that was
       missing is now there:'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: bc3c3f4cb70c
+    date: '2026-11-01'
+    evidence: 06:286 adds the same reason, root ≥ 0 by lem-reals-nth-root (b) and ≠ 0 because 0^n = 0
+      ≠ ρ, so |z_k| > 0 and 0 is no z_k. The rest of the solution is unchanged and correct.
 - key: exr-roots-of-unity-c2
   kind: exr
   file: 06-roots-of-unity.md
@@ -2883,7 +2948,7 @@ items:
   kind: exr
   file: 06-roots-of-unity.md
   line: 346
-  hash: 6fcc5335811f
+  hash: 924f979cee4f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2956,6 +3021,29 @@ items:
     evidence: '06:346-357. After the merge the previous chapter is fd4 Chapter 2 (Z/nZ, def-integers-mod-n-ring).
       R2''s solution still cites only fd2, and R1 (fd3 Chapter 6) is now 3 chapters back, so the R1/R2
       roles of STYLE §11.5 are swapped. Ledger: STALE.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 924f979cee4f
+    date: '2026-11-01'
+    evidence: Rechecked the solution. Well-definedness and injectivity follow from [k]=[l] iff n|k-l (the
+      paragraph after def-integers-mod-n-ring) together with thm-complex-nth-roots (b). Surjectivity and
+      the target set follow from thm-complex-nth-roots (a). The addition [k]+[l]=[k+l] comes from thm-quotient-ring-by-ideal
+      (b), and the homomorphism step from thm-polar-multiplication (a). The count uses thm-integers-mod-n-ring
+      (b) and thm-complex-nth-roots (c). All cited labels are in fd4 Chapter 2 or earlier, and the ledger
+      line was added. The only items left are the deferred STYLE §13 B1 issue (F008, no Uses block) and
+      the index.md 'What you need' entry in another file, both outside this mathematics verdict.
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 924f979cee4f
+    date: '2026-11-01'
+    evidence: 'The mathematics and citations are correct. def-integers-mod-n-ring (fd4 ch02/03:142, with
+      its prose: [a] = [b] iff n | a − b) supports the classes, thm-quotient-ring-by-ideal (b) gives [k]
+      + [l] = [k + l], and thm-integers-mod-n-ring (b) gives n elements. Well-definedness and injectivity
+      are each read off the equivalence from thm-complex-nth-roots (b). ''Chapter 5'' at 06:357 is correct.
+      The item stays minor only for the deferred F023 R1/R2 order (STYLE §11.5) and the deferred D1 §13
+      wording.'
 - key: exr-roots-of-unity-r3
   kind: exr
   file: 06-roots-of-unity.md

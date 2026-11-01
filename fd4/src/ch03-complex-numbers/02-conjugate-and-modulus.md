@@ -339,7 +339,7 @@ Fatal errors (0 for the step): dividing by \( a^2 + b^2 \) without first using \
 <!-- dependency ledger
 def-conjugate-modulus (claim): the modulus depends only on z | prp-reals-embed-complex (compare parts); inline
 def-conjugate-modulus (claim): a^2 + b^2 >= 0 (0^2 = 0 in the zero case) | fd3:prp-ordered-ring-rules (e), (b) (cited); fd3:prp-ring-algebra (b) for 0^2 = 0, used silently
-def-conjugate-modulus (example): sqrt 25 = 5, sqrt 1 = 1, sqrt 0 = 0, sqrt 169 = 13 by uniqueness | fd3:prp-cof-square-roots (cited); arithmetic in R; verify/ch01/def-conjugate-modulus.py
+def-conjugate-modulus (example): sqrt 25 = 5, sqrt 1 = 1, sqrt 0 = 0, sqrt 169 = 13 by uniqueness | fd3:prp-cof-square-roots (cited); arithmetic in R; verify/ch03/def-conjugate-modulus.py
 def-conjugate-modulus (claim): over Q, |1 + i| would be a rational square root of 2 | fd3:thm-no-rational-square-two (cited)
 def-conjugate-modulus (claim): N(z) = a^2 + b^2: N(2) = 4, N(1+1) = 4 > N(1) + N(1) = 2 | arithmetic; inline
 prp-modulus-of-real (proof): 0 * i = i * 0 = 0 and -0 = 0 in C | (F6), fd3:prp-ring-algebra (a), (b) in the commutative ring C (prp-complex-arithmetic-laws and the remark after it) (cited)
@@ -351,15 +351,15 @@ thm-conjugate-properties (claim): z -> -conj z sends 1 to -1 and 1*1 to -1 | ari
 thm-conjugate-properties (claim): pointers to Section 3.3 (square the modulus, triangle inequality) and Section 3.5 (angles) | prose pointers within the chapter; nothing depends on them
 prp-complex-inverse (proof): the product 1/|z|^2 * |z|^2 = 1 computed in R equals that in C | prp-reals-embed-complex (cited)
 thm-complex-numbers-field (claim): pointer to Chapter 4 (fields; R inside C as one example of a subfield) | prose pointer; nothing depends on it
-exm-complex-division (solution): 1/(3 + 4i) = 3/25 - (4/25)i; (5 + i)/(1 - i) = 2 + 3i | verify/ch01/exm-complex-division.py
+exm-complex-division (solution): 1/(3 + 4i) = 3/25 - (4/25)i; (5 + i)/(1 - i) = 2 + 3i | verify/ch03/exm-complex-division.py
 exm-complex-division (example): z/w = z conj(w) / |w|^2 | prp-complex-inverse, fd3:lem-field-fraction-rules (b) (cited); conj w != 0 by thm-conjugate-properties (d), (e) (cited)
 exm-complex-division (solution): the quotient is the only u with u(1 - i) = 5 + i | (F5), (F7), (F8) in C via thm-complex-numbers-field (cited); inline
-prp-modulus-of-real (claim): the Quick check after it: -2i and 1 - i have conjugates 2i, 1 + i and moduli 2, sqrt 2 | verify/ch01/def-conjugate-modulus.py
-exm-complex-division (example): the Quick check after it: |(1+i)(1-i)| = 2, sqrt2 * sqrt2 = 2, 1/i = -i | verify/ch01/exm-complex-division.py
-exr-conjugate-and-modulus-a1 (solution): 1/(1 + 2i) = 1/5 - (2/5)i | verify/ch01/exr-conjugate-and-modulus-a1.py
-exr-conjugate-and-modulus-b1 (solution): 14 - 5i; i; 65 (|5 - 12i| = 13); 1/2, -1/2 | verify/ch01/exr-conjugate-and-modulus-b1.py
+prp-modulus-of-real (claim): the Quick check after it: -2i and 1 - i have conjugates 2i, 1 + i and moduli 2, sqrt 2 | verify/ch03/def-conjugate-modulus.py
+exm-complex-division (example): the Quick check after it: |(1+i)(1-i)| = 2, sqrt2 * sqrt2 = 2, 1/i = -i | verify/ch03/exm-complex-division.py
+exr-conjugate-and-modulus-a1 (solution): 1/(1 + 2i) = 1/5 - (2/5)i | verify/ch03/exr-conjugate-and-modulus-a1.py
+exr-conjugate-and-modulus-b1 (solution): 14 - 5i; i; 65 (|5 - 12i| = 13); 1/2, -1/2 | verify/ch03/exr-conjugate-and-modulus-b1.py
 exr-conjugate-and-modulus-b2 (solution): 2 != 0 in R and 2i != 0 in C; 2bi = b(2i); (b(2i))(2i)^{-1} = b | fd3:prp-ordered-ring-rules (h) (2 = 2 * 1 > 0); prp-complex-arithmetic-laws; (F5), (F7), (F8) via thm-complex-numbers-field; inline
-exr-conjugate-and-modulus-c1 (solution): (ac - bd)^2 + (ad + bc)^2 = (a^2 + b^2)(c^2 + d^2) (second route, in the marking scheme) | verify/ch01/thm-conjugate-properties.py
+exr-conjugate-and-modulus-c1 (solution): (ac - bd)^2 + (ad + bc)^2 = (a^2 + b^2)(c^2 + d^2) (second route, in the marking scheme) | verify/ch03/thm-conjugate-properties.py
 exr-conjugate-and-modulus-c2 (solution): Q closed in R under +, *, negatives, inverses | fd3:thm-rational-embedding (a), (c) (cited); identification q = kappa(q) of F3.10 (prose)
 exr-conjugate-and-modulus-a1 (solution): squares of reals are >= 0 | fd3:prp-ordered-ring-rules (e), fd3:prp-ring-algebra (b) (cited)
 exr-conjugate-and-modulus-c1 (solution): |z||w| >= 0; r|z|^2 = 1 in R equals that in C | (O4) of fd3:def-ordered-ring-and-field, fd3:prp-ring-algebra (b), prp-reals-embed-complex (cited)

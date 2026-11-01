@@ -341,14 +341,14 @@ cor-complex-triangle-variants (proof): w - z = (-1)(z - w); z - (-w) = z + w | f
 cor-complex-triangle-variants (proof): from -t <= |z - w| to -|z - w| <= t, both cases | fd3:prp-ordered-ring-rules (a) with -(-t) = t, fd3:prp-ring-algebra (a), cited
 cor-complex-triangle-variants (proof): finite sums in C by appending the last term; induction from n = 1 | fd2:def-sum-product used as a template (its recursion uses only fd2:thm-recursion and the operations of C); fd1:ax-induction through fd3:cor-omega-identification (b), on m = n - 1
 cor-complex-triangle-variants (claim): Chapter 7 uses (b) and (c) for polynomial growth | prose pointer (F5.5, lem-complex-polynomial-growth); nothing depends on it
-cor-complex-triangle-variants (example): quick check values |5 - 3i| = |5 + 3i| = sqrt 34, 2 <= sqrt 34 | inline; verify/ch01/cor-complex-triangle-variants.py
-thm-complex-triangle-inequality (example): quick check |3 + 4i| + |-3 + 4i| = 10, |8i| = 8; warning (2i)^2 = -4, |2i|^2 = 4 | inline; verify/ch01/thm-complex-triangle-inequality.py
-lem-real-part-at-most-modulus (example): values for 3 - 4i, 2, -1, 2i | inline; verify/ch01/lem-real-part-at-most-modulus.py
-exr-triangle-inequality-a1 (solution): cross term 0, 25 <= 49 for z = 3, w = 4i | verify/ch01/exr-triangle-inequality-a1.py
-exr-triangle-inequality-b1 (solution): x = |u| iff y = 0 and x >= 0; (1 + i)(2 - 2i) = 4, |3 + 3i| = 3 sqrt 2 | fd3:prp-ordered-ring-rules (e), fd3:prp-cof-square-roots, cited; verify/ch01/exr-triangle-inequality-b1.py
+cor-complex-triangle-variants (example): quick check values |5 - 3i| = |5 + 3i| = sqrt 34, 2 <= sqrt 34 | inline; verify/ch03/cor-complex-triangle-variants.py
+thm-complex-triangle-inequality (example): quick check |3 + 4i| + |-3 + 4i| = 10, |8i| = 8; warning (2i)^2 = -4, |2i|^2 = 4 | inline; verify/ch03/thm-complex-triangle-inequality.py
+lem-real-part-at-most-modulus (example): values for 3 - 4i, 2, -1, 2i | inline; verify/ch03/lem-real-part-at-most-modulus.py
+exr-triangle-inequality-a1 (solution): cross term 0, 25 <= 49 for z = 3, w = 4i | verify/ch03/exr-triangle-inequality-a1.py
+exr-triangle-inequality-b1 (solution): x = |u| iff y = 0 and x >= 0; (1 + i)(2 - 2i) = 4, |3 + 3i| = 3 sqrt 2 | fd3:prp-ordered-ring-rules (e), fd3:prp-cof-square-roots, cited; verify/ch03/exr-triangle-inequality-b1.py
 exr-triangle-inequality-b1 (solution): pointer to the n-term equality case in the linear algebra volumes | prose comparison; nothing depends on it
-exr-triangle-inequality-b2 (solution): the two expansions; conj(u - v) = conj u - conj v; conj(1) = 1; conj(1 - conj(z) w) = 1 - z conj(w) | thm-conjugate-properties (a)-(c), prp-modulus-of-real, fd3:prp-ring-algebra (c) in C, cited; verify/ch01/exr-triangle-inequality-b2.py
-exr-triangle-inequality-b3 (solution): (sqrt 2)^2 = 2, sqrt 2 >= 0; 2(x^2 + y^2) - (|x| + |y|)^2 = (|x| - |y|)^2 | fd3:prp-cof-square-roots; inline; verify/ch01/exr-triangle-inequality-b3.py
-exr-triangle-inequality-c2 (solution): 1 - |z|^2 - |w|^2 + |z|^2|w|^2 = (1 - |z|^2)(1 - |w|^2) | inline; verify/ch01/exr-triangle-inequality-c2.py
+exr-triangle-inequality-b2 (solution): the two expansions; conj(u - v) = conj u - conj v; conj(1) = 1; conj(1 - conj(z) w) = 1 - z conj(w) | thm-conjugate-properties (a)-(c), prp-modulus-of-real, fd3:prp-ring-algebra (c) in C, cited; verify/ch03/exr-triangle-inequality-b2.py
+exr-triangle-inequality-b3 (solution): (sqrt 2)^2 = 2, sqrt 2 >= 0; 2(x^2 + y^2) - (|x| + |y|)^2 = (|x| - |y|)^2 | fd3:prp-cof-square-roots; inline; verify/ch03/exr-triangle-inequality-b3.py
+exr-triangle-inequality-c2 (solution): 1 - |z|^2 - |w|^2 + |z|^2|w|^2 = (1 - |z|^2)(1 - |w|^2) | inline; verify/ch03/exr-triangle-inequality-c2.py
 exr-triangle-inequality-c2 (solution): the disc map remark | prose only; nothing depends on it
 -->

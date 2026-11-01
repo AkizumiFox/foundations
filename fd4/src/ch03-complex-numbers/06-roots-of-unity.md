@@ -34,7 +34,7 @@ Write the unknown in polar form, \( z = r e^{i\theta} \). De Moivre turns \( z^n
 :::
 
 ::: {.proof}
-Here \( \rho = \abs{c} > 0 \) by @prp-polar-form (a), so \( \sqrt[n]{\rho} > 0 \) exists by @lem-reals-nth-root (b).
+Here \( \rho = \abs{c} > 0 \) by @prp-polar-form (a), so \( \sqrt[n]{\rho} \ge 0 \) exists by @lem-reals-nth-root (b), and \( \sqrt[n]{\rho} > 0 \), since \( 0^n = 0 \ne \rho \).
 
 (a) Let \( z \in \nC \). If \( z = 0 \), then \( z^n = 0^{n-1} \cdot 0 = 0 \ne c \) (@fd3:prp-ring-algebra (b)), and \( z \) is no \( z_k \), since every \( z_k \) has modulus \( \sqrt[n]{\rho} > 0 \). So let \( z \ne 0 \), and fix a polar form \( z = r e^{i\theta} \) (@prp-polar-form (a)). By @thm-de-moivre, \( z^n = r^n e^{in\theta} \), a polar form with \( r^n > 0 \). By @prp-polar-form (b),
 \[
@@ -283,7 +283,7 @@ Let \( n \ge 1 \) and \( c \in \nC \) with \( c \ne 0 \), and let \( c = \rho e^
 :::
 
 ::: {.solution}
-Here \( \rho = \abs{c} > 0 \) (@prp-polar-form (a)). The number \( 0 \) is not a solution, since \( 0^n = 0 \ne c \), and is no \( z_k \), since \( \abs{z_k} = \sqrt[n]{\rho} > 0 \) (@lem-reals-nth-root (b)). For \( z \ne 0 \), fix a polar form \( z = r e^{i\theta} \) with \( r > 0 \) (@prp-polar-form (a)); then \( z^n = r^n e^{in\theta} \) (@thm-de-moivre), a polar form with \( r^n > 0 \), and by the uniqueness of polar form (@prp-polar-form (b)), \( z^n = \rho e^{i\alpha} \) if and only if \( r^n = \rho \) and \( n\theta - \alpha \in 2\pi\nZ \). The first condition is \( r = \sqrt[n]{\rho} \), by existence and uniqueness of the real \( n \)-th root (@lem-reals-nth-root (b)); the second is \( \theta = (\alpha + 2\pi k)/n \) for some \( k \in \nZ \). So \( z^n = c \) implies \( z = z_k \); conversely, applied to the polar form \( r \coloneqq \sqrt[n]{\rho} \), \( \theta \coloneqq (\alpha + 2\pi k)/n \) of \( z = z_k \), the equivalence gives \( z^n = c \). For (b), \( z_k \) and \( z_l \) are given in polar form with the same modulus, so the same uniqueness gives \( z_k = z_l \) if and only if \( 2\pi(k - l)/n \in 2\pi\nZ \), if and only if \( k - l = mn \) for some \( m \in \nZ \), that is, \( n \mid k - l \).
+Here \( \rho = \abs{c} > 0 \) (@prp-polar-form (a)). The number \( 0 \) is not a solution, since \( 0^n = 0 \ne c \), and is no \( z_k \), since \( \abs{z_k} = \sqrt[n]{\rho} > 0 \) (@lem-reals-nth-root (b) gives \( \sqrt[n]{\rho} \ge 0 \), and \( 0^n = 0 \ne \rho \)). For \( z \ne 0 \), fix a polar form \( z = r e^{i\theta} \) with \( r > 0 \) (@prp-polar-form (a)); then \( z^n = r^n e^{in\theta} \) (@thm-de-moivre), a polar form with \( r^n > 0 \), and by the uniqueness of polar form (@prp-polar-form (b)), \( z^n = \rho e^{i\alpha} \) if and only if \( r^n = \rho \) and \( n\theta - \alpha \in 2\pi\nZ \). The first condition is \( r = \sqrt[n]{\rho} \), by existence and uniqueness of the real \( n \)-th root (@lem-reals-nth-root (b)); the second is \( \theta = (\alpha + 2\pi k)/n \) for some \( k \in \nZ \). So \( z^n = c \) implies \( z = z_k \); conversely, applied to the polar form \( r \coloneqq \sqrt[n]{\rho} \), \( \theta \coloneqq (\alpha + 2\pi k)/n \) of \( z = z_k \), the equivalence gives \( z^n = c \). For (b), \( z_k \) and \( z_l \) are given in polar form with the same modulus, so the same uniqueness gives \( z_k = z_l \) if and only if \( 2\pi(k - l)/n \in 2\pi\nZ \), if and only if \( k - l = mn \) for some \( m \in \nZ \), that is, \( n \mid k - l \).
 
 **Marking scheme.** (10 points)
 - 1: rules out \( z = 0 \), with the reason \( 0^n = 0 \ne c \).
@@ -350,11 +350,11 @@ Let \( n \ge 1 \). Show that \( [k] \mapsto e^{2\pi i k/n} \) is a well-defined 
 :::
 
 ::: {.solution}
-Write \( z_k \coloneqq e^{2\pi i k/n} \), the roots of \( c = 1 \) in @thm-complex-nth-roots (with \( \rho = 1 \), \( \alpha = 0 \), as in @exm-roots-of-unity). The classes of \( \nZ/n\nZ \) are the congruence classes of @fd2:def-congruence: \( [k] = [l] \) if and only if \( n \mid k - l \). By @thm-complex-nth-roots (b), \( n \mid k - l \) if and only if \( z_k = z_l \). Reading this equivalence from left to right, \( f([k]) \coloneqq z_k \) does not depend on the representative \( k \) of the class, so \( f \) is well defined; reading it from right to left, \( f \) is injective. Each \( z_k \) lies in \( \mu_n \) by @thm-complex-nth-roots (a), and every element of \( \mu_n \) is some \( z_k \), again by (a); so \( f \) is surjective. Finally, \( [k] + [l] = [k + l] \), and by @thm-polar-multiplication (a),
+Write \( z_k \coloneqq e^{2\pi i k/n} \), the roots of \( c = 1 \) in @thm-complex-nth-roots (with \( \rho = 1 \), \( \alpha = 0 \), as in @exm-roots-of-unity). The elements of \( \nZ/n\nZ \) are the classes \( [k] \) of @def-integers-mod-n-ring, and \( [k] = [l] \) if and only if \( n \mid k - l \). By @thm-complex-nth-roots (b), \( n \mid k - l \) if and only if \( z_k = z_l \). If \( [k] = [l] \), then \( n \mid k - l \), so \( z_k = z_l \); hence \( f([k]) \coloneqq z_k \) does not depend on the representative \( k \), and \( f \) is well defined. If \( z_k = z_l \), then \( n \mid k - l \), so \( [k] = [l] \); hence \( f \) is injective. Each \( z_k \) lies in \( \mu_n \) by @thm-complex-nth-roots (a), and every element of \( \mu_n \) is some \( z_k \), again by (a); so \( f \) is surjective. Finally, \( [k] + [l] = [k + l] \) by the addition of @thm-quotient-ring-by-ideal (b), and by @thm-polar-multiplication (a),
 \[
 f([k] + [l]) = z_{k+l} = e^{2\pi i k/n} e^{2\pi i l/n} = f([k]) \, f([l]) .
 \]
-As a check on the count, both sets have \( n \) elements (@fd2:prp-integers-mod-n and @thm-complex-nth-roots (c)). In the language of Chapter 5, \( f \) is an isomorphism from the additive structure of \( \nZ/n\nZ \) to the multiplicative structure of \( \mu_n \).
+As a check on the count, both sets have \( n \) elements (@thm-integers-mod-n-ring (b) and @thm-complex-nth-roots (c)). In the language of Chapter 5, \( f \) is an isomorphism from the additive structure of \( \nZ/n\nZ \) to the multiplicative structure of \( \mu_n \).
 :::
 
 ::: {#exr-roots-of-unity-r3}
@@ -400,26 +400,28 @@ The solutions are \( 0 \), \( 1 \), \( -\tfrac12 + \tfrac{\sqrt 3}{2} i \) and \
 thm-complex-nth-roots (proof): 2 pi (k - l)/n = 2 pi m iff k - l = mn, an equation in Z | arithmetic in R; Z inside R via F3.10's kappa (fd3:thm-reals-complete-ordered-field: injective, preserves + and *)
 thm-complex-nth-roots (proof): {1..n} -> {0..n-1}, j -> j - 1, is a bijection; composite of bijections is a bijection | inline; fd2 composition of bijections (fd2:def-bijective)
 thm-complex-nth-roots (proof): sqrt[n]{1} = 1 | inline (1^n = 1, lem-reals-nth-root (b) uniqueness)
+thm-complex-nth-roots (proof): sqrt[n]{rho} > 0 for rho > 0 (also in the C1 solution): the root is >= 0 by lem-reals-nth-root (b), and not 0 since 0^n = 0 != rho for n >= 1 | lem-reals-nth-root (b) (cited); inline
 exm-roots-of-unity (solution): regular polygon picture | prose (picture); nothing depends on it
-exm-roots-of-unity (solution): omega^2 for n = 6; omega^4 = -omega, omega^5 = -omega^2 | inline; verify/ch01/exm-roots-of-unity.py
+exm-roots-of-unity (solution): omega^2 for n = 6; omega^4 = -omega, omega^5 = -omega^2 | inline; verify/ch03/exm-roots-of-unity.py
 sec-roots-of-unity (claim): z_k = z_0 omega^k for k in N, z_0 the theorem's root | thm-polar-multiplication (a), thm-de-moivre, thm-complex-nth-roots (c) (cited)
 sec-roots-of-unity (claim): even-n pairing, omega^{n/2} = -1 and omega^{k+n/2} = -omega^k (prp-power-laws-commutative-ring (a)) | thm-de-moivre, exm-special-angles (i) (cited); inline; nothing depends on it
 sec-roots-of-unity (claim): for odd n, (-1)^n = -1 | inline (induction); nothing depends on it
 prp-roots-of-unity-sum (proof): sum_{k=0}^{n-1} 1 = n (as n * 1 in C); omega^{mn} = (omega^n)^m with mn = nm; 1^m = 1 | template: fd2:def-sum-product; prp-power-laws-commutative-ring (b); inline induction
-prp-roots-of-unity-sum (claim): sum of cos(2 pi k/n) = sum of sin(2 pi k/n) = 0: real part of a finite sum is the sum of real parts | inline (addition in C is coordinatewise, def-complex-numbers; induction on the number of terms); verify/ch01/prp-roots-of-unity-sum.py
+prp-roots-of-unity-sum (claim): sum of cos(2 pi k/n) = sum of sin(2 pi k/n) = 0: real part of a finite sum is the sum of real parts | inline (addition in C is coordinatewise, def-complex-numbers; induction on the number of terms); verify/ch03/prp-roots-of-unity-sum.py
 prp-real-coefficients-conjugate-roots (proof): conjugate of a finite sum is the sum of conjugates | inline (induction along fd2:def-sum-product recursion, template, with thm-conjugate-properties (a))
-sec-roots-of-unity (example): (1 + 2i)^2 - 2(1 + 2i) + 5 = 0 | verify/ch01/prp-real-coefficients-conjugate-roots.py
+sec-roots-of-unity (example): (1 + 2i)^2 - 2(1 + 2i) + 5 = 0 | verify/ch03/prp-real-coefficients-conjugate-roots.py
 sec-roots-of-unity (claim): Looking ahead: Section 7.6 proves the FTA using only square roots and completeness; Chapter 7 deduces splitting into linear factors; nothing in this chapter or in Chapters 4-6 uses it | F5.5 (prose pointer; blueprint ch05.md thm-fundamental-theorem-algebra, cor-complex-polynomials-linear-factors); nothing here depends on it
 sec-roots-of-unity (claim): Chapter 6 makes polynomials objects; Chapter 7 factors real polynomials into real factors of degrees 1 and 2; Chapter 5 treats T and mu_n as groups | F5.4, F5.5 (prp-real-polynomial-conjugate-roots), F5.3 (exm-subgroups (f)) (prose pointers; blueprints); nothing here depends on them
-sec-roots-of-unity (solution): Check, cube roots of unity; z^3 - 1 = (z - 1)(z^2 + z + 1) | inline; verify/ch01/exm-roots-of-unity.py
-exr-roots-of-unity-b1 (solution): z^3 = -8i values | verify/ch01/exr-roots-of-unity-b1.py
-exr-roots-of-unity-b2 (solution): z^4 = -4 values; (pi + 2 pi (k + 1))/4 = (pi + 2 pi k)/4 + pi/2 | verify/ch01/exr-roots-of-unity-b2.py
+sec-roots-of-unity (solution): Check, cube roots of unity; z^3 - 1 = (z - 1)(z^2 + z + 1) | inline; verify/ch03/exm-roots-of-unity.py
+exr-roots-of-unity-b1 (solution): z^3 = -8i values | verify/ch03/exr-roots-of-unity-b1.py
+exr-roots-of-unity-b2 (solution): z^4 = -4 values; (pi + 2 pi (k + 1))/4 = (pi + 2 pi k)/4 + pi/2 | verify/ch03/exr-roots-of-unity-b2.py
 exr-roots-of-unity-b3 (solution): |zeta^n| = |zeta|^n | inline (induction with thm-conjugate-properties (d))
 exr-roots-of-unity-c2 (solution): 1/n = m gives 1 = mn | arithmetic in R; Z inside R via kappa
 exr-roots-of-unity-r1 (solution): sigma restricted to R is a map R -> R preserving +, *, 1 | inline
 exr-roots-of-unity-r1 (solution): the non-negative reals are exactly the squares, so the order of R is definable | fd3:prp-cof-square-roots (cited); fd3:prp-ordered-ring-rules (e)
+exr-roots-of-unity-r2 (solution): classes of Z/nZ, [k] = [l] iff n | k - l, [k] + [l] = [k + l], and n elements | def-integers-mod-n-ring, thm-quotient-ring-by-ideal (b), thm-integers-mod-n-ring (b) (cited)
 exr-roots-of-unity-r2 (claim): "isomorphism" in the language of Chapter 5 | F5.3 (prose pointer); nothing depends on it
 exr-roots-of-unity-r3 (solution): (|x| + |y|)^2 - |x + y|^2 = 2(|xy| - xy) | inline (fd3:prp-ring-algebra (d), fd3:prp-absolute-value-ordered-field (b))
-exr-roots-of-unity-r4 (solution): solutions 0, 1, -1/2 +- (sqrt 3/2) i | verify/ch01/exr-roots-of-unity-r4.py
+exr-roots-of-unity-r4 (solution): solutions 0, 1, -1/2 +- (sqrt 3/2) i | verify/ch03/exr-roots-of-unity-r4.py
 sec-roots-of-unity (claim): ax-cosine-sine (T1)-(T5) through def-polar-form, thm-polar-multiplication, prp-polar-form, thm-de-moivre, exm-special-angles: used by thm-complex-nth-roots, exm-roots-of-unity, prp-roots-of-unity-sum, the prose claims on mu_n = {1, omega, ..., omega^(n-1)} and mu_n subset T (after exm-roots-of-unity), z_k = z_0 omega^k, the even-n pairing and the cos/sin sums, the Check (first route), A1, B1, B2, B3 (the inverse clause, through prp-roots-of-unity-sum (a); its 1 in mu_n, closure and mu_n subset T steps use none), C1, C2, R2; lem-reals-nth-root, prp-real-coefficients-conjugate-roots, R1, R3, R4 (via the Check's angle-free route, cor-complex-quadratic-formula, and B3's angle-free mu_n subset T step) use none | AN1.10 (borrow)
 -->

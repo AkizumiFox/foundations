@@ -210,11 +210,11 @@ From now on we compute in \( \nC \) exactly as in \( \nR \): expand brackets, co
 
 ## Powers and a factorization
 
-Powers and finite sums in any commutative ring, and in particular in \( \nC \), were set up in Chapter 1, Section 1.1. There \( z^n \) is defined by the recursion \( z^0 \coloneqq 1 \), \( z^{n+1} \coloneqq z^n z \) (@prp-power-laws-commutative-ring), the laws of powers are proved from the ring axioms alone (@prp-power-laws-commutative-ring (a)–(c), and (d) for a field), and the difference of powers \( z^n - w^n = (z - w) \sum_{k=0}^{n-1} z^k w^{n-1-k} \) is proved (@lem-difference-of-powers). Nothing in those proofs used an order, so they apply to \( R = \nC \) unchanged, and we use them from here on. Section 3.6 uses the difference of powers again.
+Powers and finite sums in any commutative ring, and in particular in \( \nC \), were set up in Chapter 1, Section 1.1. There \( z^n \) is defined by the recursion \( z^0 \coloneqq 1 \), \( z^{n+1} \coloneqq z^n z \), the laws of powers are proved from the ring axioms alone (@prp-power-laws-commutative-ring (a)–(c), and (d) for a field), and the difference of powers \( z^n - w^n = (z - w) \sum_{k=0}^{n-1} z^k w^{n-1-k} \) is proved (@lem-difference-of-powers). Nothing in those proofs used an order, so they apply to \( R = \nC \) unchanged, and we use them from here on. Section 3.6 uses the difference of powers again.
 
 For a real number \( a \), the power \( a^n \) is the same whether computed in \( \nR \) or in \( \nC \). Indeed \( \iota(a^0) = \iota(1) = 1 \), and if \( \iota(a^n) = \iota(a)^n \), then \( \iota(a^{n+1}) = \iota(a^n a) = \iota(a^n)\,\iota(a) = \iota(a)^{n+1} \), by @prp-reals-embed-complex; induction (@fd1:ax-induction) does the rest. So the identification of \( \nR \) with a subset of \( \nC \) is safe for powers too.
 
-In the notation of powers, @exm-complex-arithmetic computed \( i^2 = -1 \), \( i^3 = -i \) and \( i^4 = 1 \); by (a), (b), every multiple of \( 4 \) gives \( i^{4q} = (i^4)^q = 1^q = 1 \), since \( 1^{q+1} = 1^q \cdot 1 \) and induction give \( 1^q = 1 \). Exercise B1 turns this into a rule for every power of \( i \).
+In the notation of powers, @exm-complex-arithmetic computed \( i^2 = -1 \), \( i^3 = -i \) and \( i^4 = 1 \); by @prp-power-laws-commutative-ring (a), (b), every multiple of \( 4 \) gives \( i^{4q} = (i^4)^q = 1^q = 1 \), since \( 1^{q+1} = 1^q \cdot 1 \) and induction give \( 1^q = 1 \). Exercise B1 turns this into a rule for every power of \( i \).
 
 ::: {.check}
 Compute \( i^{10} \) and \( (1 + i)^4 \), citing the parts of @prp-power-laws-commutative-ring you use.
@@ -382,16 +382,16 @@ prp-reals-embed-complex (claim): the identification a = (a, 0) is safe ("conveni
 exm-complex-arithmetic (solution): a^2 >= 0, b^2 >= 0, sum >= 0 | fd3:prp-ordered-ring-rules (e) for non-zero, fd3:prp-ring-algebra (b) for 0^2 = 0, fd3:prp-ordered-ring-rules (b) (cited)
 exm-complex-arithmetic (solution): (-1)(-b) and similar sign rules in R | fd3:prp-ring-algebra (c)
 def-complex-numbers (example): non-example by minimal change: * is commutative with identity element (1,0); (1,1)*(1,-1) = (0,0); (1,1)*(c,d) = (c+d, d+c) | arithmetic in R; inline
-prp-complex-arithmetic-laws (proof): the four-term expansions of (zw)u and z(wu) agree | distributivity, commutativity, associativity in R and fd3:prp-ring-algebra (c); inline; verify/ch01/prp-complex-arithmetic-laws.py
+prp-complex-arithmetic-laws (proof): the four-term expansions of (zw)u and z(wu) agree | distributivity, commutativity, associativity in R and fd3:prp-ring-algebra (c); inline; verify/ch03/prp-complex-arithmetic-laws.py
 prp-complex-arithmetic-laws (claim): 1 != 0 in C | fd2:def-ordered-pair, 1 != 0 in R (field); inline
-prp-power-laws-commutative-ring (claim): the laws of powers and the difference of powers hold in C, a commutative ring | Chapter 1 Section 1.1 (prp-power-laws-commutative-ring, lem-difference-of-powers); cited
-prp-power-laws-commutative-ring (claim): iota(a^n) = iota(a)^n | prp-reals-embed-complex, fd1:ax-induction; inline
-prp-power-laws-commutative-ring (claim): 1^q = 1 for q in N | fd1:ax-induction with (F7); inline
+sec-pairs-of-reals (claim): the laws of powers and the difference of powers hold in C, a commutative ring | Chapter 1 Section 1.1 (prp-power-laws-commutative-ring, lem-difference-of-powers); cited
+sec-pairs-of-reals (claim): iota(a^n) = iota(a)^n | prp-reals-embed-complex, fd1:ax-induction; inline
+sec-pairs-of-reals (claim): 1^q = 1 for q in N | fd1:ax-induction with (F7); inline
 exr-pairs-of-reals-a1 (solution): 2 != 0 in R | fd3:prp-ordered-ring-rules (h) or (e)/(b) (2 = 1 + 1 > 0), used silently
 exr-pairs-of-reals-b1 (solution): q >= 0 from n >= 0 and r < 4; q, r in N | order of Z (F3.2, fd3:thm-integers-ordered-ring) and N subset of Z (fd3:prp-naturals-embed-integers); inline
-exr-pairs-of-reals-b1 (solution): 2026 = 4 * 506 + 2 | arithmetic; verify/ch01/exr-pairs-of-reals-b1.py
-exr-pairs-of-reals-b2 (solution): (1+i)^2 = 2i, (1+i)^3 = -2 + 2i, (1+i)^4 = -4, the factorization of z^4 + 4; 2^2 = 4 in C by the identification | verify/ch01/exr-pairs-of-reals-b2.py
-exr-pairs-of-reals-b3 (solution): (2,1)*(2/3,-1/3) = (1,0); the eliminations a*(first) - b*(second); (a,+-a)*(c,d) = (a(c+-d), +-a(c+-d)) is never (1,0) | arithmetic in R, 1 != 0 in R; verify/ch01/exr-pairs-of-reals-b3.py
+exr-pairs-of-reals-b1 (solution): 2026 = 4 * 506 + 2 | arithmetic; verify/ch03/exr-pairs-of-reals-b1.py
+exr-pairs-of-reals-b2 (solution): (1+i)^2 = 2i, (1+i)^3 = -2 + 2i, (1+i)^4 = -4, the factorization of z^4 + 4; 2^2 = 4 in C by the identification | verify/ch03/exr-pairs-of-reals-b2.py
+exr-pairs-of-reals-b3 (solution): (2,1)*(2/3,-1/3) = (1,0); the eliminations a*(first) - b*(second); (a,+-a)*(c,d) = (a(c+-d), +-a(c+-d)) is never (1,0) | arithmetic in R, 1 != 0 in R; verify/ch03/exr-pairs-of-reals-b3.py
 exr-pairs-of-reals-c1 (solution): -1 < 0 in R | fd3:prp-ordered-ring-rules (e), (a) (cited)
 exr-pairs-of-reals-c1 (solution): j != 0 since 0^2 = 0 != -1, so j^2 > 0 | fd3:prp-ring-algebra (b), fd3:prp-ordered-ring-rules (e) (cited)
 exr-pairs-of-reals-c1 (solution): pointer to Chapter 4 (subfields such as Q(i), F5.2 exm-subfields-gaussian) | prose pointer; nothing depends on it

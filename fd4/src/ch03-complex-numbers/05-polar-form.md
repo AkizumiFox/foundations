@@ -54,14 +54,14 @@ So far a direction is a point \( u \) of \( \nT \), and multiplying two directio
 
 ## What this volume borrows about cosine and sine
 
-An angle should be a real number \( \theta \) that walks around the circle: a point \( (\cos\theta, \sin\theta) \) on \( \nT \), moving as \( \theta \) moves, returning to its start after a full turn of length \( 2\pi \). Defining such functions needs limits of functions, by power series or by integrals. This volume develops no limits of functions, so it does not define cosine and sine. *Analysis on the Real Line*, Chapter 10 does: there \( \cos \) and \( \sin \) are defined by power series, \( \pi \) is defined as twice the least positive zero of \( \cos \), and the facts below are proved. Its \( \nR \) is a complete ordered field, so by @fd3:thm-cof-uniqueness it is our \( \nR \), up to the one order-preserving field isomorphism; the functions and the number carry over along it.
+An angle should be a real number \( \theta \) that walks around the circle: a point \( (\cos\theta, \sin\theta) \) on \( \nT \), moving as \( \theta \) moves, returning to its start after a full turn of length \( 2\pi \). Defining such functions needs limits of functions, by power series or by integrals. This volume develops no limits of functions, so it does not define cosine and sine. *Integration, Series, and Function Spaces*, Chapter 7 does: there \( \cos \) and \( \sin \) are defined by power series, \( \pi \) is defined as twice the least positive zero of \( \cos \), and the facts below are proved. Its \( \nR \) is a complete ordered field, so by @fd3:thm-cof-uniqueness it is our \( \nR \), up to the one order-preserving field isomorphism; the functions and the number carry over along it.
 
 We write \( 2\pi\nZ \coloneqq \{ 2\pi k : k \in \nZ \} \), the integer multiples of \( 2\pi \) in \( \nR \).
 
 ::: {#ax-cosine-sine}
 [What This Volume Borrows about Cosine and Sine]
 
-There are functions \( \cos, \sin \colon \nR \to \nR \) and a real number \( \pi > 0 \) with the following properties. They are **assumed here and proved in *Analysis on the Real Line*, Chapter 10**.
+There are functions \( \cos, \sin \colon \nR \to \nR \) and a real number \( \pi > 0 \) with the following properties. They are **assumed here and proved in *Integration, Series, and Function Spaces*, Chapter 7**.
 
 ::: {.enumerate options="label=(T\arabic*)"}
 1. \( \cos^2\theta + \sin^2\theta = 1 \) for every \( \theta \in \nR \).
@@ -105,7 +105,7 @@ e^{i\theta} \coloneqq \cos\theta + i \sin\theta .
 Let \( z \in \nC \) with \( z \ne 0 \). A **polar form** of \( z \) is an expression \( z = r e^{i\theta} \) with \( r \in \nR \), \( r > 0 \), and \( \theta \in \nR \). Then \( \theta \) is **an** argument of \( z \).
 :::
 
-In words: the first line is an abbreviation, not an exponential. This volume has no exponential function, the letter \( e \) on its own means nothing here, and the only rule of exponents we will use for \( e^{i\theta} \) is the one proved below (@thm-polar-multiplication (a)). *Analysis on the Real Line*, Chapter 10 shows that \( e^{i\theta} \) is indeed the value of the complex exponential function at \( i\theta \); the notation anticipates that, and the linear algebra volumes write their roots of unity with it. The exponent may be written in any form equal to \( i\theta \) with \( \theta \) real, and the symbol then means \( e^{i\theta} \): for example \( e^{-i\theta} = e^{i(-\theta)} \), \( e^{2\pi i} = e^{i \cdot 2\pi} \), \( e^{in\theta} = e^{i(n\theta)} \) and \( e^{-2\pi i} = e^{i(-2\pi)} \). This is unambiguous, because the real number \( \theta \) is determined by \( i\theta \) (it is its imaginary part). The second part asks for a **positive** real \( r \) and allows **any** real \( \theta \).
+In words: the first line is an abbreviation, not an exponential. This volume has no exponential function, the letter \( e \) on its own means nothing here, and the only rule of exponents we will use for \( e^{i\theta} \) is the one proved below (@thm-polar-multiplication (a)). *Integration, Series, and Function Spaces*, Chapter 7 shows that \( e^{i\theta} \) is indeed the value of the complex exponential function at \( i\theta \); the notation anticipates that, and the linear algebra volumes write their roots of unity with it. The exponent may be written in any form equal to \( i\theta \) with \( \theta \) real, and the symbol then means \( e^{i\theta} \): for example \( e^{-i\theta} = e^{i(-\theta)} \), \( e^{2\pi i} = e^{i \cdot 2\pi} \), \( e^{in\theta} = e^{i(n\theta)} \) and \( e^{-2\pi i} = e^{i(-2\pi)} \). This is unambiguous, because the real number \( \theta \) is determined by \( i\theta \) (it is its imaginary part). The second part asks for a **positive** real \( r \) and allows **any** real \( \theta \).
 
 The point \( e^{i\theta} \) lies on \( \nT \). Indeed \( \abs{e^{i\theta}} = \sqrt{\cos^2\theta + \sin^2\theta} = \sqrt 1 = 1 \), by @def-conjugate-modulus and (T1). So \( r e^{i\theta} \) is a length \( r \) times a direction, as in @prp-unit-circle (b), and that proposition gives \( r = \abs{z} \) for every polar form of \( z \).
 
@@ -201,7 +201,7 @@ From \( e^{i\theta} = e^{i\varphi} \) one may **not** conclude \( \theta = \varp
 
 ## Powers
 
-Repeating @thm-polar-multiplication gives powers. The powers \( z^n \) are those of the recursion \( z^0 = 1 \), \( z^{n+1} = z^n z \) (@prp-power-laws-commutative-ring).
+Repeating @thm-polar-multiplication gives powers. The powers \( z^n \) are those of the recursion \( z^0 = 1 \), \( z^{n+1} = z^n z \) of Chapter 1, Section 1.1.
 
 ::: {#thm-de-moivre}
 [De Moivre's Formula]
@@ -224,7 +224,7 @@ We use @fd1:ax-induction on \( n \), read on \( \nN = \omega \) through @fd3:cor
 \]
 by the recursion, the induction hypothesis, @thm-polar-multiplication (a), and \( (n + 1) \cdot 1_{\nR} = n \cdot 1_{\nR} + 1_{\nR} \) (@fd3:def-naturals-in-ordered-field (a)) with distributivity in \( \nR \). This proves the formula for every \( n \in \nN \).
 
-For the consequence, @prp-power-laws-commutative-ring (c) gives \( (r e^{i\theta})^n = r^n (e^{i\theta})^n = r^n e^{in\theta} \). The power \( r^n \) is the same whether it is computed in \( \nR \) or in \( \nC \), by the remark after @prp-power-laws-commutative-ring in Section 3.1, and \( r^n > 0 \) because a product of positive reals is positive (@fd3:prp-ordered-ring-rules (c); induction on \( n \), with \( r^0 = 1 > 0 \)).
+For the consequence, @prp-power-laws-commutative-ring (c) gives \( (r e^{i\theta})^n = r^n (e^{i\theta})^n = r^n e^{in\theta} \). The power \( r^n \) is the same whether it is computed in \( \nR \) or in \( \nC \), since the embedding of \( \nR \) in \( \nC \) preserves powers (Section 3.1), and \( r^n > 0 \) because a product of positive reals is positive (@fd3:prp-ordered-ring-rules (c); induction on \( n \), with \( r^0 = 1 > 0 \)).
 :::
 
 For a negative exponent, \( z^{-n} \) is the integer power of @def-integer-power (\( \nC \) is a field, by Section 3.2), and Exercise C1 below proves the matching formula; nothing in the text uses it.
@@ -386,7 +386,7 @@ Now \( u = 1 \) if and only if \( \abs{u - 1} = 0 \) (@thm-conjugate-properties 
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Prove that \( \cos 3\theta = 4\cos^3\theta - 3\cos\theta \) and \( \sin 3\theta = 3\sin\theta - 4\sin^3\theta \) for every \( \theta \in \nR \).
-2. For \( z \in \nC \) with \( z \ne 0 \) and \( n \in \nN \), let \( z^{-n} \) be the integer power of @def-integer-power, so that \( z^{-n} = (z^{-1})^n \). Show that \( (e^{i\theta})^{-n} = e^{-in\theta} \).
+2. For \( z \in \nC \) with \( z \ne 0 \) and \( n \in \nN \), let \( z^{-n} \) be the integer power of @def-integer-power, so that \( z^{-n} = (z^{-1})^n \). Show that \( (e^{i\theta})^{-n} = e^{-in\theta} \) for every \( \theta \in \nR \) and \( n \in \nN \).
 :::
 :::
 
@@ -402,7 +402,7 @@ Comparing real parts and using \( s^2 = 1 - c^2 \) (T1), \( \cos 3\theta = c^3 -
 
 (b) By @thm-polar-multiplication (b), \( (e^{i\theta})^{-1} = e^{-i\theta} = e^{i(-\theta)} \). By @thm-de-moivre applied to \( -\theta \), \( (e^{i\theta})^{-n} = (e^{i(-\theta)})^n = e^{in(-\theta)} = e^{-in\theta} \).
 
-Nothing in this chapter uses negative powers of complex numbers; the definition in (b) is for practice only.
+Nothing else in this chapter uses negative powers of complex numbers.
 :::
 
 ::: {#exr-polar-form-c2}
@@ -470,8 +470,8 @@ Fatal errors (0 for the step): writing \( u = e^{i\theta} \) and using a half-an
 :::
 
 <!-- dependency ledger
-sec-polar-form (claim): the analysis volume (AN1.10) defines cos, sin by power series and pi as twice the least positive zero of cos, and proves (T1)-(T5) and e^{i theta} = exp(i theta) | AN1.10 (borrow, recorded in plan-edges b: [AN1.10]; prose pointer "Analysis on the Real Line, Chapter 10"); used only through ax-cosine-sine
-sec-polar-form (claim): AN1.10's R is a complete ordered field, so cos, sin, pi transfer to F3.10's R along the unique order-preserving field isomorphism | fd3:thm-cof-uniqueness (cited); an1's axioms (prose)
+sec-polar-form (claim): the analysis volume (AN1.10) defines cos, sin by power series and pi as twice the least positive zero of cos, and proves (T1)-(T5) and e^{i theta} = exp(i theta) | AN1.10 (borrow, recorded in plan-edges b: [AN1.10]; prose pointer "Integration, Series, and Function Spaces, Chapter 7", where series.py places AN1.10 (an2 Ch 7)); used only through ax-cosine-sine
+sec-polar-form (claim): AN1.10's R is a complete ordered field, so cos, sin, pi transfer to F3.10's R along the unique order-preserving field isomorphism | fd3:thm-cof-uniqueness (cited); the analysis volume's axioms (prose)
 sec-polar-form (claim): fd1's ax-induction is proved in Number Systems Chapter 1 | fd3:cor-omega-identification (b), fd3 thm-omega-induction (prose comparison; nothing depends on it)
 sec-polar-form (claim): periodicity of cos and sin is derivable from (T2), (T3) | not proved here; marked so in the warning; nothing depends on it
 ax-cosine-sine (claim): (T1)-(T5) assumed | AN1.10 (borrowed; proved there); users listed in the sec-polar-form borrow line at the end of this ledger
@@ -483,18 +483,18 @@ def-polar-form (claim): e^{i theta} in T, via sqrt(cos^2 + sin^2) = sqrt 1 = 1 |
 prp-polar-form (proof): r e^{i theta} is non-zero | prp-unit-circle (a), thm-complex-numbers-field, fd3:lem-field-fraction-rules (d) (cited)
 exr-polar-form-c2 (solution): u - conj(u) = 2i Im u | def-conjugate-modulus (cited)
 thm-polar-multiplication (proof): reordering sin theta cos phi + cos theta sin phi | commutativity of + and * in R (field axioms, fd3:thm-reals-complete-ordered-field)
-thm-de-moivre (proof): r^n computed in R equals r^n computed in C | Section 3.1 remark after prp-power-laws-commutative-ring (cited)
+thm-de-moivre (proof): r^n computed in R equals r^n computed in C | Section 3.1 paragraph on powers of reals in C (iota(a^n) = iota(a)^n; prp-reals-embed-complex, fd1:ax-induction) (cited)
 thm-de-moivre (proof): r^n > 0 for r > 0 | inline (induction on n; fd3:prp-ordered-ring-rules (c))
 thm-de-moivre (proof): n theta + theta = (n + 1) theta | fd3:def-naturals-in-ordered-field (a) and distributivity in R
-exm-special-angles (solution): pi/2, pi/3, pi/4, pi/6 lie in (0, pi) since pi > 0; pi/6 = pi/2 - pi/3 | arithmetic in the ordered field R; verify/ch01/exm-special-angles.py
+exm-special-angles (solution): pi/2, pi/3, pi/4, pi/6 lie in (0, pi) since pi > 0; pi/6 = pi/2 - pi/3 | arithmetic in the ordered field R; verify/ch03/exm-special-angles.py
 exm-special-angles (solution): pi = 2 pi k gives 1 = 2k in R, hence in Z | Z inside R via fd3:prp-integers-embed-rationals and F3.10's kappa (fd3:thm-reals-complete-ordered-field: injective, preserves + and *) (both cited)
-exm-special-angles (solution): (u + 1)(u^2 - u + 1) = u^3 + 1; sqrt(1/2) = 1/sqrt 2; (sqrt 3 i)^2 = -3 | inline (ring algebra; uniqueness in fd3:prp-cof-square-roots); verify/ch01/exm-special-angles.py
-exm-polar-power (solution): (sqrt 3 + i)^6 = -64 both ways | verify/ch01/exm-polar-power.py
-sec-polar-form (solution): Check, (1 + i)^8 = 16, (sqrt 2)^8 = 16 | verify/ch01/exm-polar-power.py
+exm-special-angles (solution): (u + 1)(u^2 - u + 1) = u^3 + 1; sqrt(1/2) = 1/sqrt 2; (sqrt 3 i)^2 = -3 | inline (ring algebra; uniqueness in fd3:prp-cof-square-roots); verify/ch03/exm-special-angles.py
+exm-polar-power (solution): (sqrt 3 + i)^6 = -64 both ways | verify/ch03/exm-polar-power.py
+sec-polar-form (solution): Check, (1 + i)^8 = 16, (sqrt 2)^8 = 16 | verify/ch03/exm-polar-power.py
 exr-polar-form-a1 (solution): values | exm-special-angles (cited)
-exr-polar-form-b1 (solution): (1 - sqrt 3 i)^6 = 64 | verify/ch01/exr-polar-form-b1.py
+exr-polar-form-b1 (solution): (1 - sqrt 3 i)^6 = 64 | verify/ch03/exr-polar-form-b1.py
 exr-polar-form-b3 (solution): a real is 0 iff its square is 0 | fd3:prp-ring-algebra (b) for 0^2 = 0, fd3:prp-ordered-ring-rules (e) for x != 0 (both cited)
-exr-polar-form-c1 (solution): (c + is)^3 expansion, triple-angle formulas | inline; verify/ch01/exr-polar-form-c1.py
-exr-polar-form-c2 (solution): u_t in T, t = Im u/(1 + Re u), u_{1/2} = 3/5 + 4/5 i | inline; verify/ch01/exr-polar-form-c2.py
+exr-polar-form-c1 (solution): (c + is)^3 expansion, triple-angle formulas | inline; verify/ch03/exr-polar-form-c1.py
+exr-polar-form-c2 (solution): u_t in T, t = Im u/(1 + Re u), u_{1/2} = 3/5 + 4/5 i | inline; verify/ch03/exr-polar-form-c2.py
 sec-polar-form (claim): ax-cosine-sine (T1)-(T5) used by def-polar-form (T1), thm-polar-multiplication (T2; (b) also T1, T3 via e^{i0} = 1 and def-polar-form), prp-polar-form (T1, T3, T4; T2 through thm-polar-multiplication), thm-de-moivre (through thm-polar-multiplication), exm-special-angles (T3, T5, T1), exm-polar-power, exr-polar-form-a1, -b1 (T1, T3), -b2, -b3 (through def-polar-form), -c1 (T1); prp-unit-circle and exr-polar-form-c2 use none | AN1.10 (borrow)
 -->
