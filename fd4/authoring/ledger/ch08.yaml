@@ -4,960 +4,3574 @@ items:
 - key: def-real-function
   kind: def
   file: 01-real-functions-and-graphs.md
-  line: 13
+  line: 15
   hash: 90c1012242c0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/01
+    hash: 90c1012242c0
+    date: '2026-11-01'
+    evidence: 01:15-23 matches fd2:def-function (function = (G,Y), value = unique y); line 25 identification
+      of graph f with G is correct
+  - stage: S5b
+    verdict: minor
+    by: B:08/01
+    hash: 90c1012242c0
+    date: '2026-11-01'
+    evidence: 'L18-22 correct and every @ref exists. Notation is missing: the blueprint (merged-ch08-f47.md,
+      Notation, ''drafter confirms at S3'') asks for a NOTATION.md row for graph f and the no-natural-domain
+      convention, and authoring/NOTATION.md has no such row. L9 also misstates fd2:def-function (see findings).'
 - key: exm-first-real-functions
   kind: exm
   file: 01-real-functions-and-graphs.md
-  line: 25
-  hash: 9049d748f92e
-  verdicts: []
+  line: 27
+  hash: 159062593cc7
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/01
+    hash: 159062593cc7
+    date: '2026-11-01'
+    evidence: 01:27-49; (d) cites fd3:prp-cof-square-roots (exists, unique b>=0 with b^2=a, hypothesis
+      complete ordered field via fd3:thm-reals-complete-ordered-field); (g) disjoint cover as in fd2:exm-piecewise-as-gluing
+      (c)
+  - stage: S5b
+    verdict: correct
+    by: B:08/01
+    hash: 159062593cc7
+    date: '2026-11-01'
+    evidence: 'L30-49: all seven items are well-posed. fd3:prp-cof-square-roots (fd3 ch06 01:214) gives
+      the unique b>=0 with b^2=a. Trichotomy and division facts are in the ledger (L467). Gluing cites
+      fd2:exm-piecewise-as-gluing (exists).'
 - key: prp-graph-vertical-line
   kind: prp
   file: 01-real-functions-and-graphs.md
-  line: 80
+  line: 88
   hash: a081646dedc2
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/01
+    hash: a081646dedc2
+    date: '2026-11-01'
+    evidence: '01:88-97; both conditions needed: dropping (ii) admits {(1,5),(2,5),(3,5)} over {1,2};
+      dropping (i) admits the circle'
+  - stage: S5b
+    verdict: correct
+    by: B:08/01
+    hash: a081646dedc2
+    date: '2026-11-01'
+    evidence: L91-96 is the correct iff. Preceded by an unlabelled instance at L86.
 - key: proof:prp-graph-vertical-line
   kind: proof
   file: 01-real-functions-and-graphs.md
-  line: 91
-  hash: 3f31c889c78f
-  verdicts: []
+  line: 99
+  hash: 0931e3990626
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:08/01
+    hash: 0931e3990626
+    date: '2026-11-01'
+    evidence: 01:102 only argues G ⊆ graph f before 'so G = graph f'; the inclusion graph f ⊆ G (by definition
+      of the value, (a,f(a)) ∈ G) is left unsaid
+  - stage: S5b
+    verdict: correct
+    by: B:08/01
+    hash: 0931e3990626
+    date: '2026-11-01'
+    evidence: 'L100-102: fd2:def-function makes f the pair (G,Y) with G ⊆ X×Y (fd2 ch02 01:13-22), so
+      f := (G, ℝ) is exactly right. Value and graph equality are checked.'
 - key: check:01-real-functions-and-graphs:1
   kind: check
   file: 01-real-functions-and-graphs.md
-  line: 101
-  hash: 8c863c96f661
-  verdicts: []
+  line: 115
+  hash: 6ea4d3b07596
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/01
+    hash: 6ea4d3b07596
+    date: '2026-11-01'
+    evidence: 01:120; (2) counterexample (1,±1) with (ii) forcing 1∈D; (3) uses uniqueness of sqrt and
+      x=y^2>=0
+  - stage: S5b
+    verdict: correct
+    by: B:08/01
+    hash: 6ea4d3b07596
+    date: '2026-11-01'
+    evidence: 'L116-120: (1) yes over ℝ; (2) no, (1,±1); (3) yes over [0,∞), using uniqueness from prp-cof-square-roots.
+      All checked.'
 - key: def-function-algebra
   kind: def
   file: 01-real-functions-and-graphs.md
-  line: 113
+  line: 129
   hash: b6e6d2c87009
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:08/01
+    hash: b6e6d2c87009
+    date: '2026-11-01'
+    evidence: 01:136 uses max(f(x),g(x)) for reals with no source; fd3 ch04 01-rules-and-absolute-value.md:320
+      defines max{a,b} (braces) in an ordered field; not cited, not in ledger, notation differs. Associativity
+      paragraph and second-reading fold (01:142-146) are correct via fd2:prp-function-equality
+  - stage: S5b
+    verdict: minor
+    by: B:08/01
+    hash: b6e6d2c87009
+    date: '2026-11-01'
+    evidence: L132-139 defines f+g, fg, cf, |f|, max, min, f/g and g∘f, but not f−g or −f. Those appear
+      in prp-graph-transformations (c) at L214, the uniqueness proof (e−e', L309) and B1 (|f−g|, L357).
+      The L148 empty-domain claim needs −x²−1<0, which has no ledger line.
 - key: check:01-real-functions-and-graphs:2
   kind: check
   file: 01-real-functions-and-graphs.md
-  line: 134
+  line: 150
   hash: cce039637ac7
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/01
+    hash: cce039637ac7
+    date: '2026-11-01'
+    evidence: '01:155 [0,∞)∩(R∖{0})=(0,∞); {x: x-1>=0}=[1,∞)'
+  - stage: S5b
+    verdict: correct
+    by: B:08/01
+    hash: cce039637ac7
+    date: '2026-11-01'
+    evidence: 'L155: (0,∞) and [1,∞) are correct.'
 - key: def-polynomial-rational-function
   kind: def
   file: 01-real-functions-and-graphs.md
-  line: 146
+  line: 162
   hash: 5204e5947711
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:08/01
+    hash: 5204e5947711
+    date: '2026-11-01'
+    evidence: '01:162-172 math correct: prp-polynomial-function-map (b) is ε a ring homomorphism; thm-polynomial-identity-from-values
+      (a) with n=max(deg p,deg q,0) and the infinite-set claim inside proof of (b); thm-polynomial-root-count.
+      Only issue: no small worked instance precedes the definition (STYLE §13 B5), see finding'
+  - stage: S5b
+    verdict: minor
+    by: B:08/01
+    hash: 5204e5947711
+    date: '2026-11-01'
+    evidence: L165 definition is fine and cited labels exist (Ch6 04:11, 04:277 (b) is the ring hom, Ch7
+      04:61, 04:11). L168 says 'Chapters 6 and 7 proved three facts ... over every field', but prp-polynomial-function-map
+      is over a commutative ring and the second fact (infinite D ⊆ ℝ, not infinite F) is derived on this
+      page at L171, not proved in Ch6-7.
 - key: check:01-real-functions-and-graphs:3
   kind: check
   file: 01-real-functions-and-graphs.md
-  line: 160
+  line: 176
   hash: ac8f8626a885
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/01
+    hash: ac8f8626a885
+    date: '2026-11-01'
+    evidence: 01:181 |x|=x on [0,∞); domains R∖{1} vs R differ
+  - stage: S5b
+    verdict: correct
+    by: B:08/01
+    hash: ac8f8626a885
+    date: '2026-11-01'
+    evidence: 'L181: |x|=x on [0,∞), so it is a polynomial function. The domains ℝ∖{1} and ℝ differ. Both
+      answers are correct.'
 - key: exm-method-graph-pairs
   kind: exm
   file: 01-real-functions-and-graphs.md
-  line: 172
-  hash: b7f8958d098d
-  verdicts: []
+  line: 188
+  hash: 0fb849125eb4
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/01
+    hash: 0fb849125eb4
+    date: '2026-11-01'
+    evidence: '01:191-195: (x,y)∈graph g ⇔ M^{-1}(x,y)∈graph f, and with M bijective this is (x,y)∈M(graph
+      f); correct'
+  - stage: S5b
+    verdict: correct
+    by: B:08/01
+    hash: 0fb849125eb4
+    date: '2026-11-01'
+    evidence: 'L191-199: the equivalence with M^{-1} and the bijection step are correct, and the box uses
+      the parts How it goes / When to use it / Common mistakes (§13 B4). The ''next section'' pointer
+      is honoured: 8.2 L293 cites @exm-method-graph-pairs for the graph of f^{-1}.'
 - key: prp-graph-transformations
   kind: prp
   file: 01-real-functions-and-graphs.md
-  line: 188
+  line: 206
   hash: 61df5aba1a13
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/01
+    hash: 61df5aba1a13
+    date: '2026-11-01'
+    evidence: '01:206-216; c>0 used only as c≠0 (needed: c=0 makes f(x/c) and cD meaningless); all four
+      maps M are bijections'
+  - stage: S5b
+    verdict: correct
+    by: B:08/01
+    hash: 61df5aba1a13
+    date: '2026-11-01'
+    evidence: 'L209-216: all four parts are true. The instance at L204 gives {(1,2),(2,3),(3,6)}, rechecked
+      by hand. The figure has vertex (1,−2) and zeros −1, 3, consistent with the tikz endpoints (−2.4,1.4)
+      and (4.2,1.2). Hypothesis c>0 is used only as c≠0, which the ledger notes.'
 - key: proof:prp-graph-transformations
   kind: proof
   file: 01-real-functions-and-graphs.md
-  line: 214
-  hash: ac21beb34c9a
-  verdicts: []
+  line: 232
+  hash: a80770d81fc5
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/01
+    hash: a80770d81fc5
+    date: '2026-11-01'
+    evidence: 01:233-239; (a) both directions explicit with fd2:def-ordered-pair; (b)-(d) prove (x,y)∈graph
+      ⇔ M^{-1}(x,y)∈graph f and rely on the method (01:195); x∈-D⇔-x∈D and x∈cD⇔x/c∈D are definitional
+      (ledger 469)
+  - stage: S5b
+    verdict: correct
+    by: B:08/01
+    hash: a80770d81fc5
+    date: '2026-11-01'
+    evidence: 'L233-239: (a) in full. (b)-(d) stop at membership in graph f, and the rewriting into the
+      displayed set form is a one-step substitution. x∈−D ⟺ −x∈D is used silently (the ledger covers D+a
+      and cD only), which is trivial.'
 - key: check:01-real-functions-and-graphs:4
   kind: check
   file: 01-real-functions-and-graphs.md
-  line: 240
+  line: 262
   hash: 7272cf7c2730
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/01
+    hash: 7272cf7c2730
+    date: '2026-11-01'
+    evidence: 01:267 a=-1,b=2 gives |x+1|+2 on R; vertex (-1,2)
+  - stage: S5b
+    verdict: correct
+    by: B:08/01
+    hash: 7272cf7c2730
+    date: '2026-11-01'
+    evidence: 'L267: a=−1, b=2 gives |x+1|+2 on ℝ with vertex (−1,2). Correct.'
 - key: def-even-odd-function
   kind: def
   file: 01-real-functions-and-graphs.md
-  line: 252
+  line: 276
   hash: 90396bf82de3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:08/01
+    hash: 90396bf82de3
+    date: '2026-11-01'
+    evidence: 01:282-284 graph characterizations correct (odd case uses -x∈D⇔x∈D from symmetry). 01:288
+      lists x^2, |x>, constants as even without stating D, against the rule at 01:22 'The set D is always
+      stated'
+  - stage: S5b
+    verdict: minor
+    by: B:08/01
+    hash: 90396bf82de3
+    date: '2026-11-01'
+    evidence: L279 definition is fine and the graph paragraphs L282-284 are correct. But the example list
+      L288-289 ('x², |x| and the constants are even'; 'x, x³ and 1/x on ℝ∖{0} are odd') states no domain
+      for most items, against the section's own rule at L22 ('The set D is always stated').
 - key: prp-even-odd-decomposition
   kind: prp
   file: 01-real-functions-and-graphs.md
-  line: 262
+  line: 297
   hash: e9066c400cb7
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/01
+    hash: e9066c400cb7
+    date: '2026-11-01'
+    evidence: 01:297-304; D symmetric is needed for f(-x) to be defined (cf. B3)
+  - stage: S5b
+    verdict: correct
+    by: B:08/01
+    hash: e9066c400cb7
+    date: '2026-11-01'
+    evidence: L300-303 is correct. The instance (x+1)² before it is at L295.
 - key: proof:prp-even-odd-decomposition
   kind: proof
   file: 01-real-functions-and-graphs.md
-  line: 271
-  hash: 33b7a002101e
-  verdicts: []
+  line: 306
+  hash: a8db3c0310ac
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/01
+    hash: a8db3c0310ac
+    date: '2026-11-01'
+    evidence: 01:307-309; existence via -(-x)=x; uniqueness h=e-e'=o'-o both even and odd, 2h(x)=0, 2≠0
+      (ledger 478)
+  - stage: S5b
+    verdict: minor
+    by: B:08/01
+    hash: a8db3c0310ac
+    date: '2026-11-01'
+    evidence: L307-309 is correct, with 2≠0 stated. It uses 'difference of even functions' with e−e',
+      which def-function-algebra does not define (see that item). The follow-up claim at L312 ('the even
+      part keeps the even powers') is not proved and has no ledger line.
 - key: exr-real-functions-and-graphs-a1
   kind: exr
   file: 01-real-functions-and-graphs.md
-  line: 283
-  hash: 7a2079591287
-  verdicts: []
+  line: 318
+  hash: 142e81ec7f9f
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/01
+    hash: 142e81ec7f9f
+    date: '2026-11-01'
+    evidence: 01:332; (a) (-1,±1); (c) (2,0),(2,1); (d) 0·y=0≠1, unique y=1/a
+  - stage: S5b
+    verdict: minor
+    by: B:08/01
+    hash: 142e81ec7f9f
+    date: '2026-11-01'
+    evidence: L332 (a), (b), (d) are correct. The (c) solution only lists (2,0) and (2,1). Unlike (a),
+      it does not say that (ii) forces 2∈D and that (i) then fails, so the 'over no D' part is unargued.
+  - stage: S6
+    verdict: minor
+    by: S6:08a
+    hash: 142e81ec7f9f
+    date: '2026-11-01'
+    evidence: 01:331-333. All four verdicts agree with mine ((a) no, (b) R, (c) no, (d) R\{0}). Part (c)
+      only lists two points and does not say which clause fails, unlike part (a) and the Quick check at
+      115-121.
 - key: exr-real-functions-and-graphs-a2
   kind: exr
   file: 01-real-functions-and-graphs.md
-  line: 300
+  line: 335
   hash: 5b15da0dc69e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/01
+    hash: 5b15da0dc69e
+    date: '2026-11-01'
+    evidence: 01:347-349; g(f(2))=1, f(g(2))=-1/2; sidecar exr-...-a2.py passes; (b) domain ∅ → fd2:prp-empty-function
+  - stage: S5b
+    verdict: correct
+    by: B:08/01
+    hash: 5b15da0dc69e
+    date: '2026-11-01'
+    evidence: 'L347-349: domains ℝ∖{1} and ℝ∖{0}; g(f(2))=1, f(g(2))=−1/2; the empty composite. All correct;
+      sidecar exists.'
+  - stage: S6
+    verdict: correct
+    by: S6:08a
+    hash: 5b15da0dc69e
+    date: '2026-11-01'
+    evidence: 01:346-350. Domains R\{1} and R\{0}; g(f(2))=1 and f(g(2))=-1/2 confirmed by my script.
+      The composite with the constant 0 has empty domain, which makes it the empty function (fd2:prp-empty-function
+      exists).
 - key: exr-real-functions-and-graphs-b1
   kind: exr
   file: 01-real-functions-and-graphs.md
-  line: 319
+  line: 354
   hash: eec53bd0e5d7
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:08/01
+    hash: eec53bd0e5d7
+    date: '2026-11-01'
+    evidence: 01:361 correct case split; max of reals is used as in fd3 ch04 :320 (max{a,b}) but that
+      definition is neither cited nor in ledger line 482
+  - stage: S5b
+    verdict: minor
+    by: B:08/01
+    hash: eec53bd0e5d7
+    date: '2026-11-01'
+    evidence: 'L361: the case analysis is correct. The statement uses f−g, which has no definition in
+      def-function-algebra (see that item).'
+  - stage: S6
+    verdict: minor
+    by: S6:08a
+    hash: eec53bd0e5d7
+    date: '2026-11-01'
+    evidence: 01:359-362. The case proof is correct and I checked the identity on random samples. Section
+      8.1 has no worked example of a pointwise identity proved by cases on |.|, so this B task has no
+      model example in the section.
 - key: exr-real-functions-and-graphs-b2
   kind: exr
   file: 01-real-functions-and-graphs.md
-  line: 329
+  line: 364
   hash: 4d490eceb8ea
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/01
+    hash: 4d490eceb8ea
+    date: '2026-11-01'
+    evidence: 01:371; 2|x-1|=3 ⇒ x=-1/2,5/2; vertex (1,-3); sidecar passes
+  - stage: S5b
+    verdict: correct
+    by: B:08/01
+    hash: 4d490eceb8ea
+    date: '2026-11-01'
+    evidence: 'L371: 2|x−1|−3 = h(x−1)−3 with h=2|·|. Vertex (1,−3); |x−1|=3/2 gives −1/2 and 5/2. Correct;
+      sidecar exists.'
+  - stage: S6
+    verdict: correct
+    by: S6:08a
+    hash: 4d490eceb8ea
+    date: '2026-11-01'
+    evidence: 01:369-372. Stretch by (d), then shift by (a); vertex (1,-3); zeros -1/2 and 5/2 (my sympy
+      solve). The worked example |x-1|-2 is at 01:246.
 - key: exr-real-functions-and-graphs-b3
   kind: exr
   file: 01-real-functions-and-graphs.md
-  line: 339
-  hash: '958044994547'
-  verdicts: []
+  line: 374
+  hash: db1f6569d99a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/01
+    hash: db1f6569d99a
+    date: '2026-11-01'
+    evidence: 01:381-388; (1/(1-x)+1/(1+x))/2=1/(1-x^2), difference 2x/(1-x^2)/2=x/(1-x^2); sidecar passes
+  - stage: S5b
+    verdict: correct
+    by: B:08/01
+    hash: db1f6569d99a
+    date: '2026-11-01'
+    evidence: 'L384-388: e=1/(1−x²) and o=x/(1−x²) are correct. The reason for removing −1 is correct.'
+  - stage: S6
+    verdict: correct
+    by: S6:08a
+    hash: db1f6569d99a
+    date: '2026-11-01'
+    evidence: 01:377-390. e=1/(1-x^2) and o=x/(1-x^2), checked symbolically. The reason for removing -1
+      (a symmetric domain is needed) is correct. Worked example (x+1)^2 is at 01:294.
 - key: exr-real-functions-and-graphs-b4
   kind: exr
   file: 01-real-functions-and-graphs.md
-  line: 356
+  line: 395
   hash: e93735eb4735
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/01
+    hash: e93735eb4735
+    date: '2026-11-01'
+    evidence: 01:409-415; (d) x^2 + 0 is even refutes 'never'
+  - stage: S5b
+    verdict: correct
+    by: B:08/01
+    hash: e93735eb4735
+    date: '2026-11-01'
+    evidence: 'L409-415: (a)-(c) true with valid one-line proofs; (d) false, with x²+0 as counterexample.
+      Correct.'
+  - stage: S6
+    verdict: correct
+    by: S6:08a
+    hash: e93735eb4735
+    date: '2026-11-01'
+    evidence: '01:410-418. (a), (b) and (c) are true, with correct one-line proofs. (d) is false: x^2
+      plus the zero function is even. This matches my answers.'
 - key: exr-real-functions-and-graphs-c1
   kind: exr
   file: 01-real-functions-and-graphs.md
-  line: 381
+  line: 420
   hash: bfbb84f675a4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/01
+    hash: bfbb84f675a4
+    date: '2026-11-01'
+    evidence: 01:445-449; induction on N, oddness for n<0, n f(q)=f(nq)=f(m·1)=mc; later use at ch08/06:476
+      is in a solution only (STYLE 'used later' rule respected)
+  - stage: S5b
+    verdict: correct
+    by: B:08/01
+    hash: bfbb84f675a4
+    date: '2026-11-01'
+    evidence: 'L445-456: (a), the induction plus oddness in (b), and (c) via n f(q)=f(m)=mc are all correct.
+      The rubric sums to 2+3+2+3=10. ''used later'' is honoured by 8.6 L466/476 (@exr-real-functions-and-graphs-c1,
+      in a solution).'
+  - stage: S6
+    verdict: correct
+    by: S6:08a
+    hash: bfbb84f675a4
+    date: '2026-11-01'
+    evidence: 01:422-457. (a) uses x=y=0 and y=-x. (b) uses induction plus oddness for negative n. (c)
+      computes n f(q)=f(m)=mc. All match my proof. Hints name first lines without carrying them out. My
+      alternative route through f(1/n)=c/n fits the scheme's bullets.
 - key: def-monotone-function
   kind: def
   file: 02-monotone-functions-and-inverses.md
-  line: 11
+  line: 13
   hash: e3cd5159bead
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/02
+    hash: e3cd5159bead
+    date: '2026-11-01'
+    evidence: '13-27: four clauses, the quantifier form and the negation at 33 (via fd1:prp-quantifier-negation)
+      are right. The remark at 29 that x<=y gives f(x)<=f(y) is justified.'
+  - stage: S5b
+    verdict: minor
+    by: B:08/02
+    hash: e3cd5159bead
+    date: '2026-11-01'
+    evidence: 02:29 'and likewise for the other three kinds' can be read as x<=y => f(x)<f(y) for the
+      strict kinds, which fails at x=y; definition itself (13-27) correct, negation 31-35 correct
 - key: check:02-monotone-functions-and-inverses:1
   kind: check
   file: 02-monotone-functions-and-inverses.md
-  line: 47
+  line: 49
   hash: 0a29c4c8113a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/02
+    hash: 0a29c4c8113a
+    date: '2026-11-01'
+    evidence: '54: the constant, the 1/x witnesses -1<1, and the indicator case check are all correct.'
+  - stage: S5b
+    verdict: correct
+    by: B:08/02
+    hash: 0a29c4c8113a
+    date: '2026-11-01'
+    evidence: '02:49-55: constant, 1/x witnesses -1<1, indicator case check all correct'
 - key: exm-method-factor-difference
   kind: exm
   file: 02-monotone-functions-and-inverses.md
-  line: 59
-  hash: c74d52b35894
-  verdicts: []
+  line: 61
+  hash: 6a1d442bcde2
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/02
+    hash: 6a1d442bcde2
+    date: '2026-11-01'
+    evidence: '68: fd3:prp-ordered-ring-rules (c) signs (y-x)Q. lem-difference-of-powers (fd4 ch01:426)
+      matches the display with z=y, w=x.'
+  - stage: S5b
+    verdict: correct
+    by: B:08/02
+    hash: 6a1d442bcde2
+    date: '2026-11-01'
+    evidence: '02:61-83: lem-difference-of-powers (fd4 ch01 01:426) matches the displayed formula with
+      z=y,w=x; sign rule via fd3:prp-ordered-ring-rules (c)'
 - key: exm-mobius-increasing
   kind: exm
   file: 02-monotone-functions-and-inverses.md
-  line: 85
+  line: 87
   hash: 7660b2bbf034
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/02
+    hash: 7660b2bbf034
+    date: '2026-11-01'
+    evidence: '117: numerator 3(y-x) checked by hand. Positive denominator via (O4), named in words. Uses
+      line labels match fd3 (prp-reciprocal-order (a): a>0 => 1/a>0).'
+  - stage: S5b
+    verdict: minor
+    by: B:08/02
+    hash: 7660b2bbf034
+    date: '2026-11-01'
+    evidence: 02:85 and 02:126 are sentences about the page's devices ('The first worked example', 'The
+      scratch work found...; the proof starts from it... Nothing in the proof mentions the naive attempt'),
+      STYLE §13 B3; math 115-119 correct (3(y-x) verified by hand)
 - key: exm-squash-function
   kind: exm
   file: 02-monotone-functions-and-inverses.md
-  line: 124
+  line: 130
   hash: b42aeba7afc0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/02
+    hash: b42aeba7afc0
+    date: '2026-11-01'
+    evidence: '143-156: all three cases are correct, and trichotomy covers x<y. 158: x=v/(1+v) for v<0
+      gives 1+|x|=1/(1+v) and sigma(x)=v. Matches fd2:exm-fraction-map.'
+  - stage: S5b
+    verdict: minor
+    by: B:08/02
+    hash: b42aeba7afc0
+    date: '2026-11-01'
+    evidence: 02:141 uses 1+|x|>=1 and 02:156 'By trichotomy' without @ref and neither is in the ledger
+      lines 568-569; math correct, three cases cover all x<y, image formula v/(1-|v|) correct
 - key: prp-monotone-algebra
   kind: prp
   file: 02-monotone-functions-and-inverses.md
-  line: 157
-  hash: 7929af2c7487
-  verdicts: []
+  line: 165
+  hash: fc5d84416245
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/02
+    hash: fc5d84416245
+    date: '2026-11-01'
+    evidence: '165-177: every hypothesis is needed (the warning at 202 drops the sign condition in (c)).
+      The domain of 1/f contains A because f>0 there.'
+  - stage: S5b
+    verdict: minor
+    by: B:08/02
+    hash: fc5d84416245
+    date: '2026-11-01'
+    evidence: 02:165 stated over general D, A with no worked instance before it (STYLE §13 B5); statements
+      (a)-(e) true
 - key: proof:prp-monotone-algebra
   kind: proof
   file: 02-monotone-functions-and-inverses.md
-  line: 175
-  hash: 542093f9ecab
-  verdicts: []
+  line: 183
+  hash: d71ca762dd72
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/02
+    hash: d71ca762dd72
+    date: '2026-11-01'
+    evidence: '186-194: the cited rules match. fd3 ordered-ring-rules (a) negate, (b) add, (c) scale.
+      ordered-field-halves (c) non-strict reciprocal, (d) products. reciprocal-order (b) strict. (e) uses
+      the <= form in B, valid since f(x),f(y) lie in B.'
+  - stage: S5b
+    verdict: correct
+    by: B:08/02
+    hash: d71ca762dd72
+    date: '2026-11-01'
+    evidence: '02:183-199: each part matches fd3:prp-ordered-ring-rules (a)-(c), prp-ordered-field-halves
+      (c),(d), prp-reciprocal-order (b); (e) domain via def-function-algebra (01:136)'
 - key: check:02-monotone-functions-and-inverses:2
   kind: check
   file: 02-monotone-functions-and-inverses.md
-  line: 193
-  hash: ed6279c0ecd2
-  verdicts: []
+  line: 205
+  hash: 86554a82140c
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/02
+    hash: 86554a82140c
+    date: '2026-11-01'
+    evidence: '210: (c) applies. x^2 is increasing on [0,oo) by lem-reals-nth-root (a), and the constant
+      1 is added via (a).'
+  - stage: S5b
+    verdict: correct
+    by: B:08/02
+    hash: 86554a82140c
+    date: '2026-11-01'
+    evidence: '02:205-211: rule (c) applies, x^2 increasing on [0,oo) by lem-reals-nth-root (a), +1 by
+      rule (a)'
 - key: prp-strictly-monotone-order-reflecting
   kind: prp
   file: 02-monotone-functions-and-inverses.md
-  line: 205
+  line: 217
   hash: 34059d5e5359
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/02
+    hash: 34059d5e5359
+    date: '2026-11-01'
+    evidence: '217-226: the statement is true. Dropping ''strictly'' fails: for a constant f, f(x)<=f(y)
+      holds but x<=y need not.'
+  - stage: S5b
+    verdict: correct
+    by: B:08/02
+    hash: 34059d5e5359
+    date: '2026-11-01'
+    evidence: 02:217-226 true as stated
 - key: proof:prp-strictly-monotone-order-reflecting
   kind: proof
   file: 02-monotone-functions-and-inverses.md
-  line: 220
-  hash: 67047986beba
-  verdicts: []
+  line: 232
+  hash: 8b0fcbc7d703
+  verdicts:
+  - stage: S5a
+    verdict: gap
+    by: A:08/02
+    hash: 8b0fcbc7d703
+    date: '2026-11-01'
+    evidence: '239: cites prp-monotone-algebra (b) for ''-f strictly increasing'' when f is strictly decreasing.
+      (b) at 172 states only the direction increasing => -f decreasing. Also, 237 attributes y != x to
+      totality; it comes from reflexivity.'
+  - stage: S5b
+    verdict: gap
+    by: B:08/02
+    hash: 8b0fcbc7d703
+    date: '2026-11-01'
+    evidence: '02:239 ''(b) By @prp-monotone-algebra (b), -f is strictly increasing on A'' but rule (b)
+      (02:172) only says: f increasing => -f decreasing, strictly if f strictly increasing; it does not
+      cover f strictly decreasing => -f strictly increasing'
 - key: check:02-monotone-functions-and-inverses:3
   kind: check
   file: 02-monotone-functions-and-inverses.md
-  line: 232
+  line: 248
   hash: f9f78a66902c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/02
+    hash: f9f78a66902c
+    date: '2026-11-01'
+    evidence: '253: correctly locates totality in the (<=) directions.'
+  - stage: S5b
+    verdict: correct
+    by: B:08/02
+    hash: f9f78a66902c
+    date: '2026-11-01'
+    evidence: '02:248-254: both (<=) directions use totality (235, 237); answer correct'
 - key: exm-injective-not-monotone
   kind: exm
   file: 02-monotone-functions-and-inverses.md
-  line: 242
-  hash: bd4afc5f4297
-  verdicts: []
+  line: 258
+  hash: b2eaef1ca5de
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/02
+    hash: b2eaef1ca5de
+    date: '2026-11-01'
+    evidence: '265-267: the swap is an involution, hence bijective by fd2:thm-bijection-iff-inverse. Witnesses
+      0<1 and 1<2 lie in every set containing 0,1,2. The 1/x witnesses -1,1,2 are correct.'
+  - stage: S5b
+    verdict: correct
+    by: B:08/02
+    hash: b2eaef1ca5de
+    date: '2026-11-01'
+    evidence: '02:258-268: f(f(x))=x by three cases; witnesses 0<1, 1<2; for 1/x witnesses 1<2 and -1<1
+      lie in {-1,1,2}'
 - key: thm-monotone-inverse
   kind: thm
   file: 02-monotone-functions-and-inverses.md
-  line: 258
+  line: 276
   hash: f3c47f0d8ac4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/02
+    hash: f3c47f0d8ac4
+    date: '2026-11-01'
+    evidence: '276-287: true as stated. Hypotheses are tested at 314 (constant; sigma without the codomain
+      cut).'
+  - stage: S5b
+    verdict: correct
+    by: B:08/02
+    hash: f3c47f0d8ac4
+    date: '2026-11-01'
+    evidence: 02:276-288 true; decreasing variant handled in 310-312 via prp (b) applied to the pair y,x
 - key: proof:thm-monotone-inverse
   kind: proof
   file: 02-monotone-functions-and-inverses.md
-  line: 280
-  hash: 80fb03986d53
-  verdicts: []
+  line: 298
+  hash: b80363d5ce2d
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:08/02
+    hash: b80363d5ce2d
+    date: '2026-11-01'
+    evidence: '299-303: the proof is correct. fd2:prp-strictly-monotone-injective (fd2 ch02:391) applies
+      with B=R. However, 295/314 say totality is used ''once, inside prp-strictly-monotone-order-reflecting''.
+      The injectivity cited in (a) also uses trichotomy (fd2 proof: ''By trichotomy, x<x'' or x''<x'').'
+  - stage: S5b
+    verdict: correct
+    by: B:08/02
+    hash: b80363d5ce2d
+    date: '2026-11-01'
+    evidence: '02:298-308: surjective onto f(A), injective by fd2:prp-strictly-monotone-injective (fd2
+      ch02 02:391, covers decreasing too as 311 claims), order via prp (a), graph by both composites'
 - key: check:02-monotone-functions-and-inverses:4
   kind: check
   file: 02-monotone-functions-and-inverses.md
-  line: 296
+  line: 318
   hash: b0bb065ab85c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/02
+    hash: b0bb065ab85c
+    date: '2026-11-01'
+    evidence: '323: g=1-3/(x+2) has image (-oo,1). The inverse (1+2v)/(1-v) was checked by hand: x+2=3/(1-v),
+      x-1=3v/(1-v).'
+  - stage: S5b
+    verdict: correct
+    by: B:08/02
+    hash: b0bb065ab85c
+    date: '2026-11-01'
+    evidence: '02:318-324: g=1-3/(x+2), image (-oo,1), inverse (1+2v)/(1-v), x+2=3/(1-v), x-1=3v/(1-v)
+      all verified by hand'
 - key: exm-odd-roots
   kind: exm
   file: 02-monotone-functions-and-inverses.md
-  line: 306
-  hash: deb106341e63
-  verdicts: []
+  line: 328
+  hash: 7bf1f8c5729e
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:08/02
+    hash: 7bf1f8c5729e
+    date: '2026-11-01'
+    evidence: '335, 337: ''a power of a non-negative number is non-negative'' and ''a power of a positive
+      number is positive'' appear without a source in the text or the Uses line at 340. Ledger line 579
+      says ''cited''. The math is correct: the cases 0<=x, y<=0, x<0<y cover x<y; the image formula and
+      the oddness of the root are right.'
+  - stage: S5b
+    verdict: minor
+    by: B:08/02
+    hash: 7bf1f8c5729e
+    date: '2026-11-01'
+    evidence: 02:335, 337 use 'a power of a non-negative (positive) number is non-negative (positive)'
+      with no @ref, but ledger line 579 says 'cited'; 02:326 'the first half of @lem-reals-nth-root' while
+      the example uses both (a) and (b); 02:344 'For even n the second half fails' argues only n=2
+  - stage: S8
+    verdict: minor
+    by: S8:08
+    hash: 7bf1f8c5729e
+    date: '2026-11-01'
+    evidence: '02:326-336: ''a -> n-th root of a is strictly increasing on [0, inf)'' is Chapter 1''s
+      lem-root-rules (d), re-proved without saying so. The lead-in at 02:326 presents it as new.'
 - key: exm-strange-jump
   kind: exm
   file: 02-monotone-functions-and-inverses.md
-  line: 338
+  line: 364
   hash: 0d6df0d7f73d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/02
+    hash: 0d6df0d7f73d
+    date: '2026-11-01'
+    evidence: '371-373: the three cases cover x<y, and the image (-oo,0) u [1,oo) and H^{-1} are correct.'
+  - stage: S5b
+    verdict: correct
+    by: B:08/02
+    hash: 0d6df0d7f73d
+    date: '2026-11-01'
+    evidence: '02:364-374: cases y<0, 0<=x, x<0<=y cover all; image (-oo,0)u[1,oo); H^{-1} correct'
 - key: exr-monotone-functions-and-inverses-a1
   kind: exr
   file: 02-monotone-functions-and-inverses.md
-  line: 376
+  line: 402
   hash: 11ba42b3c240
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/02
+    hash: 11ba42b3c240
+    date: '2026-11-01'
+    evidence: '415-419: f([0,2])=[0,4] is justified by strict monotonicity, and the x, y in part (b) are
+      right.'
+  - stage: S5b
+    verdict: minor
+    by: B:08/02
+    hash: 11ba42b3c240
+    date: '2026-11-01'
+    evidence: '02:408-409: exercise parts (a),(b),(c) refer to ''part (b)'' and ''part (a)'' of the theorem
+      in the same labelling, e.g. (b) ''Which cited result gives the injectivity in part (a)?'' reads
+      as the exercise''s own part (a); solution correct'
+  - stage: S6
+    verdict: correct
+    by: S6:08a
+    hash: 11ba42b3c240
+    date: '2026-11-01'
+    evidence: 02:415-419. f(A)=[0,4] and f^{-1}=sqrt; for u=1, v=4 the proof gives x=1, y=2, which matches
+      the proof of thm-monotone-inverse(b) at 02:303. Injectivity comes from fd2:prp-strictly-monotone-injective,
+      as at 02:301.
 - key: exr-monotone-functions-and-inverses-a2
   kind: exr
   file: 02-monotone-functions-and-inverses.md
-  line: 396
-  hash: 6e56becda840
-  verdicts: []
+  line: 422
+  hash: 61c78b844c11
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/02
+    hash: 61c78b844c11
+    date: '2026-11-01'
+    evidence: '436-442: all four classifications and their witnesses are right. 1/y-1/x=-(y-x)/(xy).'
+  - stage: S5b
+    verdict: correct
+    by: B:08/02
+    hash: 61c78b844c11
+    date: '2026-11-01'
+    evidence: '02:422-443: witnesses and 1/y-1/x=-(y-x)/(xy) correct; (c) via rule (b) for strictly increasing
+      x^3 is within what (b) states'
+  - stage: S6
+    verdict: minor
+    by: S6:08a
+    hash: 61c78b844c11
+    date: '2026-11-01'
+    evidence: '02:435-444. The classifications are correct: neither, strictly increasing, strictly decreasing,
+      strictly decreasing. The reasons in (a), "-1 < 0 with 1 > 0" and "0 < 1 with 0 < 1", omit the function
+      values and are hard for a beginner to parse.'
 - key: exr-monotone-functions-and-inverses-b1
   kind: exr
   file: 02-monotone-functions-and-inverses.md
-  line: 414
+  line: 447
   hash: 618f1056ae8e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/02
+    hash: 618f1056ae8e
+    date: '2026-11-01'
+    evidence: '456-458: (y-x)(xy-1)/(xy) is correct, and xy>x>=1 and xy<y<=1 are justified.'
+  - stage: S5b
+    verdict: correct
+    by: B:08/02
+    hash: 618f1056ae8e
+    date: '2026-11-01'
+    evidence: '02:447-459: (y-x)-(y-x)/(xy)=(y-x)(xy-1)/(xy); xy>x>=1 and xy<y<=1 correct'
+  - stage: S6
+    verdict: correct
+    by: S6:08a
+    hash: 618f1056ae8e
+    date: '2026-11-01'
+    evidence: '02:452-458. Difference = (y-x)(xy-1)/(xy), confirmed by my sympy factor. Both sign arguments
+      hold. Worked example: exm-mobius-increasing.'
 - key: exr-monotone-functions-and-inverses-b2
   kind: exr
   file: 02-monotone-functions-and-inverses.md
-  line: 428
+  line: 461
   hash: 19d607ab7fd6
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:08/02
+    hash: 19d607ab7fd6
+    date: '2026-11-01'
+    evidence: '470 vs 481-485: statement (d) names the function only as x |-> x^3 - x, but the solution
+      writes f(y)-f(x), f(1/2) with f undefined. The values are correct: h(-1/2)=3/8, f(1/2)=-3/8, f(3/5)=-48/125,
+      bracket 0.91-1<0.'
+  - stage: S5b
+    verdict: minor
+    by: B:08/02
+    hash: 19d607ab7fd6
+    date: '2026-11-01'
+    evidence: 02:481-485 (d) solution writes f(y)-f(x), f(1/2), f(3/5) but (d) names no f (part (c) used
+      h); values -3/8, -48/125, bracket 0.91-1 verified
+  - stage: S6
+    verdict: correct
+    by: S6:08a
+    hash: 19d607ab7fd6
+    date: '2026-11-01'
+    evidence: '02:474-485. (a) and (b) follow from prp-monotone-algebra (e) and (d). (c): h(-1)=0, h(-1/2)=3/8,
+      h(0)=0. (d): bracket -9/100 at (1/2, 3/5); f(1/2)=-3/8 and f(3/5)=-48/125. All values confirmed
+      by script.'
 - key: exr-monotone-functions-and-inverses-b3
   kind: exr
   file: 02-monotone-functions-and-inverses.md
-  line: 455
+  line: 488
   hash: af5259cfc322
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/02
+    hash: af5259cfc322
+    date: '2026-11-01'
+    evidence: '495-501: x^2-y^2=(x-y)(x+y)>0 since both factors are negative. The image and inverse are
+      right and match fd2:exm-two-sided-inverses (c).'
+  - stage: S5b
+    verdict: minor
+    by: B:08/02
+    hash: af5259cfc322
+    date: '2026-11-01'
+    evidence: 02:497-499 '(x-y)(x+y) > 0, as both factors are negative' uses product of negatives positive;
+      not in ledger line 587; math correct
+  - stage: S6
+    verdict: correct
+    by: S6:08a
+    hash: af5259cfc322
+    date: '2026-11-01'
+    evidence: 02:493-503. The three-case monotonicity proof is valid (x+y<0 when x<y<=0). Image is R.
+      The inverse matches fd2:exm-two-sided-inverses(c) (checked at fd2 ch02/04-inverses.md:300). It is
+      increasing by the theorem.
 - key: exr-monotone-functions-and-inverses-c1
   kind: exr
   file: 02-monotone-functions-and-inverses.md
-  line: 473
-  hash: 5e3086231792
-  verdicts: []
+  line: 506
+  hash: b6398dcbb2be
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/02
+    hash: b6398dcbb2be
+    date: '2026-11-01'
+    evidence: '520-522: the failing line (iv) is correctly identified. The repair y^2>1, xy>=1, x^2>=1
+      gives the bracket >0.'
+  - stage: S5b
+    verdict: correct
+    by: B:08/02
+    hash: b6398dcbb2be
+    date: '2026-11-01'
+    evidence: '02:506-523: factorization correct; (iv) is the failing line; repair y^2>1, x^2>=1, xy>=1
+      gives bracket>0'
+  - stage: S6
+    verdict: correct
+    by: S6:08a
+    hash: b6398dcbb2be
+    date: '2026-11-01'
+    evidence: 02:519-522. Factorization (y-x)(x^2+xy+y^2-3) checked. Lines (i)-(iii) are true. Only the
+      inference in (iv) is illegal, and 1*0=0 defeats it. The repair through y^2>1 is valid.
 - key: exr-monotone-functions-and-inverses-c2
   kind: exr
   file: 02-monotone-functions-and-inverses.md
-  line: 492
+  line: 525
   hash: aa8dd8223cd2
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/02
+    hash: aa8dd8223cd2
+    date: '2026-11-01'
+    evidence: '544-548: both cases use only the non-strict monotonicity correctly. The counterexample
+      -x is right, and the rubric is consistent.'
+  - stage: S5b
+    verdict: correct
+    by: B:08/02
+    hash: aa8dd8223cd2
+    date: '2026-11-01'
+    evidence: '02:525-558: x<f(x) gives f(x)<=f(f(x))=x, contradiction; symmetric case right; x->-x counterexample;
+      rubric sums to 10; cited by 06:178'
+  - stage: S6
+    verdict: minor
+    by: S6:08a
+    hash: aa8dd8223cd2
+    date: '2026-11-01'
+    evidence: 02:537-555. The proof is correct and matches mine. The marking scheme does not accept a
+      valid alternative proof (see findings).
 - key: prp-real-infimum
   kind: prp
   file: 03-bounds-and-suprema.md
-  line: 19
+  line: 21
   hash: 0218c49854d3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/03
+    hash: 0218c49854d3
+    date: '2026-11-01'
+    evidence: 03:21-30; (a) is fd3:prp-ordered-ring-rules (a) plus the equality case; (b) needs non-empty
+      and bounded below, and both are used
+  - stage: S5b
+    verdict: minor
+    by: B:08/03
+    hash: 0218c49854d3
+    date: '2026-11-01'
+    evidence: 'Statement and proof at 03:21-40 are correct: (a) uses fd3 ordered-ring-rules (a) with the
+      equality case, and (b) uses completeness and (S2). The sentence right after it at 03:42 is a false
+      meta-claim (see findings).'
+  - stage: S8
+    verdict: minor
+    by: S8:08
+    hash: 0218c49854d3
+    date: '2026-11-01'
+    evidence: 03:21-38 (b) is Number Systems exr-the-least-upper-bound-property-b1 (fd3 ch05 §05:279),
+      the same statement inf A = -sup(-A) with the same proof. It is not acknowledged.
 - key: proof:prp-real-infimum
   kind: proof
   file: 03-bounds-and-suprema.md
-  line: 30
-  hash: a680b6dac16d
-  verdicts: []
+  line: 32
+  hash: 3659c1384f8a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/03
+    hash: 3659c1384f8a
+    date: '2026-11-01'
+    evidence: '03:32-40; quantifiers: l is fixed, s comes from completeness, l'' is arbitrary; S2 is applied
+      correctly; completeness hypotheses (non-empty, upper bound -l) are checked'
+  - stage: S5b
+    verdict: correct
+    by: B:08/03
+    hash: 3659c1384f8a
+    date: '2026-11-01'
+    evidence: 03:33-35. The (a) iff argument is sound, and (b) gives existence, the lower bound and the
+      greatest one. The Uses line names (S2). Ledger 601 covers the equality case.
 - key: prp-real-sup-approximation
   kind: prp
   file: 03-bounds-and-suprema.md
-  line: 40
-  hash: 1d46d33d1c89
-  verdicts: []
+  line: 48
+  hash: 75a0047c6e77
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/03
+    hash: 75a0047c6e77
+    date: '2026-11-01'
+    evidence: 03:48-56; s is fixed as an upper bound before eps; a depends on eps
+  - stage: S5b
+    verdict: correct
+    by: B:08/03
+    hash: 75a0047c6e77
+    date: '2026-11-01'
+    evidence: 03:48-56. The equivalence is right, including the infimum twin.
 - key: proof:prp-real-sup-approximation
   kind: proof
   file: 03-bounds-and-suprema.md
-  line: 50
-  hash: d6ae2231252f
-  verdicts: []
+  line: 58
+  hash: dce2b05b8e18
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:08/03
+    hash: dce2b05b8e18
+    date: '2026-11-01'
+    evidence: 03:58-64; mathematics correct (totality = ordered-ring-rules (i); the inf clause follows
+      from prp-real-infimum (b)); uses (S1)/(S2) of fd2:def-order-supremum with no citation and no Uses
+      line, see finding
+  - stage: S5b
+    verdict: correct
+    by: B:08/03
+    hash: dce2b05b8e18
+    date: '2026-11-01'
+    evidence: 03:59-63. (⇒) uses (S2) and totality (i), which is cited. (⇐) is a contradiction on u <
+      s. The infimum case reflects through -A, -i and prp-real-infimum.
 - key: check:03-bounds-and-suprema:1
   kind: check
   file: 03-bounds-and-suprema.md
-  line: 60
+  line: 68
   hash: 5ad0c69d946b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/03
+    hash: 5ad0c69d946b
+    date: '2026-11-01'
+    evidence: 03:72-74; max(0,1-eps/2) lies in [0,1) and exceeds 1-eps in both cases eps>=2 and eps<2
+  - stage: S5b
+    verdict: correct
+    by: B:08/03
+    hash: 5ad0c69d946b
+    date: '2026-11-01'
+    evidence: 03:69-73. 0.995 shows that 0.99 is not an upper bound. max(0,1-ε/2) lies in [0,1) and exceeds
+      1-ε for every ε>0.
 - key: def-bounded-function
   kind: def
   file: 03-bounds-and-suprema.md
-  line: 74
+  line: 84
   hash: 6b03278aa9b4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/03
+    hash: 6b03278aa9b4
+    date: '2026-11-01'
+    evidence: 03:84-92; the two meanings of bounded agree via abs (d); 1/(|M|+1) is a correct witness;
+      1/2<=1/x<=1 follows from fd3:prp-ordered-field-halves (c)
+  - stage: S5b
+    verdict: correct
+    by: B:08/03
+    hash: 6b03278aa9b4
+    date: '2026-11-01'
+    evidence: 03:84-92. The equivalence of the two meanings is right, with M=max(|L|,|U|) (ledger 603).
+      In the 1/x example, x=1/(|M|+1) works, and 1/2≤1/x≤1 on [1,2] follows from fd3 halves (c).
 - key: def-sup-of-function
   kind: def
   file: 03-bounds-and-suprema.md
-  line: 84
+  line: 96
   hash: a40d36f37d34
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:08/03
+    hash: a40d36f37d34
+    date: '2026-11-01'
+    evidence: 03:99-103; inf_A f is defined only under the standing hypothesis 'f bounded above on A',
+      yet B1, A1(b) and line 106 use it for f that is only bounded below
+  - stage: S5b
+    verdict: minor
+    by: B:08/03
+    hash: a40d36f37d34
+    date: '2026-11-01'
+    evidence: '03:96-106. The math is fine. The new notation sup_A f, sup_{x∈A} f(x), inf_A f, max_A f,
+      min_A f has no row in NOTATION.md: grep for ''sup_A'' finds nothing, and the only \sup row (NOTATION:89)
+      is about sets.'
 - key: exm-method-sup-two-halves
   kind: exm
   file: 03-bounds-and-suprema.md
-  line: 102
-  hash: 9cbf54331e7b
-  verdicts: []
+  line: 114
+  hash: 7a9c71882cc1
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/03
+    hash: 7a9c71882cc1
+    date: '2026-11-01'
+    evidence: 03:114-131; reduces to prp-real-sup-approximation with A non-empty and M an upper bound
+  - stage: S5b
+    verdict: correct
+    by: B:08/03
+    hash: 7a9c71882cc1
+    date: '2026-11-01'
+    evidence: 03:114-131. The two halves plus prp-real-sup-approximation give equality. 'An inequality
+      needs only the first half' is true. The B4 pointer is accurate.
 - key: exm-sup-not-attained
   kind: exm
   file: 03-bounds-and-suprema.md
-  line: 125
+  line: 137
   hash: 4f300c723c8b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/03
+    hash: 4f300c723c8b
+    date: '2026-11-01'
+    evidence: 03:137-179; x=1/eps lies in A, f(x)=1/(1+eps)>1-eps since 1-eps^2<1; the sidecar exm-sup-not-attained.py
+      runs ok
+  - stage: S5b
+    verdict: minor
+    by: B:08/03
+    hash: 4f300c723c8b
+    date: '2026-11-01'
+    evidence: 03:168-178. The math is correct and the sidecar passes. But 1/(1+x)>0, 1/ε>0 (so that x=1/ε
+      lies in A) and 'quotient of x≥0 by 1+x>0 is ≥0' all use positivity of reciprocals (@fd3:prp-reciprocal-order
+      (a)). That source is neither cited nor in ledger line 609, which lists only ordered-ring-rules (c)
+      and lem-field-fraction-rules.
 - key: check:03-bounds-and-suprema:2
   kind: check
   file: 03-bounds-and-suprema.md
-  line: 169
+  line: 181
   hash: 47cb10bebc17
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/03
+    hash: 47cb10bebc17
+    date: '2026-11-01'
+    evidence: 03:185-187; f(1/2)=1/3>-1
+  - stage: S5b
+    verdict: correct
+    by: B:08/03
+    hash: 47cb10bebc17
+    date: '2026-11-01'
+    evidence: 03:182-187. x=1/2 gives f=1/3 > -1.
 - key: exm-sup-attained-parabola
   kind: exm
   file: 03-bounds-and-suprema.md
-  line: 179
+  line: 191
   hash: f3c24fd4e80a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/03
+    hash: f3c24fd4e80a
+    date: '2026-11-01'
+    evidence: 03:191-205; x(1-x)=1/4-(x-1/2)^2; inf 0 at 0; the sidecar runs ok
+  - stage: S5b
+    verdict: minor
+    by: B:08/03
+    hash: f3c24fd4e80a
+    date: '2026-11-01'
+    evidence: 03:191-205. The solution is correct (sidecar ok). The follow-up sentence at 03:207 says
+      'no ε appears in the second solution', but 03:202 has 'ε' twice ('1/4 > 1/4 - ε for every ε > 0').
 - key: check:03-bounds-and-suprema:3
   kind: check
   file: 03-bounds-and-suprema.md
-  line: 197
-  hash: 3fec79959611
-  verdicts: []
+  line: 209
+  hash: 9212f9c5bc39
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/03
+    hash: 9212f9c5bc39
+    date: '2026-11-01'
+    evidence: 03:213-217; values of x^2 on (-1,2) are [0,4); the irrationality of sqrt2/2 is argued through
+      fd3:thm-rationals-embed-ordered-field and thm-no-rational-square-two
+  - stage: S5b
+    verdict: correct
+    by: B:08/03
+    hash: 9212f9c5bc39
+    date: '2026-11-01'
+    evidence: '03:210-217. The values of x^2 on (-1,2) are [0,4): sup 4, not attained, inf 0, attained.
+      The indicator part is correct, and the irrationality of √2/2 is argued with cited sources (ledger
+      612-613).'
 - key: thm-sup-function-rules
   kind: thm
   file: 03-bounds-and-suprema.md
-  line: 211
+  line: 225
   hash: 7cdf1e48b056
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/03
+    hash: 7cdf1e48b056
+    date: '2026-11-01'
+    evidence: '03:225-239; dropping ''bounded below'' in (g): f=-1/x, g=0 on (0,1] makes |f-g| unbounded,
+      so the hypothesis is needed'
+  - stage: S5b
+    verdict: minor
+    by: B:08/03
+    hash: 7cdf1e48b056
+    date: '2026-11-01'
+    evidence: 03:225-239. The statement is correct. The lead-in meta-claim at 03:221, 'Each comparison
+      below is one or both halves of the method', is false for (e). The idea (03:242) and the proof (03:256)
+      both say (e) is prp-real-infimum applied to f(A), not a half of the method.
 - key: proof:thm-sup-function-rules
   kind: proof
   file: 03-bounds-and-suprema.md
-  line: 231
-  hash: 66ca1b7feb90
-  verdicts: []
+  line: 245
+  hash: 9625aa8ad5e2
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/03
+    hash: 9625aa8ad5e2
+    date: '2026-11-01'
+    evidence: 03:245-269; (c) and (d) both halves present, (d) treats c=0 apart; (g) uses (a) and then
+      (c) with g+d bounded above; the Uses entries match the fd3 labels (b),(c),(d)
+  - stage: S5b
+    verdict: correct
+    by: B:08/03
+    hash: 9625aa8ad5e2
+    date: '2026-11-01'
+    evidence: '03:246-269. (a)-(g) check out: (d) treats c=0 separately and uses ε/c, and in (g) (a) and
+      then (c) apply because g+d is bounded above. The Uses line covers (S2), ring rules (b) and abs (b),(c),(d),
+      and (e) triangle is cited inline.'
 - key: check:03-bounds-and-suprema:4
   kind: check
   file: 03-bounds-and-suprema.md
-  line: 259
+  line: 277
   hash: 97766cd49db0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/03
+    hash: 97766cd49db0
+    date: '2026-11-01'
+    evidence: 03:281-283
+  - stage: S5b
+    verdict: correct
+    by: B:08/03
+    hash: 97766cd49db0
+    date: '2026-11-01'
+    evidence: 03:278-283. It matches the proof of (f) at 03:258.
 - key: prp-sup-oscillation
   kind: prp
   file: 03-bounds-and-suprema.md
-  line: 271
+  line: 291
   hash: 60597fb11bda
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/03
+    hash: 60597fb11bda
+    date: '2026-11-01'
+    evidence: 03:291-298; bounded below is needed for I (A1(b))
+  - stage: S5b
+    verdict: correct
+    by: B:08/03
+    hash: 60597fb11bda
+    date: '2026-11-01'
+    evidence: 03:291-298. The statement is true, and both hypotheses (bounded above and below) are used.
 - key: proof:prp-sup-oscillation
   kind: proof
   file: 03-bounds-and-suprema.md
-  line: 288
-  hash: 39702b70852b
-  verdicts: []
+  line: 308
+  hash: 1ffc02154811
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/03
+    hash: 1ffc02154811
+    date: '2026-11-01'
+    evidence: 03:308-322; x and y are chosen after eps and depend only on eps/2; the inf version of prp-real-sup-approximation
+      gives y; T is non-empty
+  - stage: S5b
+    verdict: correct
+    by: B:08/03
+    hash: 1ffc02154811
+    date: '2026-11-01'
+    evidence: '03:309-322. The bounding half goes through abs (d). The witness half uses ε/2 twice and
+      the infimum twin of the test. The Uses line covers halves (b) and abs (c). The meta-claims at 03:324
+      are true: no maximizer is used, and for x/(1+x) the spread is 1 and is not attained.'
 - key: exm-polynomial-unbounded
   kind: exm
   file: 03-bounds-and-suprema.md
-  line: 306
-  hash: cf0e9c2595f1
-  verdicts: []
+  line: 332
+  hash: 267f1a4bb814
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/03
+    hash: 267f1a4bb814
+    date: '2026-11-01'
+    evidence: 03:332-360; K and R match the A and R of lem-complex-polynomial-growth (fd4 ch07/06), and
+      the modulus equals the absolute value by prp-modulus-of-real; (c) witness x=R+2|M|/|a_d|; x^3-4x+1
+      gives K=5, R=10; the sidecar runs ok
+  - stage: S5b
+    verdict: correct
+    by: B:08/03
+    hash: 267f1a4bb814
+    date: '2026-11-01'
+    evidence: '03:332-360. K and R match A and R of lem-complex-polynomial-growth (fd4 ch07/06:21). (c):
+      x=R+2|M|/|a_d| gives |p(x)| ≥ ½|a_d|R+|M| > M. x^3-4x+1 gives K=5, R=10 (sidecar ok). The Chapter
+      7 pointers (lem-complex-polynomial-growth, cor-real-odd-degree-root via factoring) are correct local
+      numbers.'
 - key: check:03-bounds-and-suprema:5
   kind: check
   file: 03-bounds-and-suprema.md
-  line: 332
-  hash: c653fc5cbd66
-  verdicts: []
+  line: 364
+  hash: fdff67b7c3f8
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/03
+    hash: fdff67b7c3f8
+    date: '2026-11-01'
+    evidence: 03:368-370; 8000+2000
+  - stage: S5b
+    verdict: correct
+    by: B:08/03
+    hash: fdff67b7c3f8
+    date: '2026-11-01'
+    evidence: 03:365-370. 8000+2000 bound on [-20,20]; unbounded on ℝ by (c).
 - key: prp-iterated-sup
   kind: prp
   file: 03-bounds-and-suprema.md
-  line: 344
+  line: 378
   hash: a2e08753c988
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/03
+    hash: a2e08753c988
+    date: '2026-11-01'
+    evidence: 03:378-385; the empty-factor remark is correct
+  - stage: S5b
+    verdict: correct
+    by: B:08/03
+    hash: a2e08753c988
+    date: '2026-11-01'
+    evidence: 03:378-387. The statement is correct, and 03:374 explains sup over a non-numeric domain.
 - key: proof:prp-iterated-sup
   kind: proof
   file: 03-bounds-and-suprema.md
-  line: 356
-  hash: 8864ce4f36d2
-  verdicts: []
+  line: 390
+  hash: b0767c4d0c02
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/03
+    hash: b0767c4d0c02
+    date: '2026-11-01'
+    evidence: 03:390-394; phi(a)<=S, then sup phi<=S; every f(a,b)<=sup phi; the symmetric case follows
+      by exchanging the roles of A and B
+  - stage: S5b
+    verdict: correct
+    by: B:08/03
+    hash: b0767c4d0c02
+    date: '2026-11-01'
+    evidence: 03:391-396. φ(a) ≤ S gives sup φ ≤ S, and f(a,b) ≤ φ(a) ≤ sup φ gives S ≤ sup φ. The remark
+      that the hypotheses are needed is correct. Ledger 630 covers A×B ≠ ∅.
 - key: exr-bounds-and-suprema-a1
   kind: exr
   file: 03-bounds-and-suprema.md
-  line: 375
-  hash: 181887d49587
-  verdicts: []
+  line: 409
+  hash: 5877e29415d7
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/03
+    hash: 5877e29415d7
+    date: '2026-11-01'
+    evidence: 03:409-427; spread 4 is not attained because both values lie in [0,4)
+  - stage: S5b
+    verdict: correct
+    by: B:08/03
+    hash: 5877e29415d7
+    date: '2026-11-01'
+    evidence: 03:409-427. (a) sup 4 and inf 0 on [-1,2), spread 4, not attained (sidecar ok). (b) correctly
+      locates the use of 'bounded below'. This is the proof-comprehension part the key proof needs.
+  - stage: S6
+    verdict: minor
+    by: S6:08a
+    hash: 5877e29415d7
+    date: '2026-11-01'
+    evidence: 03:421-427. sup=4, inf=0, spread 4 and not attained all match my answers (numeric sampling
+      agrees). Part (b) leaves out the proof's opening line, where I is said to exist.
 - key: exr-bounds-and-suprema-a2
   kind: exr
   file: 03-bounds-and-suprema.md
-  line: 395
+  line: 429
   hash: b6cdb05fe98d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/03
+    hash: b6cdb05fe98d
+    date: '2026-11-01'
+    evidence: 03:429-447; (c) case split is exhaustive (S<0 gives m=-I; I>0 gives m=S)
+  - stage: S5b
+    verdict: minor
+    by: B:08/03
+    hash: b6cdb05fe98d
+    date: '2026-11-01'
+    evidence: '03:429-447. The math is correct: the case split in (c) is exhaustive. STYLE §6 says group
+      A has ''Exactly one exercise with 2–6 lettered parts'', and this section has two A items (A1, A2).
+      This is not a rule section, so the exception for introductory volumes does not apply.'
+  - stage: S6
+    verdict: correct
+    by: S6:08a
+    hash: b6cdb05fe98d
+    date: '2026-11-01'
+    evidence: 03:442-448. (a) is false by exm-sup-not-attained. (b) is true. (c) is true, and the case
+      analysis on the signs of S and I is complete; I checked it on random finite samples.
 - key: exr-bounds-and-suprema-b1
   kind: exr
   file: 03-bounds-and-suprema.md
-  line: 417
-  hash: 22d1b899700e
-  verdicts: []
+  line: 451
+  hash: 9a8d2c607896
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:08/03
+    hash: 9a8d2c607896
+    date: '2026-11-01'
+    evidence: 03:451-463; mathematics correct; inf_A f for f only bounded below relies on the definition
+      issue at def-sup-of-function
+  - stage: S5b
+    verdict: correct
+    by: B:08/03
+    hash: 9a8d2c607896
+    date: '2026-11-01'
+    evidence: 03:451-463. The completion is right, and the existence of inf(f+g) comes from the displayed
+      lower bound.
+  - stage: S6
+    verdict: correct
+    by: S6:08a
+    hash: 9a8d2c607896
+    date: '2026-11-01'
+    evidence: 03:460-462. The method is named, and the last step is completed by 'greatest lower bound'
+      (fd2:def-order-supremum covers inf). Existence of inf(f+g) is noted.
 - key: exr-bounds-and-suprema-b2
   kind: exr
   file: 03-bounds-and-suprema.md
-  line: 431
+  line: 465
   hash: c2e1ee356596
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/03
+    hash: c2e1ee356596
+    date: '2026-11-01'
+    evidence: '03:465-486; (c) on (0,1): sup fg=1/4 at 1/2, while sup f * sup g = 1; (d) rule (e) applied
+      to -f'
+  - stage: S5b
+    verdict: correct
+    by: B:08/03
+    hash: c2e1ee356596
+    date: '2026-11-01'
+    evidence: '03:465-486. (a) has the counterexample. (b) has both halves, and max(f,g) is defined in
+      def-function-algebra. (c) uses (0,1): sup x = sup(1-x) = 1, but sup x(1-x) = 1/4. (d) is rule (e)
+      applied to -f.'
+  - stage: S6
+    verdict: correct
+    by: S6:08a
+    hash: c2e1ee356596
+    date: '2026-11-01'
+    evidence: '03:477-485. (a) false (x, 1-x on [0,1]). (b) true, both halves given. (c) false: sup x(1-x)=1/4
+      is not 1 (numeric max 0.25). (d) true by rule (e) applied to -f. Rule letters checked at 03:225-240.'
 - key: exr-bounds-and-suprema-b3
   kind: exr
   file: 03-bounds-and-suprema.md
-  line: 454
+  line: 488
   hash: c22648276277
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/03
+    hash: c22648276277
+    date: '2026-11-01'
+    evidence: 03:496-504; both identities check out; the sidecar runs ok
+  - stage: S5b
+    verdict: correct
+    by: B:08/03
+    hash: c22648276277
+    date: '2026-11-01'
+    evidence: 03:488-504. The identities (x∓1)^2/(2(x^2+1)) are correct, and h(±1) = ±1/2 (sidecar ok).
+  - stage: S6
+    verdict: correct
+    by: S6:08a
+    hash: c22648276277
+    date: '2026-11-01'
+    evidence: 03:495-503. Both identities and h(±1)=±1/2 confirmed symbolically. sup 1/2 and inf -1/2
+      are both attained, and |h|<=1/2 follows by (d).
 - key: exr-bounds-and-suprema-b4
   kind: exr
   file: 03-bounds-and-suprema.md
-  line: 472
-  hash: 2438364c3c80
-  verdicts: []
+  line: 506
+  hash: 19ee1e792525
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/03
+    hash: 19ee1e792525
+    date: '2026-11-01'
+    evidence: 03:521-525; line (iv) fails because f(x)+g(y) with x!=y is not a value of f+g
+  - stage: S5b
+    verdict: correct
+    by: B:08/03
+    hash: 19ee1e792525
+    date: '2026-11-01'
+    evidence: 03:506-525. Lines (i)-(iii) are valid, (iv) is the mismatched witness, and the counterexample
+      gives f(1)+g(0)=2.
+  - stage: S6
+    verdict: correct
+    by: S6:08a
+    hash: 19ee1e792525
+    date: '2026-11-01'
+    evidence: 03:520-526. The conclusion is false. Lines (i)-(iii) are valid (rule (b) is sup(f+g)<=sup
+      f+sup g). Line (iv) is the only flaw. Witnesses x=1, y=0 give 2, while every value of f+g is 1,
+      which defeats the step.
 - key: exr-bounds-and-suprema-c1
   kind: exr
   file: 03-bounds-and-suprema.md
-  line: 495
-  hash: 75bbf12de934
-  verdicts: []
+  line: 529
+  hash: 588f5d096ad4
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/03
+    hash: 588f5d096ad4
+    date: '2026-11-01'
+    evidence: 03:547-576; delta=eps/(2s) is chosen before x; both cases s-delta>=0 and s-delta<0 are checked;
+      counterexample x on [-2,1]
+  - stage: S5b
+    verdict: correct
+    by: B:08/03
+    hash: 588f5d096ad4
+    date: '2026-11-01'
+    evidence: 03:529-576. Cases s=0, s-δ≥0 (ring rules (g)) and s-δ<0 (s^2<ε/2) are complete. The counterexample
+      x on [-2,1] is right. The marking scheme is present, with 'Slips that lose the step'.
+  - stage: S6
+    verdict: minor
+    by: S6:08a
+    hash: 588f5d096ad4
+    date: '2026-11-01'
+    evidence: '03:546-575. The proof is correct: (s-δ)^2 = s^2-ε+δ^2 was checked symbolically, and the
+      case s-δ<0 is handled. The counterexample x on [-2,1] is valid. The marking scheme does not accept
+      a valid alternative proof (see findings).'
 - key: exr-bounds-and-suprema-c2
   kind: exr
   file: 03-bounds-and-suprema.md
-  line: 542
-  hash: ecb4eb60500c
-  verdicts: []
+  line: 578
+  hash: 3190b316daae
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/03
+    hash: 3190b316daae
+    date: '2026-11-01'
+    evidence: 03:588-598; |x-y|<=b-a and L>=0; the equality case f=Lx is correct
+  - stage: S5b
+    verdict: correct
+    by: B:08/03
+    hash: 3190b316daae
+    date: '2026-11-01'
+    evidence: 03:578-598. |x-y| ≤ b-a and L ≥ 0 give the bound. The first half is a valid triangle-inequality
+      step. f=Lx attains equality.
+  - stage: S6
+    verdict: correct
+    by: S6:08a
+    hash: 3190b316daae
+    date: '2026-11-01'
+    evidence: '03:594-604. Bounding half: |x-y|<=b-a, times L>=0, and the sup is at most an upper bound
+      by (S2), with its meaning stated. The equality case f=Lx is correct.'
 - key: def-floor-ceiling
   kind: def
   file: 04-floor-and-step-functions.md
-  line: 11
+  line: 19
   hash: 558d3dfbdace
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/04
+    hash: 558d3dfbdace
+    date: '2026-11-01'
+    evidence: 04:19-29. Existence and uniqueness come from @fd3:prp-integer-part-ordered-field applied
+      to R, which is Archimedean by fd3:thm-cof-complete-archimedean. The fractional-part bound is derived
+      on line 29. The examples on line 31 check.
+  - stage: S5b
+    verdict: minor
+    by: B:08/04
+    hash: 558d3dfbdace
+    date: '2026-11-01'
+    evidence: 04:15 says the embedding respects sums and order and reflects order, then concludes that
+      integer arithmetic means the same in Z and R. Proof (h) at 04:149 and B2 use that jk is an integer
+      computed in R, which needs products as well. thm-rationals-embed-ordered-field does give products,
+      but the sentence leaves them out. Definition 04:19-27 checked, fine.
 - key: check:04-floor-and-step-functions:1
   kind: check
   file: 04-floor-and-step-functions.md
-  line: 49
+  line: 57
   hash: 15e9678a228b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/04
+    hash: 15e9678a228b
+    date: '2026-11-01'
+    evidence: 04:62. floor(-7/2) = -4 and ceil(-7/2) = -floor(7/2) = -3, so the sum is 3 - 4 = -1. All
+      three values verified.
+  - stage: S5b
+    verdict: correct
+    by: B:08/04
+    hash: 15e9678a228b
+    date: '2026-11-01'
+    evidence: '04:57-63: floor(-7/2)=-4, ceil(-7/2)=-3, sum -1, all checked by hand.'
 - key: exm-method-floor-inequality
   kind: exm
   file: 04-floor-and-step-functions.md
-  line: 59
-  hash: dc72d9268083
-  verdicts: []
+  line: 67
+  hash: facdffd33fb3
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:08/04
+    hash: facdffd33fb3
+    date: '2026-11-01'
+    evidence: '04:67-82. The mathematics is correct: the second form is justified at line 129, and the
+      counterexample on line 81 is valid. Line 73 contains a sentence about the page itself (STYLE B3,
+      see findings).'
+  - stage: S5b
+    verdict: minor
+    by: B:08/04
+    hash: facdffd33fb3
+    date: '2026-11-01'
+    evidence: 04:73 'the paragraph after its proof shows why it works' and 04:65 'Every computation in
+      the check used...' describe the page's own devices (STYLE §13 B3). Same at 04:104 '(h) is treated
+      separately below'. The math is fine. The 04:81 example (x-1/2 is the floor only when it is an integer)
+      is correct.
 - key: prp-floor-rules
   kind: prp
   file: 04-floor-and-step-functions.md
-  line: 78
+  line: 86
   hash: fc6f22d95644
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/04
+    hash: fc6f22d95644
+    date: '2026-11-01'
+    evidence: 04:86-101. Each of (a)-(h) checked, including the edge cases x in Z for (e) and k > 0 for
+      (h). All sidecars pass.
+  - stage: S5b
+    verdict: minor
+    by: B:08/04
+    hash: fc6f22d95644
+    date: '2026-11-01'
+    evidence: 04:84 says 'Each is one application of the method', which is false for (g) and (c). (g)
+      is proved from discreteness (04:120), (c) from (g) (04:122), and the method's second form itself
+      rests on (g) (04:73, 04:129). The statement (a)-(h) is correct.
 - key: proof:prp-floor-rules
   kind: proof
   file: 04-floor-and-step-functions.md
-  line: 99
-  hash: 4209fd33adfc
-  verdicts: []
+  line: 107
+  hash: 077011d9b30d
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/04
+    hash: 077011d9b30d
+    date: '2026-11-01'
+    evidence: 04:107-127. (a), (b) and (d) are first-form checks; in (d), 0 <= s+t < 2 gives both cases.
+      (e) uses ordered-ring-rules (a). (f) proves both existence and uniqueness. (g) uses discreteness
+      from fd3:thm-integers-ordered-ring (c). (c) is proved after (g) but uses only (a) and (g), so there
+      is no circularity.
+  - stage: S5b
+    verdict: correct
+    by: B:08/04
+    hash: 077011d9b30d
+    date: '2026-11-01'
+    evidence: '04:107-127: checked (a)-(g) step by step. Negation is cited (ordered-ring-rules (a)), as
+      are discreteness (thm-integers-ordered-ring (c)) and totality (ordered-field-halves (a), which is
+      totality). All cited labels exist with the parts named.'
 - key: proof:prp-floor-rules#2
   kind: proof
   file: 04-floor-and-step-functions.md
-  line: 136
-  hash: 12ccf0dcadac
-  verdicts: []
+  line: 148
+  hash: 59f767e073f0
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/04
+    hash: 59f767e073f0
+    date: '2026-11-01'
+    evidence: '04:148-164. Each equivalence holds: multiplying by k > 0 or by 1/k > 0, and (g) applied
+      with the integers jk and j. The second form is justified at line 129. The corollary on line 166
+      is (h) applied to x/k and l.'
+  - stage: S5b
+    verdict: correct
+    by: B:08/04
+    hash: 59f767e073f0
+    date: '2026-11-01'
+    evidence: '04:148-164: the chain jk<=floor x <=> jk<=x <=> j<=x/k <=> j<=floor(x/k) is valid. The
+      second form is applied with A=floor(x)/k. Uses: ordered-ring-rules (c) is strict but gives <= at
+      once; reciprocal-order (a) is right. The 04:166 corollary is correct.'
 - key: check:04-floor-and-step-functions:2
   kind: check
   file: 04-floor-and-step-functions.md
-  line: 152
+  line: 168
   hash: d4c82ed839d8
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/04
+    hash: d4c82ed839d8
+    date: '2026-11-01'
+    evidence: 04:173. floor(7/2) = 3 and floor(3.75) = 3.
+  - stage: S5b
+    verdict: correct
+    by: B:08/04
+    hash: d4c82ed839d8
+    date: '2026-11-01'
+    evidence: '04:168-174: floor(7)=7, floor(7/2)=3, floor(3.75)=3, both sides agree.'
 - key: def-distance-to-integer
   kind: def
   file: 04-floor-and-step-functions.md
-  line: 166
+  line: 182
   hash: 19e9b3ca2f4b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/04
+    hash: 19e9b3ca2f4b
+    date: '2026-11-01'
+    evidence: 04:182-191. The set is non-empty and bounded below by 0, so @prp-real-infimum (b) applies.
+  - stage: S5b
+    verdict: correct
+    by: B:08/04
+    hash: 19e9b3ca2f4b
+    date: '2026-11-01'
+    evidence: '04:182-191: the set is non-empty and bounded below by 0, and prp-real-infimum exists (fd4
+      ch08/03:21).'
 - key: prp-distance-to-integer
   kind: prp
   file: 04-floor-and-step-functions.md
-  line: 177
+  line: 193
   hash: 4de29e5d98fc
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/04
+    hash: 4de29e5d98fc
+    date: '2026-11-01'
+    evidence: 04:193-204. All four parts are true. The sidecar passes.
+  - stage: S5b
+    verdict: correct
+    by: B:08/04
+    hash: 4de29e5d98fc
+    date: '2026-11-01'
+    evidence: '04:193-204: (a)-(d) are true; (b) gives the 1/2 case iff x-1/2 is in Z.'
 - key: proof:prp-distance-to-integer
   kind: proof
   file: 04-floor-and-step-functions.md
-  line: 194
-  hash: 8e561a0fe2c8
-  verdicts: []
+  line: 210
+  hash: 68274df27470
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/04
+    hash: 68274df27470
+    date: '2026-11-01'
+    evidence: '04:210-226. (a): the two cases n <= m and n >= m+1 (by discreteness), and the minimum belongs
+      to the set. (b): t + (1-t) = 1 and 1 - t > 0. (c): reindexing by n -> n-1 and n -> -n. (d): nearest-integer
+      witnesses from (a), the triangle inequality fd3 (e), and the two-sided bound fd3 (d).'
+  - stage: S5b
+    verdict: correct
+    by: B:08/04
+    hash: 68274df27470
+    date: '2026-11-01'
+    evidence: '04:210-226: the case split on n<=m and n>=m+1 uses discreteness, which is cited. The min-is-inf
+      step is in the ledger (04:527), as is the reindexing (04:528). Triangle inequality (e) and abs (b),
+      (d) are checked against fd3 01:145.'
 - key: def-periodic-function
   kind: def
   file: 04-floor-and-step-functions.md
-  line: 227
+  line: 247
   hash: ed9cbe82835a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:08/04
+    hash: ed9cbe82835a
+    date: '2026-11-01'
+    evidence: 04:247-255. The definition is fine, and closure under negation and under non-zero sums is
+      proved. The step from there to every non-zero integer being a period (line 253) uses an induction
+      the text does not mention. Exercise C1, Step 3 relies on this (see findings).
+  - stage: S5b
+    verdict: minor
+    by: B:08/04
+    hash: ed9cbe82835a
+    date: '2026-11-01'
+    evidence: 04:253 'So if 1 is a period, every non-zero integer is one' needs an induction (p, 2p=p+p,
+      ...) that is neither stated nor ledgered. Ledger line 529 covers only negation and non-zero sums.
+      C1 Step 3 (04:475) relies on the same claim for j/n.
 - key: check:04-floor-and-step-functions:3
   kind: check
   file: 04-floor-and-step-functions.md
-  line: 237
+  line: 257
   hash: 1690b9c89a91
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/04
+    hash: 1690b9c89a91
+    date: '2026-11-01'
+    evidence: 04:262. dist(0) = 0 but dist(1/2) = 1/2, by (b).
+  - stage: S5b
+    verdict: correct
+    by: B:08/04
+    hash: 1690b9c89a91
+    date: '2026-11-01'
+    evidence: '04:257-263: dist(1/2,Z)=1/2 and dist(0,Z)=0, both by prp (b).'
 - key: def-step-function
   kind: def
   file: 04-floor-and-step-functions.md
-  line: 251
+  line: 271
   hash: 96b799840571
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/04
+    hash: 96b799840571
+    date: '2026-11-01'
+    evidence: '04:271-287. The definition is fine. The proof that the floor is a step function on [a,b]
+      (line 285) is valid: the interior integers lie in {floor a + 1, ..., floor b}, and on each piece
+      u < v gives floor v <= u, then (g) and (c). The non-example with the identity is correct.'
+  - stage: S5b
+    verdict: minor
+    by: B:08/04
+    hash: 96b799840571
+    date: '2026-11-01'
+    evidence: 'The floor example at 04:285 uses two facts with no citation and no ledger line. First,
+      the integer range {floor a+1,...,floor b} is finite: def-finite needs a bijection j -> floor a +
+      j. Second, a finite set of reals can be listed in increasing order, which is only cited later in
+      the fold (04:314, fd2:prp-finite-max). The ''no integer in the open piece'' argument is correct
+      (ledger 04:530).'
 - key: check:04-floor-and-step-functions:4
   kind: check
   file: 04-floor-and-step-functions.md
-  line: 269
-  hash: db48f753e346
-  verdicts: []
+  line: 289
+  hash: 1a48102bb47f
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/04
+    hash: 1a48102bb47f
+    date: '2026-11-01'
+    evidence: 04:294. Archimedean-reciprocal gives 1/n' < x_1. The midpoint c of 1/(n'+1) and 1/n' lies
+      in (0, x_1) and is not of the form 1/k (fd3:prp-reciprocal-order (b)), so the indicator is not constant
+      on the first piece.
+  - stage: S5b
+    verdict: correct
+    by: B:08/04
+    hash: 1a48102bb47f
+    date: '2026-11-01'
+    evidence: '04:289-295: prp-archimedean-reciprocal gives 1/n''<x_1. The midpoint c between 1/(n''+1)
+      and 1/n'' is not any 1/k, by reciprocal-order (b). Correct.'
 - key: prp-step-function-algebra
   kind: prp
   file: 04-floor-and-step-functions.md
-  line: 279
+  line: 299
   hash: 278d79513f69
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/04
+    hash: 278d79513f69
+    date: '2026-11-01'
+    evidence: 04:299-303. All five operations are defined in @def-function-algebra on [a,b].
+  - stage: S5b
+    verdict: minor
+    by: B:08/04
+    hash: 278d79513f69
+    date: '2026-11-01'
+    evidence: 'STYLE §13 B5: the statement is over general [a,b], phi, psi, c, but its concrete instance
+      (04:319, ind_[0,1/2]+ind_[0,1/3]) comes after it, not before. The 04:319 claim that neither partition
+      alone is adapted is true: on (0,1/2) the sum is 2 then 1, and on (1/3,1) it is 1 then 0.'
 - key: proof:prp-step-function-algebra
   kind: proof
   file: 04-floor-and-step-functions.md
-  line: 289
-  hash: 7f3be83d3351
-  verdicts: []
+  line: 309
+  hash: b33b7adf8602
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/04
+    hash: b33b7adf8602
+    date: '2026-11-01'
+    evidence: 04:309-317. The merged partition is finite (subset-finite, disjoint-union-count). The second-reading
+      box proves that p and p' are consecutive in P with (r, r') inside (p, p'); all three cases for a
+      point q are excluded.
+  - stage: S5b
+    verdict: correct
+    by: B:08/04
+    hash: b33b7adf8602
+    date: '2026-11-01'
+    evidence: '04:309-317: the merge is checked. The fold shows that consecutive points of R lie in a
+      piece of P, with the three cases for q. fd2:prp-finite-max gives the max and the min (fd2 03:354).'
 - key: exr-floor-and-step-functions-a1
   kind: exr
   file: 04-floor-and-step-functions.md
-  line: 311
+  line: 331
   hash: ec7d88d7b98d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/04
+    hash: ec7d88d7b98d
+    date: '2026-11-01'
+    evidence: 04:345-355. Values -1, 2, 0, 0.3 and 1/4 verified. The sidecar passes.
+  - stage: S5b
+    verdict: correct
+    by: B:08/04
+    hash: ec7d88d7b98d
+    date: '2026-11-01'
+    evidence: '04:345-355: -1; 2; 2+(-2)=0; 0.3 with nearest integer -3; 1/4. All recomputed.'
+  - stage: S6
+    verdict: correct
+    by: S6:08b
+    hash: ec7d88d7b98d
+    date: '2026-11-01'
+    evidence: '04:345-355; script: floor(-0.01)=-1, ceil 2=2, 2+(-2)=0, dist(-2.7,Z)=3/10, dist(13/4,Z)=1/4'
 - key: exr-floor-and-step-functions-a2
   kind: exr
   file: 04-floor-and-step-functions.md
-  line: 337
+  line: 357
   hash: 149b6e3f96db
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/04
+    hash: 149b6e3f96db
+    date: '2026-11-01'
+    evidence: '04:369-375. Both counterexamples are valid: floor(1) = 1 vs 0, and x = y = -1/2 gives 1
+      > 0. Part (c) follows from subadditivity.'
+  - stage: S5b
+    verdict: correct
+    by: B:08/04
+    hash: 149b6e3f96db
+    date: '2026-11-01'
+    evidence: '04:369-375: x=1/2 is a counterexample to (a); x=y=-1/2 gives 1>0 for (b); (c) follows by
+      subadditivity. Correct.'
+  - stage: S6
+    verdict: correct
+    by: S6:08b
+    hash: 149b6e3f96db
+    date: '2026-11-01'
+    evidence: 04:369-375; (a) x=1/2 gives 1 vs 0; (b) x=y=-1/2 gives 1 vs floor(1/4)=0 (script); (c) subadditivity
+      with y=x
 - key: exr-floor-and-step-functions-b1
   kind: exr
   file: 04-floor-and-step-functions.md
-  line: 359
-  hash: 8fae7aa4e2ec
-  verdicts: []
+  line: 379
+  hash: 029db5b2085b
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/04
+    hash: 029db5b2085b
+    date: '2026-11-01'
+    evidence: '04:392-404. (a): case split on t vs 1/2. (c): u <= sqrt v iff u^2 <= v, from @lem-reals-nth-root
+      (a) (0 <= s < t gives s^n < t^n); the case j < 0 is handled, then the second form. (b) and (d):
+      counterexamples at 0 and at 1/2.'
+  - stage: S5b
+    verdict: correct
+    by: B:08/04
+    hash: 029db5b2085b
+    date: '2026-11-01'
+    evidence: '04:392-404: (a) both cases give 2m and 2m+1; (b) x=0; (c) the second form is valid and
+      lem-reals-nth-root (a) is strict, as used; (d) x=1/2 gives -1.'
+  - stage: S6
+    verdict: correct
+    by: S6:08b
+    hash: 029db5b2085b
+    date: '2026-11-01'
+    evidence: '04:392-404; (a) the two cases t<1/2 and t>=1/2 check, and 20k random rationals pass; (b)
+      x=0 refutes; (c) second-form chain is valid, and j<0 is handled because both roots are >=0; (d)
+      x=1/2. Worked example: exm-method-floor-inequality'
 - key: exr-floor-and-step-functions-b2
   kind: exr
   file: 04-floor-and-step-functions.md
-  line: 386
-  hash: ea03b3048287
-  verdicts: []
+  line: 406
+  hash: 35d0c74fc150
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/04
+    hash: 35d0c74fc150
+    date: '2026-11-01'
+    evidence: 04:412-422. jk >= 1 iff j >= 1, and jk <= N iff j <= floor(N/k) by (g). Then a bijection
+      onto {1, ..., floor(N/k)}, with the empty case handled.
+  - stage: S5b
+    verdict: correct
+    by: B:08/04
+    hash: 35d0c74fc150
+    date: '2026-11-01'
+    evidence: '04:412-422: jk>=1 iff j>=1; jk<=N iff j<=floor(N/k); the bijection {1..floor(N/k)} -> multiples
+      is injective; def-finite and cor-finite-size-unique are cited.'
+  - stage: S6
+    verdict: correct
+    by: S6:08b
+    hash: 35d0c74fc150
+    date: '2026-11-01'
+    evidence: 04:412-422; jk<=N iff j<=floor(N/k) by rule (g), then a bijection with {1..floor(N/k)};
+      brute-forced N<80, k<30
 - key: exr-floor-and-step-functions-b3
   kind: exr
   file: 04-floor-and-step-functions.md
-  line: 400
+  line: 424
   hash: 5f7a699dc5e5
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:08/04
+    hash: 5f7a699dc5e5
+    date: '2026-11-01'
+    evidence: 04:431-438. The partition and all values are correct (checked, including at the cut points).
+      The parenthetical 'Alternatively' route (line 438) needs x -> floor(2x) to be a step function, which
+      the section never shows (see findings).
+  - stage: S5b
+    verdict: minor
+    by: B:08/04
+    hash: 5f7a699dc5e5
+    date: '2026-11-01'
+    evidence: 'The values check out: pieces 0,1,0,1 and cut points 0,1,0,1,0. But the parenthetical at
+      04:438 needs floor(2x) to be a step function on [0,2], which the section never shows: it shows only
+      the floor itself on [a,b].'
+  - stage: S6
+    verdict: correct
+    by: S6:08b
+    hash: 5f7a699dc5e5
+    date: '2026-11-01'
+    evidence: 04:430-439; piece values 0,1,0,1 and cut-point values 0,1,0,1,0 confirmed by script
 - key: exr-floor-and-step-functions-c1
   kind: exr
   file: 04-floor-and-step-functions.md
-  line: 419
+  line: 443
   hash: 99a14b606d54
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:08/04
+    hash: 99a14b606d54
+    date: '2026-11-01'
+    evidence: 04:452-491. Steps 1 and 2 are correct. Step 3 needs j/n to be a period for every non-zero
+      integer j, and cites only closure under negation and under non-zero sums; the induction on |j| is
+      left implicit.
+  - stage: S5b
+    verdict: minor
+    by: B:08/04
+    hash: 99a14b606d54
+    date: '2026-11-01'
+    evidence: 'Steps 1-3 at 04:465-475 are correct. Step 3''s ''j/n is a period'' uses closure of periods
+      under integer multiples, the induction left unstated at 04:253. The rubric line at 04:490 ''shifting
+      only forward when x < 0 needs a backward shift'' is garbled: it names the slip and its correction
+      as one clause.'
+  - stage: S6
+    verdict: correct
+    by: S6:08b
+    hash: 99a14b606d54
+    date: '2026-11-01'
+    evidence: 04:464-491; the index shift and rule (b) give period 1/n; F=0 on [0,1/n); the reduction
+      by j=floor(nx) is valid (period closure is stated in the body at 04:253). 5000 random checks of
+      Hermite's identity pass. My direct count (LHS = n*floor(x) + floor(nt)) fits the stated alternative
+      mapping. Hints are within the rules
 - key: exr-floor-and-step-functions-c2
   kind: exr
   file: 04-floor-and-step-functions.md
-  line: 465
-  hash: 55e2c480f36c
-  verdicts: []
+  line: 493
+  hash: 1be55d3e70b1
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:08/04
+    hash: 1be55d3e70b1
+    date: '2026-11-01'
+    evidence: '04:507-522. (b) and (c) are correct: the reverse triangle inequality fd3 (f), and the example
+      x = 1/2. (a) is an induction from base n = 1 but cites @fd1:ax-induction, whose base case is P(0).'
+  - stage: S5b
+    verdict: minor
+    by: B:08/04
+    hash: 1be55d3e70b1
+    date: '2026-11-01'
+    evidence: '(a)-(c) are correct: dist(1,Z)=0<1 at x=1/2. But at 04:519, |nx-nk| = n|t| uses |ab|=|a||b|
+      (fd3:prp-absolute-value-ordered-field (b)), which is neither cited nor ledgered. The solution has
+      no Uses line, and the discreteness step j!=k => |j-k|>=1 is only partly spelled out.'
+  - stage: S6
+    verdict: correct
+    by: S6:08b
+    hash: 1be55d3e70b1
+    date: '2026-11-01'
+    evidence: 04:507-522; induction with subadditivity; the hint is proved by reverse triangle |y-j| >=
+      |j-k| - |y-k| >= 1/2; equality and x=1/2 (0<1) checked by script
 - key: ax-exponential
   kind: ax
   file: 05-exponential-and-logarithm.md
   line: 15
   hash: eaf0006fd1db
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/05
+    hash: eaf0006fd1db
+    date: '2026-11-01'
+    evidence: '15-35: three facts stated with quantifiers; independence of E1/E2 checked (1 vs 2; 3 vs
+      4); transport via fd3:thm-cof-uniqueness; mirrors ax-cosine-sine'
+  - stage: S5b
+    verdict: minor
+    by: B:08/05
+    hash: eaf0006fd1db
+    date: '2026-11-01'
+    evidence: 05:13,18 'Analysis on the Real Line, Chapter 10' does not match series.json, where AN1.10
+      is an2 Ch 7 and an1 Ch 10 is AN1.11 (Forms of Completeness). STATUS has no promise row for ax-exponential
+      -> AN1.10 (blueprint merged-ch08-f47.md:292 'Opened'). See findings.
+  - stage: S8
+    verdict: error
+    by: S8:08
+    hash: eaf0006fd1db
+    date: '2026-11-01'
+    evidence: '05-exponential-and-logarithm.md:13,18: the borrowed facts are ''proved in *Analysis on
+      the Real Line*, Chapter 10''. That volume was renamed and Chapter 10 is the wrong chapter (series.py:
+      an1 Ch10 = AN1.11 The Forms of Completeness; the exponential is AN1.10 = *Integration, Series, and
+      Function Spaces*, Chapter 7).'
 - key: prp-exp-first-consequences
   kind: prp
   file: 05-exponential-and-logarithm.md
   line: 43
-  hash: 208b173a6266
-  verdicts: []
+  hash: 6314e903c3bd
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/05
+    hash: 6314e903c3bd
+    date: '2026-11-01'
+    evidence: '43-53: all five parts true; only E1,E2 used (E3 dropped is harmless)'
+  - stage: S5b
+    verdict: minor
+    by: B:08/05
+    hash: 6314e903c3bd
+    date: '2026-11-01'
+    evidence: 05:44 title '[First Consequences of (E1) and (E2)]' uses the codes alone (STYLE §13 B7).
+      The statement is true.
+  - stage: S8
+    verdict: minor
+    by: S8:08
+    hash: 6314e903c3bd
+    date: '2026-11-01'
+    evidence: 05:39 redefines u^{-n} := 1/u^n and re-proves (1/u)^n = u^{-n}. Chapter 1 already defines
+      a^{-n} := (a^{-1})^n (def-integer-power) and proves the equality (prp-integer-power-laws (d)), so
+      one volume now has two definitions of the symbol.
 - key: proof:prp-exp-first-consequences
   kind: proof
   file: 05-exponential-and-logarithm.md
   line: 59
-  hash: 0cdbcb3f1728
-  verdicts: []
+  hash: 5768eb7dae15
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/05
+    hash: 5768eb7dae15
+    date: '2026-11-01'
+    evidence: '60-76: (a) zero product + E2 rules out 0; (b) uniqueness of inverse, square >=0; (c) E2
+      at y-x times exp x>0; (d) fd3:prp-ordered-field-halves (c) needs both positive, exp(-x)>0 and 1-x>0
+      given; (e) induction then (b) for negatives'
+  - stage: S5b
+    verdict: minor
+    by: B:08/05
+    hash: 5768eb7dae15
+    date: '2026-11-01'
+    evidence: 05:62 uses x/2+x/2=x for every real x. Ledger 05:640 cites fd3:prp-ordered-field-halves
+      (b), which is stated only for eps>0, and the Uses line 05:79 omits it. The Uses line also glosses
+      ordered-ring-rules (e) as 'squares are non-negative', but (e) says a!=0 => a^2>0. The mathematics
+      is fine.
 - key: check:05-exponential-and-logarithm:1
   kind: check
   file: 05-exponential-and-logarithm.md
-  line: 81
-  hash: 7ec0669732ba
-  verdicts: []
+  line: 85
+  hash: bd0009d5fb08
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/05
+    hash: bd0009d5fb08
+    date: '2026-11-01'
+    evidence: '85-91: attributions match the proofs'
+  - stage: S5b
+    verdict: correct
+    by: B:08/05
+    hash: bd0009d5fb08
+    date: '2026-11-01'
+    evidence: '05:85-91: the answer matches the proofs of (a)-(c) and E3.'
 - key: exm-method-archimedes-squeeze
   kind: exm
   file: 05-exponential-and-logarithm.md
-  line: 93
-  hash: 9a413cb571f4
-  verdicts: []
+  line: 99
+  hash: 73bdfb65d7ba
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/05
+    hash: 73bdfb65d7ba
+    date: '2026-11-01'
+    evidence: '99-121: C>0 fixed before n; eps=(L-L'')/C>0; fd3:prp-archimedean-reciprocal gives N for
+      all n>=N; s_n >= L-C/n > L-C*eps = L''; matches fd2:def-order-supremum (S1),(S2)'
+  - stage: S5b
+    verdict: correct
+    by: B:08/05
+    hash: 73bdfb65d7ba
+    date: '2026-11-01'
+    evidence: '05:99-121: step 3 checked against fd3:prp-archimedean-reciprocal (all n>=N). C>0 is fixed
+      in advance, and thm-exp-unique obeys this with C=(x^2+1)exp x.'
 - key: thm-exp-unique
   kind: thm
   file: 05-exponential-and-logarithm.md
-  line: 120
+  line: 129
   hash: fc2d56e1113d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/05
+    hash: fc2d56e1113d
+    date: '2026-11-01'
+    evidence: '129-137: true; dropping E2, F(x)=exp(2x) (line 204) is a counterexample to uniqueness;
+      E3 not needed'
+  - stage: S5b
+    verdict: minor
+    by: B:08/05
+    hash: fc2d56e1113d
+    date: '2026-11-01'
+    evidence: 05:130,136 title and statement say '(E1) and (E2)' with no words (B7). check_beginner flags
+      05:132. The mathematics is correct.
 - key: proof:thm-exp-unique
   kind: proof
   file: 05-exponential-and-logarithm.md
-  line: 153
-  hash: 22d2f73ae68b
-  verdicts: []
+  line: 162
+  hash: f497c67b6446
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/05
+    hash: f497c67b6446
+    date: '2026-11-01'
+    evidence: '163-181: n>|x| gives 1±x/n>0; upper bound via lem-reals-nth-root (a) plus equality case;
+      lower: (1+x/n)^n=(1-x^2/n^2)^n(1-x/n)^{-n}, multiply by positive factor, Bernoulli at -x^2/n^2>=-1
+      (fd2:thm-bernoulli hypothesis), times exp x>0; C=(x^2+1)exp x depends on x only; uniqueness transfers
+      since only E1,E2 used'
+  - stage: S5b
+    verdict: correct
+    by: B:08/05
+    hash: f497c67b6446
+    date: '2026-11-01'
+    evidence: '05:162-186: n>|x| gives 1±x/n>0 by abs-value rule (d). Bernoulli is applied at -x^2/n^2>=-1,
+      and the hypothesis matches fd2:thm-bernoulli. C=(x^2+1)exp x>0. The non-strict use of lem-reals-nth-root
+      (a), which is stated strictly, is ledgered at 05:646. The uniqueness meta-claim is true: the proof
+      of prp-exp-first-consequences never uses E3.'
 - key: def-euler-number
   kind: def
   file: 05-exponential-and-logarithm.md
-  line: 179
+  line: 192
   hash: 88a747a24eb2
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/05
+    hash: 88a747a24eb2
+    date: '2026-11-01'
+    evidence: '192-204: bounds for n>=2 (n>|1|); 9/4<=e<=4; exp(2x) fails E2 at -1/2 since 1/e<1/2; sidecar
+      def-euler-number.py ok'
+  - stage: S5b
+    verdict: minor
+    by: B:08/05
+    hash: 88a747a24eb2
+    date: '2026-11-01'
+    evidence: NOTATION has no row for e as Euler's number. Its rows 285 ('never Euler's number in fd5,
+      which has no exp') and 275 ('fd4 has no exp') are stale after the merge, and e is now also the group
+      identity in fd4 Ch5. The bounds at 05:198-202 are correct.
 - key: def-logarithm
   kind: def
   file: 05-exponential-and-logarithm.md
-  line: 199
+  line: 212
   hash: d01e37e6cc6c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/05
+    hash: d01e37e6cc6c
+    date: '2026-11-01'
+    evidence: '208-218: bijection from (b),(c),E3; injectivity fd2:prp-strictly-monotone-injective; thm-monotone-inverse
+      (b),(c) give increasing and reflected graph'
+  - stage: S5b
+    verdict: minor
+    by: B:08/05
+    hash: d01e37e6cc6c
+    date: '2026-11-01'
+    evidence: NOTATION has no row for \exp, \log or a^x. Blueprint merged-ch08-f47.md:37 requires those
+      amendments, and row 313 covers only a^x. The definition and the claims at 05:218 match thm-monotone-inverse
+      (a)-(c) and fd2:prp-strictly-monotone-injective.
 - key: check:05-exponential-and-logarithm:2
   kind: check
   file: 05-exponential-and-logarithm.md
-  line: 224
+  line: 237
   hash: 6a1b5f18dd20
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/05
+    hash: 6a1b5f18dd20
+    date: '2026-11-01'
+    evidence: '237-243: log(exp 2)=2, log(1/e)=-1 via (b)'
+  - stage: S5b
+    verdict: correct
+    by: B:08/05
+    hash: 6a1b5f18dd20
+    date: '2026-11-01'
+    evidence: 05:237-243 checked.
 - key: prp-log-rules
   kind: prp
   file: 05-exponential-and-logarithm.md
-  line: 234
+  line: 247
   hash: c8bc87e42862
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/05
+    hash: c8bc87e42862
+    date: '2026-11-01'
+    evidence: '247-257: all true, equality only at x=1'
+  - stage: S5b
+    verdict: correct
+    by: B:08/05
+    hash: c8bc87e42862
+    date: '2026-11-01'
+    evidence: '05:247-257: true. The equality case is only x=1.'
 - key: proof:prp-log-rules
   kind: proof
   file: 05-exponential-and-logarithm.md
-  line: 250
-  hash: cd1df53eb221
-  verdicts: []
+  line: 263
+  hash: 77a52c3157ed
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/05
+    hash: 77a52c3157ed
+    date: '2026-11-01'
+    evidence: '264-274: strict bound exp t>1+t by cases t>=-2 (squaring, t^2/4>0) and t<-2; tangent bound
+      at log x and -log x; exp(-log x)=1/x via first-consequences (b)'
+  - stage: S5b
+    verdict: correct
+    by: B:08/05
+    hash: 77a52c3157ed
+    date: '2026-11-01'
+    evidence: '05:263-279: the split t>=-2 / t<-2 is correct, (1+t/2)^2=1+t+t^2/4, and the strictness
+      transfers properly.'
 - key: def-real-power
   kind: def
   file: 05-exponential-and-logarithm.md
-  line: 270
+  line: 289
   hash: 3326c7b1d501
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/05
+    hash: 3326c7b1d501
+    date: '2026-11-01'
+    evidence: '289-308: well defined; negative-base remark (-8)^{1/3} vs 64^{1/6} correct'
+  - stage: S5b
+    verdict: correct
+    by: B:08/05
+    hash: 3326c7b1d501
+    date: '2026-11-01'
+    evidence: '05:289-308: well-posed. The second-reading fold''s claims about 0^x and (-8)^{1/3} are
+      checked.'
 - key: check:05-exponential-and-logarithm:3
   kind: check
   file: 05-exponential-and-logarithm.md
-  line: 291
-  hash: 5f7761e2755e
-  verdicts: []
+  line: 310
+  hash: 8860222d6355
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/05
+    hash: 8860222d6355
+    date: '2026-11-01'
+    evidence: '310-316: (1/2)^{-1}=exp(log 2)=2'
+  - stage: S5b
+    verdict: correct
+    by: B:08/05
+    hash: 8860222d6355
+    date: '2026-11-01'
+    evidence: 05:310-316 checked.
 - key: prp-real-power-consistent
   kind: prp
   file: 05-exponential-and-logarithm.md
-  line: 299
+  line: 318
   hash: bac2d0a71945
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: gap
+    by: A:08/05
+    hash: bac2d0a71945
+    date: '2026-11-01'
+    evidence: '318-328 with 302: the prose claims agreement with Chapter 1''s a^{m/n}, but def-rational-power
+      defines a^{m/n}:=(nth-root a)^m; the proposition only proves real a^{m/n} = nth-root(a^m); the link
+      (lem-root-rules (b), m>=1 only, plus negative m) is never made, so a^{m/n} keeps two definitions
+      on the page'
+  - stage: S5b
+    verdict: gap
+    by: B:08/05
+    hash: bac2d0a71945
+    date: '2026-11-01'
+    evidence: 05:302 claims the new definition agrees with Chapter 1's a^{m/n}. But def-rational-power
+      (ch01 05:223) defines a^{m/n}:=(nth-root a)^m, while (a) proves a^{m/n}=nth-root(a^m). lem-root-rules
+      (b) bridges the two only for m>=1, so for m<=0 the agreement with def-rational-power is not proved.
+      It also defines a^m for m<0 afresh instead of citing @def-integer-power.
+  - stage: S8
+    verdict: gap
+    by: S8:08
+    hash: bac2d0a71945
+    date: '2026-11-01'
+    evidence: 05:318ff. The proposition proves a^{m/n} = n-th root of a^m, but Chapter 1's def-rational-power
+      is (n-th root of a)^m. Nothing identifies the real power with Chapter 1's a^r, although Ch1 05:424
+      and STATUS:291 say this is paid. 05:7 also restates Ch1's definition wrongly.
 - key: proof:prp-real-power-consistent
   kind: proof
   file: 05-exponential-and-logarithm.md
-  line: 315
-  hash: 73e22b895d23
-  verdicts: []
+  line: 334
+  hash: 6fb5246cebb4
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/05
+    hash: 6fb5246cebb4
+    date: '2026-11-01'
+    evidence: '335-343: b>0, b^n=exp(m log a)=a^m via (e) twice incl. m<0, uniqueness lem-reals-nth-root
+      (b); (c) via log e=1'
+  - stage: S5b
+    verdict: minor
+    by: B:08/05
+    hash: 6fb5246cebb4
+    date: '2026-11-01'
+    evidence: '05:339 ''Part (e) covers m<0 with the convention u^{-k}=1/u^k'': this convention comes
+      from 05:39, not from Chapter 1''s @def-integer-power (a^{-n}:=(a^{-1})^n). The values agree, but
+      the source should be Chapter 1.'
 - key: check:05-exponential-and-logarithm:4
   kind: check
   file: 05-exponential-and-logarithm.md
-  line: 329
+  line: 352
   hash: 65927fc69296
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/05
+    hash: 65927fc69296
+    date: '2026-11-01'
+    evidence: '352-358: 4^{1/2}=sqrt(4)=2'
+  - stage: S5b
+    verdict: correct
+    by: B:08/05
+    hash: 65927fc69296
+    date: '2026-11-01'
+    evidence: 05:352-358 checked.
 - key: prp-real-power-laws
   kind: prp
   file: 05-exponential-and-logarithm.md
-  line: 339
+  line: 362
   hash: f877ab066c18
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/05
+    hash: f877ab066c18
+    date: '2026-11-01'
+    evidence: '362-375: all six parts true for a,b>0'
+  - stage: S5b
+    verdict: correct
+    by: B:08/05
+    hash: f877ab066c18
+    date: '2026-11-01'
+    evidence: '05:362-375: all six parts are true.'
 - key: proof:prp-real-power-laws
   kind: proof
   file: 05-exponential-and-logarithm.md
-  line: 358
-  hash: 4c27e884e22b
-  verdicts: []
+  line: 381
+  hash: 1e48dc2114ce
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/05
+    hash: 1e48dc2114ce
+    date: '2026-11-01'
+    evidence: '382-392: (b) uses (d) before stated in order but (d) is proved independently from first-consequences
+      (b), no circularity; (e) prp-monotone-algebra (e) covers increasing∘decreasing; (f) correct'
+  - stage: S5b
+    verdict: correct
+    by: B:08/05
+    hash: 1e48dc2114ce
+    date: '2026-11-01'
+    evidence: '05:381-397: (e) uses prp-monotone-algebra (e), the composition rule, which was checked.
+      (b) uses (d), with no circularity.'
 - key: check:05-exponential-and-logarithm:5
   kind: check
   file: 05-exponential-and-logarithm.md
-  line: 372
-  hash: 7395876f5a4b
-  verdicts: []
+  line: 399
+  hash: ec0376dc1a06
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/05
+    hash: ec0376dc1a06
+    date: '2026-11-01'
+    evidence: '399-409: sqrt2>1 and sqrt2<2 via fd3:prp-ordered-ring-rules (g); (sqrt2)^sqrt2 = 2^{sqrt2/2}
+      < 2'
+  - stage: S5b
+    verdict: correct
+    by: B:08/05
+    hash: ec0376dc1a06
+    date: '2026-11-01'
+    evidence: '05:399-409: sqrt2=2^{1/2} and (2^{1/2})^{sqrt2}=2^{sqrt2/2} are correct. ordered-ring-rules
+      (g) is the comparison of squares.'
 - key: prp-exp-beats-powers
   kind: prp
   file: 05-exponential-and-logarithm.md
-  line: 384
+  line: 417
   hash: 811bd4951e8b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/05
+    hash: 811bd4951e8b
+    date: '2026-11-01'
+    evidence: '417-424: (a) exp x > (x/(k+1))^{k+1}; threshold M(k+1)^{k+1} works; (b) log x < m x^{1/m},
+      threshold 4/eps^2 works; sidecar ok; 27,000 and 40,000 correct'
+  - stage: S5b
+    verdict: minor
+    by: B:08/05
+    hash: 811bd4951e8b
+    date: '2026-11-01'
+    evidence: '05:427 idea: ''Dropping the 1 costs only strictness''. In fact dropping the 1 is what makes
+      the inequality strict: (1+t)^{k+1} > t^{k+1}. The statement and the thresholds 27,000 and 40,000
+      at 05:448 were checked.'
 - key: proof:prp-exp-beats-powers
   kind: proof
   file: 05-exponential-and-logarithm.md
-  line: 397
-  hash: 6b995e1b1f6e
-  verdicts: []
+  line: 430
+  hash: 1d8dcaaafba7
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:08/05
+    hash: 1d8dcaaafba7
+    date: '2026-11-01'
+    evidence: 431-445 math correct (0<=t<exp t, strict power order; sqrt x>2/eps). Uses line 444 cites
+      fd2:prp-power-laws (c) as '(power of a quotient)', but (c) is (uv)^n=u^n v^n; the quotient form
+      also needs (1/u)^n=1/u^n from line 39
+  - stage: S5b
+    verdict: minor
+    by: B:08/05
+    hash: 1d8dcaaafba7
+    date: '2026-11-01'
+    evidence: '05:444 Uses line: ''@fd2:prp-power-laws (c) (power of a quotient)''. Part (c) is (uv)^n=u^n
+      v^n, a product; the quotient also needs (1/u)^n=1/u^n. The proof itself is correct.'
 - key: exr-exponential-and-logarithm-a1
   kind: exr
   file: 05-exponential-and-logarithm.md
-  line: 417
-  hash: efd7fa953e0b
-  verdicts: []
+  line: 454
+  hash: 660f59cdda5c
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/05
+    hash: 660f59cdda5c
+    date: '2026-11-01'
+    evidence: '454-475: (d) exp(-3)=1/exp 3<1/4 since exp 3>4 strictly; (c) 9/4<=e<=4'
+  - stage: S5b
+    verdict: correct
+    by: B:08/05
+    hash: 660f59cdda5c
+    date: '2026-11-01'
+    evidence: '05:454-475: (d) exp(-3)<1/4 because exp 3>4 strictly. Checked.'
+  - stage: S6
+    verdict: correct
+    by: S6:08b
+    hash: 660f59cdda5c
+    date: '2026-11-01'
+    evidence: 05:467-475; only E1 and E2 are used; Bernoulli is applied at -x^2/n^2 >= -1; 9/4 <= e <=
+      4; at x=-3, n=2 the conclusion fails, since exp(-3) < 1/4 (strict via prp-log-rules (c) first step);
+      numeric exp(-3)=0.0498
 - key: exr-exponential-and-logarithm-a2
   kind: exr
   file: 05-exponential-and-logarithm.md
-  line: 440
-  hash: f5b1ee4d8c7d
-  verdicts: []
+  line: 477
+  hash: 98e5ac3af99b
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/05
+    hash: 98e5ac3af99b
+    date: '2026-11-01'
+    evidence: '477-498: (d) counterexample 1 vs 2 checks; (b) log 2 > 0'
+  - stage: S5b
+    verdict: correct
+    by: B:08/05
+    hash: 98e5ac3af99b
+    date: '2026-11-01'
+    evidence: '05:477-498: all four answers checked. (d): 1*1=1 != 2.'
+  - stage: S6
+    verdict: correct
+    by: S6:08b
+    hash: 98e5ac3af99b
+    date: '2026-11-01'
+    evidence: 05:490-498; (b) log 2 > 0; (d) a=1, b=2, x=1, y=0 gives 1 vs 2
 - key: exr-exponential-and-logarithm-b1
   kind: exr
   file: 05-exponential-and-logarithm.md
-  line: 465
-  hash: 291644741b86
-  verdicts: []
+  line: 502
+  hash: 7f142ede2d69
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/05
+    hash: 7f142ede2d69
+    date: '2026-11-01'
+    evidence: '502-520: 235298>233280, 46656<46875, (5/4)^5=3125/1024>3; sidecar ok'
+  - stage: S5b
+    verdict: minor
+    by: B:08/05
+    hash: 7f142ede2d69
+    date: '2026-11-01'
+    evidence: 05:519 'Smaller n is not enough' is backed only by n=5. n=2,3,4 also fail (upper bounds
+      4, 3.375, 3.16), but monotonicity is not shown. The arithmetic is correct, and the sidecar prints
+      ok.
+  - stage: S6
+    verdict: minor
+    by: S6:08b
+    hash: 7f142ede2d69
+    date: '2026-11-01'
+    evidence: 05:510-520; (7/6)^6=117649/46656≈2.5216>2.5 and (6/5)^6=46656/15625≈2.986<3, both confirmed
+      by script. The closing claim 'Smaller n is not enough' is shown only at n=5
 - key: exr-exponential-and-logarithm-b2
   kind: exr
   file: 05-exponential-and-logarithm.md
-  line: 485
-  hash: 943f88edfe9f
-  verdicts: []
+  line: 522
+  hash: fbd6ca219de4
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:08/05
+    hash: fbd6ca219de4
+    date: '2026-11-01'
+    evidence: '536: for 0<=x<1, n=1 is allowed by ''n>x'', and then (1+x/n)^n has only two binomial terms,
+      so ''Among them are ... binom(n,2)x^2/n^2'' is false as stated (the inequality still holds since
+      that term is 0); (b),(c),(d) correct'
+  - stage: S5b
+    verdict: correct
+    by: B:08/05
+    hash: fbd6ca219de4
+    date: '2026-11-01'
+    evidence: '05:522-551: (a) the Archimedean contradiction is valid, (b) is the log rules, (c) the counterexample
+      is valid, (d) M and the threshold were checked. power-laws (e) and abs-value (e) match.'
+  - stage: S6
+    verdict: correct
+    by: S6:08b
+    hash: fbd6ca219de4
+    date: '2026-11-01'
+    evidence: 05:535-551; (a) binomial terms with C(n,2)x^2/n^2=(1-1/n)x^2/2, then an Archimedean contradiction;
+      (b) log(e*x/e) <= x/e; (c) a=1, b=2, x=-1; (d) |p(x)| < M x^d for x>=1, and prp-exp-beats-powers
+      (a) with k=d gives a contradiction for x > M(d+1)^{d+1} >= 1
 - key: exr-exponential-and-logarithm-b3
   kind: exr
   file: 05-exponential-and-logarithm.md
-  line: 512
-  hash: bddf02577024
-  verdicts: []
+  line: 553
+  hash: cc882ef1e2ae
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/05
+    hash: cc882ef1e2ae
+    date: '2026-11-01'
+    evidence: '553-575: dependency order and both sample orders valid; D1, D2 diagnoses correct'
+  - stage: S5b
+    verdict: correct
+    by: B:08/05
+    hash: cc882ef1e2ae
+    date: '2026-11-01'
+    evidence: '05:553-575: the dependency order and both distractor analyses were checked. (D2): LHS<1<RHS.'
+  - stage: S6
+    verdict: correct
+    by: S6:08b
+    hash: cc882ef1e2ae
+    date: '2026-11-01'
+    evidence: 05:571-575; the dependency constraints are right and both listed orders are admissible.
+      D1 is a non sequitur toward the wrong target (its conclusion is true by Bernoulli); D2 is false
+      for x≠0 (LHS<1<RHS)
 - key: exr-exponential-and-logarithm-c1
   kind: exr
   file: 05-exponential-and-logarithm.md
-  line: 538
-  hash: 1ebeb5d420f1
-  verdicts: []
+  line: 579
+  hash: 625ed52ade95
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/05
+    hash: 625ed52ade95
+    date: '2026-11-01'
+    evidence: '579-587: e-1 != e; corrected line matches prp-exp-first-consequences (c)'
+  - stage: S5b
+    verdict: minor
+    by: B:08/05
+    hash: 625ed52ade95
+    date: '2026-11-01'
+    evidence: 05:586 'After it, the rest of the argument ... goes through'. The rest proves exp(y-x) >=
+      1+(y-x) > 0, but the corrected line needs exp(y-x)-1>0, so the '>0' must become '>1'. 05:582 also
+      uses (E1), (E2) as bare codes (B7).
+  - stage: S6
+    verdict: correct
+    by: S6:08b
+    hash: 625ed52ade95
+    date: '2026-11-01'
+    evidence: '05:585-587; the only flaw is the first line, exp y - exp x = exp(y-x). At x=0, y=1: e-1
+      ≠ e. The remaining lines are valid and the conclusion is true'
 - key: exr-exponential-and-logarithm-c2
   kind: exr
   file: 05-exponential-and-logarithm.md
-  line: 548
-  hash: 9c34fb94b266
-  verdicts: []
+  line: 589
+  hash: ba50576baf14
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:08/05
+    hash: ba50576baf14
+    date: '2026-11-01'
+    evidence: '613: (Y^m)^{1/m}=Y cited to prp-real-power-laws (b) only, but Y^m:=X is the natural power;
+      identifying it with the real power needs prp-real-power-consistent (b), which the solution cites
+      only for y^m a sentence later'
+  - stage: S5b
+    verdict: minor
+    by: B:08/05
+    hash: ba50576baf14
+    date: '2026-11-01'
+    evidence: '05:593: part (a) is word for word the second sentence of prp-exp-beats-powers (b) (05:422),
+      so the solution at 05:611 is a citation, yet the scheme awards 6 points for it. Part (b) was checked:
+      Y=4m^2/eps^2, X=Y^m.'
+  - stage: S6
+    verdict: minor
+    by: S6:08b
+    hash: ba50576baf14
+    date: '2026-11-01'
+    evidence: '05:589-629; mathematics correct (Y=4m^2/eps^2, X=Y^m, y>Y, log x = m log y < eps y). Three
+      problems: (a) restates prp-exp-beats-powers (b) word for word; the scheme fails a valid alternative
+      proof; Hint 2 hands over the key substitution'
 - key: lem-irrationals-dense
   kind: lem
   file: 06-strange-functions.md
   line: 9
   hash: a4737be38c61
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/06
+    hash: a4737be38c61
+    date: '2026-11-01'
+    evidence: 06:9-13 statement matches its use in 06:58, 06:60, 06:83, 06:150, 06:189
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: a4737be38c61
+    date: '2026-11-01'
+    evidence: 06:9-13; statement is the fd3 exercise C2 recalled; all labels exist
+  - stage: S8
+    verdict: minor
+    by: S8:08
+    hash: a4737be38c61
+    date: '2026-11-01'
+    evidence: 'The transport argument ''sqrt 2 is not rational in R'' (embedding plus fd3:thm-no-rational-square-two)
+      is written out three times: 03:216, 05:7 and 06:19-20.'
 - key: proof:lem-irrationals-dense
   kind: proof
   file: 06-strange-functions.md
   line: 15
-  hash: 9a45f28f8c31
-  verdicts: []
+  hash: f4bdd034c025
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/06
+    hash: f4bdd034c025
+    date: '2026-11-01'
+    evidence: '06:16-18: prp-cof-square-roots gives sqrt2>=0; thm-cof-complete-archimedean gives Archimedean;
+      thm-rationals-dense-ordered-field gives q; iota_F from thm-rationals-embed-ordered-field is injective
+      and multiplicative, so r^2=2 holds in Q, against thm-no-rational-square-two. Every hypothesis used.'
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: f4bdd034c025
+    date: '2026-11-01'
+    evidence: 06:15-23; q in (a-√2,b-√2) by thm-rationals-dense-ordered-field, transport through thm-rationals-embed-ordered-field
+      and thm-no-rational-square-two; Uses line covers prp-cof-square-roots, thm-cof-complete-archimedean
 - key: check:06-strange-functions:1
   kind: check
   file: 06-strange-functions.md
-  line: 23
+  line: 27
   hash: 4cb0635e47c3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/06
+    hash: 4cb0635e47c3
+    date: '2026-11-01'
+    evidence: '06:27-33: q+1/2 is rational; the answer is right'
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: 4cb0635e47c3
+    date: '2026-11-01'
+    evidence: 06:27-33; q+1/2 rational; irrational shift argument holds
 - key: def-dirichlet-function
   kind: def
   file: 06-strange-functions.md
-  line: 35
+  line: 39
   hash: c95c53ce64b6
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/06
+    hash: c95c53ce64b6
+    date: '2026-11-01'
+    evidence: 06:42 matches fd2:def-indicator
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: c95c53ce64b6
+    date: '2026-11-01'
+    evidence: 06:39-43; @fd2:def-indicator exists
 - key: prp-dirichlet-properties
   kind: prp
   file: 06-strange-functions.md
-  line: 41
+  line: 45
   hash: 797582c6a5cf
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/06
+    hash: 797582c6a5cf
+    date: '2026-11-01'
+    evidence: 06:49-51 all three true
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: 797582c6a5cf
+    date: '2026-11-01'
+    evidence: 06:45-53; def-periodic-function (Ch8 §04:247) requires p≠0, matches (a)
 - key: proof:prp-dirichlet-properties
   kind: proof
   file: 06-strange-functions.md
-  line: 51
-  hash: 32bef69ddb0a
-  verdicts: []
+  line: 55
+  hash: ce8687409947
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/06
+    hash: ce8687409947
+    date: '2026-11-01'
+    evidence: 06:56 period definition (def-periodic-function, x±p in R trivial); 06:58 |D|<=1 so prp-sup-oscillation
+      applies on the non-empty set (a,b); 06:60 matches def-monotone-function (non-strict)
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: ce8687409947
+    date: '2026-11-01'
+    evidence: 06:55-65; (b) uses prp-sup-oscillation with nonempty bounded set; (c) q1<t<q2 witnesses;
+      Q closed under sums ledgered
 - key: def-thomae-function
   kind: def
   file: 06-strange-functions.md
-  line: 85
+  line: 93
   hash: db96e1dd3791
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/06
+    hash: db96e1dd3791
+    date: '2026-11-01'
+    evidence: 06:96 uniqueness from prp-rationals-lowest-terms (a), which says exactly that
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: db96e1dd3791
+    date: '2026-11-01'
+    evidence: 06:93-100; uniqueness from prp-rationals-lowest-terms (a) (Ch2 §02:222)
 - key: check:06-strange-functions:2
   kind: check
   file: 06-strange-functions.md
-  line: 100
-  hash: 1bbdddb5b30c
-  verdicts: []
+  line: 108
+  hash: b7fd379d65ae
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/06
+    hash: b7fd379d65ae
+    date: '2026-11-01'
+    evidence: 06:113-116 values 1/4, 1/4, 1/5, 0 all correct; sqrt2/2 irrational argued
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: b7fd379d65ae
+    date: '2026-11-01'
+    evidence: 06:108-117; 1/4, 1/4, 1/5, 0 checked; sidecar prp-thomae-large-values.py asserts them
 - key: prp-thomae-large-values
   kind: prp
   file: 06-strange-functions.md
-  line: 108
+  line: 121
   hash: 0d00cf14186d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/06
+    hash: 0d00cf14186d
+    date: '2026-11-01'
+    evidence: 06:125-127 true; (b) holds for a<=b
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: 0d00cf14186d
+    date: '2026-11-01'
+    evidence: 06:121-129; statement true for a≤b, ε>0
 - key: proof:prp-thomae-large-values
   kind: proof
   file: 06-strange-functions.md
-  line: 122
-  hash: d1833549a684
-  verdicts: []
+  line: 135
+  hash: b6cf23c11e59
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:08/06
+    hash: b6cf23c11e59
+    date: '2026-11-01'
+    evidence: 06:142 uses prp-floor-rules (g) (j<=x iff j<=floor x) correctly for both q<=Q and p<=floor(bq);
+      06:144 bijection onto S_q fine; 06:146 cites the exercise fd2:exr-finite-sets-b3 inside a proof
+      (though the step is then re-proved inline)
+  - stage: S5b
+    verdict: minor
+    by: B:08/06
+    hash: b6cf23c11e59
+    date: '2026-11-01'
+    evidence: 06:136 'hence divides gcd(p,q)=1' uses thm-integers-bezout (c) with no @ref/ledger line;
+      06:146 a main-text proof cites the exercise @fd2:exr-finite-sets-b3 (STYLE §6/§9)
 - key: exm-strange-involution
   kind: exm
   file: 06-strange-functions.md
-  line: 163
+  line: 180
   hash: 5696af251fb4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/06
+    hash: 5696af251fb4
+    date: '2026-11-01'
+    evidence: '06:187-189: J∘J=id, bijection by fd2:thm-bijection-iff-inverse; q1<q2 and t1<t2 by density
+      twice give not decreasing / not increasing'
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: 5696af251fb4
+    date: '2026-11-01'
+    evidence: 06:180-190; J∘J=id, bijection by fd2:thm-bijection-iff-inverse, rational/irrational pairs
+      show not monotone
 - key: exm-strange-staircase
   kind: exm
   file: 06-strange-functions.md
-  line: 181
-  hash: 408a737c7be6
-  verdicts: []
+  line: 198
+  hash: 4c3902ec6dd3
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:08/06
+    hash: 4c3902ec6dd3
+    date: '2026-11-01'
+    evidence: 06:205-209 math correct (floor-rules (g), reciprocal-order); the display ends with a comma
+      followed by a new capitalised sentence at 06:209
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: 4c3902ec6dd3
+    date: '2026-11-01'
+    evidence: 06:198-214; floor(1/x)=n ⇔ 1/(n+1)<x≤1/n via prp-reciprocal-order (b); figure open/closed
+      dots match (1/(n+1),1/n]
 - key: prp-staircase-squeeze
   kind: prp
   file: 06-strange-functions.md
-  line: 217
+  line: 238
   hash: 993b5fdb32ed
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:08/06
+    hash: 993b5fdb32ed
+    date: '2026-11-01'
+    evidence: 06:244 parenthetical '(At x = 0 both sides are 0.)' next to a strict inequality; at x=0,
+      0<2*0^2 is false
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: 993b5fdb32ed
+    date: '2026-11-01'
+    evidence: 06:238-246; (c) restricted to 0<x≤1 with the x=0 remark
 - key: proof:prp-staircase-squeeze
   kind: proof
   file: 06-strange-functions.md
-  line: 227
-  hash: f2e6936eb072
-  verdicts: []
+  line: 248
+  hash: 642e49d62edd
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:08/06
+    hash: 642e49d62edd
+    date: '2026-11-01'
+    evidence: 06:249 floor-rules (c); 06:251 prp-subset-finite, prp-finite-max (reals) fine; 06:255 n+1<=2n
+      and the last step are right; 06:257 says 'lem-reals-nth-root (a) with n = 2' while n already names
+      floor(1/x)
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: 642e49d62edd
+    date: '2026-11-01'
+    evidence: 06:248-258; 1/(n(n+1)) ≤ 2/(n+1)^2 ⇔ n+1 ≤ 2n; prp-floor-rules (a),(c) and fd2:prp-finite-max
+      (min) checked
 - key: check:06-strange-functions:3
   kind: check
   file: 06-strange-functions.md
-  line: 241
+  line: 262
   hash: 8e3da321b840
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/06
+    hash: 8e3da321b840
+    date: '2026-11-01'
+    evidence: 06:267 n open pieces + n+1 points gives at most 2n+1 values (def-step-function); (b) gives
+      infinitely many
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: 8e3da321b840
+    date: '2026-11-01'
+    evidence: 06:262-268; n open pieces + n+1 cut points cover [a,b] per def-step-function, ≤ 2n+1 values
 - key: exm-strange-zigzag
   kind: exm
   file: 06-strange-functions.md
-  line: 251
+  line: 272
   hash: 5b25eb6d6b25
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/06
+    hash: 5b25eb6d6b25
+    date: '2026-11-01'
+    evidence: 06:281-283 prp-distance-to-integer (a) with t=1/x-n; endpoint x=1/(n+1) checked separately;
+      1/x=n+1/2 at x=2/(2n+1)
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: 5b25eb6d6b25
+    date: '2026-11-01'
+    evidence: 06:272-284; prp-distance-to-integer (a) with floor(1/x)=n; endpoint x=1/(n+1) handled; peak
+      at 2/(2n+1)
 - key: prp-zigzag-all-values
   kind: prp
   file: 06-strange-functions.md
-  line: 287
+  line: 308
   hash: 79c81533cafb
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/06
+    hash: 79c81533cafb
+    date: '2026-11-01'
+    evidence: 06:312-313 true
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: 79c81533cafb
+    date: '2026-11-01'
+    evidence: 06:308-315
 - key: proof:prp-zigzag-all-values
   kind: proof
   file: 06-strange-functions.md
-  line: 296
+  line: 317
   hash: 789de587d310
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/06
+    hash: 789de587d310
+    date: '2026-11-01'
+    evidence: 06:318 n depends only on delta, x on n,t; prp-archimedean-reciprocal, distance (c) period
+      by induction, (a) with floor t=0, t<=1/2<=1-t; 06:320 distance (b)
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: 789de587d310
+    date: '2026-11-01'
+    evidence: 06:317-321; x=1/(n+t), period-1 induction ledgered, dist(t,Z)=t for t≤1/2, (b) for |xZ(x)|
 - key: exm-strange-unbounded
   kind: exm
   file: 06-strange-functions.md
-  line: 306
+  line: 327
   hash: 90440cdf69e7
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/06
+    hash: 90440cdf69e7
+    date: '2026-11-01'
+    evidence: 06:334 C'>=1 so 1/C' in (0,1], R(1/C')=C'>C
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: 90440cdf69e7
+    date: '2026-11-01'
+    evidence: 06:327-335; C'=max{C,0}+1, x=1/C'∈(0,1]
 - key: exm-strange-sup-missed
   kind: exm
   file: 06-strange-functions.md
-  line: 316
+  line: 337
   hash: a2d1e34f6aab
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/06
+    hash: a2d1e34f6aab
+    date: '2026-11-01'
+    evidence: 06:344 x=max{0,1-eps/2} in [0,1); prp-real-sup-approximation with upper bound 1 on a non-empty
+      set; all values <1
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: a2d1e34f6aab
+    date: '2026-11-01'
+    evidence: 06:337-345; prp-real-sup-approximation applied with an upper bound and witnesses
 - key: exm-strange-functions
   kind: exm
   file: 06-strange-functions.md
-  line: 330
+  line: 351
   hash: ba0b876c7cd7
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:08/06
+    hash: ba0b876c7cd7
+    date: '2026-11-01'
+    evidence: 06:360 T row 'finitely many values >= eps on [a,b]' misstates prp-thomae-large-values (b),
+      which is about points; 06:363 s row states 0<=s(x)-x<2x^2 without x>0
+  - stage: S5b
+    verdict: minor
+    by: B:08/06
+    hash: ba0b876c7cd7
+    date: '2026-11-01'
+    evidence: 06:354 'lists what this section proved' but H row (06:362) was proved in Section 8.2 (exm-strange-jump);
+      06:360 'finitely many values ≥ ε' misstates prp-thomae-large-values (b) (finitely many points);
+      06:363 '0 ≤ s(x)−x < 2x²' drops 0<x≤1 and is false at x=0
 - key: exr-strange-functions-a1
   kind: exr
   file: 06-strange-functions.md
-  line: 358
+  line: 379
   hash: a8d55e95c4aa
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/06
+    hash: a8d55e95c4aa
+    date: '2026-11-01'
+    evidence: 06:386-388 correct sup/inf and where attained
+  - stage: S5b
+    verdict: minor
+    by: B:08/06
+    hash: a8d55e95c4aa
+    date: '2026-11-01'
+    evidence: 06:386 uses √2/2 ∈ (0,1) and √2/2 irrational without reason or ledger line (only A2 is ledgered,
+      06:566; A2 proves the order)
+  - stage: S6
+    verdict: correct
+    by: S6:08b
+    hash: a8d55e95c4aa
+    date: '2026-11-01'
+    evidence: 06:385-389; for D, sup 1 and inf 0 are attained at 1/2 and sqrt2/2; for T on [0,1], sup
+      1 is attained exactly at 0 and 1, and inf 0 at the irrationals
 - key: exr-strange-functions-a2
   kind: exr
   file: 06-strange-functions.md
-  line: 370
+  line: 391
   hash: 6683342f7a46
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/06
+    hash: 6683342f7a46
+    date: '2026-11-01'
+    evidence: 06:403-405 bound |x|<=5; 1/2<sqrt2/2<3/4 via strictly increasing squaring; values 1/2,0,3/4
+      refute both monotonicities
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: 6683342f7a46
+    date: '2026-11-01'
+    evidence: 06:402-406; squares 1/4<1/2<9/16 and lem-reals-nth-root (a) give the order; values give
+      non-monotonicity
+  - stage: S6
+    verdict: correct
+    by: S6:08b
+    hash: 6683342f7a46
+    date: '2026-11-01'
+    evidence: 06:402-406; 1/4<1/2<9/16 is true (script); g-values 1/2, 0, 3/4 refute both kinds of monotonicity
 - key: exr-strange-functions-b1
   kind: exr
   file: 06-strange-functions.md
-  line: 389
+  line: 410
   hash: 919d2fc59648
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/06
+    hash: 919d2fc59648
+    date: '2026-11-01'
+    evidence: 06:417-421 seven points 0,1,1/2,1/3,2/3,1/4,3/4
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: 919d2fc59648
+    date: '2026-11-01'
+    evidence: 06:416-422; seven points, sidecar asserts the set
+  - stage: S6
+    verdict: correct
+    by: S6:08b
+    hash: 919d2fc59648
+    date: '2026-11-01'
+    evidence: '06:416-422; enumerated {p/q: q<=4, 0<=p<=q} = 7 points, same list (script)'
 - key: exr-strange-functions-b2
   kind: exr
   file: 06-strange-functions.md
-  line: 403
-  hash: 7b4c67866d5f
-  verdicts: []
+  line: 424
+  hash: 5f134e5e85d8
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/06
+    hash: 5f134e5e85d8
+    date: '2026-11-01'
+    evidence: 06:436-442 (a) true, (b) true, (c) false via J, (d) true
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: 5f134e5e85d8
+    date: '2026-11-01'
+    evidence: 06:435-443; (a) T, (b) T, (c) F via J, (d) T via prp-thomae-large-values (a)
+  - stage: S6
+    verdict: correct
+    by: S6:08b
+    hash: 5f134e5e85d8
+    date: '2026-11-01'
+    evidence: 06:435-443; (a) both values rational would make sqrt2 rational; (b) J is the identity on
+      Q; (c) J is a counterexample; (d) prp-thomae-large-values (a)
 - key: exr-strange-functions-b3
   kind: exr
   file: 06-strange-functions.md
-  line: 424
+  line: 445
   hash: 34621e47b135
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/06
+    hash: 34621e47b135
+    date: '2026-11-01'
+    evidence: 06:452 floor(2.5)=2, 0.1<0.32
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: 34621e47b135
+    date: '2026-11-01'
+    evidence: 06:452; s(0.4)=1/2, 0.1<0.32
+  - stage: S6
+    verdict: correct
+    by: S6:08b
+    hash: 34621e47b135
+    date: '2026-11-01'
+    evidence: 06:451-453; s(0.4)=1/2, 0 <= 1/10 < 8/25 (script)
 - key: exr-strange-functions-c1
   kind: exr
   file: 06-strange-functions.md
-  line: 436
+  line: 457
   hash: 5feb6155f8c5
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/06
+    hash: 5feb6155f8c5
+    date: '2026-11-01'
+    evidence: 06:476-480 exr-real-functions-and-graphs-c1 (a),(c) give f(0)=0, f(q)=cq; c>=0; both directions
+      for c>0 with rationals between x and f(x)/c; c=0 squeezed. Hint 1 'Exercise C1 of Section 8.1' matches
+      01-real-functions-and-graphs
+  - stage: S5b
+    verdict: minor
+    by: B:08/06
+    hash: 5feb6155f8c5
+    date: '2026-11-01'
+    evidence: 06:482 asserts an unproved independence result ('The other axioms of set theory do not prove
+      that one exists') without marking it not proved here; math of the solution correct (06:476-480)
+  - stage: S6
+    verdict: minor
+    by: S6:08b
+    hash: 5feb6155f8c5
+    date: '2026-11-01'
+    evidence: '06:463-490; the proof is correct: f(q)=cq from exr-real-functions-and-graphs-c1 (a),(c);
+      c>=0; the rational-between argument and the c=0 case are valid. The marking scheme fails a valid
+      alternative proof, and Hint 2 executes the key choice'
 - key: exr-strange-functions-c2
   kind: exr
   file: 06-strange-functions.md
-  line: 471
+  line: 492
   hash: cb38ea968e5f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/06
+    hash: cb38ea968e5f
+    date: '2026-11-01'
+    evidence: 06:499-501 f(a)<=f(x)<=f(b); M not increasing
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: cb38ea968e5f
+    date: '2026-11-01'
+    evidence: 06:499-501; f(a)≤f(x)≤f(b); M not increasing
+  - stage: S6
+    verdict: correct
+    by: S6:08b
+    hash: cb38ea968e5f
+    date: '2026-11-01'
+    evidence: '06:498-502; f(a) <= f(x) <= f(b), so the sup f(b) and the inf f(a) are attained; M is not
+      increasing: M(1/2)=1/2 > 0 = M(1)'
 - key: exr-strange-functions-r1
   kind: exr
   file: 06-strange-functions.md
-  line: 485
+  line: 506
   hash: 4584ec48a84d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/06
+    hash: 4584ec48a84d
+    date: '2026-11-01'
+    evidence: 06:513-515 prp-polynomial-function-map (b) homomorphism; r(n)=0 by induction; thm-polynomial-root-count
+      over the field R
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: 4584ec48a84d
+    date: '2026-11-01'
+    evidence: 06:513-515; thm-polynomial-root-count gives k≤deg f; prp-polynomial-function-map (b) is
+      the ring homomorphism
+  - stage: S6
+    verdict: correct
+    by: S6:08b
+    hash: 4584ec48a84d
+    date: '2026-11-01'
+    evidence: 06:512-516; r(n)=0 for n in N by induction; a non-zero r of degree d would have the d+1
+      distinct roots 0..d, against thm-polynomial-root-count (fd4 ch07:11, named by @ref). The problem
+      text hides the source
 - key: exr-strange-functions-r2
   kind: exr
   file: 06-strange-functions.md
-  line: 497
-  hash: 08358a567e45
-  verdicts: []
+  line: 518
+  hash: 504aea320af9
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/06
+    hash: 504aea320af9
+    date: '2026-11-01'
+    evidence: 06:525-529 exm-groups (c); thm-subgroup-test form ab^{-1}; thm-monotone-inverse (b) with
+      g(R)=R; prp-monotone-algebra (e) strict composition; decreasing ones lack id
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: 504aea320af9
+    date: '2026-11-01'
+    evidence: 06:525-530; thm-subgroup-test form ab^{-1}; thm-monotone-inverse (b), prp-monotone-algebra
+      (e), exm-groups (c) checked
+  - stage: S6
+    verdict: correct
+    by: S6:08b
+    hash: 504aea320af9
+    date: '2026-11-01'
+    evidence: 06:524-530; the subgroup test (ch05:21, form H nonempty and ab^{-1} in H) applies. thm-monotone-inverse
+      (b) makes g^{-1} strictly increasing, and prp-monotone-algebra (e) has a strict clause. The decreasing
+      bijections miss the identity
 - key: exr-strange-functions-r3
   kind: exr
   file: 06-strange-functions.md
-  line: 511
+  line: 532
   hash: 27d18af646d3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/06
+    hash: 27d18af646d3
+    date: '2026-11-01'
+    evidence: 06:539 prp-floor-rules (a); fd3:prp-archimedean-reciprocal gives N in Z>0 subset N; matches
+      fd3:def-sequence-limit-ordered-field
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: 27d18af646d3
+    date: '2026-11-01'
+    evidence: 06:539; prp-floor-rules (a), fd3:prp-archimedean-reciprocal gives the N for all n≥N
+  - stage: S6
+    verdict: correct
+    by: S6:08b
+    hash: 27d18af646d3
+    date: '2026-11-01'
+    evidence: 06:538-540; 0 <= x - a_n < 1/n; prp-archimedean-reciprocal gives N in Z>0, which fits def-sequence-limit-ordered-field
+      (N in N)
 - key: exr-strange-functions-r4
   kind: exr
   file: 06-strange-functions.md
-  line: 521
+  line: 542
   hash: 161be2d01a77
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:08/06
+    hash: 161be2d01a77
+    date: '2026-11-01'
+    evidence: 06:549 d=max{deg p,1}; thm-polynomial-identity-from-values (a) with points 0..d gives p=x;
+      p(-1)=-1
+  - stage: S5b
+    verdict: correct
+    by: B:08/06
+    hash: 161be2d01a77
+    date: '2026-11-01'
+    evidence: 06:549; thm-polynomial-identity-from-values (a) with d=max{deg p,1}, points 0..d
+  - stage: S6
+    verdict: correct
+    by: S6:08b
+    hash: 161be2d01a77
+    date: '2026-11-01'
+    evidence: 06:548-552; thm-polynomial-identity-from-values (a) with n=d=max(deg p,1) at 0..d gives
+      p=x, then p(-1)=-1≠1. The look-alike tools are named and the source is cited by @ref
