@@ -12,7 +12,7 @@ Calculus on \( \nR^n \) is built on this. A ball is the set of points at distanc
 - The complex numbers, the modulus and the triangle inequality in \( \nC \), from Chapter 3 (@thm-complex-triangle-inequality).
 - Fields (Chapter 4) for one remark in Section 9.2, and polynomials (Chapters 6 and 7) for one exercise of Section 9.6. Groups (Chapter 5) and monotone functions (Chapter 8) appear only in the review exercises of Section 9.6.
 
-**Time.** About 25 hours if you read the main text and do every A exercise and one B and one C exercise per section; about 30 hours for everything.
+**Time.** About 25 hours if you read the main text and do every A exercise and one B and one C exercise per section; about 35 hours for everything.
 
 ## Roadmap
 

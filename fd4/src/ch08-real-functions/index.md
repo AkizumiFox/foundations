@@ -14,7 +14,7 @@ Part III of this volume begins here. Its three chapters, 8, 9 and 10, are the to
 - Roots and rational powers, from Chapter 1 (@def-rational-power).
 - Polynomial functions, from Chapters 6 and 7, in Sections 8.1, 8.3 and 8.6 (@def-polynomial-evaluation).
 
-**Time.** About 25 hours if you read the main text and do every A exercise and one B and one C exercise per section; about 40 hours for everything.
+**Time.** About 30 hours if you read the main text and do every A exercise and one B and one C exercise per section; about 45 hours for everything.
 
 ## Roadmap
 

@@ -134,7 +134,7 @@ By @lem-root-rules (c) with \( m = 3 \), \( n = 2 \), it is \( \sqrt[6]{64} = 2 
 
 ## Integer powers
 
-A rational exponent \( \frac{m}{n} \) may have a negative numerator, so before we can define \( a^{m/n} \) we need \( a^m \) for negative integers \( m \). There is only one sensible choice. If the law \( a^{m+k} = a^m a^k \) is to survive, then \( a^{-k} a^k = a^0 = 1 \), so \( a^{-k} \) has to be the inverse of \( a^k \). For instance, \( 2^{-3} \) must be the inverse of \( 2^3 = 8 \), which is \( \frac18 = \bigl(\frac12\bigr)^3 \). The definition makes this so, and it works in every field, which Chapter 3 will use in \( \nC \).
+A rational exponent \( \frac{m}{n} \) may have a negative numerator, so before we can define \( a^{m/n} \) we need \( a^m \) for negative integers \( m \). There is only one sensible choice. If the law \( a^{m+k} = a^m a^k \) is to survive, then \( a^{-k} a^k = a^0 = 1 \), so \( a^{-k} \) has to be the inverse of \( a^k \). For instance, \( 2^{-3} \) must be the inverse of \( 2^3 = 8 \), which is \( \frac18 = \bigl(\frac12\bigr)^3 \). The definition makes this so, and it works in every field. Chapter 3 meets it again in \( \nC \), in an exercise.
 
 ::: {#def-integer-power}
 [Integer Powers]

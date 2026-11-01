@@ -472,3 +472,5 @@ l'Hôpital's
 l'hôpital's
 l’hôpital
 l'hôpital
+summable
+unshifted

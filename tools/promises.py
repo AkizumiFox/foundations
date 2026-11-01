@@ -316,7 +316,7 @@ def parse_status(path: Path = STATUS) -> list:
         frm, promise, target = cells[0], cells[1], cells[2]
         first = _ids(frm)
         sections = set(re.findall(r"§(\d+)", frm))
-        if re.search(r"\bindex\b", frm):
+        if re.search(r"\b(index|review)\b", frm):  # review.md (the Chapter review page) counts as index
             sections.add("index")
         rows.append(Row(n, line, first[0] if first else None, sections, promise,
                         set(_ids(target)), "paid" in target.lower()))

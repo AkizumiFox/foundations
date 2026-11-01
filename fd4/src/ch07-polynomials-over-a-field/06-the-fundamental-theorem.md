@@ -651,7 +651,7 @@ Let \( m, n \in \nZ_{>0} \). Prove that \( \gcd(2^m - 1, 2^n - 1) = 2^{\gcd(m, n
 :::
 
 ::: {.solution}
-The method is the integer Euclidean step of *Number Systems: From \( \nN \) to \( \nR \)*, Chapter 4 (@lem-gcd-remainder-step), used on the exponents and on the numbers at once. We prove the claim for all \( m, n \ge 1 \) by strong induction on \( m + n \) (@fd1:thm-strong-induction).
+The method is the integer Euclidean step of Chapter 2 (@lem-gcd-remainder-step), used on the exponents and on the numbers at once. We prove the claim for all \( m, n \ge 1 \) by strong induction on \( m + n \) (@fd1:thm-strong-induction).
 
 If \( m = n \), both sides are \( 2^m - 1 \): the gcd of a positive integer with itself is that integer (it divides both, and every common divisor is at most it, @def-integer-gcd), and \( \gcd(m, m) = m \). If \( m > n \), then
 \[

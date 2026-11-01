@@ -4,7 +4,7 @@ Section 7.4 proved a uniqueness statement: two polynomials of degree at most \( 
 \[
 f \equiv 1 \pmod{x} , \qquad f \equiv 3 \pmod{x - 1} , \qquad f \equiv 7 \pmod{x - 2} .
 \]
-Three congruences to coprime moduli: that is the Chinese remainder theorem of *Number Systems: From \( \nN \) to \( \nR \)*, Chapter 4 (@thm-chinese-remainder-two), with polynomials in place of integers. On the way we meet the classes modulo a polynomial \( m \). They form a ring \( F[x]/\langle m \rangle \), and it is a field exactly when \( m \) is irreducible, as \( \nZ/p\nZ \) is a field exactly when \( p \) is prime.
+Three congruences to coprime moduli: that is the Chinese remainder theorem of Chapter 2 (@thm-chinese-remainder-two), with polynomials in place of integers. On the way we meet the classes modulo a polynomial \( m \). They form a ring \( F[x]/\langle m \rangle \), and it is a field exactly when \( m \) is irreducible, as \( \nZ/p\nZ \) is a field exactly when \( p \) is prime.
 
 Throughout, \( F \) is a field. "Polynomial" means an element of \( F[x] \) unless another field is named.
 
@@ -125,7 +125,7 @@ So \( p = x^3 + x^2 - x + 1 \). Check the four values: \( p(-1) = -1 + 1 + 1 + 1
 
 ## Congruence modulo a polynomial
 
-The opening question turned values into remainders. To compute with remainders as *Number Systems: From \( \nN \) to \( \nR \)*, Chapter 4 did with integers, we need the relation "same remainder" and the classes it makes.
+The opening question turned values into remainders. To compute with remainders as Chapter 2 did with integers, we need the relation "same remainder" and the classes it makes.
 
 ::: {#def-polynomial-congruence}
 [Congruence Modulo a Polynomial]
@@ -155,7 +155,7 @@ Divide: \( x^3 = x(x^2 + 1) - x \), so \( x^3 \equiv -x \), and \( x^3 - x = x(x
 
 ## The ring of classes modulo a polynomial
 
-*Number Systems: From \( \nN \) to \( \nR \)*, Chapter 4 built \( \nZ/n\nZ \) as the quotient of \( \nZ \) by the ideal \( n\nZ \), and found in each class exactly one remainder in \( \{0, \dots, n - 1\} \). The same construction works for \( F[x] \) and an ideal \( \langle m \rangle \), and division with remainder again picks one representative per class, now "of degree less than \( \deg m \)".
+Chapter 2 built \( \nZ/n\nZ \) as the quotient of \( \nZ \) by the ideal \( n\nZ \), and found in each class exactly one remainder in \( \{0, \dots, n - 1\} \). The same construction works for \( F[x] \) and an ideal \( \langle m \rangle \), and division with remainder again picks one representative per class, now "of degree less than \( \deg m \)".
 
 ::: {#thm-polynomial-quotient-ring}
 [The Ring of Polynomials Modulo m]
@@ -259,7 +259,7 @@ Is \( \nQ[x]/\langle x^2 - 2 \rangle \) a field? Is \( \nR[x]/\langle x^2 - 2 \r
 
 ## The Chinese remainder theorem for polynomials
 
-Now several congruences at once. *Number Systems: From \( \nN \) to \( \nR \)*, Chapter 4 solved two congruences to coprime integer moduli by writing \( 1 \) as a combination of the moduli and multiplying (@thm-chinese-remainder-two). With polynomials the move is the same, and we take \( k \) moduli at once. The one new ingredient is that coprimality survives products.
+Now several congruences at once. Chapter 2 solved two congruences to coprime integer moduli by writing \( 1 \) as a combination of the moduli and multiplying (@thm-chinese-remainder-two). With polynomials the move is the same, and we take \( k \) moduli at once. The one new ingredient is that coprimality survives products.
 
 ::: {#lem-polynomial-coprime-to-product}
 [Coprime to Each Factor, Coprime to the Product]

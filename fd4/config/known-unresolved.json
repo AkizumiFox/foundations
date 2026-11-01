@@ -25,22 +25,6 @@
       {
         "ref": "prp-cof-sqrt2-field-incomplete",
         "in": "src/ch04-fields/06-frobenius-and-fermat.md"
-      },
-      {
-        "ref": "def-cof-sqrt2-field",
-        "in": "src/ch04-fields/index.md"
-      },
-      {
-        "ref": "exm-cof-sqrt2-conjugation",
-        "in": "src/ch04-fields/index.md"
-      },
-      {
-        "ref": "prp-cof-sqrt2-field-archimedean",
-        "in": "src/ch04-fields/index.md"
-      },
-      {
-        "ref": "prp-cof-sqrt2-field-incomplete",
-        "in": "src/ch04-fields/index.md"
       }
     ]
   }
