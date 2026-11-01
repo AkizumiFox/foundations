@@ -6,490 +6,1836 @@ items:
   file: 01-lines-and-segments.md
   line: 11
   hash: 38a6e975bb1e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:10/01
+    hash: 38a6e975bb1e
+    date: '2026-11-01'
+    evidence: 'line 11-23: the definition is correct. The first numeric instance, (1,0,0)+R(-1,1,0), comes
+      only after it at line 23, and line 7 is a description in words. Under STYLE §13 B5 a definition
+      that introduces p, v, the parametrization and the parameter needs a worked instance before it.'
+  - stage: S5b
+    verdict: minor
+    by: B:10/01
+    hash: 38a6e975bb1e
+    date: '2026-11-01'
+    evidence: '01:11-23 definition correct. Two problems: the first worked instance with numbers, (1,0,0)+R(-1,1,0),
+      comes after the definition (line 23), not before it as STYLE §13 B5 asks. Also, the new notation
+      p + Rv and its shorthand Rv (used bare in B3 and B4(c)) has no row in NOTATION.md.'
 - key: check:01-lines-and-segments:1
   kind: check
   file: 01-lines-and-segments.md
   line: 25
   hash: bae3ca65426c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/01
+    hash: bae3ca65426c
+    date: '2026-11-01'
+    evidence: 'lines 25-40: (d) derives (t-u)v=0, then |t-u|·||v||=0 by prp-norm-basic-rn (b), and ||v||>0
+      by (a). (a) a line has at least two points; (b) R = 0 + R·1; (c) t=2. The sidecar def-line-rn.py
+      runs ok.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/01
+    hash: bae3ca65426c
+    date: '2026-11-01'
+    evidence: '01:25-40: (d) uses prp-norm-basic-rn (a),(b), checked against ch09/04:39; (a) and (b) correct;
+      (c) (1,1,1)+2(1,2,3)=(3,5,7).'
 - key: prp-line-parametrizations
   kind: prp
   file: 01-lines-and-segments.md
   line: 46
   hash: df2770241c9a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/01
+    hash: df2770241c9a
+    date: '2026-11-01'
+    evidence: 'line 49: the statement is true, and both directions are proved.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/01
+    hash: df2770241c9a
+    date: '2026-11-01'
+    evidence: '01:46-50: statement true; the line-44 example is covered by sidecar def-line-rn.py:43.'
 - key: proof:prp-line-parametrizations
   kind: proof
   file: 01-lines-and-segments.md
   line: 56
-  hash: 3b6e79c245b7
-  verdicts: []
+  hash: 567867d1853a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/01
+    hash: 567867d1853a
+    date: '2026-11-01'
+    evidence: 'lines 57-67: (<=) p'' + ((t-s)/λ)λv = p + sv + (t-s)v = p + tv, and the division needs
+      λ≠0. (=>) v'' = (u-s)v, and u-s=0 would force v''=0, which contradicts the hypothesis v''≠0. The
+      cited laws (e),(h),(i) are correct, and the remaining field steps are in the ledger at line 455.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/01
+    hash: 567867d1853a
+    date: '2026-11-01'
+    evidence: '01:56-72: both inclusions checked. In (=>), v''=(u-s)v and u-s≠0 by (i). The ledger covers
+      the field division.'
 - key: prp-line-through-two-points
   kind: prp
   file: 01-lines-and-segments.md
-  line: 72
+  line: 76
   hash: be807983479a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/01
+    hash: be807983479a
+    date: '2026-11-01'
+    evidence: 'line 79: true for p≠q.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/01
+    hash: be807983479a
+    date: '2026-11-01'
+    evidence: 01:76-80, true as stated for p≠q.
 - key: proof:prp-line-through-two-points
   kind: proof
   file: 01-lines-and-segments.md
-  line: 78
-  hash: 6df70e54b047
-  verdicts: []
+  line: 82
+  hash: f2d9a2dee73c
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/01
+    hash: f2d9a2dee73c
+    date: '2026-11-01'
+    evidence: 'line 83: q-p=(u-s)v, and u=s would give q=p. The proof then applies prp-line-parametrizations
+      with p'' = p and v'' = q-p, so its hypotheses are met.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/01
+    hash: f2d9a2dee73c
+    date: '2026-11-01'
+    evidence: '01:82-88: u=s would give q-p=0v=0. prp-line-parametrizations is applied with base r, direction
+      v, p''=p, v''=q-p.'
 - key: def-collinear
   kind: def
   file: 01-lines-and-segments.md
-  line: 82
+  line: 90
   hash: 6f7acb8fd6aa
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:10/01
+    hash: 6f7acb8fd6aa
+    date: '2026-11-01'
+    evidence: 'line 96: ''By @prp-line-through-two-points, any two points are collinear'' cites a result
+      that requires p≠q. The case p=q is not covered, though it is easy (p + R e_1 contains p).'
+  - stage: S5b
+    verdict: gap
+    by: B:10/01
+    hash: 6f7acb8fd6aa
+    date: '2026-11-01'
+    evidence: '01:100: ''skew'' is defined through ''direction'', but direction belongs to a parametrization
+      (line 21), and the text never shows the condition is independent of that choice. 01:96: ''any two
+      points are collinear'' is cited to a result that needs p≠q.'
 - key: exm-two-lines-in-space
   kind: exm
   file: 01-lines-and-segments.md
-  line: 94
+  line: 102
   hash: 64659d1af9f7
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/01
+    hash: 64659d1af9f7
+    date: '2026-11-01'
+    evidence: 'lines 131-141: the systems 1+s=t, s=2, 1=t (inconsistent) and 1+s=2, s=1+u, 1=1+u (s=1,
+      u=0) are right. The directions (1,1,0) and (1,0,1) are not multiples of each other. The sidecar
+      runs ok. The skew definition at line 100 is covered by a separate finding.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/01
+    hash: 64659d1af9f7
+    date: '2026-11-01'
+    evidence: '01:102-142: (1+s,s,1)=(t,2,t) gives s=2, t=1, then 3≠1. L3 gives u=0, s=1, meeting at (2,1,1).
+      The sidecar passes.'
 - key: exm-method-parametrize
   kind: exm
   file: 01-lines-and-segments.md
-  line: 138
-  hash: cb5c753ff52c
-  verdicts: []
+  line: 146
+  hash: 1525462d4364
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/01
+    hash: 1525462d4364
+    date: '2026-11-01'
+    evidence: 'lines 146-154: the method and its common mistakes are accurate.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/01
+    hash: 1525462d4364
+    date: '2026-11-01'
+    evidence: '01:146-154: the ''later'' uses are paid in 10.2 (prp-line-meets-sphere cites it; prp-segment-crosses-hyperplane).'
 - key: def-segment-rn
   kind: def
   file: 01-lines-and-segments.md
-  line: 154
+  line: 162
   hash: 094a045dc894
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:10/01
+    hash: 094a045dc894
+    date: '2026-11-01'
+    evidence: 'lines 162-174: the definition and its remarks are correct ([p,q]=[q,p] via t ↔ 1-t, [p,p]={p},
+      and the n=1 comparison). Line 158 gives only the general p+t(q-p), with no numeric instance before
+      the definition (STYLE §13 B5).'
+  - stage: S5b
+    verdict: minor
+    by: B:10/01
+    hash: 094a045dc894
+    date: '2026-11-01'
+    evidence: '01:162-174: definition and the three remarks are correct. NOTATION.md:316 lists `[p, q]`
+      as the segment but does not record that it clashes with the interval row `[a, b]` at NOTATION.md:117.
+      The section handles the clash in its ''Segments and intervals'' remark.'
 - key: lem-subsegment
   kind: lem
   file: 01-lines-and-segments.md
-  line: 170
+  line: 178
   hash: 5922bcf3507a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/01
+    hash: 5922bcf3507a
+    date: '2026-11-01'
+    evidence: 'line 181: true, and it needs no p≠q.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/01
+    hash: 5922bcf3507a
+    date: '2026-11-01'
+    evidence: 01:178-182, true.
 - key: proof:lem-subsegment
   kind: proof
   file: 01-lines-and-segments.md
-  line: 180
-  hash: 3601b71249cd
-  verdicts: []
+  line: 188
+  hash: f7cecb8abd7d
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/01
+    hash: f7cecb8abd7d
+    date: '2026-11-01'
+    evidence: 'lines 189-193: the identity (1-t)x+ty = p+((1-t)s+tu)(q-p) holds, and the sidecar runs
+      ok. The bounds come from fd3:prp-ordered-field-halves (d) with a=0≤b=s and c=d=1-t, followed by
+      the addition rule fd3:prp-ordered-ring-rules (b). These labels say what is cited.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/01
+    hash: f7cecb8abd7d
+    date: '2026-11-01'
+    evidence: '01:188-198: the identity is checked by sidecar. Bounds use fd3 ordered-field-halves (d)
+      (verified: 0≤a≤b, 0≤c≤d ⇒ ac≤bd) and ordered-ring-rules (b).'
 - key: check:01-lines-and-segments:2
   kind: check
   file: 01-lines-and-segments.md
-  line: 188
+  line: 200
   hash: 4f2c2c4a46f1
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/01
+    hash: 4f2c2c4a46f1
+    date: '2026-11-01'
+    evidence: 'line 205: (1,1,-1)=t(2,1,-2) forces t=1/2 from the first coordinate and t=1 from the second.
+      Correct.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/01
+    hash: 4f2c2c4a46f1
+    date: '2026-11-01'
+    evidence: '01:200-206: (1,1,-1)=t(2,1,-2) forces t=1/2 and t=1. Correct.'
 - key: thm-betweenness
   kind: thm
   file: 01-lines-and-segments.md
-  line: 200
+  line: 212
   hash: 88a3eb25383b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/01
+    hash: 88a3eb25383b
+    date: '2026-11-01'
+    evidence: 'lines 215-222: the statement is true, including the moreover clause.'
+  - stage: S5b
+    verdict: minor
+    by: B:10/01
+    hash: 88a3eb25383b
+    date: '2026-11-01'
+    evidence: '01:212-223: the statement is true. Two wording problems. No worked numeric instance precedes
+      it (STYLE §13 B5). The aftermath at 01:260 names AN1 without a chapter number, and says GEO ''proved''
+      a fact; GEO is in neither the series map nor STATUS.'
 - key: proof:thm-betweenness
   kind: proof
   file: 01-lines-and-segments.md
-  line: 228
-  hash: 40097d2d692e
-  verdicts: []
+  line: 240
+  hash: 14fa611a04c4
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/01
+    hash: 14fa611a04c4
+    date: '2026-11-01'
+    evidence: 'lines 241-251: x-p=t(q-p) and q-x=(1-t)(q-p). The sign change uses the norm rule with c=-1.
+      thm-triangle-inequality-rn (a) (line 181 of ch09/05) states exactly the case ''x=0 or y=cx, c≥0''
+      with x=u, y=w. In the case w=cu, t=1/(1+c), and fd3:prp-ordered-field-halves (c) (reciprocals reverse
+      ≤) gives t≤1. Both cases are handled.'
+  - stage: S5b
+    verdict: minor
+    by: B:10/01
+    hash: 14fa611a04c4
+    date: '2026-11-01'
+    evidence: '01:240-256: the proof is correct. The meta-claim at 01:258 misstates where c≥0 is used:
+      with c=-1/2, 1+c>0 but t=2. The Uses line leaves out prp-reciprocal-order (a) (t>0) and 1+c≥1>0.
+      ''The third row'' (01:237) points at a page device.'
 - key: exm-method-equality-case
   kind: exm
   file: 01-lines-and-segments.md
-  line: 246
-  hash: 2b9726818219
-  verdicts: []
+  line: 262
+  hash: 51e2305bb04f
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:10/01
+    hash: 51e2305bb04f
+    date: '2026-11-01'
+    evidence: 'line 269: ''Forgetting the case u = 0 leaves a gap, because in that case no multiplier
+      exists'' is overstated. When u=0 and w=0, every c works. The correct statement is that w need not
+      be a multiple of u.'
+  - stage: S5b
+    verdict: minor
+    by: B:10/01
+    hash: 51e2305bb04f
+    date: '2026-11-01'
+    evidence: '01:269: ''in that case no multiplier exists'' is false when u=w=0, since then w=c·u for
+      every c.'
 - key: cor-point-pinned-on-segment
   kind: cor
   file: 01-lines-and-segments.md
-  line: 258
+  line: 274
   hash: f01d6645d1b0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/01
+    hash: f01d6645d1b0
+    date: '2026-11-01'
+    evidence: 'line 277: true. With p=q, s+r=0 forces s=r=0 and x=p.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/01
+    hash: f01d6645d1b0
+    date: '2026-11-01'
+    evidence: '01:274-282: true, including the case p=q.'
 - key: proof:cor-point-pinned-on-segment
   kind: proof
   file: 01-lines-and-segments.md
-  line: 268
-  hash: 4511f6bfd41f
-  verdicts: []
+  line: 284
+  hash: c48fef111b54
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/01
+    hash: c48fef111b54
+    date: '2026-11-01'
+    evidence: 'lines 285-291: t=s/||p-q|| lies in [0,1], and existence and uniqueness both follow from
+      thm-betweenness and its moreover clause. The p=q case is completed in the second-reading block at
+      line 291, using fd3:prp-ordered-ring-rules (b) and prp-norm-basic-rn (a). The argument is complete.'
+  - stage: S5b
+    verdict: minor
+    by: B:10/01
+    hash: c48fef111b54
+    date: '2026-11-01'
+    evidence: '01:284-292: the math is correct and the fold covers p=q. The proof has no Uses line, yet
+      the ledger (01:468-470) lists sources it uses without inline refs: ordered-ring-rules (b),(c), reciprocal-order,
+      lem-field-fraction-rules.'
 - key: check:01-lines-and-segments:3
   kind: check
   file: 01-lines-and-segments.md
-  line: 278
+  line: 294
   hash: 85aeb3f734bb
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/01
+    hash: 85aeb3f734bb
+    date: '2026-11-01'
+    evidence: 'line 299: s=r=||p-q||/2 meets the hypotheses of the corollary, and the midpoint has these
+      distances by the moreover clause with t=1/2.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/01
+    hash: 85aeb3f734bb
+    date: '2026-11-01'
+    evidence: '01:294-300: s=r=||p-q||/2 is a valid choice in cor-point-pinned-on-segment, and the midpoint
+      has t=1/2.'
 - key: exr-lines-and-segments-a1
   kind: exr
   file: 01-lines-and-segments.md
-  line: 296
+  line: 312
   hash: 763c93f514f0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/01
+    hash: 763c93f514f0
+    date: '2026-11-01'
+    evidence: 'line 322-324: the direction (2,1,-2), t=2 and the midpoint (2,-1/2,1) are right. The sidecar
+      runs ok.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/01
+    hash: 763c93f514f0
+    date: '2026-11-01'
+    evidence: '01:312-325: (1,-1,2)+2(2,1,-2)=(5,1,-2); midpoint (2,-1/2,1). The sidecar passes.'
+  - stage: S6
+    verdict: correct
+    by: S6:10a
+    hash: 763c93f514f0
+    date: '2026-11-01'
+    evidence: 01:322-324. I got direction (2,1,-2); (5,1,-2) has parameter t=2; midpoint (2,-1/2,1). A
+      sympy script confirms all three.
 - key: exr-lines-and-segments-a2
   kind: exr
   file: 01-lines-and-segments.md
-  line: 311
+  line: 327
   hash: fc0b3e806bc0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:10/01
+    hash: fc0b3e806bc0
+    date: '2026-11-01'
+    evidence: 'line 331/337: the question asks to ''find the one that lies between'', and the solution
+      only shows that (3,5) is between the other two, not that it is the only one (that is C1). Line 339:
+      ''so it does not apply'' is loose wording, covered by a separate finding.'
+  - stage: S5b
+    verdict: gap
+    by: B:10/01
+    hash: fc0b3e806bc0
+    date: '2026-11-01'
+    evidence: '01:339: the answer to ''where is c≥0 used'' gives only 1+c>0. The exercise''s own data
+      has c=-1/2, so 1+c=1/2>0 and t=2∉(0,1]. The real use is 1≤1+c (01:251). Also a second A item, against
+      STYLE §6 ''exactly one''.'
+  - stage: S6
+    verdict: correct
+    by: S6:10a
+    hash: fc0b3e806bc0
+    date: '2026-11-01'
+    evidence: 01:337-339. (a) v=(2,3), parameters 0,1,3, t=1/3, script-checked. (b) distances 2,1,1; u=(2,0),
+      w=(-1,0)=-u/2. The negative multiplier means equality fails; the solution says this correctly.
 - key: exr-lines-and-segments-b1
   kind: exr
   file: 01-lines-and-segments.md
-  line: 328
-  hash: d8ba4af512b4
-  verdicts: []
+  line: 344
+  hash: 680e0da368cf
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/01
+    hash: 680e0da368cf
+    date: '2026-11-01'
+    evidence: 'lines 351-357: s=(t-a)/(b-a)∈[0,1], and the identity checks. (=>) uses the uniqueness of
+      the parameter, which needs v≠0, and fd3 halves (d). Every hypothesis is used.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/01
+    hash: 680e0da368cf
+    date: '2026-11-01'
+    evidence: '01:344-358: both directions checked; uniqueness of parameter needs v≠0, which is in the
+      hypothesis.'
+  - stage: S6
+    verdict: correct
+    by: S6:10a
+    hash: 680e0da368cf
+    date: '2026-11-01'
+    evidence: 01:351-357. Both directions match my proof. The step 0<=s(b-a)<=b-a correctly cites fd3:prp-ordered-field-halves
+      (d), which is 0<=a<=b, 0<=c<=d => ac<=bd. The parameter-arithmetic worked model is lem-subsegment
+      (01:189-193).
 - key: exr-lines-and-segments-b2
   kind: exr
   file: 01-lines-and-segments.md
-  line: 344
+  line: 360
   hash: c00b9b2d1694
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/01
+    hash: c00b9b2d1694
+    date: '2026-11-01'
+    evidence: 'lines 372-384: I checked the elimination by hand. Eliminating gives sD = d1v''2 - d2v''1
+      and tD = d1v2 - d2v1, and substituting back gives d1 and d2. The case v1=0 uses no zero divisors
+      (fd3 ring rules (f)). The symbolic sidecar runs ok.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/01
+    hash: c00b9b2d1694
+    date: '2026-11-01'
+    evidence: '01:360-385: elimination checked by hand: sD=d1v''2-d2v''1, tD=d1v2-d2v1. Back-substitution
+      gives d1. The sidecar passes.'
+  - stage: S6
+    verdict: correct
+    by: S6:10a
+    hash: c00b9b2d1694
+    date: '2026-11-01'
+    evidence: '01:372-384. Case split in (a) checked. In (b) the elimination formulas sD=d1v2''-d2v1''
+      and tD=d1v2-d2v1 and the back-substitution were verified symbolically (residues 0). Worked model
+      for (b): exm-two-lines-in-space. For (a), the only nearby model is the coordinatewise test of multiples
+      in 01:135.'
 - key: exr-lines-and-segments-b3
   kind: exr
   file: 01-lines-and-segments.md
-  line: 371
+  line: 387
   hash: 6e2eaf2d5c57
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/01
+    hash: 6e2eaf2d5c57
+    date: '2026-11-01'
+    evidence: 'line 394: the second coordinates are 0 and 1, and (1,0,0)≠λ(0,0,1). Correct.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/01
+    hash: 6e2eaf2d5c57
+    date: '2026-11-01'
+    evidence: '01:387-395: second coordinates 0≠1; (1,0,0)≠λ(0,0,1). Enough, by the remark at 01:100.'
+  - stage: S6
+    verdict: correct
+    by: S6:10a
+    hash: 6e2eaf2d5c57
+    date: '2026-11-01'
+    evidence: 01:394. Second coordinates are 0 and 1, so the lines are disjoint. (1,0,0)=λ(0,0,1) fails
+      in the first coordinate. That is the test the remark at 01:100 says is enough.
 - key: exr-lines-and-segments-b4
   kind: exr
   file: 01-lines-and-segments.md
-  line: 381
-  hash: e4e54f27aa6a
-  verdicts: []
+  line: 397
+  hash: 2753a2761d52
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/01
+    hash: 2753a2761d52
+    date: '2026-11-01'
+    evidence: 'lines 412-420: (a) is the check; (b) is the warning; (c) uses the triple (0,0),(1,0),(0,1);
+      (d) uses λ=2 with 2v-v=v≠0; (e) uses prp-line-through-two-points. All are correct.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/01
+    hash: 2753a2761d52
+    date: '2026-11-01'
+    evidence: '01:397-421: (a) T, (b) F, (c) F, (d) F with w=2v, (e) T. All correct.'
+  - stage: S6
+    verdict: minor
+    by: S6:10a
+    hash: 2753a2761d52
+    date: '2026-11-01'
+    evidence: '01:412-420. All five verdicts agree with mine: T,F,F,F,T. The counterexamples in (b),(c),(d)
+      are valid. The wording of (a) and (b) refers to page devices; see the findings.'
 - key: exr-lines-and-segments-c1
   kind: exr
   file: 01-lines-and-segments.md
-  line: 409
-  hash: a71842eac43f
-  verdicts: []
+  line: 425
+  hash: 0f9c7ad8b5e4
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/01
+    hash: 0f9c7ad8b5e4
+    date: '2026-11-01'
+    evidence: 'lines 432-436: distinct points have distinct parameters, and fd3:prp-ordered-ring-rules
+      (i) orders them. B1 gives existence, and B1 (=>) excludes x1 and x3. Citing an earlier exercise
+      from a solution is allowed, and B1 is marked ''used later''.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/01
+    hash: 0f9c7ad8b5e4
+    date: '2026-11-01'
+    evidence: '01:425-448: B1 is applied with the right a<b in each case. The scheme has 5 steps summing
+      to 10, with ''Slips that lose the step'', as STYLE §11.6 asks.'
+  - stage: S6
+    verdict: minor
+    by: S6:10a
+    hash: 0f9c7ad8b5e4
+    date: '2026-11-01'
+    evidence: 01:432-447. The proof is correct and agrees with mine. The uniqueness step via B1 with a=t2,b=t3
+      and a=t1,b=t2 is valid. The marking scheme's bullet 4 does not fit the distance route it claims
+      to grade equally; see the findings.
 - key: def-hyperplane-rn
   kind: def
   file: 02-hyperplanes-and-nearest-points.md
-  line: 11
+  line: 13
   hash: 489f104baa6c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/02
+    hash: 489f104baa6c
+    date: '2026-11-01'
+    evidence: 'L13-41: a≠0 stated; p0 well defined (‖a‖²>0) and in H; x∈H iff x−p0⊥a by linearity; n=1
+      case {c/a} and a=0 failure checked.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/02
+    hash: 489f104baa6c
+    date: '2026-11-01'
+    evidence: '02:13-41: definition, p0 in H, x in H iff x-p0 ⊥ a (linearity, cited), n=1, coordinate
+      and a=0 examples all check; prp-norm-basic-rn (a) gives ||a||>0.'
 - key: prp-hyperplane-normals
   kind: prp
   file: 02-hyperplanes-and-nearest-points.md
-  line: 43
+  line: 45
   hash: 7b0bc838ba92
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/02
+    hash: 7b0bc838ba92
+    date: '2026-11-01'
+    evidence: 'L45-49: both a,a''≠0 used (a for p0, a'' for μ≠0); statement true.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/02
+    hash: 7b0bc838ba92
+    date: '2026-11-01'
+    evidence: 02:45-49 statement matches proof; preceded by the (1,1)/(2,2) instance at 02:43.
 - key: proof:prp-hyperplane-normals
   kind: proof
   file: 02-hyperplanes-and-nearest-points.md
-  line: 53
-  hash: ab8655bae6c1
-  verdicts: []
+  line: 55
+  hash: 4f8fc4aaff30
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/02
+    hash: 4f8fc4aaff30
+    date: '2026-11-01'
+    evidence: 'L56-64: (⇐) multiply by λ,1/λ; (⇒) w⊥a ⇒ p0+w∈H (L31), w=0 gives ⟨a'',p0⟩=c'', w=a''−proj_a
+      a'' ⊥ a by @thm-projection-closest-point (a) (checked text: x−p⊥y), ‖w‖²=0 ⇒ w=0, μ≠0 from a''≠0,
+      c''=μc. Quantifier order fine (p0 depends only on a,c).'
+  - stage: S5b
+    verdict: minor
+    by: B:10/02
+    hash: 4f8fc4aaff30
+    date: '2026-11-01'
+    evidence: 02:58-67 correct (w = a' - proj_a a' ⊥ a by thm-projection-closest-point (a), ||w||^2=0,
+      mu≠0, c'=mu c). The step ||w||^2 = <a'-mu a, w> uses ||w||^2=<w,w> (prp-norm-basic-rn (c)) and <a,w>=0
+      from w ⊥ a (symmetry); neither is in the Uses line or ledger.
 - key: exm-lines-in-the-plane
   kind: exm
   file: 02-hyperplanes-and-nearest-points.md
-  line: 71
+  line: 77
   hash: d7567549bff4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/02
+    hash: d7567549bff4
+    date: '2026-11-01'
+    evidence: 'L83-98: recomputed −t a2 = w1 and t a1 = w2 using a1w1+a2w2=0; (b): (−a2,a1)=−v, p=p0−sv,
+      then @prp-line-parametrizations with λ=−1 (statement checked at 01-lines-and-segments.md:46). Sidecar
+      passes.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/02
+    hash: d7567549bff4
+    date: '2026-11-01'
+    evidence: '02:89-98: checked -t a2 = w1 and t a1 = w2 using a1w1 = -a2w2; (b) (-a2,a1) = -v, p = p0
+      - sv, prp-line-parametrizations applies with lambda=-1.'
 - key: check:02-hyperplanes-and-nearest-points:1
   kind: check
   file: 02-hyperplanes-and-nearest-points.md
-  line: 97
-  hash: d7312aa272f8
-  verdicts: []
+  line: 103
+  hash: 6ce95ef2915e
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/02
+    hash: 6ce95ef2915e
+    date: '2026-11-01'
+    evidence: 'L108: v=(3,−4), a=(4,3), c=13; 16−3=13.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/02
+    hash: 6ce95ef2915e
+    date: '2026-11-01'
+    evidence: '02:108: v=(3,-4), normal (4,3), c=4+9=13, 16-3=13; sidecar exm-lines-in-the-plane.py asserts
+      it.'
 - key: prp-perpendicular-bisector
   kind: prp
   file: 02-hyperplanes-and-nearest-points.md
-  line: 109
+  line: 121
   hash: fc9d6b56bc2a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/02
+    hash: fc9d6b56bc2a
+    date: '2026-11-01'
+    evidence: 'L124-128: p≠q used for q−p≠0; statement matches @exr-length-and-distance-b3.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/02
+    hash: fc9d6b56bc2a
+    date: '2026-11-01'
+    evidence: '02:124-128: ||x-p||^2-||x-q||^2 = 2<q-p,x>-2c checked; strict side and midpoint correct;
+      instance at 02:119 precedes it.'
 - key: proof:prp-perpendicular-bisector
   kind: proof
   file: 02-hyperplanes-and-nearest-points.md
-  line: 125
-  hash: 913367d0c910
-  verdicts: []
+  line: 137
+  hash: bfa704c41f95
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/02
+    hash: bfa704c41f95
+    date: '2026-11-01'
+    evidence: 'L138-146: expansion gives 2⟨q−p,x⟩−2c (recomputed); comparing squares via @fd3:prp-ordered-ring-rules
+      (g) and totality (i) (checked); midpoint computation correct.'
+  - stage: S5b
+    verdict: minor
+    by: B:10/02
+    hash: bfa704c41f95
+    date: '2026-11-01'
+    evidence: 02:146 'linearity and symmetry give <q-p,p+q> = ||q||^2-||p||^2' and the expansion line
+      use prp-dot-product-laws-rn (a),(b), which are neither @ref'd in the block nor in the Uses line
+      (02:149) nor in the ledger.
 - key: check:02-hyperplanes-and-nearest-points:2
   kind: check
   file: 02-hyperplanes-and-nearest-points.md
-  line: 139
+  line: 155
   hash: de674b894c44
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/02
+    hash: de674b894c44
+    date: '2026-11-01'
+    evidence: 'L160: c=10, x1+2x2=5, midpoint (1,2) satisfies.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/02
+    hash: de674b894c44
+    date: '2026-11-01'
+    evidence: '02:160: q-p=(2,4), c=10, 2x1+4x2=10 ⇔ x1+2x2=5, midpoint (1,2) checks.'
 - key: prp-nearest-point-on-line
   kind: prp
   file: 02-hyperplanes-and-nearest-points.md
-  line: 151
+  line: 169
   hash: 2b2992c3168c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/02
+    hash: 2b2992c3168c
+    date: '2026-11-01'
+    evidence: 'L172-180: v≠0 needed by the cited theorem; identity is thm-projection-closest-point (b)
+      applied to x−p.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/02
+    hash: 2b2992c3168c
+    date: '2026-11-01'
+    evidence: '02:172-180: thm-projection-closest-point applied to x-p, v gives the identity; uniqueness
+      follows.'
 - key: proof:prp-nearest-point-on-line
   kind: proof
   file: 02-hyperplanes-and-nearest-points.md
-  line: 165
+  line: 183
   hash: 3dbf8e7c52c4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:10/02
+    hash: 3dbf8e7c52c4
+    date: '2026-11-01'
+    evidence: 'L184: ''equality iff t=t0, that is, iff p+tv=m'' — the direction p+tv=m ⇒ t=t0 needs v≠0
+      (injectivity), shown only later at L277; not needed for uniqueness.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/02
+    hash: 3dbf8e7c52c4
+    date: '2026-11-01'
+    evidence: '02:184: x-(p+tv) = (x-p)-tv, parts (a),(b) of the Ch9 theorem; t=t0 iff p+tv=m (direction
+      v≠0 so distinct parameters distinct points, implicit but immediate).'
 - key: prp-nearest-point-on-hyperplane
   kind: prp
   file: 02-hyperplanes-and-nearest-points.md
-  line: 173
+  line: 193
   hash: 31d1b3c85e25
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/02
+    hash: 31d1b3c85e25
+    date: '2026-11-01'
+    evidence: 'L196-207: statement and formula correct; invariance under (λa,λc) checked at L222 (λ·λ/λ²=1).'
+  - stage: S5b
+    verdict: correct
+    by: B:10/02
+    hash: 31d1b3c85e25
+    date: '2026-11-01'
+    evidence: 02:196-207; example at 02:191 ((3,3) → (1,1), 2√2) correct; invariance under (λa,λc) checked
+      at 02:222 (λ/λ^2 · λ = 1).
 - key: proof:prp-nearest-point-on-hyperplane
   kind: proof
   file: 02-hyperplanes-and-nearest-points.md
-  line: 190
-  hash: 7787ff97d1a7
-  verdicts: []
+  line: 210
+  hash: 34cd342e3d5d
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/02
+    hash: 34cd342e3d5d
+    date: '2026-11-01'
+    evidence: 'L211-215: ⟨a,x*⟩=c; x−x*=sa ⊥ x*−y; @prp-pythagoras-rn (statement checked); |u/w|=|u|/|w|
+      from @fd3:prp-absolute-value-ordered-field (b) (|xy|, |1/x|) with w>0.'
+  - stage: S5b
+    verdict: minor
+    by: B:10/02
+    hash: 34cd342e3d5d
+    date: '2026-11-01'
+    evidence: 02:211 '<a,x*> = <a,x> - s||a||^2' and '<a,x*-y> = c-c' are 'by linearity' with no @ref
+      in the block, Uses line (02:218) omits prp-dot-product-laws-rn (b) and ||a||^2=<a,a>; not in ledger.
 - key: check:02-hyperplanes-and-nearest-points:3
   kind: check
   file: 02-hyperplanes-and-nearest-points.md
-  line: 200
+  line: 224
   hash: b9688380f99e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/02
+    hash: b9688380f99e
+    date: '2026-11-01'
+    evidence: 'L229: s=2, x*=(−1,0,1), distance 6/√3=2√3.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/02
+    hash: b9688380f99e
+    date: '2026-11-01'
+    evidence: '02:229: <a,x>=6, ||a||^2=3, x*=(-1,0,1), 6/√3=2√3; sidecar asserts 12.'
 - key: def-sphere-rn
   kind: def
   file: 02-hyperplanes-and-nearest-points.md
-  line: 212
+  line: 236
   hash: 215a3eff2643
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/02
+    hash: 215a3eff2643
+    date: '2026-11-01'
+    evidence: 'L239: matches NOTATION row S(c,r) and blueprint (r>0).'
+  - stage: S5b
+    verdict: correct
+    by: B:10/02
+    hash: 215a3eff2643
+    date: '2026-11-01'
+    evidence: 02:239 matches NOTATION.md:316 S(c,r); instance at 02:234 precedes it.
 - key: prp-line-meets-sphere
   kind: prp
   file: 02-hyperplanes-and-nearest-points.md
-  line: 222
+  line: 246
   hash: a6545c80436f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/02
+    hash: a6545c80436f
+    date: '2026-11-01'
+    evidence: 'L249-255: three cases correct; m, t0 from @prp-nearest-point-on-line with x=c.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/02
+    hash: a6545c80436f
+    date: '2026-11-01'
+    evidence: '02:249-255: k=(r^2-d^2)/||v||^2, rho = √(r^2-d^2)/||v||; B2 second method confirms t=1/3±1/3.'
 - key: proof:prp-line-meets-sphere
   kind: proof
   file: 02-hyperplanes-and-nearest-points.md
-  line: 238
-  hash: 006db04dd4f1
-  verdicts: []
+  line: 262
+  hash: d97d9023a0a3
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/02
+    hash: d97d9023a0a3
+    date: '2026-11-01'
+    evidence: 'L263-277: identity with d=‖c−m‖, sign of k via (g),(i) and division by ‖v‖²>0; (e),(f)
+      as cited (checked fd3 ordered-ring-rules list); √ unique via @fd3:prp-cof-square-roots; injectivity
+      of t↦p+tv shown. (b) implicitly uses that t0 satisfies (t−t0)²=0, trivial.'
+  - stage: S5b
+    verdict: minor
+    by: B:10/02
+    hash: d97d9023a0a3
+    date: '2026-11-01'
+    evidence: 02:280 Uses line attributes existence of the root to @fd3:thm-reals-complete-ordered-field
+      and uniqueness to @fd3:prp-cof-square-roots; prp-cof-square-roots gives both (exactly one b≥0),
+      thm-reals-complete-ordered-field only supplies that ℝ is complete. Math correct.
+  - stage: S8
+    verdict: minor
+    by: S8:10
+    hash: d97d9023a0a3
+    date: '2026-11-01'
+    evidence: 02-hyperplanes-and-nearest-points.md:277 proves again that distinct parameters give distinct
+      points, which 01:37-42 already proved and said it would use without further comment.
 - key: prp-segment-crosses-hyperplane
   kind: prp
   file: 02-hyperplanes-and-nearest-points.md
-  line: 260
+  line: 288
   hash: a29a5c7c4ff1
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/02
+    hash: a29a5c7c4ff1
+    date: '2026-11-01'
+    evidence: 'L291-294: both strict inequalities used (β−α>0 and 0<t1<1).'
+  - stage: S5b
+    verdict: correct
+    by: B:10/02
+    hash: a29a5c7c4ff1
+    date: '2026-11-01'
+    evidence: '02:291-294: t1 formula and t1 ∈ (0,1) correct; example at 02:286 (t=1/4) correct.'
 - key: proof:prp-segment-crosses-hyperplane
   kind: proof
   file: 02-hyperplanes-and-nearest-points.md
-  line: 269
+  line: 297
   hash: 21bcae880628
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/02
+    hash: 21bcae880628
+    date: '2026-11-01'
+    evidence: 'L298-302: @def-segment-rn checked; linearity gives α+t(β−α); solve and bound t1.'
+  - stage: S5b
+    verdict: minor
+    by: B:10/02
+    hash: 21bcae880628
+    date: '2026-11-01'
+    evidence: 02:298-302 has no Uses line; 'by linearity' (prp-dot-product-laws-rn (b)) and 't(β-α)=c-α
+      iff t=t1' (division by β-α≠0) are uncited and not in the ledger (ledger 02:472 covers only 0<t1<1).
 - key: exr-hyperplanes-and-nearest-points-a1
   kind: exr
   file: 02-hyperplanes-and-nearest-points.md
-  line: 283
+  line: 311
   hash: a4092b235ecc
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/02
+    hash: a4092b235ecc
+    date: '2026-11-01'
+    evidence: 'L324-328: ‖a‖=3, distance 2, x*=(4/3,−2/3,4/3) satisfies equation; sidecar passes.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/02
+    hash: a4092b235ecc
+    date: '2026-11-01'
+    evidence: '02:324-328: ||a||=3, distance 2, x*=(4/3,-2/3,4/3), check 8/3+2/3+8/3=6; sidecar a1.py.'
+  - stage: S6
+    verdict: correct
+    by: S6:10a
+    hash: a4092b235ecc
+    date: '2026-11-01'
+    evidence: 02:324-328. ||a||=3, distance 2, x*=(4/3,-2/3,4/3) with <a,x*>=6. Script-checked.
 - key: exr-hyperplanes-and-nearest-points-a2
   kind: exr
   file: 02-hyperplanes-and-nearest-points.md
-  line: 303
+  line: 331
   hash: 06d653fa2f95
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/02
+    hash: 06d653fa2f95
+    date: '2026-11-01'
+    evidence: 'L338: values 0<6<8, t1=3/4, point (9/4,0,3/4), 9/2+3/2=6.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/02
+    hash: 06d653fa2f95
+    date: '2026-11-01'
+    evidence: '02:338: values 0 and 8, t1=3/4, (9/4,0,3/4), 9/2+3/2=6; asserted in a1.py.'
+  - stage: S6
+    verdict: correct
+    by: S6:10a
+    hash: 06d653fa2f95
+    date: '2026-11-01'
+    evidence: 02:338. Values 0<6<8, t1=3/4, crossing point (9/4,0,3/4) with value 6. Script-checked.
 - key: exr-hyperplanes-and-nearest-points-b1
   kind: exr
   file: 02-hyperplanes-and-nearest-points.md
-  line: 315
+  line: 343
   hash: f201fbab2641
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/02
+    hash: f201fbab2641
+    date: '2026-11-01'
+    evidence: 'L350-354: t0=2/3, m=(5/3,2/3,2/3), ‖x−m‖²=78/9=26/3; sidecar passes.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/02
+    hash: f201fbab2641
+    date: '2026-11-01'
+    evidence: '02:350-354: t0=2/3, m=(5/3,2/3,2/3), x-m=(-5/3,7/3,-2/3), (25+49+4)/9=26/3.'
+  - stage: S6
+    verdict: correct
+    by: S6:10a
+    hash: f201fbab2641
+    date: '2026-11-01'
+    evidence: '02:350-354. t0=2/3, m=(5/3,2/3,2/3), x-m is orthogonal to v, squared distance 26/3. Script-checked,
+      including by minimizing over t. Worked model: the Quick check at 02:229 and Ch9 exm-distance-to-a-line-through-the-origin.'
 - key: exr-hyperplanes-and-nearest-points-b2
   kind: exr
   file: 02-hyperplanes-and-nearest-points.md
-  line: 329
+  line: 357
   hash: dec61ca1f624
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/02
+    hash: dec61ca1f624
+    date: '2026-11-01'
+    evidence: 'L364-366: 9t²−6t+9=9 gives t=0,2/3; second route t0=1/3, d²=8, t=1/3±1/3.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/02
+    hash: dec61ca1f624
+    date: '2026-11-01'
+    evidence: '02:364-366: (t-3)^2+8t^2=9t^2-6t+9, t=0,2/3; d^2=72/9=8, t=1/3±1/3.'
+  - stage: S6
+    verdict: correct
+    by: S6:10a
+    hash: dec61ca1f624
+    date: '2026-11-01'
+    evidence: '02:364-366. Quadratic 9t^2-6t+9 with roots t=0 and t=2/3. Second route: t0=1/3, d^2=8<9.
+      Script-checked.'
 - key: exr-hyperplanes-and-nearest-points-b3
   kind: exr
   file: 02-hyperplanes-and-nearest-points.md
-  line: 341
-  hash: 18c389ca3ded
-  verdicts: []
+  line: 369
+  hash: ceaa5ff3959e
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/02
+    hash: ceaa5ff3959e
+    date: '2026-11-01'
+    evidence: 'L376-380: expansion with ‖m−c‖=r; roots t=0, t''; distinct parameters give distinct points;
+      tangent link to L284 consistent with prp-line-meets-sphere (singleton iff d=r).'
+  - stage: S5b
+    verdict: gap
+    by: B:10/02
+    hash: ceaa5ff3959e
+    date: '2026-11-01'
+    evidence: '02:380 last sentence ''Hence the tangent lines at m are those whose direction is orthogonal
+      to m-c'' (and 02:284 ''Exercise B3 shows that the tangent lines at a point m ... are exactly ...''):
+      tangent is defined at 02:284 as d=r, but neither place says why, for a line through m ∈ S, ''meets
+      S only at m'' is equivalent to d=r.'
+  - stage: S6
+    verdict: minor
+    by: S6:10a
+    hash: ceaa5ff3959e
+    date: '2026-11-01'
+    evidence: 02:376-380. The expansion identity was verified symbolically and the main argument is correct.
+      The closing 'Hence the tangent lines...' sentence skips the link to the definition of tangent (d=r),
+      and one sentence breaks B6; see the findings.
 - key: exr-hyperplanes-and-nearest-points-b4
   kind: exr
   file: 02-hyperplanes-and-nearest-points.md
-  line: 355
+  line: 387
   hash: a50a0e4c0da5
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/02
+    hash: a50a0e4c0da5
+    date: '2026-11-01'
+    evidence: 'L402-410: (a) true; (b) disjoint parallel planes; (c) p=(−1,0),q=(1,0) gives c=0, {x1=0};
+      (d) weighted sum with strictness via (b),(c); (e) a=(2,0),c=2 distance 1. Sidecar passes.'
+  - stage: S5b
+    verdict: correct
+    by: B:10/02
+    hash: a50a0e4c0da5
+    date: '2026-11-01'
+    evidence: '02:402-410: (a) true; (b) x1=0, x1=1 disjoint; (c) H_{(2,0),0}; (d) weighted sum < c; (e)
+      a=(2,0), c=2 gives 1. Statements well-posed (a≠0 throughout).'
+  - stage: S6
+    verdict: minor
+    by: S6:10a
+    hash: a50a0e4c0da5
+    date: '2026-11-01'
+    evidence: '02:402-410. All five verdicts agree with mine: T,F,F,T,F. The counterexample in (e) gives
+      distance 1, script-checked. The math is correct. The sentence in (d) has two parentheses (B6).'
 - key: exr-hyperplanes-and-nearest-points-c1
   kind: exr
   file: 02-hyperplanes-and-nearest-points.md
-  line: 383
-  hash: e24f130a5b89
-  verdicts: []
+  line: 415
+  hash: 260d195ed642
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/02
+    hash: 260d195ed642
+    date: '2026-11-01'
+    evidence: 'L434-446: distinctness, reduction via bisector, r−q=λ(q−p) ⇒ collinear, D recomputed as
+      (−a2)a1''−a1(−a2'') = D, @exr-lines-and-segments-b2 (a),(b) statements checked; example center (2,1),
+      ρ=√5 verified. Sidecar passes.'
+  - stage: S5b
+    verdict: minor
+    by: B:10/02
+    hash: 260d195ed642
+    date: '2026-11-01'
+    evidence: 02:418-458 proof correct (D computed as (-a2)a'1 - a1(-a'2) = D; rho>0; uniqueness); example
+      center (2,1), √5 checks. But the statement uses r for a point while the same section uses r as the
+      radius of S(c,r) (02:239, 02:249, B3), and the example never checks that (0,0),(4,0),(0,2) are non-collinear.
+  - stage: S6
+    verdict: minor
+    by: S6:10a
+    hash: 260d195ed642
+    date: '2026-11-01'
+    evidence: 02:434-458. The proof is correct. D=8 for the example, and the center (2,1) is at squared
+      distance 5 from all three points (script). Hints 1 and 2 name the tool without solving the step.
+      The marking scheme over-credits the linear-system route, gives no points for 'Find it', and rewards
+      citing the bisector result over expanding the squares directly.
 - key: check:03-convex-sets-and-hulls:1
   kind: check
   file: 03-convex-sets-and-hulls.md
-  line: 7
-  hash: a2771d7eee10
-  verdicts: []
+  line: 13
+  hash: 8a9db3de8fdf
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/03
+    hash: 8a9db3de8fdf
+    date: '2026-11-01'
+    evidence: 'l.13-26: every answer is right. Ring: (3/2,0) and (-3/2,0) are in it, midpoint 0. Axes:
+      midpoint (1/2,1/2) is on neither axis. Line: (v,v) with v=(1-t)s+tu'
+  - stage: S5b
+    verdict: correct
+    by: B:10/03
+    hash: 8a9db3de8fdf
+    date: '2026-11-01'
+    evidence: '13-25: the six answers check out. Ring: (3/2,0),(-3/2,0) with midpoint of norm 0 < 1. Line:
+      (v,v). Axes: (1/2,1/2).'
 - key: def-convex-set-rn
   kind: def
   file: 03-convex-sets-and-hulls.md
-  line: 21
+  line: 34
   hash: a0b222f1e2cf
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:10/03
+    hash: a0b222f1e2cf
+    date: '2026-11-01'
+    evidence: l.37 definition is fine. The prose after it at l.40 says 'at the end of this subsection',
+      which is a sentence about the text (STYLE §13 B3)
+  - stage: S5b
+    verdict: minor
+    by: B:10/03
+    hash: a0b222f1e2cf
+    date: '2026-11-01'
+    evidence: '40: the phrase ''at the end of this subsection'' describes the page (STYLE §13 B3). The
+      math is fine: ∅, {p}, ring and axes are correct.'
+  - stage: S8
+    verdict: minor
+    by: S8:10
+    hash: a0b222f1e2cf
+    date: '2026-11-01'
+    evidence: 03-convex-sets-and-hulls.md:40 says 'at the end of this subsection'. STYLE §13 B3 bans phrases
+      that describe the text itself, and names 'this subsection' as an example.
 - key: def-ball-rn
   kind: def
   file: 03-convex-sets-and-hulls.md
-  line: 31
+  line: 46
   hash: d1999fc616b3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/03
+    hash: d1999fc616b3
+    date: '2026-11-01'
+    evidence: 'l.49-55: n=1 intervals follow from prp-norm-basic-rn (d) and fd3:prp-absolute-value-ordered-field
+      (d), which covers both < and <='
+  - stage: S5b
+    verdict: correct
+    by: B:10/03
+    hash: d1999fc616b3
+    date: '2026-11-01'
+    evidence: '49-55: n=1 intervals are cited via prp-norm-basic-rn (d) and fd3:prp-absolute-value-ordered-field
+      (d), which checked out. def-sphere-rn exists. The instance comes before the definition at line 44.'
 - key: prp-balls-convex
   kind: prp
   file: 03-convex-sets-and-hulls.md
-  line: 42
+  line: 57
   hash: 0c53128f4029
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/03
+    hash: 0c53128f4029
+    date: '2026-11-01'
+    evidence: l.60 statement is true
+  - stage: S5b
+    verdict: correct
+    by: B:10/03
+    hash: 0c53128f4029
+    date: '2026-11-01'
+    evidence: '60: the statement is true.'
 - key: proof:prp-balls-convex
   kind: proof
   file: 03-convex-sets-and-hulls.md
-  line: 62
-  hash: 3c6ade7d26ed
-  verdicts: []
+  line: 77
+  hash: 8a4641a2a370
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/03
+    hash: 8a4641a2a370
+    date: '2026-11-01'
+    evidence: 'l.78-84: triangle inequality (a) with norm(sx)=|s|norm(x) (prp-norm-basic-rn (b)). Strict
+      case: t in {0,1} handled separately, otherwise ordered-ring-rules (c),(b). Closed case: fd3:prp-ordered-field-halves
+      (d) (0<=a<=b, 0<=c<=d gives ac<=bd) applies'
+  - stage: S5b
+    verdict: correct
+    by: B:10/03
+    hash: 8a4641a2a370
+    date: '2026-11-01'
+    evidence: '78-84: thm-triangle-inequality-rn (a), ordered-ring-rules (b),(c) and ordered-field-halves
+      (d) checked. |t|=t is in the ledger. The t∈{0,1} case is handled separately for strictness.'
 - key: check:03-convex-sets-and-hulls:2
   kind: check
   file: 03-convex-sets-and-hulls.md
-  line: 74
+  line: 93
   hash: 722c5b73118d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/03
+    hash: 722c5b73118d
+    date: '2026-11-01'
+    evidence: 'l.94-99: (1,0) and (-1,0) are on S(0,1) and their midpoint 0 is not. The pointer to Exercise
+      B3 is commentary, not a proof step'
+  - stage: S5b
+    verdict: correct
+    by: B:10/03
+    hash: 722c5b73118d
+    date: '2026-11-01'
+    evidence: '94-98: the pair (±1,0) with midpoint 0 is correct. The B3 pointer matches B3''s statement.'
 - key: exm-method-two-point-test
   kind: exm
   file: 03-convex-sets-and-hulls.md
-  line: 84
-  hash: 6ec5a129fe58
-  verdicts: []
+  line: 103
+  hash: e22761cbe147
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/03
+    hash: e22761cbe147
+    date: '2026-11-01'
+    evidence: 'l.106-115: the steps and the mistakes are accurate. Q^2 is the midpoint counterexample
+      shown at l.119'
+  - stage: S5b
+    verdict: correct
+    by: B:10/03
+    hash: e22761cbe147
+    date: '2026-11-01'
+    evidence: '106-115: the steps match the proofs of B1 and prp-balls-convex. The Q² warning at 118-119
+      is correct, apart from bookkeeping (see findings).'
 - key: prp-convex-examples
   kind: prp
   file: 03-convex-sets-and-hulls.md
-  line: 102
-  hash: 1b42e6fabc6a
-  verdicts: []
+  line: 126
+  hash: 843683b956e6
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/03
+    hash: 843683b956e6
+    date: '2026-11-01'
+    evidence: l.129-133 true. Convexity of H_{a,c} does not need a != 0, and -a != 0 is noted for the
+      reflected half-spaces
+  - stage: S5b
+    verdict: correct
+    by: B:10/03
+    hash: 843683b956e6
+    date: '2026-11-01'
+    evidence: '129-133: def-hyperplane-rn (02:13-20) does define two closed and two open half-spaces,
+      so ''four'' is correct.'
 - key: proof:prp-convex-examples
   kind: proof
   file: 03-convex-sets-and-hulls.md
-  line: 112
-  hash: 37bd6682a818
-  verdicts: []
+  line: 140
+  hash: 704a74578227
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/03
+    hash: 704a74578227
+    date: '2026-11-01'
+    evidence: 'l.141-151: lines use vector laws; segments use lem-subsegment (checked: x,y in [p,q] gives
+      [x,y] in [p,q]); half-spaces use the affine identity plus sign rules. Strict case: one weight is
+      positive because the weights add up to 1, a trivial step. >= and > reduce to the -a, -c case through
+      dot-law (b) and ordered-ring (a)'
+  - stage: S5b
+    verdict: correct
+    by: B:10/03
+    hash: 704a74578227
+    date: '2026-11-01'
+    evidence: '141-155: lem-subsegment, prp-dot-product-laws-rn (b) and the sign arguments are correct.
+      The ≥/> half-spaces are reduced via -a≠0.'
 - key: prp-convex-operations
   kind: prp
   file: 03-convex-sets-and-hulls.md
-  line: 128
+  line: 160
   hash: eb02d0ce3751
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/03
+    hash: eb02d0ce3751
+    date: '2026-11-01'
+    evidence: l.164-166 true for every lambda in R, including lambda=0 and C empty
+  - stage: S5b
+    verdict: minor
+    by: B:10/03
+    hash: eb02d0ce3751
+    date: '2026-11-01'
+    evidence: '163-167: the math is true. The proposition introduces b+C, λC and an arbitrary family with
+      no worked instance before it; line 158 is a single sentence (STYLE §13 B5).'
 - key: proof:prp-convex-operations
   kind: proof
   file: 03-convex-sets-and-hulls.md
-  line: 142
-  hash: 02380eb141aa
-  verdicts: []
+  line: 174
+  hash: c3105d77d3af
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/03
+    hash: c3105d77d3af
+    date: '2026-11-01'
+    evidence: 'l.175: the empty index set gives R^n, which is right because fd2:def-family-union-intersection
+      (b) takes the intersection inside X=R^n. (b) identities hold. (c) the midpoint t=1/2 is in [p,q]
+      and is neither p nor q'
+  - stage: S5b
+    verdict: correct
+    by: B:10/03
+    hash: c3105d77d3af
+    date: '2026-11-01'
+    evidence: '175-183: fd2:def-family-union-intersection (b) is relative to X, so I=∅ gives ℝⁿ. The (b)
+      identities and the (c) midpoint argument are correct.'
 - key: check:03-convex-sets-and-hulls:3
   kind: check
   file: 03-convex-sets-and-hulls.md
-  line: 154
+  line: 186
   hash: 039f96bc6447
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/03
+    hash: 039f96bc6447
+    date: '2026-11-01'
+    evidence: 'l.191: the three half-spaces have non-zero normals and their intersection is T'
+  - stage: S5b
+    verdict: correct
+    by: B:10/03
+    hash: 039f96bc6447
+    date: '2026-11-01'
+    evidence: '191: the three half-spaces with non-zero normals are correct, and the intersection by (a)
+      is correct.'
 - key: def-convex-combination-rn
   kind: def
   file: 03-convex-sets-and-hulls.md
-  line: 166
+  line: 198
   hash: 664652955eec
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/03
+    hash: 664652955eec
+    date: '2026-11-01'
+    evidence: 'l.201-208: standard definition. The k=1 and k=2 remarks are right'
+  - stage: S5b
+    verdict: correct
+    by: B:10/03
+    hash: 664652955eec
+    date: '2026-11-01'
+    evidence: '201-208: the instance at line 196 checks out: ½(0,0)+¼(4,0)+¼(0,4)=(1,1).'
 - key: thm-convex-contains-combinations
   kind: thm
   file: 03-convex-sets-and-hulls.md
-  line: 180
+  line: 212
   hash: 8ba7a72ad2d8
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/03
+    hash: 8ba7a72ad2d8
+    date: '2026-11-01'
+    evidence: 'l.215 true. Without convexity it fails: C={0,1}, (1/2)0+(1/2)1 is not in C'
+  - stage: S5b
+    verdict: correct
+    by: B:10/03
+    hash: 8ba7a72ad2d8
+    date: '2026-11-01'
+    evidence: '215: the statement is true.'
 - key: proof:thm-convex-contains-combinations
   kind: proof
   file: 03-convex-sets-and-hulls.md
-  line: 190
-  hash: 51cf375af1b0
-  verdicts: []
+  line: 222
+  hash: d597ca0b4904
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:10/03
+    hash: d597ca0b4904
+    date: '2026-11-01'
+    evidence: 'l.223-243: induction from base 1 via fd2:thm-induction. s>0 from s>=0 and s!=0. y depends
+      only on p_1..p_k and the weights. The math is right, but l.235 says ''This proves P(k+1)'' before
+      the case lambda_{k+1}=1 is done. That case sits after the proof in a second-reading block (l.242-244),
+      and l.227 says ''handled just after this proof'', a B3-style pointer to the page'
+  - stage: S5b
+    verdict: minor
+    by: B:10/03
+    hash: d597ca0b4904
+    date: '2026-11-01'
+    evidence: '227: ''is handled just after this proof'' points at the page device, the second-reading
+      block (STYLE §13 B3). The math is correct: prp-sum-order (a),(e), lem-ring-finite-sums (b), fd2:thm-induction
+      with base n0=1, and s>0 by totality (ledgered).'
 - key: def-convex-hull-rn
   kind: def
   file: 03-convex-sets-and-hulls.md
-  line: 212
+  line: 248
   hash: 01c335bda006
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/03
+    hash: 01c335bda006
+    date: '2026-11-01'
+    evidence: 'l.251-263: the family is non-empty because R^n is in it, so bigcap is defined (fd2 note:
+      the family must be non-empty). The three properties and conv{p,q}=[p,q] are justified'
+  - stage: S5b
+    verdict: correct
+    by: B:10/03
+    hash: 01c335bda006
+    date: '2026-11-01'
+    evidence: '251-263: non-empty family, the three properties, and conv{p,q}=[p,q] are all correct. The
+      fd2:prp-smallest-closed-set analogy exists.'
 - key: thm-convex-hull-combinations-rn
   kind: thm
   file: 03-convex-sets-and-hulls.md
-  line: 225
+  line: 267
   hash: c31fa53ed860
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/03
+    hash: c31fa53ed860
+    date: '2026-11-01'
+    evidence: 'l.270 true, including S empty: K and conv S are both empty'
+  - stage: S5b
+    verdict: correct
+    by: B:10/03
+    hash: c31fa53ed860
+    date: '2026-11-01'
+    evidence: '270: true, including S=∅ (K=∅=conv ∅). The Idea example at 276 checks: (1/2,1/2) is not
+      on [q,r], since 1/2+1/2≠2.'
 - key: proof:thm-convex-hull-combinations-rn
   kind: proof
   file: 03-convex-sets-and-hulls.md
-  line: 241
-  hash: 31966fc665cd
-  verdicts: []
+  line: 283
+  hash: e9c1d963f356
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/03
+    hash: e9c1d963f356
+    date: '2026-11-01'
+    evidence: 'l.284-294: (supseteq) applies thm-convex-contains-combinations to conv S. (subseteq): the
+      joined weights are nonneg and sum to (1-t)+t; prp-sum-reindex (b), lem-ring-finite-sums (b) and
+      lem-vector-sums-coordinatewise (a) give the vector identity; minimality closes the proof'
+  - stage: S5b
+    verdict: minor
+    by: B:10/03
+    hash: e9c1d963f356
+    date: '2026-11-01'
+    evidence: '286: ''Each ν_i is a product of two non-negative numbers, so ν_i ≥ 0'' has no @ref, is
+      not in the Uses line and is not in the ledger. Elsewhere in this section the same fact cites fd3:prp-ordered-field-halves
+      (d).'
 - key: exm-triangle-as-hull
   kind: exm
   file: 03-convex-sets-and-hulls.md
-  line: 257
-  hash: bddd819e6f84
-  verdicts: []
+  line: 303
+  hash: 829c633d2f2a
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:10/03
+    hash: 829c633d2f2a
+    date: '2026-11-01'
+    evidence: 'l.316: ''In this example the hull is {x1>=0, x2>=0, x1+x2<=3}'' is stated with no argument.
+      The rest of (a) and (b) is correct: 3*lambda2=2 and 3*lambda3=2 force lambda1=-1/3'
+  - stage: S5b
+    verdict: minor
+    by: B:10/03
+    hash: 829c633d2f2a
+    date: '2026-11-01'
+    evidence: '316: ''In this example the hull is {x1≥0, x2≥0, x1+x2≤3}'' is asserted without derivation
+      and is not ledgered. It is true: points are (3λ2,3λ3) with λ2,λ3≥0, λ2+λ3≤1. (a) and the (2,2) computation
+      are correct.'
 - key: def-star-shaped
   kind: def
   file: 03-convex-sets-and-hulls.md
-  line: 277
+  line: 323
   hash: a8c6b8ea23fe
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/03
+    hash: a8c6b8ea23fe
+    date: '2026-11-01'
+    evidence: 'l.326-329: definition is fine. ''Non-empty convex set is star-shaped about each point''
+      is immediate'
+  - stage: S5b
+    verdict: correct
+    by: B:10/03
+    hash: a8c6b8ea23fe
+    date: '2026-11-01'
+    evidence: '326-329: the definition and the remark that a convex set is star-shaped about each point
+      are correct.'
 - key: exm-star-not-convex
   kind: exm
   file: 03-convex-sets-and-hulls.md
-  line: 285
+  line: 331
   hash: ab8c9db4fad7
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/03
+    hash: ab8c9db4fad7
+    date: '2026-11-01'
+    evidence: 'l.338: (ts,0) is in A. The midpoint (1/2,1/2) is not in A, so [(1,0),(0,1)] is not inside
+      A'
+  - stage: S5b
+    verdict: correct
+    by: B:10/03
+    hash: ab8c9db4fad7
+    date: '2026-11-01'
+    evidence: '338: correct. (1/2,1/2) is not in A, which settles both ''not convex'' and ''not star-shaped
+      about (1,0)''.'
 - key: exr-convex-sets-and-hulls-a1
   kind: exr
   file: 03-convex-sets-and-hulls.md
-  line: 301
+  line: 347
   hash: 7f8e94bc6bef
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/03
+    hash: 7f8e94bc6bef
+    date: '2026-11-01'
+    evidence: 'l.361-367: (b) (1,1) and (-1,1) are in the set, midpoint (0,1) has 1>0. (c) and (d) are
+      right'
+  - stage: S5b
+    verdict: correct
+    by: B:10/03
+    hash: 7f8e94bc6bef
+    date: '2026-11-01'
+    evidence: '361-367: (b) (±1,1) has midpoint (0,1) with 1>0. (c) and (d) are correct.'
+  - stage: S6
+    verdict: correct
+    by: S6:10b
+    hash: 7f8e94bc6bef
+    date: '2026-11-01'
+    evidence: '03:347-368. Solved first: (a) convex; (b) (±1,1) in set, midpoint (0,1) fails 1<=0; (c)
+      (0,0),(1,0); (d) (±3/2,0), midpoint norm 0. All checked by script (chk.py). (a) defers its proof
+      to B1; the task only asks for two points on the ''no'' items, so this is acceptable.'
 - key: exr-convex-sets-and-hulls-a2
   kind: exr
   file: 03-convex-sets-and-hulls.md
-  line: 324
-  hash: d7dcdc6c104c
-  verdicts: []
+  line: 370
+  hash: 227a4e32bbfb
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/03
+    hash: 227a4e32bbfb
+    date: '2026-11-01'
+    evidence: 'l.380-382: weights 0, 1/3, 2/3 give (1,2). The inclusion named in (b) is right'
+  - stage: S5b
+    verdict: minor
+    by: B:10/03
+    hash: 227a4e32bbfb
+    date: '2026-11-01'
+    evidence: '380: the numeric answer (weights 0, 1/3, 2/3 giving (1,2)) is correct, but verify/ch10
+      has no sidecar exr-convex-sets-and-hulls-a2.py (STYLE §9 sidecar rule). (b) matches the proof''s
+      (⊇) half.'
+  - stage: S6
+    verdict: correct
+    by: S6:10b
+    hash: 227a4e32bbfb
+    date: '2026-11-01'
+    evidence: '03:370-383. (a) 0(0,0)+1/3(3,0)+2/3(0,3)=(1,2), checked by script. (b) matches the proof
+      at 03:284: the (⊇) direction, i.e. K ⊆ conv S, applies thm-convex-contains-combinations to conv
+      S. The family is non-empty because it contains R^n, as 03:257 says.'
 - key: exr-convex-sets-and-hulls-b1
   kind: exr
   file: 03-convex-sets-and-hulls.md
-  line: 341
-  hash: cdec8742847e
-  verdicts: []
+  line: 387
+  hash: 67cbb43133b6
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/03
+    hash: 67cbb43133b6
+    date: '2026-11-01'
+    evidence: 'l.394-402: identity (1-t)a^2+tc^2-((1-t)a+tc)^2=t(1-t)(a-c)^2 checked by hand, and the
+      sidecar prints ok. fd3:prp-ordered-field-halves (d) applies with a^2>=0'
+  - stage: S5b
+    verdict: correct
+    by: B:10/03
+    hash: 67cbb43133b6
+    date: '2026-11-01'
+    evidence: '394-402: the identity (1-t)a²+tc²-((1-t)a+tc)²=t(1-t)(a-c)² is correct and backed by a
+      sidecar.'
+  - stage: S6
+    verdict: correct
+    by: S6:10b
+    hash: 67cbb43133b6
+    date: '2026-11-01'
+    evidence: '03:387-407. My two-point proof gives the same identity (1-t)a^2+tc^2-((1-t)a+tc)^2=t(1-t)(a-c)^2,
+      checked symbolically and confirmed equal to 0. Citations exist: ordered-field-halves (d), ordered-ring-rules
+      (b), (e). Worked example: exm-method-two-point-test (03:103) and the proof of prp-balls-convex.'
 - key: exr-convex-sets-and-hulls-b2
   kind: exr
   file: 03-convex-sets-and-hulls.md
-  line: 359
+  line: 409
   hash: dc6393249c1a
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/03
+    hash: dc6393249c1a
+    date: '2026-11-01'
+    evidence: 'l.416-420: correct regrouping'
+  - stage: S5b
+    verdict: correct
+    by: B:10/03
+    hash: dc6393249c1a
+    date: '2026-11-01'
+    evidence: '416-420: correct.'
+  - stage: S6
+    verdict: correct
+    by: S6:10b
+    hash: dc6393249c1a
+    date: '2026-11-01'
+    evidence: '03:409-421. This is the standard regrouping. Worked example: the proof of prp-convex-operations
+      (b) at 03:177-181 uses the same pattern of regrouping by the vector laws.'
 - key: exr-convex-sets-and-hulls-b3
   kind: exr
   file: 03-convex-sets-and-hulls.md
-  line: 373
-  hash: 7fd7999f5192
-  verdicts: []
+  line: 423
+  hash: 99cac9798146
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/03
+    hash: 99cac9798146
+    date: '2026-11-01'
+    evidence: 'l.430-434: u!=0 since (1-t)r>0. The equality case of thm-triangle-inequality-rn (a) (''x=0
+      or y=cx, c>=0'') is used correctly. mu>=0 so |mu|=mu, r=mu*r gives mu=1, so q=p. Max-norm remark
+      checked: d((1,1),(0,0))=d((1,1),(2,0))=1, d((0,0),(2,0))=2'
+  - stage: S5b
+    verdict: correct
+    by: B:10/03
+    hash: 99cac9798146
+    date: '2026-11-01'
+    evidence: '430-434: the equality case of thm-triangle-inequality-rn (a) is applied with u≠0; |μ|=μ;
+      the cancellation is ledgered. The max-distance remarks check: (1,1) is at distance 1 from (0,0)
+      and from (2,0).'
+  - stage: S6
+    verdict: correct
+    by: S6:10b
+    hash: 99cac9798146
+    date: '2026-11-01'
+    evidence: '03:423-435. I solved it by the equality case of the triangle inequality. The book also
+      covers u≠0, divides by t>0, and gets r=μr ⇒ μ=1 ⇒ q=p. thm-triangle-inequality-rn (a) has the stated
+      equality case. Max-distance remark checked by script: d((1,1),(0,0))=1, d((1,1),(2,0))=1, d((0,0),(2,0))=2.
+      Worked example: exm-method-equality-case (ch10/01).'
 - key: exr-convex-sets-and-hulls-b4
   kind: exr
   file: 03-convex-sets-and-hulls.md
-  line: 387
-  hash: cfb65a2bc352
-  verdicts: []
+  line: 437
+  hash: 2217613f3fd7
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/03
+    hash: 2217613f3fd7
+    date: '2026-11-01'
+    evidence: 'l.452-464: (d) matches prp-perpendicular-bisector, whose c is (|q|^2-|p|^2)/2. In (e),
+      the identity, the lambda=mu=0 case and the counterexample {0,e1} are all right'
+  - stage: S5b
+    verdict: correct
+    by: B:10/03
+    hash: 2217613f3fd7
+    date: '2026-11-01'
+    evidence: '452-464: (d) matches prp-perpendicular-bisector (02:121-128) plus ordered-ring-rules (i).
+      (e): the λ=μ=0 case and the counterexample C={0,e1} are correct.'
+  - stage: S6
+    verdict: correct
+    by: S6:10b
+    hash: 2217613f3fd7
+    date: '2026-11-01'
+    evidence: '03:437-465. (a) False, (b) False, (c) False, (d) True, (e) True: all agree with my answers.
+      (d) checked against prp-perpendicular-bisector (c=(|q|^2-|p|^2)/2), with 10^4 random tests in R^3.
+      (e) covers λ+μ>0 and λ=μ=0, including C=∅. Counterexample C={0,e1}: C+C={0,e1,2e1} but 2C={0,2e1},
+      checked by script.'
 - key: exr-convex-sets-and-hulls-c1
   kind: exr
   file: 03-convex-sets-and-hulls.md
-  line: 419
-  hash: 233e9e2cc547
-  verdicts: []
+  line: 469
+  hash: cdb1b0b9f77c
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:10/03
+    hash: cdb1b0b9f77c
+    date: '2026-11-01'
+    evidence: 'l.488-494: the proof is right, with inf C = -sup(-C) derived. l.492 uses 1/(b-a)>0 with
+      no reason in the text, though the ledger (l.572) says the argument is given inline'
+  - stage: S5b
+    verdict: minor
+    by: B:10/03
+    hash: cdb1b0b9f77c
+    date: '2026-11-01'
+    evidence: '492 and ledger line 572: the ledger lists ''1/(b - a) > 0'' with source ''inline'', but
+      the solution only asserts 1/(b-a)>0 and gives no argument on the page. Otherwise correct: the inf=-sup(-C)
+      derivation, totality, and the rubric''s Section 10.1 remark (01:174) exists.'
+  - stage: S6
+    verdict: minor
+    by: S6:10b
+    hash: cdb1b0b9f77c
+    date: '2026-11-01'
+    evidence: '03:469-506. The proof is complete and agrees with mine: get inf as -sup(-C), find a<x<b
+      from ''x is not a lower or upper bound'', then use t=(x-a)/(b-a). I also proved it a second way:
+      if x∉C, convexity puts C on one side of x, so x is a bound, a contradiction. That proof earns full
+      marks under the scheme. The marking scheme is headed and ended correctly. Problem: Hint 2 (03:484)
+      carries out half of the 3-point key step (see findings).'
+  - stage: S8
+    verdict: minor
+    by: S8:10
+    hash: cdb1b0b9f77c
+    date: '2026-11-01'
+    evidence: 03-convex-sets-and-hulls.md:488 proves inf C = -sup(-C) from scratch. This is @prp-real-infimum
+      (b), Ch8 §8.3 (fd4/src/ch08-real-functions/03-bounds-and-suprema.md:21). The marking scheme (3 points)
+      rewards re-deriving it.
 - key: exr-convex-sets-and-hulls-r1
   kind: exr
   file: 03-convex-sets-and-hulls.md
-  line: 456
-  hash: 907eaf195980
-  verdicts: []
+  line: 510
+  hash: eccadf461c9a
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/03
+    hash: eccadf461c9a
+    date: '2026-11-01'
+    evidence: 'l.517-519: Q is an intersection of 2n half-spaces. prp-norm-coordinate-bounds (a),(b) give
+      both inclusions'
+  - stage: S5b
+    verdict: correct
+    by: B:10/03
+    hash: eccadf461c9a
+    date: '2026-11-01'
+    evidence: '517-519: prp-dot-product-laws-rn (a),(b),(d) and prp-norm-coordinate-bounds (a),(b) check
+      against 09/03:54 and 09/04:284.'
+  - stage: S6
+    verdict: correct
+    by: S6:10b
+    hash: eccadf461c9a
+    date: '2026-11-01'
+    evidence: 03:510-520. Q is an intersection of 2n half-spaces. The solution uses prp-norm-coordinate-bounds
+      (a) |x_k|<=|x| and (b) |x|<=√n M; both match ch09/04. The statement hides its source, and the solution
+      names it with @ref.
 - key: exr-convex-sets-and-hulls-r2
   kind: exr
   file: 03-convex-sets-and-hulls.md
-  line: 468
-  hash: cf6dd1759916
-  verdicts: []
+  line: 522
+  hash: 62cbe467e0c1
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/03
+    hash: 62cbe467e0c1
+    date: '2026-11-01'
+    evidence: 'l.529-535: P_t is the closed half-space with normal (1,t,t^2)!=0. The index set [0,1] is
+      non-empty'
+  - stage: S5b
+    verdict: minor
+    by: B:10/03
+    hash: 62cbe467e0c1
+    date: '2026-11-01'
+    evidence: '535: the alternative route uses g, a'', b'', c'' without introducing them. The main route
+      is correct: (1,t,t²)≠0 and P is the intersection of the P_t.'
+  - stage: S6
+    verdict: correct
+    by: S6:10b
+    hash: 62cbe467e0c1
+    date: '2026-11-01'
+    evidence: 03:522-540. f(t)=<(1,t,t^2),(a,b,c)> holds. The normal has first coordinate 1, so it is
+      non-zero. A half-space with ≥ is covered by prp-convex-examples, and the intersection over t by
+      prp-convex-operations (a). The source thm-evaluation-respects-operations is named with @ref.
 - key: exr-convex-sets-and-hulls-r3
   kind: exr
   file: 03-convex-sets-and-hulls.md
-  line: 484
-  hash: 117d95ab9bd2
-  verdicts: []
+  line: 542
+  hash: a70857a8d616
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:10/03
+    hash: a70857a8d616
+    date: '2026-11-01'
+    evidence: 'l.549-554: uses prp-plane-is-complex-plane (c), thm-conjugate-properties (d) and prp-unit-circle
+      (a) (u^{-1}=conj u), each as stated there'
+  - stage: S5b
+    verdict: correct
+    by: B:10/03
+    hash: a70857a8d616
+    date: '2026-11-01'
+    evidence: '549-555: prp-plane-is-complex-plane (a),(c), thm-conjugate-properties (d) and prp-unit-circle
+      (a) (u^{-1}=conj u) check out.'
+  - stage: S6
+    verdict: correct
+    by: S6:10b
+    hash: a70857a8d616
+    date: '2026-11-01'
+    evidence: 03:542-556. prp-plane-is-complex-plane (c) gives |z|=|z| as a norm. thm-conjugate-properties
+      (d) gives |zw|=|z||w| and |conj z|=|z|. prp-unit-circle (a) gives u^{-1}=conj u. The onto argument
+      with z=conj(u)w is correct. Sources are named with @ref.
