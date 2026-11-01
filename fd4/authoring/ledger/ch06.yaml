@@ -145,6 +145,16 @@ items:
       u_0..u_k by zeros. I checked this: the extended sequence vanishes at every k != j, and part (a)''s
       finite-lists clause gives the same sum. Both cases of j come out right. Resolved. The meta-claims
       at 01:101 and 01:138'
+  - stage: S8
+    verdict: minor
+    by: S8:06
+    hash: 8edc6349f7b4
+    date: '2026-11-01'
+    evidence: '01-polynomials-as-sequences.md:99,138,140. Part (c) re-proves fd4 Chapter 1''s @prp-power-laws-commutative-ring
+      (a)-(c). Its stated reason (''rests on Chapter 4 and not on Chapter 3'') is stale: the chapter already
+      cites Chapter 1''s @lem-ring-finite-sums. Three credits are also wrong: ''Chapter 4'' for lem-ring-finite-sums
+      (it is Chapter 1), ''Chapter 3'' for the power laws (Chapter 1), and ''Number Systems, Section 3.3''
+      for Multiples (fd3 Section 2.4).'
 - key: proof:lem-finite-sums-and-powers
   kind: proof
   file: 01-polynomials-as-sequences.md
@@ -2307,6 +2317,14 @@ items:
       (a) for (a), and ''reduce to (a)'' for (b). Rung 2 gives the first line of (b). That is the tool-then-first-line
       order of STYLE §11.7, and neither rung carries out the key step, so the S5b and S6 findings are
       resolved. l.516 now relates (a) to lem-difference-of-powers (01-pairs-of-reals.md:278,'
+  - stage: S8
+    verdict: minor
+    by: S8:06
+    hash: 6c802ab506a5
+    date: '2026-11-01'
+    evidence: 04-evaluation-and-substitution.md:516 says "Chapter 3's difference-of-powers identity (@lem-difference-of-powers)",
+      but the label is in fd4 Chapter 1 (ch01.../01-finite-sums.md:426). The ledger at :601 says F4.1
+      where it should say F4.6.
 - key: exr-evaluation-and-substitution-c4
   kind: exr
   file: 04-evaluation-and-substitution.md
@@ -2942,6 +2960,55 @@ items:
     model: claude-opus-5-5
     evidence: STYLE §11.5 says R3 is 'taken from the spiral table in curriculum.md'. curriculum.md:448-456
       has no row for countability or polynomials, and no F4.4 entry. [finding refuted by skeptics]
+  - stage: S5a
+    verdict: gap
+    by: A:06/05
+    hash: 40bc6c508303
+    date: '2026-11-01'
+    evidence: '05-formal-derivative.md:520 relies on @fd2:cor-product-countable (b). The citing rule (fd3
+      04-categoricity.md:257, group (ii)) excludes that part from use on N: ''A later chapter that needs
+      (b) proves it on N first.'' Line 522 uses @fd2:thm-countable-union, which none of the citing-rule
+      groups (i)-(iii) lists. Line 526 claims the algebraic numbers are countable but leaves out the finite-root
+      count, which is only proved in Chapter 7 (thm-polynomial-root-count). The rest of the solution checks
+      out: the Z count at 518 (fd3 R2, def-quotient-set, prp-countable-image), the F_2 count, the bijection
+      with B1 at 520, the bijection {0,1}->F_2 and the surjection onto {0,1}^N at 524 (thm-binary-sequences-uncountable
+      is in group (i)), and the ''only finitely many'' clause at 526.'
+  - stage: S5b
+    verdict: gap
+    by: B:06/05
+    hash: 40bc6c508303
+    date: '2026-11-01'
+    evidence: '05-formal-derivative.md:519 cites @fd2:cor-product-countable (b) on N = omega. The citing
+      rule at fd3/src/ch01-natural-numbers/04-categoricity.md:257 explicitly excludes it: ''Part (b) ...
+      is not checked on N here ... A later chapter that needs (b) proves it on N first.'' Line 521 uses
+      @fd2:thm-countable-union (a), which is in fd2 Chapter 6 and is in none of the three groups. Line
+      526''s aside about algebraic numbers needs a root count that is only proved later, in Chapter 7.
+      Smaller wording and bookkeeping slips at lines 513 and 524.'
+  - stage: S6
+    verdict: gap
+    by: S6:06a
+    hash: 40bc6c508303
+    date: '2026-11-01'
+    evidence: '05-formal-derivative.md:509-527. My own solution (before reading theirs) was: Z and F_2
+      are countable; A_N corresponds one-to-one with R^{N+1}; then a countable union, then the diagonal
+      argument. The book''s solution follows the same route and the mathematics is right. Two problems:
+      (1) line 520 cites @fd2:cor-product-countable (b), which fd3/src/ch01-natural-numbers/04-categoricity.md:56
+      explicitly leaves out of the citable groups (''A later chapter that needs (b) proves it on N first'').
+      (2) line 522 cites @fd2:thm-countable-union (a), which is in fd2 Chapter 6, while the citing rule
+      (04-categoricity.md:51) covers only fd2 Chapters 3 and 4, and the solution''s opening line says
+      ''Chapter 4''. Smaller problems are listed as findings. Nothing in the item is numeric (no sidecar
+      is needed). The R item hides its source and its solution names the sources with @ref. The clause
+      answer (''only finitely many'', def-polynomial line 28) is correct.'
+  - stage: S8
+    verdict: gap
+    by: S8:06
+    hash: 40bc6c508303
+    date: '2026-11-01'
+    evidence: 05-formal-derivative.md:516 credits the tools to *Sets and Functions*, Chapter 4, but the
+      solution uses @fd2:thm-countable-union, which is in fd2 Chapter 6 (ch06-axiom-of-choice/01:165).
+      The rewritten closing sentence at :526 claims the algebraic numbers are countable 'by the same count',
+      which needs a finite-roots fact the chapter never states, and the series no longer defines algebraic
+      numbers (thm-algebraic-countable is parked to ST, blueprint ch06.md:343).
 - key: exr-formal-derivative-r4
   kind: exr
   file: 05-formal-derivative.md
