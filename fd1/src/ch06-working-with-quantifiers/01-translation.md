@@ -333,7 +333,9 @@ Each block is one line longer than the bounded step it replaces:
 
 - two lines for one in \( \rulename{\forall E} \) and \( \rulename{\exists I} \);
 - the extra \( \rulename{{\to}I} \) line in \( \rulename{\forall I} \);
-- three lines, an assumption and two \( \rulename{\wedge E} \), for two assumptions in \( \rulename{\exists E} \). So **each bounded step saves exactly one line**, and a derivation with many bounds saves many. More than the count, the bounded rules keep the derivation at the level at which a mathematician thinks: "let \( \varepsilon > 0 \)" is one step, not two.
+- three lines, an assumption and two \( \rulename{\wedge E} \), for two assumptions in \( \rulename{\exists E} \).
+
+So **each bounded step saves exactly one line**, and a derivation with many bounds saves many. More than the count, the bounded rules keep the derivation at the level at which a mathematician thinks: "let \( \varepsilon > 0 \)" is one step, not two.
 
 ::: {.check}
 Unfolded, \( \exists N \in \nN\; \psi \) is \( \exists N\, (N \in \nN \wedge \psi) \). A student uses the bounded \( \rulename{\exists E} \) on it and writes the box with the single assumption \( N_0 \in \nN \wedge \psi[N_0/N] \). Is that wrong?

@@ -80,6 +80,15 @@ items:
     date: '2026-11-01'
     evidence: 'Wording only: (c),(d) sentence splits; the follow-up paragraph restates the order of choices
       (challenger eps, defender N/delta, challenger n/x). Sidecar passes.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 4bafc4945962
+    date: '2026-11-01'
+    evidence: 'Wording only. In (c), ''; its restriction'' becomes ''. Its restriction''. In (d), '':
+      the laws'' becomes ''. The laws''. A blank line now splits the (c) paragraph. The follow-up paragraph
+      changes from ''Two remarks on the example. First, ... by a challenger; then ... by the defender
+      ...'' to ''In (a) and ...'
 - key: check:01-translation:1
   kind: check
   file: 01-translation.md
@@ -128,6 +137,15 @@ items:
     date: '2026-11-01'
     evidence: 'Wording only: warning (2) split at semicolons; counterexample f(x)=x on [0,1], bound 1
       unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b6231bf6c6d0
+    date: '2026-11-01'
+    evidence: Wording only. Warning (2) is split at its semicolons. The counterexample f(x)=x on [0,1]
+      and the bound 1 are unchanged. 'The warning above caught three slips. Here are five more, each with
+      the reading' becomes 'Here are five more slips, each with a reading'. The check and its solution
+      are untouched.
 - key: exm-translation-traps
   kind: exm
   file: 01-translation.md
@@ -162,6 +180,14 @@ items:
     date: '2026-11-01'
     evidence: Table untouched; 'eventually' and a_n=(-1)^n readings reworded with the same truth values.
       Sidecar passes.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 7848799a8bb4
+    date: '2026-11-01'
+    evidence: The table is untouched. In the 'Infinitely many, and eventually' text, '(warning (3) above),
+      says' becomes '"Eventually a_n>0" means a_n>0 for all large n. It says'. The parentheses for a_n=(-1)^n
+      become 'since' clauses with the same truth values. Only an internal pointer to the warning was ...
 - key: check:01-translation:2
   kind: check
   file: 01-translation.md
@@ -206,6 +232,15 @@ items:
     hash: cacc031644cf
     date: '2026-11-01'
     evidence: Wording only; @prp-vacuous-implication kept; bounded-rules motivation reworded truthfully.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: cacc031644cf
+    date: '2026-11-01'
+    evidence: Wording only. In 'Translation error or derivation error?', 'the slip of warning (1) above'
+      becomes 'with -> under exists'. That is the same description, and @prp-vacuous-implication stays
+      inline. The bounded-rules motivation changes from 'drowns in them... fold' to 'but they fill up
+      a derivation ...
 - key: prp-bounded-quantifier-rules
   kind: prp
   file: 01-translation.md
@@ -254,6 +289,15 @@ items:
     date: '2026-11-01'
     evidence: 'Statement: side conditions now a displayed list, word for word apart from ''it'' -> ''the
       name x_0'' (same antecedent).'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 8bd7cd38842b
+    date: '2026-11-01'
+    evidence: The statement changed in wording only. The side conditions are now a displayed list. They
+      are word for word apart from 'it' -> 'the name x_0' in the third clause, which is the antecedent
+      the old 'it' already had. 'may be used in derivations, with the rule names' becomes 'may be used
+      in ...
 - key: proof:prp-bounded-quantifier-rules
   kind: proof
   file: 01-translation.md
@@ -297,6 +341,14 @@ items:
     date: '2026-11-01'
     evidence: Steps in the same order, sentences split; Uses line @def-bounded-quantifier (earlier definition).
       check_fitch 0 errors.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 9cfc23a7ed28
+    date: '2026-11-01'
+    evidence: The proof steps are in the same order. Sentences in the bounded forall-I paragraph are split
+      at ':' and ';' ('Indeed, a line outside...', 'The premises are the same as before. The boxes still
+      open...'), with no change in logic. @def-derivation stays inline. A Uses line is added, ...
 - key: check:01-translation:3
   kind: check
   file: 01-translation.md
@@ -335,6 +387,24 @@ items:
     date: '2026-11-01'
     evidence: 01-translation.md:385 now 'which follows the check below', as before the rewrite; line ranges
       unchanged.
+  - stage: S5e
+    verdict: minor
+    by: s5e-referee
+    hash: 8a2c14e69bd8
+    date: '2026-11-01'
+    evidence: 'New line ~370: ''In the full derivation, which comes next, lines 1-6 and 13-16 are the
+      lines above written out.'' The full derivation does not come next. The {.check} on eps_0/2 (check:01-translation:4)
+      comes first, then the derivation. The old text said the derivation ''follows the check below'',
+      ...'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 8a2c14e69bd8
+    date: '2026-11-01'
+    evidence: 01-translation.md:385 now reads 'which follows the check below' (check:01-translation:4
+      precedes the full derivation); line ranges 1-6, 7-12, 13-16 unchanged. Also moved the 'each bounded
+      step saves exactly one line' sentences out of the third bullet into their own paragraph (layout
+      only).
 - key: check:01-translation:4
   kind: check
   file: 01-translation.md
@@ -379,6 +449,15 @@ items:
     hash: 26a2a7af7445
     date: '2026-11-01'
     evidence: Line-15 bullet reworded truthfully (line 14 is bounded exists-I at N_0); 22-line count unchanged.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 26a2a7af7445
+    date: '2026-11-01'
+    evidence: 'The line 15 bullet changes from ''(the witness has been forgotten by line 14)'' to ''since
+      line 14 replaced it by the bound variable N. It is also not in line 4...''. That is true: line 14
+      is bounded exists-I at witness N_0, and the remaining conditions are the same. The Looking ahead
+      remark is ...'
 - key: exr-translation-a1
   kind: exr
   file: 01-translation.md
@@ -429,6 +508,13 @@ items:
     hash: efd48d9f5836
     date: '2026-11-01'
     evidence: Statement (i)-(v) separated by full stops; same content. Sidecar passes.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: efd48d9f5836
+    date: '2026-11-01'
+    evidence: In statement (a), the five sentences (i)-(v) are now separated by full stops instead of
+      semicolons, with the same content. The sidecar passes.
 - key: exr-translation-a2
   kind: exr
   file: 01-translation.md
@@ -536,6 +622,15 @@ items:
     hash: 72c352e23896
     date: '2026-11-01'
     evidence: Signature lists rewritten as sentences; same symbols, arities and formulas.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 72c352e23896
+    date: '2026-11-01'
+    evidence: In solutions (a)-(c), the signature lists are rewritten as 'Variables ..., all bound. Function
+      symbol(s) ..., one-place. Predicate symbols ...'. The same symbols, arities and formulas are listed.
+      'a is a function symbol by the one-domain convention, step 1 of the procedure' is kept. The swap
+      ...
 - key: exr-translation-b2
   kind: exr
   file: 01-translation.md
@@ -574,6 +669,13 @@ items:
     hash: e3fe4c48f822
     date: '2026-11-01'
     evidence: Wording only; 8 + 3 = 11 unchanged.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e3fe4c48f822
+    date: '2026-11-01'
+    evidence: In the solution, '(lines 5, 7 and 8), each of which costs' becomes ', lines 5, 7 and 8.
+      Each costs'. 8 + 3 = 11 is unchanged, and the unbounded expansion is described as before.
 - key: exr-translation-b3
   kind: exr
   file: 01-translation.md
@@ -645,6 +747,15 @@ items:
     date: '2026-11-01'
     evidence: '''Fold back'' -> ''Abbreviate with subset, union, intersection''; solutions (d), (e) unchanged;
       marking-scheme heading per B4. Sidecar passes.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e677e63f34e9
+    date: '2026-11-01'
+    evidence: The title 'Unfold, then fold back' becomes 'Unfold, then abbreviate'. (d) and (e) change
+      from 'Fold back X' to 'Abbreviate X with ⊆, ∪, ∩'. The same task is now stated explicitly, and the
+      solutions (d) A⊆B∧B⊆C and (e) A∩B⊆C are unchanged. In (f), 'trap (b) of the section' becomes 'the
+      trap of an ...
 - key: exr-translation-c1
   kind: exr
   file: 01-translation.md
@@ -692,6 +803,13 @@ items:
     hash: 1bdf68b1aaeb
     date: '2026-11-01'
     evidence: Wording only; references to Sections 6.4 and 7.2 kept.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 1bdf68b1aaeb
+    date: '2026-11-01'
+    evidence: In the solution, '; in (a)' becomes '. In (a)'. The references to Sections 6.4 and 7.2 are
+      kept.
 - key: exr-translation-c2
   kind: exr
   file: 01-translation.md
@@ -734,6 +852,15 @@ items:
     date: '2026-11-01'
     evidence: Statement split into sentences with the same definitions; separation as a 3-item list with
       the same pairs. Sidecar passes.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 4750a1e2025f
+    date: '2026-11-01'
+    evidence: The statement splits into 'Fix a formula mu, the "matrix", ... Put the prefixes ... Call
+      two ... Call them essentially different if ... read informally as in Section 5.1'. The definitions
+      of 'essentially the same' and 'different' mean exactly the same. In the solution, the separation
+      sentence ...
 - key: exr-translation-c3
   kind: exr
   file: 01-translation.md
@@ -788,6 +915,14 @@ items:
     hash: 404f0da90994
     date: '2026-11-01'
     evidence: Only marking-scheme heading and 'Slips that lose the step' changed; points unchanged. Sidecar
+      passes.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 404f0da90994
+    date: '2026-11-01'
+    evidence: Only the marking-scheme heading changes ('What a complete answer needs'), along with 'Fatal
+      errors' -> 'Slips that lose the step'. The points and the list of slips are unchanged. The sidecar
       passes.
 - key: prp-quantifier-negation
   kind: prp
@@ -853,6 +988,15 @@ items:
     date: '2026-11-01'
     evidence: 'Wording only: idea and side-condition paragraph split into sentences, same steps and order;
       Fitch blocks identical; @thm-raa-independent kept.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 522dc5e3de99
+    date: '2026-11-01'
+    evidence: Wording only. In the idea, 'stuck (we know nothing about φ), so a second RAA...; and now...'
+      is split into three sentences with the same steps in the same order. The side-condition paragraph
+      after line 7 is split into four sentences that keep the same three facts (premise, open assumption,
+      ∀xφ) ...
 - key: check:02-quantifier-laws:1
   kind: check
   file: 02-quantifier-laws.md
@@ -926,6 +1070,15 @@ items:
     date: '2026-11-01'
     evidence: 'Wording only: @def-derived-rule moved to a Uses line; line 3, line 8 and the single RAA
       unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d90a85464325
+    date: '2026-11-01'
+    evidence: Wording only. @def-derived-rule moved from the sentence about line 3 into a Uses line at
+      the end of the proof. Line 3, line 8 and the 'only RAA at line 5' sentence are kept. The lead-in
+      'a proof in the text may not rest on an exercise, so we prove it here' became 'Here it gets a full
+      proof.' The ...
 - key: prp-bounded-quantifier-negation
   kind: prp
   file: 02-quantifier-laws.md
@@ -978,6 +1131,15 @@ items:
     date: '2026-11-01'
     evidence: 'Wording only: @prp-bounded-quantifier-rules to Uses line; push steps in the same order;
       worked case over R (x>0, x^2>x) true and in the ledger.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: a698476186d5
+    date: '2026-11-01'
+    evidence: Wording only. In the idea, @prp-bounded-quantifier-rules moved into a Uses line, and the
+      two push steps (QN, then NIm inside an ∃E box) became separate sentences in the same order. In the
+      proof, the line-7 left and right checks are split. 'choosing x0 not to appear in a; since x does
+      not occur ...
 - key: prp-replacement
   kind: prp
   file: 02-quantifier-laws.md
@@ -1070,6 +1232,15 @@ items:
     evidence: 'Wording only: closure argument split, same steps; @def-rules-biconditional to Uses line;
       fresh x0 defined in words in place of ''as in the fold above''; worked case via double negation
       true.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6da138f09464
+    date: '2026-11-01'
+    evidence: 'Wording only. In the closure paragraph, the argument that the order of the ∀''s does not
+      matter is split into the same steps: ∀E in one order, k flagged boxes closed in another, the citation
+      of @exm-universal-introduction-derivations (c). ''as "The laws as one line" allows'' became ''as
+      for a law ...'
 - key: exm-negating-definitions
   kind: exm
   file: 02-quantifier-laws.md
@@ -1121,6 +1292,15 @@ items:
     date: '2026-11-01'
     evidence: 'Wording only: citations split; Prime paragraph names both directions of not(a and b) -||-
       a -> not b, checked against De Morgan (c),(d) and implication-as-disjunction (a),(b).'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 912bd7c583ca
+    date: '2026-11-01'
+    evidence: 'Wording only. (a) and (c): the ''first three steps / fourth'' citations are split into
+      separate sentences. (b): the supremum reading is split into its two disjuncts. In (c), the comma
+      at the end of the display became a period and the ''where...'' clause became new sentences. In the
+      Prime paragraph, ...'
 - key: check:02-quantifier-laws:2
   kind: check
   file: 02-quantifier-laws.md
@@ -1177,6 +1357,14 @@ items:
     hash: 30033b66ba75
     date: '2026-11-01'
     evidence: Wording only; negation exists A((E(A) and B(A)) and not S(A)) unchanged; QN to Uses line.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 30033b66ba75
+    date: '2026-11-01'
+    evidence: Wording only. The E(A)/B(A)/S(A) check is split into three sentences with the same notation.
+      In the solution, @prp-quantifier-negation moved into a Uses line. The negated formula ∃A((E(A)∧B(A))∧¬S(A))
+      is unchanged.
 - key: check:02-quantifier-laws:3
   kind: check
   file: 02-quantifier-laws.md
@@ -1441,6 +1629,15 @@ items:
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 02: idea''s run of the search
       method now a displayed list with the same five steps; ''intuitionistic direction'' -> ''direction
       derived without RAA''; distribution proof cites as a list. Derivations unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 12d2e9c6c741
+    date: '2026-11-01'
+    evidence: 'Wording only. In the idea, ''Each intuitionistic direction'' became ''Each direction derived
+      without RAA''. This matches the statement''s own wording: the LEM directions count as ''derived
+      with RAA'', and the other eight are ''without it''. The five search moves became a bullet list in
+      the same order, ...'
 - key: proof:prp-quantifier-passage#2
   kind: proof
   file: 02-quantifier-laws.md
@@ -1512,6 +1709,15 @@ items:
     date: '2026-11-01'
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 02: solution reworded; law (e)
       under forall x with psi x>0, phi y*y=x, y not free in psi; replacement cited in words. Same mathematics.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: c5a93f1ef055
+    date: '2026-11-01'
+    evidence: Wording only. The solution still names law (e) under ∀x with the same ψ, φ and moving variable
+      y, and the same condition check. The parenthetical 'with the fold "Passage laws on a part"' became
+      the sentence 'the passage laws meet its hypothesis'. Under PIPELINE check 2, its source moved into
+      the ...
 - key: exm-prenex-conversion
   kind: exm
   file: 02-quantifier-laws.md
@@ -1543,6 +1749,15 @@ items:
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 02: ''Its hypothesis is checked
       in the fold'' -> ''The passage laws meet the hypothesis of the replacement rule''. Steps (b) then
       (e) unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 9584b202b610
+    date: '2026-11-01'
+    evidence: Wording only. The second bullet 'Its hypothesis is checked in the fold "Passage laws on
+      a part"' became 'The passage laws meet the hypothesis of the replacement rule.' The fold citation
+      moved into the updated ledger line. Both steps, (b) and then (e) under ∀x, are unchanged. The Twin
+      laws fold ...
 - key: check:02-quantifier-laws:6
   kind: check
   file: 02-quantifier-laws.md
@@ -1646,6 +1861,14 @@ items:
     date: '2026-11-01'
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 02: (g) parenthesis -> semicolon;
       same parts.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e5e310eb7648
+    date: '2026-11-01'
+    evidence: Wording only. The intro's parenthesis '(in (g), choose the negation)' became a clause after
+      a semicolon. The part list and the solutions are unchanged, and the sidecar exr-quantifier-laws-a2.py
+      passes.
 - key: exr-quantifier-laws-b1
   kind: exr
   file: 02-quantifier-laws.md
@@ -1696,6 +1919,14 @@ items:
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 02: solution (a)-(d) reworded
       (''bounded negation'', ''negated implication''); displays unchanged; Uses line added for earlier
       results.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: fe29d6b3e965
+    date: '2026-11-01'
+    evidence: Wording only. In parts (a) to (d), the inline @prp-negated-implication and @prp-bounded-quantifier-negation
+      (in (a) and (c)) became 'negated implication' and 'bounded negation'. Both labels are now in a Uses
+      line at the end of the solution, and @prp-bounded-quantifier-negation is still inline in ...
 - key: exr-quantifier-laws-b2
   kind: exr
   file: 02-quantifier-laws.md
@@ -1772,6 +2003,14 @@ items:
     date: '2026-11-01'
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 02: law (b) then law (a) under
       forall x; same psi, phi, moving variable y and not-free condition; replacement in words.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 8a774e37ceb3
+    date: '2026-11-01'
+    evidence: Wording only. In the solution's second step, law (a) under ∀x, with ψ=P(x), φ=Q(y) and moving
+      variable y, is reordered into three sentences. @prp-replacement and the 'y not free in P(x)' check
+      are kept.
 - key: exr-quantifier-laws-b3
   kind: exr
   file: 02-quantifier-laws.md
@@ -1843,6 +2082,14 @@ items:
     date: '2026-11-01'
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 02: only the marking-scheme
       heading and ''Slips that lose the part'' changed; readings and points unchanged. Sidecar passes.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: cc7db7e2abf4
+    date: '2026-11-01'
+    evidence: Wording only. 'Marking scheme' became 'What a complete answer needs' and 'Fatal errors (0
+      for the part)' became 'Slips that lose the part (0 points for it)'. The point values and the error
+      list are the same, and the sidecar passes.
 - key: exr-quantifier-laws-b5
   kind: exr
   file: 02-quantifier-laws.md
@@ -1901,6 +2148,15 @@ items:
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 02: exists-E is not a one-line
       step, sentences split; counter-reading over Z (P even, Q positive, c=0) with the same truth values;
       marking-scheme heading. Sidecar passes.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ff48441e5bca
+    date: '2026-11-01'
+    evidence: Wording only. The ∃E explanation is split into sentences, with 'never a constant, since
+      a constant has a fixed meaning'. The counter-reading over Z (P even, Q positive, c=0, witness 2)
+      is unchanged, the sidecar exr-quantifier-laws-b5.py passes, and the marking headings were renamed
+      with the same ...
 - key: exr-quantifier-laws-c1
   kind: exr
   file: 02-quantifier-laws.md
@@ -1935,6 +2191,15 @@ items:
     evidence: '09:840-885. Both routes are correct: (d) then (e) under exists-x, and (e) then (d) under
       exists-y, each with its not-free condition satisfied. Every step towards prenex form is the dashv
       (LEM) direction of (d) or (e). The scheme does not depend on the book''s wording.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ca29746eed2a
+    date: '2026-11-01'
+    evidence: Wording only. In both routes, 'Law (d)..., with φ..., ψ...' became 'Use law (d). Take φ
+      to be..., ψ to be...'. The same laws are used in the same order, with the same not-free checks,
+      the same displays and @prp-replacement. The marking headings were renamed with the same points.
+      The ledger list ...
 - key: exr-quantifier-laws-c2
   kind: exr
   file: 02-quantifier-laws.md
@@ -1985,6 +2250,15 @@ items:
     date: '2026-11-01'
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 02: negation, eps=1 construction
       unchanged; slips as a 3-item list, same content; NIm to Uses line.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6f35330ed57f
+    date: '2026-11-01'
+    evidence: Wording only. The title 'Exit check' became 'Chapter check', and the label is unchanged.
+      In (a), @prp-negated-implication moved into a Uses line, and @prp-bounded-quantifier-negation is
+      still inline. The formula is unchanged. The fatal-error list became bullets with the same three
+      items. The ...
 - key: exr-quantifier-laws-c3
   kind: exr
   file: 02-quantifier-laws.md
@@ -2044,6 +2318,15 @@ items:
     model: claude-opus-5-5
     evidence: 'S7 leftover resolved by the coordinator per the re-referee''s fix, re-read after the edit:
       (c) now asks which part uses a classical rule and the solution answers it'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: fbcee4b32015
+    date: '2026-11-01'
+    evidence: Wording only. In (b), 'as "The laws as one line" requires' became 'as for a law used as
+      one line'. That heading is still present, and the ledger line for C3 still names it. In (c), '(Whether
+      (b) could avoid a classical rule altogether is not asked.)' became 'Whether some other derivation
+      of (b) ...
 - key: exm-search-with-witnesses
   kind: exm
   file: 03-first-order-search.md
@@ -2076,6 +2359,14 @@ items:
     model: claude-opus-5-5
     evidence: 03:159 now offers 'a variable or a constant that nothing mentions, say c'. P(c)→∃y R(c,y)
       still waits for P(c), which no premise gives, and premise 3's box supplies x0.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e37cb6b491c4
+    date: '2026-11-01'
+    evidence: Wording only. The solution's reading sentence (line 162) is split into 'The premises say
+      that ... So some integer is odd.' It makes the same three premise readings and draws the same conclusion.
+      The derivation and the side-condition sentence are unchanged.
 - key: check:03-first-order-search:1
   kind: check
   file: 03-first-order-search.md
@@ -2105,6 +2396,13 @@ items:
     date: '2026-11-01'
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 03: ''move'' -> ''strategy''
       in the solution; the reason (line 7 names x_0, y_0) unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e59acf7e26f4
+    date: '2026-11-01'
+    evidence: Wording only. In the solution, 'move' becomes 'strategy' ('instantiate at the term you need'),
+      a renamed printed device. Nothing else changed.
 - key: def-propositional-skeleton
   kind: def
   file: 03-first-order-search.md
@@ -2152,6 +2450,15 @@ items:
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 03: ''same atom exactly when
       renaming'' sentence reordered; recursion clauses as a list, identical. New unlabelled instance p
       -> (q or p) is a tautology (sidecar updated, passes).'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d0869f8e0a92
+    date: '2026-11-01'
+    evidence: Wording only. The assignment sentence is now 'Assign ... a propositional atom. Two prime
+      formulas get the same atom exactly when ... in either direction. This is an equivalence relation...',
+      which is the same condition. The recursion is a displayed list of the same four clauses (bot, prime,
+      neg, ...
 - key: prp-taut-skeleton
   kind: prp
   file: 03-first-order-search.md
@@ -2193,6 +2500,15 @@ items:
       the hypothesis now reads prime formulas occurring outside all quantifiers, as Step 2 needs; the
       S8 gap (closure of a renaming) is paid by the extended renaming sentence after prp-replacement (02,
       S7 cross-file fix)'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: a2e5f6e184d1
+    date: '2026-11-01'
+    evidence: 'The statement is unchanged. The lead-in drops only ''it is in the fold below''. In the
+      TAUT paragraph after the proof, ''all from one assignment; with no cited lines'' is split into two
+      sentences with the same content. Library table: the negate and equality rows are split one row per
+      label, and ...'
 - key: proof:prp-taut-skeleton
   kind: proof
   file: 03-first-order-search.md
@@ -2253,6 +2569,15 @@ items:
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 03: Step 2 split into sentences,
       same order of steps; @lem-substitution moved to Uses line; Step 1 rewording ''substitution of formulas
       for letters ... now for atoms'' says the same.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 95b7167abacc
+    date: '2026-11-01'
+    evidence: Wording only. Steps 1 and 2 are split into shorter sentences, with every step kept in order.
+      'Substitution of formulas for atoms that @def-derived-rule makes for letters' becomes '...for letters
+      that @def-derived-rule makes, now for atoms', which means the same. @lem-substitution moved to a
+      Uses ...
 - key: check:03-first-order-search:2
   kind: check
   file: 03-first-order-search.md
@@ -2281,6 +2606,13 @@ items:
     date: '2026-11-01'
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 03: (c) adds the words ''quantifier
       negation''; verdicts (a) yes, (b), (c) no unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 7132efd5f5ba
+    date: '2026-11-01'
+    evidence: Wording only. The solution's (c) expands 'QN (a)' to 'quantifier negation, QN (a)'. The
+      verdicts and skeletons are unchanged, and the def-propositional-skeleton sidecar passes.
 - key: exm-propositional-core
   kind: exm
   file: 03-first-order-search.md
@@ -2372,6 +2704,15 @@ items:
     date: '2026-11-01'
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 03: (b), (c) name the E, A and
       O forms in words; (d) reading reworded; derivations and verdicts unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: dccb504960c3
+    date: '2026-11-01'
+    evidence: The new glosses are true. In (b), the premise forall x (P(x) -> not Q(x)) is 'no P is Q',
+      the E form. In (c), forall x (P(x) -> Q(x)) is 'every P is Q', the A form, and exists x (P(x) and
+      not Q(x)) is 'some P is not Q', the O form. The (c) and (d) sentence splits keep the same reasoning.
+      All ...
 - key: check:03-first-order-search:4
   kind: check
   file: 03-first-order-search.md
@@ -2453,6 +2794,12 @@ items:
     date: '2026-11-01'
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 03: ''move'' -> ''strategy'';
       same answer.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d0fcfe2aeb2c
+    date: '2026-11-01'
+    evidence: Wording only. In solution (d), 'moves' becomes 'strategies'. The verdicts in (c) are unchanged.
 - key: exr-first-order-search-b1
   kind: exr
   file: 03-first-order-search.md
@@ -2495,6 +2842,15 @@ items:
     date: '2026-11-01'
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 03: group labels ''move'' ->
       ''strategy''; marking-scheme heading; twelve verdicts and readings unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b655506e71e1
+    date: '2026-11-01'
+    evidence: Wording only. In the statement, 'which move to try first' becomes 'which strategy...'. 'Marking
+      scheme' is now 'What a complete answer needs' and 'Fatal errors (0 for the claim)' is now 'Slips
+      that lose the claim (0 for it)'. The points and the listed errors are unchanged, and the sidecar
+      ...
 - key: exr-first-order-search-b2
   kind: exr
   file: 03-first-order-search.md
@@ -2551,6 +2907,14 @@ items:
     date: '2026-11-01'
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 03: ''move'' -> ''strategy'';
       marking-scheme heading; derivation unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 01683e70cbb3
+    date: '2026-11-01'
+    evidence: Wording only. In the statement, 'Name the move' becomes 'Name the strategy', and the solution
+      makes the same rename. The marking-scheme and fatal-error headings are renamed. The points, the
+      error and the derivation are unchanged.
 - key: exr-first-order-search-b3
   kind: exr
   file: 03-first-order-search.md
@@ -2588,6 +2952,13 @@ items:
     hash: ad1cffaf31d8
     date: '2026-11-01'
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 03: marking-scheme heading only.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ad1cffaf31d8
+    date: '2026-11-01'
+    evidence: Wording only. Only the marking-scheme and fatal-error headings are renamed. The points and
+      the solution are unchanged.
 - key: exr-first-order-search-c1
   kind: exr
   file: 03-first-order-search.md
@@ -2638,6 +3009,15 @@ items:
     model: claude-opus-5-5
     evidence: '03:835/841: the hints now ask for the law (negated ∀ to ∃; the passage law moving ∀n out
       of a hypothesis as ∃n). Both are correct and neither executes the key step.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 71781ecc23ac
+    date: '2026-11-01'
+    evidence: 'There are two new sentences, and both are true. (1) ''Line 8 uses QN (a), line 10 uses
+      VI; Section 6.2 allows each as one line'': lines 8 and 10 of the derivation are tagged QN (a) and
+      VI, and ''The laws as one line'' (ch06/02 lines 136-140) lists both tags, VI included. (2) ''In
+      (b) the split is ...'
 - key: exr-first-order-search-c2
   kind: exr
   file: 03-first-order-search.md
@@ -2693,6 +3073,13 @@ items:
     hash: 5b3a105fa832
     date: '2026-11-01'
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 03: marking-scheme heading only.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 5b3a105fa832
+    date: '2026-11-01'
+    evidence: Wording only. Only the marking-scheme and fatal-error headings are renamed. The points and
+      the solution are unchanged, and the sidecar passes.
 - key: check:04-uniform-continuity-rule-by-rule:1
   kind: check
   file: 04-uniform-continuity-rule-by-rule.md
@@ -2774,6 +3161,14 @@ items:
     date: '2026-11-01'
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 04: ''The answer to the prompt''
       -> question in words; dependency chain line 5 <- 4 <- 1, 3 unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 860d8d4b64e0
+    date: '2026-11-01'
+    evidence: 'Solution (new l.59-61): the sentence ''δ0 does not appear in line 5 ..., nor in the existential
+      of line 1'' is split in two (''Nor does it appear in ...''), and ''Every clause'' became ''So every
+      clause''. The three side-condition facts are the same.'
 - key: exm-uniform-implies-continuous
   kind: exm
   file: 04-uniform-continuity-rule-by-rule.md
@@ -2802,6 +3197,15 @@ items:
       §08:237 (each bounded step saves exactly one line; there are six). The prose sentences cover lines
       2-11. The answer to the prompt (line 5 rests on lines 4, 1 and 3, none of which mention x0) is right.
       The dep'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: af8f0a950e53
+    date: '2026-11-01'
+    evidence: 'Statement and Fitch block unchanged. Skeleton prose (l.52-54): the old mapping (''skeleton
+      line 1 -> 4, lines 2-5 -> 6-9, line 6 -> 11'') became ''the six lines above become lines 4, 6-9
+      and 11 ... so line 4 is UC at ε0 and line 11 closes the box of x0''. That is the same order-preserving
+      map, and 6 ...'
 - key: check:04-uniform-continuity-rule-by-rule:3
   kind: check
   file: 04-uniform-continuity-rule-by-rule.md
@@ -2824,6 +3228,14 @@ items:
     model: claude-opus-5-5
     evidence: 04:122-128. The boxes of x_0 (line 2) and eps_0 (line 3) surround line 5. Line 4 mentions
       eps_0 only. This matches the derivation at 04:76-94.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 9f2b05ebf06f
+    date: '2026-11-01'
+    evidence: 'Solution (l.134-136): ''available, so ... term, and a witness'' was split into three sentences,
+      with ''then'' added. The second-reading box that follows only splits sentences (''...(c). With the
+      bounded rules this takes ...''). The steps and the claims are unchanged.'
 - key: exm-converse-fails
   kind: exm
   file: 04-uniform-continuity-rule-by-rule.md
@@ -2849,6 +3261,15 @@ items:
     evidence: '10:122-144: the partial derivation passes check_fitch. Both blocked attempts (10:148-149)
       break the stated clauses: x0 is in the open assumptions on lines 3 and 7, and δ0 is in χ. The parallel
       with §06:615 (two blocks) holds. Try-it-first is placed and worded per STYLE §11.8.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: a8feba498ac5
+    date: '2026-11-01'
+    evidence: 'Idea (l.158): ''both side conditions then hold it in: it cannot leave ... and x0 cannot
+      be generalized ...'' became ''both side conditions block the way out. First, δ0 cannot leave ...
+      Second, x0 cannot be generalized ...''. The two blocks are the same. The bullet parenthetical ''(With
+      a different ...'
 - key: exm-square-not-uniform
   kind: exm
   file: 04-uniform-continuity-rule-by-rule.md
@@ -2882,6 +3303,15 @@ items:
       inequality (exm-triangle-inequality-cases, Ch01 07:420); |x²−y²| = |x−y||x+y| is in the ledger (exm-abs-product-cases);
       the chain to ≤ ε checks. UC part: the displayed goal matches exm-negating-definitions (c) (09-quantifier-laws.md,
       final display) with the bounds dropped over ℝ. x = 1/δ > 0 and y = x + δ/2 >'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 8d8d781a6b2d
+    date: '2026-11-01'
+    evidence: The example and its solution are unchanged. The lead-in (l.202) 'Here is the picture first;
+      the example proves it' became 'The picture shows what goes wrong for x^2, and the example after
+      it proves it'. The warning after it (l.258-262) only splits sentences. 'This is the logical origin
+      of the ...
 - key: exm-not-uniform-derived
   kind: exm
   file: 04-uniform-continuity-rule-by-rule.md
@@ -2923,6 +3353,14 @@ items:
     date: '2026-11-01'
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 04: ''move'' -> ''advice ...
       of Section 5.6''; line 15 skeleton and closing-line witnesses unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 52e4c960f05f
+    date: '2026-11-01'
+    evidence: 'Lead-in prose: ''carries its propositional core'' became ''handles''. The solution sentence
+      on early witness boxes (l.307) changes ''the move "name the witness early" (Section 5.6)'' to ''the
+      advice ... of Section 5.6''. Lines, flags and the TAUT skeleton p ∧ ¬q, p → q ⊨ ⊥ are unchanged.'
 - key: exm-converse-proof-critique
   kind: exm
   file: 04-uniform-continuity-rule-by-rule.md
@@ -2963,6 +3401,15 @@ items:
     model: claude-opus-5-5
     evidence: '04:330: the smallest δ would need a uniform δ line ∀x∈A ∀y∈A (|x−y|<δ → …), the line exm-converse-fails
       found blocked. The ledger now cites exm-abs-product-cases for |uv|=|u||v|.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 9d138cd2cf40
+    date: '2026-11-01'
+    evidence: 'In the ''Witness functions'' prose before it (l.316), the in-text pointer ''"May depend"
+      and "does depend" are exactly the two readings of "Reading dependence off the boxes"'' was replaced
+      by ''the two readings found earlier: the open boxes say what a witness may depend on, and its own
+      line says what ...'
 - key: check:04-uniform-continuity-rule-by-rule:4
   kind: check
   file: 04-uniform-continuity-rule-by-rule.md
@@ -3035,6 +3482,13 @@ items:
     date: '2026-11-01'
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 04: (a) sentence split; same
       lines 2, 6, 7 and boxes.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: a49817a121f0
+    date: '2026-11-01'
+    evidence: 'Solution (a) (l.375): the ''line 7; both boxes'' semicolon was split into two sentences.
+      No content change.'
 - key: exr-uniform-continuity-rule-by-rule-a2
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
@@ -3148,6 +3602,14 @@ items:
     date: '2026-11-01'
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 04: Lipschitz statement: parentheses
       removed, L >= 0 remark unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 24cccf4c4fb5
+    date: '2026-11-01'
+    evidence: 'Lipschitz exercise (l.456-458): the instruction was split (''Do it first as a derivation
+      ..., with lines of arithmetic justified "arith"''). The parenthetical about the bound L ≥ 0 is now
+      plain text with the same claim (at most one point gives x=y, so L=-1 would satisfy the matrix).'
 - key: exr-uniform-continuity-rule-by-rule-b2
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
@@ -3212,6 +3674,13 @@ items:
     date: '2026-11-01'
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 04: admissible orders (three)
       unchanged; swap sentence split; distractor (vii) reworded with the same blocked forall-I.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 5da9a56c6293
+    date: '2026-11-01'
+    evidence: 'Solution (l.525, 529): split sentences only. The admissible orders, the distractor analysis
+      and the reference to the first blocked line of @exm-converse-fails are unchanged.'
 - key: exr-uniform-continuity-rule-by-rule-b3
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
@@ -3249,6 +3718,14 @@ items:
     date: '2026-11-01'
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 04: sqrt solution: delta = eps^2,
       same inequality and monotonicity; reworded only.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 7fea111ae3d6
+    date: '2026-11-01'
+    evidence: 'Solution (l.539): ''Then, by the inequality given and because the square root is strictly
+      increasing'' became ''The inequality given, and the fact that ..., give''. δ = ε² and the displayed
+      chain are unchanged, and the sidecar passes.'
 - key: exr-uniform-continuity-rule-by-rule-b4
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
@@ -3303,6 +3780,14 @@ items:
     date: '2026-11-01'
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 04: marking-scheme heading and
       slips wording only.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ef0547a5745a
+    date: '2026-11-01'
+    evidence: '''Marking scheme'' became ''What a complete answer needs'', and ''Fatal error (0 for the
+      step):'' became ''Slips that lose the step:''. Point allocations (3/4/3, 10 points) and the error
+      list are unchanged.'
 - key: exr-uniform-continuity-rule-by-rule-c1
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
@@ -3342,6 +3827,15 @@ items:
     date: '2026-11-01'
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 04: ''move'' -> ''method'';
       fix, obtain at eta, choose unchanged; marking-scheme heading.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: fd07bcfbd22d
+    date: '2026-11-01'
+    evidence: In the statement and solution, 'move' became 'proof method' / 'method'. The solution chain
+      (∀I at ε, ∀E at ε, ∃E for η, ∀E at η, ∃E, then ∃I) is the same steps with the parentheses unpacked.
+      The marking-scheme renames are the same as in B4, and the points (2/3/3/2) and the fatal-error list
+      are ...
 - key: exr-uniform-continuity-rule-by-rule-c2
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
@@ -3397,6 +3891,14 @@ items:
       < δ, and b lies in both sets. The triangle inequality (exm-triangle-inequality-cases at 07-disjunction-and-cases.md:420)
       then gives a bound < ε. The cases are exhaustive because S = A ∪ B. The marking scheme matches the
       solution, and its ε1+ε2 ≤ ε generalization is correct. Line 393 is consistent with line 382.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 56e382095d59
+    date: '2026-11-01'
+    evidence: 'Solution (a) (l.641): semicolons became sentences. η = min(δ/4, 1/2), x = 1-η, y = 1+η
+      and |x-y| = 2η ≤ δ/2 < δ are unchanged, and the sidecar passes. The marking-scheme renames are the
+      same as in B4.'
 - key: exr-uniform-continuity-rule-by-rule-c3
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
@@ -3448,6 +3950,15 @@ items:
     date: '2026-11-01'
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 04: (a) side-condition bullets
       reworded, same conditions; (b) two-element reading unchanged (parenthesis removed). Sidecar passes.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: a439d7b416ec
+    date: '2026-11-01'
+    evidence: Title 'Exit check' became 'Chapter check', matching other sections (02-quantifier-laws C2
+      and others). In the statement, part 2 is split ('false. Check both ...'). In the solution, the line
+      8 bullet and the 'other nesting' paragraph are split with the same side-condition facts. In (b),
+      the ...
 - key: exr-uniform-continuity-rule-by-rule-r1
   kind: exr
   file: 04-uniform-continuity-rule-by-rule.md
@@ -3594,3 +4105,10 @@ items:
     date: '2026-11-01'
     evidence: 'Equivalence check against 9f9dbb8 by the chapter finisher. 04: wording only; no change
       to the mathematics.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ede4009f44f1
+    date: '2026-11-01'
+    evidence: 'Solution (l.825): the ''1.6; citing'' semicolon was split. TAUT skeleton, @prp-distributivity,
+      @def-derived-rule and the line-11 flag check are unchanged.'
