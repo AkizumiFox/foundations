@@ -841,7 +841,7 @@ Each step below is wrong, and breaks the clause of \( \rulename{{\to}I} \) named
 - End the derivation inside an open box: clause 4, the box must close (a box that never closes proves nothing).
 - Cite the box's lines one by one: clause 4, the box is cited whole, as a range.
 
-Most errors with \( \rulename{{\to}I} \) happen at the discharge. Here is one wrong step beside the right one, with premises \( (P \wedge R) \to Q \) and \( R \). On the left, line 6 carries \( Q \) out of the box by repetition, as if \( P \) had been proved. On the right, line 6 closes the box with \( \rulename{{\to}I} \).
+The discharge is the step of \( \rulename{{\to}I} \) to check most carefully. Here is one wrong step beside the right one, with premises \( (P \wedge R) \to Q \) and \( R \). On the left, line 6 carries \( Q \) out of the box by repetition, as if \( P \) had been proved. On the right, line 6 closes the box with \( \rulename{{\to}I} \).
 
 ```{=latex}
 \begin{center}

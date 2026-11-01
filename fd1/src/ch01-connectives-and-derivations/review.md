@@ -17,8 +17,6 @@ Still open: the chapter has no rules for "not" or for contradiction, and the fac
 
 ## Proof methods in this chapter
 
-Section 1.6 lists the same methods beside the rules that carry them out.
-
 - **Try to break it.** To test a form, put statements in for the letters that make every premise true and the conclusion false. One such choice shows that the form is bad. (Section 1.1)
 - **Two ways to attack an argument.** Show a premise false, or show that a step's form is bad. Either attack works without the other. (Section 1.1)
 - **Read the skeleton off the goal.** The goal's main connective chooses the introduction rule: \( \wedge \) gives two subgoals, \( \to \) a box, \( \vee \) a choice to postpone. (Section 1.2)

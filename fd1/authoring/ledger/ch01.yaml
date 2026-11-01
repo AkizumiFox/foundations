@@ -449,6 +449,22 @@ items:
     hash: 5f308907f608
     date: '2026-11-01'
     evidence: L311 split; meaning identical, check_beginner long finding gone
+  - stage: S5e
+    verdict: minor
+    by: s5e-referee
+    hash: 5f308907f608
+    date: '2026-11-01'
+    evidence: The statement is unchanged word for word, which is correct. The one check_beginner finding
+      left is L311, a 39-word sentence ('A **counterexample** to the form is ...') inside this definition
+      statement. S3e may not reword a statement, so keeping it is justified. It is listed only as the
+      kept findi...
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 5f308907f608
+    date: '2026-11-01'
+    evidence: statement unchanged word for word vs 9f9dbb8; the one long sentence is inside the definition
+      statement and is kept on purpose
 - key: check:01-statements-and-connectives:5
   kind: check
   file: 01-statements-and-connectives.md
@@ -609,6 +625,15 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: solution (a) points to the fixed-but-arbitrary-number convention, (f) drops
       a section-title pointer; statement and numbers unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 11231faa887d
+    date: '2026-11-01'
+    evidence: Wording only, in the solution. In (a), 'by the convention of the box in "Statements"' became
+      'by the convention of a fixed but arbitrary number', which points to the same remark with the same
+      claim. In (f), the cross-pointer 'This is the first question of "What comes next", asked before...'
+      becam...
 - key: exr-statements-and-connectives-a2
   kind: exr
   file: 01-statements-and-connectives.md
@@ -1003,6 +1028,15 @@ items:
     hash: 6af76293bdbf
     date: '2026-11-01'
     evidence: 'wording only: instruction sentence split in two, forms (a)-(e) unchanged; sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6af76293bdbf
+    date: '2026-11-01'
+    evidence: Wording only. The instruction sentence at L647 was split into two sentences ('...or explain
+      why no choice of statements can. To explain, check every case, using the meaning of each connective;
+      for →, use the table of "When is an implication broken?"'). It means exactly what the old single
+      sentenc...
 - key: exr-statements-and-connectives-b5
   kind: exr
   file: 01-statements-and-connectives.md
@@ -1252,6 +1286,15 @@ items:
     hash: 66f788138587
     date: '2026-11-01'
     evidence: 'wording only: surrounding prose reworded; definition block, instance and non-instance unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 66f788138587
+    date: '2026-11-01'
+    evidence: The definition block is unchanged. In the surrounding prose, 'a noninstance, by a minimal
+      change' became 'change one line so that the pattern no longer fits'. The instance and the non-instance
+      (0<1/2, 1/3<1) are the same, and the Greek-letter example (P→Q, R, (P→Q)∧R) has the same content,
+      split ...
 - key: def-box-free-derivation
   kind: def
   file: 02-derivations.md
@@ -1391,6 +1434,15 @@ items:
     hash: e3a296d36204
     date: '2026-11-01'
     evidence: 'wording only: follow-up line reworded; example and solution unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e3a296d36204
+    date: '2026-11-01'
+    evidence: 'The example and its solution are unchanged. The follow-up line now reads ''Both directions
+      come back, with names, once the rules for "and" are in place.'' This is true: ''Two directions of
+      reasoning'' (line 351) follows ''The rules for and'' and names goal-directed and premise-directed
+      reasoning.'
 - key: check:02-derivations:1
   kind: check
   file: 02-derivations.md
@@ -1651,6 +1703,15 @@ items:
     hash: ad30a12e5043
     date: '2026-11-01'
     evidence: 'wording only: remark 3 and capital-letters paragraph reworded/split; definition unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ad30a12e5043
+    date: '2026-11-01'
+    evidence: The definition is unchanged. Remark 3 changed 'From "The rules for and" below on, it is…'
+      to 'Once the rules for "and" are given below, it means…', which means the same. The capital-letters
+      paragraph was split ('So, to decide…; For example, Q is not a conjunct…'), and its claim is the
+      same.
 - key: check:02-derivations:2
   kind: check
   file: 02-derivations.md
@@ -1782,6 +1843,15 @@ items:
     hash: e032c1ec9b38
     date: '2026-11-01'
     evidence: 'wording only: pointer and box title reworded; answers unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e032c1ec9b38
+    date: '2026-11-01'
+    evidence: 'The solution of (a) is unchanged. The pointer now reads ''Part (b), the empty list, and
+      part (c) are answered just below.'' The second-reading box title went from ''Edge cases'' to ''Parts
+      (b) and (c): one line, no lines, and a full check'', and ''The degenerate case'' became ''This smallest
+      case''. The an...'
 - key: def-rules-conjunction
   kind: def
   file: 02-derivations.md
@@ -1858,6 +1928,15 @@ items:
     hash: ae99241728cb
     date: '2026-11-01'
     evidence: 'wording only: bullet pointers reworded; schemas, def text and safety sentence unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ae99241728cb
+    date: '2026-11-01'
+    evidence: The schemas, the def text and the safety sentence are unchanged. In the bullets, 'first
+      one in the block' became 'first of the three schemas above' and 'other two in the block' became
+      'other two schemas above'; there are exactly three schemas. 'Section 1.1 previewed these two moves'
+      became 'met t...
 - key: check:02-derivations:3
   kind: check
   file: 02-derivations.md
@@ -2005,6 +2084,15 @@ items:
     hash: f4333cb1d4d8
     date: '2026-11-01'
     evidence: 'wording only: closing paragraph split, box title renamed; solutions unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: f4333cb1d4d8
+    date: '2026-11-01'
+    evidence: The solutions are unchanged. The closing paragraph was split ('Premises come first, and
+      every later line is…'). The box title changed from 'Edge cases for and-introduction' to 'One line
+      cited twice', and the bold lead-in became the title. The content (∧I with i=j, P ⊢ P∧P, the derivation)
+      is iden...
 - key: prp-and-commutes
   kind: prp
   file: 02-derivations.md
@@ -2136,6 +2224,15 @@ items:
     hash: d0c433cd3d0b
     date: '2026-11-01'
     evidence: 'wording only: Idea split, table renamed We know/We want; derivation byte-identical'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d0c433cd3d0b
+    date: '2026-11-01'
+    evidence: The Idea is split into sentences, and 'the Givens/Goal table' became 'the "We know | We
+      want" table'. The proof derivation is byte-identical. The earlier back-pointer 'left picture in
+      the Idea of' became 'left picture before the proof of @prp-and-commutes', and the Idea does sit
+      between the state...
 - key: prp-and-associative
   kind: prp
   file: 02-derivations.md
@@ -2267,6 +2364,13 @@ items:
     hash: ac9b3bdcf1ea
     date: '2026-11-01'
     evidence: 'wording only: picture description split; line numbers and derivation unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ac9b3bdcf1ea
+    date: '2026-11-01'
+    evidence: '''In pictures: …'' became ''The left picture shows… The right picture adds…''. The line
+      numbers (2–3, 4–5, 6, and 7 = ∧I 4, 6) are unchanged, and the derivation is byte-identical.'
 - key: exm-product-in-unit-interval
   kind: exm
   file: 02-derivations.md
@@ -2360,6 +2464,14 @@ items:
     hash: 109edd3a7283
     date: '2026-11-01'
     evidence: 'wording only: parenthetical split into sentences, same fact ab<1; sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 109edd3a7283
+    date: '2026-11-01'
+    evidence: The parenthetical was split. 'Line 8 uses one fact about numbers, "if 0<a, a<1 and b<1,
+      then ab<1". It holds because multiplying b<1 by the positive a gives ab<a, and a<1.' This is the
+      same claim, and the sidecar passes.
 - key: exm-derivations-instances
   kind: exm
   file: 02-derivations.md
@@ -2525,6 +2637,15 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: (a) split, (d) displayed list, (e) pointer to Chapter 4; refs kept; sidecar
       passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e8dad36083d7
+    date: '2026-11-01'
+    evidence: The solution of (a) was split ('Fix a list of rules. …'; 'The derivation uses the rules
+      of logic, or a named list…'). It has the same clauses, and @def-box-free-derivation, @def-derivable
+      and @def-rules-conjunction are still inline (the count is unchanged; only a trailing colon was dropped).
+      (d) ...
 - key: exr-derivations-a2
   kind: exr
   file: 02-derivations.md
@@ -2610,6 +2731,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: (j),(e) displayed lists, We know/We want header; rows unchanged; sidecar
       passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 4a45f4826905
+    date: '2026-11-01'
+    evidence: 'The options of (j) and the answer to (e) are now displayed lists with the same entries
+      (line 5: ∧I 3, 4 or 4, 3). Part 15 and the table header of (o) use ''We know | We want'', and the
+      rows are unchanged. The sidecar passes.'
 - key: exr-derivations-b1
   kind: exr
   file: 02-derivations.md
@@ -2838,6 +2967,14 @@ items:
     hash: 16f2fd770bca
     date: '2026-11-01'
     evidence: 'wording only: ''Name the move'' -> ''Say which method this is''; derivation unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 16f2fd770bca
+    date: '2026-11-01'
+    evidence: '''Name the move'' became ''Say which method this is'' (STYLE §11.4). The answer ''work
+      from both ends'' now repeats the slogan from line 359 instead of the section name. The derivation
+      is unchanged.'
 - key: exr-derivations-c1
   kind: exr
   file: 02-derivations.md
@@ -2934,6 +3071,14 @@ items:
     hash: 50fb922e4ed1
     date: '2026-11-01'
     evidence: 'wording only: (c) pointers reworded, same targets; sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 50fb922e4ed1
+    date: '2026-11-01'
+    evidence: In (c), '(A1(e))' became 'as part (e) of Exercise A1 showed', and 'this section's Looking-ahead
+      box says where that is checked' became 'Chapter 4 checks that they do'. The pointer target is the
+      same, and the sidecar passes.
 - key: exr-derivations-c2
   kind: exr
   file: 02-derivations.md
@@ -3026,6 +3171,14 @@ items:
     hash: e78218ea947b
     date: '2026-11-01'
     evidence: 'wording only: marking-scheme headings renamed (B4); points 3/3/1/3 unchanged; sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e78218ea947b
+    date: '2026-11-01'
+    evidence: The heading 'Marking scheme' became 'What a complete answer needs', and 'Fatal errors (0
+      for the step)' became 'Slips that lose the step' (§13 B4). The points (3/3/1/3) and the listed slips
+      are unchanged. The sidecar passes.
 - key: exr-derivations-c3
   kind: exr
   file: 02-derivations.md
@@ -3127,6 +3280,15 @@ items:
     hash: 77f7a9635788
     date: '2026-11-01'
     evidence: 'wording only: parenthetical split, headings renamed; points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 77f7a9635788
+    date: '2026-11-01'
+    evidence: The parenthetical 'not a find-the-error exercise… simply not a step of this calculus' became
+      'The step has no counterexample… It is rejected only because it is not a step of these rules.' The
+      claim is the same. The marking-scheme heading and the slips line were renamed as §13 B4 requires,
+      and the...
   renamed_from: exr-conjunction-c2
 - key: exr-derivations-c4
   kind: exr
@@ -3251,6 +3413,15 @@ items:
     hash: bb15bd3d59e8
     date: '2026-11-01'
     evidence: 'wording only: argument split into sentences, same steps; points and slips unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: bb15bd3d59e8
+    date: '2026-11-01'
+    evidence: 'The ∧E* replacement argument was split into sentences, with the same steps (two ∧E lines,
+      renumbering, a derived rule as in Section 2.3). The first-bad-line remark was split. In the scheme,
+      ''(finitely many lines); or, equally,'' became '': there are finitely many lines. Equally good:'',
+      with the sam...'
   renamed_from: exr-conjunction-c1
 - key: exm-wason-selection
   kind: exm
@@ -3341,6 +3512,15 @@ items:
     hash: dc541724b8c8
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: dc541724b8c8
+    date: '2026-11-01'
+    evidence: 'Wording only. In the red-card paragraph, ''fits the claim; if ... fits, since the claim
+      says'' became two sentences (''fits the claim. If ... still fits: the claim says ...''). ''The red
+      card is the tell: choosing it means'' became ''Choosing the red card means''. The answer (the 6
+      and the green card), t...'
 - key: def-rule-implication-elimination
   kind: def
   file: 04-using-an-implication.md
@@ -3419,6 +3599,15 @@ items:
       The x=-3 warning, the regress fold (two steps, ∧I then →E) and the 1895 dialogue are correct. The
       04:103 meta-claims match 01:330 (broken at n=2) and 01:345 (B''s tempting repair). Every fact is
       ledgered; the sideca'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 259a4bc78771
+    date: '2026-11-01'
+    evidence: 'Wording only. (1) New line 39: ''In plain words: from a line φ→ψ and a line φ, the rule
+      writes the line ψ.'' This is true and is exactly the schema that follows. It brings in no new fact
+      or reference. (2) ''We read it in four bullets'' became ''Four points make the rule precise''. The
+      four bold points ...'
 - key: check:04-using-an-implication:1
   kind: check
   file: 04-using-an-implication.md
@@ -3737,6 +3926,14 @@ items:
     hash: 2ceeef879d92
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 2ceeef879d92
+    date: '2026-11-01'
+    evidence: 'Wording only. (a) ''the two short arguments at the start of "The form of an argument" in
+      Section 1.1 (n odd ...; x>2 ...), now shown as a sequent'' was reworded as ''...that open "The form
+      of an argument" in Section 1.1: ... Here the form is shown as a sequent''. I checked 01-statements-and-connectiv...'
 - key: exm-chains-about-numbers
   kind: exm
   file: 04-using-an-implication.md
@@ -3920,6 +4117,13 @@ items:
     hash: b5401fb2f96b
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b5401fb2f96b
+    date: '2026-11-01'
+    evidence: Wording only. In part (b), the candidate list 'Q∧R; Q; R∧Q; P→Q' became 'The candidates
+      are Q∧R, Q, R∧Q and P→Q'. Same four candidates, same order. The solution is unchanged.
 - key: exr-using-an-implication-a2
   kind: exr
   file: 04-using-an-implication.md
@@ -3992,6 +4196,14 @@ items:
     hash: b16d2a84a258
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b16d2a84a258
+    date: '2026-11-01'
+    evidence: 'Wording only. Solution (f): the semicolon list was split into sentences. Lines 1–2 are
+      premises, 3 and 4 are ∧E 1, 5 is →E 2,4 and 6 is →E 3,5, as before. Solution (o): only ''4; 6''
+      became ''4. Then 6''. Same lines and citations. Sidecar exr-using-an-implication-a2.py exits 0.'
 - key: exr-using-an-implication-b1
   kind: exr
   file: 04-using-an-implication.md
@@ -4272,6 +4484,14 @@ items:
     hash: 8075ff4f73f5
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 8075ff4f73f5
+    date: '2026-11-01'
+    evidence: Wording only. In the forward-search sentence of the solution, '—' and ':' were replaced
+      by sentence breaks ('relevant or not. From P it writes Q and R, ... and T from Q. That is five new
+      lines, three of them useless'). The count (five lines, three useless) and the derivation are unchanged.
 - key: exr-using-an-implication-b4
   kind: exr
   file: 04-using-an-implication.md
@@ -4339,6 +4559,15 @@ items:
     hash: 1d108f4a9628
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 1d108f4a9628
+    date: '2026-11-01'
+    evidence: Wording only. In the statement, '*Name the move, then complete it.*' became '*Say which
+      way the search should go next, then complete it.*'. That asks for the same thing (forwards or backwards)
+      without the printed-device term. The solution opening 'The move is to work backwards from the goal'
+      beca...
 - key: exr-using-an-implication-b5
   kind: exr
   file: 04-using-an-implication.md
@@ -4512,6 +4741,15 @@ items:
     hash: b82c7a4e603f
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b82c7a4e603f
+    date: '2026-11-01'
+    evidence: '(b): semicolons were split into sentences only. 6k=2(3k), 10=2·5 and the bound argument
+      (6k≤6 for k≤1, ≥12 for k≥2) are unchanged. Sidecar exr-using-an-implication-c1.py exits 0. (c):
+      the last clause ''which is why the conclusion had to be smuggled in'' became ''so the offered derivation
+      could reach...'
 - key: exr-using-an-implication-c2
   kind: exr
   file: 04-using-an-implication.md
@@ -4611,6 +4849,15 @@ items:
     model: claude-opus-5-5
     evidence: 04:969-1027; 9-line derivation checked; scheme accepts my alternative order (P, Q→R before
       Q by ∧E)
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 18d22c96168b
+    date: '2026-11-01'
+    evidence: Wording only. In solution (a), 'premise; P ... asked for; and Q' was split into sentences.
+      In the marking scheme, 'Marking scheme' became 'What a complete answer needs' (still 10 points,
+      with the same 2/2/.../1 lines). 'Fatal errors (0 for the step):' became 'Slips that lose the step:',
+      which mea...
 - key: def-rules-implication
   kind: def
   file: 05-proving-an-implication.md
@@ -4746,6 +4993,14 @@ items:
     model: claude-opus-5-5
     evidence: 05:84; Idea table 92-97 and snapshots 101-127 (closing line justified, so no \purpose is
       needed, per D1); x>3, x^2>9, x^2>4 checked; the ledger covers 157.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 999c59619e91
+    date: '2026-11-01'
+    evidence: Statement unchanged. In the idea (l.87-100) only the Givens/Goal headers change to 'We know
+      | We want' (the §13 B4 replacement) and the sentences are split. Table rows, the backward search
+      and the partial-derivation drawings are identical.
 - key: proof:prp-implication-transitive
   kind: proof
   file: 05-proving-an-implication.md
@@ -4824,6 +5079,14 @@ items:
     hash: 51534e4b5772
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 51534e4b5772
+    date: '2026-11-01'
+    evidence: 'Proof lines 1-6 and their justifications are unchanged. A Uses line was added (l.150):
+      @def-rules-implication for →E and →I. That label sits earlier in the same section, and its right-hand
+      schema is →E, so this is a new backward citation, not a new fact.'
 - key: check:05-proving-an-implication:1
   kind: check
   file: 05-proving-an-implication.md
@@ -5008,6 +5271,13 @@ items:
     hash: 308932d006dd
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 308932d006dd
+    date: '2026-11-01'
+    evidence: 'Solution l.369: the answer (lines 1, 5, 6, 9 and the box 7-8) and the reasons (A and C
+      closed) are unchanged. The parenthetical clauses became full sentences.'
 - key: def-derivation
   kind: def
   file: 05-proving-an-implication.md
@@ -5163,6 +5433,15 @@ items:
     hash: 99e54e306b3a
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 99e54e306b3a
+    date: '2026-11-01'
+    evidence: 'Solution: ''(D3) repeats only an available line'' became ''repetition, (D3), copies only
+      an available line'', the B7 code-in-words change. The verdict (line 7 is illegal), the countermodel
+      (x>3, x>2, x>1 at x=0) and the numbers are unchanged. The sidecar verify/ch01/exm-illegal-citation.py
+      checks.'
 - key: check:05-proving-an-implication:3
   kind: check
   file: 05-proving-an-implication.md
@@ -5302,6 +5581,15 @@ items:
     hash: 41f16469b08a
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 41f16469b08a
+    date: '2026-11-01'
+    evidence: (a) The three inline refs became a list of rules in words (∧I, ∧E, →E, R) plus a Uses line
+      (l.631) naming the same three labels, @def-rules-conjunction, @def-rule-implication-elimination
+      and @def-derivation, so no ref was lost. (b) 'the derivation the checker accepted after the fix
+      in "A box must...
 - key: prp-curry
   kind: prp
   file: 05-proving-an-implication.md
@@ -5361,6 +5649,14 @@ items:
     model: claude-opus-5-5
     evidence: 05:633 both sequents; Try-it-first and Idea with snapshots 643-699; readings 758 (ledger
       1473).
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 3a0b6bab11f7
+    date: '2026-11-01'
+    evidence: Statement unchanged. In the idea, 'move' became 'step', a semicolon became a full stop,
+      and the drawing captions were reworded ('the left drawing opens… the right one…'). The boxes, their
+      order and the goals are the same.
 - key: proof:prp-curry
   kind: proof
   file: 05-proving-an-implication.md
@@ -5450,6 +5746,15 @@ items:
     hash: fe1b270141d6
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: fe1b270141d6
+    date: '2026-11-01'
+    evidence: 'The availability sentence for line 4 is now four sentences with the same claims (line 1
+      is in no box, box 2-6 contains 4, both boxes containing 3 contain 4). Derivations unchanged. A Uses
+      line was added (l.759): @def-derivation, @def-rules-conjunction and @def-rules-implication, all
+      earlier label...'
 - key: check:05-proving-an-implication:4
   kind: check
   file: 05-proving-an-implication.md
@@ -5745,6 +6050,15 @@ items:
     hash: f29dbca61f19
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: f29dbca61f19
+    date: '2026-11-01'
+    evidence: 'In solutions (l)-(o), the inline runs became displayed lists, with ''After the premise
+      on line 1'' added to (l), (m) and (o). Line 1 is a premise in each: the exercise items 12, 13 and
+      15 have premises P→Q, Q and (P→Q)∧R. The statements, line numbers, justifications and order are
+      identical to 9f9db...'
 - key: exr-proving-an-implication-b1
   kind: exr
   file: 05-proving-an-implication.md
@@ -5824,6 +6138,13 @@ items:
     hash: c8de9e7c02e3
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: c8de9e7c02e3
+    date: '2026-11-01'
+    evidence: '''Name the move'' became ''Name the kind of reasoning'', and ''The move is goal-directed''
+      became ''The reasoning is goal-directed'' (B4). The derivation and the reasoning are unchanged.'
 - key: exr-proving-an-implication-b2
   kind: exr
   file: 05-proving-an-implication.md
@@ -6110,6 +6431,15 @@ items:
     hash: 65f30de7a1d1
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 65f30de7a1d1
+    date: '2026-11-01'
+    evidence: The order (v), (ii), (ix), (viii), (iii), (i), (vi) and the arguments are unchanged. The
+      sentence was split. '(D3) repeats only an available line (the scope rule of @def-derivation)' became
+      'by the scope rule of @def-derivation, and repetition, (D3), copies only an available line'. The
+      ref is kep...
 - key: exr-proving-an-implication-c1
   kind: exr
   file: 05-proving-an-implication.md
@@ -6214,6 +6544,15 @@ items:
     hash: 10b7d3b27ebf
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 10b7d3b27ebf
+    date: '2026-11-01'
+    evidence: The title 'Exit check' became 'Chapter check' (the B4 replacement, also used in other fd1
+      sections). In (a), 'repeat line 5 by (D3)… (D3) allows repeating' became 'be a repetition of line
+      5, (D3)… repetition copies'. 'Marking scheme' became 'What a complete answer needs', and 'Fatal
+      errors (0 for...
 - key: exr-proving-an-implication-c2
   kind: exr
   file: 05-proving-an-implication.md
@@ -6319,6 +6658,15 @@ items:
     date: '2026-10-13'
     model: claude-opus-5-5
     evidence: 05:1290-1349; third-box derivation checked line by line; scheme fits any correct proof
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 38a1015c4ed2
+    date: '2026-11-01'
+    evidence: The sentence 'fires only on… has it as a conjunct or as the conclusion of an implication,
+      so it can come only from →I, which needs a box of its own' became 'needs… contains it as a conjunct
+      or as an implication's conclusion; only →I, with its own box, can supply it'. Same claim. The marking
+      headi...
 - key: exr-proving-an-implication-c3
   kind: exr
   file: 05-proving-an-implication.md
@@ -6439,6 +6787,15 @@ items:
     hash: e274882fe784
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e274882fe784
+    date: '2026-11-01'
+    evidence: 'The title became ''Chapter check''. ''A route… earns the same points: …third line'' became
+      ''Another route… gets the same points… third item''. ''item'' is the more accurate word, since it
+      points to the third bullet of the scheme. The points and the slips are unchanged, and the sidecar
+      checks.'
 - key: exr-proving-an-implication-c4
   kind: exr
   file: 05-proving-an-implication.md
@@ -6486,6 +6843,14 @@ items:
     hash: a875a6be2ec6
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: a875a6be2ec6
+    date: '2026-11-01'
+    evidence: '(a) Semicolons became full stops, with ''is'' added: the sets {1}, {1,2}, {1,2,3}, {1,2},
+      {1} are unchanged. The marking headings were replaced per B4, and the points are unchanged. The
+      sidecar checks.'
 - key: def-rule-disjunction-introduction
   kind: def
   file: 06-disjunction-introduction.md
@@ -6652,6 +7017,14 @@ items:
     hash: 9e0e1bab221e
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 9e0e1bab221e
+    date: '2026-11-01'
+    evidence: 'Solution (iv) line 84: ''as the convention on inequalities above asks'' became ''the form
+      a derivation uses when a rule must see the disjunction''. Same condition, (x > 2) ∨ (x = 2), same
+      schema (second, φ := x = 2). Parts (i) to (iii) are unchanged.'
 - key: check:06-disjunction-introduction:2
   kind: check
   file: 06-disjunction-introduction.md
@@ -6880,6 +7253,14 @@ items:
     hash: 6860b153cb40
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6860b153cb40
+    date: '2026-11-01'
+    evidence: Lead-in line 197 ('In each, watch whether the goal or a premise chooses the next rule')
+      and line 229 ('The rule allows this, since the other side may be any statement') are rewordings
+      of the old pointer to 'the Reading's any statement'. All \hypo/\have lines and the Ideas are unchanged.
 - key: exm-or-hypothesis-split
   kind: exm
   file: 06-disjunction-introduction.md
@@ -7251,6 +7632,15 @@ items:
     hash: a8f86450dd9b
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: a8f86450dd9b
+    date: '2026-11-01'
+    evidence: 'Solution (c): the pointer to the Quick check was replaced by ''the line (x = 2) ∨ (1 =
+      0), which ∨I writes from x = 2''. That is true and matches check 1 (iii). Solution (d): ''The move
+      is the one of @exm-or-hypothesis-split'' became ''This is the step of @exm-or-hypothesis-split'',
+      and the ref is kept...'
 - key: exr-disjunction-introduction-a2
   kind: exr
   file: 06-disjunction-introduction.md
@@ -7346,6 +7736,15 @@ items:
     hash: b80a827f09ef
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b80a827f09ef
+    date: '2026-11-01'
+    evidence: 'Statement parts 3 and 4: only the punctuation changed ('';'' to ''. Line k:''). The formulas,
+      the ''premise'' tags and the (i)-(iv) options are identical. Solutions (c), (h), (k)-(o): each ''k
+      φ, R n;'' became ''Line k is φ, by R n.''. Every line number, formula, rule and citation is unchanged,
+      and so is (...'
 - key: exr-disjunction-introduction-b1
   kind: exr
   file: 06-disjunction-introduction.md
@@ -7540,6 +7939,15 @@ items:
     hash: 7180311a2fcc
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 7180311a2fcc
+    date: '2026-11-01'
+    evidence: 'Task line 717: ''Name the move, then complete it'' became ''Say which rule finishes it,
+      then write the last line''. Only the last line is missing, so the task is the same. In the solution
+      ''The move is the one read off the goal'' became ''The rule is read off the goal''. The derivation
+      is unchanged (→I c...'
 - key: exr-disjunction-introduction-b3
   kind: exr
   file: 06-disjunction-introduction.md
@@ -7767,6 +8175,14 @@ items:
     hash: 5547f7325e41
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 5547f7325e41
+    date: '2026-11-01'
+    evidence: '''Marking scheme'' became ''What a complete answer needs'' and ''Fatal errors (0 for the
+      step)'' became ''Slips that lose the step''. The points (3/3/3/1 = 10), the criteria, the x = -1
+      witness and the three listed errors are identical. The sidecar passes.'
 - key: exr-disjunction-introduction-c2
   kind: exr
   file: 06-disjunction-introduction.md
@@ -7867,6 +8283,13 @@ items:
     hash: f5e8082bcb1a
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: f5e8082bcb1a
+    date: '2026-11-01'
+    evidence: 'Solution (c) line 951: a nested parenthesis was turned into a colon and a new sentence
+      (''at line 3 in (a) and at line 4 in (b). In both...''). The line numbers and the argument are unchanged.'
 - key: def-rules-disjunction
   kind: def
   file: 07-disjunction-and-cases.md
@@ -7932,6 +8355,22 @@ items:
     evidence: 07:25-59 schema matches 07:907-920 and 1.5's vI schemas; clause bullets 63-67 agree with
       the Not-allowed tags 795-799; warnings 74, 733, 737, 743 checked (x=-1; x=1,y=-1; x=0; n=6); ledger
       lines 2128-2131 cover them
+  - stage: S5e
+    verdict: error
+    by: s5e-referee
+    hash: 87e604682a2c
+    date: '2026-11-01'
+    evidence: 'The definition block itself is unchanged. But the ''Not allowed: ∨E'' warning, whose claims
+      the dependency ledger attributes to this item (''the fourth item of the Not-allowed block''), has
+      a new false sentence at line 812 (third bullet): ''The boxes are separate, and a case may use only
+      its own assum...'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 87e604682a2c
+    date: '2026-11-01'
+    evidence: 07 l.74 and Not-allowed bullet 3 now say a case may not cite the other case's assumption
+      or its lines (true; examples citing premises unaffected); def block unchanged
 - key: exm-disjunction-first-derivations
   kind: exm
   file: 07-disjunction-and-cases.md
@@ -8018,6 +8457,14 @@ items:
     hash: eb16b06aa94e
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: eb16b06aa94e
+    date: '2026-11-01'
+    evidence: 'Wording only (line 173): ''degenerate case split'' became ''the two cases are the same
+      case, and each box has only one line''. That is true of boxes 2-2 and 3-3. The derivation lines
+      are identical.'
 - key: check:07-disjunction-and-cases:1
   kind: check
   file: 07-disjunction-and-cases.md
@@ -8277,6 +8724,15 @@ items:
     hash: df88294fa0e5
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: df88294fa0e5
+    date: '2026-11-01'
+    evidence: 'The Idea paragraph was split into sentences with the same rule sequence: ∧E, then →E, then
+      ∨I. In the trailing paragraph (line 377), the pointer to the skeleton of ''From a skeleton to a
+      proof about numbers'' became ''The proofs about numbers later in this section have that shape''.
+      It is a same-sect...'
 - key: prp-distributivity
   kind: prp
   file: 07-disjunction-and-cases.md
@@ -8912,6 +9368,14 @@ items:
     hash: ac1af602aa87
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ac1af602aa87
+    date: '2026-11-01'
+    evidence: '(a): the restated ∨E schema was split into sentences. It still has the same line i, the
+      boxes j-k and l-m, the same χ ending each box as a line of its own, and the conclusion at line n.
+      (e) and (f): only semicolons were split. The sidecar passes.'
 - key: exr-disjunction-and-cases-a2
   kind: exr
   file: 07-disjunction-and-cases.md
@@ -9004,6 +9468,14 @@ items:
     hash: 25a9f4f87530
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 25a9f4f87530
+    date: '2026-11-01'
+    evidence: 'Item 6 statement: a wording-only change with the same meaning. Lines 1-3 are the premises,
+      and the reader justifies lines 4-9, with boxes 4-5 and 6-8. Solution (f): the semicolon list became
+      ''Line k:'' sentences, with the same justifications. The sidecar passes.'
 - key: exr-disjunction-and-cases-b1
   kind: exr
   file: 07-disjunction-and-cases.md
@@ -9261,6 +9733,13 @@ items:
     hash: 541b0ce1b6ae
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 541b0ce1b6ae
+    date: '2026-11-01'
+    evidence: In the statement, 'Name the move' became 'Name the method', a wording-only change. In the
+      solution, 'The move is' became 'The method is'. The derivation is identical and the sidecar passes.
 - key: exr-disjunction-and-cases-b4
   kind: exr
   file: 07-disjunction-and-cases.md
@@ -9393,6 +9872,14 @@ items:
     hash: ca6bd2a31e75
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ca6bd2a31e75
+    date: '2026-11-01'
+    evidence: The sentence was split. @exr-statements-and-connectives-b3 part (c) is still cited inline
+      for the fact that x^2 > 1 implies x > 1 or x < -1. The reference existed before, so it is not new.
+      The sidecar passes.
 - key: exr-disjunction-and-cases-b7
   kind: exr
   file: 07-disjunction-and-cases.md
@@ -9459,6 +9946,13 @@ items:
     hash: cc5291db1095
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: cc5291db1095
+    date: '2026-11-01'
+    evidence: In the statement, 'grouped by the move' became 'grouped by the method'. In solution 3, 'manufactures'
+      became 'builds'. All derivations are identical and the sidecar passes.
 - key: exr-disjunction-and-cases-c1
   kind: exr
   file: 07-disjunction-and-cases.md
@@ -9556,6 +10050,15 @@ items:
       which is at 07:693 and says exactly that, so the case a=0 is covered. (2) The ledger line for C1
       (07:2126) now lists the order facts as 'school algebra, taken as known; AN1.1 (promised)', like
       the other school-alge
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 195286ed7245
+    date: '2026-11-01'
+    evidence: The parenthetical proof that |-a| = |a| became sentences, with the same two cases and the
+      same use of @exm-abs-product-cases for |b| = -b when b ≤ 0. The new phrase 'by cases on the sign
+      of a' is true. 'Marking scheme' became 'What a complete answer needs'. 'Fatal errors (0 for the
+      step)' became ...
 - key: exr-disjunction-and-cases-c2
   kind: exr
   file: 07-disjunction-and-cases.md
@@ -9678,6 +10181,15 @@ items:
     hash: 50ca08d17377
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 50ca08d17377
+    date: '2026-11-01'
+    evidence: '(a): the parenthetical citing @exr-disjunction-and-cases-c1 became its own sentence. This
+      solution-to-solution citation existed before. (b): the overlong sentence was split, with the same
+      rule broken (∨E and the scope rule of @def-derivation) and the same list of what a box may cite.
+      The sidecar ...'
 - key: exr-disjunction-and-cases-c3
   kind: exr
   file: 07-disjunction-and-cases.md
@@ -9794,6 +10306,15 @@ items:
     hash: be4090056728
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: be4090056728
+    date: '2026-11-01'
+    evidence: The title 'Exit check' became 'Chapter check' (B4). The line-by-line justification became
+      a bulleted list with the same 12 entries. The scheme points (2/2/2/2/2) and the second-route mapping
+      are unchanged, now as bullets. The second route now comes before the 'Slips that lose the step'
+      line, whic...
 - key: exr-disjunction-and-cases-c4
   kind: exr
   file: 07-disjunction-and-cases.md
@@ -9916,6 +10437,14 @@ items:
     hash: 39d4abbfb2ca
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 39d4abbfb2ca
+    date: '2026-11-01'
+    evidence: In the statement, 'Name the move' became 'Name the method', a wording-only change. In the
+      solution, 'The moves are two' became 'Two methods are at work', and the last sentence was split.
+      The derivation is identical.
 - key: exr-disjunction-and-cases-r1
   kind: exr
   file: 07-disjunction-and-cases.md
@@ -10011,6 +10540,14 @@ items:
     hash: b74a7215ab88
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b74a7215ab88
+    date: '2026-11-01'
+    evidence: The inline @def-rules-conjunction and @def-rule-implication-elimination moved to a new Uses
+      line. That is an inline-to-Uses move, and both references are present. The sentence was split, with
+      the same reasoning.
 - key: exr-disjunction-and-cases-r2
   kind: exr
   file: 07-disjunction-and-cases.md
@@ -10104,6 +10641,13 @@ items:
     hash: 4e0ad71869b8
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 4e0ad71869b8
+    date: '2026-11-01'
+    evidence: The inline @def-rules-conjunction moved to a Uses line. @exm-implication-chains stays inline.
+      The text is otherwise unchanged.
 - key: exr-disjunction-and-cases-r3
   kind: exr
   file: 07-disjunction-and-cases.md
@@ -10213,6 +10757,14 @@ items:
     hash: 327e43850098
     date: '2026-11-01'
     evidence: equivalence checked by the chapter finisher; new sentences true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 327e43850098
+    date: '2026-11-01'
+    evidence: The inline @def-rules-implication and @def-rule-disjunction-introduction moved to a Uses
+      line. 'the move is to open a box' became 'the first step is to open a box'. The last sentence's
+      semicolons were split, with the same content.
 - key: check:review:1
   kind: check
   file: review.md

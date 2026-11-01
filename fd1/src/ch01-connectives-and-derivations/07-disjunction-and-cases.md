@@ -71,7 +71,7 @@ A box may consist of one line, its assumption, when that assumption is already \
 :::
 
 ::: {.warning}
-A case may use only its own assumption. Here is the error in its usual form. Let \( x \) be a real number, and split on "\( x \ge 0 \) or \( x < 0 \)". *Case \( x \ge 0 \): then \( \abs{x} = x \). Case \( x < 0 \): since \( x \ge 0 \), again \( \abs{x} = x \). So \( \abs{x} = x \).* The second case cites the assumption of the first, whose box has closed, which the scope rule forbids. The conclusion is false at \( x = -1 \).
+A case may not use the other case's assumption. Here is the error in its usual form. Let \( x \) be a real number, and split on "\( x \ge 0 \) or \( x < 0 \)". *Case \( x \ge 0 \): then \( \abs{x} = x \). Case \( x < 0 \): since \( x \ge 0 \), again \( \abs{x} = x \). So \( \abs{x} = x \).* The second case cites the assumption of the first, whose box has closed, which the scope rule forbids. The conclusion is false at \( x = -1 \).
 :::
 
 ## Cases end in the current goal
@@ -808,7 +808,7 @@ Each step breaks the clause of the rule named after it.
 
 - "Close the split with one case box": the clause "Two boxes".
 - "Close it when the boxes end in \( R \) and in \( S \)": the clause "The same last line".
-- "In the second box, cite a line of the first": the clause "Two boxes" and the scope rule. The boxes are separate, and a case may use only its own assumption.
+- "In the second box, cite a line of the first": the clause "Two boxes" and the scope rule. The boxes are separate: a case may not cite the other case's assumption or its lines.
 - "Split on 'case \( x > 0 \), case \( x < 0 \)'": the clause "The disjunction". The cases must be the sides of an available disjunction, and \( (x > 0) \vee (x < 0) \) is not one, since \( x = 0 \) satisfies neither side.
 - "Cite the boxes' lines one by one": the clause "Three citations"; each box is cited as a range.
 
@@ -975,17 +975,6 @@ The same table, as an order in which to try the steps:
 ```
 
 The chart uses only this chapter's rules, and following it never writes an illegal line. It is a guide, not a rule. After asking whether the goal is already in hand, it reads the table's goal column and then its premise column, each from the top. But it leaves out two steps. When an available implication ends in the goal but its hypothesis is on no line, make the hypothesis the current goal and start the chart again; items 3, 8 and 10 of @exr-disjunction-and-cases-b7 need this. When the goal is a disjunction and neither side is in hand, make one side the current goal; item 14 of @exr-disjunction-and-cases-b7 does this in each case. "Unsplit" at the test for \( \vee \) means not already split by a case box you are inside. Without that word the chart would split \( P \vee Q \) again in each case of item 14 and never stop. So when the chart stops, try these two steps. A claim the chart cannot finish may still be derivable: stopping is no evidence that the claim breaks.
-
-### Proof methods in this chapter
-
-- **Try to break it.** To test a form, put statements in for the letters that make every premise true and the conclusion false; one such choice shows the form is bad. (Section 1.1)
-- **Two ways to attack an argument.** Show a premise false, or show a step's form bad; the two attacks are independent. (Section 1.1)
-- **Read the skeleton off the goal.** The goal's main connective chooses the introduction rule: \( \wedge \) gives two subgoals, \( \to \) a box, \( \vee \) a choice to postpone. (Section 1.2)
-- **Use a premise by its main connective.** Its elimination rule says what you may do with it: take a conjunction apart, feed an implication its hypothesis, split a disjunction into cases. (Section 1.2)
-- **Open a box, close a box.** An assumption lives exactly as long as its box. (Section 1.4)
-- **Work from both ends.** Premises at the top, the goal at the bottom; fill the gap from both sides. (Section 1.2)
-- **Postpone a disjunction.** Choose a side of a goal \( P \vee Q \) only when that side is in hand. (Section 1.5)
-- **Cases end in the current goal.** Both boxes of \( \rulename{\vee E} \) close on the statement you are trying to reach. (Section 1.6)
 
 ::: {.remark}
 [Looking ahead]
