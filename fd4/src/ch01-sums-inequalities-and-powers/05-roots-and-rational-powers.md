@@ -1,6 +1,6 @@
 # Roots and Rational Powers
 
-*Number Systems*, Chapter 6 found \( \sqrt a \) as the supremum of the numbers whose square stays below \( a \) (@fd3:prp-cof-square-roots). The same construction gives every \( n \)-th root, and the binomial-type estimates of this chapter make it work for every exponent. Roots then give powers with rational exponents, \( a^{m/n} \), once we check that the value does not depend on how the fraction \( \frac{m}{n} \) is written. These are the "real powers" of the chapter title as far as this chapter goes: rational exponents of positive reals. Chapter 8 extends them to every real exponent. The section ends with two estimates that make the limits \( \sqrt[n]{a} \to 1 \) and \( \sqrt[n]{n} \to 1 \) routine.
+*Number Systems*, Chapter 6 found \( \sqrt a \) as the supremum of the numbers whose square stays below \( a \) (@fd3:prp-cof-square-roots). The same construction gives every \( n \)-th root, and the factorization of \( t^n - s^n \) from Section 1.1 makes it work for every exponent. Roots then give powers with rational exponents, \( a^{m/n} \), once we check that the value does not depend on how the fraction \( \frac{m}{n} \) is written. These are the "real powers" of the chapter title as far as this chapter goes: rational exponents of positive reals. Chapter 8 extends them to every real exponent. The section ends with two estimates that make the limits \( \sqrt[n]{a} \to 1 \) and \( \sqrt[n]{n} \to 1 \) routine.
 
 ## n-th roots
 
@@ -81,13 +81,13 @@ Both cases are impossible, so \( s^n = a \) by trichotomy, and \( b \coloneqq s 
 For \( n = 2 \), the number \( \sqrt[2]{a} \) is non-negative and squares to \( a \), so it is \( \sqrt a \), by the uniqueness in @fd3:prp-cof-square-roots.
 
 ::: {.uses}
-@fd3:def-complete-ordered-field (bounded sets have suprema); @prp-power-laws-commutative-ring (a) (adding exponents).
+@fd3:def-complete-ordered-field (bounded sets have suprema); @prp-power-laws-commutative-ring (a) (adding exponents); @prp-sum-order (b), (c) (one term of a sum of non-negative terms; termwise bound).
 :::
 :::
 
-The two values of \( h \) were found by working backwards from what we wanted. Each depends on \( a \), \( n \) and \( s \) only. Completeness was used once, to produce \( s \). For \( a > 0 \) the root is positive, since \( 0^n = 0 \ne a \). For instance \( \sqrt[3]{8} = 2 \) and \( \sqrt[4]{4} = \sqrt 2 \), since \( 2^3 = 8 \) and \( (\sqrt 2)^4 = \bigl((\sqrt 2)^2\bigr)^2 = 4 \), and both are non-negative. The symbol \( \sqrt[n]{a} \) is used only for **non-negative real** \( a \); Chapter 3 shows why it could not mean "the" \( n \)-th root of a complex number.
+The two values of \( h \) were found by working backwards from what we wanted. Each depends on \( a \), \( n \) and \( s \) only. Completeness was used once, to produce \( s \). For \( a > 0 \) the root is positive, since \( 0^n = 0 \ne a \). For instance \( \sqrt[3]{8} = 2 \) and \( \sqrt[4]{4} = \sqrt 2 \), since \( 2^3 = 8 \) and \( (\sqrt 2)^4 = \bigl((\sqrt 2)^2\bigr)^2 = 4 \), and both are non-negative. In this chapter the symbol \( \sqrt[n]{a} \) is used only for **non-negative real** \( a \) (Chapter 8 adds odd roots of negative reals); Chapter 3 shows why it could not mean "the" \( n \)-th root of a complex number.
 
-The last example already used the working principle of this section. To identify a root, we do not compute it: we take a candidate, check that it is non-negative, and check that its \( n \)-th power is \( a \). Uniqueness in part (b) does the rest. Every rule for roots follows this way from a rule for powers.
+The last example already used the working principle of this section. To identify a root, we do not compute it: we take a candidate, check that it is non-negative, and check that its \( n \)-th power is \( a \). Uniqueness in part (b) does the rest. Each equation between roots follows this way from a rule for powers.
 
 ::: {#lem-root-rules}
 [Rules for n-th Roots]
@@ -146,7 +146,7 @@ a^{-n} \coloneqq \bigl( a^{-1} \bigr)^n ,
 where the right side is the power of @prp-power-laws-commutative-ring.
 :::
 
-Only \( n = 0 \) could clash with the earlier meaning: \( -0 = 0 \), and both readings give \( 1 \), since \( a^0 = 1 = (a^{-1})^0 \). For \( n \ge 1 \) the integer \( -n \) is not in \( \nN \), so the definition gives a new symbol a meaning and changes no old one. At \( n = 1 \) it reads \( a^{-1} = (a^{-1})^1 \): the new power and the old inverse agree. The base must be non-zero, since \( 0 \) has no inverse. For instance, in \( \nR \), \( 2^{-3} = \bigl(\frac12\bigr)^3 = \frac18 \).
+Only \( n = 0 \) could clash with the earlier meaning: \( -0 = 0 \), and both readings give \( 1 \), since \( a^0 = 1 = (a^{-1})^0 \). For \( n \ge 2 \) the symbol \( a^{-n} \) is new. At \( n = 1 \) it already meant the inverse, and the definition agrees with it: \( (a^{-1})^1 = a^{-1} \). The base must be non-zero, since \( 0 \) has no inverse. For instance, in \( \nR \), \( 2^{-3} = \bigl(\frac12\bigr)^3 = \frac18 \).
 
 ::: {#prp-integer-power-laws}
 [Laws of Integer Powers]
@@ -167,7 +167,7 @@ Let \( F \) be a field, let \( a, b \in F \) with \( a \ne 0 \) and \( b \ne 0 \
 Each law is known for exponents in \( \nN \) (@prp-power-laws-commutative-ring). A negative exponent is a natural one applied to \( a^{-1} \), and \( (a^{-1})^k = (a^k)^{-1} \) lets us move the inverse wherever it is needed. So each law splits into sign cases, and each case reduces to \( \nN \).
 :::
 
-The cases are routine, and all of them are written out below under "The sign cases for integer powers". One case shows the pattern: (a) with \( m \ge 0 > n \). Write \( n = -k \) with \( k \ge 1 \). Recall (d) for natural exponents, \( (a^{-1})^k = (a^k)^{-1} \), which is the first of the sign cases proved below. If \( m \ge k \), then \( a^m = a^{m-k} a^k \), so
+The other cases reduce to natural exponents in the same way. One case shows the pattern: (a) with \( m \ge 0 > n \). Write \( n = -k \) with \( k \ge 1 \). We use (d) for natural exponents, \( (a^{-1})^k = (a^k)^{-1} \), proved first among the sign cases below. If \( m \ge k \), then \( a^m = a^{m-k} a^k \), so
 \[
 a^m a^{-k} = a^{m-k} \, a^k (a^k)^{-1} = a^{m-k} = a^{m+n} .
 \]
@@ -175,7 +175,7 @@ If \( m < k \), then \( a^{-k} = (a^{-1})^{m} (a^{-1})^{k-m} \) and \( a^m (a^{-
 \[
 a^m a^{-k} = (a a^{-1})^m \, (a^{-1})^{k-m} = (a^{-1})^{k-m} = a^{-(k-m)} = a^{m+n} .
 \]
-Both computations use only the laws for natural exponents, parts (a) and (c) of @prp-power-laws-commutative-ring.
+Both computations use only the laws for natural exponents, parts (a) and (c) of @prp-power-laws-commutative-ring, together with that identity.
 
 ::: {.second-reading title="The sign cases for integer powers"}
 ::: {.proof}
@@ -265,7 +265,7 @@ So \( a^r \) depends on \( r \) alone, and the two special cases say that the ne
 Negative bases do not have rational powers. The real number \( -2 \) has cube \( -8 \), so one might want \( (-8)^{1/3} = -2 \). But \( \frac13 = \frac26 \), and read through \( \frac26 \) the power would be the square of a sixth root of \( -8 \), and no real number has sixth power \( -8 \), since an even power is \( \ge 0 \). Reading \( \frac26 \) as "sixth root of the square" gives \( ((-8)^2)^{1/6} = 64^{1/6} = 2 \), positive. No value is independent of the representative, which is why @def-rational-power asks for \( a > 0 \).
 :::
 
-With well-definedness in hand, the laws come almost for free. For instance, \( 8^{1/3} \cdot 8^{1/3} = 2 \cdot 2 = 4 \), and \( 8^{2/3} = 4 \) as computed above: the first law below says this always works. Any two rational exponents can be written over one denominator. Then everything is a statement about integer powers of a single root.
+With well-definedness in hand, the laws come almost for free. For instance, \( 8^{1/3} \cdot 8^{1/3} = 2 \cdot 2 = 4 \), and \( 8^{2/3} = 4 \) as computed above: the first law below says this always works. Any two rational exponents can be written over one denominator. Then most laws become statements about integer powers of one root \( \sqrt[n]{a} \).
 
 ::: {#prp-rational-power-laws}
 [Laws of Rational Powers]
@@ -283,11 +283,11 @@ Let \( a, b \in \nR \) with \( a > 0 \) and \( b > 0 \), and let \( r, s \in \nQ
 :::
 
 ::: {.idea}
-Write \( r = \frac{m}{n} \) and \( s = \frac{p}{n} \) over a common denominator \( n > 0 \); @prp-rational-power-well-defined allows any representative. Then \( a^r = c^m \) and \( a^s = c^p \) with \( c \coloneqq \sqrt[n]{a} \), and each law becomes a law of integer powers of \( c \) (@prp-integer-power-laws).
+Write \( r = \frac{m}{n} \) and \( s = \frac{p}{n} \) over a common denominator \( n > 0 \); @prp-rational-power-well-defined allows any representative. Then \( a^r = c^m \) and \( a^s = c^p \) with \( c \coloneqq \sqrt[n]{a} \), and (a), (d), (e) become laws of integer powers of \( c \) (@prp-integer-power-laws).
 :::
 
 ::: {.proof}
-Write \( r = \frac{m'}{n'} \) and \( s = \frac{p'}{q'} \) with \( n', q' > 0 \), and put \( n \coloneqq n'q' > 0 \), \( m \coloneqq m'q' \), \( p \coloneqq p'n' \). Then \( r = \frac{m}{n} \) and \( s = \frac{p}{n} \). Let \( c \coloneqq \sqrt[n]{a} > 0 \). By @prp-rational-power-well-defined, \( a^r = c^m \) and \( a^s = c^p \). We prove (a) and (e) here; the other parts are proved right after this proof.
+Write \( r = \frac{m'}{n'} \) and \( s = \frac{p'}{q'} \) with \( n', q' > 0 \), and put \( n \coloneqq n'q' > 0 \), \( m \coloneqq m'q' \), \( p \coloneqq p'n' \). Then \( r = \frac{m}{n} \) and \( s = \frac{p}{n} \). Let \( c \coloneqq \sqrt[n]{a} > 0 \). By @prp-rational-power-well-defined, \( a^r = c^m \) and \( a^s = c^p \).
 
 (a) Since \( r + s = \frac{m + p}{n} \), @prp-rational-power-well-defined gives \( a^{r+s} = c^{m+p} \). Adding integer exponents, \( c^{m+p} = c^m c^p = a^r a^s \).
 
@@ -405,7 +405,7 @@ Show that \( \sqrt[n]{a} \to 1 \) for every real \( a \ge 1 \), and that \( \sqr
 :::
 
 ::: {.solution}
-*First limit.* By @prp-root-estimates (a), \( \abs{\sqrt[n]{a} - 1} = \sqrt[n]{a} - 1 \le \frac{a - 1}{n} \) for \( n \ge 1 \). If \( a = 1 \), the sequence is constant. If \( a > 1 \), let \( \varepsilon > 0 \), choose an integer \( N > (a - 1)/\varepsilon \), so \( N \ge 1 \); for \( n \ge N \), \( \abs{\sqrt[n]{a} - 1} \le \frac{a-1}{n} \le \frac{a-1}{N} < \varepsilon \).
+*First limit.* By @prp-root-estimates (a), \( \abs{\sqrt[n]{a} - 1} = \sqrt[n]{a} - 1 \le \frac{a - 1}{n} \) for \( n \ge 1 \). If \( a = 1 \), the sequence is constant. If \( a > 1 \), let \( \varepsilon > 0 \), choose an integer \( N > (a - 1)/\varepsilon \), so \( N \ge 1 \); it depends on \( a \) and \( \varepsilon \) only. For \( n \ge N \), \( \abs{\sqrt[n]{a} - 1} \le \frac{a-1}{n} \le \frac{a-1}{N} < \varepsilon \).
 
 *Second limit.* By @prp-root-estimates (b), \( \abs{\sqrt[n]{n} - 1} \le \sqrt{2/(n - 1)} \) for \( n \ge 2 \). Let \( \varepsilon > 0 \) and choose an integer \( N > 1 + 2/\varepsilon^2 \); then \( N \ge 2 \), and \( N \) depends on \( \varepsilon \) only. For \( n \ge N \), \( n - 1 > 2/\varepsilon^2 > 0 \), so \( \frac{2}{n - 1} < \varepsilon^2 \) (@fd3:prp-reciprocal-order (b)). Square roots preserve strict order between non-negative numbers (@lem-root-rules (d) with \( n = 2 \)). So \( \sqrt{2/(n-1)} < \sqrt{\varepsilon^2} = \varepsilon \). Hence \( \abs{\sqrt[n]{n} - 1} < \varepsilon \).
 :::
@@ -534,10 +534,10 @@ a^r = (b^r)^{-1} > (b^s)^{-1} = a^s .
 (ii) Let \( r > 0 \). By (i) with the exponents \( 0 < r \), \( a^r < a^0 \), and \( a^0 = 1 \), since by @prp-rational-power-well-defined \( a^0 \) is the integer power \( a^0 = 1 \).
 
 **What a complete answer needs.** (10 points)
-- 2: \( b = \frac1a > 1 \), with the reason.
-- 3: \( a^t = (b^t)^{-1} \), from (c) of the laws and \( 1^t = 1 \).
-- 2: the law (e) applied to the base \( b \), not to \( a \).
-- 2: the reversal of order under reciprocals, with positivity from (d).
+- 2: reduces to a base above one (\( b = \frac1a > 1 \), with the reason), or proves the reversal of order for a base in \( (0, 1) \) directly.
+- 3: the link to that base, \( a^t = (b^t)^{-1} \) from (c) of the laws and \( 1^t = 1 \); or, over a common denominator, \( c = \sqrt[n]{a} \in (0, 1) \) with the reason.
+- 2: the law (e) applied to a base above one, not to \( a \); or \( c^p < c^m \) from \( m < p \) with positivity.
+- 2: the reversal of order under reciprocals, with positivity from (d); or the corresponding step of the direct route.
 - 1: (ii) from (i), with \( a^0 = 1 \).
 Slips that lose the step: applying (e) to a base \( a < 1 \).
 :::
@@ -583,10 +583,10 @@ Together with @exm-am-gm-compound, which showed that the sequence increases, thi
 
 **What a complete answer needs.** (10 points)
 - 3: the binomial expansion, with each term written in the factorial form.
-- 3: the termwise bound \( \binom{n}{k} n^{-k} \le \frac{1}{k!} \le \frac{1}{2^{k-1}} \), with the factors \( \frac{n-j}{n} \) shown to lie in \( (0, 1] \).
-- 2: the geometric sum evaluated correctly.
+- 3: the termwise bound \( \binom{n}{k} n^{-k} \le \frac{1}{k!} \), with the factors \( \frac{n-j}{n} \) shown to lie in \( (0, 1] \), and \( \frac{1}{k!} \) bounded by a summable comparison sequence (for instance \( \frac{1}{2^{k-1}} \)), with reason.
+- 2: the comparison sum evaluated exactly (geometric or telescoping).
 - 2: the strict inequality \( < 3 \), with its reason.
-Slips that lose the step: bounding \( \binom{n}{k} n^{-k} \) by \( \frac{1}{k!} \) without the factor-by-factor reason, or summing the geometric series to infinity.
+Slips that lose the step: bounding \( \binom{n}{k} n^{-k} \) by \( \frac{1}{k!} \) without the factor-by-factor reason, or summing the comparison series to infinity.
 :::
 
 ### R. Review
@@ -598,7 +598,7 @@ Compute \( \displaystyle\sum_{k=1}^{n} \frac{1}{\sqrt{k} + \sqrt{k + 1}} \) for 
 :::
 
 ::: {.solution}
-The tool is telescoping (@exm-method-telescoping). Since \( (\sqrt{k+1} - \sqrt k)(\sqrt{k+1} + \sqrt k) = (k + 1) - k = 1 \), and \( \sqrt k + \sqrt{k+1} \ge 1 > 0 \),
+The tool is telescoping (@exm-method-telescoping). Since \( (\sqrt{k+1} - \sqrt k)(\sqrt{k+1} + \sqrt k) = (k + 1) - k = 1 \), and \( \sqrt{k+1} > 0 \) since \( k + 1 > 0 \), so \( \sqrt k + \sqrt{k+1} > 0 \),
 \[
 \frac{1}{\sqrt k + \sqrt{k + 1}} = \sqrt{k + 1} - \sqrt k .
 \]
@@ -629,7 +629,7 @@ The first tool is keeping the dominant term (@exm-method-dominant-term). The sec
 \[
 0 < \frac{n + \sqrt n}{n^2 + 1} \le \frac{2n}{n^2} = \frac{2}{n} \qquad (n \ge 1) .
 \]
-Let \( \varepsilon > 0 \) and choose an integer \( N > 2/\varepsilon \); then \( N \ge 1 \), and for \( n \ge N \) the distance to \( 0 \) is at most \( 2/n \le 2/N < \varepsilon \).
+Let \( \varepsilon > 0 \) and choose an integer \( N > 2/\varepsilon \); then \( N \ge 1 \), and \( N \) depends on \( \varepsilon \) only. For \( n \ge N \) the distance to \( 0 \) is at most \( 2/n \le 2/N < \varepsilon \).
 
 The look-alike tool, the quotient rule for limits, does not apply to the fraction as written: neither the numerator nor the denominator converges.
 :::
@@ -639,6 +639,8 @@ lem-reals-nth-root (proof): powers of non-negative (positive) reals are non-nega
 lem-reals-nth-root (proof): min{1, a} and max{1, a} exist; trichotomy | @fd3:prp-ordered-field-halves (a) (total order), standard
 lem-root-rules (proof): products and powers of non-negative reals are non-negative | @fd3:prp-ordered-ring-rules (c), induction, inline
 prp-integer-power-laws (proof): 1^k = 1 for k in N | inline induction
+lem-reals-nth-root (proof): a sum of non-negative terms is at least one of its terms; a sum of n terms each at most M is at most nM | @prp-sum-order (b), (c)
+exr-roots-and-rational-powers-r1 (solution): sqrt(k+1) > 0 for k+1 > 0 | positivity of a root, as noted after lem-reals-nth-root
 prp-integer-power-laws (proof): a^{-1} != 0 and (a^{-1})^{-1} = a | @fd3:lem-field-fraction-rules (a)
 prp-rational-power-well-defined (proof): m/n = p/q with n, q > 0 implies mq = pn | multiplication by nq in the field Q (inside R), inline
 prp-rational-power-laws (proof): r < s and n > 0 imply nr < ns; r > 0 with n > 0 implies m >= 1 | @fd3:prp-ordered-ring-rules (c), and m an integer > 0

@@ -65,7 +65,7 @@ Induct on \( n \), as for Bernoulli: multiply the hypothesis by the next factor 
 ::: {.proof}
 We induct on \( n \in \nN \) (@fd1:ax-induction). For \( n = 0 \) the product is empty and the sum is empty, so the claim reads \( 1 \ge 1 - 0 \).
 
-Suppose the claim holds for \( n \), and let \( a_1, \dots, a_{n+1} \in [0, 1] \). Write \( s \coloneqq \sum_{k=1}^{n} a_k \). Every \( a_k \ge 0 \), so \( s \) is at least the sum of \( n \) zeros, that is, \( s \ge 0 \). Since \( a_{n+1} \le 1 \), the factor \( 1 - a_{n+1} \) is non-negative. Multiplying the hypothesis \( \prod_{k=1}^{n} (1 - a_k) \ge 1 - s \) by it keeps the direction, as in the proof of the strict Bernoulli inequality. Splitting off the last factor of the product, we get
+Suppose the claim holds for \( n \), and let \( a_1, \dots, a_{n+1} \in [0, 1] \). Write \( s \coloneqq \sum_{k=1}^{n} a_k \). Every \( a_k \ge 0 \), so \( s \) is at least the sum of \( n \) zeros, that is, \( s \ge 0 \). Since \( a_{n+1} \le 1 \), the factor \( 1 - a_{n+1} \) is non-negative. Multiplying the hypothesis \( \prod_{k=1}^{n} (1 - a_k) \ge 1 - s \) by it keeps the direction: by @fd3:prp-ordered-ring-rules (c) if the factor is positive, and both sides become \( 0 \) if it is \( 0 \). Splitting off the last factor of the product, we get
 \[
 \begin{aligned}
 \prod_{k=1}^{n+1} (1 - a_k) &\ge (1 - s)(1 - a_{n+1}) = 1 - s - a_{n+1} + s\, a_{n+1} \\
@@ -75,7 +75,7 @@ Suppose the claim holds for \( n \), and let \( a_1, \dots, a_{n+1} \in [0, 1] \
 where the second inequality drops \( s\, a_{n+1} \ge 0 \), a product of two non-negative numbers. This is the claim for \( n + 1 \).
 
 ::: {.uses}
-@prp-sum-order (a): sums respect order. @lem-bernoulli-strict: multiplying by non-negatives. @fd2:def-sum-product: empty and last factor.
+@prp-sum-order (a): sums respect order. @fd3:prp-ordered-ring-rules (c): multiplying by a positive. @fd3:prp-ring-algebra (b): times zero is zero. @fd2:def-sum-product: empty and last factor.
 :::
 :::
 
@@ -99,7 +99,7 @@ so \( ab \le \bigl(\frac{a + b}{2}\bigr)^2 \), with equality exactly when \( a =
 
 For three numbers we would like \( abc \le \bigl(\frac{a + b + c}{3}\bigr)^3 \), and for \( n \) numbers the analogous statement. A single square no longer does the job: the difference of the two sides is not a square of anything simple. Still, it holds in examples: the numbers \( 1, 2, 6 \) have average \( 3 \), and \( 1 \cdot 2 \cdot 6 = 12 \le 27 = 3^3 \). We need a proof that handles every \( n \) at once.
 
-*The arithmetic mean of the numbers is their average; a product is at most the matching power of the average.* In plain words: if \( n \) numbers are non-negative, their product is at most their average raised to the power \( n \).
+*A product is at most the matching power of the average.* In plain words: if \( n \) numbers are non-negative, their product is at most their average raised to the power \( n \).
 
 ::: {#thm-am-gm}
 [Arithmetic and Geometric Means]
@@ -112,7 +112,7 @@ Let \( n \ge 1 \) be an integer, let \( a_1, \dots, a_n \in \nR \) with \( a_k \
 :::
 :::
 
-The number \( A \) is the **arithmetic mean** of \( a_1, \dots, a_n \). The **geometric mean** is the non-negative number whose \( n \)-th power is the product \( a_1 \cdots a_n \). This chapter has not yet built \( n \)-th roots, so the theorem is stated with powers. Its form with roots comes in Section 1.5.
+The number \( A \) is the **arithmetic mean** of \( a_1, \dots, a_n \). The **geometric mean** is the non-negative number whose \( n \)-th power is the product \( a_1 \cdots a_n \). Once \( n \)-th roots are available (Section 1.5), (a) says that the geometric mean is at most the arithmetic mean.
 
 *Try it first (ten minutes): prove (a) for \( n = 3 \), or explain what goes wrong when you add a third number to the case \( n = 2 \).*
 
@@ -163,10 +163,10 @@ This is the claim for \( n + 1 \), and (a) is proved.
 
 (b) \( (\Leftarrow) \) If every \( a_k \) equals \( a \), then \( A = \frac1n (na) = a \), and both sides of (a) are \( a^n \).
 
-\( (\Rightarrow) \) We prove the contrapositive: if the \( a_k \) are not all equal, then \( a_1 \cdots a_n < A^n \). With a zero among them this is immediate. For positive numbers, the induction of (a) runs again, with the strict Bernoulli inequality (@lem-bernoulli-strict) in place of Bernoulli's inequality. The details follow under *The equality case of the means*.
+\( (\Rightarrow) \) We prove the contrapositive: if the \( a_k \) are not all equal, then \( a_1 \cdots a_n < A^n \). With a zero among them this is immediate. For positive numbers, the induction of (a) runs again, with the strict Bernoulli inequality (@lem-bernoulli-strict) in place of Bernoulli's inequality. In the step, either the first \( n \) numbers are not all equal, so the induction hypothesis is strict, or they are all equal to \( A_n \), the new number differs from \( A_n \), and the strict Bernoulli inequality applies.
 
 ::: {.uses}
-@prp-sum-order (a): sums respect order. @fd2:prp-power-laws (e): powers of positives. @fd3:prp-ordered-ring-rules (c): multiplying by a positive. @prp-power-laws-commutative-ring (a), (c): power laws.
+@prp-sum-order (a): sums respect order. @fd2:prp-power-laws (e): powers of positives. @fd3:prp-ordered-ring-rules (c), (h): multiplying by a positive; \( m > 0 \). @fd3:prp-reciprocal-order (a): \( \frac1m > 0 \). @prp-power-laws-commutative-ring (a), (c): power laws.
 :::
 :::
 
@@ -318,7 +318,7 @@ Prove or disprove each statement.
 :::
 
 ::: {.solution}
-(a) True. Both \( x/y \) and \( y/x \) are positive and their product is \( 1 \), so @thm-am-gm with \( n = 2 \) gives \( 1 \le \bigl(\frac{x/y + y/x}{2}\bigr)^2 \). Directly: \( \frac{x}{y} + \frac{y}{x} - 2 = \frac{x^2 + y^2 - 2xy}{xy} = \frac{(x - y)^2}{xy} \ge 0 \), a square divided by a positive number.
+(a) True. Both \( x/y \) and \( y/x \) are positive and their product is \( 1 \), so @thm-am-gm with \( n = 2 \) gives \( 1 \le u^2 \) for \( u \coloneqq \frac{x/y + y/x}{2} > 0 \). If \( u < 1 \), then \( u^2 < 1 \) by @fd3:prp-ordered-ring-rules (g), a contradiction; so \( u \ge 1 \), that is, \( x/y + y/x \ge 2 \). Directly: \( \frac{x}{y} + \frac{y}{x} - 2 = \frac{x^2 + y^2 - 2xy}{xy} = \frac{(x - y)^2}{xy} \ge 0 \), a square divided by a positive number.
 
 (b) False. Take \( n = 2 \) and \( a_1 = a_2 = \frac12 \): the product is \( \frac14 \), the right side is \( 1 - 1 = 0 \), and \( \frac14 > 0 \). (@prp-weierstrass-product gives the opposite inequality.)
 
@@ -362,7 +362,7 @@ In fact the two halves can hold together only in the dull case. Since \( (n + 1)
 **What a complete answer needs.** (10 points)
 
 - 3: says that the conclusion is true (citing @thm-am-gm or equivalent) and that the argument nevertheless fails.
-- 3: names the line "\( A_n \le A_{n+1} \) and \( a_{n+1} \le A_{n+1} \)" as the failing step, and accepts the multiplication step.
+- 3: names either half of the line "\( A_n \le A_{n+1} \) and \( a_{n+1} \le A_{n+1} \)" (or the whole line) as the failing step, without blaming the base case or the multiplication by \( a_{n+1} \).
 - 4: gives a concrete list on which that line fails (one list for either half earns the points).
 
 Slips that lose the step (0 for the step): calling the conclusion false; offering a "counterexample" to the conclusion; blaming the multiplication by \( a_{n+1} \).
@@ -371,8 +371,9 @@ Slips that lose the step (0 for the step): calling the conclusion false; offerin
 <!-- dependency ledger
 lem-bernoulli-strict (proof): multiplying an inequality by 0 gives 0 on both sides | fd3:prp-ring-algebra (b), cited in the Uses line
 lem-bernoulli-strict (proof): n > 0 in R for an integer n >= 2 | fd3:prp-ordered-ring-rules (h), cited in the Uses line
-prp-weierstrass-product (proof): a product of two non-negative reals is non-negative | fd3:prp-ordered-ring-rules (c) and (O4), with the zero case
+prp-weierstrass-product (proof): a product of two non-negative reals is non-negative | fd3:prp-ordered-ring-rules (c) and (O4), with the zero case fd3:prp-ring-algebra (b), cited in the Uses line
 prp-weierstrass-product (proof): the empty product is 1 and the empty sum 0 | fd2:def-sum-product
+thm-am-gm (proof): 1/m > 0 for an integer m >= 1 | fd3:prp-ordered-ring-rules (h) with fd3:prp-reciprocal-order (a), cited in the Uses line
 thm-am-gm (proof): a finite product with a zero factor is 0 | induction on fd2:def-sum-product with fd3:prp-ring-algebra (b)
 thm-am-gm (proof): 0^n = 0 for n >= 1 | fd2:def-power, one step
 thm-am-gm (proof): (n+1)A_{n+1} = nA_n + a_{n+1} | fd2:def-sum-product and the definition of A_m

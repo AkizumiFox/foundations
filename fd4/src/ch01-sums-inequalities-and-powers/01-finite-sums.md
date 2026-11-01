@@ -6,7 +6,7 @@
 - the geometric sum (@fd2:prp-geometric-sum);
 - Bernoulli's inequality (@fd2:thm-bernoulli).
 
-Analysis rearranges such sums on every page. The algebra chapters of this volume need the same sums with terms in \( \nZ/n \), in a field, in \( \nC \) and among polynomials. This section states the rules once, for any commutative ring. It also teaches the one computational method that turns a sum into two terms: telescoping.
+Analysis rearranges such sums on every page. The algebra chapters of this volume need the same sums with terms in \( \nZ/n\nZ \), in a field, in \( \nC \) and among polynomials. This section states the rules once, for any commutative ring. It also teaches the one computational method that turns a sum into two terms: telescoping.
 
 ## Sums and powers in any commutative ring
 
@@ -24,7 +24,7 @@ so the recursion appends the last term; we also write \( a_0 + a_1 + \dots + a_n
 \[
 z^0 \coloneqq 1 , \qquad z^{n+1} \coloneqq z^n z \quad \text{for every } n \in \nN .
 \]
-Formally, this is the recursion theorem of *Sets and Functions* (@fd2:thm-recursion) with \( X = R \), starting value \( 1 \) and step \( (k, y) \mapsto yz \). It applies on \( \nN = \omega \) by @fd3:cor-omega-identification (b). This is the recursion of *Sets and Functions*, Section 3.3 (@fd2:def-power), stated there for real numbers. It is also the recursion of @fd3:def-naturals-in-ordered-field (b). In particular \( z^1 = 1 \cdot z = z \) and \( z^2 = z^1 z = zz \). This matches the \( z^2 \) of @fd3:prp-ring-algebra (d).
+This is the recursion of *Sets and Functions*, Section 3.3 (@fd2:def-power), stated there for real numbers. The recursion theorem of that volume runs it just as well with values in \( R \). In particular \( z^1 = 1 \cdot z = z \) and \( z^2 = z^1 z = zz \). This matches the \( z^2 \) of @fd3:prp-ring-algebra (d).
 
 For example, \( z^2 z^3 = (zz)(zzz) = z^5 \), and \( (z^2)^3 = z^2 z^2 z^2 = z^6 \). The next proposition proves such laws for all exponents.
 
@@ -70,13 +70,13 @@ where the third equality regroups and reorders the four factors.
 (d) Let \( R \) be a field and \( z \ne 0 \). For \( n = 0 \): \( z^0 = 1 \ne 0 \), by the definition of a field. If \( z^n \ne 0 \), then \( z^{n+1} = z^n z \) is a product of two non-zero elements. So it is non-zero, since a field has no zero divisors (@fd3:lem-field-fraction-rules (d)).
 
 ::: {.uses}
-@fd1:ax-induction (induction on n); @fd3:cor-omega-identification (b) (N is ω); @fd3:def-commutative-ring-and-field (F5)–(F7), rules of multiplication.
+@fd1:ax-induction (induction on n); @fd3:cor-omega-identification (b) (induction on this ℕ); @fd3:def-commutative-ring-and-field (F5)–(F7), rules of multiplication.
 :::
 :::
 
 For \( R = \nR \) these are @fd2:prp-power-laws (a)–(c). The proofs are the same inductions and use only the ring axioms.
 
-**Natural multiples.** The binomial theorem of Section 1.2 has coefficients that are natural numbers acting on ring elements. So we need the rules for such multiples. *Number Systems: From \(\nN\) to \(\nR\)*, Section 2.4 defines, for \( a \in R \), the multiples \( n \cdot a \) by the recursion \( 0 \cdot a \coloneqq 0 \), \( (n + 1) \cdot a \coloneqq n \cdot a + a \). So \( n \cdot a \) is the sum of \( n \) copies of \( a \). A dot with a natural number on its left always means this multiple.
+**Natural multiples.** The binomial theorem of Section 1.2 has coefficients that are natural numbers acting on ring elements. So we need the rules for such multiples. *Number Systems: From \(\nN\) to \(\nR\)*, Section 2.4 defines, just before @fd3:prp-ordered-ring-rules, for \( a \in R \), the multiples \( n \cdot a \) by the recursion \( 0 \cdot a \coloneqq 0 \), \( (n + 1) \cdot a \coloneqq n \cdot a + a \). So \( n \cdot a \) is the sum of \( n \) copies of \( a \). A dot with a natural number on its left always means this multiple.
 
 For example, \( 2 \cdot a + 3 \cdot a = (a + a) + (a + a + a) = 5 \cdot a \), and \( 2 \cdot (3 \cdot a) = 6 \cdot a \). The next lemma lists the rules in general.
 
@@ -113,7 +113,7 @@ by (a), the induction hypothesis and the recursion.
 (e) By (c) with \( 1 \) in place of \( a \) and \( a \) in place of \( b \), \( (m \cdot 1) a = m \cdot (1 a) = m \cdot a \), since \( 1 a = a 1 = a \). This proves the lemma.
 
 ::: {.uses}
-@fd1:ax-induction (induction on m); @fd3:cor-omega-identification (b) (N is ω); @fd3:def-commutative-ring-and-field (F1)–(F3), (F6), (F7), (F9), ring rules.
+@fd1:ax-induction (induction on m); @fd3:cor-omega-identification (b) (induction on this ℕ); @fd3:def-commutative-ring-and-field (F1)–(F3), (F6), (F7), (F9), ring rules.
 :::
 :::
 :::
@@ -140,7 +140,7 @@ Let \( R \) be a commutative ring, \( n \in \nN \), \( c \in R \), and let \( (a
 In words: a finite sum may be split, multiplied and negated termwise. A sum with one non-zero term is that term. The first term may be split off, and the rest re-indexed from \( 0 \). By the finite-lists remark, the lemma applies to finitely many terms \( a_0, \dots, a_n \) as well.
 
 ::: {.idea}
-A sum up to \( n + 1 \) is the sum up to \( n \) plus one term. So a rule that holds for one term, and survives adding one more term, holds for all sums. Each such proof is an induction on \( n \) whose step is a single axiom:
+A sum up to \( n + 1 \) is the sum up to \( n \) plus one term. So a rule that holds for one term, and survives adding one more term, holds for all sums. Each such proof is an induction on \( n \) whose step needs only the rules listed below:
 
 - for (a), commutativity and associativity of addition, (F1), (F2);
 - for (b), the distributive law, (F9);
@@ -235,7 +235,7 @@ Let \( c_j \coloneqq a_{j+1} \) for \( 0 \le j \le n \). Then \( a_{n+1-k} = c_{
 This proves the proposition.
 
 ::: {.uses}
-@fd3:def-commutative-ring-and-field (F1)–(F3), rules of addition.
+@fd1:ax-induction (induction on n); @fd3:def-commutative-ring-and-field (F1)–(F3), rules of addition.
 :::
 :::
 :::
@@ -276,7 +276,7 @@ Let \( F \) be an ordered field, \( n \in \nN \) and \( a_k, b_k \in F \) for \(
 ::: {.enumerate options="label=(\alph*)"}
 1. If \( a_k \le b_k \) for every \( k \), then \( \sum a_k \le \sum b_k \); if moreover \( a_j < b_j \) for some \( j \), the inequality is strict.
 2. If \( a_k \ge 0 \) for every \( k \), then \( \sum_{k=0}^{n} a_k \ge \sum_{k=0}^{m} a_k \) for every integer \( m \) with \( -1 \le m \le n \), and \( \sum_{k=0}^{n} a_k \ge a_j \) for every \( j \le n \).
-3. If \( a_k \le M \) for every \( k \), then \( \sum_{k=0}^{n} a_k \le (n + 1)M \).
+3. If \( a_k \le M \) for every \( k \), then \( \sum_{k=0}^{n} a_k \le (n + 1) \cdot M \).
 4. *(Triangle inequality for sums.)* \( \abs{\sum_{k=0}^{n} a_k} \le \sum_{k=0}^{n} \abs{a_k} \).
 5. If \( a_k \ge 0 \) for every \( k \) and \( \sum_{k=0}^{n} a_k = 0 \), then \( a_k = 0 \) for every \( k \).
 :::
@@ -287,11 +287,13 @@ Every part adds inequalities one term at a time. Parts (a) and (d) are induction
 :::
 
 ::: {.proof}
+By the finite-lists remark we may extend the lists to sequences; in (a), extend with \( a_k \coloneqq b_k \coloneqq 0 \) for \( k > n \), so that the hypotheses still hold, and in (d) extend with \( a_k \coloneqq 0 \). Then the inductions below run over all \( n \).
+
 (a) Induction on \( n \), proving \( \sum_{k=0}^{n} a_k \le \sum_{k=0}^{n} b_k \), strictly if \( a_j < b_j \) for some \( j \le n \). For \( n = 0 \) this is the hypothesis on \( a_0, b_0 \). At the step, \( \sum_{k=0}^{n+1} a_k = \sum_{k=0}^{n} a_k + a_{n+1} \le \sum_{k=0}^{n} b_k + b_{n+1} \) by adding the two inequalities. The conclusion is strict if either inequality added is strict: the first when \( j \le n \), by the hypothesis, the second when \( j = n + 1 \).
 
 (b) By @prp-sum-reindex (b), \( \sum_{k=0}^{n} a_k = \sum_{k=0}^{m} a_k + \sum_{k=m+1}^{n} a_k \). The tail is \( 0 \) if \( m = n \). Otherwise, shifted to start at \( 0 \), it is \( \ge \) the sum of zeros by (a), and that sum is \( 0 \) (@lem-ring-finite-sums (d)). Adding the tail to \( \sum_{k=0}^{m} a_k \) gives the first claim. For the single term, split around \( j \) twice. By the first claim with \( m = j \), \( \sum_{k=0}^{n} a_k \ge \sum_{k=0}^{j} a_k = \sum_{k=0}^{j-1} a_k + a_j \). Also \( \sum_{k=0}^{j-1} a_k \ge 0 \): for \( j = 0 \) it is the empty sum, and for \( j \ge 1 \) it is the first claim with \( j - 1 \) in place of \( n \) and \( m = -1 \). So the total is \( \ge 0 + a_j = a_j \).
 
-(c) This is (a) with \( b_k \coloneqq M \), since \( \sum_{k=0}^{n} M = (n + 1)M \) by the constant sum computed in @exm-odd-sum-reversal.
+(c) This is (a) with \( b_k \coloneqq M \), since \( \sum_{k=0}^{n} M = (n + 1) \cdot M \) by the constant sum computed in @exm-odd-sum-reversal.
 
 (d) Induction on \( n \). For \( n = 0 \) both sides are \( \abs{a_0} \). At the step,
 \[
@@ -302,11 +304,11 @@ by the triangle inequality (@fd3:prp-absolute-value-ordered-field (e)), then the
 (e) For each \( j \le n \), \( 0 \le a_j \le \sum_{k=0}^{n} a_k = 0 \) by (b), so \( a_j = 0 \) by antisymmetry (@fd3:prp-ordered-ring-rules (i)).
 
 ::: {.uses}
-@fd3:prp-ordered-ring-rules (b) (adding inequalities).
+@fd1:ax-induction (induction on n); @fd3:prp-ordered-ring-rules (b) (adding inequalities).
 :::
 :::
 
-Parts (b) and (c) are the two estimates of Section 1.4: *drop non-negative terms*, and *replace each term by the largest*. A largest term exists by @fd2:prp-finite-max, which supplies an \( M \) for (c).
+Part (b) is the estimate *drop non-negative terms*, which Section 1.2 uses to keep a few terms of a binomial expansion; part (c) *replaces each term by the largest*. For real terms a largest term exists by @fd2:prp-finite-max (the same induction works in any ordered field), which supplies an \( M \) for (c).
 
 ::: {.warning}
 A sum of products is not a product of sums, and a sum of reciprocals is not the reciprocal of the sum. With \( n = 1 \) and \( a_0 = a_1 = b_0 = b_1 = 1 \), \( \sum a_k b_k = 2 \) while \( \bigl(\sum a_k\bigr)\bigl(\sum b_k\bigr) = 4 \); and \( \frac11 + \frac11 = 2 \ne \frac12 \).
@@ -352,7 +354,7 @@ the last step splitting off the last term of each inner sum. For the product for
 :::
 :::
 
-The analysis volumes need the same exchange for infinite sums: *Integration, Series, and Function Spaces* studies double series, where the exchange can fail and needs a hypothesis. For finite sums nothing can go wrong.
+The analysis volumes need the same exchange for infinite sums: *Integration, Series, and Function Spaces*, Chapter 5 studies double series, where the exchange can fail and needs a hypothesis. For finite sums nothing can go wrong.
 
 ## Telescoping
 
@@ -392,6 +394,7 @@ Let \( R \) be a commutative ring, \( n \in \nN \) and \( b_0, \dots, b_{n+1} \i
 :::
 
 ::: {.proof}
+By the finite-lists remark we may extend \( b_0, \dots, b_{n+1} \) to a sequence \( (b_k)_{k \in \nN} \); for (b) we extend with \( b_k \coloneqq 1 \) for \( k > n + 1 \), so that every \( b_k \ne 0 \). We prove (a) and (b) for every \( n \) by induction.
 (a) Induction on \( n \). For \( n = 0 \) the sum is its one term \( b_1 - b_0 \). If the sum up to \( n \) is \( b_{n+1} - b_0 \), then the sum up to \( n + 1 \) is \( (b_{n+1} - b_0) + (b_{n+2} - b_{n+1}) = b_{n+2} - b_0 \).
 
 (b) The same induction with products. For \( n = 0 \) the product is \( \frac{b_1}{b_0} \). At the step, \( \frac{b_{n+1}}{b_0} \cdot \frac{b_{n+2}}{b_{n+1}} = b_{n+2} b_0^{-1} \bigl( b_{n+1} b_{n+1}^{-1} \bigr) = \frac{b_{n+2}}{b_0} \), since \( b_{n+1} b_{n+1}^{-1} = 1 \).
@@ -414,11 +417,11 @@ Shift the index to start at \( 0 \), with \( j = k - 1 \): the sum is \( \sum_{j
 ::: {#exm-method-telescoping}
 [Method: telescoping]
 
-**How it goes.** To find \( \sum a_k \), write \( a_k = b_{k+1} - b_k \), or \( b_k - b_{k+1} \), for a sequence \( b \) you choose. Then the sum is the last \( b \) minus the first (@thm-telescoping). To *verify* a guessed formula \( \sum_{k=0}^{n} a_k = F(n) \), check \( F(0) = a_0 \) and \( F(k) - F(k-1) = a_k \) for \( 1 \le k \le n \). Telescoping over \( 1 \le k \le n \) then gives \( \sum_{k=0}^{n} a_k = a_0 + F(n) - F(0) = F(n) \).
+**How it goes.** To find \( \sum a_k \), write \( a_k = b_{k+1} - b_k \), or \( b_k - b_{k+1} \), for a sequence \( b \) you choose. Then the sum is the last \( b \) minus the first (the first minus the last for \( b_k - b_{k+1} \)) (@thm-telescoping). To *verify* a guessed formula \( \sum_{k=0}^{n} a_k = F(n) \), check \( F(0) = a_0 \) and \( F(k) - F(k-1) = a_k \) for \( 1 \le k \le n \). Telescoping over \( 1 \le k \le n \) then gives \( \sum_{k=0}^{n} a_k = a_0 + F(n) - F(0) = F(n) \).
 
 **When to use it.** Quotients whose denominator is a product of shifted factors; differences of powers or roots; any sum whose partial sums you can guess.
 
-**Common mistakes.** Using a difference \( b_{k+2} - b_k \) that skips a step. Such a sum leaves **two** terms at each end, not one.
+**Common mistakes.** A common mistake is to use a difference \( b_{k+2} - b_k \), which skips a step. Such a sum leaves **two** terms at each end, not one.
 :::
 
 The first use is an identity about powers that this volume needs again and again. For \( n = 2 \) it is the school identity \( z^2 - w^2 = (z - w)(w + z) \). The proof below is the method with \( b_k \coloneqq z^k w^{n-k} \).
@@ -442,7 +445,7 @@ Let \( b_k \coloneqq z^k w^{n-k} \) for \( 0 \le k \le n \). For \( 0 \le k \le 
 \[
 (z - w) z^k w^{n-1-k} = (z z^k) w^{n-1-k} - z^k (w\, w^{n-1-k}) = b_{k+1} - b_k ,
 \]
-since \( z z^k = z^{k+1} \) and \( w\, w^{n-1-k} = w^{n-k} \) by the recursion for powers. By @lem-ring-finite-sums (b), the product \( (z - w) \sum_{k=0}^{n-1} z^k w^{n-1-k} \) is therefore \( \sum_{k=0}^{n-1} (b_{k+1} - b_k) \). Since \( n - 1 \in \nN \), @thm-telescoping (a) with \( n - 1 \) in place of \( n \) gives \( b_n - b_0 = z^n w^0 - z^0 w^n = z^n - w^n \). The particular case is \( w = 1 \), since \( 1^j = 1 \) for every \( j \in \nN \).
+since \( z z^k = z^{k+1} \) and \( w\, w^{n-1-k} = w^{n-k} \) by the recursion for powers. By @lem-ring-finite-sums (b), the product \( (z - w) \sum_{k=0}^{n-1} z^k w^{n-1-k} \) is therefore \( \sum_{k=0}^{n-1} (b_{k+1} - b_k) \). Since \( n - 1 \in \nN \), @thm-telescoping (a) with \( n - 1 \) in place of \( n \) gives \( b_n - b_0 = z^n w^0 - z^0 w^n = z^n - w^n \). The particular case is \( w = 1 \), since \( 1^j = 1 \) for every \( j \in \nN \) (by induction, \( 1^0 = 1 \) and \( 1^{j+1} = 1^j \cdot 1 = 1 \)).
 
 ::: {.uses}
 @fd3:def-commutative-ring-and-field (F5)–(F7), (F9), ring rules.
@@ -488,7 +491,7 @@ Which \( b_k \) makes \( a_k = \frac{1}{(2k-1)(2k+1)} \) telescope, as \( a_k = 
 The factors \( 2k - 1 \) and \( 2k + 1 \) differ by \( 2 \), so \( \frac{1}{2k-1} - \frac{1}{2k+1} = \frac{2}{(2k-1)(2k+1)} \), and \( a_k = \frac12\bigl(\frac{1}{2k-1} - \frac{1}{2k+1}\bigr) \). So \( b_k \coloneqq -\frac{1}{2(2k-1)} \) gives \( b_{k+1} - b_k = -\frac{1}{2(2k+1)} + \frac{1}{2(2k-1)} = a_k \).
 :::
 
-**Telescoping products.** *Sets and Functions*, Section 3.3 computed \( \prod_{k=1}^{n} \frac{k+1}{k} = n + 1 \). This is @thm-telescoping (b) with \( b_k \coloneqq k + 1 \), with the index shifted to run from \( 0 \) to \( n - 1 \). Products that do not telescope at once may split into two that do. For \( n \ge 2 \), \( 1 - \frac{1}{k^2} = \frac{k-1}{k} \cdot \frac{k+1}{k} \), and a product of products splits as a sum of sums does. So
+**Telescoping products.** *Sets and Functions*, Section 3.3 computed \( \prod_{k=1}^{n} \frac{k+1}{k} = n + 1 \). This is @thm-telescoping (b) with \( b_k \coloneqq k + 1 \), with the index shifted to run from \( 0 \) to \( n - 1 \). Products that do not telescope at once may split into two that do. For every \( k \ne 0 \), \( 1 - \frac{1}{k^2} = \frac{k-1}{k} \cdot \frac{k+1}{k} \), and a product of products splits as a sum of sums does. So, for \( n \ge 2 \),
 \[
 \prod_{k=2}^{n} \Bigl( 1 - \frac{1}{k^2} \Bigr) = \prod_{k=2}^{n} \frac{k-1}{k} \cdot \prod_{k=2}^{n} \frac{k+1}{k} = \frac1n \cdot \frac{n+1}{2} = \frac{n+1}{2n} .
 \]
@@ -509,7 +512,7 @@ Chapter 4 uses these sums with terms in a field, and Chapter 9 proves the Cauchy
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Compute \( \sum_{k=5}^{4} k \) and \( \prod_{k=1}^{3} (k + 1) \).
-2. True or false, with a reason: \( \sum_{k=0}^{n} a_k b_k = \bigl(\sum_{k=0}^{n} a_k\bigr)\bigl(\sum_{k=0}^{n} b_k\bigr) \) for all reals \( a_k, b_k \).
+2. True or false, with a reason: \( \sum_{k=0}^{n} a_k b_k = \bigl(\sum_{k=0}^{n} a_k\bigr)\bigl(\sum_{k=0}^{n} b_k\bigr) \) for all \( n \in \nN \) and all reals \( a_k, b_k \).
 3. Rewrite \( \sum_{k=2}^{6} k^2 \) with the index starting at \( 0 \).
 4. Which \( b_k \) makes \( a_k = 2k + 1 \) a telescoping difference \( b_{k+1} - b_k \)?
 :::
@@ -571,7 +574,7 @@ At \( n = 2 \) this is \( \frac12 \cdot \frac{11}{12} = \frac{11}{24} \).
 ::: {#exr-finite-sums-b3}
 [B3: Name the method]
 
-*Name the method, then complete it.* Show that, for every \( n \in \nN \),
+*Say which method this is, then complete it.* Show that, for every \( n \in \nN \),
 \[
 \sum_{k=1}^{n} \frac{2k+1}{k^2(k+1)^2} = 1 - \frac{1}{(n+1)^2} .
 \]
@@ -631,6 +634,7 @@ A proof by induction on \( n \) earns the points for the corresponding steps: th
 <!-- dependency ledger
 prp-power-laws-commutative-ring (proof): (m + n) + 1 = m + (n + 1) and m(n + 1) = mn + m in N | fd3 Chapter 1 arithmetic of N (thm-omega-arithmetic-laws), used as in the moved proof
 lem-natural-multiples (proof): (m + 1)k = mk + k in N | fd3 Chapter 1 arithmetic of N (def-omega-arithmetic), as in the moved proof
+prp-power-laws-commutative-ring (claim): (paragraph Powers, before it) the power recursion exists in R | fd2:thm-recursion with X = R, start 1, step (k, y) -> yz, on fd3's N through fd3:cor-omega-identification (b); it is the recursion of fd3:def-naturals-in-ordered-field (b)
 lem-ring-finite-sums (proof): sum of one term is that term, 0 + a_0 = a_0 | (F1), (F3), unfolding the recursion
 prp-sum-reindex (proof): sums with general bounds m+1..n in a ring obey the finite-lists, shift and split-off-the-last-term remarks | fd2:def-sum-product remarks, same proofs in R (stated in prose at the section start)
 prp-sum-order (proof): a tail sum from m+1 to n, shifted to start at 0, compared by (a) | shift remark after fd2:def-sum-product
@@ -641,7 +645,7 @@ thm-telescoping (proof): (b_{n+1} - b_0) + (b_{n+2} - b_{n+1}) = b_{n+2} - b_0 |
 thm-telescoping (proof): b_{n+1} b_{n+1}^{-1} = 1 and the regrouping in (b) | (F5)-(F8), on the Uses line
 exm-telescoping-squares (solution): (k + 1)^3 = k^3 + 3k^2 + 3k + 1 | school expansion, fd3:prp-ring-algebra (d) twice with (F9)
 exm-telescoping-squares (solution): solving a linear equation for the sum in R | field arithmetic in R
-thm-telescoping (claim): (paragraph Telescoping products) prod (x_k y_k) = (prod x_k)(prod y_k) | inline (one-line induction on the number of factors, (F5), (F6))
+thm-telescoping (claim): (paragraph Telescoping products) prod (x_k y_k) = (prod x_k)(prod y_k) | same induction as lem-ring-finite-sums (a), with (F5), (F6); not written out
 thm-telescoping (claim): (paragraph Telescoping products) prod_{k=2}^{n} (k-1)/k = 1/n and prod_{k=2}^{n} (k+1)/k = (n+1)/2 | thm-telescoping (b) after a shift
 exr-finite-sums-b1 (solution): (k + 1)! = k! (k + 1) | fd2:def-sum-product (factorial recursion)
 exr-finite-sums-b1 (solution): 1/(2k-1) - 1/(2k+1) = 2/((2k-1)(2k+1)) | fd3:lem-field-fraction-rules (c), as in the Quick check before the exercises

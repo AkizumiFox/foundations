@@ -2,9 +2,9 @@
 
 ## Summary
 
-Finite sums obey the rules of @lem-ring-finite-sums in every commutative ring, and a sum whose terms are differences telescopes (@thm-telescoping). The binomial theorem holds in every commutative ring with coefficients defined by Pascal's rule (@thm-binomial-commutative-ring). In the real numbers it bounds a power from below by one or two of its terms (@cor-binomial-real). Bernoulli's inequality becomes strict (@lem-bernoulli-strict) and extends to products, and the arithmetic mean bounds the geometric mean (@thm-am-gm). With these, geometric sequences, \( n/r^n \) and \( r^n/n! \) tend to zero. Every non-negative real has a unique non-negative \( n \)-th root (@lem-reals-nth-root). The powers \( a^{m/n} \) of a positive real are well defined and obey the laws of powers (@prp-rational-power-laws).
+Finite sums obey the rules of @lem-ring-finite-sums in every commutative ring, and a sum whose terms are differences telescopes (@thm-telescoping). The binomial theorem holds in every commutative ring with coefficients defined by Pascal's rule (@thm-binomial-commutative-ring). In the real numbers it bounds a power from below by one or two of its terms (@cor-binomial-real). Bernoulli's inequality becomes strict (@lem-bernoulli-strict) and extends to products, and the arithmetic mean bounds the geometric mean (@thm-am-gm). With these, geometric sequences, \( n/r^n \) and \( 1/n! \) tend to zero. Every non-negative real has a unique non-negative \( n \)-th root (@lem-reals-nth-root). The powers \( a^{m/n} \) of a positive real are well defined and obey the laws of powers (@prp-rational-power-laws).
 
-What is open: powers with irrational exponents, which Chapter 8 defines through the exponential function, and the limit of the compound-interest sequence, which *Analysis on the Real Line* identifies.
+What is open: powers with irrational exponents, which Chapter 8 defines through the exponential function, and the limit of the compound-interest sequence, which *Analysis on the Real Line*, Chapter 4 identifies.
 
 ## Proof methods in this chapter
 
@@ -12,7 +12,7 @@ What is open: powers with irrational exponents, which Chapter 8 defines through 
 - **Bound a product by a power** (@exm-method-am-gm). Replace the factors by their arithmetic mean, which is easy to compute, and let the arithmetic–geometric mean inequality turn the product into a power. Introduced in Section 1.3.
 - **Keep the dominant term** (@exm-method-dominant-term). In a quotient of sums, keep the term that grows fastest and absorb the others into it from some index on. The quotient is then bounded by a quotient of single powers. Introduced in Section 1.4.
 - **Bound a power from below** (@exm-method-power-lower-bound). Write a base above one as \( 1 + h \) and keep one term of the expansion, by Bernoulli or by the binomial theorem. This makes \( r^n \) at least a multiple of a power of \( n \). Introduced in Section 1.4, with exercises B1 and C2.
-- **Recalled from earlier volumes.** Proving a limit from the definition (@fd3:exm-method-limit-from-definition); induction on the last term (@fd2:exm-method-induction-step); well-definedness (@fd2:exm-method-well-definedness). Constructing a point as a supremum, from *Number Systems: From \(\nN\) to \(\nR\)*, is run again in Section 1.5.
+- **Recalled from earlier volumes.** Proving a limit from the definition (@fd3:exm-method-limit-from-definition); induction on the last term (@fd2:exm-method-induction-step); well-definedness (@fd2:exm-method-well-definedness). Constructing a point as a supremum, from *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 6 (@fd3:prp-cof-square-roots), is run again in Section 1.5.
 
 ## Terms
 
@@ -39,18 +39,26 @@ Nothing in the chapter is borrowed: everything is proved from the results below.
 - finite sums and products (@fd2:def-sum-product) and powers (@fd2:def-power);
 - the laws of powers (@fd2:prp-power-laws);
 - the sum of the first \( n \) numbers (@fd2:prp-sum-first-n) and the geometric sum (@fd2:prp-geometric-sum);
-- Bernoulli's inequality for real numbers (@fd2:thm-bernoulli), used in Sections 1.2–1.4.
+- a finite list of reals has a largest term (@fd2:prp-finite-max);
+- Bernoulli's inequality for real numbers (@fd2:thm-bernoulli), used in Sections 1.2–1.5.
+
+*Sets and Functions*, Chapter 5:
+
+- well-definedness, as a proof method (@fd2:exm-method-well-definedness).
 
 *Number Systems: From \(\nN\) to \(\nR\)*:
 
-- commutative rings and fields (@fd3:def-commutative-ring-and-field) and the algebra of a ring (@fd3:prp-ring-algebra), from Chapter 2;
-- the rules of an ordered ring, including the multiples of Section 2.4 (@fd3:prp-ordered-ring-rules);
-- the rules of an ordered field (@fd3:prp-ordered-field-halves), the absolute value (@fd3:prp-absolute-value-ordered-field) and fractions in a field (@fd3:lem-field-fraction-rules), from Chapter 4;
+- its \( \nN \) and the \( \nN \) of *Sets and Functions* are the same (@fd3:cor-omega-identification), from its Chapter 1;
+- commutative rings and fields (@fd3:def-commutative-ring-and-field) and the algebra of a ring (@fd3:prp-ring-algebra), from its Chapter 2;
+- the rules of an ordered ring, including the multiples of its Section 2.4 (@fd3:prp-ordered-ring-rules), and \( \nZ \) as an ordered ring (@fd3:thm-integers-ordered-ring);
+- reciprocals reverse the order (@fd3:prp-reciprocal-order), from its Chapter 3;
+- the rules of an ordered field (@fd3:prp-ordered-field-halves), the absolute value (@fd3:prp-absolute-value-ordered-field) and fractions in a field (@fd3:lem-field-fraction-rules), from its Chapter 4;
 - the natural numbers inside an ordered field (@fd3:def-naturals-in-ordered-field, @fd3:prp-naturals-in-ordered-field);
 - the Archimedean property (@fd3:prp-archimedean-reciprocal);
-- limits of sequences (@fd3:def-sequence-limit-ordered-field) and how to prove one from the definition (@fd3:exm-method-limit-from-definition);
-- the completeness of \( \nR \) (@fd3:thm-reals-complete-ordered-field, @fd3:def-complete-ordered-field), from Chapters 5 and 6;
-- square roots in \( \nR \) (@fd3:prp-cof-square-roots) and a point constructed as a supremum (@fd3:exr-measuring-by-rationals-b2), which Section 1.5 runs for every exponent.
+- limits of sequences (@fd3:def-sequence-limit-ordered-field), the first limits (@fd3:exm-first-sequences-ordered-field), only the tail matters (@fd3:prp-tail-change-ordered-field), and how to prove a limit from the definition (@fd3:exm-method-limit-from-definition);
+- the completeness of \( \nR \) (@fd3:thm-reals-complete-ordered-field, @fd3:def-complete-ordered-field), from its Chapter 5;
+- a complete ordered field is Archimedean (@fd3:thm-cof-complete-archimedean), from its Chapter 6;
+- square roots in \( \nR \) (@fd3:prp-cof-square-roots) and a point constructed as a supremum (@fd3:exr-measuring-by-rationals-b2), from its Chapter 6, which Section 1.5 runs for every exponent.
 
 ## Threads
 

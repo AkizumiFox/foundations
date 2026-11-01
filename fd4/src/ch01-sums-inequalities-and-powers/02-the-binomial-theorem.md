@@ -110,7 +110,7 @@ Suppose (a) holds for \( n \), and let \( k \le n + 1 \). If \( k = 0 \), the le
 &= (n + 1) \, \Bigl[ \binom{n}{j} \, j! \, (n - j)! \Bigr] = (n + 1) \, n! ,
 \end{aligned}
 \]
-and \( (n + 1) \, n! = (n + 1)! \) by the factorial recursion. This proves (a) for \( n + 1 \). Parts (b) and (c) follow from (a) by cancelling a positive integer factor; their proofs come after this one.
+and \( (n + 1) \, n! = (n + 1)! \) by the factorial recursion. This proves (a) for \( n + 1 \). Parts (b) and (c) follow from (a) by cancelling a positive integer factor in \( \nZ \).
 
 For the formula in \( \nR \), read each natural number \( m \) as the real number \( m \cdot 1 \) (@fd3:def-naturals-in-ordered-field). By @fd3:prp-naturals-in-ordered-field (a), the products in (a) are the same products in \( \nR \), and by (b) there, \( k! \, (n - k)! \ge 1 > 0 \). Dividing (a) by this positive real gives the formula. This proves the proposition.
 :::
@@ -129,7 +129,7 @@ Now (a) and this claim give \( \binom{n}{k} \, k! \, (n - k)! = (n - k)! \prod_{
 :::
 :::
 
-The formula is a fact about natural numbers, and in \( \nR \) the division by \( k! \, (n - k)! \) is legal because the divisor is a positive real. Chapter 4 works in a field with \( p \) elements. There \( p! \) is \( 0 \), and so is \( k! \, (n - k)! \) as soon as \( k \ge p \). In that field the formula cannot even be written, and only the definition by Pascal's rule still makes sense.
+The formula is a fact about natural numbers, and in \( \nR \) the division by \( k! \, (n - k)! \) is legal because the divisor is a positive real. Chapter 4 works in a field with \( p \) elements. There \( p! \) is \( 0 \), and so is the divisor \( k! \, (n - k)! \) as soon as \( k \ge p \) or \( n - k \ge p \). For those \( n \) and \( k \) the formula cannot be written in that field, while the definition by Pascal's rule makes sense for every \( n \) and \( k \).
 
 ## The binomial theorem
 
@@ -153,11 +153,11 @@ Here \( \binom{n}{k} \cdot z \) is the natural multiple of @lem-natural-multiple
 ::: {.idea}
 Induct on \( n \), with \( (x + y)^{n+1} = (x + y)^n x + (x + y)^n y \). Multiplying the sum for \( (x + y)^n \) by \( x \) raises every power of \( x \) by one, which shifts the coefficients one place to the right; multiplying by \( y \) leaves them in place. Adding the two rows entry by entry is exactly Pascal's rule. The work is in lining the two sums up over the same range \( k = 0, \dots, n + 1 \): the shifted sum gets a zero first term, and the other one a zero last term.
 
-*Before reading on: explain to yourself why \( w_{n+1} = 0 \).*
+*Before reading on: explain to yourself why the last term of the unshifted sum, at \( k = n + 1 \), is \( 0 \).*
 :::
 
 ::: {.proof}
-Induction on \( n \) (@fd1:ax-induction). For \( n = 0 \), \( (x + y)^0 = 1 \) and the right side is \( \binom{0}{0} \cdot (x^0 y^0) = 1 \cdot (1 \cdot 1) = 1 \).
+Induction on \( n \) (@fd1:ax-induction). For \( n = 0 \), \( (x + y)^0 = 1 \) and the right side is \( \binom{0}{0} \cdot (x^0 y^0) = 1 \cdot 1 = 1 \).
 
 Suppose the formula holds for \( n \), and put \( t_k \coloneqq \binom{n}{k} \cdot (x^k y^{n-k}) \) for \( 0 \le k \le n \). The first equality below is the power recursion and the distributive law, (F9). The second is the induction hypothesis, with \( x \) and \( y \) multiplied into the sum term by term; this uses commutativity of multiplication, (F6).
 \[
@@ -182,11 +182,11 @@ u_k + w_k = \binom{n}{j} \cdot z_k + \binom{n}{j + 1} \cdot z_k = \binom{n + 1}{
 Hence \( (x + y)^{n+1} = \sum_{k=0}^{n+1} \binom{n+1}{k} \cdot (x^k y^{n+1-k}) \), which is the formula for \( n + 1 \). This proves the theorem.
 
 ::: {.uses}
-@lem-ring-finite-sums (b) (constant times a sum), (f) (split off first term); @lem-natural-multiples (a) (sum rule); @fd3:prp-ordered-ring-rules (h) (same rule, no order needed).
+@lem-ring-finite-sums (b) (constant times a sum), (f) (split off first term); @fd2:def-sum-product (last term split off); @lem-natural-multiples (a) (sum rule); @fd3:prp-ordered-ring-rules (h) (same rule, no order needed).
 :::
 :::
 
-The proof used commutativity, (F6), at every regrouping of \( x^k y^{n-k} x \), and the theorem needs it. The linear-algebra volumes meet matrices, whose multiplication is not commutative. For matrices the expansion holds only for pairs that commute. For \( R = \nZ \) the theorem is the familiar expansion, since there \( m \cdot z = mz \) (@lem-natural-multiples (e)). The same holds in \( \nR \), where \( m \cdot 1 \) is the real number \( m \). From here on we read the theorem in \( \nR \) this way.
+The proof used commutativity, (F6), at every regrouping of \( x^k y^{n-k} x \), and the theorem needs it. The linear-algebra volumes meet matrices, whose multiplication is not commutative. For matrices the expansion can fail for pairs that do not commute, already at \( n = 2 \). For \( R = \nZ \) the theorem is the familiar expansion, since there \( m \cdot z = mz \) (@lem-natural-multiples (e)). The same holds in \( \nR \), where \( m \cdot 1 \) is the real number \( m \). From here on we read the theorem in \( \nR \) this way.
 
 ::: {.second-reading title="What goes wrong without commutativity"}
 Keep every clause of a commutative ring except commutativity of multiplication, (F6), together with the distributive law on the other side, \( (a + b)c = ac + bc \), which (F6) used to supply. Then the theorem fails already at \( n = 2 \). Expanding by the two distributive laws gives \( (x + y)^2 = x^2 + xy + yx + y^2 \), and the theorem's middle term \( 2 \cdot (xy) = xy + xy \) agrees with \( xy + yx \) exactly when \( yx = xy \). The \( 2 \times 2 \) real matrices
@@ -229,7 +229,7 @@ Row \( 6 \) is \( 1, 6, 15, 20, 15, 6, 1 \), so row \( 7 \) is \( 1, 7, 21, 35, 
 :::
 
 ::: {.warning}
-The rule \( (x + y)^n = x^n + y^n \) is false in \( \nR \) for every \( n \ge 2 \): with \( x = y = 1 \) it would give \( 2^n = 2 \), while \( 2^n > 2^1 = 2 \) for \( n \ge 2 \) (@fd2:prp-power-laws (e)); at \( n = 2 \), \( (1 + 1)^2 = 4 \ne 2 \). The theorem says what is missing: the middle terms \( \binom{n}{k} x^k y^{n-k} \) with \( 0 < k < n \). Chapter 4 finds the rings in which those middle terms all vanish for \( n = p \), a prime.
+The rule \( (x + y)^n = x^n + y^n \) is false in \( \nR \) for every \( n \ge 2 \): with \( x = y = 1 \) it would give \( 2^n = 2 \), while \( 2^n > 2^1 = 2 \) for \( n \ge 2 \) (@fd2:prp-power-laws (e)); at \( n = 2 \), \( (1 + 1)^2 = 4 \ne 2 \). The theorem says what is missing: the middle terms \( \binom{n}{k} x^k y^{n-k} \) with \( 0 < k < n \). Chapter 4 shows that those middle terms all vanish for \( n = p \) in every field of characteristic \( p \), a prime.
 :::
 
 ## Consequences in the real numbers
@@ -251,12 +251,12 @@ Let \( n \in \nN \).
 ::: {.proof}
 We apply @thm-binomial-commutative-ring in \( R = \nR \).
 
-(a) With \( x = y = 1 \), every \( x^k y^{n-k} \) is \( 1 \), since \( 1^m = 1 \) for every \( m \), so \( 2^n = (1 + 1)^n = \sum_{k=0}^{n} \binom{n}{k} \). With \( x = -1 \) and \( y = 1 \), \( (-1 + 1)^n = 0^n \), and for \( n \ge 1 \), \( 0^n = 0^{n-1} \cdot 0 = 0 \). So \( 0 = \sum_{k=0}^{n} (-1)^k \binom{n}{k} \).
+(a) With \( x = y = 1 \), every \( x^k y^{n-k} \) is \( 1 \), since \( 1^m = 1 \) for every \( m \), so \( 2^n = (1 + 1)^n = \sum_{k=0}^{n} \binom{n}{k} \). With \( x = -1 \) and \( y = 1 \), \( (-1 + 1)^n = 0^n \), and for \( n \ge 1 \), \( 0^n = 0^{n-1} 0 = 0 \). So \( 0 = \sum_{k=0}^{n} (-1)^k \binom{n}{k} \).
 
 (b), (c) With \( y = 1 \), \( (x + 1)^n = \sum_{j=0}^{n} \binom{n}{j} x^j \). For \( x \ge 0 \) each term is \( \ge 0 \). Indeed \( \binom{n}{j} \ge 0 \) is a natural number. Also \( x^j \ge 0 \): for \( x > 0 \) a power of a positive number is positive, and for \( x = 0 \), \( x^j \) is \( 1 \) or \( 0 \). A product of two non-negative numbers is non-negative. By @prp-sum-order (b), the sum is at least its single term \( j = k \), which is (b). By the same part with \( m = 2 \le n \), it is at least the sum of its terms \( j = 0, 1, 2 \), which is \( 1 + \binom{n}{1} x + \binom{n}{2} x^2 \). Finally, \( \binom{n}{1} = n \) by the third fact after @def-binomial-coefficients. By @prp-binomial-factorial (c) with \( k = 2 \), \( \binom{n}{2} \cdot 2 = n(n - 1) \), so \( \binom{n}{2} = \frac{n(n-1)}{2} \). This proves (c).
 
 ::: {.uses}
-@fd2:prp-power-laws (e) (positive powers of positives); @fd3:prp-ordered-field-halves (d) (multiplying non-negative inequalities).
+@fd2:prp-power-laws (e) (positive powers of positives); @fd3:prp-ordered-field-halves (d) (multiplying non-negative inequalities); @fd3:prp-naturals-in-ordered-field (a), (b) (naturals in \( \nR \): products, sign).
 :::
 :::
 
@@ -271,7 +271,7 @@ The bound is \( \binom{5}{k} 2^k \), which for \( k = 0, 1, \dots, 5 \) is \( 1,
 :::
 
 ::: {#exm-binomial-bound}
-[Powers of two beat n squared]
+[A lower bound for powers of two]
 
 Show that \( 2^n \ge \frac{n(n-1)}{2} \), and hence \( \frac{n}{2^n} \le \frac{2}{n - 1} \), for every integer \( n \ge 2 \).
 :::
@@ -280,6 +280,22 @@ Show that \( 2^n \ge \frac{n(n-1)}{2} \), and hence \( \frac{n}{2^n} \le \frac{2
 Let \( n \ge 2 \). By @cor-binomial-real (b) with \( x = 1 \) and \( k = 2 \le n \), \( 2^n = (1 + 1)^n \ge \binom{n}{2} = \frac{n(n-1)}{2} \). Both sides are positive (\( n(n - 1) \ge 2 \)), so @fd3:prp-ordered-field-halves (c) inverts the inequality: \( \frac{1}{2^n} \le \frac{2}{n(n-1)} \). Multiplying by \( n > 0 \) gives \( \frac{n}{2^n} \le \frac{2}{n - 1} \). For instance, at \( n = 5 \): \( \frac{5}{32} \le \frac{2}{4} \).
 
 The right side \( \frac{2}{n - 1} \) can be made as small as we like by taking \( n \) large, and Section 1.4 turns this into the limit \( n/2^n \to 0 \).
+:::
+
+::: {#exm-binomial-absorbed-sum}
+[An absorbed sum]
+
+Compute \( \sum_{k=1}^{4} k \binom{4}{k} \) in two ways: term by term, and by absorption.
+:::
+
+::: {.solution}
+Term by term, with row \( 4 \): \( 1 \cdot 4 + 2 \cdot 6 + 3 \cdot 4 + 4 \cdot 1 = 4 + 12 + 12 + 4 = 32 \).
+
+By absorption: shift the index by \( k = j + 1 \) (@fd2:def-sum-product), so the sum is \( \sum_{j=0}^{3} (j + 1) \binom{4}{j+1} \). @prp-binomial-absorption with \( n = 3 \) gives \( (j + 1) \binom{4}{j+1} = 4 \binom{3}{j} \). Taking the constant \( 4 \) out of the sum (@lem-ring-finite-sums (b)) and using the row sum @cor-binomial-real (a) for \( n = 3 \),
+\[
+\sum_{k=1}^{4} k \binom{4}{k} = \sum_{j=0}^{3} 4 \binom{3}{j} = 4 \sum_{j=0}^{3} \binom{3}{j} = 4 \cdot 2^3 = 32 .
+\]
+The second computation never uses the entries of row \( 4 \): absorption turns the factor \( k \) into the constant \( 4 \), and what is left is all of row \( 3 \), whose sum is \( 2^3 \).
 :::
 
 ## Exercises
@@ -320,7 +336,7 @@ The right side \( \frac{2}{n - 1} \) can be made as small as we like by taking \
 \[
 (2x - 1)^5 = \sum_{k=0}^{5} \binom{5}{k} 2^k (-1)^{5-k} x^k .
 \]
-The term with \( k = 3 \) is \( \binom{5}{3} \cdot 8 \cdot (-1)^2 \, x^3 = 80 x^3 \), so \( 80 \) multiplies \( x^3 \).
+Term by term, with row \( 5 \) and \( k = 5, 4, \dots, 0 \), this is \( (2x - 1)^5 = 32x^5 - 80x^4 + 80x^3 - 40x^2 + 10x - 1 \). The term with \( k = 3 \) is \( \binom{5}{3} \cdot 8 \cdot (-1)^2 \, x^3 = 80 x^3 \), so \( 80 \) multiplies \( x^3 \).
 
 (b) By the theorem with \( x = 3 \) and \( y = 1 \), the sum is \( (3 + 1)^n = 4^n \). Check \( n = 2 \): \( 1 + 2 \cdot 3 + 9 = 16 \).
 :::
@@ -363,7 +379,7 @@ Apply @cor-binomial-real (c) with \( x = 0.01 \ge 0 \) and \( n = 10 \ge 2 \): \
 ::: {#exr-binomial-theorem-c1}
 [C1: Chapter check: absorption twice]
 
-Prove that \( \sum_{k=0}^{n} k(k - 1) \binom{n}{k} = n(n - 1) \, 2^{n-2} \) for every integer \( n \ge 2 \).
+Prove that, in \( \nZ \), \( \sum_{k=0}^{n} k(k - 1) \binom{n}{k} = n(n - 1) \, 2^{n-2} \) for every integer \( n \ge 2 \).
 :::
 
 ::: {.solution}
@@ -390,7 +406,7 @@ Check \( n = 3 \): \( a_2 + a_3 = 2 \cdot 3 + 6 \cdot 1 = 12 = 6 \cdot 2 \).
 - 3: the first absorption, \( k \binom{n}{k} = n \binom{n-1}{k-1} \), with its range \( k \ge 1 \) stated.
 - 3: the second absorption, \( (k - 1) \binom{n-1}{k-1} = (n - 1) \binom{n-2}{k-2} \), with its range \( k \ge 2 \), \( n \ge 2 \) stated.
 - 2: the index shift and the row sum @cor-binomial-real (a) for \( n - 2 \).
-A route through @prp-binomial-factorial (c) earns the absorption points for the equivalent identity \( k(k - 1) \binom{n}{k} = n(n - 1) \binom{n-2}{k-2} \), proved for \( k \ge 2 \).
+A route through @prp-binomial-factorial (c) earns the absorption points for the equivalent identity \( k(k - 1) \binom{n}{k} = n(n - 1) \binom{n-2}{k-2} \), proved for \( k \ge 2 \). An induction on \( n \) from \( n = 2 \), with Pascal's rule and @exr-binomial-theorem-b2, also earns full marks: 3 for the base case and the set-up, 4 for the Pascal split \( S(n + 1) = 2S(n) + 2 \sum_{j=0}^{n} j \binom{n}{j} \), where \( S(n) \) is the sum, and 3 for the algebra with B2.
 
 **Slips that lose the step.** Applying absorption at \( k = 0 \), where it would need \( \binom{n-1}{-1} \), earns 0 for that step.
 :::
@@ -405,7 +421,7 @@ prp-binomial-factorial (proof): (n + 1) - (j + 1) = n - j; n - (n - k) = k; arit
 prp-binomial-factorial (proof): a product of positive integers is a positive integer | fd2:prp-integers-closed (a), (b)
 thm-binomial-commutative-ring (proof): x^k x = x^{k+1}, y^{n-k} y = y^{n+1-k}, (n + 1) - (k + 1) = n - k | power recursion (prp-power-laws-commutative-ring, Section 1.1); arithmetic of omega, fd3:cor-omega-identification (c)
 thm-binomial-commutative-ring (proof): 1 . a = a and 0 . a = 0 for natural multiples | recursion for n . a (fd3 Section 2.4, "Multiples"), inline
-thm-binomial-commutative-ring (claim): matrix multiplication is not commutative, the expansion needs commuting pairs | linear-algebra volumes, prose comparison only; nothing depends on it
+thm-binomial-commutative-ring (claim): matrix multiplication is not commutative, the expansion can fail for non-commuting pairs at n = 2 | linear-algebra volumes, prose comparison only; nothing depends on it
 thm-binomial-commutative-ring (example): (fold) 2x2 matrices X, Y: X^2 = Y^2 = 0, (X + Y)^2 = I, 2XY = diag(2, 0); matrix rings satisfy (F1)-(F5), (F7), (F9) | linear-algebra volumes (school matrix arithmetic), fold only, nothing depends on it; verify/ch01/thm-binomial-commutative-ring.py
 thm-binomial-commutative-ring (claim): in Z and R, m . z = mz since m . 1 = m | NOTATION n . a row (fd3 Section 2.4); fd3:def-naturals-in-ordered-field
 exm-binomial-expansions (example): (-1)^{2i} = 1, (-1)^{2i+1} = -1; rows 4 and 5; 11^4 = 14641 | fd2:prp-power-laws (a), (b) with (-1)^2 = 1 (fd3:prp-ring-algebra (c)); verify/ch01/exm-binomial-expansions.py
@@ -415,8 +431,9 @@ cor-binomial-real (proof): 0^j is 1 (j = 0) or 0 (j >= 1) | power recursion, inl
 cor-binomial-real (claim): (check) C(5, k) 2^k = 1, 10, 40, 80, 80, 32; 3^5 = 243 | verify/ch01/cor-binomial-real.py
 cor-binomial-real (claim): for x < 0 the terms C(n, j) x^j alternate in sign | sign of x^j by fd2:prp-power-laws (a), (b) and fd3:prp-ordered-ring-rules (c), (d); prose remark, nothing depends on it
 exm-binomial-bound (solution): n(n - 1) >= 2 for n >= 2; 5/32 <= 2/4 | arithmetic of N read in R (fd3:prp-naturals-in-ordered-field (a), (b)); verify/ch01/exm-binomial-bound.py
+exm-binomial-absorbed-sum (solution): 4 + 12 + 12 + 4 = 32 = 4 * 2^3; shift of index k = j + 1 | fd2:def-sum-product (general bounds); verify/ch01/exm-binomial-absorbed-sum.py
 exr-binomial-theorem-a1 (solution): run of the step n = 1 to n = 2; (x + y)^2 = x^2 + xy + yx + y^2 for matrices | verify/ch01/exr-binomial-theorem-a1.py; matrices: linear-algebra volumes, prose only
-exr-binomial-theorem-b1 (solution): (2x)^k = 2^k x^k; x^3 coefficient 80; n = 2 check 16 | fd2:prp-power-laws (c); verify/ch01/exr-binomial-theorem-b1.py
+exr-binomial-theorem-b1 (solution): (2x)^k = 2^k x^k; six terms 32, -80, 80, -40, 10, -1; x^3 coefficient 80; n = 2 check 16 | fd2:prp-power-laws (c); verify/ch01/exr-binomial-theorem-b1.py
 exr-binomial-theorem-b2 (solution): shift of index k = j + 1 | fd2:def-sum-product (general bounds); verify/ch01/exr-binomial-theorem-b2.py
 exr-binomial-theorem-b3 (solution): 1 + 0.1 + 0.0045 = 1.1045; C(10, 2) = 45 | verify/ch01/exr-binomial-theorem-b3.py
 exr-binomial-theorem-c1 (solution): shift of index j = k - 2; n = 3 check 12 | fd2:def-sum-product (general bounds); verify/ch01/exr-binomial-theorem-c1.py

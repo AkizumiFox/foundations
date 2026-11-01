@@ -12,7 +12,7 @@ The chapter starts with finite sums and the binomial theorem, which hold in ever
 - Ordered fields, the absolute value and limits of sequences, from *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 4 (@fd3:def-sequence-limit-ordered-field).
 - The completeness of \( \nR \), from *Number Systems: From \(\nN\) to \(\nR\)*, Chapters 5 and 6 (@fd3:thm-reals-complete-ordered-field).
 
-**Time.** About 15 hours if you read the main text and do every A exercise and one B and one C exercise per section; about 25 hours for everything.
+**Time.** About 20 hours if you read the main text and do every A exercise and one B and one C exercise per section; about 30 hours for everything.
 
 ## Roadmap
 

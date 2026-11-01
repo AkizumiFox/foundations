@@ -10,7 +10,7 @@ The method of @fd3:exm-method-limit-from-definition has four steps.
 
 ::: {.enumerate options="label=(\arabic*)"}
 1. Bring the distance \( \abs{a_n - a} \) to one fraction.
-2. Bound it, for every \( n \ge n_0 \), by a constant \( C \) over \( n + 1 \).
+2. Bound it, for every \( n \ge n_0 \), by a constant \( C > 0 \) over \( n + 1 \).
 3. Choose a threshold \( N' \) for that bound, and let \( N \coloneqq \max\{N', n_0\} \).
 4. Write the proof forwards: \( \varepsilon \) first, then \( N \), then an arbitrary \( n \ge N \).
 :::
@@ -58,7 +58,7 @@ Take \( \dfrac{2n^2 + 3n}{n^2 - 5} \). For large \( n \) the terms \( 2n^2 \) an
 ::: {#exm-method-dominant-term}
 [Method: keep the dominant term]
 
-**How it goes.** In a quotient of sums, keep the term that grows fastest and absorb the others into it. From some \( n_0 \) on, a lower-order term is at most a fixed fraction of the dominant term. For example, \( 5 \le \frac12 n^2 \) once \( n \ge 4 \), so \( n^2 - 5 \ge \frac12 n^2 \) there. Then the quotient is bounded by a quotient of single powers. This is step (2) of the method of @fd3:exm-method-limit-from-definition, with \( n_0 \) the largest of the ranges used.
+**How it goes.** In a quotient of sums, keep the term that grows fastest and absorb the others into it. From some \( n_0 \) on, a lower-order term is at most a fixed fraction of the dominant term. For example, \( 5 \le \frac12 n^2 \) once \( n \ge 4 \), so \( n^2 - 5 \ge \frac12 n^2 \) there. Then the quotient is bounded by a quotient of single powers. This is the bounding step of the method of @fd3:exm-method-limit-from-definition, with \( n_0 \) the largest of the ranges used.
 
 **When to use it.** Rational expressions in \( n \), possibly with \( \sqrt{n} \).
 
@@ -83,7 +83,7 @@ so the distance is \( \abs{a_n - 2} = \dfrac{3n + 10}{n^2 - 5} \).
 \abs{a_n - 2} \le 6n \cdot \frac{2}{n^2} = \frac{12}{n} \qquad (n \ge 4) .
 \]
 
-(3) Let \( \varepsilon > 0 \). Choose an integer \( N' > 12/\varepsilon \) and let \( N \coloneqq \max\{4, N'\} \).
+(3) Let \( \varepsilon > 0 \). Choose an integer \( N' > 12/\varepsilon \) and let \( N \coloneqq \max\{4, N'\} \). It depends on \( \varepsilon \) only.
 
 (4) For \( n \ge N \): \( \abs{a_n - 2} \le 12/n \le 12/N < \varepsilon \). Hence \( a_n \to 2 \).
 
@@ -104,7 +104,7 @@ The inequality says \( \frac12 n^2 \ge 7n \), that is, \( n \bigl( \frac12 n - 7
 
 ## Powers
 
-Every bound so far came from dropping or absorbing terms of a sum. A power \( r^n \) has only one term, and there is nothing to drop. Bernoulli's inequality and the binomial theorem turn it into a sum, and a sum can be bounded below by any one of its non-negative terms.
+Every bound so far came from dropping or absorbing terms of a sum. A power \( r^n \) has only one term, and there is nothing to drop. Bernoulli's inequality and the binomial theorem turn it into a sum, and a sum of non-negative terms is at least any one of its terms.
 
 The first case is the geometric sequence. For \( \abs{r} \ge 1 \) the terms \( r^n \) do not shrink, and for \( \abs{r} < 1 \) they should tend to \( 0 \). Take \( r = \frac12 \) first. Then \( (\frac12)^n = 1/2^n \), and Bernoulli's inequality gives \( 2^n = (1 + 1)^n \ge 1 + n > n \). So \( (\frac12)^n < 1/n \) for every \( n \ge 1 \), a bound of the form \( C/n \) with \( C = 1 \). The proposition below does the same for every \( r \) with \( 0 < \abs{r} < 1 \), by writing \( 1/\abs{r} \) as \( 1 + h \).
 
@@ -122,7 +122,7 @@ Let \( r \in \nR \) with \( \abs{r} < 1 \).
 ::: {.idea}
 [Scratch work]
 
-The goal, from @fd3:def-sequence-limit-ordered-field, is \( \abs{r^n - 0} = \abs{r}^n < \varepsilon \) for every \( n \) beyond some \( N \). Solving \( \abs{r}^n < \varepsilon \) for \( n \) would need a logarithm, which we do not have yet. So we follow step (2) of the method and look for a simpler bound of the form \( C/n \).
+The goal, from @fd3:def-sequence-limit-ordered-field, is \( \abs{r^n - 0} = \abs{r}^n < \varepsilon \) for every \( n \) beyond some \( N \). Solving \( \abs{r}^n < \varepsilon \) for \( n \) would need a logarithm, which we do not have yet. So we follow the bounding step of the method and look for a simpler bound of the form \( C/n \).
 
 The trouble is that \( \abs{r}^n \) is a small number. The tools we have, Bernoulli's inequality and the binomial theorem, bound powers of numbers **above** \( 1 \) from **below**. So we turn small into large: we write \( \abs{r} \) as the reciprocal of a number above \( 1 \),
 \[
@@ -134,9 +134,9 @@ so that \( \abs{r}^n = 1/(1 + h)^n \). Now \( \abs{r}^n \) is small as soon as \
 |---|---|
 | \( 0 < \abs{r} < 1 \) | \( \abs{r}^n \) below every \( \varepsilon > 0 \) for large \( n \) |
 | \( h \coloneqq \frac{1}{\abs{r}} - 1 > 0 \), so \( \abs{r}^n = \frac{1}{(1 + h)^n} \) | enough: \( (1 + h)^n \) bounded below by \( Cn \) |
-| @fd2:thm-bernoulli: \( (1 + h)^n \ge 1 + nh > nh \) | \( \abs{r}^n < \frac{1}{nh} \): step (2) of the method with \( C = \frac{1}{h} \); the gap is closed |
+| @fd2:thm-bernoulli: \( (1 + h)^n \ge 1 + nh > nh \) | \( \abs{r}^n < \frac{1}{nh} \): the bounding step of the method with \( C = \frac{1}{h} \); the gap is closed |
 
-The proof follows these rows from top to bottom. It then finishes with steps (3) and (4) of the method, using the bound \( 1/(nh) \).
+The proof follows these rows from top to bottom. It then finishes with the choice of the threshold and the forward proof, using the bound \( 1/(nh) \).
 :::
 
 ::: {.proof}
@@ -146,7 +146,7 @@ The proof follows these rows from top to bottom. It then finishes with steps (3)
 \]
 For \( n \ge 1 \), \( nh > 0 \) as a product of positive numbers. So \( 0 < nh < (1 + h)^n \), and taking reciprocals reverses the inequality: \( \abs{r}^n = 1/(1 + h)^n < 1/(nh) \).
 
-(b) If \( r = 0 \), then \( r^n = r^{n-1} \cdot 0 = 0 \) for every \( n \ge 1 \), so \( \abs{r^n - 0} = 0 < \varepsilon \) for every \( \varepsilon > 0 \) and every \( n \ge 1 \). Let \( r \ne 0 \) and \( \varepsilon > 0 \), and let \( h \) be as in (a). Then \( h\varepsilon > 0 \). Since \( \nR \) is Archimedean, @fd3:prp-archimedean-reciprocal gives \( N \in \nZ_{>0} \) with \( 1/n < h\varepsilon \) for every \( n \ge N \). This \( N \) depends on \( \varepsilon \) and on \( r \), through \( h \). Let \( n \ge N \). Then \( n \ge 1 \), and \( \abs{r^n} = \abs{r}^n \) by induction on \( n \), since \( \abs{xy} = \abs{x} \abs{y} \). By (a),
+(b) If \( r = 0 \), then \( r^n = r^{n-1} \cdot 0 = 0 \) for every \( n \ge 1 \), so \( \abs{r^n - 0} = 0 < \varepsilon \) for every \( \varepsilon > 0 \) and every \( n \ge 1 \). So \( N \coloneqq 1 \) works for every \( \varepsilon > 0 \). Let \( r \ne 0 \) and \( \varepsilon > 0 \), and let \( h \) be as in (a). Then \( h\varepsilon > 0 \). Since \( \nR \) is Archimedean, @fd3:prp-archimedean-reciprocal gives \( N \in \nZ_{>0} \) with \( 1/n < h\varepsilon \) for every \( n \ge N \). This \( N \) depends on \( \varepsilon \) and on \( r \), through \( h \). Let \( n \ge N \). Then \( n \ge 1 \), and \( \abs{r^n} = \abs{r}^n \) by induction on \( n \), since \( \abs{xy} = \abs{x} \abs{y} \). By (a),
 \[
 \abs{r^n - 0} = \abs{r}^n < \frac{1}{nh} < \frac{h\varepsilon}{h} = \varepsilon .
 \]
@@ -167,7 +167,7 @@ From @prp-power-null (a), find an \( N \) with \( (0.9)^n < 0.01 \) for every \(
 Here \( r = 0.9 = \frac{9}{10} \), so \( h = \frac{10}{9} - 1 = \frac{1}{9} \) and \( (0.9)^n < \dfrac{1}{n/9} = \dfrac{9}{n} \) for \( n \ge 1 \). Now \( \frac{9}{n} \le \frac{1}{100} \) exactly when \( n \ge 900 \). So \( N = 900 \) works: for \( n \ge 900 \), \( (0.9)^n < 9/n \le 0.01 \). The bound is wasteful, since already \( (0.9)^{44} < 0.01 \). That costs nothing: the definition asks for **some** threshold, not the least.
 :::
 
-The same three steps handle a power in a denominator under any numerator: write the base as \( 1 + h \), keep one term of the expansion, and invert.
+The same steps handle a power in a denominator under a numerator that is a power of \( n \): write the base as \( 1 + h \), keep one term of the expansion, and invert.
 
 ::: {#exm-method-power-lower-bound}
 [Method: bound a power from below]
@@ -229,17 +229,17 @@ Show that \( \dfrac{1}{n!} \le \dfrac{1}{2^{n-1}} < \dfrac{2}{n} \) for every in
 \[
 (n + 1)! = n! \, (n + 1) \ge 2^{n-1} \cdot 2 = 2^n .
 \]
-Inverting reverses the inequality, so \( 1/n! \le 1/2^{n-1} \).
+Here \( 2^{n-1} > 0 \), as a power of a positive number, and \( n! \ge 2^{n-1} > 0 \). So inverting reverses the inequality, and \( 1/n! \le 1/2^{n-1} \).
 
 *The second inequality.* By @prp-power-null (a) with \( r = \frac12 \), \( h = 2 - 1 = 1 \), we have \( (\frac12)^n < \frac1n \) for \( n \ge 1 \). Since \( 1/2^{n-1} = (\frac12)^{n-1} = 2 \cdot (\frac12)^n \),
 \[
 \frac{1}{2^{n-1}} = 2 \Bigl( \frac12 \Bigr)^n < \frac{2}{n} .
 \]
 
-*The limit.* So \( 0 < 1/n! < 2/n \) for \( n \ge 1 \): a bound \( C/n \) with \( C = 2 \). Given \( \varepsilon > 0 \), take an integer \( N > 2/\varepsilon \). Then \( N \ge 1 \), and for \( n \ge N \), \( \abs{1/n! - 0} < 2/n \le 2/N < \varepsilon \). Hence \( 1/n! \to 0 \).
+*The limit.* So \( 0 < 1/n! < 2/n \) for \( n \ge 1 \): a bound \( C/n \) with \( C = 2 \). Given \( \varepsilon > 0 \), take an integer \( N > 2/\varepsilon \). It depends on \( \varepsilon \) only. Then \( N \ge 1 \), and for \( n \ge N \), \( \abs{1/n! - 0} < 2/n \le 2/N < \varepsilon \). Hence \( 1/n! \to 0 \).
 
 ::: {.uses}
-@fd2:def-sum-product (\( (n + 1)! = n! \, (n + 1) \)); @fd3:prp-ordered-field-halves (d) (multiplying inequalities), (c) (larger denominator, smaller quotient); @fd2:prp-power-laws (\( 1/2^{n-1} = 2 (\frac12)^n \)).
+@fd2:def-sum-product (\( (n + 1)! = n! \, (n + 1) \)); @fd3:prp-ordered-field-halves (d) (multiplying inequalities), (c) (larger denominator, smaller quotient); @fd2:prp-power-laws (\( 1/2^{n-1} = 2 (\frac12)^n \)), (e) (\( 2^{n-1} > 0 \)).
 :::
 :::
 
@@ -271,7 +271,7 @@ Change one hypothesis of @cor-binomial-real (b): keep \( k = 2 \) and allow \( h
 
 (b) On \( \varepsilon \) only. It cannot depend on \( n \): \( N \) is chosen before \( n \) is named, and the claim is about **every** \( n \ge N \).
 
-(c) Step (2) of @fd3:exm-method-limit-from-definition: shrink the denominator by dropping the positive term \( 7 \), so \( n^3 + 7 \ge n^3 > 0 \) and \( n/(n^3 + 7) \le n/n^3 = 1/n^2 \).
+(c) Bounding the distance by shrinking the denominator (the bounding step of @fd3:exm-method-limit-from-definition), here by keeping its dominant term \( n^3 \) (@exm-method-dominant-term) and dropping the positive \( 7 \), so \( n^3 + 7 \ge n^3 > 0 \) and \( n/(n^3 + 7) \le n/n^3 = 1/n^2 \).
 
 (d) True. Given \( \varepsilon > 0 \), take an integer \( N' > 5/\varepsilon \) and \( N \coloneqq \max\{10, N'\} \). For \( n \ge N \), \( \abs{a_n - 0} \le 5/n \le 5/N < \varepsilon \).
 :::
@@ -279,9 +279,9 @@ Change one hypothesis of @cor-binomial-real (b): keep \( k = 2 \) and allow \( h
 ### B. Practice
 
 ::: {#exr-estimates-for-limits-b1}
-[B1: Name the method, then complete it]
+[B1: Say which method, then complete it]
 
-Show that \( a_n \coloneqq \dfrac{n + 5}{2^n} \to 0 \). Start: write \( 2 = 1 + 1 \). By @cor-binomial-real (b) with \( k = 2 \), \( 2^n \ge \dfrac{n(n - 1)}{2} \ge \dfrac{n^2}{4} \) for \( n \ge 2 \). *Name the method, then complete it.*
+Show that \( a_n \coloneqq \dfrac{n + 5}{2^n} \to 0 \). Start: write \( 2 = 1 + 1 \). By @cor-binomial-real (b) with \( k = 2 \), \( 2^n \ge \dfrac{n(n - 1)}{2} \ge \dfrac{n^2}{4} \) for \( n \ge 2 \). *Say which method this is, then complete it.*
 :::
 
 ::: {.solution}
@@ -326,7 +326,7 @@ The line that does not belong is (iv): it makes \( N \) depend on \( n \), but \
 ::: {#exr-estimates-for-limits-b3}
 [B3: Prove or disprove]
 
-Prove each true statement and refute each false one.
+Prove each true statement and refute each false one. In parts (a), (b), (c) and (e), \( a_n \) denotes the \( n \)-th term of the sequence in question.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. \( \dfrac{n^2 + 1}{n^3} \to 0 \).
@@ -346,14 +346,14 @@ Prove each true statement and refute each false one.
 
 (d) **False.** Take \( \varepsilon = 1 \) and \( n = 1 \ge 1/\varepsilon \). Then \( 1/n^2 = 1 \), which is not \( < 1 \). The non-strict \( 1/n^2 \le \varepsilon \) does not give the strict \( 1/n^2 < \varepsilon \).
 
-(e) **True.** For \( n \ge 3 \), \( n! = 1 \cdot 2 \cdot \prod_{k=3}^{n} k \), so
+(e) **True.** For \( n \ge 3 \), \( n! = 1 \cdot 2 \cdot \prod_{k=3}^{n} k \). Also \( 2^n/n! = \prod_{k=1}^{n} (2/k) \), by induction on \( n \) from \( 2^{n+1}/(n+1)! = (2^n/n!) \cdot (2/(n+1)) \). So
 \[
 \frac{2^n}{n!} = \frac{2}{1} \cdot \frac{2}{2} \cdot \prod_{k=3}^{n} \frac{2}{k} \le 2 \cdot 1 \cdot \frac{2}{n} = \frac{4}{n} .
 \]
 Every factor \( \frac{2}{k} \) with \( 3 \le k < n \) lies in \( (0, 1] \), so their product lies in \( (0, 1] \). The last factor, \( k = n \), is kept. Given \( \varepsilon > 0 \), take an integer \( N' > 4/\varepsilon \) and \( N \coloneqq \max\{3, N'\} \). For \( n \ge N \), \( \abs{a_n} \le 4/n \le 4/N < \varepsilon \).
 
 ::: {.uses}
-@fd3:prp-absolute-value-ordered-field (b) (\( \abs{xy} = \abs{x} \abs{y} \)); @fd3:exm-first-sequences-ordered-field (d) (\( \abs{(-1)^n} = 1 \)); @fd3:prp-ordered-field-halves (d) (multiplying inequalities).
+@fd3:prp-absolute-value-ordered-field (b) (\( \abs{xy} = \abs{x} \abs{y} \)); @fd3:exm-first-sequences-ordered-field (d) (\( \abs{(-1)^n} = 1 \)); @fd3:prp-ordered-field-halves (d) (multiplying inequalities); @fd2:def-sum-product (the recursion of products and factorials, for \( 2^n/n! = \prod_{k=1}^n (2/k) \) and the splitting of \( n! \)).
 :::
 :::
 
@@ -386,7 +386,7 @@ where the middle step holds because \( n \ge N \) and the last because \( N > 13
 
 - 2: fixes \( \varepsilon > 0 \) arbitrary and states the goal.
 - 3: computes \( \abs{a_n - 3} \) exactly.
-- 3: bounds it by \( C/n \) with the range \( n \ge 1 \) stated.
+- 3: bounds it by \( C/n \) (or \( C/(n + 1) \)) on a stated range \( n \ge n_0 \), with each inequality justified.
 - 2: chooses \( N \) before \( n \), depending only on \( \varepsilon \), and ends the chain with a strict \( < \varepsilon \).
 
 **Slips that lose the step.** Letting \( N \) depend on \( n \). Bounding in the wrong direction, that is, shrinking a numerator or enlarging a denominator.
@@ -399,7 +399,7 @@ where the middle step holds because \( n \ge N \) and the last because \( N > 13
 ::: {#exr-estimates-for-limits-c2}
 [C2: Squares over powers]
 
-Let \( r > 1 \) and \( h \coloneqq r - 1 \). Show that \( \dfrac{n^2}{r^n} \to 0 \). Start: by @cor-binomial-real (b) with \( k = 3 \), \( r^n \ge \dfrac{n(n - 1)(n - 2)}{6} h^3 \) for \( n \ge 3 \). *Name the method, then complete it.*
+Let \( r > 1 \) and \( h \coloneqq r - 1 \). Show that \( \dfrac{n^2}{r^n} \to 0 \). Start: by @cor-binomial-real (b) with \( k = 3 \), \( r^n \ge \dfrac{n(n - 1)(n - 2)}{6} h^3 \) for \( n \ge 3 \). *Say which method this is, then complete it.*
 :::
 
 ::: {.solution}
@@ -411,18 +411,18 @@ Bound \( n - 1 \) and \( n - 2 \) below by multiples of \( n \), for \( n \ge 4 
 ::: {.solution}
 [Hint 2]
 
-For \( n \ge 4 \): \( n - 1 \ge \frac{3n}{4} \) and \( n - 2 \ge \frac{n}{2} \), so \( r^n \ge \dfrac{n^3 h^3}{16} \).
+For \( n \ge 4 \), \( n - 2 \ge \frac{n}{2} \), since this rearranges to \( \frac{n}{2} \ge 2 \). Find a similar bound for \( n - 1 \), then multiply.
 :::
 
 ::: {.solution}
-*The method:* bound the power from below, as in @exm-method-power-lower-bound. The start did steps (1) and (2), with \( k = 3 \), one more than the power of \( n \) on top. What remains is steps (3) and (4).
+*The method:* bound the power from below, as in @exm-method-power-lower-bound. The start wrote \( r = 1 + h \) and kept one term, with \( k = 3 \), one more than the power of \( n \) on top. What remains is to bound \( n(n - 1)(n - 2) \) below and finish the limit.
 
-*Step (3).* Let \( n \ge 4 \). Then \( n - 1 \ge \frac{3n}{4} \), since this rearranges to \( \frac{n}{4} \ge 1 \). Also \( n - 2 \ge \frac{n}{2} \), since this rearranges to \( \frac{n}{2} \ge 2 \). Both sides of both inequalities are non-negative. So we may multiply them, with \( 0 \le n \le n \) as the third factor, and get \( n(n - 1)(n - 2) \ge n \cdot \frac{3n}{4} \cdot \frac{n}{2} = \frac{3n^3}{8} \). Hence
+*The lower bound.* Let \( n \ge 4 \). Then \( n - 1 \ge \frac{3n}{4} \), since this rearranges to \( \frac{n}{4} \ge 1 \). Also \( n - 2 \ge \frac{n}{2} \), since this rearranges to \( \frac{n}{2} \ge 2 \). Both sides of both inequalities are non-negative. So we may multiply them, with \( 0 \le n \le n \) as the third factor, and get \( n(n - 1)(n - 2) \ge n \cdot \frac{3n}{4} \cdot \frac{n}{2} = \frac{3n^3}{8} \). Hence
 \[
 r^n \ge \frac{3n^3}{8 \cdot 6} h^3 = \frac{n^3 h^3}{16} > 0 \qquad (n \ge 4) .
 \]
 
-*Step (4).* Inverting, which reverses the inequality, and multiplying by \( n^2 > 0 \), we get \( \dfrac{n^2}{r^n} \le \dfrac{16}{nh^3} \) for \( n \ge 4 \). Let \( \varepsilon > 0 \), take an integer \( N' > \dfrac{16}{h^3 \varepsilon} \) and \( N \coloneqq \max\{4, N'\} \). It depends on \( \varepsilon \) and \( r \). For \( n \ge N \),
+*The limit.* Inverting, which reverses the inequality, and multiplying by \( n^2 > 0 \), we get \( \dfrac{n^2}{r^n} \le \dfrac{16}{nh^3} \) for \( n \ge 4 \). Let \( \varepsilon > 0 \), take an integer \( N' > \dfrac{16}{h^3 \varepsilon} \) and \( N \coloneqq \max\{4, N'\} \). It depends on \( \varepsilon \) and \( r \). For \( n \ge N \),
 \[
 \Bigl\lvert \frac{n^2}{r^n} - 0 \Bigr\rvert \le \frac{16}{nh^3} \le \frac{16}{Nh^3} < \varepsilon .
 \]
@@ -430,8 +430,9 @@ Hence \( n^2/r^n \to 0 \).
 
 **What a complete answer needs.** (6 points)
 
-- 2: the linear lower bounds for \( n - 1 \) and \( n - 2 \), with the range \( n \ge 4 \) justified.
-- 2: their product, with non-negativity checked, and the inversion, with positivity stated.
+- 1: names the method (bounding a power from below).
+- 2: linear lower bounds for \( n - 1 \) and \( n - 2 \) on a stated, justified range \( n \ge n_0 \).
+- 1: their product, with non-negativity checked, and the inversion, with positivity stated.
 - 2: the choice of \( N \), and the strict chain ending in \( < \varepsilon \).
 
 **Slips that lose the step.** Using \( n - 1 \ge \frac{3n}{4} \) or \( n - 2 \ge \frac{n}{2} \) without the range \( n \ge 4 \). Multiplying inequalities without checking that the factors are non-negative.
@@ -447,7 +448,9 @@ prp-power-null (proof): |r^n| = |r|^n | induction on n with @fd3:prp-absolute-va
 prp-power-null (proof): 0^n = 0 for n >= 1 | @fd3:def-naturals-in-ordered-field (b) (x^{n} = x^{n-1} x), inline; source in the Uses line
 prp-power-null (proof): a product of positive reals is positive (nh > 0) | ordered-field axioms (@fd3:prp-ordered-ring-rules), in the Uses line
 exm-geometric-comparison (solution): n! >= 2^{n-1} for n >= 1; (n+1)! = n!(n+1) | inline induction; factorial recursion from @fd2:def-sum-product, in the Uses line
+exm-geometric-comparison (solution): 2^{n-1} > 0 | @fd2:prp-power-laws (e), in the Uses line
 exm-geometric-comparison (solution): 1/2^{n-1} = (1/2)^{n-1} = 2 (1/2)^n | @fd2:prp-power-laws, in the Uses line
+exr-estimates-for-limits-b3 (solution): 2^n/n! = prod_{k=1}^n (2/k) and n! = 1*2*prod_{k=3}^n k | inline induction from 2^{n+1}/(n+1)! = (2^n/n!)(2/(n+1)); recursion of products and factorials from @fd2:def-sum-product, in the Uses line
 exr-estimates-for-limits-b3 (solution): a product of finitely many factors in (0, 1] lies in (0, 1]; |(-1)^n| = 1 | inline induction with @fd3:prp-ordered-field-halves (d); |(-1)^n| = 1 is in @fd3:exm-first-sequences-ordered-field (d); both in the Uses line, with @fd3:prp-absolute-value-ordered-field (b)
 exm-first-estimate (solution): an integer N' > C/eps exists (also used in exm-dominant-term, prp-linear-over-power-null, exm-geometric-comparison and the exercise solutions) | @fd3:def-archimedean-ordered-field via @fd3:thm-cof-complete-archimedean, recalled in "The method, recalled"
 exm-dominant-term (solution): no natural number has square 5 | 2^2 = 4 < 5 < 9 = 3^2 and monotonicity of squares on N, inline
