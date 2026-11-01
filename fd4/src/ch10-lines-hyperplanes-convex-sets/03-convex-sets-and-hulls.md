@@ -39,7 +39,7 @@ A subset \( C \subseteq \nR^n \) is **convex** if \( [p, q] \subseteq C \) **for
 
 In words: whenever \( p \) and \( q \) are in \( C \), so is \( (1 - t)p + tq \) **for every** \( t \in [0, 1] \) (@def-segment-rn). The quantifier over \( t \) covers the whole interval \( [0, 1] \), not just the midpoint \( t = 1/2 \). This matters: the set \( \nQ^2 \) of points of the plane with rational coordinates contains every midpoint of two of its points and still is not convex (see the warning on midpoints below). The empty set is convex, since the condition has no instance to check. So is every one-point set \( \{p\} \), since \( [p, p] = \{p\} \). The ring and the axes tested above are not convex: in each, one pair of points already has a midpoint outside.
 
-The sets of analysis on which estimates hold are balls. The words "open" and "closed" below are names for now. *Real Numbers, Metric Spaces, and Derivatives* explains them and defines balls for any distance.
+The sets of analysis on which estimates hold are balls. The words "open" and "closed" below are names for now. *Analysis on the Real Line* explains them and defines balls for any distance.
 
 For instance, in \( \nR^2 \) take the points at distance less than \( 1 \) from \( (1, 0) \). The point \( (1/2, 0) \) is one of them, at distance \( 1/2 \). The point \( (1, 1) \) is not, since its distance is exactly \( 1 \); it lies on the circle around the disc.
 
@@ -334,7 +334,7 @@ Let \( A \coloneqq \nR(1, 0) \cup \nR(0, 1) \subseteq \nR^2 \), the union of the
 For \( x = (s, 0) \in A \) and \( t \in [0, 1] \), \( (1 - t)\,0 + t(s, 0) = (ts, 0) \in A \); points of the other axis are handled the same way. So \( A \) is star-shaped about \( 0 \). The points \( (1, 0) \) and \( (0, 1) \) lie in \( A \), and the midpoint \( (1/2, 1/2) \) of the segment between them has both coordinates non-zero, so it lies on neither axis. This shows at once that \( A \) is not convex and that \( [(1, 0), (0, 1)] \not\subseteq A \), so \( A \) is not star-shaped about \( (1, 0) \).
 :::
 
-Convex and star-shaped sets return throughout the series. *Real Numbers, Metric Spaces, and Derivatives* uses convex balls to join points by segments, for connectedness. *Analysis in Several Variables* uses segments inside convex sets for the mean value inequality. *Complex Analysis* proves Cauchy's theorem first on convex and star-shaped regions. *Analysis on Manifolds* proves the Poincaré lemma on star-shaped sets.
+Convex and star-shaped sets return throughout the series. *Analysis on the Real Line* uses convex balls to join points by segments, for connectedness. *Analysis in Several Variables* uses segments inside convex sets for the mean value inequality. *Complex Analysis* proves Cauchy's theorem first on convex and star-shaped regions. *Analysis on Manifolds* proves the Poincaré lemma on star-shaped sets.
 
 ## Exercises
 
@@ -427,7 +427,7 @@ We use the equality case, as in @exm-method-equality-case. Let \( u \coloneqq (1
 
 Suppose \( \norm{u + w} = r = \norm{u} + \norm{w} \). Here \( u \ne 0 \), since \( \norm{u} = (1 - t)r > 0 \). By the equality case of @thm-triangle-inequality-rn (a), \( w = \lambda u \) for some \( \lambda \ge 0 \), that is, \( t(q - c) = \lambda(1 - t)(p - c) \). Dividing by \( t > 0 \), \( q - c = \mu(p - c) \) with \( \mu \coloneqq \lambda(1 - t)/t \ge 0 \). Taking norms, \( r = \mu r \), so \( \mu = 1 \) and \( q = p \), a contradiction. Hence \( \norm{u + w} < r \).
 
-The result depends on the equality case of the triangle inequality, which belongs to the Euclidean norm. Measure distances in \( \nR^2 \) instead by \( \max(\abs{x_1 - y_1}, \abs{x_2 - y_2}) \): the "unit ball" about \( 0 \) is the square \( \{ \max(\abs{x_1}, \abs{x_2}) \le 1 \} \), and its edge contains the whole segment \( [(1, -1), (1, 1)] \), so the analogue of this exercise fails. So does the analogue of @thm-betweenness: the point \( (1, 1) \) is at distance \( 1 \) from \( (0, 0) \) and from \( (2, 0) \), and \( 1 + 1 = 2 \) is the distance between them, yet \( (1, 1) \) is not on the segment \( [(0, 0), (2, 0)] \). *Real Numbers, Metric Spaces, and Derivatives* returns to this distance.
+The result depends on the equality case of the triangle inequality, which belongs to the Euclidean norm. Measure distances in \( \nR^2 \) instead by \( \max(\abs{x_1 - y_1}, \abs{x_2 - y_2}) \): the "unit ball" about \( 0 \) is the square \( \{ \max(\abs{x_1}, \abs{x_2}) \le 1 \} \), and its edge contains the whole segment \( [(1, -1), (1, 1)] \), so the analogue of this exercise fails. So does the analogue of @thm-betweenness: the point \( (1, 1) \) is at distance \( 1 \) from \( (0, 0) \) and from \( (2, 0) \), and \( 1 + 1 = 2 \) is the distance between them, yet \( (1, 1) \) is not on the segment \( [(0, 0), (2, 0)] \). *Analysis on the Real Line* returns to this distance.
 :::
 
 ::: {#exr-convex-sets-and-hulls-b4}
@@ -485,7 +485,7 @@ Since \( x > \inf C \), what can you say about \( x \) as a bound of \( C \)? Th
 
 *Two points around \( x \).* Let \( \alpha < x < \beta \). If \( C \) is bounded below, \( x > \inf C \), so \( x \) is not a lower bound of \( C \); if \( C \) is not bounded below, no real number is a lower bound. Either way there is \( a \in C \) with \( a < x \) (@fd3:prp-ordered-ring-rules (i)). In the same way, \( x \) is not an upper bound of \( C \), and there is \( b \in C \) with \( x < b \).
 
-*The segment is the interval.* For \( n = 1 \), \( (1 - t)a + tb = a + t(b - a) \). Let \( t \coloneqq (x - a)/(b - a) \), which is defined since \( b - a > 0 \). It lies in \( (0, 1) \): \( 0 < x - a < b - a \), and multiplying by \( 1/(b - a) > 0 \) keeps both inequalities (@fd3:prp-ordered-ring-rules (c)); here \( 1/(b - a) > 0 \), since otherwise \( 1 = (b - a) \cdot 1/(b - a) \le 0 \) (@fd3:prp-ordered-ring-rules (c), (e)). With this \( t \), we get \( (1 - t)a + tb = x \). So \( x \in [a, b] \subseteq C \), by convexity.
+*The segment is the interval.* For \( n = 1 \), \( (1 - t)a + tb = a + t(b - a) \). Let \( t \coloneqq (x - a)/(b - a) \), which is defined since \( b - a > 0 \). It lies in \( (0, 1) \). First, \( 1/(b - a) > 0 \), since otherwise \( 1 = (b - a) \cdot 1/(b - a) \le 0 \), against \( 1 > 0 \) (@fd3:prp-ordered-ring-rules (c), (e)). Now \( 0 < x - a < b - a \), and multiplying by \( 1/(b - a) > 0 \) keeps both inequalities, by the same rule (c). With this \( t \), we get \( (1 - t)a + tb = x \). So \( x \in [a, b] \subseteq C \), by convexity.
 
 *Conclusion.* Every \( x \) with \( \alpha < x < \beta \) lies in \( C \). For \( c \in C \), \( \alpha \le c \) because \( \inf C \) is a lower bound (or \( \alpha = -\infty \)), and \( c \le \beta \) likewise. So \( C \) is one of the intervals \( (\alpha, \beta) \), \( [\alpha, \beta) \), \( (\alpha, \beta] \), \( [\alpha, \beta] \), where an infinite end is never included.
 
@@ -512,7 +512,7 @@ Let \( Q \coloneqq \{ x \in \nR^n : \abs{x_k} \le 1 \text{ for every } k \} \). 
 ::: {.solution}
 By @fd3:prp-absolute-value-ordered-field (d), \( \abs{x_k} \le 1 \) if and only if \( -1 \le x_k \le 1 \), that is, \( x_k \le 1 \) and \( -x_k \le 1 \). Since \( x_k = \inner{e_k}{x} \) and \( -x_k = \inner{-e_k}{x} \) (@prp-dot-product-laws-rn (a), (b), (d)), \( Q \) is the intersection of the \( 2n \) closed half-spaces \( \{ \inner{e_k}{x} \le 1 \} \) and \( \{ \inner{-e_k}{x} \le 1 \} \), whose normals \( \pm e_k \) are non-zero. Each is convex by @prp-convex-examples. So \( Q \), their intersection, is convex by @prp-convex-operations (a).
 
-If \( \norm{x} \le 1 \), then \( \abs{x_k} \le \norm{x} \le 1 \) for every \( k \) (@prp-norm-coordinate-bounds (a)), so \( x \in Q \). If \( x \in Q \), then \( M \coloneqq \max_k \abs{x_k} \le 1 \), so \( \norm{x} \le \sqrt n \, M \le \sqrt n \) (@prp-norm-coordinate-bounds (b)), and \( x \in \overline{B}(0, \sqrt n) \). These two inclusions, a ball inside a box inside a larger ball, are the ones *Real Numbers, Metric Spaces, and Derivatives* uses to compare balls and boxes.
+If \( \norm{x} \le 1 \), then \( \abs{x_k} \le \norm{x} \le 1 \) for every \( k \) (@prp-norm-coordinate-bounds (a)), so \( x \in Q \). If \( x \in Q \), then \( M \coloneqq \max_k \abs{x_k} \le 1 \), so \( \norm{x} \le \sqrt n \, M \le \sqrt n \) (@prp-norm-coordinate-bounds (b)), and \( x \in \overline{B}(0, \sqrt n) \). These two inclusions, a ball inside a box inside a larger ball, are the ones *Analysis on the Real Line* uses to compare balls and boxes.
 :::
 
 ::: {#exr-convex-sets-and-hulls-r2}
@@ -528,7 +528,7 @@ f(t) = a + bt + ct^2 = \inner{(1, t, t^2)}{(a, b, c)} .
 \]
 So \( P_t \coloneqq \{ f : f(t) \ge 0 \} \) is the closed half-space \( \{ \inner{(1, t, t^2)}{y} \ge 0 \} \) of \( \nR^3 \). Its normal \( (1, t, t^2) \) is non-zero, since its first coordinate is \( 1 \). So \( P_t \) is convex by @prp-convex-examples. Then \( P = \bigcap_{t \in [0, 1]} P_t \) is convex by @prp-convex-operations (a).
 
-The two-point test also works directly. Let \( f = a + bx + cx^2 \) and \( g = a' + b'x + c'x^2 \) be in \( P \) and \( s \in [0, 1] \). Then \( (1 - s)f(t) + sg(t) \ge 0 \) for \( s \in [0, 1] \), and by the displayed formula this is the value at \( t \) of the polynomial whose coefficient triple is \( (1 - s)(a, b, c) + s(a', b', c') \).
+The two-point test also works directly. Let \( f = a + bx + cx^2 \) and \( g = a' + b'x + c'x^2 \) be in \( P \) and \( s \in [0, 1] \). Then \( (1 - s)f(t) + sg(t) \ge 0 \) for every \( t \in [0, 1] \). By the displayed formula, this is the value at \( t \) of the polynomial with coefficient triple \( (1 - s)(a, b, c) + s(a', b', c') \). So that polynomial is in \( P \).
 
 ::: {.uses}
 @def-dot-product-rn (the dot product).
@@ -552,8 +552,8 @@ and \( z \in D \). Multiplying the plane by a unit complex number turns it about
 :::
 
 <!-- dependency ledger
-def-convex-set-rn (claim): warning: 1/2 < sqrt 2/2 < 1 from 1 < sqrt 2 < 2 | fd3:prp-ordered-ring-rules (c) with 1/2 > 0
-def-convex-set-rn (claim): warning: 2t in Q for t in Q | Q is closed under products (fd3, ordered field Q)
+exm-method-two-point-test (claim): warning "Midpoints are not enough": 1/2 < sqrt 2/2 < 1 from 1 < sqrt 2 < 2 | fd3:prp-ordered-ring-rules (c) with 1/2 > 0
+exm-method-two-point-test (claim): warning "Midpoints are not enough": 2t in Q for t in Q | fd3:thm-rationals-embed-ordered-field (iota_R preserves products; Q in R is its image, 2 = iota_R(2))
 def-ball-rn (claim): for n = 1 the balls are the intervals (c - r, c + r), [c - r, c + r] | prp-norm-basic-rn (d), fd3:prp-absolute-value-ordered-field (d), cited
 prp-balls-convex (proof): |t| = t and |1 - t| = 1 - t for t in [0, 1] | fd3:def-absolute-value-ordered-field (unlabelled use)
 prp-convex-examples (proof): a product of two non-negative reals is >= 0; of two positive reals is > 0 | fd3:prp-ordered-field-halves (d), fd3:prp-ordered-ring-rules (c), cited (Uses line)

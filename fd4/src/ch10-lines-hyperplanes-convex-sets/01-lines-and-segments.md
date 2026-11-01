@@ -20,7 +20,7 @@ p + \nR v \coloneqq \{ p + tv : t \in \nR \} .
 A subset \( L \subseteq \nR^n \) is a **line** if \( L = p + \nR v \) for **some** \( p \in \nR^n \) and **some** \( v \ne 0 \). The map \( t \mapsto p + tv \) from \( \nR \) to \( L \) is a **parametrization** of \( L \), with **base point** \( p \) and **direction** \( v \); the number \( t \) is the **parameter** of the point \( p + tv \).
 :::
 
-In words: a line is any set of this form, and the pair \( (p, v) \) is a way of naming it, not part of it. The condition \( v \ne 0 \) is the one that bites. Without it, \( p + \nR 0 = \{p\} \), a single point. We write \( \nR v \) for \( 0 + \nR v \), the line through \( 0 \) with direction \( v \). The sums and multiples are those of @def-vector-operations-rn. The example above is the line \( (1, 0, 0) + \nR(-1, 1, 0) \).
+In words: a line is any set of this form, and the pair \( (p, v) \) is a way of naming it, not part of it. The condition \( v \ne 0 \) is the one that bites. Without it, \( p + \nR 0 = \{p\} \), a single point. We write \( \nR v \) for \( 0 + \nR v \), the line through \( 0 \) with direction \( v \). The sums and multiples are those of @def-vector-operations-rn. So the points \( (1 - t, t, 0) \) form the line \( (1, 0, 0) + \nR(-1, 1, 0) \).
 
 :::: {.check}
 Decide each, using only the definition.
@@ -251,13 +251,13 @@ Here \( \norm{p - x} = \norm{x - p} \) and \( \norm{q - x} = \norm{x - q} \) are
 *Case \( w = cu \) with \( c \ge 0 \).* Then \( q - p = u + cu = (1 + c)u \). Since \( 1 + c \ge 1 > 0 \), the number \( t \coloneqq 1/(1 + c) \) exists and \( t > 0 \). Taking reciprocals of the positive numbers in \( 1 \le 1 + c \) reverses the inequality, so \( t \le 1 \). Multiplying by \( t \) gives \( u = t(q - p) \). So \( x = p + u = p + t(q - p) = (1 - t)p + tq \) with \( t \in [0, 1] \). This proves the theorem.
 
 ::: {.uses}
-@prp-vector-space-laws-rn (vector algebra); @prp-norm-basic-rn (b) (\( \norm{cv} = \abs{c} \, \norm{v} \)); @fd3:def-absolute-value-ordered-field (\( \abs{t} = t \) for \( t \ge 0 \)); @fd3:prp-ordered-ring-rules (b) (\( 1 + c \ge 1 \)); @fd3:prp-reciprocal-order (a) (\( 1/(1 + c) > 0 \)); @fd3:prp-ordered-field-halves (c) (reciprocals reverse \( \le \)).
+@prp-vector-space-laws-rn (vector algebra); @prp-norm-basic-rn (b) (\( \norm{cv} = \abs{c} \, \norm{v} \)); @fd3:def-absolute-value-ordered-field (\( \abs{t} = t \) for \( t \ge 0 \)); @fd3:prp-ordered-ring-rules (b), (e) (\( 1 + c \ge 1 > 0 \)); @fd3:prp-reciprocal-order (a) (\( 1/(1 + c) > 0 \)); @fd3:prp-ordered-field-halves (c) (reciprocals reverse \( \le \)).
 :::
 :::
 
 Where is \( c \ge 0 \) used? It gives \( 1 + c \ge 1 \). So \( t = 1/(1 + c) \) exists and is positive, and taking reciprocals gives \( t \le 1 \). A multiplier \( c < 0 \) with \( c \ne -1 \) gives \( t < 0 \) or \( t > 1 \), a point of the line outside the segment, and the equality case rules such multipliers out.
 
-The right side of the theorem mentions only distances, no sums of vectors and no parameters. That is the form of "between" that survives when \( \nR^n \) is replaced by any set with a distance, as in *Real Numbers, Metric Spaces, and Derivatives*, Chapter 3. It is also why a map that preserves distances sends segments to segments, a fact to be proved in *Affine and Projective Geometry*.
+The right side of the theorem mentions only distances, no sums of vectors and no parameters. That is the form of "between" that survives when \( \nR^n \) is replaced by any set with a distance, as in *Analysis on the Real Line*, Chapter 3. It is also why a map that preserves distances sends segments to segments, a fact to be proved in *Affine and Projective Geometry*.
 
 ::: {#exm-method-equality-case}
 [Method: use the equality case]
@@ -406,7 +406,7 @@ Prove or disprove each statement, for points \( p, q, x \in \nR^n \) and directi
 ::::
 
 ::: {.solution}
-(a) **True.** By @cor-point-pinned-on-segment with \( s = r = \frac12 \norm{p - q} \), exactly one point has these two distances, and the midpoint has them by the moreover clause of @thm-betweenness.
+(a) **True.** By @cor-point-pinned-on-segment with \( s = r = \frac12 \norm{p - q} \), exactly one point has these two distances. The midpoint has them, by the moreover clause of @thm-betweenness.
 
 (b) **False.** Take \( p = (-1, 0) \), \( q = (1, 0) \), \( x = (0, 1) \). Then \( \norm{p - x} = \norm{x - q} = \sqrt 2 \), but \( x \) has second coordinate \( 1 \), while every point of \( [p, q] \) has second coordinate \( 0 \).
 
@@ -465,7 +465,7 @@ lem-subsegment (claim): Quick check: (1,1,-1) not a multiple of (2,1,-2) | verif
 thm-betweenness (example): instance before the theorem, p = (0,0), q = (4,0); x = (1,0): 1 + 3 = 4; x = (1,1): sqrt 2 + sqrt 10 > 4 | verify/ch10/thm-betweenness.py
 thm-betweenness (proof): t >= 0 and 1 - t >= 0 for t in [0,1]; |t| = t for t >= 0; x - p = t(q - p) | fd3:def-absolute-value-ordered-field; fd3:prp-ordered-ring-rules (a); prp-vector-space-laws-rn and prp-norm-basic-rn (b) (cited, Uses line); fd3:def-absolute-value-ordered-field (cited, Uses line)
 thm-betweenness (proof): 1 + c >= 1 > 0 for c >= 0; 1/(1 + c) > 0 | fd3:prp-ordered-ring-rules (b), (e); fd3:prp-ordered-ring-rules (b), positive reciprocal fd3:prp-reciprocal-order (a), fd3:prp-ordered-field-halves (c) for t <= 1 (all cited, Uses line); remark after the proof: c < 0, c != -1 gives t < 0 or t > 1; inline
-thm-betweenness (claim): aftermath pointers to Real Numbers, Metric Spaces, and Derivatives, Chapter 3 (AN1) and, in the future tense, Affine and Projective Geometry (GEO) | prose pointers by title (blueprint thread 1); nothing depends on them
+thm-betweenness (claim): aftermath pointers to Analysis on the Real Line, Chapter 3 (AN1) and, in the future tense, Affine and Projective Geometry (GEO) | prose pointers by title (blueprint thread 1); nothing depends on them
 cor-point-pinned-on-segment (proof): 0 <= s <= s + r; dividing by ||p - q|| > 0 keeps <= | fd3:prp-ordered-ring-rules (b), (c) with a positive reciprocal (fd3:prp-reciprocal-order (a)) (cited, Uses line)
 cor-point-pinned-on-segment (proof): s = t' ||p - q|| with ||p - q|| > 0 gives t' = s/||p - q|| | field: cancel a non-zero factor (fd3:lem-field-fraction-rules) (cited, Uses line)
 cor-point-pinned-on-segment (proof): fold, s + r = 0 with s, r >= 0 forces s = r = 0 | fd3:prp-ordered-ring-rules (b) (cited), total order (i); inline

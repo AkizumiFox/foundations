@@ -184,7 +184,7 @@ Hence \( m \) is the **unique** point of \( L \) nearest to \( x \).
 Apply @thm-projection-closest-point to the vectors \( x - p \) and \( v \ne 0 \). Its number is \( t_0 \), and \( x - m = (x - p) - t_0 v \). Part (a) gives \( x - m \perp v \). Part (b), since \( x - (p + tv) = (x - p) - tv \), gives the identity, and with it \( \norm{x - (p + tv)} \ge \norm{x - m} \), with equality if and only if \( t = t_0 \). So a nearest point \( p + tv \) has \( t = t_0 \), and is \( m \).
 :::
 
-Since \( m \) is described as the nearest point, it depends only on \( L \) and \( x \), not on the parametrization used to compute it. The number \( \norm{x - m} \) is the **distance from \( x \) to \( L \)**. For \( p = 0 \) this is @thm-projection-closest-point, computed for two cases in @exm-distance-to-a-line-through-the-origin.
+Since \( m \) is described as the nearest point, it depends only on \( L \) and \( x \), not on the parametrization used to compute it. The number \( \norm{x - m} \) is the **distance from \( x \) to \( L \)**. For \( p = 0 \) this is @thm-projection-closest-point. Two cases of it were computed in @exm-distance-to-a-line-through-the-origin.
 
 For a hyperplane the roles turn around. On a line we search along the direction \( v \) and the error is orthogonal to \( v \). On a hyperplane the error should be **parallel** to the normal \( a \): from \( x \), move along \( a \) until the equation \( \inner{a}{x} = c \) holds.
 
@@ -295,7 +295,7 @@ t_1 \coloneqq \frac{c - \inner{a}{p}}{\inner{a}{q} - \inner{a}{p}} \in (0, 1) .
 :::
 
 ::: {.proof}
-Write \( \alpha \coloneqq \inner{a}{p} \) and \( \beta \coloneqq \inner{a}{q} \), so \( \alpha < c < \beta \). Every point of \( [p, q] \) is \( (1 - t)p + tq \) with \( t \in [0, 1] \) (@def-segment-rn), and by linearity (@prp-dot-product-laws-rn (b))
+Write \( \alpha \coloneqq \inner{a}{p} \) and \( \beta \coloneqq \inner{a}{q} \), so \( \alpha < c < \beta \). Every point of \( [p, q] \) is \( (1 - t)p + tq \) with \( t \in [0, 1] \) (@def-segment-rn). By linearity (@prp-dot-product-laws-rn (b)),
 \[
 \inner{a}{(1 - t)p + tq} = \alpha + t(\beta - \alpha) .
 \]
