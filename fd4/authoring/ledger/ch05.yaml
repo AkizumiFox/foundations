@@ -347,6 +347,15 @@ items:
     model: claude-opus-5-5
     evidence: 01:234-246 all five parts true; (e) matches fd3 Section 2.3 'Multiples' (fd3 03-ordered-rings:300-304,
       which proves n.a = na in Z for n in N).
+  - stage: S8
+    verdict: minor
+    by: S8:05
+    hash: 831347ce8a6b
+    date: '2026-11-01'
+    evidence: 01-groups.md:230-289 proves parts (a)-(d) for every group without saying that, for the group
+      F\{0}, they recover Chapter 1's @prp-integer-power-laws (ch01 05-roots-and-rational-powers.md:152).
+      It is a legitimate generalisation, but the earlier result goes unacknowledged. Ledger line 01-groups.md:514
+      says "F3.2 §03 paragraph Multiples"; the paragraph is in fd3 Section 2.4 (fd3/src/ch02-integers/04-ordered-rings.md:164).
 - key: proof:prp-group-power-laws
   kind: proof
   file: 01-groups.md
@@ -817,6 +826,38 @@ items:
       (a) says exactly ''a > 0 implies a^{-1} > 0'' in an ordered field (fd3 05-ordered-field-of-rationals.md),
       so the S8 re-proof finding is resolved. (d): 6 | -6 in both cases, and [3][3] = [9] = [1] in Z/8Z.
       (e) is correct. (f): i^2 = -1 is now cited to prp-reals-embed-complex (''i·i = ι(-1)'') t'
+  - stage: S5a
+    verdict: minor
+    by: A:05/02
+    hash: 83fbdb138fc7
+    date: '2026-11-01'
+    evidence: '02-subgroups.md:35-78. The mathematics checks out. (a) is trivial. (b) is the additive
+      test, using def-integer-linear-combinations. In (d), [a]-[b]=[a-b] is thm-quotient-ring-by-ideal
+      (b), sum plus negation; 6 | -6 holds for both class identities; [3][3]=[9]=[1] in Z/8Z. In (e),
+      tau^{-1}(x0)=x0. In (f), prp-unit-circle (a) gives 1 in T, closure under products and u^{-1}=conj
+      u in T; the mu_n step uses prp-group-power-laws (d), since the group is abelian, and (b) with m=n,
+      (g^m)^{-1}=(g^{-1})^m. The forward pointers check out: Section 5.4 lem-permutations-fixing-last-point
+      uses X={1..n+1}, x0=n+1; ch03 Section 3.6 R2 is the bijection Z/nZ -> mu_n. Problems found: one
+      subset check is missing in (c), and the solution breaks STYLE §13 rules B7, B1, B3 and B6 (see findings).'
+  - stage: S5b
+    verdict: minor
+    by: B:05/02
+    hash: 83fbdb138fc7
+    date: '2026-11-01'
+    evidence: '02-subgroups.md:35-80: all six parts and the non-examples check out (cited labels read:
+      fd4 ch02/03:55 thm-quotient-ring-by-ideal (b); ch03/01:54 prp-reals-embed-complex gives i·i = ι(-1);
+      ch03/05:19 prp-unit-circle (a); ch03/06:113 μ_n defined after exm-roots-of-unity and μ_n ⊆ T; ch03/06:347
+      R2 exists as described; ch05/04:129 uses (e) exactly as claimed; verify/ch05/exm-subgroups.py prints
+      ok). Two minor problems: the dependency ledger at :403-406 still uses pre-merge paths and section
+      numbers, and the wording of :55-77 breaks STYLE §13 B1/B3/B6/B7/B10.'
+  - stage: S8
+    verdict: minor
+    by: S8:05
+    hash: 83fbdb138fc7
+    date: '2026-11-01'
+    evidence: 02-subgroups.md:73 (the merge-seam sentence). The math is correct, but the agreement claim
+      cites @def-integer-power, which covers only negative exponents. The z^n here has n >= 1, so the
+      relevant definition is the "Powers" recursion before @prp-power-laws-commutative-ring (ch01 01-finite-sums.md:23-27).
 - key: prp-subgroup-intersection
   kind: prp
   file: 02-subgroups.md
