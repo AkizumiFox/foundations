@@ -43,32 +43,13 @@ m \cdot (a + b) &= m \cdot a + m \cdot b , & (m \cdot a)\, b &= m \cdot (ab) , \
 In words: integer multiples obey the rules one expects of "\( m \) copies of \( a \)", with signs behaving as in \( \nZ \). Since every field is a commutative ring (the remark after @def-field), the lemma holds in every field.
 
 ::: {.idea}
-For natural numbers everything is one induction each, on the recursion that defines \( m \cdot a \): four rules for natural multiples (a sum law, a distributive law, a product law and a composition law) and then (a)–(c) as special cases with \( a = 1 \). Negative multiples are reduced to natural ones by writing an integer as a difference \( m_1 - m_2 \) of natural numbers; that bookkeeping is (d), and its proof is in the fold below.
+For natural numbers everything is one induction each, on the recursion that defines \( m \cdot a \): four rules for natural multiples (a sum law, a distributive law, a product law and a composition law, proved in Chapter 1 as @lem-natural-multiples) and then (a)–(c) as special cases with \( a = 1 \). Negative multiples are reduced to natural ones by writing an integer as a difference \( m_1 - m_2 \) of natural numbers; that bookkeeping is (d), and its proof is in the fold below.
 :::
 
 ::: {.proof}
-All inductions are @fd1:ax-induction, read on \( \nN = \omega \) through @fd3:cor-omega-identification (b). We first prove four rules for \( m, k \in \nN \).
+For natural numbers the four rules are @lem-natural-multiples (a)–(d), proved in Chapter 1: (a) is the sum law, (b) the distributive law, (c) the product law and (d) the composition law, and I write them below as rules (i)–(iv) in that order, \( (m + k) \cdot a = m \cdot a + k \cdot a \), \( m \cdot (a + b) = m \cdot a + m \cdot b \), \( (m \cdot a) b = m \cdot (ab) \) and \( (mk) \cdot a = m \cdot (k \cdot a) \).
 
-*(i) \( (m + k) \cdot a = m \cdot a + k \cdot a \).* Induction on \( k \). For \( k = 0 \), \( (m + 0) \cdot a = m \cdot a = m \cdot a + 0 = m \cdot a + 0 \cdot a \) by (F3). If it holds for \( k \), then
-\[
-\begin{aligned}
-(m + (k + 1)) \cdot a &= ((m + k) + 1) \cdot a = (m + k) \cdot a + a \\
-&= (m \cdot a + k \cdot a) + a = m \cdot a + (k + 1) \cdot a ,
-\end{aligned}
-\]
-by the recursion, the induction hypothesis, (F2) and the recursion again. (This is the sum law of @fd3:prp-ordered-ring-rules (h), whose proof uses no order.)
-
-*(ii) \( m \cdot (a + b) = m \cdot a + m \cdot b \).* Induction on \( m \). For \( m = 0 \) both sides are \( 0 \) (with \( 0 + 0 = 0 \) by (F3)). If it holds for \( m \), then \( (m + 1) \cdot (a + b) = (m \cdot a + m \cdot b) + (a + b) = (m \cdot a + a) + (m \cdot b + b) \) by (F1) and (F2), which is \( (m + 1) \cdot a + (m + 1) \cdot b \).
-
-*(iii) \( (m \cdot a) b = m \cdot (ab) \).* Induction on \( m \). For \( m = 0 \), \( (0 \cdot a) b = 0 b = 0 = 0 \cdot (ab) \) by @fd3:prp-ring-algebra (b) and (F6). If it holds for \( m \), then \( ((m + 1) \cdot a) b = (m \cdot a + a) b = (m \cdot a) b + ab = m \cdot (ab) + ab = (m + 1) \cdot (ab) \), by (F9) with (F6), and the induction hypothesis.
-
-*(iv) \( (mk) \cdot a = m \cdot (k \cdot a) \).* Induction on \( m \). For \( m = 0 \) both sides are \( 0 \). If it holds for \( m \), then, since \( (m + 1)k = mk + k \) in \( \nN \),
-\[
-((m + 1)k) \cdot a = (mk + k) \cdot a = (mk) \cdot a + k \cdot a = m \cdot (k \cdot a) + k \cdot a = (m + 1) \cdot (k \cdot a) ,
-\]
-by (i), the induction hypothesis and the recursion.
-
-Now (a) is (i) with \( a = 1 \). For (c), \( (m \cdot 1) a = m \cdot (1 a) = m \cdot a \) by (iii), then (F6) and (F7). For (b), \( (m \cdot 1)(k \cdot 1) = m \cdot (1 (k \cdot 1)) = m \cdot (k \cdot 1) = (mk) \cdot 1 \) by (iii), (F6) with (F7), and (iv). Part (d) is proved in the fold below. This proves the lemma.
+Now (a) of the present lemma is rule (i) with \( a = 1 \). For (c), \( (m \cdot 1) a = m \cdot a \) is @lem-natural-multiples (e). For (b), \( (m \cdot 1)(k \cdot 1) = m \cdot (1 (k \cdot 1)) = m \cdot (k \cdot 1) = (mk) \cdot 1 \) by rule (iii), (F6) with (F7), and rule (iv). Part (d) is proved in the fold below. This proves the lemma.
 :::
 
 ::: {.second-reading title="Proof of (d): from natural to integer multiples"}

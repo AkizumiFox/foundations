@@ -70,7 +70,7 @@ For \( \{1, i, -1, -i\} \): products of two of \( \pm 1 \) are \( \pm 1 \), prod
 
 For \( \nT = \{ u \in \nC : \abs{u} = 1 \} \): by @prp-unit-circle (a), which rests on the modulus rule \( \abs{zw} = \abs{z}\abs{w} \) of @thm-conjugate-properties (d), \( 1 \in \nT \), \( uv \in \nT \) for \( u, v \in \nT \), and each \( u \in \nT \) is non-zero with \( u^{-1} = \conj{u} \in \nT \). So \( \nT \subseteq \nC \setminus \{0\} \), and \( \nT \) is a subgroup by the definition.
 
-For \( \mu_n \), the set of \( z \in \nC \) with \( z^n = 1 \) (Chapter 3's notation, after @exm-roots-of-unity): \( 0 \notin \mu_n \), since \( 0^n = 0^{n-1} \cdot 0 = 0 \ne 1 \) for \( n \ge 1 \); so \( \mu_n \subseteq \nC \setminus \{0\} \), and there \( z^n \) is the power of @def-group-integer-power, defined by the same recursion. Also \( 1 \in \mu_n \). For \( \zeta, \eta \in \mu_n \), since \( \nC \setminus \{0\} \) is abelian,
+For \( \mu_n \), the set of \( z \in \nC \) with \( z^n = 1 \) (Chapter 3's notation, after @exm-roots-of-unity): \( 0 \notin \mu_n \), since \( 0^n = 0^{n-1} \cdot 0 = 0 \ne 1 \) for \( n \ge 1 \); so \( \mu_n \subseteq \nC \setminus \{0\} \), and there \( z^n \) is the power of @def-group-integer-power, defined by the same recursion; for the group \( F \setminus \{0\} \) of a field \( F \) it agrees with the integer power of @def-integer-power. Also \( 1 \in \mu_n \). For \( \zeta, \eta \in \mu_n \), since \( \nC \setminus \{0\} \) is abelian,
 \[
 (\zeta \eta^{-1})^n = \zeta^n (\eta^{-1})^n = \zeta^n (\eta^n)^{-1} = 1 \cdot 1^{-1} = 1 ,
 \]

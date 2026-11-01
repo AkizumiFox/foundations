@@ -2,187 +2,17 @@
 
 In \( \nF_5 \), compute \( (1 + 2)^5 \) and \( 1^5 + 2^5 \). The first is \( 3^5 = 243 \), and \( 243 = 48 \cdot 5 + 3 \), so it is \( 3 \). The second is \( 1 + 32 = 33 = 6 \cdot 5 + 3 \), so it is \( 3 \) as well. The rule "\( (x + y)^n = x^n + y^n \)", the classic error of school algebra, is a theorem when \( n \) is the characteristic \( p \) of the field. This section proves it, and deduces Fermat's little theorem from it with the rigidity of Section 4.5: a homomorphism of \( \nF_p \) to itself is the identity.
 
-The tool is the binomial theorem. School proves it for numbers; we need it in an arbitrary commutative ring, with the binomial coefficients acting as integer multiples, and so we first set up finite sums in a ring.
+The tool is the binomial theorem, which Chapter 1 proves in an arbitrary commutative ring, with the binomial coefficients acting as natural multiples.
 
-## Sums and powers in a commutative ring
+## The binomial theorem, recalled
 
-*Sets and Functions*, Chapter 3 defines finite sums, products and powers of real numbers by recursion (@fd2:def-sum-product, @fd2:def-power, both from @fd2:thm-recursion). The definitions use nothing about \( \nR \) except an addition with a \( 0 \) and a multiplication with a \( 1 \). So, read on \( \nN = \omega \) through @fd3:cor-omega-identification (b), with \( X = R \), they define in every commutative ring \( R \):
-
-- sums \( \sum_{k=m}^{n} a_k \) of elements \( a_k \in R \), with the empty sum \( 0 \), and the three remarks after @fd2:def-sum-product: a sum depends only on the terms it adds (finite lists), **shifting the index**, and **splitting off the last term**, \( \sum_{k=m}^{n+1} a_k = \sum_{k=m}^{n} a_k + a_{n+1} \) for \( m \le n + 1 \);
-- powers \( x^0 \coloneqq 1 \), \( x^{n+1} \coloneqq x^n x \) for \( x \in R \) and \( n \in \nN \), with the laws of @fd2:prp-power-laws (a)–(c):
+Chapter 1 proved what this section needs about finite sums and the binomial theorem, for every commutative ring. Finite sums obey the rules of @lem-ring-finite-sums (Section 1.1). The binomial coefficients \( \binom{n}{k} \) are defined by Pascal's rule, without division, in @def-binomial-coefficients (Section 1.2), where the table of their first rows also stands, and they satisfy the absorption rule @prp-binomial-absorption. They act on ring elements as natural multiples, with the laws of @lem-natural-multiples, which @lem-integer-multiples extends to integer multiples in Section 4.5. And the binomial theorem itself,
 \[
-x^{m+n} = x^m x^n , \qquad (x^m)^n = x^{mn} , \qquad (xy)^n = x^n y^n .
+(x + y)^n = \sum_{k=0}^{n} \binom{n}{k} \cdot \bigl( x^k y^{n-k} \bigr) ,
 \]
+holds for any \( x, y \) in a commutative ring \( R \) (@thm-binomial-commutative-ring); for \( R = \nZ \) it is the familiar expansion, since there \( m \cdot z = mz \) (Section 4.5). Chapter 1 also proves the closed form \( k! \binom{n}{k} = n(n-1)\cdots(n-k+1) \) (@prp-binomial-factorial); this section does not use it, since in \( \nF_p \) the factorial \( p! \) is \( 0 \).
 
-The proofs of those laws in *Sets and Functions* use only (F1)–(F7), (F9) and induction, so they run unchanged in \( R \). We use this paragraph as a template and do not repeat it. (Chapter 3 proves the same power laws for every commutative ring as @prp-power-laws-commutative-ring; we compare, and cite the template.) In particular \( 1^n = 1 \) for every \( n \), by induction: \( 1^0 = 1 \) and \( 1^{n+1} = 1^n \cdot 1 = 1 \).
-
-The binomial theorem rearranges sums term by term, and the rules it needs are collected in the next lemma. The sums start at \( k = 0 \); by the definition, \( \sum_{k=0}^{0} a_k = 0 + a_0 = a_0 \).
-
-::: {#lem-ring-finite-sums}
-[Finite Sums in a Commutative Ring]
-
-Let \( R \) be a commutative ring, \( n \in \nN \), \( c \in R \), and let \( (a_k)_{k \in \nN} \) and \( (b_k)_{k \in \nN} \) be sequences in \( R \).
-
-::: {.enumerate options="label=(\alph*)"}
-1. \( \sum_{k=0}^{n} (a_k + b_k) = \sum_{k=0}^{n} a_k + \sum_{k=0}^{n} b_k \).
-2. \( c \sum_{k=0}^{n} a_k = \sum_{k=0}^{n} c\, a_k \).
-3. \( \sum_{k=0}^{n} m \cdot a_k = m \cdot \sum_{k=0}^{n} a_k \) for every \( m \in \nZ \).
-4. Let \( j \in \nN \), and suppose \( a_k = 0 \) for every \( k \ne j \). Then \( \sum_{k=0}^{n} a_k = a_j \) if \( j \le n \), and \( \sum_{k=0}^{n} a_k = 0 \) if \( j > n \).
-5. \( -\sum_{k=0}^{n} a_k = \sum_{k=0}^{n} (-a_k) \).
-6. *(Splitting off the first term.)* \( \sum_{k=0}^{n+1} a_k = a_0 + \sum_{k=0}^{n} a_{k+1} \).
-:::
-:::
-
-In words: a finite sum may be split termwise, multiplied termwise, and negated termwise; a sum with one non-zero term is that term; and the first term may be split off, the rest being re-indexed from \( 0 \). By the finite-lists remark, the lemma applies to finitely many terms \( a_0, \dots, a_n \) as well.
-
-::: {.idea}
-A sum up to \( n + 1 \) is the sum up to \( n \) plus one term, so every rule that holds for one term and survives adding one more term holds for all sums: an induction on \( n \) whose step is a single axiom, (F1)–(F2) for (a), (F9) for (b), and associativity for (f). Parts (c) and (e) need no induction, because a multiple is a product, \( m \cdot a = (m \cdot 1)a \), so they are (b) in disguise.
-:::
-
-::: {.proof}
-Each part is an induction on \( n \) (@fd1:ax-induction), splitting off the last term at the step, except (c) and (e), which follow from (b).
-
-(a) For \( n = 0 \) both sides are \( a_0 + b_0 \). If (a) holds for \( n \), then splitting off the last term,
-\[
-\sum_{k=0}^{n+1} (a_k + b_k) = \Bigl( \sum_{k=0}^{n} a_k + \sum_{k=0}^{n} b_k \Bigr) + (a_{n+1} + b_{n+1}) ,
-\]
-which is \( \bigl( \sum_{k=0}^{n} a_k + a_{n+1} \bigr) + \bigl( \sum_{k=0}^{n} b_k + b_{n+1} \bigr) \) by (F1) and (F2), and that is the right side for \( n + 1 \).
-
-(b) For \( n = 0 \) both sides are \( c a_0 \). At the step, \( c \bigl( \sum_{k=0}^{n} a_k + a_{n+1} \bigr) = c \sum_{k=0}^{n} a_k + c a_{n+1} \) by (F9), and the induction hypothesis rewrites the first term.
-
-(c) By @lem-integer-multiples (c), which holds for \( m \in \nZ \) by part (d) there, \( m \cdot a_k = (m \cdot 1) a_k \) and \( m \cdot \sum a_k = (m \cdot 1) \sum a_k \). So (c) is (b) with \( c = m \cdot 1 \).
-
-(d) For \( n = 0 \): if \( j = 0 \) the sum is \( a_0 = a_j \); if \( j > 0 \), then \( 0 \ne j \), so the sum is \( a_0 = 0 \). Suppose (d) holds for \( n \), and split off \( a_{n+1} \). If \( j \le n \), the sum up to \( n \) is \( a_j \) and \( a_{n+1} = 0 \) (as \( n + 1 \ne j \)), so the total is \( a_j \). If \( j = n + 1 \), the sum up to \( n \) is \( 0 \) (as \( j > n \)) and the total is \( 0 + a_{n+1} = a_j \). If \( j > n + 1 \), both parts are \( 0 \).
-
-(e) By (c) with \( m = -1 \), since \( (-1) \cdot x = -(1 \cdot x) = -x \) (@lem-integer-multiples (d)).
-
-(f) For \( n = 0 \) both sides are \( a_0 + a_1 \). If (f) holds for \( n \), then
-\[
-\sum_{k=0}^{n+2} a_k = \Bigl( a_0 + \sum_{k=0}^{n} a_{k+1} \Bigr) + a_{n+2} = a_0 + \sum_{k=0}^{n+1} a_{k+1} ,
-\]
-by splitting off the last term, the induction hypothesis, (F2), and splitting off the last term of the sequence \( (a_{k+1})_k \), whose term at \( k = n + 1 \) is \( a_{n+2} \). This proves the lemma.
-:::
-
-## Binomial coefficients
-
-In \( (x + y)^n \), each product \( x^k y^{n-k} \) appears a certain number of times, and that number is the binomial coefficient. We define it by Pascal's rule, which is how the coefficients arise when \( (x + y)^n \) is multiplied by \( x + y \), and we never divide.
-
-::: {#def-binomial-coefficients}
-[Binomial Coefficients]
-
-The **binomial coefficients** \( \binom{n}{k} \in \nN \), for \( n, k \in \nN \), are defined by recursion on \( n \) (@fd2:thm-recursion, with \( X \) the set of functions \( \nN \to \nN \)):
-\[
-\begin{aligned}
-\binom{0}{0} &\coloneqq 1 , & \binom{0}{k} &\coloneqq 0 \quad (k \ge 1) , \\
-\binom{n + 1}{0} &\coloneqq 1 , & \binom{n + 1}{k + 1} &\coloneqq \binom{n}{k} + \binom{n}{k + 1} \quad (k \in \nN) .
-\end{aligned}
-\]
-:::
-
-In words: row \( n + 1 \) starts with \( 1 \), and each later entry is the sum of the two entries of row \( n \) above it (**Pascal's rule**). Each row is a whole function \( \nN \to \nN \), so the recursion has values for every \( k \), and a coefficient is a natural number, never a quotient.
-
-Three facts follow by one induction on \( n \) each.
-
-- \( \binom{n}{k} = 0 \) for \( k > n \). For \( n = 0 \) this is the definition. If it holds for \( n \) and \( k > n + 1 \), write \( k = j + 1 \) with \( j > n \); then \( \binom{n+1}{j+1} = \binom{n}{j} + \binom{n}{j+1} = 0 + 0 \).
-- \( \binom{n}{n} = 1 \). Indeed \( \binom{0}{0} = 1 \), and \( \binom{n+1}{n+1} = \binom{n}{n} + \binom{n}{n+1} = 1 + 0 \) by the first fact.
-- \( \binom{n}{1} = n \). Indeed \( \binom{0}{1} = 0 \), and \( \binom{n+1}{1} = \binom{n}{0} + \binom{n}{1} = 1 + n \).
-
-The rows \( n = 0, \dots, 6 \), with the zeros for \( k > n \) shown:
-
-| \( n \) | \( k = 0 \) | \( 1 \) | \( 2 \) | \( 3 \) | \( 4 \) | \( 5 \) | \( 6 \) |
-|---|---|---|---|---|---|---|---|
-| 0 | 1 | 0 | 0 | 0 | 0 | 0 | 0 |
-| 1 | 1 | 1 | 0 | 0 | 0 | 0 | 0 |
-| 2 | 1 | 2 | 1 | 0 | 0 | 0 | 0 |
-| 3 | 1 | 3 | 3 | 1 | 0 | 0 | 0 |
-| 4 | 1 | 4 | 6 | 4 | 1 | 0 | 0 |
-| 5 | 1 | 5 | 10 | 10 | 5 | 1 | 0 |
-| 6 | 1 | 6 | 15 | 20 | 15 | 6 | 1 |
-
-::: {.remark}
-The formula \( \binom{n}{k} \cdot k! \cdot (n - k)! = n! \) for \( k \le n \) is true, but we neither prove nor use it. The route below needs one identity between neighboring coefficients and avoids division altogether, which matters because in \( \nF_p \) the factorial \( p! \) is \( 0 \).
-:::
-
-The identity we need relates row \( n + 1 \) to row \( n \) by a factor. It is what makes a prime divide the middle coefficients of row \( p \).
-
-::: {#prp-binomial-absorption}
-[Absorption Identity]
-
-For all \( n, k \in \nN \),
-\[
-(k + 1) \binom{n + 1}{k + 1} = (n + 1) \binom{n}{k} .
-\]
-:::
-
-::: {.idea}
-The definition is a recursion on \( n \), so we induct on \( n \), proving the statement for **all** \( k \) at once; the step then needs the hypothesis at two values of \( k \). In the step, expand the left side by Pascal's rule, split the factor \( k + 2 \) as \( (k + 1) + 1 \) in front of one of the two terms, apply the hypothesis twice, and recombine with Pascal's rule. For \( n = 2 \), \( k = 0 \) it reads \( 1 \cdot 3 = 3 \cdot 1 \); for \( n = 3 \), \( k = 1 \), \( 2 \cdot 6 = 4 \cdot 3 \).
-:::
-
-::: {.proof}
-We prove by induction on \( n \) (@fd1:ax-induction) the statement "for every \( k \in \nN \), \( (k + 1)\binom{n+1}{k+1} = (n + 1)\binom{n}{k} \)".
-
-*Base \( n = 0 \).* For \( k = 0 \): \( 1 \cdot \binom{1}{1} = 1 = 1 \cdot \binom{0}{0} \). For \( k \ge 1 \): \( \binom{1}{k+1} = 0 \) since \( k + 1 > 1 \), and \( \binom{0}{k} = 0 \); both sides are \( 0 \).
-
-*Step.* Suppose the statement holds for \( n \). For \( k = 0 \), the claim for \( n + 1 \) reads \( \binom{n+2}{1} = (n + 2)\binom{n+1}{0} \), and both sides are \( n + 2 \) by the facts above. For \( k = j + 1 \) with \( j \in \nN \), Pascal's rule gives
-\[
-\begin{aligned}
-(j + 2)\binom{n+2}{j+2} &= (j + 2)\binom{n+1}{j+1} + (j + 2)\binom{n+1}{j+2} \\
-&= (j + 1)\binom{n+1}{j+1} + \binom{n+1}{j+1} + (j + 2)\binom{n+1}{j+2} \\
-&= (n + 1)\binom{n}{j} + \binom{n+1}{j+1} + (n + 1)\binom{n}{j+1} \\
-&= (n + 1)\binom{n+1}{j+1} + \binom{n+1}{j+1} = (n + 2)\binom{n+1}{j+1} ,
-\end{aligned}
-\]
-where the third line uses the hypothesis at \( k = j \) and at \( k = j + 1 \), and the fourth line Pascal's rule again. This is the claim for \( n + 1 \) at \( k = j + 1 \). This proves the proposition.
-:::
-
-## The binomial theorem
-
-Expanding \( (x + y)^n \) multiplies out \( n \) factors \( x + y \) and collects the products \( x^k y^{n-k} \). In a commutative ring this collecting is legitimate, and the counts are the binomial coefficients, acting as integer multiples.
-
-::: {#thm-binomial-commutative-ring}
-[The Binomial Theorem in a Commutative Ring]
-
-Let \( R \) be a commutative ring, \( x, y \in R \) and \( n \in \nN \). Then
-\[
-(x + y)^n = \sum_{k=0}^{n} \binom{n}{k} \cdot \bigl( x^k y^{n-k} \bigr) .
-\]
-:::
-
-Here \( \binom{n}{k} \cdot z \) is the integer multiple of Section 4.5, and \( n - k \in \nN \) since \( k \le n \).
-
-::: {.idea}
-Induct on \( n \), with \( (x + y)^{n+1} = (x + y)^n x + (x + y)^n y \). Multiplying the sum for \( (x + y)^n \) by \( x \) raises every power of \( x \) by one, which shifts the coefficients one place to the right; multiplying by \( y \) leaves them in place. Adding the two rows entry by entry is exactly Pascal's rule. The work is in lining the two sums up over the same range \( k = 0, \dots, n + 1 \): the shifted sum gets a zero first term, and the other one a zero last term.
-:::
-
-::: {.proof}
-Induction on \( n \) (@fd1:ax-induction). For \( n = 0 \), \( (x + y)^0 = 1 \) and the right side is \( \binom{0}{0} \cdot (x^0 y^0) = 1 \cdot (1 \cdot 1) = 1 \).
-
-Suppose the formula holds for \( n \), and put \( t_k \coloneqq \binom{n}{k} \cdot (x^k y^{n-k}) \) for \( 0 \le k \le n \). By the power recursion, (F9) and @lem-ring-finite-sums (b) with (F6),
-\[
-(x + y)^{n+1} = (x + y)^n x + (x + y)^n y = \sum_{k=0}^{n} t_k x + \sum_{k=0}^{n} t_k y .
-\]
-By the rule \( (m \cdot a) b = m \cdot (ab) \) of @lem-integer-multiples (d), with (F5), (F6) and the power recursion,
-\[
-t_k x = \binom{n}{k} \cdot \bigl( x^{k+1} y^{n-k} \bigr) , \qquad t_k y = \binom{n}{k} \cdot \bigl( x^k y^{n+1-k} \bigr) .
-\]
-For \( 0 \le k \le n + 1 \) let \( z_k \coloneqq x^k y^{n+1-k} \), and define
-\[
-u_0 \coloneqq 0 , \quad u_k \coloneqq \binom{n}{k - 1} \cdot z_k \ (1 \le k \le n + 1) , \qquad w_k \coloneqq \binom{n}{k} \cdot z_k \ (0 \le k \le n + 1) .
-\]
-Then \( t_k x = u_{k+1} \) and \( t_k y = w_k \) for \( 0 \le k \le n \), and \( w_{n+1} = 0 \cdot z_{n+1} = 0 \), since \( \binom{n}{n+1} = 0 \). By @lem-ring-finite-sums (f) and \( u_0 = 0 \), and by splitting off the last term \( w_{n+1} = 0 \),
-\[
-\sum_{k=0}^{n} t_k x = \sum_{k=0}^{n+1} u_k , \qquad \sum_{k=0}^{n} t_k y = \sum_{k=0}^{n+1} w_k .
-\]
-So \( (x + y)^{n+1} = \sum_{k=0}^{n+1} (u_k + w_k) \) by @lem-ring-finite-sums (a). Finally, \( u_0 + w_0 = 0 + 1 \cdot z_0 = \binom{n+1}{0} \cdot z_0 \), and for \( k = j + 1 \) with \( 0 \le j \le n \), the sum rule of @lem-integer-multiples (d) and Pascal's rule give
-\[
-u_k + w_k = \binom{n}{j} \cdot z_k + \binom{n}{j + 1} \cdot z_k = \binom{n + 1}{j + 1} \cdot z_k = \binom{n + 1}{k} \cdot z_k .
-\]
-Hence \( (x + y)^{n+1} = \sum_{k=0}^{n+1} \binom{n+1}{k} \cdot (x^k y^{n+1-k}) \), which is the formula for \( n + 1 \). This proves the theorem.
-:::
-
-The proof used (F6) at every regrouping of \( x^k y^{n-k} x \), and the theorem needs it: the linear-algebra volumes meet matrices, whose multiplication is not commutative, and there the expansion holds only for pairs that commute. For \( R = \nZ \) the theorem is the familiar expansion, since there \( m \cdot z = mz \) (Section 4.5).
-
-In row \( 5 \) of the table, the four middle entries \( 5, 10, 10, 5 \) are all multiples of \( 5 \); in row \( 6 \) the middle entries \( 15 \) and \( 20 \) are not multiples of \( 6 \). Primes are special.
+In row \( 5 \) of the table of Section 1.2, the four middle entries \( 5, 10, 10, 5 \) are all multiples of \( 5 \); in row \( 6 \) the middle entries \( 15 \) and \( 20 \) are not multiples of \( 6 \). Primes are special.
 
 ::: {#lem-prime-divides-binomial}
 [A Prime Divides the Middle Binomial Coefficients]
@@ -511,13 +341,6 @@ so \( \sigma(\sqrt 2) = \sqrt 2 \) or \( \sigma(\sqrt 2) = -\sqrt 2 \) by @cor-f
 :::
 
 <!-- dependency ledger
-lem-ring-finite-sums (proof): finite sums, products, powers in a commutative ring R; finite-lists, shifting-the-index, splitting-off-the-last-term remarks; power laws (a)-(c) | fd2:def-sum-product, fd2:def-power, fd2:prp-power-laws (a)-(c) used as templates with X = R (fd2:thm-recursion read on omega, fd3:cor-omega-identification (b)); stated in the opening paragraph; their proofs use only (F1)-(F7), (F9) and induction
-lem-ring-finite-sums (proof): sum_{k=0}^{0} a_k = a_0 | fd2:def-sum-product (general bounds) with the empty sum 0, and (F1), (F3)
-thm-binomial-commutative-ring (proof): x^k x = x^{k+1}, y^{n-k} y = y^{n+1-k}, (n + 1) - (k + 1) = n - k | power recursion (template, opening paragraph); arithmetic of omega, fd3:cor-omega-identification (c)
-def-binomial-coefficients (claim): the three facts C(n, k) = 0 for k > n, C(n, n) = 1, C(n, 1) = n; table rows 0-6 | inline inductions; verify/ch02/def-binomial-coefficients.py
-prp-binomial-absorption (proof): arithmetic in N (distributivity, (j + 2) = (j + 1) + 1) | arithmetic of omega, fd3:cor-omega-identification (c); fd2:lem-naturals-arithmetic read on omega
-prp-binomial-absorption (idea): 1 * 3 = 3 * 1; 2 * 6 = 4 * 3 | verify/ch02/prp-binomial-absorption.py
-thm-binomial-commutative-ring (claim): matrix multiplication is not commutative, the expansion needs commuting pairs | linear-algebra volumes, prose comparison only; nothing depends on it
 lem-prime-divides-binomial (claim): (check) C(7, 3) = 35 | verify/ch02/lem-prime-divides-binomial.py
 lem-prime-divides-binomial (proof): coefficients read in N subset Z; p - 1, k - 1 in N | fd3:prp-naturals-embed-integers (a); arithmetic of omega
 thm-frobenius-homomorphism (proof): (xy)^p = x^p y^p; 1^p = 1 | fd2:prp-power-laws (c) under the template line; inline induction for 1^n

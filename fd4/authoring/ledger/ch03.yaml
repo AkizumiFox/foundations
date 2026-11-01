@@ -190,78 +190,10 @@ items:
     model: claude-opus-5-5
     evidence: '01:177-188: both real parts expand to ace-adf-bcf-bde and both imaginary parts to acf+ade+bce-bdf
       (checked by hand). (c) and (d) are correct. Ledger line 473 is present.'
-- key: prp-power-laws-commutative-ring
-  kind: prp
-  file: 01-pairs-of-reals.md
-  line: 221
-  hash: e47085cd0348
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: e47085cd0348
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '01:221-232; the field hypothesis in (d) is needed (Z/4, z=2: z^2=0); the recursion at 215
-      matches fd2:thm-recursion''s g: N x X -> X'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: e47085cd0348
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '01-pairs-of-reals.md:258 ''for R = N they are the laws of @fd3:prp-omega-powers-parity
-      (a)'' is false in two ways. N is not a commutative ring (F4 fails), so ''R = N'' is outside the
-      proposition''s hypothesis. And prp-omega-powers-parity (a) is only b^{m+n}=b^m b^n: laws (b) and
-      (c) are not in it.'
-  - stage: S8
-    verdict: minor
-    by: seam
-    hash: e47085cd0348
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 01-pairs-of-reals.md:258 A result is credited to the wrong place. The text says that parts
-      (a)-(c) 'for R = N' are the laws of @fd3:prp-omega-powers-parity (a). That label covers only (a),
-      and N is not a commutative ring, so it is not an instance of the proposition.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: e47085cd0348
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '01:221-258. I rechecked the proof''s steps: (a) uses (F7) for the base and (F5) for the
-      step; (b) uses (a); (c) uses (F5) and (F6); (d) cites fd3:lem-field-fraction-rules (d), which is
-      the no-zero-divisors clause for all x, y (fd3 ch04/01:29), and gets 1 != 0 from the field definition.
-      The S5b Idea finding is resolved: the Idea (01:235) now names (F5) and (F6) for (c), and it calls
-      the field proper'
-- key: proof:prp-power-laws-commutative-ring
-  kind: proof
-  file: 01-pairs-of-reals.md
-  line: 238
-  hash: 14fe0700da3e
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 14fe0700da3e
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 01:238-256; each induction uses the recursion, the hypothesis and (F5)/(F6)/(F7); (d) uses
-      1!=0 from the field definition and fd3:lem-field-fraction-rules (d); N arithmetic (m(n+1)=mn+m)
-      used silently, as the ledger records
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 14fe0700da3e
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '01:239-255: the inductions are correct. The N-arithmetic used without citation is on ledger
-      line 476. The (d) step cites fd3:lem-field-fraction-rules (d), which states that a field has no
-      zero divisors.'
 - key: check:01-pairs-of-reals:2
   kind: check
   file: 01-pairs-of-reals.md
-  line: 264
+  line: 219
   hash: ab85cdf28905
   verdicts:
   - stage: S5a
@@ -278,54 +210,10 @@ items:
     date: '2026-10-12'
     model: claude-opus-5-5
     evidence: '01:269: i^10=(i^4)^2 i^2=-1 by (a),(b), and (1+i)^4=(2i)^2=-4 by (b),(c). Correct.'
-- key: lem-difference-of-powers
-  kind: lem
-  file: 01-pairs-of-reals.md
-  line: 278
-  hash: fa87e5d4b8bb
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: fa87e5d4b8bb
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 01:278-286; checked n=2,3 in the idea; particular case w=1 fine
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: fa87e5d4b8bb
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: The statement is correct (the Idea's n=2 and n=3 cases check). The prose after it at 01:315
-      says Section 1.6 shows '0 <= s < t gives s^n < t^n' with no condition on n. This is false for n=0
-      (1<1); lem-reals-nth-root assumes n>=1. [finding refuted by skeptics]
-- key: proof:lem-difference-of-powers
-  kind: proof
-  file: 01-pairs-of-reals.md
-  line: 292
-  hash: 074a9113ea64
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 074a9113ea64
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 01:292-313; induction on m with n=m+1; the split (z^n-w^n)w + z^n(z-w) = z^{n+1}-w^{n+1};
-      the shifted sum plus z^n w^0 gives S_{n+1} by the append-last-term recursion; no dependency issue
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 074a9113ea64
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '01:293-312: the base case is S_1=1; the split (z^n-w^n)w+z^n(z-w)=z^{n+1}-w^{n+1} checks;
-      the sum is re-indexed by append-last-term. Ledger lines 479-481 cover the sum template and the induction.'
 - key: exr-pairs-of-reals-a1
   kind: exr
   file: 01-pairs-of-reals.md
-  line: 321
+  line: 231
   hash: 6904ec30ee66
   verdicts:
   - stage: S5a
@@ -355,7 +243,7 @@ items:
 - key: exr-pairs-of-reals-b1
   kind: exr
   file: 01-pairs-of-reals.md
-  line: 344
+  line: 254
   hash: c697e28c00ea
   verdicts:
   - stage: S5a
@@ -386,7 +274,7 @@ items:
 - key: exr-pairs-of-reals-b2
   kind: exr
   file: 01-pairs-of-reals.md
-  line: 360
+  line: 270
   hash: 56effb1f5a38
   verdicts:
   - stage: S5a
@@ -416,7 +304,7 @@ items:
 - key: exr-pairs-of-reals-b3
   kind: exr
   file: 01-pairs-of-reals.md
-  line: 390
+  line: 300
   hash: 934bee453ebd
   verdicts:
   - stage: S5a
@@ -460,7 +348,7 @@ items:
 - key: exr-pairs-of-reals-c1
   kind: exr
   file: 01-pairs-of-reals.md
-  line: 412
+  line: 322
   hash: 3c9211de8188
   verdicts:
   - stage: S5a
@@ -2426,7 +2314,7 @@ items:
   kind: exr
   file: 05-polar-form.md
   line: 384
-  hash: 4b38cdd90944
+  hash: f377cdad0b21
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2504,67 +2392,10 @@ items:
       Re u is cited to thm-conjugate-properties (a), (c). (2) Line 460 now derives u_t = ((1-t^2) + 2ti)/(1+t^2),
       so rational t gives rational coordinates. (3) The marking scheme no longer requires the book's route
       (line 4
-- key: lem-reals-nth-root
-  kind: lem
-  file: 06-roots-of-unity.md
-  line: 9
-  hash: 99b8b6a98ce5
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 99b8b6a98ce5
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '06:9-18. Both hypotheses are used: n>=1 (n=0 fails for a!=1) and a>=0. The n=2 identification
-      matches the uniqueness clause of fd3:prp-cof-square-roots.'
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 99b8b6a98ce5
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:9-18. (a) and (b) are proved. The n=2 identification with @fd3:prp-cof-square-roots is
-      checked at 06:71. The label exists only here.
-- key: proof:lem-reals-nth-root
-  kind: proof
-  file: 06-roots-of-unity.md
-  line: 28
-  hash: 9893f4024f41
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: e7f1d1c7ed94
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '06:28-72. (a) lem-difference-of-powers, then sum >= t^{n-1} > 0 and prp-ordered-ring-rules
-      (c). Existence: m=min{1,a} lies in S and M=max{1,a} bounds S, so sup exists via fd3:thm-reals-complete-ordered-field.
-      Each h depends only on (a,n,s), and s is chosen first. Case 1: h<=1 gives s+h<=s+1, so the bound
-      n(s+1)^{n-1} holds and (s+h)^n<=s^n+(a-s^n)/2<a. Case 2: s^n-a<s^n<=ns^n gives h<s/n<=s, the b'
-  - stage: S5b
-    verdict: minor
-    by: refereeB
-    hash: e7f1d1c7ed94
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06-roots-of-unity.md:53 Both bounds use the monotonicity of products of non-negative reals,
-      but the text neither cites it nor records it in the ledger.
-  - stage: S7r
-    verdict: correct
-    by: rereferee
-    hash: 9893f4024f41
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '06-roots-of-unity.md:29 adds a third fact: 0<=x<=x'', 0<=y<=y'' gives xy<=x''y<=x''y''.
-      I checked it against @fd3:prp-ordered-ring-rules (c) (if a<b and c>0 then ac<bc) and it follows
-      by applying (c) twice, with equality covering y=0, x=x'' or y=y''. Line 53 now cites it for (s+h)^k
-      s^{n-1-k} <= (s+1)^{n-1}, where (a) or equality covers k=0 and h=1. Line 63 (''the same bound'')
-      applies the same facts to s^'
 - key: thm-complex-nth-roots
   kind: thm
   file: 06-roots-of-unity.md
-  line: 80
+  line: 13
   hash: 339e82b636ee
   verdicts:
   - stage: S5a
@@ -2586,7 +2417,7 @@ items:
 - key: proof:thm-complex-nth-roots
   kind: proof
   file: 06-roots-of-unity.md
-  line: 103
+  line: 36
   hash: 20e52c5fe6c1
   verdicts:
   - stage: S5a
@@ -2612,7 +2443,7 @@ items:
 - key: exm-roots-of-unity
   kind: exm
   file: 06-roots-of-unity.md
-  line: 137
+  line: 70
   hash: 16e9e910917a
   verdicts:
   - stage: S5a
@@ -2646,7 +2477,7 @@ items:
 - key: prp-roots-of-unity-sum
   kind: prp
   file: 06-roots-of-unity.md
-  line: 186
+  line: 119
   hash: 88d99b7e59c3
   verdicts:
   - stage: S5a
@@ -2667,7 +2498,7 @@ items:
 - key: proof:prp-roots-of-unity-sum
   kind: proof
   file: 06-roots-of-unity.md
-  line: 209
+  line: 142
   hash: 03de4e067a97
   verdicts:
   - stage: S5a
@@ -2691,7 +2522,7 @@ items:
 - key: check:06-roots-of-unity:1
   kind: check
   file: 06-roots-of-unity.md
-  line: 233
+  line: 166
   hash: 856be2a98bee
   verdicts:
   - stage: S5a
@@ -2714,7 +2545,7 @@ items:
 - key: prp-real-coefficients-conjugate-roots
   kind: prp
   file: 06-roots-of-unity.md
-  line: 257
+  line: 190
   hash: 1b0d7b83b322
   verdicts:
   - stage: S5a
@@ -2734,7 +2565,7 @@ items:
 - key: proof:prp-real-coefficients-conjugate-roots
   kind: proof
   file: 06-roots-of-unity.md
-  line: 267
+  line: 200
   hash: 48b692d589f9
   verdicts:
   - stage: S5a
@@ -2756,7 +2587,7 @@ items:
 - key: exr-roots-of-unity-a1
   kind: exr
   file: 06-roots-of-unity.md
-  line: 277
+  line: 210
   hash: a5176febc23b
   verdicts:
   - stage: S5a
@@ -2786,7 +2617,7 @@ items:
 - key: exr-roots-of-unity-b1
   kind: exr
   file: 06-roots-of-unity.md
-  line: 303
+  line: 236
   hash: cfca8adffcb4
   verdicts:
   - stage: S5a
@@ -2816,7 +2647,7 @@ items:
 - key: exr-roots-of-unity-b2
   kind: exr
   file: 06-roots-of-unity.md
-  line: 320
+  line: 253
   hash: fc1ef84b29a6
   verdicts:
   - stage: S5a
@@ -2846,7 +2677,7 @@ items:
 - key: exr-roots-of-unity-b3
   kind: exr
   file: 06-roots-of-unity.md
-  line: 334
+  line: 267
   hash: d7a0878adb74
   verdicts:
   - stage: S5a
@@ -2878,7 +2709,7 @@ items:
 - key: exr-roots-of-unity-c1
   kind: exr
   file: 06-roots-of-unity.md
-  line: 346
+  line: 279
   hash: 89bf82a06c08
   verdicts:
   - stage: S5a
@@ -2918,7 +2749,7 @@ items:
 - key: exr-roots-of-unity-c2
   kind: exr
   file: 06-roots-of-unity.md
-  line: 364
+  line: 297
   hash: 281c573f9096
   verdicts:
   - stage: S5a
@@ -2961,7 +2792,7 @@ items:
 - key: exr-roots-of-unity-r1
   kind: exr
   file: 06-roots-of-unity.md
-  line: 386
+  line: 319
   hash: 8c1895bbebaa
   verdicts:
   - stage: S5a
@@ -2994,7 +2825,7 @@ items:
 - key: exr-roots-of-unity-r2
   kind: exr
   file: 06-roots-of-unity.md
-  line: 413
+  line: 346
   hash: 6fcc5335811f
   verdicts:
   - stage: S5a
@@ -3028,7 +2859,7 @@ items:
 - key: exr-roots-of-unity-r3
   kind: exr
   file: 06-roots-of-unity.md
-  line: 427
+  line: 360
   hash: 1ff10d8c82f5
   verdicts:
   - stage: S5a
@@ -3083,7 +2914,7 @@ items:
 - key: exr-roots-of-unity-r4
   kind: exr
   file: 06-roots-of-unity.md
-  line: 448
+  line: 381
   hash: 395b8dbe3882
   verdicts:
   - stage: S5a
@@ -3111,3 +2942,178 @@ items:
     evidence: 06:448-464. The solutions 0, 1, -1/2±(√3/2)i agree with sympy's solve of x^2-y^2=x, 2xy=-y.
       The converse direction is checked. The solution names the tool and explains why the look-alike tools
       are worse, as R4 requires (STYLE §11.5).
+- key: prp-power-laws-commutative-ring
+  kind: prp
+  file: 01-pairs-of-reals.md
+  line: 221
+  hash: e47085cd0348
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e47085cd0348
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:221-232; the field hypothesis in (d) is needed (Z/4, z=2: z^2=0); the recursion at 215
+      matches fd2:thm-recursion''s g: N x X -> X'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: e47085cd0348
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01-pairs-of-reals.md:258 ''for R = N they are the laws of @fd3:prp-omega-powers-parity
+      (a)'' is false in two ways. N is not a commutative ring (F4 fails), so ''R = N'' is outside the
+      proposition''s hypothesis. And prp-omega-powers-parity (a) is only b^{m+n}=b^m b^n: laws (b) and
+      (c) are not in it.'
+  - stage: S8
+    verdict: minor
+    by: seam
+    hash: e47085cd0348
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01-pairs-of-reals.md:258 A result is credited to the wrong place. The text says that parts
+      (a)-(c) 'for R = N' are the laws of @fd3:prp-omega-powers-parity (a). That label covers only (a),
+      and N is not a commutative ring, so it is not an instance of the proposition.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e47085cd0348
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:221-258. I rechecked the proof''s steps: (a) uses (F7) for the base and (F5) for the
+      step; (b) uses (a); (c) uses (F5) and (F6); (d) cites fd3:lem-field-fraction-rules (d), which is
+      the no-zero-divisors clause for all x, y (fd3 ch04/01:29), and gets 1 != 0 from the field definition.
+      The S5b Idea finding is resolved: the Idea (01:235) now names (F5) and (F6) for (c), and it calls
+      the field proper'
+  removed: true
+- key: proof:prp-power-laws-commutative-ring
+  kind: proof
+  file: 01-pairs-of-reals.md
+  line: 238
+  hash: 14fe0700da3e
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 14fe0700da3e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:238-256; each induction uses the recursion, the hypothesis and (F5)/(F6)/(F7); (d) uses
+      1!=0 from the field definition and fd3:lem-field-fraction-rules (d); N arithmetic (m(n+1)=mn+m)
+      used silently, as the ledger records
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 14fe0700da3e
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:239-255: the inductions are correct. The N-arithmetic used without citation is on ledger
+      line 476. The (d) step cites fd3:lem-field-fraction-rules (d), which states that a field has no
+      zero divisors.'
+  removed: true
+- key: lem-difference-of-powers
+  kind: lem
+  file: 01-pairs-of-reals.md
+  line: 278
+  hash: fa87e5d4b8bb
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: fa87e5d4b8bb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:278-286; checked n=2,3 in the idea; particular case w=1 fine
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: fa87e5d4b8bb
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: The statement is correct (the Idea's n=2 and n=3 cases check). The prose after it at 01:315
+      says Section 1.6 shows '0 <= s < t gives s^n < t^n' with no condition on n. This is false for n=0
+      (1<1); lem-reals-nth-root assumes n>=1. [finding refuted by skeptics]
+  removed: true
+- key: proof:lem-difference-of-powers
+  kind: proof
+  file: 01-pairs-of-reals.md
+  line: 292
+  hash: 074a9113ea64
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 074a9113ea64
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 01:292-313; induction on m with n=m+1; the split (z^n-w^n)w + z^n(z-w) = z^{n+1}-w^{n+1};
+      the shifted sum plus z^n w^0 gives S_{n+1} by the append-last-term recursion; no dependency issue
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 074a9113ea64
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '01:293-312: the base case is S_1=1; the split (z^n-w^n)w+z^n(z-w)=z^{n+1}-w^{n+1} checks;
+      the sum is re-indexed by append-last-term. Ledger lines 479-481 cover the sum template and the induction.'
+  removed: true
+- key: lem-reals-nth-root
+  kind: lem
+  file: 06-roots-of-unity.md
+  line: 9
+  hash: 99b8b6a98ce5
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 99b8b6a98ce5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:9-18. Both hypotheses are used: n>=1 (n=0 fails for a!=1) and a>=0. The n=2 identification
+      matches the uniqueness clause of fd3:prp-cof-square-roots.'
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 99b8b6a98ce5
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:9-18. (a) and (b) are proved. The n=2 identification with @fd3:prp-cof-square-roots is
+      checked at 06:71. The label exists only here.
+  removed: true
+- key: proof:lem-reals-nth-root
+  kind: proof
+  file: 06-roots-of-unity.md
+  line: 28
+  hash: 9893f4024f41
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: e7f1d1c7ed94
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:28-72. (a) lem-difference-of-powers, then sum >= t^{n-1} > 0 and prp-ordered-ring-rules
+      (c). Existence: m=min{1,a} lies in S and M=max{1,a} bounds S, so sup exists via fd3:thm-reals-complete-ordered-field.
+      Each h depends only on (a,n,s), and s is chosen first. Case 1: h<=1 gives s+h<=s+1, so the bound
+      n(s+1)^{n-1} holds and (s+h)^n<=s^n+(a-s^n)/2<a. Case 2: s^n-a<s^n<=ns^n gives h<s/n<=s, the b'
+  - stage: S5b
+    verdict: minor
+    by: refereeB
+    hash: e7f1d1c7ed94
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06-roots-of-unity.md:53 Both bounds use the monotonicity of products of non-negative reals,
+      but the text neither cites it nor records it in the ledger.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 9893f4024f41
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06-roots-of-unity.md:29 adds a third fact: 0<=x<=x'', 0<=y<=y'' gives xy<=x''y<=x''y''.
+      I checked it against @fd3:prp-ordered-ring-rules (c) (if a<b and c>0 then ac<bc) and it follows
+      by applying (c) twice, with equality covering y=0, x=x'' or y=y''. Line 53 now cites it for (s+h)^k
+      s^{n-1-k} <= (s+1)^{n-1}, where (a) or equality covers k=0 and h=1. Line 63 (''the same bound'')
+      applies the same facts to s^'
+  removed: true

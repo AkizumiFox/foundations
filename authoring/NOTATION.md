@@ -307,6 +307,13 @@ The F4.1 rows (`\nC` to `\omega`) belong to fd4 *Analytic Preliminaries*; the ro
 | (L1), (L2) | clause names local to F5.5 (§03–§06): (L1) a product of a list of non-zero polynomials is non-zero, of degree the sum of the degrees, monic if the entries are; (L2) removing entry j from a list gives ∏q = (∏q′)·q_j (F5.5 §03, proved in a fold; §04–§06 cite them by name) |
 | `A_1 \times \dots \times A_k` (amends that row) | F5.5 §05's Chinese remainder theorem (d) uses it for k ≥ 1, the case k = 1 being A₁ itself |
 | `p`, `p_1, \dots, p_k` (irreducible polynomials) | in F5.5 §03–§06, irreducible polynomials (F5.5 §03, `def-irreducible-polynomial`); f, g, h are other polynomials. In F5.5 §04, p is also a prime (the warning after `thm-polynomial-identity-from-values`, `exm-polynomial-function-finite-field` (b), `exr-multiple-roots-b3`): the two uses never share a block |
+| `n \cdot a` (natural multiple; moved) | for n ∈ ℕ, the natural multiple of an element of a commutative ring, with its laws, in Chapter 1 Section 1.1 (F4.6 §01, `lem-natural-multiples`); the fd3 row above defines it, and `lem-integer-multiples` (F5.2 §05) extends it to n < 0 |
+| `u^n`, `\sum_{k=m}^{n} a_k` in a commutative ring (amend those rows) | the ring versions, with their laws, are F4.6 §01 (`prp-power-laws-commutative-ring`, `lem-ring-finite-sums`, `prp-sum-reindex`, `prp-sum-order`, `prp-double-sum`); F4.1 §01 and F5.2 §06 recall them |
+| `\binom{n}{k}` (amends that row) | home moved to F4.6 §02 (`def-binomial-coefficients`); `prp-binomial-factorial` there proves k!·C(n, k) = n(n−1)⋯(n−k+1), so the factorial formula is a theorem and never the definition |
+| `\sqrt[n]{a}`, `a^{1/n}`, `a^{m/n}` (amends the two `\sqrt[n]{a}` rows) | in fd4, the n-th root of a ≥ 0 and the rational power a^{m/n} for a > 0 are F4.6 §05 (`lem-reals-nth-root`, `def-rational-power`); real exponents are F4.7 §05 (`def-real-power`); the odd root of a negative real is F4.7 §02's `exm-odd-roots`. Without that example the root symbol is applied to non-negative reals only |
+| `\inner{x}{y}`, `\norm{x}` | the dot product Σ x_k y_k and the length √⟨x, x⟩ of x, y ∈ ℝⁿ (F4.8 §03, `def-dot-product-rn`; §04, `def-norm-rn`); `\norm{x - y}` is the distance (`def-distance-rn`). Not an abstract inner product: the linear algebra volumes define that |
+| `\cos\angle(x, y)` | the quotient ⟨x, y⟩/(‖x‖‖y‖) for non-zero x, y ∈ ℝⁿ (F4.8 §06, `def-angle-cosine-rn`); no angle is defined |
+| `[p, q]`, `B(c, r)`, `\overline{B}(c, r)`, `S(c, r)`, `H_{a,c}`, `\operatorname{conv} S` | the segment, the open and closed ball, the sphere, the hyperplane and the convex hull in ℝⁿ (F4.9 §01–§03, `def-segment-rn`, `def-ball-rn`, `def-sphere-rn`, `def-hyperplane-rn`, `def-convex-hull-rn`) |
 
 ## Retired notation
 

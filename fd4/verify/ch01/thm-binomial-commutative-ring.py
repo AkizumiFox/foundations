@@ -21,3 +21,20 @@ for mod in QUOTED["moduli"]:
                     rhs = (rhs + mult(comb(n, k), (pow(x, k, mod) * pow(y, n - k, mod)) % mod, mod)) % mod
                 assert lhs == rhs
 print("ok")
+
+# Fold "drop (F6)": X = [[0,1],[0,0]], Y = [[0,0],[1,0]].
+QUOTED_FOLD = {"X2": [[0, 0], [0, 0]], "S2": [[1, 0], [0, 1]], "2XY": [[2, 0], [0, 0]]}
+
+
+def mm(a, b):
+    return [[sum(a[i][k] * b[k][j] for k in range(2)) for j in range(2)] for i in range(2)]
+
+
+X = [[0, 1], [0, 0]]
+Y = [[0, 0], [1, 0]]
+S = [[X[i][j] + Y[i][j] for j in range(2)] for i in range(2)]
+assert mm(X, X) == mm(Y, Y) == QUOTED_FOLD["X2"]
+assert mm(S, S) == QUOTED_FOLD["S2"]
+assert [[2 * v for v in row] for row in mm(X, Y)] == QUOTED_FOLD["2XY"]
+assert mm(X, Y) != mm(Y, X)
+print("ok (fold)")

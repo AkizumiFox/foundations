@@ -779,7 +779,7 @@ items:
   kind: exm
   file: 02-subgroups.md
   line: 35
-  hash: 6e4a32cec8e3
+  hash: 83fbdb138fc7
   verdicts:
   - stage: S5a
     verdict: correct

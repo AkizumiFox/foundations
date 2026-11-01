@@ -2064,7 +2064,7 @@ items:
   kind: proof
   file: 05-characteristic-and-prime-subfield.md
   line: 49
-  hash: 0c4f236dcbb0
+  hash: b65c57186159
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2097,7 +2097,7 @@ items:
 - key: proof:lem-integer-multiples#2
   kind: proof
   file: 05-characteristic-and-prime-subfield.md
-  line: 79
+  line: 60
   hash: 4597b1315b11
   verdicts:
   - stage: S5a
@@ -2120,7 +2120,7 @@ items:
 - key: check:05-characteristic-and-prime-subfield:1
   kind: check
   file: 05-characteristic-and-prime-subfield.md
-  line: 114
+  line: 95
   hash: a75dbc6e45ca
   verdicts:
   - stage: S5a
@@ -2154,7 +2154,7 @@ items:
 - key: def-characteristic
   kind: def
   file: 05-characteristic-and-prime-subfield.md
-  line: 128
+  line: 109
   hash: d149ca4c8148
   verdicts:
   - stage: S5a
@@ -2177,7 +2177,7 @@ items:
 - key: prp-characteristic-divides
   kind: prp
   file: 05-characteristic-and-prime-subfield.md
-  line: 151
+  line: 132
   hash: ec24e8d8c117
   verdicts:
   - stage: S5a
@@ -2198,7 +2198,7 @@ items:
 - key: proof:prp-characteristic-divides
   kind: proof
   file: 05-characteristic-and-prime-subfield.md
-  line: 166
+  line: 147
   hash: d684cf0bb98a
   verdicts:
   - stage: S5a
@@ -2222,7 +2222,7 @@ items:
 - key: exm-completing-square-f3
   kind: exm
   file: 05-characteristic-and-prime-subfield.md
-  line: 190
+  line: 171
   hash: efc9f5feb273
   verdicts:
   - stage: S7r
@@ -2239,7 +2239,7 @@ items:
 - key: thm-characteristic-prime
   kind: thm
   file: 05-characteristic-and-prime-subfield.md
-  line: 206
+  line: 187
   hash: 594e183267a7
   verdicts:
   - stage: S5a
@@ -2260,7 +2260,7 @@ items:
 - key: proof:thm-characteristic-prime
   kind: proof
   file: 05-characteristic-and-prime-subfield.md
-  line: 216
+  line: 197
   hash: 997673232a50
   verdicts:
   - stage: S5a
@@ -2293,7 +2293,7 @@ items:
 - key: prp-characteristic-invariant
   kind: prp
   file: 05-characteristic-and-prime-subfield.md
-  line: 230
+  line: 211
   hash: 69055be44bb4
   verdicts:
   - stage: S5a
@@ -2313,7 +2313,7 @@ items:
 - key: proof:prp-characteristic-invariant
   kind: proof
   file: 05-characteristic-and-prime-subfield.md
-  line: 240
+  line: 221
   hash: 6afbbc76aeef
   verdicts:
   - stage: S5a
@@ -2336,7 +2336,7 @@ items:
 - key: exm-characteristics
   kind: exm
   file: 05-characteristic-and-prime-subfield.md
-  line: 250
+  line: 231
   hash: c29189d2c17b
   verdicts:
   - stage: S5a
@@ -2371,7 +2371,7 @@ items:
 - key: check:05-characteristic-and-prime-subfield:2
   kind: check
   file: 05-characteristic-and-prime-subfield.md
-  line: 270
+  line: 251
   hash: e852655ee12f
   verdicts:
   - stage: S5a
@@ -2391,7 +2391,7 @@ items:
 - key: thm-prime-subfield
   kind: thm
   file: 05-characteristic-and-prime-subfield.md
-  line: 284
+  line: 265
   hash: 6872fbf97387
   verdicts:
   - stage: S5a
@@ -2423,7 +2423,7 @@ items:
 - key: proof:thm-prime-subfield
   kind: proof
   file: 05-characteristic-and-prime-subfield.md
-  line: 307
+  line: 288
   hash: 15a6e02921ea
   verdicts:
   - stage: S5a
@@ -2459,7 +2459,7 @@ items:
 - key: cor-homomorphisms-fix-prime-subfield
   kind: cor
   file: 05-characteristic-and-prime-subfield.md
-  line: 371
+  line: 352
   hash: e0ef859023d0
   verdicts:
   - stage: S5a
@@ -2479,7 +2479,7 @@ items:
 - key: proof:cor-homomorphisms-fix-prime-subfield
   kind: proof
   file: 05-characteristic-and-prime-subfield.md
-  line: 381
+  line: 362
   hash: '986010621131'
   verdicts:
   - stage: S5a
@@ -2502,7 +2502,7 @@ items:
 - key: cor-finite-field-prime-characteristic
   kind: cor
   file: 05-characteristic-and-prime-subfield.md
-  line: 393
+  line: 374
   hash: 4b1aca853793
   verdicts:
   - stage: S5a
@@ -2522,7 +2522,7 @@ items:
 - key: proof:cor-finite-field-prime-characteristic
   kind: proof
   file: 05-characteristic-and-prime-subfield.md
-  line: 405
+  line: 386
   hash: fa9336c83898
   verdicts:
   - stage: S5a
@@ -2555,7 +2555,7 @@ items:
 - key: check:05-characteristic-and-prime-subfield:3
   kind: check
   file: 05-characteristic-and-prime-subfield.md
-  line: 415
+  line: 396
   hash: 72f93fffe710
   verdicts:
   - stage: S5a
@@ -2577,7 +2577,7 @@ items:
 - key: exr-characteristic-and-prime-subfield-a1
   kind: exr
   file: 05-characteristic-and-prime-subfield.md
-  line: 427
+  line: 408
   hash: bdfe595e98ae
   verdicts:
   - stage: S5a
@@ -2607,7 +2607,7 @@ items:
 - key: exr-characteristic-and-prime-subfield-b1
   kind: exr
   file: 05-characteristic-and-prime-subfield.md
-  line: 452
+  line: 433
   hash: d45107dd9f49
   verdicts:
   - stage: S5a
@@ -2646,7 +2646,7 @@ items:
 - key: exr-characteristic-and-prime-subfield-b2
   kind: exr
   file: 05-characteristic-and-prime-subfield.md
-  line: 472
+  line: 453
   hash: a2fcc4990e1a
   verdicts:
   - stage: S5a
@@ -2687,7 +2687,7 @@ items:
 - key: exr-characteristic-and-prime-subfield-b3
   kind: exr
   file: 05-characteristic-and-prime-subfield.md
-  line: 501
+  line: 482
   hash: 3bd2c6747e44
   verdicts:
   - stage: S5a
@@ -2716,7 +2716,7 @@ items:
 - key: exr-characteristic-and-prime-subfield-c1
   kind: exr
   file: 05-characteristic-and-prime-subfield.md
-  line: 520
+  line: 501
   hash: 1fe2f4b348a6
   verdicts:
   - stage: S5a
@@ -2758,7 +2758,7 @@ items:
 - key: exr-characteristic-and-prime-subfield-c2
   kind: exr
   file: 05-characteristic-and-prime-subfield.md
-  line: 551
+  line: 532
   hash: 17851d6196ef
   verdicts:
   - stage: S5a
@@ -2800,7 +2800,7 @@ items:
 - key: exr-characteristic-and-prime-subfield-c3
   kind: exr
   file: 05-characteristic-and-prime-subfield.md
-  line: 577
+  line: 558
   hash: 845aca1ec842
   verdicts:
   - stage: S5a
@@ -2838,171 +2838,10 @@ items:
       0(xy) = 0 by thm-field-basic-properties (d). The citation is no longer ambiguous and no longer points
       at the wrong rule, so all three earlier findings are resolved. Checked against exr-finite-fields-from-modular-arithmetic-c1''s
       rules (line 251): α^2 = 1+α = β and αβ = 1. (a) 1+1 = 0. (b) the image of ι_F is {0,'
-- key: lem-ring-finite-sums
-  kind: lem
-  file: 06-frobenius-and-fermat.md
-  line: 21
-  hash: 2574f15b1d58
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 2574f15b1d58
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:21-33; statement is what the proofs and later uses (thm-binomial, Frobenius) need; m
-      ∈ ℤ in (c) is covered by lem-integer-multiples (d)
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 2574f15b1d58
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:21-33. Parts (a)-(f) are well-posed for sequences on N. The opening paragraph (06:9-17)
-      covers sums of reals read in R, matching fd2:def-sum-product 159-183 (general bounds, empty sum,
-      the three remarks).
-- key: proof:lem-ring-finite-sums
-  kind: proof
-  file: 06-frobenius-and-fermat.md
-  line: 42
-  hash: babf80d56119
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: babf80d56119
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:42-64; (a),(b),(d),(f) inductions checked step by step against fd2 splitting-off remark;
-      (c) via lem-integer-multiples (c)+(d) (m·a=(m·1)a for m∈ℤ) then (b); (e) via (-1)·x=-(1·x)=-x, (d)
-      there
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: babf80d56119
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '06:42-64. Checked each base case and step: (a) uses (F1),(F2); (b) uses (F9); (c) uses
-      lem-integer-multiples (c) via (d), which holds for m in Z (05:31-37); (e) uses (-m)·a=-(m·a); in
-      (f) the n=0 case a_0+a_1 and the re-indexed step are right. Sum_{0}^{0}=a_0 is in the ledger (06:511).'
-- key: def-binomial-coefficients
-  kind: def
-  file: 06-frobenius-and-fermat.md
-  line: 70
-  hash: 294012de380b
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 294012de380b
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:70-80; recursion on n into ℕ^ℕ is well-formed; the three facts at 86-88 checked (fact
-      1 uses j>n and j+1>n); table rows match, sidecar def-binomial-coefficients.py ok
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 294012de380b
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '06:70-100. The recursion through fd2:thm-recursion with X = N^N is valid. The three inline
-      facts are right (C(n,1): C(n+1,1)=C(n,0)+C(n,1)=1+n). Table rows 0-6 are correct and the sidecar
-      def-binomial-coefficients.py passes. The remark 06:103 (''neither prove nor use'' the factorial
-      formula) holds on the page.'
-- key: prp-binomial-absorption
-  kind: prp
-  file: 06-frobenius-and-fermat.md
-  line: 108
-  hash: 11abdb064ae9
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 11abdb064ae9
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:108-115; identity true for all n,k (sidecar ok); k>n cases both sides 0
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 11abdb064ae9
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '06:108-119. Idea examples: n=2,k=0 gives 1·3=3·1; n=3,k=1 gives 2·6=12=4·3. The sidecar
-      passes.'
-- key: proof:prp-binomial-absorption
-  kind: proof
-  file: 06-frobenius-and-fermat.md
-  line: 121
-  hash: 9532358a19e1
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 9532358a19e1
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:121-136; induction on n over all k; base k=0 and k≥1 via fact 1; step k=0 via C(n,1)=n,
-      C(n,0)=1; k=j+1 uses IH at j and j+1 then Pascal; each line checked
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 9532358a19e1
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:121-136. Base n=0 checked for k=0 and k>=1. Step k=0 gives n+2=n+2. In the k=j+1 step,
-      the hypothesis is used at k=j ((j+1)C(n+1,j+1)=(n+1)C(n,j)) and at k=j+1, then Pascal. All verified.
-      The N arithmetic is in the ledger (06:514).
-- key: thm-binomial-commutative-ring
-  kind: thm
-  file: 06-frobenius-and-fermat.md
-  line: 142
-  hash: f39530cc74b3
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: f39530cc74b3
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:142-149; commutativity hypothesis used (F6) at regroupings; n-k∈ℕ noted
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: f39530cc74b3
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:142-151 statement is correct. The prose after it (06:183), 'the linear-algebra volumes
-      meet matrices', is a forward pointer to later volumes. STATUS row 161 lists only F4.2 §05 (05:187,
-      05:399) for this kind of pointer, not 06:183. [finding refuted by skeptics]
-- key: proof:thm-binomial-commutative-ring
-  kind: proof
-  file: 06-frobenius-and-fermat.md
-  line: 157
-  hash: 35f7940dfc28
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: refereeA
-    hash: 35f7940dfc28
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: 06:157-181; t_k x=u_{k+1} (z_{k+1}=x^{k+1}y^{n-k}), t_k y=w_k (needs k≤n), lem (f) with
-      u_0=0, w_{n+1}=0·z=0 by C(n,n+1)=0, sum rule (m+k)·a of lem-integer-multiples (d) and Pascal; base
-      1·(1·1)=1
-  - stage: S5b
-    verdict: correct
-    by: refereeB
-    hash: 35f7940dfc28
-    date: '2026-10-12'
-    model: claude-opus-5-5
-    evidence: '06:157-181. Checked: t_k x = u_{k+1} with z_{k+1}=x^{k+1}y^{n-k}; t_k y = w_k; w_{n+1}=0
-      since C(n,n+1)=0; lem (f) with u_0=0 lines up the shifted sum; u_k+w_k=C(n+1,k)·z_k by the sum rule
-      in lem-integer-multiples (d) and Pascal, including j=n.'
 - key: lem-prime-divides-binomial
   kind: lem
   file: 06-frobenius-and-fermat.md
-  line: 187
+  line: 17
   hash: d708fc4764e4
   verdicts:
   - stage: S5a
@@ -3022,7 +2861,7 @@ items:
 - key: proof:lem-prime-divides-binomial
   kind: proof
   file: 06-frobenius-and-fermat.md
-  line: 193
+  line: 23
   hash: 4a10433e6106
   verdicts:
   - stage: S5a
@@ -3046,7 +2885,7 @@ items:
 - key: check:06-frobenius-and-fermat:1
   kind: check
   file: 06-frobenius-and-fermat.md
-  line: 203
+  line: 33
   hash: 2055989483cc
   verdicts:
   - stage: S5a
@@ -3067,7 +2906,7 @@ items:
 - key: thm-frobenius-homomorphism
   kind: thm
   file: 06-frobenius-and-fermat.md
-  line: 215
+  line: 45
   hash: 5bcbad832861
   verdicts:
   - stage: S5a
@@ -3090,7 +2929,7 @@ items:
 - key: proof:thm-frobenius-homomorphism
   kind: proof
   file: 06-frobenius-and-fermat.md
-  line: 241
+  line: 71
   hash: 1a0aa6ef23c9
   verdicts:
   - stage: S5a
@@ -3116,7 +2955,7 @@ items:
 - key: thm-fermat-little
   kind: thm
   file: 06-frobenius-and-fermat.md
-  line: 269
+  line: 99
   hash: 621234352abb
   verdicts:
   - stage: S5a
@@ -3147,7 +2986,7 @@ items:
 - key: proof:thm-fermat-little
   kind: proof
   file: 06-frobenius-and-fermat.md
-  line: 281
+  line: 111
   hash: 16e2cb39e6ca
   verdicts:
   - stage: S5a
@@ -3172,7 +3011,7 @@ items:
 - key: exm-frobenius-computations
   kind: exm
   file: 06-frobenius-and-fermat.md
-  line: 293
+  line: 123
   hash: acdc1dc67d99
   verdicts:
   - stage: S5a
@@ -3205,7 +3044,7 @@ items:
 - key: check:06-frobenius-and-fermat:2
   kind: check
   file: 06-frobenius-and-fermat.md
-  line: 322
+  line: 152
   hash: d2bec6b4591e
   verdicts:
   - stage: S5a
@@ -3226,7 +3065,7 @@ items:
 - key: exr-frobenius-and-fermat-a1
   kind: exr
   file: 06-frobenius-and-fermat.md
-  line: 334
+  line: 164
   hash: 7ee3a6348f86
   verdicts:
   - stage: S5a
@@ -3256,7 +3095,7 @@ items:
 - key: exr-frobenius-and-fermat-b1
   kind: exr
   file: 06-frobenius-and-fermat.md
-  line: 359
+  line: 189
   hash: 7d11f3788449
   verdicts:
   - stage: S5a
@@ -3285,7 +3124,7 @@ items:
 - key: exr-frobenius-and-fermat-b2
   kind: exr
   file: 06-frobenius-and-fermat.md
-  line: 369
+  line: 199
   hash: d2f335554925
   verdicts:
   - stage: S5a
@@ -3316,7 +3155,7 @@ items:
 - key: exr-frobenius-and-fermat-b3
   kind: exr
   file: 06-frobenius-and-fermat.md
-  line: 389
+  line: 219
   hash: 2cb1c3bd140a
   verdicts:
   - stage: S5a
@@ -3343,7 +3182,7 @@ items:
 - key: exr-frobenius-and-fermat-c1
   kind: exr
   file: 06-frobenius-and-fermat.md
-  line: 401
+  line: 231
   hash: a2ab2e270b28
   verdicts:
   - stage: S5a
@@ -3382,7 +3221,7 @@ items:
 - key: exr-frobenius-and-fermat-c2
   kind: exr
   file: 06-frobenius-and-fermat.md
-  line: 428
+  line: 258
   hash: 79ebe7944082
   verdicts:
   - stage: S5a
@@ -3422,7 +3261,7 @@ items:
 - key: exr-frobenius-and-fermat-c3
   kind: exr
   file: 06-frobenius-and-fermat.md
-  line: 449
+  line: 279
   hash: 74c5be04dad2
   verdicts:
   - stage: S5a
@@ -3462,7 +3301,7 @@ items:
 - key: exr-frobenius-and-fermat-r1
   kind: exr
   file: 06-frobenius-and-fermat.md
-  line: 461
+  line: 291
   hash: cd9c33c40b0a
   verdicts:
   - stage: S5a
@@ -3492,7 +3331,7 @@ items:
 - key: exr-frobenius-and-fermat-r2
   kind: exr
   file: 06-frobenius-and-fermat.md
-  line: 471
+  line: 301
   hash: 5350c8b74c8c
   verdicts:
   - stage: S5a
@@ -3531,7 +3370,7 @@ items:
 - key: exr-frobenius-and-fermat-r3
   kind: exr
   file: 06-frobenius-and-fermat.md
-  line: 481
+  line: 311
   hash: 89926b9ce40d
   verdicts:
   - stage: S5a
@@ -3581,7 +3420,7 @@ items:
 - key: exr-frobenius-and-fermat-r4
   kind: exr
   file: 06-frobenius-and-fermat.md
-  line: 493
+  line: 323
   hash: b64f423a82e8
   verdicts:
   - stage: S5a
@@ -3617,3 +3456,171 @@ items:
       (b) is now applied with its hypothesis checked, since Q(sqrt2) and R both have characteristic 0
       (exm-characteristics). The rest checks out: the inclusion is a homomorphism by exm-complex-conjugation-automorphism
       (ii); sigma o iota_{Q(sqrt2)} = iota_R by cor-homomorphisms-fix-prime-subfield (a); sigma('
+- key: lem-ring-finite-sums
+  kind: lem
+  file: 06-frobenius-and-fermat.md
+  line: 21
+  hash: 2574f15b1d58
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 2574f15b1d58
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:21-33; statement is what the proofs and later uses (thm-binomial, Frobenius) need; m
+      ∈ ℤ in (c) is covered by lem-integer-multiples (d)
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 2574f15b1d58
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:21-33. Parts (a)-(f) are well-posed for sequences on N. The opening paragraph (06:9-17)
+      covers sums of reals read in R, matching fd2:def-sum-product 159-183 (general bounds, empty sum,
+      the three remarks).
+  removed: true
+- key: proof:lem-ring-finite-sums
+  kind: proof
+  file: 06-frobenius-and-fermat.md
+  line: 42
+  hash: babf80d56119
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: babf80d56119
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:42-64; (a),(b),(d),(f) inductions checked step by step against fd2 splitting-off remark;
+      (c) via lem-integer-multiples (c)+(d) (m·a=(m·1)a for m∈ℤ) then (b); (e) via (-1)·x=-(1·x)=-x, (d)
+      there
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: babf80d56119
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:42-64. Checked each base case and step: (a) uses (F1),(F2); (b) uses (F9); (c) uses
+      lem-integer-multiples (c) via (d), which holds for m in Z (05:31-37); (e) uses (-m)·a=-(m·a); in
+      (f) the n=0 case a_0+a_1 and the re-indexed step are right. Sum_{0}^{0}=a_0 is in the ledger (06:511).'
+  removed: true
+- key: def-binomial-coefficients
+  kind: def
+  file: 06-frobenius-and-fermat.md
+  line: 70
+  hash: 294012de380b
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 294012de380b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:70-80; recursion on n into ℕ^ℕ is well-formed; the three facts at 86-88 checked (fact
+      1 uses j>n and j+1>n); table rows match, sidecar def-binomial-coefficients.py ok
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 294012de380b
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:70-100. The recursion through fd2:thm-recursion with X = N^N is valid. The three inline
+      facts are right (C(n,1): C(n+1,1)=C(n,0)+C(n,1)=1+n). Table rows 0-6 are correct and the sidecar
+      def-binomial-coefficients.py passes. The remark 06:103 (''neither prove nor use'' the factorial
+      formula) holds on the page.'
+  removed: true
+- key: prp-binomial-absorption
+  kind: prp
+  file: 06-frobenius-and-fermat.md
+  line: 108
+  hash: 11abdb064ae9
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 11abdb064ae9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:108-115; identity true for all n,k (sidecar ok); k>n cases both sides 0
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 11abdb064ae9
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:108-119. Idea examples: n=2,k=0 gives 1·3=3·1; n=3,k=1 gives 2·6=12=4·3. The sidecar
+      passes.'
+  removed: true
+- key: proof:prp-binomial-absorption
+  kind: proof
+  file: 06-frobenius-and-fermat.md
+  line: 121
+  hash: 9532358a19e1
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 9532358a19e1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:121-136; induction on n over all k; base k=0 and k≥1 via fact 1; step k=0 via C(n,1)=n,
+      C(n,0)=1; k=j+1 uses IH at j and j+1 then Pascal; each line checked
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 9532358a19e1
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:121-136. Base n=0 checked for k=0 and k>=1. Step k=0 gives n+2=n+2. In the k=j+1 step,
+      the hypothesis is used at k=j ((j+1)C(n+1,j+1)=(n+1)C(n,j)) and at k=j+1, then Pascal. All verified.
+      The N arithmetic is in the ledger (06:514).
+  removed: true
+- key: thm-binomial-commutative-ring
+  kind: thm
+  file: 06-frobenius-and-fermat.md
+  line: 142
+  hash: f39530cc74b3
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: f39530cc74b3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:142-149; commutativity hypothesis used (F6) at regroupings; n-k∈ℕ noted
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: f39530cc74b3
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:142-151 statement is correct. The prose after it (06:183), 'the linear-algebra volumes
+      meet matrices', is a forward pointer to later volumes. STATUS row 161 lists only F4.2 §05 (05:187,
+      05:399) for this kind of pointer, not 06:183. [finding refuted by skeptics]
+  removed: true
+- key: proof:thm-binomial-commutative-ring
+  kind: proof
+  file: 06-frobenius-and-fermat.md
+  line: 157
+  hash: 35f7940dfc28
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: refereeA
+    hash: 35f7940dfc28
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: 06:157-181; t_k x=u_{k+1} (z_{k+1}=x^{k+1}y^{n-k}), t_k y=w_k (needs k≤n), lem (f) with
+      u_0=0, w_{n+1}=0·z=0 by C(n,n+1)=0, sum rule (m+k)·a of lem-integer-multiples (d) and Pascal; base
+      1·(1·1)=1
+  - stage: S5b
+    verdict: correct
+    by: refereeB
+    hash: 35f7940dfc28
+    date: '2026-10-12'
+    model: claude-opus-5-5
+    evidence: '06:157-181. Checked: t_k x = u_{k+1} with z_{k+1}=x^{k+1}y^{n-k}; t_k y = w_k; w_{n+1}=0
+      since C(n,n+1)=0; lem (f) with u_0=0 lines up the shifted sum; u_k+w_k=C(n+1,k)·z_k by the sum rule
+      in lem-integer-multiples (d) and Pascal, including j=n.'
+  removed: true

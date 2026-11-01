@@ -1,77 +1,10 @@
 # Higher Roots, Roots of Unity, and a Look Ahead
 
-Section 3.4 solved \( z^2 = c \) with real square roots alone. Polar form turns the general equation \( z^n = c \) into a question about lengths and angles: by De Moivre's formula (@thm-de-moivre), raising to the \( n \)-th power raises the modulus to the \( n \)-th power and multiplies the argument by \( n \). The angle part is a linear equation for a real number, with the ambiguity \( 2\pi\nZ \) of @prp-polar-form attached. The length part is the real equation \( r^n = \rho \) with \( \rho > 0 \), and before anything else we must know that it has exactly one positive solution. This section proves that, solves \( z^n = c \), counts the solutions, studies the case \( c = 1 \), and ends with a look ahead at polynomial equations in general.
+Section 3.4 solved \( z^2 = c \) with real square roots alone. Polar form turns the general equation \( z^n = c \) into a question about lengths and angles: by De Moivre's formula (@thm-de-moivre), raising to the \( n \)-th power raises the modulus to the \( n \)-th power and multiplies the argument by \( n \). The angle part is a linear equation for a real number, with the ambiguity \( 2\pi\nZ \) of @prp-polar-form attached. The length part is the real equation \( r^n = \rho \) with \( \rho > 0 \), and Chapter 1 already showed that it has exactly one positive solution. This section recalls that, solves \( z^n = c \), counts the solutions, studies the case \( c = 1 \), and ends with a look ahead at polynomial equations in general.
 
 ## Real n-th roots
 
-For \( n = 2 \), *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 6 built the square root by the move **construct a point as a supremum** (@fd3:prp-cof-square-roots), and an exercise there ran the same move for cube roots (@fd3:exr-measuring-by-rationals-b2). For a general exponent the move is the same; only the estimate for \( (s + h)^n \) needs a new tool, and @lem-difference-of-powers supplies it. Here \( n \cdot 1_{\nR} \) is written \( n \), and powers in \( \nR \) are those of @prp-power-laws-commutative-ring with \( R = \nR \), the same recursion as @fd3:def-naturals-in-ordered-field (b).
-
-::: {#lem-reals-nth-root}
-[Real n-th Roots]
-
-Let \( n \in \nN \) with \( n \ge 1 \).
-
-::: {.enumerate options="label=(\alph*)"}
-1. If \( s, t \in \nR \) and \( 0 \le s < t \), then \( s^n < t^n \).
-2. For every \( a \in \nR \) with \( a \ge 0 \) there is **exactly one** \( b \in \nR \) with \( b \ge 0 \) and \( b^n = a \). We write \( \sqrt[n]{a} \coloneqq b \). For \( n = 2 \) it is the square root \( \sqrt a \) of @fd3:prp-cof-square-roots.
-:::
-:::
-
-::: {.idea}
-Part (a) is the factorization \( t^n - s^n = (t - s)(t^{n-1} + t^{n-2}s + \dots + s^{n-1}) \): both factors are positive. For (b), let \( s \) be the supremum of the set \( S \) of non-negative \( y \) with \( y^n \le a \), and rule out \( s^n < a \) and \( s^n > a \).
-
-If \( s^n < a \), we want \( h > 0 \) with \( (s + h)^n \le a \). Working backwards: for \( 0 < h \le 1 \), the same factorization writes \( (s + h)^n - s^n \) as \( h \) times a sum of \( n \) terms, each at most \( (s + 1)^{n-1} \). So \( (s + h)^n - s^n \le h \cdot n(s + 1)^{n-1} \), and it is enough that this be at most half the room \( a - s^n \). That gives \( h \coloneqq \min\{1, (a - s^n)/(2n(s + 1)^{n-1})\} \).
-
-If \( s^n > a \), we want \( h > 0 \) with \( (s - h)^n \ge a \) still, which makes \( s - h \) a smaller upper bound. Now \( s^n - (s - h)^n \le h \cdot n s^{n-1} \), and it is enough that this equal the excess \( s^n - a \). That gives \( h \coloneqq (s^n - a)/(n s^{n-1}) \).
-:::
-
-::: {.proof}
-Three facts are used throughout: a power of a non-negative real number is non-negative and a power of a positive one is positive (induction on the exponent with @fd3:prp-ordered-ring-rules (c)); if \( 0 \le y \le 1 \) then \( y^k \le y \) for every \( k \ge 1 \), while if \( y \ge 1 \) then \( y^k \ge y \) (induction: \( y^{k+1} = y^k y \), and @fd3:prp-ordered-ring-rules (c) or equality); and if \( 0 \le x \le x' \) and \( 0 \le y \le y' \), then \( xy \le x'y \le x'y' \) (@fd3:prp-ordered-ring-rules (c) twice, or equality).
-
-(a) By @lem-difference-of-powers in the commutative ring \( \nR \),
-\[
-t^n - s^n = (t - s) \sum_{k=0}^{n-1} t^k s^{n-1-k} .
-\]
-Every term of the sum is \( \ge 0 \), and the term with \( k = n - 1 \) is \( t^{n-1} > 0 \), since \( t > s \ge 0 \). So the sum is \( \ge t^{n-1} > 0 \). Also \( t - s > 0 \). Hence \( t^n - s^n > 0 \) (@fd3:prp-ordered-ring-rules (c)).
-
-(b) *Uniqueness.* If \( b, c \ge 0 \) and \( b \ne c \), say \( b < c \), then \( b^n < c^n \) by (a); so at most one non-negative \( b \) has \( b^n = a \).
-
-*Existence.* If \( a = 0 \), then \( b \coloneqq 0 \) works, since \( 0^n = 0^{n-1} \cdot 0 = 0 \). Let \( a > 0 \), and let
-\[
-S \coloneqq \{ y \in \nR : y \ge 0 \text{ and } y^n \le a \} .
-\]
-Put \( m \coloneqq \min\{1, a\} > 0 \). Since \( 0 < m \le 1 \), \( m^n \le m \le a \), so \( m \in S \). Put \( M \coloneqq \max\{1, a\} \). If \( y > M \), then \( y > 1 \), so \( y^n \ge y > M \ge a \) and \( y \notin S \); hence \( M \) is an upper bound of \( S \). Since \( \nR \) is a complete ordered field (@fd3:thm-reals-complete-ordered-field, @fd3:def-complete-ordered-field), \( S \) has a supremum; let \( s \coloneqq \sup S \). Then \( s \ge m > 0 \).
-
-*Case \( s^n < a \).* Let
-\[
-h \coloneqq \min\Bigl\{ 1, \frac{a - s^n}{2n(s + 1)^{n-1}} \Bigr\} .
-\]
-It depends only on \( a \), \( n \) and \( s \), and \( h > 0 \), since \( a - s^n > 0 \) and \( 2n(s + 1)^{n-1} > 0 \). By @lem-difference-of-powers,
-\[
-(s + h)^n - s^n = h \sum_{k=0}^{n-1} (s + h)^k s^{n-1-k} .
-\]
-Since \( 0 \le s < s + h \le s + 1 \), each term satisfies \( (s + h)^k s^{n-1-k} \le (s + 1)^k (s + 1)^{n-1-k} = (s + 1)^{n-1} \), by (a) (or equality), the third fact, and @prp-power-laws-commutative-ring (a). A sum of \( n \) terms, each at most \( (s + 1)^{n-1} \), is at most \( n (s + 1)^{n-1} \). Hence
-\[
-(s + h)^n \le s^n + h \cdot n(s + 1)^{n-1} \le s^n + \frac{a - s^n}{2} < a .
-\]
-So \( s + h \in S \), and \( s + h > s \), against \( s \) being an upper bound of \( S \).
-
-*Case \( s^n > a \).* Let
-\[
-h \coloneqq \frac{s^n - a}{n s^{n-1}} ,
-\]
-which depends only on \( a \), \( n \) and \( s \), and is positive. Since \( a > 0 \), we have \( s^n - a < s^n \le n s^n \), so \( h < s^n/(n s^{n-1}) = s/n \le s \); thus \( 0 < s - h < s \). By @lem-difference-of-powers and the same bound, with \( 0 < s - h < s \), each of the \( n \) terms of \( \sum_{k=0}^{n-1} s^k (s - h)^{n-1-k} \) is at most \( s^{n-1} \), so
-\[
-s^n - (s - h)^n \le h \cdot n s^{n-1} = s^n - a ,
-\]
-that is, \( (s - h)^n \ge a \). Now let \( y \in S \). If \( y > s - h \), then (a) gives \( y^n > (s - h)^n \ge a \), against \( y \in S \). So \( y \le s - h \), and \( s - h \) is an upper bound of \( S \) smaller than \( s \), against \( s \) being the **least** upper bound.
-
-Both cases are impossible, so \( s^n = a \) by trichotomy, and \( b \coloneqq s \ge 0 \) works.
-
-For \( n = 2 \), the number \( \sqrt[2]{a} \) is non-negative and squares to \( a \), so it is \( \sqrt a \), by the uniqueness in @fd3:prp-cof-square-roots.
-:::
-
-The constants were found backwards in the Idea and placed first in the proof, and each depends on \( a \), \( n \) and \( s \) only. Completeness was used once, to produce \( s \). For \( a > 0 \) the root is positive, since \( 0^n = 0 \ne a \). For instance \( \sqrt[3]{8} = 2 \) and \( \sqrt[4]{4} = \sqrt 2 \), since \( 2^3 = 8 \) and \( (\sqrt 2)^4 = \bigl((\sqrt 2)^2\bigr)^2 = 4 \), and both are non-negative. The symbol \( \sqrt[n]{a} \) is used only for **non-negative real** \( a \); the next theorem shows why it could not mean "the" \( n \)-th root of a complex number.
+Chapter 1, Section 1.5, proved that every real number \( a \ge 0 \) has exactly one non-negative \( n \)-th root \( \sqrt[n]{a} \), by the move **construct a point as a supremum** (@lem-reals-nth-root), and that \( 0 \le s < t \) gives \( s^n < t^n \) (@lem-reals-nth-root (a)). We use both here, with the difference of powers (@lem-difference-of-powers) behind them, for the roots of complex numbers below.
 
 ## Solving the equation z to the n equals c
 
@@ -464,12 +397,6 @@ The solutions are \( 0 \), \( 1 \), \( -\tfrac12 + \tfrac{\sqrt 3}{2} i \) and \
 :::
 
 <!-- dependency ledger
-lem-reals-nth-root (proof): powers of non-negative (positive) reals are non-negative (positive); 0 <= y <= 1 gives y^k <= y, y >= 1 gives y^k >= y, for k >= 1; 0 <= x <= x', 0 <= y <= y' gives xy <= x'y' | inline (induction, fd1:ax-induction via fd3:cor-omega-identification (b), with fd3:prp-ordered-ring-rules (c))
-lem-reals-nth-root (proof): finite sums in R; a sum of non-negative terms is >= any one term; a sum of n terms each <= M is <= nM | template: fd2:def-sum-product recursion used as a pattern in R; inline induction on n (fd1:ax-induction)
-lem-reals-nth-root (proof): 0^n = 0 for n >= 1; min{1, a}, max{1, a} exist (two-element sets in a total order) | fd3:prp-ring-algebra (b); fd3:prp-ordered-ring-rules (i)
-lem-reals-nth-root (proof): h < s from s^n - a < s^n <= n s^n and s/n <= s | arithmetic in the ordered field R (n >= 1: fd3:prp-naturals-in-ordered-field (b)); verify/ch01/lem-reals-nth-root.py
-lem-reals-nth-root (proof): constants h and the two inequalities (s + h)^n <= s^n + h n (s + 1)^{n-1}, s^n - (s - h)^n <= h n s^{n-1} | verify/ch01/lem-reals-nth-root.py (numeric, sample a, n)
-lem-reals-nth-root (claim): cube root of 8 is 2, fourth root of 4 is sqrt 2 | inline (uniqueness); verify/ch01/lem-reals-nth-root.py
 thm-complex-nth-roots (proof): 2 pi (k - l)/n = 2 pi m iff k - l = mn, an equation in Z | arithmetic in R; Z inside R via F3.10's kappa (fd3:thm-reals-complete-ordered-field: injective, preserves + and *)
 thm-complex-nth-roots (proof): {1..n} -> {0..n-1}, j -> j - 1, is a bijection; composite of bijections is a bijection | inline; fd2 composition of bijections (fd2:def-bijective)
 thm-complex-nth-roots (proof): sqrt[n]{1} = 1 | inline (1^n = 1, lem-reals-nth-root (b) uniqueness)

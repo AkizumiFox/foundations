@@ -227,7 +227,7 @@ by the recursion, the induction hypothesis, @thm-polar-multiplication (a), and \
 For the consequence, @prp-power-laws-commutative-ring (c) gives \( (r e^{i\theta})^n = r^n (e^{i\theta})^n = r^n e^{in\theta} \). The power \( r^n \) is the same whether it is computed in \( \nR \) or in \( \nC \), by the remark after @prp-power-laws-commutative-ring in Section 3.1, and \( r^n > 0 \) because a product of positive reals is positive (@fd3:prp-ordered-ring-rules (c); induction on \( n \), with \( r^0 = 1 > 0 \)).
 :::
 
-For a negative exponent, Exercise C1 below defines \( z^{-n} \) locally and proves the matching formula; nothing in the text uses it.
+For a negative exponent, \( z^{-n} \) is the integer power of @def-integer-power (\( \nC \) is a field, by Section 3.2), and Exercise C1 below proves the matching formula; nothing in the text uses it.
 
 The five borrowed facts give no particular value of \( \cos \) or \( \sin \) except at multiples of \( 2\pi \). Every other value this chapter uses is derived next, from (T1)–(T5) and the algebra of Sections 3.1–3.4.
 
@@ -386,7 +386,7 @@ Now \( u = 1 \) if and only if \( \abs{u - 1} = 0 \) (@thm-conjugate-properties 
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Prove that \( \cos 3\theta = 4\cos^3\theta - 3\cos\theta \) and \( \sin 3\theta = 3\sin\theta - 4\sin^3\theta \) for every \( \theta \in \nR \).
-2. For \( z \in \nC \) with \( z \ne 0 \) and \( n \in \nN \), put \( z^{-n} \coloneqq (z^{-1})^n \) (a definition local to this exercise). Show that \( (e^{i\theta})^{-n} = e^{-in\theta} \).
+2. For \( z \in \nC \) with \( z \ne 0 \) and \( n \in \nN \), let \( z^{-n} \) be the integer power of @def-integer-power, so that \( z^{-n} = (z^{-1})^n \). Show that \( (e^{i\theta})^{-n} = e^{-in\theta} \).
 :::
 :::
 

@@ -210,52 +210,7 @@ From now on we compute in \( \nC \) exactly as in \( \nR \): expand brackets, co
 
 ## Powers and a factorization
 
-Powers in \( \nC \) are defined exactly as powers in an ordered field were, and that definition never used the order. We state it, and the laws of powers, for an arbitrary commutative ring, because the same proofs serve every commutative ring and later chapters need them in that generality.
-
-**Powers.** Let \( R \) be a commutative ring and \( z \in R \). The **powers** \( z^n \), for \( n \in \nN \), are given by @fd2:thm-recursion, read on \( \nN = \omega \) through @fd3:cor-omega-identification (b), with \( X = R \), starting value \( 1 \) and step \( (k, y) \mapsto yz \):
-\[
-z^0 \coloneqq 1 , \qquad z^{n+1} \coloneqq z^n z \quad \text{for every } n \in \nN .
-\]
-This is the recursion of *Sets and Functions*, Section 3.3 (@fd2:def-power), stated there for real numbers, and the same recursion as @fd3:def-naturals-in-ordered-field (b). In particular \( z^1 = 1 \cdot z = z \) and \( z^2 = z^1 z = zz \), matching the \( z^2 \) of @fd3:prp-ring-algebra (d).
-
-::: {#prp-power-laws-commutative-ring}
-[Laws of Powers in a Commutative Ring]
-
-Let \( R \) be a commutative ring (@fd3:def-commutative-ring-and-field), let \( z, w \in R \), and let \( m, n \in \nN \).
-
-::: {.enumerate options="label=(\alph*)"}
-1. \( z^{m+n} = z^m z^n \).
-2. \( (z^m)^n = z^{mn} \).
-3. \( (zw)^n = z^n w^n \).
-4. If \( R \) is a field and \( z \ne 0 \), then \( z^n \ne 0 \).
-:::
-:::
-
-::: {.idea}
-The definition of \( z^n \) is a recursion on \( n \), so every law is proved by induction on \( n \), peeling off the last factor with \( z^{n+1} = z^n z \). Each inductive step rests on one ingredient: associativity (F5) for (a), the law (a) for (b), associativity and commutativity (F5), (F6) for (c), and the absence of zero divisors in a field for (d).
-:::
-
-::: {.proof}
-Each part is proved by @fd1:ax-induction (through @fd3:cor-omega-identification (b)) on \( n \), with \( z \), \( w \) and \( m \) fixed.
-
-(a) For \( n = 0 \): \( z^{m+0} = z^m = z^m \cdot 1 = z^m z^0 \), by (F7). If \( z^{m+n} = z^m z^n \), then
-\[
-z^{m+(n+1)} = z^{(m+n)+1} = z^{m+n} z = (z^m z^n) z = z^m (z^n z) = z^m z^{n+1} ,
-\]
-by the recursion, the hypothesis and associativity (F5).
-
-(b) For \( n = 0 \): \( (z^m)^0 = 1 = z^0 = z^{m \cdot 0} \). If \( (z^m)^n = z^{mn} \), then \( (z^m)^{n+1} = (z^m)^n z^m = z^{mn} z^m = z^{mn + m} = z^{m(n+1)} \), by the recursion, the hypothesis and (a).
-
-(c) For \( n = 0 \): \( (zw)^0 = 1 = 1 \cdot 1 = z^0 w^0 \). If \( (zw)^n = z^n w^n \), then
-\[
-(zw)^{n+1} = (zw)^n (zw) = (z^n w^n)(zw) = (z^n z)(w^n w) = z^{n+1} w^{n+1} ,
-\]
-where the third equality regroups and reorders the four factors by (F5) and (F6).
-
-(d) Let \( R \) be a field and \( z \ne 0 \). For \( n = 0 \): \( z^0 = 1 \ne 0 \), by the definition of a field. If \( z^n \ne 0 \), then \( z^{n+1} = z^n z \) is a product of two non-zero elements, so it is non-zero, since a field has no zero divisors (@fd3:lem-field-fraction-rules (d)).
-:::
-
-Parts (a)–(c) are the laws of *Sets and Functions*, Section 3.3 (@fd2:prp-power-laws (a)–(c)), proved there for real numbers; on \( \nN = \omega \), which is not a ring, law (a) is @fd3:prp-omega-powers-parity (a), proved by the same induction. The proofs above are the same inductions, and they use only the ring axioms.
+Powers and finite sums in any commutative ring, and in particular in \( \nC \), were set up in Chapter 1, Section 1.1. There \( z^n \) is defined by the recursion \( z^0 \coloneqq 1 \), \( z^{n+1} \coloneqq z^n z \) (@prp-power-laws-commutative-ring), the laws of powers are proved from the ring axioms alone (@prp-power-laws-commutative-ring (a)–(c), and (d) for a field), and the difference of powers \( z^n - w^n = (z - w) \sum_{k=0}^{n-1} z^k w^{n-1-k} \) is proved (@lem-difference-of-powers). Nothing in those proofs used an order, so they apply to \( R = \nC \) unchanged, and we use them from here on. Section 3.6 uses the difference of powers again.
 
 For a real number \( a \), the power \( a^n \) is the same whether computed in \( \nR \) or in \( \nC \). Indeed \( \iota(a^0) = \iota(1) = 1 \), and if \( \iota(a^n) = \iota(a)^n \), then \( \iota(a^{n+1}) = \iota(a^n a) = \iota(a^n)\,\iota(a) = \iota(a)^{n+1} \), by @prp-reals-embed-complex; induction (@fd1:ax-induction) does the rest. So the identification of \( \nR \) with a subset of \( \nC \) is safe for powers too.
 
@@ -268,51 +223,6 @@ Compute \( i^{10} \) and \( (1 + i)^4 \), citing the parts of @prp-power-laws-co
 ::: {.solution}
 By (a) and (b), \( i^{10} = i^{8} i^{2} = (i^4)^2 i^2 = 1^2 \cdot (-1) = -1 \). By (b), \( (1 + i)^4 = \bigl((1 + i)^2\bigr)^2 = (2i)^2 \), and by (c), \( (2i)^2 = 2^2 i^2 = 4 \cdot (-1) = -4 \), using \( (1 + i)^2 = 2i \) from the first Quick check.
 :::
-
-**Finite sums.** One identity about powers is used repeatedly in this chapter and later, and it needs sums of several terms. For elements \( a_0, a_1, a_2, \dots \) of a commutative ring \( R \) and \( n \in \nN \), the sum \( \sum_{k=0}^{n} a_k \) is defined by the recursion of @fd2:def-sum-product, with \( R \) as the set of values and the index starting at \( 0 \): the empty sum \( \sum_{k=0}^{-1} a_k \) is \( 0 \), and
-\[
-\sum_{k=0}^{n} a_k \coloneqq \sum_{k=0}^{n-1} a_k + a_n \quad \text{for every } n \in \nN .
-\]
-So the recursion appends the last term. We also write \( a_0 + a_1 + \dots + a_n \) for this sum. Multiplying a sum by \( c \in R \) multiplies each term: \( \bigl(\sum_{k=0}^{n} a_k\bigr) c = \sum_{k=0}^{n} a_k c \), by induction on \( n \), since \( 0 \cdot c = 0 \) (@fd3:prp-ring-algebra (b)) and the step is one use of the distributive law (F9).
-
-::: {#lem-difference-of-powers}
-[Difference of Powers]
-
-Let \( R \) be a commutative ring, let \( z, w \in R \), and let \( n \in \nN \) with \( n \ge 1 \). Then
-\[
-z^n - w^n = (z - w) \sum_{k=0}^{n-1} z^k w^{n-1-k} .
-\]
-In particular \( z^n - 1 = (z - 1)(1 + z + z^2 + \dots + z^{n-1}) \).
-:::
-
-::: {.idea}
-For \( n = 2 \) this is \( z^2 - w^2 = (z - w)(w + z) \), and for \( n = 3 \) it is \( z^3 - w^3 = (z - w)(w^2 + zw + z^2) \). To pass from \( n \) to \( n + 1 \), split \( z^{n+1} - w^{n+1} \) so that the case \( n \) appears: \( z^{n+1} - w^{n+1} = (z^n - w^n)w + z^n(z - w) \). The first piece is \( (z - w) \) times the old sum times \( w \), and the second supplies the one new term \( z^n \), which the recursion appends at the end.
-:::
-
-::: {.proof}
-For \( n \ge 1 \) write \( S_n \coloneqq \sum_{k=0}^{n-1} z^k w^{n-1-k} \). We prove \( z^{m+1} - w^{m+1} = (z - w) S_{m+1} \) for every \( m \in \nN \), by @fd1:ax-induction (through @fd3:cor-omega-identification (b)) on \( m \).
-
-For \( m = 0 \): \( S_1 = z^0 w^0 = 1 \), so \( (z - w) S_1 = z - w = z^1 - w^1 \).
-
-Let \( n \coloneqq m + 1 \ge 1 \) and suppose \( z^n - w^n = (z - w) S_n \). Expanding with (F9) and @fd3:prp-ring-algebra (c),
-\[
-(z^n - w^n) w + z^n (z - w) = z^n w - w^n w + z^n z - z^n w = z^{n+1} - w^{n+1} ,
-\]
-by the recursion for powers. By the hypothesis and the rule for multiplying a sum by \( w \),
-\[
-(z^n - w^n) w = (z - w) S_n w = (z - w) \sum_{k=0}^{n-1} z^k w^{n-k} ,
-\]
-since \( w^{n-1-k} w = w^{n-k} \) for \( k \le n - 1 \) (@prp-power-laws-commutative-ring (a)). Since \( z^n = z^n w^0 \), the recursion for sums gives
-\[
-\begin{aligned}
-z^{n+1} - w^{n+1} &= (z - w) \Bigl( \sum_{k=0}^{n-1} z^k w^{n-k} + z^n w^0 \Bigr) \\
-&= (z - w) \sum_{k=0}^{n} z^k w^{n-k} = (z - w) S_{n+1} .
-\end{aligned}
-\]
-This completes the induction. The particular case is \( w = 1 \), since \( 1^j = 1 \) for every \( j \in \nN \).
-:::
-
-The lemma is the algebra behind the formula for a finite geometric sum: if \( z - 1 \) has an inverse, then \( 1 + z + \dots + z^{n-1} = (z^n - 1)(z - 1)^{-1} \). Section 3.6 uses it again, for real numbers, to show that \( 0 \le s < t \) gives \( s^n < t^n \). Here we need only the identity.
 
 ## Exercises
 
@@ -474,14 +384,9 @@ exm-complex-arithmetic (solution): (-1)(-b) and similar sign rules in R | fd3:pr
 def-complex-numbers (example): non-example by minimal change: * is commutative with identity element (1,0); (1,1)*(1,-1) = (0,0); (1,1)*(c,d) = (c+d, d+c) | arithmetic in R; inline
 prp-complex-arithmetic-laws (proof): the four-term expansions of (zw)u and z(wu) agree | distributivity, commutativity, associativity in R and fd3:prp-ring-algebra (c); inline; verify/ch01/prp-complex-arithmetic-laws.py
 prp-complex-arithmetic-laws (claim): 1 != 0 in C | fd2:def-ordered-pair, 1 != 0 in R (field); inline
-prp-power-laws-commutative-ring (claim): the definition of powers: recursion z^0 = 1, z^{n+1} = z^n z in a commutative ring | fd2:thm-recursion on omega via fd3:cor-omega-identification (b) (cited); fd2:def-power and fd3:def-naturals-in-ordered-field (b) as the pattern (cited)
-prp-power-laws-commutative-ring (proof): m + (n + 1) = (m + n) + 1, m(n + 1) = mn + m in N | arithmetic of N = omega (fd3:cor-omega-identification; the F3.1 laws of omega), used silently
+prp-power-laws-commutative-ring (claim): the laws of powers and the difference of powers hold in C, a commutative ring | Chapter 1 Section 1.1 (prp-power-laws-commutative-ring, lem-difference-of-powers); cited
 prp-power-laws-commutative-ring (claim): iota(a^n) = iota(a)^n | prp-reals-embed-complex, fd1:ax-induction; inline
 prp-power-laws-commutative-ring (claim): 1^q = 1 for q in N | fd1:ax-induction with (F7); inline
-lem-difference-of-powers (proof): finite sums in a commutative ring, index from 0, append-last-term recursion, empty sum 0 | fd2:def-sum-product used as a pattern with R as the set of values (cited); its recursive clause and "Finite lists" remark use only fd2:thm-recursion, fd1:ax-induction and the operations of the target set, so they run unchanged in R (same wording as F5.1's ledger line)
-lem-difference-of-powers (proof): (sum a_k) c = sum (a_k c) | induction on n with (F9) and fd3:prp-ring-algebra (b); inline
-lem-difference-of-powers (proof): induction on m for n = m + 1 >= 1 | fd1:ax-induction through fd3:cor-omega-identification (b) (cited)
-lem-difference-of-powers (claim): 0 <= s < t gives s^n < t^n | prose pointer to Section 3.6 (lem-reals-nth-root (a) proves it); nothing here depends on it
 exr-pairs-of-reals-a1 (solution): 2 != 0 in R | fd3:prp-ordered-ring-rules (h) or (e)/(b) (2 = 1 + 1 > 0), used silently
 exr-pairs-of-reals-b1 (solution): q >= 0 from n >= 0 and r < 4; q, r in N | order of Z (F3.2, fd3:thm-integers-ordered-ring) and N subset of Z (fd3:prp-naturals-embed-integers); inline
 exr-pairs-of-reals-b1 (solution): 2026 = 4 * 506 + 2 | arithmetic; verify/ch01/exr-pairs-of-reals-b1.py
