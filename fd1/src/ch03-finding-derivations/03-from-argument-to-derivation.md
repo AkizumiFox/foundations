@@ -159,7 +159,7 @@ Line 10. The paragraph is silent on lines 4–5 and on the box, lines 6–9, tha
 ::: {.warning}
 [Not allowed: extracting an argument]
 
-Each mistake below breaks one of the five steps; the step is named at the end.
+Each mistake below breaks a step of the method. The steps it breaks are named at the end.
 
 - "Writing '\( n \) is odd' among the premises": a step taken as a premise. The derivation then proves nothing about whether \( n \) is odd (step 2).
 - "Reading '\( n \) is odd, since \( n \) is a prime greater than \( 10 \)' with '\( n \) is odd' as the premise": *since* introduces the premise, not the conclusion (steps 1–2).
@@ -402,7 +402,7 @@ $\begin{nd}
 
 The tempting wrong supply is "the square of an odd integer is odd", \( \neg E \to \neg S \). It is true, since \( (2k+1)^2 = 2(2k^2+2k)+1 \), but with the premise \( \neg S \) it gives nothing: concluding \( \neg E \) from it would be affirming the consequent (Section 1.3).
 
-(c) Take \( A \): "\( a = 0 \)", \( B \): "\( b = 0 \)", \( Z \): "\( ab = 0 \)". The stated fact is \( (Z \wedge \neg A) \to B \), dividing by \( a \): \( b = a^{-1}(ab) = 0 \). The premise is \( Z \) and the conclusion \( A \vee B \). Neither side of the goal is in hand. In that case the search of Section 3.1 splits on a letter by \( \rulename{LEM} \), so we split on \( A \), as in @exm-equivalence-search.
+(c) Take \( A \): "\( a = 0 \)", \( B \): "\( b = 0 \)", \( Z \): "\( ab = 0 \)". The stated fact is \( (Z \wedge \neg A) \to B \), dividing by \( a \): \( b = a^{-1}(ab) = 0 \). The premise is \( Z \) and the conclusion \( A \vee B \). Neither side of the goal is in hand, and the premises give nothing yet, so we are at step 5 of Section 3.1's method. We split on \( A \) by \( \rulename{LEM} \), as in @exm-equivalence-search.
 
 ```{=latex}
 \begin{center}

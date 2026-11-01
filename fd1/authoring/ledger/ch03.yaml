@@ -119,6 +119,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only vs 9f9dbb8: derivations, rules, line citations and numbers unchanged; sidecars
       pass'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6703c86fe832
+    date: '2026-11-01'
+    evidence: 'wording only: solution (d) splits semicolon clauses and turns ''(its ∧E gives P)'' into
+      ''since its ∧E gives P. The box gives ¬(P∧Q)''; same steps (LEM on P, ∨I left, ¬I box, ∨I right).'
 - key: exm-search-distribute
   kind: exm
   file: 01-finding-derivations.md
@@ -192,6 +199,14 @@ items:
     date: '2026-11-01'
     evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
       or equivalence checked against 9f9dbb8'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e3bab2854352
+    date: '2026-11-01'
+    evidence: 'wording only: table headers Givens/Goal -> We know/We want; ''used; the ... wrote four,
+      lines 3, 4, 5, and 10'' split into two sentences; derivation, line counts (9 of 14, lines 3,4,5,10)
+      and sidecar unchanged (passes).'
 - key: check:01-finding-derivations:2
   kind: check
   file: 01-finding-derivations.md
@@ -297,6 +312,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only vs 9f9dbb8: derivations, rules, line citations and numbers unchanged; sidecars
       pass'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 23eff86d9f01
+    date: '2026-11-01'
+    evidence: 'wording only: ''(compare @exm-cases-on-hypothesis, which packages ... implication)'' becomes
+      a separate sentence ''Compare @exm-cases-on-hypothesis, ...''; ref kept, nothing else changed.'
 - key: exm-search-postpone-or
   kind: exm
   file: 01-finding-derivations.md
@@ -358,6 +380,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only vs 9f9dbb8: derivations, rules, line citations and numbers unchanged; sidecars
       pass'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d51cc64154af
+    date: '2026-11-01'
+    evidence: 'wording only: ''box on P; then'' split; countermodels split into two sentences, still P,Q
+      true R false (premise true, P->R false) and P,R true Q false (premise true, P->Q false), both checked;
+      sidecar passes.'
 - key: exm-search-raa
   kind: exm
   file: 01-finding-derivations.md
@@ -443,6 +473,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only vs 9f9dbb8: derivations, rules, line citations and numbers unchanged; sidecars
       pass'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ea2b6ffcdc70
+    date: '2026-11-01'
+    evidence: 'wording only: ''What the method did'' paragraph split at the colons (''applied. After it,
+      steps 2 and 4 did the rest. Step 4 chose ...''); same order of steps, lines 2/5/9 unchanged; sidecar
+      passes.'
 - key: check:01-finding-derivations:3
   kind: check
   file: 01-finding-derivations.md
@@ -620,6 +658,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only vs 9f9dbb8: derivations, rules, line citations and numbers unchanged; sidecars
       pass'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: cf5941316ce9
+    date: '2026-11-01'
+    evidence: 'wording only: ''"if m is even then mn is even" is one, and CP (@prp-contrapositive) turns
+      it into'' rewritten as ''One is ... The contrapositive, CP (@prp-contrapositive), turns it into'';
+      the pointer ''tabulated in the fold below'' ...'
 - key: exr-finding-derivations-a1
   kind: exr
   file: 01-finding-derivations.md
@@ -686,6 +732,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only vs 9f9dbb8: derivations, rules, line citations and numbers unchanged; sidecars
       pass'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 1e1706ed4e07
+    date: '2026-11-01'
+    evidence: 'wording only: solution (a) parenthesis unwrapped: ''Starting "Suppose x>=0" inside that
+      frame opens an RAA box on the goal x<0; it is not the contrapositive. A proof through the contrapositive
+      replaces the frame. It proves ... a...'
 - key: exr-finding-derivations-a2
   kind: exr
   file: 01-finding-derivations.md
@@ -741,6 +795,14 @@ items:
     date: '2026-11-01'
     evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
       or equivalence checked against 9f9dbb8'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 845be4ff3056
+    date: '2026-11-01'
+    evidence: 'wording only: question 9 and solutions (k), (l) recast from ''n X, rule; ...'' lists into
+      ''Line n is X, rule.'' sentences; every formula, rule and line citation (5-8; 2,3,4,5 of k; 3-6
+      of l) identical.'
 - key: exr-finding-derivations-b1
   kind: exr
   file: 01-finding-derivations.md
@@ -818,6 +880,14 @@ items:
     date: '2026-11-01'
     evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
       or equivalence checked against 9f9dbb8'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 570be06bbe39
+    date: '2026-11-01'
+    evidence: 'wording only: ''; the derivation then has 15 lines instead of 12'' and (c) ''Step 5, LEM
+      on P ...: in the case P'' split into sentences (''So step 5: ...''); numbers 15/12/8 unchanged;
+      sidecar passes.'
 - key: exr-finding-derivations-b2
   kind: exr
   file: 01-finding-derivations.md
@@ -882,6 +952,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only vs 9f9dbb8: derivations, rules, line citations and numbers unchanged; sidecars
       pass'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 64b622b794a3
+    date: '2026-11-01'
+    evidence: 'wording only: ''Name the move'' -> ''Name the kind of reasoning''; solution ''The move
+      is the chapter''s main one'' -> ''The reasoning is the chapter''s main pattern''; derivation and
+      line citations (3-8) unchanged.'
 - key: exr-finding-derivations-b3
   kind: exr
   file: 01-finding-derivations.md
@@ -946,6 +1024,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only vs 9f9dbb8: derivations, rules, line citations and numbers unchanged; sidecars
       pass'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 8d4c7f9a882d
+    date: '2026-11-01'
+    evidence: 'wording only: ''fire both premises'' -> ''apply both premises''; ''a backward chain from
+      the goal S (it needs R, which needs Q, a resource) is written forwards as two more ->E lines'' ->
+      ''we chain backwards from the goal S: it needs ...'
 - key: exr-finding-derivations-b4
   kind: exr
   file: 01-finding-derivations.md
@@ -1052,6 +1138,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only vs 9f9dbb8: derivations, rules, line citations and numbers unchanged; sidecars
       pass'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6664885a47be
+    date: '2026-11-01'
+    evidence: 'wording only: ''Name the move'' -> ''Name the kind of reasoning''; ''the sibling-box error
+      of @exr-reductio-and-classical-rules-c2'' -> ''would cite a line of the first box after it has closed,
+      the error of @exr-reductio-and-classical...'
 - key: exr-finding-derivations-c2
   kind: exr
   file: 01-finding-derivations.md
@@ -1165,6 +1259,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only vs 9f9dbb8: derivations, rules, line citations and numbers unchanged; sidecars
       pass'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6b6e4dfaa1aa
+    date: '2026-11-01'
+    evidence: 'wording only: main solution (b) parenthesis and semicolons unwrapped (same countermodels
+      P true Q false / P false Q true, same ''Chapter 4'' remark); ''Marking scheme'' -> ''What a complete
+      answer needs'', ''Fatal errors (0 for the st...'
 - key: exr-finding-derivations-c3
   kind: exr
   file: 01-finding-derivations.md
@@ -1282,6 +1384,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only vs 9f9dbb8: derivations, rules, line citations and numbers unchanged; sidecars
       pass'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 7b228af09f0b
+    date: '2026-11-01'
+    evidence: 'wording only: title ''Exit check: search'' -> ''Chapter check: search'' (§13 B4); step
+      6 parenthesis made a sentence; marking ''Marking scheme''/''Fatal errors (0 for the step)'' renamed;
+      ''(LEM on Q also works; ...; award it.)'' -> ''LEM...'
 - key: exr-finding-derivations-c4
   kind: exr
   file: 01-finding-derivations.md
@@ -1359,6 +1469,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only vs 9f9dbb8: derivations, rules, line citations and numbers unchanged; sidecars
       pass'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: de248a42a171
+    date: '2026-11-01'
+    evidence: 'wording only: closing paragraph of (b) split: ''opens with ¬Q. The rule ¬I writes ... gives
+      ¬¬Q. Our derivation reaches Q with the classical rule instead: RAA in place of ¬I, or ¬¬E after
+      it.'' Line 6 claim unchanged; sidecar pas...'
 - key: check:02-four-kinds-of-task:1
   kind: check
   file: 02-four-kinds-of-task.md
@@ -1410,6 +1528,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only vs 9f9dbb8: same steps, statements and derivations; new instances true and
       recorded; sidecars pass'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 2867a7cf7ee7
+    date: '2026-11-01'
+    evidence: 'L46/L75: steps 1-4 renamed (setting up, goal-directed, premise-directed, clash); ''Step
+      3 fires the first on the second'' became ''applies ->E to the first and the second'', which is the
+      same step. Derivation unchanged.'
 - key: exm-equivalence-search
   kind: exm
   file: 02-four-kinds-of-task.md
@@ -1451,6 +1577,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only vs 9f9dbb8: same steps, statements and derivations; new instances true and
       recorded; sidecars pass'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 614f78cbcc53
+    date: '2026-11-01'
+    evidence: L110 'premise fires on P' became 'gives Q v R from P' (->E, true). L156 'waits for' became
+      'needs', and the step-5 sentence was split ('the statement to split on is Q, since the premise needs
+      its negation'), same LEM on Q. L220...
 - key: def-inconsistent-set
   kind: def
   file: 02-four-kinds-of-task.md
@@ -1480,6 +1614,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only vs 9f9dbb8: same steps, statements and derivations; new instances true and
       recorded; sidecars pass'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 3148a0082c20
+    date: '2026-11-01'
+    evidence: Definition box unchanged. The lead-in at L224 is now a bulleted list with the same three
+      items. The new instance at L232 (P, ~P v Q, ~Q gives bot by vE, each case clashing) is true and
+      matches the check at L26/L30. It is record...
 - key: prp-inconsistent-derives-everything
   kind: prp
   file: 02-four-kinds-of-task.md
@@ -1510,6 +1652,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only vs 9f9dbb8: same steps, statements and derivations; new instances true and
       recorded; sidecars pass'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 41ea14193aeb
+    date: '2026-11-01'
+    evidence: 'Statement word for word. L257: ''grown from two premises'' became ''extends ... from the
+      two premises P, ~P'', and ''in the fold of the next subsection'' became ''in the next subsection
+      together with the proof of the proposition there...'
 - key: check:02-four-kinds-of-task:2
   kind: check
   file: 02-four-kinds-of-task.md
@@ -1560,6 +1710,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only vs 9f9dbb8: same steps, statements and derivations; new instances true and
       recorded; sidecars pass'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 2824d83e96e5
+    date: '2026-11-01'
+    evidence: L285 'the case T fires line 3' became 'uses line 3 by ->E'. L341 was split into three sentences
+      with the same reasoning and the same numbers (n=6,1,3,12). The fold quote was replaced by its content.
+      Sidecar exm-inconsistency-se...
 - key: check:02-four-kinds-of-task:3
   kind: check
   file: 02-four-kinds-of-task.md
@@ -1612,6 +1770,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only vs 9f9dbb8: same steps, statements and derivations; new instances true and
       recorded; sidecars pass'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e1aadc2e638a
+    date: '2026-11-01'
+    evidence: 'L359-360: in the table rows, semicolons became ''then''/''so''/''Last,'', with the same
+      rules in the same order and the same line counts (7, 8). L366: the detour remark was split and keeps
+      the Section 3.1 rule.'
 - key: prp-derivable-iff-negation-inconsistent
   kind: prp
   file: 02-four-kinds-of-task.md
@@ -1653,6 +1819,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only vs 9f9dbb8: same steps, statements and derivations; new instances true and
       recorded; sidecars pass'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 5a7def1bf8d2
+    date: '2026-11-01'
+    evidence: 'Statement unchanged. The new instance at L384 (counterexample set of P&Q |- P is P&Q, ~P,
+      inconsistent by &E and ~E) is true and recorded in the ledger. L397: the Section 1.1 sentence was
+      reworded with the same meaning. L399 wa...'
 - key: proof:prp-derivable-iff-negation-inconsistent
   kind: proof
   file: 02-four-kinds-of-task.md
@@ -1720,6 +1894,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only vs 9f9dbb8: same steps, statements and derivations; new instances true and
       recorded; sidecars pass'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 0125b42b9b37
+    date: '2026-11-01'
+    evidence: 'L411 ''legal'' became ''still allowed''. The inline ''(the scope rule of @def-derivation)''
+      moved to a Uses line, ''@def-derivation (the scope rule)'', at the end of the proof. The proof steps
+      are unchanged. L420: the ''run backwards'' s...'
 - key: check:02-four-kinds-of-task:4
   kind: check
   file: 02-four-kinds-of-task.md
@@ -1771,6 +1953,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only vs 9f9dbb8: same steps, statements and derivations; new instances true and
       recorded; sidecars pass'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 4386beaee58c
+    date: '2026-11-01'
+    evidence: 'L477: the plan sentence was split. ''Both premises fire on P'' became ''give a line from
+      P by ->E'' (P->Q and P->~R or similar both apply ->E; the lines need nothing new). L538: the chart
+      sentence was reworded with the same claim t...'
 - key: check:02-four-kinds-of-task:5
   kind: check
   file: 02-four-kinds-of-task.md
@@ -1837,6 +2027,13 @@ items:
     model: claude-opus-5-5
     evidence: 02:583-605. All five parts agree with my answers. (d) cites lem-weakening-cut (a), which
       is weakening (03-derived-rules.md:224).
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 2b11572490db
+    date: '2026-11-01'
+    evidence: item 5 reworded 'first move' -> 'first rule to use'; solution (e) (each derivation starts
+      with wedge-E) still answers it
 - key: exr-four-kinds-of-task-a2
   kind: exr
   file: 02-four-kinds-of-task.md
@@ -1881,6 +2078,20 @@ items:
     date: '2026-11-01'
     evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
       or equivalence checked against 9f9dbb8'
+  - stage: S5e
+    verdict: minor
+    by: s5e-referee
+    hash: ecac80731ffe
+    date: '2026-11-01'
+    evidence: 'This item did not change. The §13 fallen-out term is still at L605: ''Name the task and
+      the first move''. Elsewhere the reviser changed ''move'' to ''step''.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: ecac80731ffe
+    date: '2026-11-01'
+    evidence: 'fixed: A1 item 5 ''the first move'' -> ''the first rule to use'' (solution (e) starts with
+      wedge-E); the line sits in the A1 block'
 - key: exr-four-kinds-of-task-b1
   kind: exr
   file: 02-four-kinds-of-task.md
@@ -1931,6 +2142,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only vs 9f9dbb8: same steps, statements and derivations; new instances true and
       recorded; sidecars pass'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 9719aa219a18
+    date: '2026-11-01'
+    evidence: 'L712 ''step 2 inside step 4: step 4 chooses'' was split into ''step 4. The clash step chooses
+      ...''. The derivation is unchanged.'
 - key: exr-four-kinds-of-task-b2
   kind: exr
   file: 02-four-kinds-of-task.md
@@ -1976,6 +2194,21 @@ items:
     date: '2026-11-01'
     evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
       or equivalence checked against 9f9dbb8'
+  - stage: S5e
+    verdict: minor
+    by: s5e-referee
+    hash: 0cb8da05842a
+    date: '2026-11-01'
+    evidence: 'L773 ''Name the move'' became ''Name the step of the method''. L795 adds ''the stuck step,
+      step 5''. Both are correct. The §13 B11 figurative verb is still unchanged at L764: ''the resources
+      wait for P -> Q''.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 0cb8da05842a
+    date: '2026-11-01'
+    evidence: 'confirmed fixed: ''the resources wait for'' no longer in 02-four-kinds-of-task.md (grep
+      ''wait'' empty)'
 - key: exr-four-kinds-of-task-b3
   kind: exr
   file: 02-four-kinds-of-task.md
@@ -2041,6 +2274,21 @@ items:
     date: '2026-11-01'
     evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
       or equivalence checked against 9f9dbb8'
+  - stage: S5e
+    verdict: minor
+    by: s5e-referee
+    hash: 91ac4792795c
+    date: '2026-11-01'
+    evidence: 'L867: the parenthesis was dropped and @prp-de-morgan (c) became ''part (c) of @prp-de-morgan''.
+      L919: semicolons became full stops, and the affirming-the-consequent sentence was restructured (''Here
+      Q holds by (c)''). That is true:...'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 91ac4792795c
+    date: '2026-11-01'
+    evidence: 'confirmed fixed: ''wait(s) for'' at old L896/L961 gone (grep ''wait'' empty); mathematics
+      unchanged'
 - key: exr-four-kinds-of-task-b4
   kind: exr
   file: 02-four-kinds-of-task.md
@@ -2145,6 +2393,14 @@ items:
     date: '2026-11-01'
     evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
       or equivalence checked against 9f9dbb8'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b7eb374b933b
+    date: '2026-11-01'
+    evidence: 'L1062: ''Exit check'' became ''Chapter check''. L1105 and L1107: sentences split, ''pays''
+      became ''helps''. The break values are unchanged (x=1, so P, R, T are true and Q, S are false),
+      and the sidecar passes. At L1112, @exm-cases-on-...'
 - key: exr-four-kinds-of-task-c2
   kind: exr
   file: 02-four-kinds-of-task.md
@@ -2213,6 +2469,28 @@ items:
     date: '2026-11-01'
     evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
       or equivalence checked against 9f9dbb8'
+  - stage: S5e
+    verdict: minor
+    by: s5e-referee
+    hash: 181eb39cdd33
+    date: '2026-11-01'
+    evidence: 'L1147: ''@lem-weakening-cut (c) ... or by Cut (@lem-weakening-cut (b))'' became ''by part
+      (c) of the same lemma ... or by Cut, its part (b)'', with @lem-weakening-cut in the Uses line (L1153-1155).
+      The mathematics is unchanged and ...'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 181eb39cdd33
+    date: '2026-11-01'
+    evidence: 'fixed: ''part (c) of the same lemma'' -> ''part (c) of the Cut lemma, @lem-weakening-cut'';
+      matches 9f9dbb8 ''@lem-weakening-cut (c)'''
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: bfc6a1ce52a3
+    date: '2026-11-01'
+    evidence: 'fixed: ''part (c) of the same lemma'' -> ''part (c) of the Cut lemma'' (@lem-weakening-cut
+      in the Uses line), as 9f9dbb8 ''@lem-weakening-cut (c)'''
 - key: check:03-from-argument-to-derivation:1
   kind: check
   file: 03-from-argument-to-derivation.md
@@ -2274,6 +2552,14 @@ items:
     date: '2026-11-01'
     evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
       or equivalence checked against 9f9dbb8'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 23e47a5751d5
+    date: '2026-11-01'
+    evidence: 'Three wording changes. In step 2, the sentence ''The stated premise ... : P∧G, since''
+      is split into two sentences with the same content. In method step 3, the parenthetical ''(Compare
+      Section 1.3, Exercise B5 (d) ...)'' becomes a ...'
 - key: check:03-from-argument-to-derivation:2
   kind: check
   file: 03-from-argument-to-derivation.md
@@ -2471,6 +2757,21 @@ items:
     date: '2026-11-01'
     evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
       or equivalence checked against 9f9dbb8'
+  - stage: S5e
+    verdict: minor
+    by: s5e-referee
+    hash: 7fd6d5cec1dc
+    date: '2026-11-01'
+    evidence: The statement change, splitting the semicolon list, is wording only, and the derivation
+      in (c) is unchanged. In (c), however, the new sentence 'Neither side of the goal is in hand. In
+      that case the search of Section 3.1 splits ...
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 7fd6d5cec1dc
+    date: '2026-11-01'
+    evidence: 'fixed (c): false ''search splits on a letter by LEM'' -> ''we are at step 5 of Section
+      3.1''s method. We split on A by LEM'', as 9f9dbb8 said; derivation unchanged'
 - key: exr-from-argument-to-derivation-b2
   kind: exr
   file: 03-from-argument-to-derivation.md
@@ -2527,6 +2828,14 @@ items:
     date: '2026-11-01'
     evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
       or equivalence checked against 9f9dbb8'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: bec4b4fdcb25
+    date: '2026-11-01'
+    evidence: '(a): ''Name the move, then complete it'' becomes ''Say which rule comes next, then complete
+      the derivation'', which is the same task. In the solution, ''step 2 of the method opens a ¬I box''
+      becomes ''as in every search of Section 3.1...'
 - key: exr-from-argument-to-derivation-b3
   kind: exr
   file: 03-from-argument-to-derivation.md
@@ -2594,6 +2903,14 @@ items:
     date: '2026-11-01'
     evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
       or equivalence checked against 9f9dbb8'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 7b43913cadc5
+    date: '2026-11-01'
+    evidence: In the statement, 'their letters are free, not the key' becomes 'their letters stand for
+      any statements, not for the key', which means the same. One long sentence is split into two with
+      the same content. In the item 3 remark, t...
 - key: exr-from-argument-to-derivation-b4
   kind: exr
   file: 03-from-argument-to-derivation.md
@@ -2654,6 +2971,13 @@ items:
     date: '2026-11-01'
     evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
       or equivalence checked against 9f9dbb8'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: cefa92a6e202
+    date: '2026-11-01'
+    evidence: Only 'The two distractors' becomes 'The two sentences that do not belong'. The order (ii),(vi),(viii),(iv),(i),(v)
+      and the counterexample a=0, b=3 are unchanged.
 - key: exr-from-argument-to-derivation-c1
   kind: exr
   file: 03-from-argument-to-derivation.md
@@ -2711,6 +3035,14 @@ items:
     date: '2026-11-01'
     evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
       or equivalence checked against 9f9dbb8'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 4b3f8dfc2634
+    date: '2026-11-01'
+    evidence: The title 'Exit check' becomes 'Chapter check'. 'Marking scheme' becomes 'What a complete
+      answer needs', 'the model' becomes 'our solution', and 'Fatal errors (0 for the step)' becomes 'Slips
+      that lose the step (0 for it)'. The...
 - key: exr-from-argument-to-derivation-c2
   kind: exr
   file: 03-from-argument-to-derivation.md
@@ -2768,6 +3100,14 @@ items:
     date: '2026-11-01'
     evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
       or equivalence checked against 9f9dbb8'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 3d043fbb9c60
+    date: '2026-11-01'
+    evidence: In (c), the nested parenthesis about Q := ⊥ becomes a sentence, and '(Section 2.2)' becomes
+      'by Section 2.2'. That claim is unchanged. The scheme renames match C1. The points 4/3/3, the 7-line
+      ending and the 'Q obtained inside ...
 - key: exr-finding-derivations-r1
   kind: exr
   file: 03-from-argument-to-derivation.md
@@ -2841,6 +3181,14 @@ items:
     date: '2026-11-01'
     evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
       or equivalence checked against 9f9dbb8'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 9ed47e0fa36c
+    date: '2026-11-01'
+    evidence: '''@def-rules-disjunction'' moves from the inline parenthesis into a closing `.uses` block
+      reading ''@def-rules-disjunction (the rule ∨E).'' The reference is kept, the reference multiset
+      of the file is identical old vs new, and the ...'
 - key: exr-finding-derivations-r2
   kind: exr
   file: 03-from-argument-to-derivation.md
@@ -2936,6 +3284,14 @@ items:
     date: '2026-11-01'
     evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
       or equivalence checked against 9f9dbb8'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: cb828027207e
+    date: '2026-11-01'
+    evidence: '''equivalently (@prp-de-morgan (a), (b)) ¬(N∨M)'' becomes ''By @prp-de-morgan (a), (b),
+      this is interderivable with ¬(N∨M)''. That is true: DM (a) and (b) are the two directions. The plan
+      sentence for the goal is split into sentenc...'
 - key: exr-finding-derivations-r3
   kind: exr
   file: 03-from-argument-to-derivation.md
@@ -3020,6 +3376,14 @@ items:
     date: '2026-11-01'
     evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
       or equivalence checked against 9f9dbb8'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 77e6b38e71e9
+    date: '2026-11-01'
+    evidence: '''The repetition at line 5 puts Q inside the box of line 4, as →I requires (clause (D3)
+      of @def-derivation)'' becomes ''Line 5 copies Q into the box of line 4 by repetition, clause (D3)
+      of @def-derivation, since →I needs that box ...'
 - key: exr-from-argument-to-derivation-r4
   kind: exr
   file: 03-from-argument-to-derivation.md
@@ -3098,3 +3462,11 @@ items:
     date: '2026-11-01'
     evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
       or equivalence checked against 9f9dbb8'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d5591d2f4b06
+    date: '2026-11-01'
+    evidence: The inline '(@prp-modus-tollens)' moves to a closing `.uses` block reading '@prp-modus-tollens
+      (the rule MT).' The sentence about MT needing ¬¬L from ¬¬I (@prp-double-negation (a)) at line 5
+      is re-sentenced with the same conten...

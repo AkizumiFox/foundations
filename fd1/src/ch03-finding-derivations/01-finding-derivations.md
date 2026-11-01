@@ -247,7 +247,7 @@ $\begin{nd}
 *What the method did.* The goal-directed steps wrote nine of the fourteen lines, every box among them, before the premise was used. The premise-directed steps wrote four: lines 3, 4, 5, and 10. The premise itself was used once in each gap, by the same \( \rulename{{\to}E} \). Line 10 cites line 1 from inside two boxes. That is allowed, because line 1 is a premise and so is available everywhere below it.
 :::
 
-Notice how little thinking the search needed. That is the typical shape of a successful search: **the goal fixes the skeleton, and the premises fill in the flesh.** In plain words, the boxes, their assumptions and the last lines come from the goal, and the lines that fill each box come from the premises.
+Notice how little thinking the search needed. That is the typical shape of a successful search: **the goal fixes the skeleton, and the premises fill in the flesh.** In plain words, the boxes, their assumptions and the last lines come from the goal, and most of the lines that fill each box come from the premises.
 
 ::: {.check}
 In the second snapshot of @exm-search-distribute above, the second gap has the current goal \( \bot \) on line 11, and line 7 is one of its resources, though the gap never uses it. Why is line 7 available there, and why are lines 2–6 not?

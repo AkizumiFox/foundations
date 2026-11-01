@@ -439,7 +439,7 @@ $\begin{nd}
 ```
 :::
 
-## One task in four costumes
+## One task in four forms
 
 Every task of this section is a claim that something is derivable, and by @prp-derivable-iff-negation-inconsistent every such claim is a claim that a list is inconsistent.
 
@@ -602,7 +602,7 @@ Chapter 4 calls a list whose members can all be made true at once *satisfiable*,
 2. By @prp-derivable-iff-negation-inconsistent, which list is inconsistent exactly when \( P \to Q, \ Q \to R \vdash P \to R \)?
 3. True or false: every list that has \( \bot \) as a member is inconsistent.
 4. True or false: if \( \Gamma \) is inconsistent, so is every list \( \Gamma, \psi \).
-5. Name the task and the first move: "show that \( P \wedge Q \dashv\vdash Q \wedge P \)".
+5. Name the task and the first rule to use: "show that \( P \wedge Q \dashv\vdash Q \wedge P \)".
 :::
 :::
 
@@ -1144,7 +1144,7 @@ Section 4.10 (optional) adds statements to a consistent list one at a time, in e
 **What a complete answer needs.** (10 points)
 
 - 4: (a) obtains \( \Gamma \vdash \neg\varphi \) by part (a) of the proposition or \( \Gamma \vdash \varphi \) by part (b), and combines it with the other inconsistency, directly (by Cut, @lem-weakening-cut (b)) or by the other part.
-- 3: (a) concludes by @prp-inconsistent-derives-everything, by part (c) of the same lemma with one \( \rulename{\neg E} \), or by Cut, its part (b).
+- 3: (a) concludes by @prp-inconsistent-derives-everything, by part (c) of the Cut lemma with one \( \rulename{\neg E} \), or by Cut, its part (b).
 - 2: (b) as the contrapositive.
 - 1: (c) "no".
 
