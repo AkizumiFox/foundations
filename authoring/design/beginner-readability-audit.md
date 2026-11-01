@@ -310,16 +310,16 @@ followed (or preceded) by an ordinary sentence that says the same thing literall
 | `refs`：一句有兩個以上行內 `@ref`（Uses 行不算） | B1 | 252 | 7 | 376 | 587 | 1,215 |
 | `long`：一句超過 35 字 | B6 | 938 | 11 | 348 | 296 | 1,582 |
 | `nested`：括號裡又有括號（`@ref (a)` 的條款標記不算） | B6 | 103 | 0 | 46 | 68 | 217 |
-| `semicolons`：一句超過兩個分號 | B6 | 143 | 6 | 23 | 20 | 186 |
+| `semicolons`：一句超過兩個分號 | B6 | 143 | 5 | 23 | 20 | 186 |
 | `term`：作者用語上版面（含標題、框標題） | B4 | 394 | 0 | 241 | 183 | 818 |
 | `code`：代號單獨出現（「by (Eq3)」） | B7 | 198 | 4 | 107 | 323 | 628 |
 | `time-line`：舊的 Time 行模板 | B4 | 8 | 0 | 6 | 6 | 20 |
 | `index-part`：章首頁有 Named moves、Summary 或 Terms | B8 | 24 | 0 | 18 | 16 | 58 |
 | `need`：What you need 超過五個連結 | B8 | 3 | 0 | 6 | 6 | 15 |
-| **合計** | | **2,063** | **28** | **1,171** | **1,505** | **4,739** |
+| **合計** | | **2,063** | **27** | **1,171** | **1,505** | **4,739** |
 | 每萬字（主線字數見 §5） | | 56 | 0.7 | 74 | 124 | 73 |
 
-**fd1 改寫後（2026-11-01）。** 「fd1 改寫後」一欄量的是 fd1 第 1–8 章 STYLE §13 措辭改寫（S3e/S5e，commit 50099e0、088a23e、9f59a6e、524607b、7867d46、a83ec04、8f8a974、afb722c，加上收尾 commit）之後的原文，指令相同（`python3 tools/check_beginner.py --book fd1 --summary`）。2,063 條降到 28 條，每萬字從 56 降到 0.7（主線字數 366k → 377k，`check_structure.py --words`）。剩下的 28 條還沒逐條判斷（工具只是提示）：`refs` 7（第 8 章 6、第 6 章 1）、`long` 11（第 4 章 5、第 8 章 4、第 7 章 2）、`semicolons` 6（第 2 章 3、第 4 章 2、第 7 章 1）、`code` 4（第 7 章 3、第 4 章 1）。`term`、`time-line`、`index-part`、`need`、`nested` 全部歸零。「合計」欄仍是三冊改寫前的合計。
+**fd1 改寫後（2026-11-01）。** 「fd1 改寫後」一欄量的是 fd1 第 1–8 章 STYLE §13 措辭改寫（S3e/S5e，commit 50099e0、088a23e、9f59a6e、524607b、7867d46、a83ec04、8f8a974、afb722c，加上收尾 commit 1ee9c8a，以及依完整 S5e 判定修正的 60c2360–2284ee0 八個 commit）之後的原文，指令相同（`python3 tools/check_beginner.py --book fd1 --summary`）。2,063 條降到 27 條，每萬字從 56 降到 0.7（主線字數 366k → 377k，`check_structure.py --words`）。剩下的 27 條還沒逐條判斷（工具只是提示）：`refs` 7（第 8 章 6、第 6 章 1）、`long` 11（第 4 章 5、第 8 章 4、第 7 章 2）、`semicolons` 5（第 2 章 3、第 4 章 1、第 7 章 1）、`code` 4（第 7 章 3、第 4 章 1）。`term`、`time-line`、`index-part`、`need`、`nested` 全部歸零。「合計」欄仍是三冊改寫前的合計。
 
 **怎麼讀這張表。**
 
