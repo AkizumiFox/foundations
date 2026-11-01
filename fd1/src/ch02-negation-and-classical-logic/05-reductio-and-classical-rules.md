@@ -1,6 +1,6 @@
 # Proof by Contradiction and the Classical Rules
 
-Every rule so far either builds a statement or takes one apart. The rules for negation are no exception: \( \rulename{\neg I} \) (@def-rules-negation) builds \( \neg\varphi \) from a box that opens with \( \varphi \) and ends in \( \bot \), and \( \rulename{\neg E} \) (@def-rules-contradiction) uses \( \neg\varphi \) against \( \varphi \). Yet in three places this chapter has stopped one step short of a goal. This section adds the one rule that takes a negation away, reductio ad absurdum. It then derives from it the classical laws that mathematics uses without noticing, and shows that three of them are one principle in three forms.
+Every rule so far either builds a statement or takes one apart. The rules for negation are no exception. The rule \( \rulename{\neg I} \) (@def-rules-negation) builds \( \neg\varphi \) from a box that opens with \( \varphi \) and ends in \( \bot \). The rule \( \rulename{\neg E} \) (@def-rules-contradiction) uses \( \neg\varphi \) against \( \varphi \). Yet in three places this chapter has stopped one step short of a goal. This section adds the one rule that takes a negation away, reductio ad absurdum. It then derives from it the classical laws that mathematics uses without noticing, and shows that three of them are one principle in three forms.
 
 ## Two boxes that look alike
 
@@ -30,7 +30,7 @@ The second argument is not a curiosity. Three times already in this chapter a de
 2. If you did Exercise C1 of Section 2.3, you met a second: @exr-derived-rules-c1 led from \( P \to Q \) and \( \neg P \to R \) to \( \neg(\neg Q \wedge \neg R) \), and not to \( Q \vee R \).
 3. Section 2.4 noted, after @exm-iff-negations, that its converse, \( \neg P \leftrightarrow \neg Q \vdash P \leftrightarrow Q \), resists the rules so far. The natural box on \( \neg Q \), inside the box of \( P \), closes to \( \neg\neg Q \), not \( Q \).
 
-Try the smallest case, \( P \) from \( \neg\neg P \). The goal \( P \) is a letter, so no introduction rule applies: the goal-directed moves have nothing to say. The premise \( \neg\neg P \) is a negation, and a negation can be used only by \( \rulename{\neg E} \), against the statement it negates, \( \neg P \). So we assume \( \neg P \) in a box. The box reaches \( \bot \) at once, and \( \rulename{\neg I} \) closes it with \( \neg\neg P \): the premise again. Every attempt goes round this circle.
+Try the smallest case, \( P \) from \( \neg\neg P \). The goal \( P \) is a letter, so no introduction rule applies, and goal-directed reasoning has nothing to offer. The premise \( \neg\neg P \) is a negation, and a negation can be used only by \( \rulename{\neg E} \), against the statement it negates, \( \neg P \). So we assume \( \neg P \) in a box. The box reaches \( \bot \) at once, and \( \rulename{\neg I} \) closes it with \( \neg\neg P \): the premise again. Every attempt goes round this circle.
 
 That no derivation of \( P \) from \( \neg\neg P \) exists with the rules so far is a claim about **all** derivations, which no search can settle; this section's Looking-ahead box says where it is proved. Here we name the missing step and add it as a rule.
 
@@ -58,7 +58,7 @@ $\begin{nd}[schema]
 This is the rule \( \rulename{RAA} \) (**reductio ad absurdum**, "reduction to the absurd"). The line \( \neg\varphi \) is an assumption, which opens the box and is **discharged** when the box closes. The line \( \bot \) is a line **of that box itself**, not of a box inside it.
 :::
 
-As in every schema (@def-rule-schema), \( \varphi \) stands for any statement and \( i, j, k \) for line numbers. This rule has conditions that matter; read each one.
+As in every schema (@def-rule-schema), \( \varphi \) stands for any statement and \( i, j, k \) for line numbers. The rule has four conditions.
 
 1. **The assumption is the exact negation of the goal.** To prove \( \varphi \), the box opens with \( \neg\varphi \): the negation of the **whole** of \( \varphi \). If \( \varphi \) is \( Q \vee R \), the box opens with \( \neg(Q \vee R) \), not with \( \neg Q \vee R \). In a finished derivation this assumption is printed **"asm, for \( \rulename{RAA} \)"**; in prose it is the sentence "suppose, for a contradiction, that \( \varphi \) fails".
 2. **The box must reach \( \bot \)**, as a line of the box itself: a \( \bot \) inside a smaller box depends on a further assumption, as in \( \rulename{\neg I} \).
@@ -72,9 +72,9 @@ In words: the box is a thought experiment in which \( \varphi \) fails. If the e
 | \( \rulename{\neg I} \) | \( \varphi \) | \( \bot \) | \( \neg\varphi \) |
 | \( \rulename{RAA} \) | \( \neg\varphi \) | \( \bot \) | \( \varphi \) |
 
-The rows differ only in where the \( \neg \) sits, and that makes \( \rulename{RAA} \) different in kind: every other primitive rule is the introduction or elimination rule of one connective (\( \rulename{\bot E} \) counts as the elimination rule of \( \bot \), and \( \rulename{R} \) is the repetition clause of @def-derivation), while \( \rulename{RAA} \) applies to every statement, whatever its main connective, even a letter.
+The rows differ only in where the \( \neg \) sits, and that makes \( \rulename{RAA} \) different in kind. Every other primitive rule is the introduction or elimination rule of one connective. Here \( \rulename{\bot E} \) counts as the elimination rule of \( \bot \), and \( \rulename{R} \) is the repetition clause of @def-derivation. But \( \rulename{RAA} \) applies to every statement, whatever its main connective, even a letter.
 
-In the Givens/Goal table, \( \rulename{RAA} \) adds \( \neg\varphi \) to the Givens and makes \( \bot \) the goal.
+In a table of what we know and what we want, \( \rulename{RAA} \) adds \( \neg\varphi \) to what we know and makes \( \bot \) the statement we want.
 
 With the convention of Section 2.1, the argument of @exm-raa-at-most-one is this derivation.
 
@@ -113,17 +113,17 @@ In the derivation of @exm-raa-at-most-one above, which line is the \( \rulename{
 Line 6 is the \( \rulename{RAA} \) step, and it cites the box \( \lines{2}{5} \). \( \rulename{\neg I} \) would have written \( \neg\neg(x \le 1) \).
 :::
 
-## The move: when stuck, assume the negation of the goal
+## When stuck, assume the negation of the goal
 
-Chapter 1 and Sections 2.1–2.4 built two lists of moves. From the goal: its main connective chooses an introduction rule and so a box or two subgoals. From the premises: each available line's main connective chooses the elimination rule that uses it, and a goal \( \bot \) asks for a clash. The new rule adds one move, for the moment when both lists are used up.
+Chapter 1 and Sections 2.1–2.4 built two lists of steps. From the goal: its main connective chooses an introduction rule and so a box or two subgoals. From the premises: each available line's main connective chooses the elimination rule that uses it, and a goal \( \bot \) asks for a clash. The new rule adds one step, for the moment when both lists are used up.
 
-We are **stuck** at a gap when the goal-directed moves give nothing (the goal is a letter, or a disjunction with neither side in hand) and no premise-directed move brings the goal closer. Then open an \( \rulename{RAA} \) box on the negation of the goal. The new goal is \( \bot \), so we hunt for a clash, and the box has given us one more line to clash with: \( \neg\varphi \) itself.
+We are **stuck** at a gap when the goal-directed steps give nothing (the goal is a letter, or a disjunction with neither side in hand) and no premise-directed step brings the goal closer. Then open an \( \rulename{RAA} \) box on the negation of the goal. The new goal is \( \bot \), so we hunt for a clash, and the box has given us one more line to clash with: \( \neg\varphi \) itself.
 
 *When stuck, assume the negation of the goal, and hunt for a clash.*
 
-The move is a last resort, not a first one: try every other move first. Four of the derivations under the next heading reach the moment of being stuck, and their Ideas say where.
+This step is a last resort, not a first one: try every other step first. Four of the derivations below get stuck in this way, and the idea before each proof says where.
 
-**When \( \rulename{RAA} \) earns its place.** Look ahead at where the classical step enters the derivations below: a goal that is a letter with nothing to build it (@prp-double-negation), and a disjunction neither of whose sides follows from what is available, each side's step breaking on its own (@prp-excluded-middle, De Morgan's law (d)). Premises that say little and a goal that decides something: that is where to expect \( \rulename{RAA} \). Exercise B6 meets a third such disjunction.
+**Where to expect \( \rulename{RAA} \).** Look ahead at where the classical step enters the derivations below. One is a goal that is a letter with nothing to build it (@prp-double-negation). The others are disjunctions neither of whose sides follows from what is available, each side's step breaking on its own. Examples are excluded middle (@prp-excluded-middle) and De Morgan's law (d). Premises that say little and a goal that decides something: that is where to expect \( \rulename{RAA} \). Exercise B6 meets a third such disjunction.
 
 ## Derivations with the new rule
 
@@ -141,13 +141,13 @@ For every statement \( P \):
 :::
 
 ::: {.idea}
-In (a) the goal \( \neg\neg P \) is the negation of \( \neg P \), so the goal-directed move of Section 2.2 opens a \( \rulename{\neg I} \) box with \( \neg P \), and the premise clashes with it at once.
+In (a) the goal \( \neg\neg P \) is the negation of \( \neg P \), so the goal-directed step of Section 2.2 opens a \( \rulename{\neg I} \) box with \( \neg P \), and the premise clashes with it at once.
 
 In (b) the goal \( P \) is a letter, so no introduction rule applies. The only premise is a negation, which can only clash; the attempt above showed that clashing it inside a \( \rulename{\neg I} \) box leads back to the premise. We are stuck, so we assume the negation of the goal: an \( \rulename{RAA} \) box on \( \neg P \). The premise clashes with it at once.
 :::
 
 ::: {.proof}
-(a) This is the derivation of @exm-double-negation-introduction (a), which uses the rules of @def-rules-negation alone; we repeat it to set it beside (b).
+(a) This is the derivation of @exm-double-negation-introduction (a), repeated here to set it beside (b). It uses only the rules for \( \neg \).
 
 ```{=latex}
 \begin{center}
@@ -178,15 +178,19 @@ $\begin{nd}
 ```
 
 Line 3 applies \( \rulename{\neg E} \) to the statement \( \neg P \) on line 2 and to its negation \( \neg\neg P \) on line 1. This proves both parts.
+
+::: {.uses}
+@def-rules-negation (the rules for \( \neg \)).
+:::
 :::
 
 In both derivations, lines 2 and 3 form a box that opens with \( \neg P \) and reaches \( \bot \) by a clash with line 1. Only the rule that closes the box differs, and with it the last line. So the two directions are not mirror images: one needs only the rules for \( \neg \), and the derivation of the other uses the new rule.
 
 ::: {.second-reading title="Edge cases of reductio"}
-**The degenerate case.** The smallest use of \( \rulename{RAA} \) proves \( P \) from \( P \).
+**The smallest case.** The smallest use of \( \rulename{RAA} \) proves \( P \) from \( P \).
 
 ::: {.idea}
-There is nothing to find: the premise is the goal. The derivation is here only to show the rule at its smallest. The box opens with \( \neg P \), and the one line it needs, \( \bot \), comes from the clash of the assumption with the premise.
+There is nothing to find: the premise is the goal. This derivation shows the rule at its smallest. The box opens with \( \neg P \), and the one line it needs, \( \bot \), comes from the clash of the assumption with the premise.
 :::
 
 ```{=latex}
@@ -204,12 +208,12 @@ $\begin{nd}
 
 It is legal and pointless, since line 1 already is the goal. It is the purest case of a pattern that turns up in real proofs: a contradiction box whose assumption does nothing except clash with a line we already had. A warning later in this section, after @exm-raa-zero, returns to it.
 
-**Nonexample by minimal change.** Change only the last line of (a), from \( \neg\neg P \) to \( P \), keeping the justification \( \rulename{\neg I}\ \lines{2}{3} \). Lines 1–3 still check. What fails is the conclusion of \( \rulename{\neg I} \), which must be the negation of the box's assumption, here \( \neg\neg P \). To write \( P \), the justification must be \( \rulename{RAA} \).
+**One changed line that fails.** Change only the last line of (a), from \( \neg\neg P \) to \( P \), keeping the justification \( \rulename{\neg I}\ \lines{2}{3} \). Lines 1–3 still check. What fails is the conclusion of \( \rulename{\neg I} \), which must be the negation of the box's assumption, here \( \neg\neg P \). To write \( P \), the justification must be \( \rulename{RAA} \).
 :::
 
-From now on both parts are derived rules in the sense of @def-derived-rule. A line \( \neg\neg\varphi \) may be justified by "\( \rulename{\neg\neg I} \) \( i \)", citing a line \( \varphi \), and a line \( \varphi \) by "\( \rulename{\neg\neg E} \) \( i \)", citing a line \( \neg\neg\varphi \). The first stall of the list above is now one line: from \( \neg\neg(x > 0) \), \( \rulename{\neg\neg E} \) gives \( x > 0 \).
+From now on both parts are derived rules in the sense of @def-derived-rule. A line \( \neg\neg\varphi \) may be justified by "\( \rulename{\neg\neg I} \) \( i \)", citing a line \( \varphi \), and a line \( \varphi \) by "\( \rulename{\neg\neg E} \) \( i \)", citing a line \( \neg\neg\varphi \). The first stall, from Section 2.2, is now one line: from \( \neg\neg(x > 0) \), \( \rulename{\neg\neg E} \) gives \( x > 0 \).
 
-**Contraposition, backwards.** @prp-contrapositive derives \( \neg Q \to \neg P \) from \( P \to Q \) with the rules for \( \to \) and \( \neg \) alone. In practice we use it the other way round. To prove "if \( n^2 \) is even then \( n \) is even", one may prove "if \( n \) is not even then \( n^2 \) is not even", and the step from that back to the original goes from \( \neg Q \to \neg P \) to \( P \to Q \).
+**Contraposition, backwards.** @prp-contrapositive derives \( \neg Q \to \neg P \) from \( P \to Q \) with the rules for \( \to \) and \( \neg \) alone. In practice we use it the other way round. To prove "if \( n^2 \) is even then \( n \) is even", one may prove "if \( n \) is not even then \( n^2 \) is not even". The step from that back to the original goes from \( \neg Q \to \neg P \) to \( P \to Q \).
 
 ::: {#prp-contrapositive-converse}
 [Converse of the Contrapositive]
@@ -219,7 +223,7 @@ For all statements \( P \) and \( Q \), \( \neg Q \to \neg P \vdash P \to Q \).
 
 
 ::: {.idea}
-The goal is an implication, so the goal-directed move opens a box with \( P \), and the new goal is \( Q \), a letter. The premise needs \( \neg Q \) before it gives anything, and \( \neg Q \) is nowhere; the box's assumption \( P \) is a letter and cannot be taken apart. We are stuck at \( Q \), so we assume its negation, \( \neg Q \). That is exactly what the premise wanted: \( \rulename{{\to}E} \) gives \( \neg P \), which clashes with the \( P \) of the outer box, and \( \rulename{RAA} \) closes the inner box with \( Q \).
+The goal is an implication, so the goal-directed step opens a box with \( P \), and the new goal is \( Q \), a letter. The premise needs \( \neg Q \) before it gives anything, and \( \neg Q \) is nowhere; the box's assumption \( P \) is a letter and cannot be taken apart. We are stuck at \( Q \), so we assume its negation, \( \neg Q \). That is exactly what the premise wanted: \( \rulename{{\to}E} \) gives \( \neg P \), which clashes with the \( P \) of the outer box, and \( \rulename{RAA} \) closes the inner box with \( Q \).
 
 In pictures: the stall at the letter \( Q \); then the \( \rulename{RAA} \) box on \( \neg Q \).
 
@@ -289,7 +293,7 @@ For every statement \( P \), \( \vdash P \vee \neg P \).
 
 
 ::: {.idea}
-The goal is a disjunction, so Section 1.5's move postpones it: choose a side only when that side is in hand. But there are no premises, so no premise-directed move applies, and neither side is worth aiming at: \( P \) false breaks the step to \( P \), and \( P \) true breaks the step to \( \neg P \). We are stuck, so we assume the negation of the whole goal, \( \neg(P \vee \neg P) \), which says that neither side holds, and hunt for a clash. The new line can clash only with \( P \vee \neg P \), which \( \rulename{\vee I} \) builds from either side. So we manufacture a side, as in @exm-manufactured-clash. If \( P \) held, then \( P \vee \neg P \) would hold, against the assumption; so \( \neg P \), by \( \rulename{\neg I} \). But then \( P \vee \neg P \) holds after all, and that is the final clash.
+The goal is a disjunction, so, as in Section 1.5, we postpone it: choose a side only when that side is in hand. But there are no premises, so no premise-directed step applies, and neither side is worth aiming at: \( P \) false breaks the step to \( P \), and \( P \) true breaks the step to \( \neg P \). We are stuck, so we assume the negation of the whole goal, \( \neg(P \vee \neg P) \), which says that neither side holds, and hunt for a clash. The new line can clash only with \( P \vee \neg P \), which \( \rulename{\vee I} \) builds from either side. So we manufacture a side, as in @exm-manufactured-clash. If \( P \) held, then \( P \vee \neg P \) would hold, against the assumption; so \( \neg P \), by \( \rulename{\neg I} \). But then \( P \vee \neg P \) holds after all, and that is the final clash.
 
 In pictures: the \( \rulename{RAA} \) box; then the final clash, written backwards.
 
@@ -346,7 +350,7 @@ The derivation has no premises, so it shows \( \vdash P \vee \neg P \). \( \rule
 
 The assumption of line 1 is used twice, at lines 4 and 7. The first use refutes \( P \); the second uses that refutation. Excluded middle now becomes a derived rule with no premises: a line \( \varphi \vee \neg\varphi \) may be written anywhere, for any statement \( \varphi \), justified by \( \rulename{LEM} \) with no line cited. Pasting in the eight lines above would replace it.
 
-Its use is **proof by cases on a statement**. To derive \( \chi \), derive it once in a box that assumes \( \varphi \) and once in a box that assumes \( \neg\varphi \), and combine the two boxes with the line \( \varphi \vee \neg\varphi \) by \( \rulename{\vee E} \). The fold after De Morgan's laws below uses it that way, and so does part (b) of the result after them.
+Its use is **proof by cases on a statement**. To derive \( \chi \), derive it once in a box that assumes \( \varphi \) and once in a box that assumes \( \neg\varphi \), and combine the two boxes with the line \( \varphi \vee \neg\varphi \) by \( \rulename{\vee E} \). The derivation of De Morgan's law (d) by excluded middle, below, uses it that way, and so does part (b) of the result that follows De Morgan's laws.
 
 **A law with no negation.** The last is a law in which \( \neg \) does not occur at all.
 
@@ -356,15 +360,15 @@ Its use is **proof by cases on a statement**. To derive \( \chi \), derive it on
 For all statements \( P \) and \( Q \), \( \vdash ((P \to Q) \to P) \to P \).
 :::
 
-*In words: a law with no \( \neg \) in it, whose derivation here still uses \( \rulename{RAA} \). The derivation is in the fold below.*
+In words: this law has no \( \neg \) in it, yet the derivation below still uses \( \rulename{RAA} \).
 
 ::: {.second-reading title="Peirce's law, derived"}
-*Try it first (ten minutes): use the goal-directed and premise-directed moves of the earlier sections on this goal until they stall. At which gap do they stall, and which line, if it were available there, would let you finish?*
+*Try it first (ten minutes): use the goal-directed and premise-directed steps of the earlier sections on this goal until they stall. At which gap do they stall, and which line, if it were available there, would let you finish?*
 
 ::: {.idea}
-The goal is an implication, so we open a box on \( (P \to Q) \to P \) with the goal \( P \), a letter. The only line that can produce \( P \) is the assumption itself, by \( \rulename{{\to}E} \), once we have its hypothesis \( P \to Q \). So \( P \to Q \) becomes a subgoal, and the goal-directed move opens a box on \( P \) with the goal \( Q \). There the moves stall: the resources are \( (P \to Q) \to P \) and \( P \), and neither says anything about \( Q \). What the stalled gap lacks is a clash, which \( \rulename{\bot E} \) would turn into \( Q \).
+The goal is an implication, so we open a box on \( (P \to Q) \to P \) with the goal \( P \), a letter. The only line that can produce \( P \) is the assumption itself, by \( \rulename{{\to}E} \), once we have its hypothesis \( P \to Q \). So \( P \to Q \) becomes a subgoal, and the goal-directed step opens a box on \( P \) with the goal \( Q \). There the search stalls: the resources are \( (P \to Q) \to P \) and \( P \), and neither says anything about \( Q \). What the stalled gap lacks is a clash, which \( \rulename{\bot E} \) would turn into \( Q \).
 
-We are stuck, so the new move applies, but where? Assuming \( \neg Q \) at the stalled gap gives nothing new: a clash with \( \neg Q \) needs \( Q \), the stalled goal itself. So apply the move one level out, to the goal \( P \), and assume \( \neg P \). That is exactly what the stalled gap lacked: inside the box of \( P \), the pair \( P \), \( \neg P \) gives \( \bot \), and \( \rulename{\bot E} \) gives \( Q \). Then \( P \to Q \), then \( P \) by \( \rulename{{\to}E} \), which clashes with \( \neg P \).
+We are stuck, so we assume a negation. But the negation of which goal? Assuming \( \neg Q \) at the stalled gap gives nothing new: a clash with \( \neg Q \) needs \( Q \), the stalled goal itself. So go one level out, to the goal \( P \), and assume \( \neg P \). That is exactly what the stalled gap lacked: inside the box of \( P \), the pair \( P \), \( \neg P \) gives \( \bot \), and \( \rulename{\bot E} \) gives \( Q \). Then \( P \to Q \), then \( P \) by \( \rulename{{\to}E} \), which clashes with \( \neg P \).
 :::
 
 ::: {.proof}
@@ -494,7 +498,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Part (d) resists. Its goal is a disjunction, so the natural last line is \( \rulename{\vee I} \), from \( \neg P \) or from \( \neg Q \). But the step from the premise to \( \neg P \) can be broken: with \( P \) true and \( Q \) false the premise is true and \( \neg P \) false; and the step to \( \neg Q \) breaks with \( P \) false and \( Q \) true. So neither side is worth aiming at. The premise itself can be used only by \( \rulename{\neg E} \), against \( P \wedge Q \), which we do not have. We are stuck at the whole goal, so we assume its negation, \( \neg(\neg P \vee \neg Q) \), which says that neither \( \neg P \) nor \( \neg Q \) holds. It should give \( P \) and \( Q \). Each is a letter, so each gets a small \( \rulename{RAA} \) box of its own, whose clash is manufactured by \( \rulename{\vee I} \). Together \( P \) and \( Q \) clash with the premise.
+Part (d) resists. Its goal is a disjunction, so the natural last line is \( \rulename{\vee I} \), from \( \neg P \) or from \( \neg Q \). But the step from the premise to \( \neg P \) can be broken: with \( P \) true and \( Q \) false, the premise is true and \( \neg P \) false. The step to \( \neg Q \) breaks with \( P \) false and \( Q \) true. So neither side is worth aiming at. The premise itself can be used only by \( \rulename{\neg E} \), against \( P \wedge Q \), which we do not have. We are stuck at the whole goal, so we assume its negation, \( \neg(\neg P \vee \neg Q) \), which says that neither \( \neg P \) nor \( \neg Q \) holds. It should give \( P \) and \( Q \). Each is a letter, so each gets a small \( \rulename{RAA} \) box of its own, whose clash is manufactured by \( \rulename{\vee I} \). Together \( P \) and \( Q \) clash with the premise.
 
 For (d): the \( \rulename{RAA} \) box on the negated goal; then a box for each of \( P \) and \( Q \).
 
@@ -823,7 +827,14 @@ The two routes of the section now stand side by side. \( \rulename{RAA} \) assum
 
 \( \rulename{RAA} \) gave us \( \rulename{\neg\neg E} \) and excluded middle. Had we added one of those two as the new primitive rule instead of \( \rulename{RAA} \), would we have proved less?
 
-To say this exactly, we need two rule forms and one notion. **\( \rulename{\neg\neg E} \) taken as a rule** says: if \( \neg\neg\varphi \) stands on an available line, we may write \( \varphi \). **\( \rulename{LEM} \) taken as a rule** says: we may write \( \varphi \vee \neg\varphi \) on any line, for any statement \( \varphi \), citing nothing. Given a list of rules, a rule \( \mathsf{X} \) **derives** a rule \( \mathsf{Y} \) over that list if every use of \( \mathsf{Y} \) in a derivation can be replaced by a fragment that uses only \( \mathsf{X} \) and the rules of the list, without changing the premises or the last line. Then every sequent derivable with \( \mathsf{Y} \) added to the list is derivable with \( \mathsf{X} \) added instead.
+To say this exactly, we need two rule forms and one notion.
+
+- **\( \rulename{\neg\neg E} \) taken as a rule** says: if \( \neg\neg\varphi \) stands on an available line, we may write \( \varphi \).
+- **\( \rulename{LEM} \) taken as a rule** says: we may write \( \varphi \vee \neg\varphi \) on any line, for any statement \( \varphi \), citing nothing.
+
+Here is the notion on one case first. A line \( x \le 1 \) written by \( \rulename{\neg\neg E} \) from a line \( \neg\neg(x \le 1) \) can be replaced by three lines that use \( \rulename{RAA} \) instead. They are the box on \( \neg(x \le 1) \), its clash with \( \neg\neg(x \le 1) \), and \( x \le 1 \) by \( \rulename{RAA} \), as in @prp-double-negation (b). The premises and the last line of the derivation do not change.
+
+In general, fix a list of rules. A rule \( \mathsf{X} \) **derives** a rule \( \mathsf{Y} \) over that list if every use of \( \mathsf{Y} \) in a derivation can be replaced by a fragment that uses only \( \mathsf{X} \) and the rules of the list. The replacement must not change the premises or the last line. Then every sequent derivable with \( \mathsf{Y} \) added to the list is derivable with \( \mathsf{X} \) added instead.
 
 ::: {#thm-classical-rules-interderivable}
 [The Classical Rules Are Interderivable]
@@ -833,7 +844,12 @@ Over the primitive rules other than \( \rulename{RAA} \), each of the three rule
 
 *In words: \( \rulename{RAA} \), \( \rulename{\neg\neg E} \) and \( \rulename{LEM} \) are one principle in three forms; adding any one of them to the other rules proves exactly what adding any other does.*
 
-In the picture, an arrow from X to Y means that X derives Y over the other primitive rules; going round the solid cycle, each rule derives the other two. ① is @prp-excluded-middle on the solid arrow and @prp-double-negation (b) on the dashed one; ② closes the box by \( \rulename{\neg I} \), then applies \( \rulename{\neg\neg E} \); ③ splits on \( \varphi \vee \neg\varphi \).
+In the picture, an arrow from X to Y means that X derives Y over the other primitive rules. Going round the solid cycle, each rule derives the other two. The circled numbers name the replacements:
+
+- ① on the solid arrow is @prp-excluded-middle;
+- ① on the dashed arrow is @prp-double-negation (b);
+- ② closes the box by \( \rulename{\neg I} \), then applies \( \rulename{\neg\neg E} \);
+- ③ splits on \( \varphi \vee \neg\varphi \).
 
 ```{=latex}
 \begin{center}
@@ -867,7 +883,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 6 is correct by \( \rulename{\neg I} \): the box opens with \( \neg(x \le 1) \), and \( \neg\neg(x \le 1) \) is the negation of that assumption. The box itself is unchanged: both rules ask for \( \bot \) as a line of the box, and differ only in what they write after it. Part ③, shown on the same example in the fold below, replaces that \( \rulename{\neg\neg E} \) line by a split written by \( \rulename{LEM} \).
+Line 6 is correct by \( \rulename{\neg I} \): the box opens with \( \neg(x \le 1) \), and \( \neg\neg(x \le 1) \) is the negation of that assumption. The box itself is unchanged: both rules ask for \( \bot \) as a line of the box, and differ only in what they write after it. Part ③ replaces that \( \rulename{\neg\neg E} \) line by a split written by \( \rulename{LEM} \).
 
 So the classical part of our rules is **one** extra principle, whichever of its three forms we write down.
 
@@ -902,13 +918,19 @@ $\begin{nd}
 The first case is the goal; the second clashes with line 6 and closes itself. Together, ② and ③ turned the one \( \rulename{RAA} \) line into steps of \( \rulename{\neg I} \), \( \rulename{LEM} \) and the rules of the earlier sections: that is how \( \rulename{LEM} \) derives \( \rulename{RAA} \).
 
 ::: {.idea}
-Replacements can be chained, so it is enough to go once round a cycle. ① \( \rulename{RAA} \) derives the other two: that is @prp-excluded-middle and @prp-double-negation (b). ② \( \rulename{\neg\neg E} \) derives \( \rulename{RAA} \): \( \rulename{\neg I} \) closes an \( \rulename{RAA} \) box, which runs from \( \neg\varphi \) to \( \bot \), with \( \neg\neg\varphi \), and \( \rulename{\neg\neg E} \) finishes. ③ \( \rulename{LEM} \) derives \( \rulename{\neg\neg E} \): split on \( \varphi \vee \neg\varphi \); the case \( \varphi \) is the goal, and the case \( \neg\varphi \) clashes with \( \neg\neg\varphi \).
+Replacements can be chained, so it is enough to go once round a cycle.
+
+① \( \rulename{RAA} \) derives the other two. It derives \( \rulename{LEM} \) by @prp-excluded-middle. It derives \( \rulename{\neg\neg E} \) by @prp-double-negation (b).
+
+② \( \rulename{\neg\neg E} \) derives \( \rulename{RAA} \). An \( \rulename{RAA} \) box runs from \( \neg\varphi \) to \( \bot \). \( \rulename{\neg I} \) closes it with \( \neg\neg\varphi \), and \( \rulename{\neg\neg E} \) finishes.
+
+③ \( \rulename{LEM} \) derives \( \rulename{\neg\neg E} \): split on \( \varphi \vee \neg\varphi \); the case \( \varphi \) is the goal, and the case \( \neg\varphi \) clashes with \( \neg\neg\varphi \).
 
 *Before reading on: in the fragment for ③ below, which rule does line \( k + 4 \) use, and why may line \( k + 3 \) cite line \( m \)?*
 :::
 
 ::: {.proof}
-① Suppose a derivation uses \( \rulename{\neg\neg E} \) at line \( k \), writing \( \varphi \) and citing a line \( m \) that holds \( \neg\neg\varphi \). Replace line \( k \) by the last three lines of the derivation in @prp-double-negation (b), with its premise replaced by line \( m \): a box opening with \( \neg\varphi \), the line \( \bot \) by \( \rulename{\neg E} \) citing the assumption and line \( m \), and then \( \varphi \) by \( \rulename{RAA} \). A use of \( \rulename{LEM} \), writing \( \varphi \vee \neg\varphi \), is replaced by the eight lines of the derivation in @prp-excluded-middle, with \( \varphi \) for \( P \); that derivation has no premises. So \( \rulename{RAA} \) derives \( \rulename{\neg\neg E} \) and \( \rulename{LEM} \).
+① Suppose a derivation uses \( \rulename{\neg\neg E} \) at line \( k \), writing \( \varphi \) and citing a line \( m \) that holds \( \neg\neg\varphi \). Replace line \( k \) by the last three lines of the derivation in @prp-double-negation (b), with its premise replaced by line \( m \). These are a box opening with \( \neg\varphi \), the line \( \bot \) by \( \rulename{\neg E} \) citing the assumption and line \( m \), and then \( \varphi \) by \( \rulename{RAA} \). A use of \( \rulename{LEM} \), writing \( \varphi \vee \neg\varphi \), is replaced by the eight lines of the derivation in @prp-excluded-middle, with \( \varphi \) for \( P \); that derivation has no premises. So \( \rulename{RAA} \) derives \( \rulename{\neg\neg E} \) and \( \rulename{LEM} \).
 
 ② Suppose a derivation uses \( \rulename{RAA} \) at line \( k \), closing a box, lines \( i \) to \( j \), that opens with \( \neg\varphi \) and ends with \( \bot \). Keep the box and replace line \( k \) by two lines:
 
@@ -951,7 +973,7 @@ $\begin{nd}[schema]
 \end{center}
 ```
 
-The first case is a one-line box: it opens with \( \varphi \) and so already ends with the goal. In the second case, line \( k + 3 \) may cite line \( m \), because line \( m \) was available at the old line \( k \) and every new line sits in the same boxes as the old line \( k \), or in boxes opened after it. No rule other than \( \rulename{LEM} \) and the rules of the list is used. So \( \rulename{LEM} \) derives \( \rulename{\neg\neg E} \).
+The first case is a one-line box: it opens with \( \varphi \) and so already ends with the goal. In the second case, line \( k + 3 \) may cite line \( m \). Line \( m \) was available at the old line \( k \), and every new line sits in the same boxes as the old line \( k \), or in boxes opened after it. No rule other than \( \rulename{LEM} \) and the rules of the list is used. So \( \rulename{LEM} \) derives \( \rulename{\neg\neg E} \).
 
 In each replacement the later lines are renumbered, and a later citation of the old line \( k \) now cites the fragment's last line, which holds the same statement in the same boxes. The premises and the last line of the derivation are unchanged.
 
@@ -961,14 +983,15 @@ Finally, replacements can be chained. \( \rulename{LEM} \) derives \( \rulename{
 The base list matters: part ③ uses \( \rulename{\bot E} \) at line \( k + 4 \), to close the impossible case as in @exm-impossible-case.
 :::
 
-::: {.second-reading title="Other books, and a rule we could drop"}
-::: {.remark}
-Some books call exactly our \( \rulename{RAA} \) "proof by contradiction" or PBC, and some take \( \rulename{\neg\neg E} \) as their primitive rule and derive \( \rulename{RAA} \) from it. By @thm-classical-rules-interderivable nothing changes: all these choices prove the same sequents.
-:::
-
-
+::: {.second-reading title="A rule we could drop"}
 ::: {.remark}
 \( \rulename{\bot E} \) could have been dropped from the primitive rules, since \( \rulename{RAA} \) and repetition derive it (Exercise B3 below asks for the derivation). We keep it so that the primitive rules other than \( \rulename{RAA} \) form a system of their own.
+:::
+:::
+
+::: {.second-reading title="For instructors"}
+::: {.remark}
+Some books call exactly our \( \rulename{RAA} \) "proof by contradiction" or PBC, and some take \( \rulename{\neg\neg E} \) as their primitive rule and derive \( \rulename{RAA} \) from it. By @thm-classical-rules-interderivable nothing changes: all these choices prove the same sequents.
 :::
 :::
 
@@ -987,9 +1010,9 @@ Suppose, for a contradiction, that \( x \ne 0 \). Since \( x \ge 0 \) and \( x \
 :::
 
 1. "Suppose, for a contradiction, that \( x \ne 0 \)." [An \( \rulename{RAA} \) box opens, with \( \neg(x = 0) \), the exact negation of the goal \( x = 0 \).]
-2. "Since \( x \ge 0 \) and \( x \ne 0 \), we have \( x > 0 \)." [\( x \ge 0 \) is written out \( (x > 0) \vee (x = 0) \) (the box of Section 1.5), and the box's assumption refutes the right side. So \( \rulename{\vee E} \) with that case impossible (@exm-impossible-case), which is \( \rulename{DS} \) (@prp-disjunctive-syllogism) with the two sides exchanged, gives \( x > 0 \).]
+2. "Since \( x \ge 0 \) and \( x \ne 0 \), we have \( x > 0 \)." [As in Section 1.5, \( x \ge 0 \) is written out \( (x > 0) \vee (x = 0) \), and the box's assumption refutes the right side. So \( \rulename{\vee E} \) with that case impossible gives \( x > 0 \), as in @exm-impossible-case. This is \( \rulename{DS} \) with the two sides exchanged (@prp-disjunctive-syllogism).]
 3. "Then \( \varepsilon \coloneqq x/2 \) is a real number with \( \varepsilon > 0 \)." [School algebra.]
-4. "So the hypothesis applies to it and gives \( x \le x/2 \)." [The hypothesis is about **every** \( \varepsilon > 0 \); applying it to one is a step about "every", used as ordinary reasoning (the note at the start of this chapter).]
+4. "So the hypothesis applies to it and gives \( x \le x/2 \)." [The hypothesis is about **every** \( \varepsilon > 0 \); applying it to one is a step about "every", which this chapter uses as ordinary reasoning until its rule is given.]
 5. "… gives \( x/2 \le 0 \), and … \( x \le 0 \)." [School algebra.]
 6. "This contradicts \( x > 0 \)." [\( \rulename{\neg E} \): for real numbers \( x > 0 \) is \( \neg(x \le 0) \), the negation of the line \( x \le 0 \).]
 7. "Hence \( x = 0 \)." [\( \rulename{RAA} \) closes the box.]
@@ -999,7 +1022,7 @@ Suppose, for a contradiction, that \( x \ne 0 \). Since \( x \ge 0 \) and \( x \
 - **By the contrapositive (\( \rulename{CP} \)).** We prove that if \( x \ge 0 \), then \( x^3 \ge 0 \). Suppose \( x \ge 0 \) [assumption for \( \rulename{{\to}I} \)]. Then \( x^3 = x \cdot x \cdot x \ge 0 \) [algebra]. So if \( x \ge 0 \), then \( x^3 \ge 0 \) [\( \rulename{{\to}I} \)], and by contraposition, if \( x^3 \) is not \( \ge 0 \), then \( x \) is not \( \ge 0 \) [\( \rulename{CP} \)]: that is, if \( x^3 < 0 \), then \( x < 0 \).
 - **By contradiction (\( \rulename{RAA} \)).** Suppose \( x^3 < 0 \) [assumption for \( \rulename{{\to}I} \)]. Suppose, for a contradiction, that \( x < 0 \) fails, that is, \( x \ge 0 \) [an \( \rulename{RAA} \) box on \( \neg(x < 0) \)]. Then \( x^3 \ge 0 \), which contradicts \( x^3 < 0 \) [\( \rulename{\neg E} \)]. Hence \( x < 0 \) [\( \rulename{RAA} \)], and so if \( x^3 < 0 \), then \( x < 0 \) [\( \rulename{{\to}I} \)].
 
-The first proof introduces negations and removes none; the second removes one, at its \( \rulename{RAA} \) step. Which rule a "suppose not" uses is decided by the lines as written: what the box assumes, and what is written after it. Under the convention of Section 2.1 an order statement can be written either way: with the goal \( x < 0 \) written as \( \neg(x \ge 0) \), the box on \( x \ge 0 \) closes by \( \rulename{\neg I} \); and @exm-raa-at-most-one, with its goal written \( \neg(x > 1) \) and its box on \( x > 1 \), would close by \( \rulename{\neg I} \) too.
+The first proof introduces negations and removes none; the second removes one, at its \( \rulename{RAA} \) step. Which rule a "suppose not" uses is decided by the lines as written: what the box assumes, and what is written after it. Under the convention of Section 2.1, an order statement can be written either way. With the goal \( x < 0 \) written as \( \neg(x \ge 0) \), the box on \( x \ge 0 \) closes by \( \rulename{\neg I} \). Likewise @exm-raa-at-most-one, with its goal written \( \neg(x > 1) \) and its box on \( x > 1 \), would close by \( \rulename{\neg I} \).
 
 The proof of @thm-sqrt2-irrational assumes the positive statement \( r^2 = 2 \) and concludes its negation, so it is \( \rulename{\neg I} \).
 
@@ -1012,13 +1035,13 @@ The proof of @thm-sqrt2-irrational assumes the positive statement \( r^2 = 2 \) 
 :::
 
 ::: {.second-reading title="RAA is never needed to finish a negation"}
-For one kind of goal the new rule is never needed at the last step. Suppose the goal is itself a negation \( \neg\psi \). An \( \rulename{RAA} \) box for it opens with \( \neg\neg\psi \). Replace it by a \( \rulename{\neg I} \) box that opens with \( \psi \); inside it, derive \( \neg\neg\psi \) from \( \psi \) by the three lines of @exm-double-negation-introduction (a) (a box on \( \neg\psi \) that clashes with \( \psi \)); then continue as the \( \rulename{RAA} \) box did, citing that line wherever the \( \rulename{RAA} \) box cited its assumption. The box still ends in \( \bot \), and \( \rulename{\neg I} \) closes it with \( \neg\psi \). So the **last** step of a derivation of a negation never needs \( \rulename{RAA} \), though steps inside its box still may. \( \rulename{RAA} \) earns its place on the other goals.
+For one kind of goal the new rule is never needed at the last step. Suppose the goal is itself a negation \( \neg\psi \). An \( \rulename{RAA} \) box for it opens with \( \neg\neg\psi \). Replace it by a \( \rulename{\neg I} \) box that opens with \( \psi \). Inside it, derive \( \neg\neg\psi \) from \( \psi \) by the three lines of @exm-double-negation-introduction (a), a box on \( \neg\psi \) that clashes with \( \psi \). Then continue as the \( \rulename{RAA} \) box did, citing that line wherever the \( \rulename{RAA} \) box cited its assumption. The box still ends in \( \bot \), and \( \rulename{\neg I} \) closes it with \( \neg\psi \). So the **last** step of a derivation of a negation never needs \( \rulename{RAA} \), though steps inside its box still may. Only a goal that is not a negation can need \( \rulename{RAA} \) at the last step.
 
 When \( Q \) is itself a negation, the inner goal in @prp-contrapositive-converse is a negation, and its \( \rulename{RAA} \) can be replaced by \( \rulename{\neg I} \) in this way.
 :::
 
 ::: {.warning}
-An \( \rulename{RAA} \) box on \( \neg\varphi \) whose assumption is used **only at its last step**, against a \( \varphi \) derived without it, is legal, but it is a direct proof in disguise: the lines before the clash already derive \( \varphi \), so the box can be deleted. The smallest case opens a box on \( \neg P \) only to clash with a premise \( P \) that is already the goal. It is a direct proof in costume. (A box that reaches \( \bot \) without using its assumption at all is a different matter: the same lines, written before the box, derive \( \bot \) without it, and \( \rulename{\bot E} \) then gives the goal at once.)
+An \( \rulename{RAA} \) box on \( \neg\varphi \) may use its assumption **only at its last step**, against a \( \varphi \) derived without it. Such a box is legal, but it is a direct proof in disguise. The lines before the clash already derive \( \varphi \), so the box can be deleted. The smallest case opens a box on \( \neg P \) only to clash with a premise \( P \) that is already the goal. (A box that reaches \( \bot \) without using its assumption at all is a different matter: the same lines, written before the box, derive \( \bot \) without it, and \( \rulename{\bot E} \) then gives the goal at once.)
 :::
 
 ::: {.warning}
@@ -1038,41 +1061,57 @@ Before the card, the new rule on large statements; each box runs from the assump
 | \( (P \to Q) \to R \) | \( \neg((P \to Q) \to R) \) | \( (P \to Q) \to R \) |
 | \( \neg Q \) | \( \neg\neg Q \) | \( \neg Q \) |
 
-The third row is legal; a \( \rulename{\neg I} \) box opened by \( Q \) would also do (the fold "RAA is never needed to finish a negation").
+The third row is legal. A \( \rulename{\neg I} \) box opened by \( Q \) would also do, as "RAA is never needed to finish a negation" explains.
 
 **Not an instance.** A box opens with \( \neg P \vee \neg Q \) and reaches \( \bot \). The line "\( P \wedge Q \) — \( \rulename{RAA} \)" is not an instance: the assumption must be \( \neg(P \wedge Q) \), the negation of the whole line written. \( \neg P \vee \neg Q \) says the same only after a derivation (De Morgan's laws), and the rule compares symbols.
 :::
 
 Chapter 1's seven rules are on the card at the end of Section 1.6; here are this chapter's so far.
 
-| Rule | Shape | You write | Lean |
-|---|---|---|---|
-| \( \rulename{\neg E} \) | \( \varphi \), \( \neg\varphi \) \( \Longrightarrow \) \( \bot \) | "…, which contradicts …" | `exact hn hp` (goal `False`) |
-| \( \rulename{\bot E} \) | \( \bot \) \( \Longrightarrow \) any \( \varphi \) | "This case cannot occur." "So there is nothing to prove." | `exfalso` |
-| \( \rulename{\neg I} \) | box \( \varphi \) … \( \bot \) \( \Longrightarrow \) \( \neg\varphi \) | "Suppose \( P \). … This is a contradiction. Hence not \( P \)." | `intro hp` (goal `False`) |
-| \( \rulename{MT} \) (derived) | \( \varphi \to \psi \), \( \neg\psi \) \( \Longrightarrow \) \( \neg\varphi \) | "Since \( Q \) fails, so does \( P \)." | `mt h hnq` |
-| \( \rulename{CP} \) (derived) | \( \varphi \to \psi \) \( \Longrightarrow \) \( \neg\psi \to \neg\varphi \) | "We prove the contrapositive: suppose not \( Q \); … so not \( P \)." | `mt` |
-| \( \rulename{DS} \) (derived) | \( \varphi \vee \psi \), \( \neg\varphi \) \( \Longrightarrow \) \( \psi \) | "\( P \) is impossible, so \( Q \)." | `h.resolve_left hnp` |
-| \( \rulename{{\leftrightarrow}I} \) | box \( \varphi \) … \( \psi \), box \( \psi \) … \( \varphi \) \( \Longrightarrow \) \( \varphi \leftrightarrow \psi \) | "\( (\Rightarrow) \) Suppose \( P \). … so \( Q \). \( (\Leftarrow) \) Suppose \( Q \). … so \( P \)." | `constructor` |
-| \( \rulename{{\leftrightarrow}E} \) | \( \varphi \leftrightarrow \psi \), \( \varphi \) \( \Longrightarrow \) \( \psi \) (or with \( \psi \), \( \varphi \)) | "Since \( P \) holds if and only if \( Q \) does, and \( P \) holds, so does \( Q \)." | `h.mp hp` / `h.mpr hq` |
-| \( \rulename{RAA} \) | box \( \neg\varphi \) … \( \bot \) \( \Longrightarrow \) \( \varphi \) | "Suppose, for a contradiction, that \( P \) fails. … This is impossible. Hence \( P \)." | `by_contra h` |
-| \( \rulename{\neg\neg E} \) (derived) | \( \neg\neg\varphi \) \( \Longrightarrow \) \( \varphi \) | "It cannot be that \( P \) fails; so \( P \)." | `not_not.mp h` |
-| \( \rulename{LEM} \) (derived) | nothing \( \Longrightarrow \) \( \varphi \vee \neg\varphi \) | "Either \( P \) or not. If \( P \), … If not, … In either case, …" | `by_cases h : P` |
+| Rule | Shape | You write |
+|---|---|---|
+| \( \rulename{\neg E} \) | \( \varphi \), \( \neg\varphi \) \( \Longrightarrow \) \( \bot \) | "…, which contradicts …" |
+| \( \rulename{\bot E} \) | \( \bot \) \( \Longrightarrow \) any \( \varphi \) | "This case cannot occur." "So there is nothing to prove." |
+| \( \rulename{\neg I} \) | box \( \varphi \) … \( \bot \) \( \Longrightarrow \) \( \neg\varphi \) | "Suppose \( P \). … This is a contradiction. Hence not \( P \)." |
+| \( \rulename{MT} \) (derived) | \( \varphi \to \psi \), \( \neg\psi \) \( \Longrightarrow \) \( \neg\varphi \) | "Since \( Q \) fails, so does \( P \)." |
+| \( \rulename{CP} \) (derived) | \( \varphi \to \psi \) \( \Longrightarrow \) \( \neg\psi \to \neg\varphi \) | "We prove the contrapositive: suppose not \( Q \); … so not \( P \)." |
+| \( \rulename{DS} \) (derived) | \( \varphi \vee \psi \), \( \neg\varphi \) \( \Longrightarrow \) \( \psi \) | "\( P \) is impossible, so \( Q \)." |
+| \( \rulename{{\leftrightarrow}I} \) | box \( \varphi \) … \( \psi \), box \( \psi \) … \( \varphi \) \( \Longrightarrow \) \( \varphi \leftrightarrow \psi \) | "\( (\Rightarrow) \) Suppose \( P \). … so \( Q \). \( (\Leftarrow) \) Suppose \( Q \). … so \( P \)." |
+| \( \rulename{{\leftrightarrow}E} \) | \( \varphi \leftrightarrow \psi \), \( \varphi \) \( \Longrightarrow \) \( \psi \) (or with \( \psi \), \( \varphi \)) | "Since \( P \) holds if and only if \( Q \) does, and \( P \) holds, so does \( Q \)." |
+| \( \rulename{RAA} \) | box \( \neg\varphi \) … \( \bot \) \( \Longrightarrow \) \( \varphi \) | "Suppose, for a contradiction, that \( P \) fails. … This is impossible. Hence \( P \)." |
+| \( \rulename{\neg\neg E} \) (derived) | \( \neg\neg\varphi \) \( \Longrightarrow \) \( \varphi \) | "It cannot be that \( P \) fails; so \( P \)." |
+| \( \rulename{LEM} \) (derived) | nothing \( \Longrightarrow \) \( \varphi \vee \neg\varphi \) | "Either \( P \) or not. If \( P \), … If not, … In either case, …" |
 
-The Lean column is for readers who use that proof assistant; nothing later depends on it.
+::: {.second-reading title="For instructors"}
+In the proof assistant Lean, these rules are performed by the following code. Nothing in this book depends on it.
+
+| Rule | Lean |
+|---|---|
+| \( \rulename{\neg E} \) | `exact hn hp` (goal `False`) |
+| \( \rulename{\bot E} \) | `exfalso` |
+| \( \rulename{\neg I} \) | `intro hp` (goal `False`) |
+| \( \rulename{MT} \) (derived) | `mt h hnq` |
+| \( \rulename{CP} \) (derived) | `mt` |
+| \( \rulename{DS} \) (derived) | `h.resolve_left hnp` |
+| \( \rulename{{\leftrightarrow}I} \) | `constructor` |
+| \( \rulename{{\leftrightarrow}E} \) | `h.mp hp` / `h.mpr hq` |
+| \( \rulename{RAA} \) | `by_contra h` |
+| \( \rulename{\neg\neg E} \) (derived) | `not_not.mp h` |
+| \( \rulename{LEM} \) (derived) | `by_cases h : P` |
+:::
 
 ::: {.warning}
 [Not allowed: \( \rulename{RAA} \)]
 
-Each step is wrong; the tag names the clause it breaks.
+Each step is wrong, for the reason given after it.
 
-- Open the box for \( Q \vee R \) with \( \neg Q \vee R \): clause 1, the box opens with the negation of the **whole** goal.
-- Write \( \varphi \) after a box opened by \( \varphi \): clause 1 (the pair below).
-- Close the box on a \( \bot \) of a box inside it: clause 2.
-- Write \( \neg\neg\varphi \) by \( \rulename{RAA} \): clause 3; \( \neg\neg\varphi \) is the line \( \rulename{\neg I} \) writes.
-- To prove \( x \le 1 \), assume \( x \ge 1 \): clause 1, the negation of \( x \le 1 \) is \( x > 1 \).
+- Open the box for \( Q \vee R \) with \( \neg Q \vee R \): the box must open with the negation of the **whole** goal.
+- Write \( \varphi \) after a box opened by \( \varphi \): the box must open with \( \neg\varphi \), as the pair below shows.
+- Close the box on a \( \bot \) of a box inside it: the \( \bot \) must be a line of the box itself.
+- Write \( \neg\neg\varphi \) by \( \rulename{RAA} \): the rule writes \( \varphi \) itself, and \( \neg\neg\varphi \) is the line \( \rulename{\neg I} \) writes.
+- To prove \( x \le 1 \), assume \( x \ge 1 \): the box must open with the exact negation of the goal, and the negation of \( x \le 1 \) is \( x > 1 \).
 
-Clause 1 is where the rule bites. Premises \( (P \vee R) \to Q \) and \( \neg Q \); wrong on the left, right on the right:
+Here is the second slip in full: a box opened with the goal itself, not with its negation. Premises \( (P \vee R) \to Q \) and \( \neg Q \); wrong on the left, right on the right:
 
 ```{=latex}
 \begin{center}
@@ -1117,7 +1156,7 @@ A box opens with \( \neg(x \ne 2) \), for a real number \( x \), and reaches \( 
 ::: {.remark}
 [Looking ahead]
 
-Chapter 4 proves that \( P \) cannot be derived from \( \neg\neg P \), nor Peirce's law from no premises, without \( \rulename{RAA} \) or one of its two equivalents, and states the same, without proof, for De Morgan's law (d) and for \( (P \to Q) \vee (Q \to P) \). Chapter 8 tells the story of the mathematicians who declined the classical principle, and shows how to spot a proof by contradiction that is a direct proof in costume.
+Chapter 4 proves that \( P \) cannot be derived from \( \neg\neg P \), nor Peirce's law from no premises, without \( \rulename{RAA} \) or one of its two equivalents. It states the same, without proof, for De Morgan's law (d) and for \( (P \to Q) \vee (Q \to P) \). Chapter 8 tells the story of the mathematicians who declined the classical principle. It also shows how to spot a proof by contradiction that is a direct proof in disguise.
 :::
 
 ## Exercises
@@ -1147,11 +1186,11 @@ Chapter 4 proves that \( P \) cannot be derived from \( \neg\neg P \), nor Peirc
 
 (d) \( \rulename{\neg I} \): a box that opens with \( \varphi \) and reaches \( \bot \) gives \( \neg\varphi \). \( \rulename{RAA} \): a box that opens with \( \neg\varphi \) and reaches \( \bot \) gives \( \varphi \). The derivation of @prp-double-negation (a) uses \( \rulename{\neg I} \), with \( \neg P \) as the assumption, so its conclusion is the negation of \( \neg P \), namely \( \neg\neg P \).
 
-(e) \( \rulename{\vee I} \) would need \( \neg P \) or \( \neg Q \) on a line derived from the premise alone, and each of those steps can be broken: with \( P \) true and \( Q \) false the premise is true and \( \neg P \) false, and with \( P \) false and \( Q \) true the premise is true and \( \neg Q \) false. So neither step is worth aiming at: each breaks (Section 1.1's test).
+(e) \( \rulename{\vee I} \) would need \( \neg P \) or \( \neg Q \) on a line derived from the premise alone, and each of those steps can be broken. With \( P \) true and \( Q \) false, the premise is true and \( \neg P \) false. With \( P \) false and \( Q \) true, the premise is true and \( \neg Q \) false. So neither step is worth aiming at: each breaks (Section 1.1's test).
 
 (f) Line 5 cites it, by \( \rulename{\neg E} \) against line 4, \( \neg P \vee \neg Q \); and line 9 cites it, by \( \rulename{\neg E} \) against line 8, the same statement. Both lines lie in boxes inside the box of line 2, which is still open, so the citations are legal.
 
-(g) \( \rulename{\neg I} \): the box opens with \( \neg(x \le 1) \) and ends with \( \bot \), so \( \rulename{\neg I} \) gives the negation of its assumption, \( \neg\neg(x \le 1) \). The box needs no change because \( \rulename{\neg I} \), like \( \rulename{RAA} \), asks only for a box that ends with \( \bot \) as a line of the box itself; the two rules differ in what they write after the box, not in the box.
+(g) \( \rulename{\neg I} \): the box opens with \( \neg(x \le 1) \) and ends with \( \bot \), so \( \rulename{\neg I} \) gives the negation of its assumption, \( \neg\neg(x \le 1) \). The box needs no change because \( \rulename{\neg I} \), like \( \rulename{RAA} \), asks only for a box that ends with \( \bot \) as a line of the box itself. The two rules differ in what they write after the box, not in the box.
 :::
 
 ::: {#exr-reductio-and-classical-rules-a2}
@@ -1225,7 +1264,7 @@ The parts run from one step, through a missing line, a justification column and 
 
 (f) Line 5 is \( \neg\neg(Q \vee R) \). Such a line is usually written by \( \rulename{\neg I} \), closing a box opened by \( \neg(Q \vee R) \) (or it is a premise).
 
-(g) (i) \( \rulename{\neg\neg E} \) 1; (ii) \( \rulename{\wedge E} \) 3; (iii) \( \rulename{{\to}E} \) 2, 4; (iv) \( \rulename{\vee I} \) 5.
+(g) (i) \( \rulename{\neg\neg E} \) 1. (ii) \( \rulename{\wedge E} \) 3. (iii) \( \rulename{{\to}E} \) 2, 4. (iv) \( \rulename{\vee I} \) 5.
 
 (h) \( \rulename{\neg I} \): the box opens with "\( 9 \) is prime", and the conclusion is its negation.
 
@@ -1235,13 +1274,13 @@ The parts run from one step, through a missing line, a justification column and 
 
 (k) Line 7: lines 2–5 are not a box (the box opened at line 2 ends at line 6), and \( \rulename{RAA} \) needs \( \bot \) as a line of the box itself.
 
-(l) No: \( \rulename{RAA} \) writes \( P \), the statement whose negation opened the box (clause 3); \( \neg\neg P \) is the line \( \rulename{\neg I} \) writes after the same box.
+(l) No: \( \rulename{RAA} \) writes \( P \) itself, the statement whose negation opened the box; \( \neg\neg P \) is the line \( \rulename{\neg I} \) writes after the same box.
 
-(m) 3 \( P \), \( \rulename{\neg\neg E} \) 1; 4 \( Q \), \( \rulename{{\to}E} \) 2, 3.
+(m) Line 3: \( P \), \( \rulename{\neg\neg E} \) 1. Line 4: \( Q \), \( \rulename{{\to}E} \) 2, 3.
 
-(n) 2 \( \neg P \), assumption, for \( \rulename{RAA} \); 3 \( P \), \( \rulename{{\to}E} \) 1, 2; 4 \( \bot \), \( \rulename{\neg E} \) 3, 2; 5 \( P \), \( \rulename{RAA} \) \( \lines{2}{4} \).
+(n) Line 2: \( \neg P \), assumption, for \( \rulename{RAA} \). Line 3: \( P \), \( \rulename{{\to}E} \) 1, 2. Line 4: \( \bot \), \( \rulename{\neg E} \) 3, 2. Line 5: \( P \), \( \rulename{RAA} \) \( \lines{2}{4} \).
 
-(o) 3 \( \neg\neg P \), \( \rulename{MT} \) 1, 2; 4 \( P \), \( \rulename{\neg\neg E} \) 3.
+(o) Line 3: \( \neg\neg P \), \( \rulename{MT} \) 1, 2. Line 4: \( P \), \( \rulename{\neg\neg E} \) 3.
 :::
 
 ### B. Practice
@@ -1375,7 +1414,7 @@ The repetition at line 3 is needed because \( \rulename{RAA} \) asks for \( \bot
 ::: {#exr-reductio-and-classical-rules-b4}
 [B4: Stuck at a letter]
 
-A search for \( (\neg P \to Q) \wedge (\neg P \to R), \ \neg(Q \wedge R) \vdash P \) has reached the stage below. *Name the move, then complete it.*
+A search for \( (\neg P \to Q) \wedge (\neg P \to R), \ \neg(Q \wedge R) \vdash P \) has reached the stage below. *Say which step comes next, then complete the derivation.*
 
 ```{=latex}
 % schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
@@ -1391,7 +1430,7 @@ $\begin{nd}
 :::
 
 ::: {.solution}
-The goal \( P \) is a letter, so no introduction rule applies, and both halves of the first premise wait for \( \neg P \), which is nowhere. The move is *when stuck, assume the negation of the goal*: open an \( \rulename{RAA} \) box on \( \neg P \), and hunt for a clash. The assumption feeds both halves, and \( Q \wedge R \) then clashes with the second premise.
+The goal \( P \) is a letter, so no introduction rule applies, and both halves of the first premise wait for \( \neg P \), which is nowhere. The step is *when stuck, assume the negation of the goal*: open an \( \rulename{RAA} \) box on \( \neg P \), and hunt for a clash. The assumption feeds both halves, and \( Q \wedge R \) then clashes with the second premise.
 
 ```{=latex}
 \begin{center}
@@ -1567,7 +1606,7 @@ $\begin{nd}
 
 (g) Break. Take \( P \): "\( x > 0 \)", \( Q \): "\( x > 5 \)". At \( x = 1 \), \( P \) is true and \( Q \) false, so \( P \leftrightarrow Q \) is false and the premise is true; \( \neg P \) is false, so \( \neg P \wedge Q \) is false.
 
-(h) Derive; the classical line is line 14, \( \rulename{RAA} \). Each side of the goal breaks on its own: with \( P \): "\( x > 0 \)", \( Q \): "\( x > 5 \)", \( R \): "\( x > 3 \)", the premise holds at every \( x \) and \( P \to R \) fails at \( x = 1 \); exchanging the statements for \( P \) and \( Q \) breaks the step to \( Q \to R \) at the same \( x \). So assume the negation of the whole goal. Inside, the box on \( P \) turns the clash into \( R \), and the box on \( Q \) inside it builds \( P \wedge Q \).
+(h) Derive; the classical line is line 14, \( \rulename{RAA} \). Each side of the goal breaks on its own. Take \( P \): "\( x > 0 \)", \( Q \): "\( x > 5 \)", \( R \): "\( x > 3 \)"; the premise holds at every \( x \), and \( P \to R \) fails at \( x = 1 \). Exchanging the statements for \( P \) and \( Q \) breaks the step to \( Q \to R \) at the same \( x \). So assume the negation of the whole goal. Inside, the box on \( P \) turns the clash into \( R \), and the box on \( Q \) inside it builds \( P \wedge Q \).
 
 ```{=latex}
 \begin{center}
@@ -1596,9 +1635,19 @@ $\begin{nd}
 \end{center}
 ```
 
-(a) needs no classical line, although its goal is a disjunction, because each case of the premise hands over one side. (c) and (h) are disjunctions whose sides break on their own, the place "When \( \rulename{RAA} \) earns its place" points to, and the answers use both classical tools there: (c) decides a letter first with \( \rulename{LEM} \), as @prp-implication-as-disjunction (b) does, but the letter is \( Q \), a side of the goal, not \( P \); (h) assumes the negation of the goal. In (f) the classical line closes a box whose goal is a letter, \( P \) from \( \neg Q \), as in @prp-double-negation, the other case that paragraph names; the box \( \lines{2}{10} \) of (f) has no classical line. (b), (d) and (g) are look-alikes. Worked examples of these types: @prp-excluded-middle, @prp-de-morgan (d), @prp-implication-as-disjunction (b), @prp-contrapositive-converse.
+(a) needs no classical line, although its goal is a disjunction, because each case of the premise hands over one side. (c) and (h) are disjunctions whose sides break on their own, the place described under "Where to expect \( \rulename{RAA} \)". The answers use both classical tools there. (c) decides a letter first with \( \rulename{LEM} \), as @prp-implication-as-disjunction (b) does, but the letter is \( Q \), a side of the goal, not \( P \). (h) assumes the negation of the goal. In (f) the classical line closes a box whose goal is a letter, \( P \) from \( \neg Q \), as in @prp-double-negation, the other case that paragraph names. The box \( \lines{2}{10} \) of (f) has no classical line. (b), (d) and (g) are look-alikes. Worked examples of these types:
 
-**Marking scheme.** (16 points) For each claim: 1 for the verdict; 1 for a derivation every line of which checks, with the classical line correctly marked, or for a choice of statements and one value of \( x \) at which **every** member of the counterexample set is true. Fatal errors (0 for the claim): a "break" at which a premise fails; a classical line not marked, or a non-classical line marked as classical.
+- @prp-excluded-middle;
+- @prp-de-morgan (d);
+- @prp-implication-as-disjunction (b);
+- @prp-contrapositive-converse.
+
+**What a complete answer needs.** (16 points) For each claim:
+
+- 1 for the verdict;
+- 1 for a derivation every line of which checks, with the classical line correctly marked. For a break instead, 1 for a choice of statements and one value of \( x \) at which **every** member of the counterexample set is true.
+
+Slips that lose the claim (0 points for it): a "break" at which a premise fails; a classical line not marked, or a non-classical line marked as classical.
 :::
 
 ::: {#exr-reductio-and-classical-rules-b6}
@@ -1608,7 +1657,7 @@ $\begin{nd}
 1. Show that \( (P \to Q) \vee (Q \to P) \) cannot be broken: whatever statements \( P \) and \( Q \) are, one disjunct is true.
 2. Let \( n \) be an integer, \( P \): "\( n \) is even", \( Q \): "\( n > 5 \)". Check the statement at \( n = 2 \) and at \( n = 7 \), saying which disjunct holds.
 3. The sentence "every even integer is greater than \( 5 \), or every integer greater than \( 5 \) is even" is false. Why is that no counterexample to (a)?
-4. Show that each disjunct, as a claim from no premises, breaks. Which move of this section does a derivation of \( (P \to Q) \vee (Q \to P) \) then call for?
+4. Show that each disjunct, as a claim from no premises, breaks. Which step of this section does a derivation of \( (P \to Q) \vee (Q \to P) \) then call for?
 :::
 :::
 
@@ -1619,9 +1668,9 @@ $\begin{nd}
 
 (c) The false sentence puts "every" in front of each disjunct separately: (for every \( n \), \( P \to Q \)) or (for every \( n \), \( Q \to P \)). The value \( n = 2 \) refutes the first and \( n = 7 \) the second. What (a) gives is, for each \( n \), the disjunction itself, as (b) checked at two values. "Every" does not pass inside an "or". This is the point of "Two sequents that sound wrong" in Section 2.1: the mathematical "if" sits under an "every".
 
-(d) \( P \to Q \) breaks with \( P \): "\( x > 0 \)", \( Q \): "\( x > 5 \)", at \( x = 1 \); \( Q \to P \) breaks with the same two statements exchanged, at \( x = 1 \). So \( \rulename{\vee I} \) from either side is not worth aiming at, and the goal is a disjunction with neither side within reach: the case of "When \( \rulename{RAA} \) earns its place", and the move *when stuck, assume the negation of the goal*. (The derivation itself is Exercise C2 of Section 3.1, where the search method finds it; Chapter 4 states, without proof, that every derivation of it uses \( \rulename{RAA} \) or one of its equivalents.)
+(d) \( P \to Q \) breaks with \( P \): "\( x > 0 \)", \( Q \): "\( x > 5 \)", at \( x = 1 \); \( Q \to P \) breaks with the same two statements exchanged, at \( x = 1 \). So \( \rulename{\vee I} \) from either side is not worth aiming at, and the goal is a disjunction with neither side within reach. This is the case described under "Where to expect \( \rulename{RAA} \)", and it calls for the step *when stuck, assume the negation of the goal*. (The derivation itself is Exercise C2 of Section 3.1, where the search method finds it; Chapter 4 states, without proof, that every derivation of it uses \( \rulename{RAA} \) or one of its equivalents.)
 
-**Marking scheme.** (10 points) 3: (a), both cases. 2: (b), the disjunct that holds at each value. 3: (c), the scope of "every" named, with a refuting value for each separated disjunct. 2: (d), the two breaks and the move named. Fatal error (0 for (c)): calling the false sentence an instance of (a).
+**What a complete answer needs.** (10 points) 3: (a), both cases. 2: (b), the disjunct that holds at each value. 3: (c), the scope of "every" named, with a refuting value for each separated disjunct. 2: (d), the two breaks and the step named. Slips that lose the step, scoring 0 for (c): calling the false sentence an instance of (a).
 :::
 
 ### C. Going deeper
@@ -1668,7 +1717,7 @@ $\begin{nd}[schema]
 \end{center}
 ```
 
-Here \( i = h + 2 \). The first case is a one-line box that already ends with the goal. The second case is the given box with one more line, \( \rulename{\bot E} \) on its \( \bot \); its lines are unchanged and cite what they cited before, since the box has not moved into or out of any other box. No \( \rulename{RAA} \) and no \( \rulename{\neg\neg E} \) is used.
+Here \( i = h + 2 \). The first case is a one-line box that already ends with the goal. The second case is the given box with one more line, \( \rulename{\bot E} \) on its \( \bot \). Its lines are unchanged and cite what they cited before, since the box has not moved into or out of any other box. No \( \rulename{RAA} \) and no \( \rulename{\neg\neg E} \) is used.
 :::
 
 ::: {#exr-reductio-and-classical-rules-c2}
@@ -1700,7 +1749,7 @@ $\begin{nd}
 ::: {.enumerate options="label=(\alph*)"}
 1. Is the sequent \( \neg(\neg P \wedge \neg Q) \vdash P \vee Q \) derivable?
 2. Does the student's derivation derive it? Name the first line that fails and the rule or clause it breaks.
-3. Show that the illegal step, if it were allowed, would prove too much: use the same move to "derive" \( P \vee Q \vdash P \), and break that sequent.
+3. Show that the illegal step, if it were allowed, would prove too much: use the same step to "derive" \( P \vee Q \vdash P \), and break that sequent.
 4. Give a correct derivation.
 :::
 :::
@@ -1710,7 +1759,7 @@ $\begin{nd}
 
 (b) No. Line 6 fails: it cites line 3, the assumption of the first case box, lines 3–4, which closed before line 5. By the scope rule of @def-derivation, line 3 is not available at line 6. The form of \( \rulename{\neg E} \) is right; what is broken is availability. In words, the student used the assumption of one case inside the other case, where it has not been assumed.
 
-(c) The same move derives \( P \vee Q \vdash P \): split on the premise by \( \rulename{\vee E} \), with a first box that opens with \( P \) and ends there, and a second box that opens with \( Q \) and "repeats" \( P \) from the first. That sequent breaks: with \( P \) false and \( Q \) true the premise is true and the conclusion false, so the move can carry a true premise to a false conclusion. So citing a line of a sibling box is illegal in general, not just unlucky here.
+(c) The same illegal step derives \( P \vee Q \vdash P \). Split on the premise by \( \rulename{\vee E} \). The first box opens with \( P \) and ends there; the second opens with \( Q \) and "repeats" \( P \) from the first. That sequent breaks: with \( P \) false and \( Q \) true the premise is true and the conclusion false, so the step can carry a true premise to a false conclusion. So citing a line of a sibling box is illegal in general, not just unlucky here.
 
 (d) Keep lines 1–5, and in the case \( \neg P \) we are stuck at the goal \( Q \), so we argue for it by \( \rulename{RAA} \), using the premise:
 
@@ -1742,13 +1791,13 @@ Line 7 cites line 5, the assumption of the enclosing case box, which is still op
 :::
 
 ::: {#exr-reductio-and-classical-rules-c3}
-[C3: Exit check: a classical disjunction]
+[C3: Chapter check: a classical disjunction]
 
 Derive \( \vdash P \vee (P \to Q) \) using the **primitive** rules only (those of Chapter 1, \( \rulename{\neg E} \), \( \rulename{\bot E} \), \( \rulename{\neg I} \), \( \rulename{{\leftrightarrow}I} \), \( \rulename{{\leftrightarrow}E} \), and \( \rulename{RAA} \)), with no derived rule, so neither \( \rulename{LEM} \) nor \( \rulename{\neg\neg E} \) as a single line. Name the rule on every line, and say which line is classical.
 :::
 
 ::: {.solution}
-*The search.* The goal is a disjunction, so we postpone it; there are no premises, so no premise-directed move applies; and neither side is worth aiming at: \( P \) false breaks the step to \( P \), and \( P \) true with \( Q \) false breaks the step to \( P \to Q \). We are stuck, so we assume the exact negation of the goal, \( \neg(P \vee (P \to Q)) \), and hunt for a clash. The assumption can clash only with \( P \vee (P \to Q) \), which \( \rulename{\vee I} \) builds from either side. The side \( P \to Q \) is an implication, so we open a box on \( P \) with the goal \( Q \). Inside it, \( \rulename{\vee I} \) gives \( P \vee (P \to Q) \) from \( P \), which clashes with the assumption, and \( \rulename{\bot E} \) writes \( Q \). So \( P \to Q \) holds, \( \rulename{\vee I} \) gives the goal, and that is the second clash.
+*The search.* The goal is a disjunction, so we postpone it. There are no premises, so no premise-directed step applies. Neither side is worth aiming at: \( P \) false breaks the step to \( P \), and \( P \) true with \( Q \) false breaks the step to \( P \to Q \). We are stuck, so we assume the exact negation of the goal, \( \neg(P \vee (P \to Q)) \), and hunt for a clash. The assumption can clash only with \( P \vee (P \to Q) \), which \( \rulename{\vee I} \) builds from either side. The side \( P \to Q \) is an implication, so we open a box on \( P \) with the goal \( Q \). Inside it, \( \rulename{\vee I} \) gives \( P \vee (P \to Q) \) from \( P \), which clashes with the assumption, and \( \rulename{\bot E} \) writes \( Q \). So \( P \to Q \) holds, \( \rulename{\vee I} \) gives the goal, and that is the second clash.
 
 ```{=latex}
 \begin{center}
@@ -1772,9 +1821,9 @@ $\begin{nd}
 
 Lines 1 and 2 are assumptions, of the \( \rulename{RAA} \) box and of the \( \rulename{{\to}I} \) box; every other line names its rule on the right. The classical line is line 9; every other rule used is a rule for a connective. The shape is that of @prp-excluded-middle: there the inner box closed by \( \rulename{\neg I} \) to give \( \neg P \); here it ends with \( \rulename{\bot E} \) and closes by \( \rulename{{\to}I} \) to give \( P \to Q \).
 
-A second correct route first derives \( P \vee \neg P \) by the eight lines of @prp-excluded-middle, written out, and then splits on it: in the case \( P \), \( \rulename{\vee I} \) gives the goal; in the case \( \neg P \), a box on \( P \) clashes with \( \neg P \), \( \rulename{\bot E} \) writes \( Q \), \( \rulename{{\to}I} \) gives \( P \to Q \), and \( \rulename{\vee I} \) the goal. Its classical line is the \( \rulename{RAA} \) inside the written-out excluded middle.
+A second correct route first derives \( P \vee \neg P \) by the eight lines of @prp-excluded-middle, written out, and then splits on it. In the case \( P \), \( \rulename{\vee I} \) gives the goal. In the case \( \neg P \), a box on \( P \) clashes with \( \neg P \), \( \rulename{\bot E} \) writes \( Q \), \( \rulename{{\to}I} \) gives \( P \to Q \), and \( \rulename{\vee I} \) gives the goal. Its classical line is the \( \rulename{RAA} \) inside the written-out excluded middle.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 2: an \( \rulename{RAA} \) box opened with \( \neg(P \vee (P \to Q)) \), the exact negation of the goal.
 - 3: an inner box on \( P \) that reaches \( \bot \) by \( \rulename{\vee I} \) and \( \rulename{\neg E} \) against the outer assumption, and then \( Q \) by \( \rulename{\bot E} \).
@@ -1782,14 +1831,26 @@ A second correct route first derives \( P \vee \neg P \) by the eight lines of @
 - 2: \( \rulename{RAA} \) closes the outer box, and it is named as the classical step.
 - 1: every citation is available.
 
-The second route earns the same points, step for step: 2 for the written-out excluded middle opened correctly (its \( \rulename{RAA} \) box on \( \neg(P \vee \neg P) \)); 3 for the box on \( P \) in the case \( \neg P \), ending with \( Q \) by \( \rulename{\bot E} \); 2 for \( \rulename{{\to}I} \), the two \( \rulename{\vee I} \) lines, and the \( \rulename{\vee E} \); 2 for naming the \( \rulename{RAA} \) inside excluded middle as the classical step; 1 for availability. Fatal errors (0 for the step): opening the outer box with anything but \( \neg(P \vee (P \to Q)) \); closing the outer box by \( \rulename{\neg I} \) (that gives \( \neg\neg(P \vee (P \to Q)) \)); a line justified by \( \rulename{\neg\neg E} \) or \( \rulename{LEM} \) taken as a rule, which the item excludes.
+The second route earns the same points, step for step:
+
+- 2 for the written-out excluded middle opened correctly, with its \( \rulename{RAA} \) box on \( \neg(P \vee \neg P) \);
+- 3 for the box on \( P \) in the case \( \neg P \), ending with \( Q \) by \( \rulename{\bot E} \);
+- 2 for \( \rulename{{\to}I} \), the two \( \rulename{\vee I} \) lines, and the \( \rulename{\vee E} \);
+- 2 for naming the \( \rulename{RAA} \) inside excluded middle as the classical step;
+- 1 for availability.
+
+Slips that lose the step (0 for the step):
+
+- opening the outer box with anything but \( \neg(P \vee (P \to Q)) \);
+- closing the outer box by \( \rulename{\neg I} \), which gives \( \neg\neg(P \vee (P \to Q)) \);
+- a line justified by \( \rulename{\neg\neg E} \) or \( \rulename{LEM} \) taken as a rule, which the exercise excludes.
 :::
 
 ::: {#exr-reductio-and-classical-rules-c4}
 [C4: Challenge: Smaller rule sets]
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Show that, once \( \rulename{RAA} \) is a rule, \( \rulename{\neg I} \) could be dropped: given a box that opens with \( \varphi \) and reaches \( \bot \) as a line of its own, derive \( \neg\varphi \) with \( \rulename{RAA} \), \( \rulename{\neg E} \) and the box's lines, without \( \rulename{\neg I} \). Use your method to derive @prp-modus-tollens without \( \rulename{\neg I} \).
+1. Show that, once \( \rulename{RAA} \) is a rule, \( \rulename{\neg I} \) could be dropped. Given a box that opens with \( \varphi \) and reaches \( \bot \) as a line of its own, derive \( \neg\varphi \) with \( \rulename{RAA} \), \( \rulename{\neg E} \) and the box's lines, without \( \rulename{\neg I} \). Use your method to derive @prp-modus-tollens without \( \rulename{\neg I} \).
 2. With neither \( \rulename{\bot E} \) nor \( \rulename{RAA} \) (\( \rulename{\neg I} \) allowed), derive \( \neg P \vdash P \to \neg Q \).
 3. Exercise B3 derived \( \rulename{\bot E} \) from \( \rulename{RAA} \) and repetition. Does its derivation use \( \rulename{\neg I} \), and does your fragment in (a) use \( \rulename{\bot E} \)? What do (a) and B3 together say about the list of thirteen primitive rules?
 4. Which of the two paradoxes of Section 2.1 survives in a system with neither \( \rulename{\bot E} \) nor \( \rulename{RAA} \), by the derivation given there?
@@ -1840,13 +1901,20 @@ $\begin{nd}
 \end{center}
 ```
 
-The \( \rulename{\neg I} \) box never uses its assumption; the fold "Edge cases of not-introduction" of Section 2.2 explains why that is legal: the lines above it, \( P \) and \( \neg P \), already clash.
+The \( \rulename{\neg I} \) box never uses its assumption. Section 2.2, under "Edge cases of not-introduction", explains why that is legal: the lines above it, \( P \) and \( \neg P \), already clash.
 
 (c) No, and no: B3 uses \( \rulename{RAA} \) and repetition only, and (a) uses \( \rulename{RAA} \) and \( \rulename{\neg E} \) only. So \( \rulename{\bot E} \) and \( \rulename{\neg I} \) can be dropped together, and the remaining eleven rules derive every sequent the thirteen do (replace the lines one at a time, innermost boxes first). The book keeps both for the reason the remark after @thm-classical-rules-interderivable gives for \( \rulename{\bot E} \): the primitive rules other than \( \rulename{RAA} \) are to form a system of their own.
 
 (d) \( Q \vdash P \to Q \): its derivation uses \( \rulename{{\to}I} \) and repetition only. The derivation of \( \neg P \vdash P \to Q \) given in Section 2.1 uses \( \rulename{\bot E} \).
 
-**Marking scheme.** (10 points) 5: (a), the general replacement (2 for the inner \( \rulename{RAA} \) producing \( \varphi \); 1 for re-citing the old assumption; 1 for closing by \( \rulename{RAA} \) with \( \psi \) the statement \( \neg\varphi \)) and 1 for the modus tollens derivation. 2: (b). 2: (c), both answers and the conclusion about the list. 1: (d). Fatal error (0 for (a)): closing the new box by \( \rulename{\neg I} \), or opening it with \( \varphi \).
+**What a complete answer needs.** (10 points)
+
+- 5: (a). Of these, 2 for the inner \( \rulename{RAA} \) producing \( \varphi \), 1 for re-citing the old assumption, 1 for closing by \( \rulename{RAA} \) with \( \psi \) the statement \( \neg\varphi \), and 1 for the modus tollens derivation.
+- 2: (b).
+- 2: (c), both answers and the conclusion about the list.
+- 1: (d).
+
+Slips that lose the step, scoring 0 for (a): closing the new box by \( \rulename{\neg I} \), or opening it with \( \varphi \).
 :::
 
 ### R. Review
@@ -1858,7 +1926,7 @@ Let \( n \) be an integer. Prove that \( n^2 + 3n \) is even, naming the rule at
 :::
 
 ::: {.solution}
-By (E1), \( n \) is even or \( n \) is odd, and we argue by cases \( [\rulename{\vee E}] \).
+Every integer is even or odd, (E1), so \( n \) is even or \( n \) is odd, and we argue by cases \( [\rulename{\vee E}] \).
 
 *Case \( n \) even.* Write \( n = 2k \) with \( k \) an integer. Then \( n^2 + 3n = 4k^2 + 6k = 2(2k^2 + 3k) \), which is even.
 
@@ -1866,7 +1934,7 @@ By (E1), \( n \) is even or \( n \) is odd, and we argue by cases \( [\rulename{
 
 Both cases reach the goal, so \( n^2 + 3n \) is even \( [\rulename{\vee E}] \).
 
-The method is Chapter 1's case split (@def-rules-disjunction), used as in @exm-abs-product-cases, here on the parity of \( n \). No rule of this chapter is needed: neither case clashes, and each ends in the goal.
+The method is Chapter 1's case split (@def-rules-disjunction), here on the parity of \( n \). It is used as in @exm-abs-product-cases. No rule of this chapter is needed: neither case clashes, and each ends in the goal.
 :::
 
 ::: {#exr-reductio-and-classical-rules-r2}
@@ -1881,7 +1949,7 @@ Call an integer \( n \) **balanced** if \( n \) is even exactly when \( n \) is 
 :::
 
 ::: {.solution}
-(a) \( E \leftrightarrow T \): a definition's "if" is read as an iff (Section 2.4, as in @exm-strictly-increasing-both-ways; the rules are @def-rules-biconditional). At \( 4 \), \( E \) is true and \( T \) false: not balanced. At \( 6 \), both are true: balanced. At \( 7 \), both are false: balanced. At \( 9 \), \( E \) is false and \( T \) true: not balanced.
+(a) \( E \leftrightarrow T \), since a definition's "if" is read as an iff, as in @exm-strictly-increasing-both-ways of Section 2.4. At \( 4 \), \( E \) is true and \( T \) false: not balanced. At \( 6 \), both are true: balanced. At \( 7 \), both are false: balanced. At \( 9 \), \( E \) is false and \( T \) true: not balanced.
 
 (b) Left to right; the classical line is line 2, \( \rulename{LEM} \) (@prp-excluded-middle as a derived rule):
 
@@ -1951,13 +2019,26 @@ $\begin{nd}
 \end{center}
 ```
 
-The classical line of these derivations is in the left-to-right direction, the \( \rulename{LEM} \) at line 2. There the goal is a disjunction neither of whose sides holds for every balanced \( n \) (at \( n = 7 \) the left fails, at \( n = 6 \) the right): the case "When \( \rulename{RAA} \) earns its place" names.
+The classical line of these derivations is in the left-to-right direction, the \( \rulename{LEM} \) at line 2. There the goal is a disjunction neither of whose sides holds for every balanced \( n \) (at \( n = 7 \) the left fails, at \( n = 6 \) the right). This is the case described under "Where to expect \( \rulename{RAA} \)".
+
+::: {.uses}
+@def-rules-biconditional (the rules for \( \leftrightarrow \)).
+:::
 :::
 
 ::: {#exr-reductio-and-classical-rules-r3}
 [R3]
 
-Let \( n \) be an integer, \( P \): "\( n \) is a multiple of \( 6 \)", \( Q \): "\( n \) is even", so that \( P \to Q \) is true. For each statement, say whether it follows from \( P \to Q \) by the rules so far, naming the result that gives it, or break the step from \( P \to Q \) to it at a value of \( n \): (i) \( \neg Q \to \neg P \); (ii) \( Q \to P \); (iii) \( \neg P \to \neg Q \); (iv) \( \neg P \vee Q \); (v) \( P \to (P \wedge Q) \); (vi) \( P \leftrightarrow Q \). Which of the derivations you cite uses a classical line (\( \rulename{RAA} \), \( \rulename{\neg\neg E} \) or \( \rulename{LEM} \))?
+Let \( n \) be an integer, \( P \): "\( n \) is a multiple of \( 6 \)", \( Q \): "\( n \) is even", so that \( P \to Q \) is true. For each statement below, say whether it follows from \( P \to Q \) by the rules so far, naming the result that gives it. If it does not, break the step from \( P \to Q \) to it at a value of \( n \).
+
+- (i) \( \neg Q \to \neg P \);
+- (ii) \( Q \to P \);
+- (iii) \( \neg P \to \neg Q \);
+- (iv) \( \neg P \vee Q \);
+- (v) \( P \to (P \wedge Q) \);
+- (vi) \( P \leftrightarrow Q \).
+
+Which of the derivations you cite uses a classical line (\( \rulename{RAA} \), \( \rulename{\neg\neg E} \) or \( \rulename{LEM} \))?
 :::
 
 ::: {.solution}
@@ -1987,7 +2068,7 @@ $\begin{nd}
 
 (vi) Breaks at \( n = 2 \): \( P \) is false and \( Q \) true.
 
-The breaks are of the step with this \( P \) and \( Q \): at \( n = 2 \) the premise is true (a multiple of \( 6 \) is \( 6k = 2(3k) \), so \( P \to Q \) holds for every \( n \)) and the conclusion false, so the form is bad.
+The breaks are of the step with this \( P \) and \( Q \). At \( n = 2 \) the premise is true and the conclusion false, so the form is bad. The premise is true because a multiple of \( 6 \) is \( 6k = 2(3k) \), so \( P \to Q \) holds for every \( n \).
 :::
 
 <!-- dependency ledger
@@ -2001,6 +2082,7 @@ prp-excluded-middle (idea): P false breaks the step to P, P true breaks the step
 prp-de-morgan (claim): not(0 <= x and x <= 1) iff x < 0 or x > 1 | school algebra, AN1.1 (promised); the order convention of F1.2 s01; motivation only
 prp-de-morgan (idea): the step from not(P and Q) to not-P breaks (P true, Q false), and the step to not-Q breaks (P false, Q true) | read off Section 1.1's test (breaking); motivation only, the proof does not use it
 prp-de-morgan (claim): in the fold "De Morgan (d) by excluded middle", the LEM route to (d) is 11 lines | described inline; nothing depends on it
+thm-classical-rules-interderivable (example): the worked instance before the notion "derives" (a not-not-E line x <= 1 replaced by the box on not(x <= 1), its clash and RAA, premises and last line unchanged) | prp-double-negation (b) (cited, earlier in this section); an unlabelled preview of part 1 of the proof, nothing cites it
 thm-classical-rules-interderivable (proof): replacing a line by a fragment keeps every citation available and the premises and last line unchanged | inline (argued in the proof)
 exm-raa-zero (example): x >= 0 and x != 0 give x > 0; x/2 > 0 for x > 0; subtracting x/2 and multiplying by 2 preserve <= | school algebra, AN1.1 (promised)
 exm-raa-zero (example): the hypothesis "x <= eps for every eps > 0" applies to eps = x/2 | F1.4 (promised; rules for "every"), used as ordinary reasoning under the index note; the example illustrates the shape of RAA and nothing cites it for its logic

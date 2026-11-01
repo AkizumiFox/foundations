@@ -4,13 +4,13 @@ The rules of Section 2.1 **use** a negation: \( \rulename{\neg E} \) records a c
 
 ## How to prove that something is not so
 
-To show that no rational number has square \( 2 \), we cannot inspect the rational numbers one by one: there are infinitely many. A mathematician instead supposes the opposite and shows that it leads to something impossible: "suppose \( r \) is rational and \( r^2 = 2 \); …; this is a contradiction; hence \( r^2 \ne 2 \)."
+To show that no rational number has square \( 2 \), we cannot inspect the rational numbers one by one: there are infinitely many. A mathematician instead supposes the opposite and shows that it leads to something impossible. The proof reads: "Suppose \( r \) is rational and \( r^2 = 2 \). … This is a contradiction. Hence \( r^2 \ne 2 \)."
 
-Try the smaller goal \( x^2 + 1 \ne 0 \), for a real number \( x \), with the rules so far. The goal is \( \neg(x^2 + 1 = 0) \), and its main connective is \( \neg \). Chapter 1's goal-directed move asks for the introduction rule of the main connective, and \( \neg \) has none yet. The rules of Section 2.1 do not help: \( \rulename{\bot E} \) could write the goal, but only from a line \( \bot \), and nothing available clashes. The statement \( x^2 + 1 = 0 \) is not a line of anything; it is the thing we want to rule out.
+Try the smaller goal \( x^2 + 1 \ne 0 \), for a real number \( x \), with the rules so far. The goal is \( \neg(x^2 + 1 = 0) \), and its main connective is \( \neg \). Working back from the goal, as in Chapter 1, asks for the introduction rule of the main connective, and \( \neg \) has none yet. The rules of Section 2.1 do not help. \( \rulename{\bot E} \) could write the goal, but only from a line \( \bot \), and nothing available clashes. The statement \( x^2 + 1 = 0 \) is not a line of anything. It is the thing we want to rule out.
 
-The mathematician's sentence shows the missing rule. "Suppose \( r^2 = 2 \)" opens a box, exactly like the box of \( \rulename{{\to}I} \) in @def-rules-implication, and "this is a contradiction" is its last line, \( \bot \). The only new thing is what the box gives when it closes.
+The mathematician's sentence shows the missing rule. "Suppose \( r^2 = 2 \)" opens a box, exactly like the box of \( \rulename{{\to}I} \) in @def-rules-implication, and "this is a contradiction" is its last line, \( \bot \). For \( x^2 + 1 \), the sentence would read: "Suppose \( x^2 + 1 = 0 \). Then \( x^2 = -1 < 0 \), which contradicts \( x^2 \ge 0 \). Hence \( x^2 + 1 \ne 0 \)." The only new thing is what the box gives when it closes.
 
-*To prove "not \( \varphi \)", assume \( \varphi \) and reach a contradiction.*
+*To prove "not \( \varphi \)", assume \( \varphi \) and reach a contradiction.* The rule below says exactly how.
 
 ::: {#def-rules-negation}
 [Rules for Negation]
@@ -38,7 +38,7 @@ $\begin{nd}[schema]
 The left schema is \( \rulename{\neg I} \) (**not-introduction**): the assumption \( \varphi \) is **discharged** when the box closes, and the line \( \bot \) is a line of that box itself, not of a box inside it. The right schema is \( \rulename{\neg E} \), recalled from @def-rules-contradiction, so that the rule that proves a negation and the rule that uses one stand together.
 :::
 
-This rule has conditions that matter; read each one.
+Here is the rule in words. Each of its conditions matters.
 
 1. **Open a box** whose first line is the assumption \( \varphi \). It is the **unnegated** statement: the thing we want to refute, not the thing we want to prove. Any statement may be assumed. In a finished derivation this assumption is printed **"asm, for \( \rulename{\neg I} \)"**: the annotation names the rule that will close the box, as "asm, for \( \rulename{{\to}I} \)" did in Section 1.4.
 2. **Inside the box** every rule may be used, and every line available just above the box may be cited, as in any box (@def-derivation).
@@ -47,7 +47,7 @@ This rule has conditions that matter; read each one.
 5. **The new line is always a negation.** \( \rulename{\neg I} \) never writes a statement whose main connective is not \( \neg \).
 
 ::: {.second-reading title="Edge cases of not-introduction"}
-The degenerate case is a box of one line, whose assumption is already \( \bot \). The box \( \lines{1}{1} \) then ends on \( \bot \) as soon as it opens, and \( \rulename{\neg I} \) gives \( \neg\bot \):
+The smallest case is a box of one line, whose assumption is already \( \bot \). The box \( \lines{1}{1} \) then ends on \( \bot \) as soon as it opens, and \( \rulename{\neg I} \) gives \( \neg\bot \):
 
 ```{=latex}
 \begin{center}
@@ -62,9 +62,9 @@ $\begin{nd}
 
 So \( \vdash \neg\bot \): "it is not the case that contradiction" is derivable from nothing, as it should be.
 
-**A noninstance by one change.** Take a box opened by \( \varphi \) whose last line is \( \neg\varphi \) instead of \( \bot \). It looks as if the assumption has refuted itself, and \( \rulename{\neg I} \) still does not apply: the box must end on \( \bot \). One more line, \( \bot \) by \( \rulename{\neg E} \) citing the assumption and the line \( \neg\varphi \), repairs it. The same holds if \( \bot \) is reached only inside a smaller box within the box: it is not then a line of the box itself.
+**Ending on \( \neg\varphi \) is not enough.** Take a box opened by \( \varphi \) whose last line is \( \neg\varphi \) instead of \( \bot \). It looks as if the assumption has refuted itself, and \( \rulename{\neg I} \) still does not apply: the box must end on \( \bot \). One more line, \( \bot \) by \( \rulename{\neg E} \) citing the assumption and the line \( \neg\varphi \), repairs it. The same holds if \( \bot \) is reached only inside a smaller box within the box: it is not then a line of the box itself.
 
-**A box that never uses its assumption.** A box may reach \( \bot \) without ever using its assumption. That is legal, but it is a sign: if no line of the box depends on \( \varphi \), the same lines could have been written just above the box, where \( \bot \) would then stand, and \( \rulename{\bot E} \) would have written \( \neg\varphi \), or anything else, directly. The lines available above the box were already contradictory. When your \( \rulename{\neg I} \) box never uses its assumption, look for the error above the box, not in it.
+**A box that never uses its assumption.** A box may reach \( \bot \) without ever using its assumption. That is legal, but it is a warning sign. Suppose no line of the box depends on \( \varphi \). Then the same lines could have been written just above the box, and \( \bot \) would stand there. From that line, \( \rulename{\bot E} \) would have written \( \neg\varphi \), or anything else, directly. The lines available above the box were already contradictory. When your \( \rulename{\neg I} \) box never uses its assumption, look for the error above the box, not in it.
 :::
 
 **Why this rule.** The statement \( \neg\varphi \) says that \( \varphi \) fails, and the box shows what would happen if \( \varphi \) held: together with the lines above it, it would lead to \( \bot \), which never holds. So in any situation where the lines above the box hold, \( \varphi \) cannot hold. That is exactly what \( \neg\varphi \) claims.
@@ -77,14 +77,18 @@ The rules for \( \neg \) have the same shapes as rules we already know, with \( 
 | use it, given \( \varphi \) | \( \bot \) by \( \rulename{\neg E} \) | \( \bot \) by \( \rulename{{\to}E} \) |
 
 ::: {.remark}
-Row by row, \( \neg\varphi \) behaves exactly like \( \varphi \to \bot \): "not \( \varphi \)" means "\( \varphi \) leads to contradiction". Some presentations of logic take this as the definition of \( \neg \). This book keeps \( \neg \) as a connective with its own rules.
+Row by row, \( \neg\varphi \) behaves exactly like \( \varphi \to \bot \): "not \( \varphi \)" means "\( \varphi \) leads to contradiction".
+:::
+
+::: {.second-reading title="For instructors"}
+Some presentations of logic take \( \varphi \to \bot \) as the definition of \( \neg\varphi \). This book keeps \( \neg \) as a connective with its own rules.
 :::
 
 ::: {.warning}
-Do not open the box with what you want to prove. To prove \( \neg\varphi \), the box opens with \( \varphi \). A box opened by \( \neg\varphi \) and ending in \( \bot \) gives \( \neg\neg\varphi \) by \( \rulename{\neg I} \), the negation of the goal, not the goal. So a box opened with \( \neg(x > 0) \) and closed by \( \rulename{\neg I} \) gives \( \neg\neg(x > 0) \), not \( x > 0 \); Section 2.5 shows the other kind of "suppose not". This is the negation's version of the converse error that Section 1.4 found in Argument B.
+Do not open the box with what you want to prove. To prove \( \neg\varphi \), the box opens with \( \varphi \). A box opened by \( \neg\varphi \) and ending in \( \bot \) gives \( \neg\neg\varphi \) by \( \rulename{\neg I} \), the negation of the goal, not the goal. So a box opened with \( \neg(x > 0) \) and closed by \( \rulename{\neg I} \) gives \( \neg\neg(x > 0) \), not \( x > 0 \). Section 2.5 shows the other kind of "suppose not". This is the negation's version of the converse error that Section 1.4 found in Argument B.
 :::
 
-In the Givens/Goal table, \( \rulename{\neg I} \) moves \( \varphi \) into the Givens and makes \( \bot \) the goal.
+In the table of what we know and what we want, \( \rulename{\neg I} \) adds \( \varphi \) to what we know, and \( \bot \) becomes what we want.
 
 ## The first example: a number that is never zero
 
@@ -97,7 +101,7 @@ Let \( x \) be a real number. Prove that \( x^2 + 1 \ne 0 \), naming the rules.
 :::
 
 ::: {.idea}
-The goal \( x^2 + 1 \ne 0 \) is \( \neg(x^2 + 1 = 0) \), a negation, so open a box on \( x^2 + 1 = 0 \) and look for a clash. The school fact \( x^2 \ge 0 \), that is \( \neg(x^2 < 0) \), is the negation available; its unnegated half \( x^2 < 0 \) is the subgoal, and algebra on the assumption produces it.
+The goal \( x^2 + 1 \ne 0 \) is \( \neg(x^2 + 1 = 0) \), a negation, so open a box on \( x^2 + 1 = 0 \) and look for a clash. The school fact \( x^2 \ge 0 \), that is \( \neg(x^2 < 0) \), is the negation available. Its unnegated half \( x^2 < 0 \) is the subgoal, and algebra on the assumption produces it.
 :::
 
 ::: {.solution}
@@ -130,7 +134,7 @@ The box \( \lines{2}{4} \), opened by \( x^2 + 1 = 0 \), the unnegated statement
 
 ## First derivations with not-introduction
 
-The goal-directed move of this section: *a goal \( \neg\varphi \) opens a box with \( \varphi \), and the new goal is \( \bot \).* From there, Section 2.1's move takes over: *goal \( \bot \), find a clash*, among the available lines or by manufacturing its missing half.
+Working back from a negation goes like this: *a goal \( \neg\varphi \) opens a box with \( \varphi \), and the new goal is \( \bot \).* In words, to refute \( \varphi \), assume it and look for a contradiction. From there, Section 2.1 takes over: *goal \( \bot \), find a clash.* The clash is found among the available lines, or made by manufacturing its missing half.
 
 ::: {#exm-double-negation-introduction}
 [Two negations from one premise]
@@ -141,7 +145,7 @@ Show that (a) \( P \vdash \neg\neg P \), and (b) \( (P \vee Q) \to \neg P \vdash
 ::: {.idea}
 (a) The goal \( \neg\neg P \) is \( \neg(\neg P) \), a negation of \( \neg P \). So the box opens with what is negated, \( \neg P \), and aims at \( \bot \). The clash is immediate: the premise \( P \) and the assumption \( \neg P \).
 
-The goal alone (left); then the box opened on \( \neg P \), its goal \( \bot \) at its foot (right).
+On the left is the goal alone. On the right, the box is open on \( \neg P \), with its goal \( \bot \) at the bottom.
 
 ```{=latex}
 % schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
@@ -164,9 +168,9 @@ $\begin{nd}
 \end{center}
 ```
 
-(b) The goal \( \neg P \) opens a box on \( P \). Inside it the premise is an implication, and the premise-directed move feeds it its hypothesis \( P \vee Q \), which \( \rulename{\vee I} \) manufactures from \( P \). The premise then hands back \( \neg P \), and that clashes with the box's own assumption. The assumption is used twice: once to build the hypothesis, once in the clash.
+(b) The goal \( \neg P \) opens a box on \( P \). Inside it, the premise is an implication. Working forward from the premise, we feed it its hypothesis \( P \vee Q \), which \( \rulename{\vee I} \) manufactures from \( P \). The premise then hands back \( \neg P \), and that clashes with the box's own assumption. The assumption is used twice: once to build the hypothesis, once in the clash.
 
-The box opened, its goal \( \bot \) at its foot (left); then the hypothesis \( P \vee Q \) manufactured, with line 5 still to reach (right).
+On the left, the box is open, with its goal \( \bot \) at the bottom. On the right, the hypothesis \( P \vee Q \) has been manufactured, and line 5 is still to be reached.
 
 ```{=latex}
 % schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
@@ -231,14 +235,14 @@ $\begin{nd}
 In (b), line 4 already says \( \neg P \), but it lies inside the box of \( P \) and depends on that assumption, so it cannot be the conclusion. Line 6 is the same statement outside the box, where it depends on the premise alone.
 :::
 
-Derivation (a) adds two negations. The reverse passage, from \( \neg\neg P \) alone to \( P \), would have to **remove** two, and no rule so far has a negation as its one given line and the unnegated statement as its new line: \( \rulename{\neg E} \) needs a second line and writes only \( \bot \), and \( \rulename{\neg I} \) only adds a \( \neg \). Section 2.5 returns to this.
+Derivation (a) adds two negations. The reverse passage, from \( \neg\neg P \) alone to \( P \), would have to **remove** two. No rule so far has a negation as its one given line and the unnegated statement as its new line. \( \rulename{\neg E} \) needs a second line and writes only \( \bot \), and \( \rulename{\neg I} \) only adds a \( \neg \). Section 2.5 returns to this.
 
 ::: {.check}
 Is \( \neg(P \vee Q) \vdash \neg P \)? If so, give a derivation and name its rules. Compare it with @exm-manufactured-clash, which has the same premise.
 :::
 
 ::: {.solution}
-Yes. The goal \( \neg P \) is a negation, so assume \( P \) and aim at \( \bot \); \( \rulename{\vee I} \) turns \( P \) into \( P \vee Q \), which clashes with the premise.
+Yes. The goal \( \neg P \) is a negation, so assume \( P \) and aim at \( \bot \). Then \( \rulename{\vee I} \) turns \( P \) into \( P \vee Q \), which clashes with the premise.
 
 ```{=latex}
 \begin{center}
@@ -257,7 +261,7 @@ $\begin{nd}
 The rules are \( \rulename{\vee I} \), \( \rulename{\neg E} \), and \( \rulename{\neg I} \). The box is the same as in @exm-manufactured-clash up to its line \( \bot \). There the goal was \( P \to R \), so the box had to end on \( R \), written by \( \rulename{\bot E} \), and closed by \( \rulename{{\to}I} \). Here the goal is \( \neg P \), so the box ends on \( \bot \) itself and closes by \( \rulename{\neg I} \). In words: if neither \( P \) nor \( Q \) holds, then in particular \( P \) does not.
 :::
 
-In the next derivation the clash itself creates a goal that is a negation, and the move of this section is used a second time, one box inside another.
+In the next derivation the clash itself creates a goal that is a negation. So a negation goal opens a box a second time, one box inside another.
 
 ::: {#exm-triple-negation}
 [Three negations become one]
@@ -266,9 +270,9 @@ Show that \( \neg\neg\neg P \vdash \neg P \).
 :::
 
 ::: {.idea}
-The goal \( \neg P \) opens a box on \( P \), with goal \( \bot \). Which clash? The only negation available is the premise \( \neg(\neg\neg P) \), so the premise-directed question asks for its unnegated half, \( \neg\neg P \): that becomes the subgoal. It is itself a negation, \( \neg(\neg P) \), so the goal-directed move opens a second \( \rulename{\neg I} \) box, on \( \neg P \), with goal \( \bot \). Inside it, \( \neg P \) clashes with the outer assumption \( P \). This is the first derivation in which a \( \rulename{\neg I} \) box is opened for a subgoal that a clash created.
+The goal \( \neg P \) opens a box on \( P \), with goal \( \bot \). Which clash? The only negation available is the premise \( \neg(\neg\neg P) \). To clash with it, we need its unnegated half, \( \neg\neg P \), so that becomes the subgoal. It is itself a negation, \( \neg(\neg P) \), so it opens a second \( \rulename{\neg I} \) box, on \( \neg P \), with goal \( \bot \). Inside it, \( \neg P \) clashes with the outer assumption \( P \). This is the first derivation in which a \( \rulename{\neg I} \) box is opened for a subgoal that a clash created.
 
-The outer box opened, its goal \( \bot \) at its foot (left); then the clash with the premise chosen, so that \( \neg\neg P \) becomes the goal of the gap (right).
+On the left, the outer box is open, with its goal \( \bot \) at the bottom. On the right, the clash with the premise has been chosen, so \( \neg\neg P \) is the goal of the gap.
 
 ```{=latex}
 % schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
@@ -318,7 +322,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 4 may cite line 2, because the only box containing line 2, the box \( \lines{2}{6} \), also contains line 4 (@def-derivation). The inner box \( \lines{3}{4} \) ends on \( \bot \) as a line of its own, and so does the outer box \( \lines{2}{6} \), at line 6; each \( \rulename{\neg I} \) cites its own box. Notice what did **not** happen: no line removes a pair of negations. Three became one by adding them, twice, and clashing.
+Line 4 may cite line 2, because the only box containing line 2, the box \( \lines{2}{6} \), also contains line 4 (@def-derivation). The inner box \( \lines{3}{4} \) ends on \( \bot \) as a line of its own, and so does the outer box \( \lines{2}{6} \), at line 6. Each \( \rulename{\neg I} \) cites its own box. Notice what did **not** happen: no line removes a pair of negations. Three became one by adding them, twice, and clashing.
 :::
 
 ## How the rule looks in a mathematical proof
@@ -327,7 +331,7 @@ The proof that no rational number has square \( 2 \) has the shape of \( \rulena
 
 **(L)** Every rational number can be written as \( p/q \) with \( p \) and \( q \) integers, \( q \ne 0 \), and \( p \) and \( q \) **not both even**.
 
-This holds because a fraction whose numerator and denominator are both even can be reduced by \( 2 \), and the reduction cannot go on for ever, since the denominator shrinks in absolute value each time. Making "cannot go on for ever" precise needs a fact about the natural numbers that this book does not prove; here we take (L) as known.
+This holds because a fraction whose numerator and denominator are both even can be reduced by \( 2 \), and the reduction cannot go on for ever, since the denominator shrinks in absolute value each time. Making "cannot go on for ever" precise needs a fact about the natural numbers that this book does not prove. Here we take (L) as known.
 
 ::: {#thm-sqrt2-irrational}
 [Irrationality of the Square Root of Two]
@@ -336,11 +340,11 @@ There is no rational number whose square is \( 2 \). So if a real number \( \sqr
 :::
 
 ::: {.idea}
-Fix a rational number \( r \) and prove the negative statement \( r^2 \ne 2 \) by \( \rulename{\neg I} \): assume \( r^2 = 2 \) and hunt for \( \bot \). Write \( r = p/q \) as in (L), so that the equation becomes \( p^2 = 2q^2 \). The only available negation is "not both even", so the clash must come from showing that \( p \) and \( q \) **are** both even; @thm-square-even-implies-even is the tool for that, used twice. *Before reading on: the second use of @thm-square-even-implies-even needs the line "\( q^2 \) is even". From which two earlier lines of the proof will it come?*
+Fix a rational number \( r \) and prove the negative statement \( r^2 \ne 2 \) by \( \rulename{\neg I} \): assume \( r^2 = 2 \) and hunt for \( \bot \). Write \( r = p/q \) as in (L), so that the equation becomes \( p^2 = 2q^2 \). The only available negation is "not both even", so the clash must come from showing that \( p \) and \( q \) **are** both even. @thm-square-even-implies-even is the tool for that, used twice. *Before reading on: the second use of @thm-square-even-implies-even needs the line "\( q^2 \) is even". From which two earlier lines of the proof will it come?*
 :::
 
 ::: {.proof}
-Let \( r \) be a rational number, and suppose \( r^2 = 2 \) \( [\text{assumption for } \rulename{\neg I}] \). By (L), \( r = p/q \) for integers \( p \) and \( q \) with \( q \ne 0 \), not both even. Then \( p^2 = r^2 q^2 = 2q^2 \), so \( p^2 \) is even. By @thm-square-even-implies-even, \( p \) is even \( [\rulename{{\to}E}] \), say \( p = 2m \) for an integer \( m \). Then \( 4m^2 = 2q^2 \), so \( q^2 = 2m^2 \), and \( q^2 \) is even. By @thm-square-even-implies-even again, \( q \) is even \( [\rulename{{\to}E}] \). So \( p \) and \( q \) are both even \( [\rulename{\wedge I}] \), while they were chosen not both even; this is a contradiction \( [\rulename{\neg E}] \). Hence \( r^2 \ne 2 \) \( [\rulename{\neg I}] \).
+Let \( r \) be a rational number, and suppose \( r^2 = 2 \) \( [\text{assumption for } \rulename{\neg I}] \). By (L), \( r = p/q \) for integers \( p \) and \( q \) with \( q \ne 0 \), not both even. Then \( p^2 = r^2 q^2 = 2q^2 \), so \( p^2 \) is even. By @thm-square-even-implies-even, \( p \) is even \( [\rulename{{\to}E}] \), say \( p = 2m \) for an integer \( m \). Then \( 4m^2 = 2q^2 \), so \( q^2 = 2m^2 \), and \( q^2 \) is even. By @thm-square-even-implies-even again, \( q \) is even \( [\rulename{{\to}E}] \). So \( p \) and \( q \) are both even \( [\rulename{\wedge I}] \), while they were chosen not both even. This is a contradiction \( [\rulename{\neg E}] \). Hence \( r^2 \ne 2 \) \( [\rulename{\neg I}] \).
 
 Since \( r \) was an arbitrary rational number, no rational number has square \( 2 \). This proves the theorem.
 :::
@@ -353,7 +357,7 @@ In the proof, which step is \( \rulename{\neg E} \), and which two statements do
 The step "this is a contradiction". It cites "\( p \) and \( q \) are both even", derived inside the box of \( r^2 = 2 \) by \( \rulename{\wedge I} \), and "\( p \) and \( q \) are not both even", which (L) supplied when \( p \) and \( q \) were chosen. In the derivation below these are lines 11 and 2, and the step is line 12.
 :::
 
-The propositional part of the proof fits in a derivation. Fix \( r \) and the integers \( p \), \( q \) that (L) supplies. Lines 1 and 2 record what (L) says about them; lines 3 and 4 are @thm-square-even-implies-even for \( n = p \) and \( n = q \); the lines marked "algebra" are the computations of the proof.
+The propositional part of the proof fits in a derivation. Fix \( r \) and the integers \( p \), \( q \) that (L) supplies. Lines 1 and 2 record what (L) says about them. Lines 3 and 4 are @thm-square-even-implies-even for \( n = p \) and \( n = q \). The lines marked "algebra" are the computations of the proof.
 
 ```{=latex}
 \begin{center}
@@ -377,7 +381,13 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 13 is \( r^2 \ne 2 \). The box \( \lines{5}{12} \) is a \( \rulename{\neg I} \) box as the schema asks: opened by the unnegated statement \( r^2 = 2 \), and ending on \( \bot \) as a line of its own. Three steps of the proof lie outside the derivation: applying @thm-square-even-implies-even, a fact about every integer, to \( p \) and to \( q \); choosing \( p \), \( q \) and \( m \); and passing from the arbitrary \( r \) to every rational number. All three are steps about "some" and "every", used as ordinary reasoning (the note at the start of this chapter).
+Line 13 is \( r^2 \ne 2 \). The box \( \lines{5}{12} \) is a \( \rulename{\neg I} \) box as the schema asks: opened by the unnegated statement \( r^2 = 2 \), and ending on \( \bot \) as a line of its own. Three steps of the proof lie outside the derivation:
+
+- applying @thm-square-even-implies-even, a fact about every integer, to \( p \) and to \( q \);
+- choosing \( p \), \( q \) and \( m \);
+- passing from the arbitrary \( r \) to every rational number.
+
+All three are steps about "some" and "every". This chapter uses such steps as ordinary reasoning, as it said at its start.
 
 Notice also what the proof does **not** need: that \( \sqrt{2} \) exists as a real number. The theorem is a statement about rational numbers only.
 
@@ -385,7 +395,7 @@ And notice which rule closes it. "Suppose \( r^2 = 2 \)" opens a box whose **neg
 
 ## The rule card
 
-Before the card, the rule at work on large statements. Each row is one use of \( \rulename{\neg I} \): the box, and the line it writes.
+First, here is the rule at work on larger statements. Each row is one use of \( \rulename{\neg I} \): the box, and the line it writes.
 
 ::: {#exm-negation-and-contradiction-instances}
 [Instances of \( \rulename{\neg I} \)]
@@ -399,28 +409,38 @@ Before the card, the rule at work on large statements. Each row is one use of \(
 **Not an instance.** From the third box, the line "\( P \wedge R \) — \( \rulename{\neg I} \)" is not an instance: \( \rulename{\neg I} \) puts one \( \neg \) in front of the whole assumption and never takes one away. (The rule that writes \( P \wedge R \) from that box is Section 2.5's.)
 :::
 
-Chapter 1's seven rules are on the card at the end of Section 1.6; here are this chapter's so far.
+Chapter 1's seven rules are on the card at the end of Section 1.6. Here are this chapter's rules so far.
 
-| Rule | Shape | You write | Lean |
-|---|---|---|---|
-| \( \rulename{\neg E} \) | \( \varphi \), \( \neg\varphi \) \( \Longrightarrow \) \( \bot \) | "…, which contradicts …" | `exact hn hp` (goal `False`) |
-| \( \rulename{\bot E} \) | \( \bot \) \( \Longrightarrow \) any \( \varphi \) | "This case cannot occur." "So there is nothing to prove." | `exfalso` |
-| \( \rulename{\neg I} \) | box \( \varphi \) … \( \bot \) \( \Longrightarrow \) \( \neg\varphi \) | "Suppose \( P \). … This is a contradiction. Hence not \( P \)." | `intro hp` (goal `False`) |
+| Rule | Shape | You write |
+|---|---|---|
+| \( \rulename{\neg E} \) | \( \varphi \), \( \neg\varphi \) \( \Longrightarrow \) \( \bot \) | "…, which contradicts …" |
+| \( \rulename{\bot E} \) | \( \bot \) \( \Longrightarrow \) any \( \varphi \) | "This case cannot occur." "So there is nothing to prove." |
+| \( \rulename{\neg I} \) | box \( \varphi \) … \( \bot \) \( \Longrightarrow \) \( \neg\varphi \) | "Suppose \( P \). … This is a contradiction. Hence not \( P \)." |
 
-In Lean, the negation of `P` is defined to be `P → False`, with `False` playing the part of \( \bot \): the reading of the remark above. So `intro` performs both \( \rulename{{\to}I} \) and \( \rulename{\neg I} \).
+::: {.second-reading title="For instructors"}
+In the proof assistant Lean, these rules are performed by the following code. Nothing in this book depends on it.
+
+| Rule | Lean |
+|---|---|
+| \( \rulename{\neg E} \) | `exact hn hp` (goal `False`) |
+| \( \rulename{\bot E} \) | `exfalso` |
+| \( \rulename{\neg I} \) | `intro hp` (goal `False`) |
+
+In Lean, the negation of `P` is defined to be `P → False`, with `False` playing the part of \( \bot \), as in the remark comparing \( \neg\varphi \) with \( \varphi \to \bot \). So `intro` performs both \( \rulename{{\to}I} \) and \( \rulename{\neg I} \).
+:::
 
 ::: {.warning}
 [Not allowed: \( \rulename{\neg I} \)]
 
-Each step below is wrong; the tag names the clause of the rule's reading that it breaks.
+Each step below is wrong, and breaks the condition of \( \rulename{\neg I} \) named after it.
 
-- Close the box on \( \neg\varphi \) instead of \( \bot \): clause 3, the last line is \( \bot \) (one \( \rulename{\neg E} \) line repairs it; the fold "Edge cases of not-introduction").
-- Close it on a \( \bot \) that stands in a box inside it: clause 3, the last line is a line of the box itself.
-- Write \( \varphi \) after a box opened by \( \neg\varphi \): clause 4, the new line is the negation of the whole assumption, here \( \neg\neg\varphi \).
-- Write the negation of part of the assumption: clause 4, the whole assumption is negated (the pair below).
-- Cite a line of the box after it has closed: clause 4, only the negation leaves.
+- Close the box on \( \neg\varphi \) instead of \( \bot \): "The last line of the box" is \( \bot \). One \( \rulename{\neg E} \) line repairs it.
+- Close it on a \( \bot \) that stands in a box inside it: "The last line of the box" is a line of the box itself.
+- Write \( \varphi \) after a box opened by \( \neg\varphi \): "Close the box" writes the negation of the whole assumption, here \( \neg\neg\varphi \).
+- Write the negation of part of the assumption: "Close the box" negates the whole assumption, as the pair below shows.
+- Cite a line of the box after it has closed: "Close the box" lets only the negation leave.
 
-The discharge is where the rule bites, so here is one wrong step beside the right one, with the premise \( \neg(Q \vee R) \). On the left, line 6 negates only \( P \), part of the assumption; on the right, line 6 negates the whole assumption.
+Most errors with \( \rulename{\neg I} \) happen at the discharge. Here is one wrong step beside the right one, with the premise \( \neg(Q \vee R) \). On the left, line 6 negates only \( P \), part of the assumption; on the right, line 6 negates the whole assumption.
 
 ```{=latex}
 \begin{center}
@@ -449,7 +469,7 @@ $\begin{nd}
 \end{center}
 ```
 
-The left list would show \( \neg(Q \vee R) \vdash \neg P \), which breaks. Let \( x \) be a real number, with \( P \): "\( x > 0 \)", \( Q \): "\( x > 5 \)", \( R \): "\( x < -5 \)". At \( x = 1 \) the premise is true and \( \neg P \) is false.
+The left derivation would show \( \neg(Q \vee R) \vdash \neg P \), and that sequent breaks. Let \( x \) be a real number, with \( P \): "\( x > 0 \)", \( Q \): "\( x > 5 \)", \( R \): "\( x < -5 \)". At \( x = 1 \) the premise is true and \( \neg P \) is false.
 :::
 
 ::: {.remark}
@@ -477,13 +497,13 @@ The left list would show \( \neg(Q \vee R) \vdash \neg P \), which breaks. Let \
 ::: {.solution}
 (a) The schema is the left one of @def-rules-negation: a box opened by the assumption \( \varphi \), ending on \( \bot \) as a line of the box itself, then \( \neg\varphi \) outside it, citing the box. The box opens with the **unnegated** statement \( \varphi \).
 
-(b) \( \rulename{\neg I} \). The conclusion is the negative statement "\( 0 \) has no reciprocal"; the box opens with "\( 0 \) has a reciprocal \( y \)", and "which is absurd" is its line \( \bot \), reached by \( \rulename{\neg E} \) from \( 1 = 0 \) and the fact \( 1 \ne 0 \).
+(b) \( \rulename{\neg I} \). The conclusion is the negative statement "\( 0 \) has no reciprocal". The box opens with "\( 0 \) has a reciprocal \( y \)", and "which is absurd" is its line \( \bot \), reached by \( \rulename{\neg E} \) from \( 1 = 0 \) and the fact \( 1 \ne 0 \).
 
-(c) @thm-square-even-implies-even, for \( n = p \), is the implication "if \( p^2 \) is even, then \( p \) is even"; together with "\( p^2 \) is even" it gives "\( p \) is even" by \( \rulename{{\to}E} \) (line 8 of the derivation, citing lines 3 and 7).
+(c) @thm-square-even-implies-even, for \( n = p \), is the implication "if \( p^2 \) is even, then \( p \) is even". Together with "\( p^2 \) is even" it gives "\( p \) is even" by \( \rulename{{\to}E} \). This is line 8 of the derivation, citing lines 3 and 7.
 
 (d) The fact (L) supplies the line "\( p \) and \( q \) are not both even" (line 2 of the derivation), which the \( \rulename{\neg E} \) of line 12 cites. Without that clause the proof still derives "both even", but it contradicts nothing (\( 2 = 4/2 \) has both even), and no \( \bot \) is reached.
 
-(e) With \( r^2 = 4 \) we get \( p^2 = 4q^2 = 2(2q^2) \), so \( p^2 \) is even and \( p \) is even, \( p = 2k \). Then \( 4k^2 = 4q^2 \), so \( q^2 = k^2 \). This is where the proof stalls: nothing says \( q^2 \) is even, so @thm-square-even-implies-even cannot be applied to \( q \). Indeed for \( r = 2 = 2/1 \) we have \( q = 1 \), which is odd. Every step before the stall is correct; the proof simply fails to reach \( \bot \).
+(e) With \( r^2 = 4 \) we get \( p^2 = 4q^2 = 2(2q^2) \), so \( p^2 \) is even and \( p \) is even, \( p = 2k \). Then \( 4k^2 = 4q^2 \), so \( q^2 = k^2 \). This is where the proof stalls: nothing says \( q^2 \) is even, so @thm-square-even-implies-even cannot be applied to \( q \). Indeed for \( r = 2 = 2/1 \) we have \( q = 1 \), which is odd. Every step before the stall is correct. The proof simply fails to reach \( \bot \).
 :::
 
 ::: {#exr-negation-and-contradiction-a2}
@@ -558,7 +578,14 @@ The parts run from one step, through a missing line, a justification column and 
 
 (f) \( P \vee R \), the unnegated half of line 2; it comes from line 3 by \( \rulename{\vee I} \).
 
-(g) Line 3 is the assumption for \( \rulename{\neg I} \); (i) \( \rulename{{\to}E} \) 2, 3; (ii) \( \rulename{\wedge E} \) 4; (iii) \( \rulename{\neg E} \) 5, 1; (iv) \( \rulename{\neg I} \) \( \lines{3}{6} \). The derivation shows \( \neg Q, \ P \to (Q \wedge R) \vdash \neg P \).
+(g) Line 3 is the assumption for \( \rulename{\neg I} \). The blanks are:
+
+- (i) \( \rulename{{\to}E} \) 2, 3;
+- (ii) \( \rulename{\wedge E} \) 4;
+- (iii) \( \rulename{\neg E} \) 5, 1;
+- (iv) \( \rulename{\neg I} \) \( \lines{3}{6} \).
+
+The derivation shows \( \neg Q, \ P \to (Q \wedge R) \vdash \neg P \).
 
 (h) No: the last line must be \( \bot \). First write \( \bot \) by \( \rulename{\neg E} \), citing the assumption and the line \( \neg P \); then \( \rulename{\neg I} \) closes the box.
 
@@ -566,15 +593,32 @@ The parts run from one step, through a missing line, a justification column and 
 
 (j) Line 7: it cites line 3, which lies inside the box \( \lines{3}{5} \), closed before line 7.
 
-(k) No. The box \( \lines{3}{7} \) ends on \( \neg R \), not on \( \bot \); the \( \bot \) at line 6 is a line of the inner box, not of the box \( \lines{3}{7} \) itself (clause 3). The outer box needs a line \( \bot \) of its own.
+(k) No. The box \( \lines{3}{7} \) ends on \( \neg R \), not on \( \bot \). The \( \bot \) at line 6 is a line of the inner box, not of the box \( \lines{3}{7} \) itself, and the last line must be a line of the box itself. The outer box needs a line \( \bot \) of its own.
 
 (l) \( x^2 + 4 \ne 2x \), by \( \rulename{\neg I} \). The supposition opens the box, and the contradiction is its line \( \bot \); the step to \( (x - 1)^2 = -3 \) is the identity \( x^2 + 4 - 2x = (x - 1)^2 + 3 \).
 
-(m) 2 \( P \wedge Q \), assumption, for \( \rulename{\neg I} \); 3 \( P \), \( \rulename{\wedge E} \) 2; 4 \( \bot \), \( \rulename{\neg E} \) 3, 1; 5 \( \neg(P \wedge Q) \), \( \rulename{\neg I} \) \( \lines{2}{4} \).
+(m) After the premise on line 1:
 
-(n) 2 \( P \), assumption, for \( \rulename{\neg I} \); 3 \( \neg P \), \( \rulename{{\to}E} \) 1, 2; 4 \( \bot \), \( \rulename{\neg E} \) 2, 3; 5 \( \neg P \), \( \rulename{\neg I} \) \( \lines{2}{4} \).
+- 2 \( P \wedge Q \), assumption, for \( \rulename{\neg I} \);
+- 3 \( P \), \( \rulename{\wedge E} \) 2;
+- 4 \( \bot \), \( \rulename{\neg E} \) 3, 1;
+- 5 \( \neg(P \wedge Q) \), \( \rulename{\neg I} \) \( \lines{2}{4} \).
 
-(o) 2 \( P \to Q \), assumption, for \( \rulename{\neg I} \); 3 \( P \), \( \rulename{\wedge E} \) 1; 4 \( Q \), \( \rulename{{\to}E} \) 2, 3; 5 \( \neg Q \), \( \rulename{\wedge E} \) 1; 6 \( \bot \), \( \rulename{\neg E} \) 4, 5; 7 \( \neg(P \to Q) \), \( \rulename{\neg I} \) \( \lines{2}{6} \).
+(n) After the premise on line 1:
+
+- 2 \( P \), assumption, for \( \rulename{\neg I} \);
+- 3 \( \neg P \), \( \rulename{{\to}E} \) 1, 2;
+- 4 \( \bot \), \( \rulename{\neg E} \) 2, 3;
+- 5 \( \neg P \), \( \rulename{\neg I} \) \( \lines{2}{4} \).
+
+(o) After the premise on line 1:
+
+- 2 \( P \to Q \), assumption, for \( \rulename{\neg I} \);
+- 3 \( P \), \( \rulename{\wedge E} \) 1;
+- 4 \( Q \), \( \rulename{{\to}E} \) 2, 3;
+- 5 \( \neg Q \), \( \rulename{\wedge E} \) 1;
+- 6 \( \bot \), \( \rulename{\neg E} \) 4, 5;
+- 7 \( \neg(P \to Q) \), \( \rulename{\neg I} \) \( \lines{2}{6} \).
 :::
 
 ### B. Practice
@@ -582,7 +626,7 @@ The parts run from one step, through a missing line, a justification column and 
 ::: {#exr-negation-and-contradiction-b1}
 [B1: A box inside a box]
 
-A search for \( P \to \neg Q \vdash Q \to \neg P \) has reached the stage below. *Name the move that opens each box, then complete it.*
+A search for \( P \to \neg Q \vdash Q \to \neg P \) has reached the stage below. *Name the reasoning that opens each box, then complete it.*
 
 ```{=latex}
 % schema (partial derivation: the gap is unnumbered, lines carry their final numbers)
@@ -617,7 +661,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 5 may cite line 2 because the box \( \lines{2}{6} \) contains line 5. Both boxes were read off the goal: the outer one by Chapter 1's move for an implication, the inner one by this section's move for a negation. In words: if \( P \) rules out \( Q \), then \( Q \) rules out \( P \).
+Line 5 may cite line 2 because the box \( \lines{2}{6} \) contains line 5. Both boxes were read off the goal. An implication goal gave the outer box, as in Chapter 1, and a negation goal gave the inner one, as in this section. In words: if \( P \) rules out \( Q \), then \( Q \) rules out \( P \).
 :::
 
 ::: {#exr-negation-and-contradiction-b2}
@@ -635,7 +679,7 @@ The goal is \( \neg(x^2 - x + 1 = 0) \), a negation, so we use the rule \( \rule
 x^2 - x + 1 = \left( x - \tfrac12 \right)^2 + \tfrac34 ,
 \]
 
-so \( (x - \tfrac12)^2 = -\tfrac34 \), and therefore \( (x - \tfrac12)^2 < 0 \). But the square of a real number is never negative, that is, \( \neg((x - \tfrac12)^2 < 0) \); this is a contradiction \( [\rulename{\neg E}] \). Hence \( x^2 - x + 1 \ne 0 \) \( [\rulename{\neg I}] \).
+so \( (x - \tfrac12)^2 = -\tfrac34 \), and therefore \( (x - \tfrac12)^2 < 0 \). But the square of a real number is never negative, that is, \( \neg((x - \tfrac12)^2 < 0) \). This is a contradiction \( [\rulename{\neg E}] \). Hence \( x^2 - x + 1 \ne 0 \) \( [\rulename{\neg I}] \).
 
 This is the pattern of @exm-square-plus-one, with the square \( (x - \tfrac12)^2 \) in place of \( x^2 \). The identity can be checked by expanding: \( (x - \tfrac12)^2 = x^2 - x + \tfrac14 \), and \( \tfrac14 + \tfrac34 = 1 \).
 :::
@@ -643,7 +687,7 @@ This is the pattern of @exm-square-plus-one, with the square \( (x - \tfrac12)^2
 ::: {#exr-negation-and-contradiction-b3}
 [B3: The square root of three, used later]
 
-You may use that every integer can be written as \( 3k \), \( 3k + 1 \) or \( 3k + 2 \) with \( k \) an integer, in one way only, and that every rational number can be written as \( p/q \) with integers \( p \), \( q \), \( q \ne 0 \), and \( p \), \( q \) not both divisible by \( 3 \).
+You may use two facts. Every integer can be written as \( 3k \), \( 3k + 1 \) or \( 3k + 2 \) with \( k \) an integer, in one way only. Every rational number can be written as \( p/q \) with integers \( p \), \( q \), \( q \ne 0 \), and \( p \), \( q \) not both divisible by \( 3 \).
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Prove that if \( n \) is an integer and \( n^2 \) is divisible by \( 3 \), then \( n \) is divisible by \( 3 \).
@@ -652,7 +696,7 @@ You may use that every integer can be written as \( 3k \), \( 3k + 1 \) or \( 3k
 :::
 
 ::: {.solution}
-(a) Suppose \( n^2 \) is divisible by \( 3 \) \( [\text{assumption for } \rulename{{\to}I}] \), so \( n^2 \) has the form \( 3j \) with \( j \) an integer. The integer \( n \) has the form \( 3k \), \( 3k + 1 \) or \( 3k + 2 \), and we argue by cases \( [\rulename{\vee E}] \); a three-way split is two uses of \( \rulename{\vee E} \), one inside a box of the other.
+(a) Suppose \( n^2 \) is divisible by \( 3 \) \( [\text{assumption for } \rulename{{\to}I}] \), so \( n^2 \) has the form \( 3j \) with \( j \) an integer. The integer \( n \) has the form \( 3k \), \( 3k + 1 \) or \( 3k + 2 \), and we argue by cases \( [\rulename{\vee E}] \). A three-way split is two uses of \( \rulename{\vee E} \), one inside a box of the other.
 
 *Case \( n = 3k \).* Then \( n \) is divisible by \( 3 \), as required.
 
@@ -669,7 +713,7 @@ so \( n^2 \) has the form \( 3j' + 1 \) as well as the form \( 3j \). An integer
 
 All cases give that \( n \) is divisible by \( 3 \) \( [\rulename{\vee E}] \), which proves (a) \( [\rulename{{\to}I}] \). The two impossible cases were closed exactly as the odd case in the proof of @thm-square-even-implies-even.
 
-(b) Let \( r \) be a rational number and suppose \( r^2 = 3 \) \( [\text{assumption for } \rulename{\neg I}] \). Write \( r = p/q \) with \( p \), \( q \) not both divisible by \( 3 \). Then \( p^2 = 3q^2 \), so \( 3 \) divides \( p^2 \), and by (a), \( p = 3m \) for an integer \( m \). Then \( 9m^2 = 3q^2 \), so \( q^2 = 3m^2 \), and by (a) again, \( 3 \) divides \( q \). So \( 3 \) divides both \( p \) and \( q \) \( [\rulename{\wedge I}] \); this contradicts their choice \( [\rulename{\neg E}] \). Hence \( r^2 \ne 3 \) \( [\rulename{\neg I}] \). Since \( r \) was an arbitrary rational number, no rational number has square \( 3 \).
+(b) Let \( r \) be a rational number and suppose \( r^2 = 3 \) \( [\text{assumption for } \rulename{\neg I}] \). Write \( r = p/q \) with \( p \), \( q \) not both divisible by \( 3 \). Then \( p^2 = 3q^2 \), so \( 3 \) divides \( p^2 \), and by (a), \( p = 3m \) for an integer \( m \). Then \( 9m^2 = 3q^2 \), so \( q^2 = 3m^2 \), and by (a) again, \( 3 \) divides \( q \). So \( 3 \) divides both \( p \) and \( q \) \( [\rulename{\wedge I}] \). This contradicts their choice \( [\rulename{\neg E}] \). Hence \( r^2 \ne 3 \) \( [\rulename{\neg I}] \). Since \( r \) was an arbitrary rational number, no rational number has square \( 3 \).
 
 The form of (L) matters: the argument ends at "\( 3 \) divides \( p \) and \( q \)", which clashes only with "not both divisible by \( 3 \)". The form "not both even" of the text would give no clash, since \( p = q = 3 \) are both divisible by \( 3 \) and not both even.
 :::
@@ -718,13 +762,13 @@ Let \( p \) be a prime number. You may use two facts.
 :::
 
 ::: {.solution}
-(a) Let \( r \) be a rational number, and suppose \( r^2 = p \) \( [\text{assumption for } \rulename{\neg I}] \). By (\( \mathrm{L}_p \)), \( r = a/b \) with \( b \ne 0 \) and \( a \), \( b \) not both divisible by \( p \). Then \( a^2 = r^2 b^2 = p b^2 \), so \( p \) divides \( a^2 \), and by (\( \mathrm{E}_p \)) \( p \) divides \( a \) \( [\rulename{{\to}E}] \); write \( a = pm \). Then \( p^2 m^2 = p b^2 \), so \( b^2 = p m^2 \), \( p \) divides \( b^2 \), and by (\( \mathrm{E}_p \)) again \( p \) divides \( b \) \( [\rulename{{\to}E}] \). So \( p \) divides both \( a \) and \( b \) \( [\rulename{\wedge I}] \), which contradicts their choice \( [\rulename{\neg E}] \). Hence \( r^2 \ne p \) \( [\rulename{\neg I}] \); since \( r \) was arbitrary, no rational number has square \( p \).
+(a) Let \( r \) be a rational number, and suppose \( r^2 = p \) \( [\text{assumption for } \rulename{\neg I}] \). By (\( \mathrm{L}_p \)), \( r = a/b \) with \( b \ne 0 \) and \( a \), \( b \) not both divisible by \( p \). Then \( a^2 = r^2 b^2 = p b^2 \), so \( p \) divides \( a^2 \), and by (\( \mathrm{E}_p \)) \( p \) divides \( a \) \( [\rulename{{\to}E}] \). Write \( a = pm \). Then \( p^2 m^2 = p b^2 \), so \( b^2 = p m^2 \), \( p \) divides \( b^2 \), and by (\( \mathrm{E}_p \)) again \( p \) divides \( b \) \( [\rulename{{\to}E}] \). So \( p \) divides both \( a \) and \( b \) \( [\rulename{\wedge I}] \), which contradicts their choice \( [\rulename{\neg E}] \). Hence \( r^2 \ne p \) \( [\rulename{\neg I}] \). Since \( r \) was arbitrary, no rational number has square \( p \).
 
-(b) (\( \mathrm{E}_p \)) twice, once for \( a \) and once for \( b \), in the places where @thm-sqrt2-irrational used @thm-square-even-implies-even. (\( \mathrm{L}_p \)) when \( a \) and \( b \) are chosen, and again at the clash, which cites "not both divisible by \( p \)".
+(b) (\( \mathrm{E}_p \)) is used twice, once for \( a \) and once for \( b \). These are the places where the proof of @thm-sqrt2-irrational used "if \( n^2 \) is even, then \( n \) is even". The fact (\( \mathrm{L}_p \)) is used when \( a \) and \( b \) are chosen, and again at the clash, which cites "not both divisible by \( p \)".
 
-(c) For \( 6 \): (\( \mathrm{L}_6 \)) follows from (L) of the text, since integers \( a \), \( b \) that are not both even are not both divisible by \( 6 \). With (\( \mathrm{E}_6 \)) as given, the argument proves that \( \sqrt 6 \) is irrational; Exercise C1 of this section does it by another route, with (L) and @thm-square-even-implies-even in place of (\( \mathrm{E}_6 \)). (\( \mathrm{E}_6 \)) itself is not proved here: its proof is Exercise C1 of Section 2.4. For \( 9 \): (\( \mathrm{E}_9 \)) is false, since \( 9 \) divides \( 3^2 \) but not \( 3 \). The proof breaks at its first use of (\( \mathrm{E}_9 \)), as it must, since \( 9 = 3^2 \) and \( 3 = 3/1 \) is rational: with \( r = 3/1 \), \( 9 \) divides \( a^2 = 9 \), but not \( a = 3 \).
+(c) For \( 6 \): (\( \mathrm{L}_6 \)) follows from (L) of the text, since integers \( a \), \( b \) that are not both even are not both divisible by \( 6 \). With (\( \mathrm{E}_6 \)) as given, the argument proves that \( \sqrt 6 \) is irrational. Exercise C1 of this section does it by another route, with (L) and @thm-square-even-implies-even in place of (\( \mathrm{E}_6 \)). (\( \mathrm{E}_6 \)) itself is not proved here: its proof is Exercise C1 of Section 2.4. For \( 9 \): (\( \mathrm{E}_9 \)) is false, since \( 9 \) divides \( 3^2 \) but not \( 3 \). The proof breaks at its first use of (\( \mathrm{E}_9 \)), as it must, since \( 9 = 3^2 \) and \( 3 = 3/1 \) is rational: with \( r = 3/1 \), \( 9 \) divides \( a^2 = 9 \), but not \( a = 3 \).
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 2: the \( \rulename{\neg I} \) frame, a fixed rational \( r \), and \( a/b \) from (\( \mathrm{L}_p \)).
 - 2: \( a^2 = pb^2 \) and the first use of (\( \mathrm{E}_p \)).
@@ -733,13 +777,17 @@ Let \( p \) be a prime number. You may use two facts.
 - 1: (b).
 - 2: (c), (\( \mathrm{L}_6 \)) from (L) with the conclusion about \( \sqrt 6 \) (1), and \( 9 \) with a witness against (\( \mathrm{E}_9 \)) (1).
 
-Fatal errors (0 for the step): using "\( p \) divides \( n^2 \), so \( p \) divides \( n \)" for \( p = 9 \) or \( p = 4 \); dividing by \( p \) before \( p \) is known to divide \( a \).
+Slips that lose the step: using "\( p \) divides \( n^2 \), so \( p \) divides \( n \)" for \( p = 9 \) or \( p = 4 \); dividing by \( p \) before \( p \) is known to divide \( a \).
+
+::: {.uses}
+@thm-square-even-implies-even (\( n^2 \) even gives \( n \) even).
+:::
 :::
 
 ::: {#exr-negation-and-contradiction-b6}
 [B6: Derive or break]
 
-For each claim, either derive it with the rules of Chapter 1 and Sections 2.1–2.2, or break it by statements about a real number \( x \) that make its counterexample set true at one value of \( x \).
+For each claim, either derive it with the rules of Chapter 1 and Sections 2.1–2.2, or break it. To break it, give statements about a real number \( x \) that make its counterexample set true at one value of \( x \).
 
 ::: {.enumerate options="label=(\alph*)"}
 1. \( P \vdash \neg(\neg P \wedge Q) \).
@@ -790,7 +838,7 @@ $\begin{nd}
 \end{center}
 ```
 
-(d) Derive. Inside the box of \( P \wedge Q \), feed the premise its two hypotheses one at a time; the \( R \) it hands back clashes with \( \neg R \).
+(d) Derive. Inside the box of \( P \wedge Q \), feed the premise its two hypotheses one at a time. The \( R \) it hands back clashes with \( \neg R \).
 
 ```{=latex}
 \begin{center}
@@ -851,11 +899,16 @@ $\begin{nd}
 \end{center}
 ```
 
-(h) Break. Take \( P \): "\( x > 0 \)", \( Q \): "\( x > 5 \)". At \( x = 1 \), \( P \) is true, so \( \neg\neg P \) is true; \( P \wedge Q \) is false, so \( \neg(P \wedge Q) \) is true and \( \neg\neg(P \wedge Q) \) is false. The counterexample set \( \neg\neg P \), \( \neg\neg\neg(P \wedge Q) \) is true.
+(h) Break. Take \( P \): "\( x > 0 \)", \( Q \): "\( x > 5 \)". At \( x = 1 \), \( P \) is true, so \( \neg\neg P \) is true. Also \( P \wedge Q \) is false, so \( \neg(P \wedge Q) \) is true and \( \neg\neg(P \wedge Q) \) is false. The counterexample set \( \neg\neg P \), \( \neg\neg\neg(P \wedge Q) \) is true.
 
-(b) and (h) are the look-alikes, each moving a negation or a conjunct the wrong way: (b) would refute a conjunct from a refuted conjunction, and (h) would add a conjunct under two negations. (g) keeps both negations because \( \rulename{\neg I} \) can only add them, as the warning of this section says. (d) unpacks its nested premise inside the \( \rulename{\neg I} \) box, one \( \rulename{{\to}E} \) per hypothesis, as the two forms of @prp-curry suggest.
+(b) and (h) are the look-alikes, each moving a negation or a conjunct the wrong way. (b) would refute a conjunct from a refuted conjunction, and (h) would add a conjunct under two negations. (g) keeps both negations because \( \rulename{\neg I} \) can only add them, as the warning of this section says. (d) unpacks its nested premise inside the \( \rulename{\neg I} \) box, one \( \rulename{{\to}E} \) per hypothesis, as the two forms of @prp-curry suggest.
 
-**Marking scheme.** (16 points) For each claim: 1 for the verdict; 1 for a derivation every line of which checks, or for a choice of statements and one value of \( x \) at which **every** member of the counterexample set is true. Fatal errors (0 for the claim): a "break" at which some premise is false; a derivation that uses a rule other than those of Chapter 1 and Sections 2.1–2.2.
+**What a complete answer needs.** (16 points) For each claim:
+
+- 1 for the verdict;
+- 1 for a derivation every line of which checks, or for a choice of statements and one value of \( x \) at which **every** member of the counterexample set is true.
+
+Slips that lose the whole claim: a "break" at which some premise is false; a derivation that uses a rule other than those of Chapter 1 and Sections 2.1–2.2.
 :::
 
 ### C. Going deeper
@@ -863,7 +916,7 @@ $\begin{nd}
 ::: {#exr-negation-and-contradiction-c1}
 [C1: The square root of six]
 
-Prove that no rational number has square \( 6 \). Use only the facts (E1)–(E3) of Section 2.1, (L), and @thm-square-even-implies-even, and name the rule at each logical step.
+Prove that no rational number has square \( 6 \). Use only the facts (E1)–(E3) about even and odd integers from Section 2.1, the fact (L), and @thm-square-even-implies-even, and name the rule at each logical step.
 :::
 
 ::: {.solution}
@@ -879,20 +932,20 @@ You will reach \( 3q^2 = 2m^2 \), so \( 3q^2 \) is even. The proof of @thm-squar
 :::
 
 ::: {.solution}
-Let \( r \) be a rational number and suppose \( r^2 = 6 \) \( [\text{assumption for } \rulename{\neg I}] \). By (L), \( r = p/q \) with integers \( p \), \( q \), \( q \ne 0 \), not both even. Then \( p^2 = 6q^2 = 2(3q^2) \) is even, so \( p \) is even by @thm-square-even-implies-even \( [\rulename{{\to}E}] \); write \( p = 2m \). Then \( 4m^2 = 6q^2 \), that is, \( 3q^2 = 2m^2 \), so \( 3q^2 \) is even.
+Let \( r \) be a rational number and suppose \( r^2 = 6 \) \( [\text{assumption for } \rulename{\neg I}] \). By (L), \( r = p/q \) with integers \( p \), \( q \), \( q \ne 0 \), not both even. Then \( p^2 = 6q^2 = 2(3q^2) \) is even, so \( p \) is even by @thm-square-even-implies-even \( [\rulename{{\to}E}] \). Write \( p = 2m \). Then \( 4m^2 = 6q^2 \), that is, \( 3q^2 = 2m^2 \), so \( 3q^2 \) is even.
 
-We show that \( q \) is even. By (E1), \( q \) is even or odd, and we argue by cases \( [\rulename{\vee E}] \). *Case \( q \) even:* this is the goal. *Case \( q \) odd:* then \( q^2 \) is odd by (E3) \( [\rulename{{\to}E}] \), say \( q^2 = 2j + 1 \), and then \( 3q^2 = 6j + 3 = 2(3j + 1) + 1 \) is odd. So \( 3q^2 \) is both even and odd \( [\rulename{\wedge I}] \); this contradicts (E2) \( [\rulename{\neg E}] \), so this case cannot occur, and in it \( q \) is even \( [\rulename{\bot E}] \). In both cases \( q \) is even \( [\rulename{\vee E}] \).
+We show that \( q \) is even. Every integer is even or odd, (E1), so \( q \) is even or odd, and we argue by cases \( [\rulename{\vee E}] \). *Case \( q \) even:* this is the goal. *Case \( q \) odd:* the square of an odd integer is odd, (E3), so \( q^2 \) is odd \( [\rulename{{\to}E}] \). Say \( q^2 = 2j + 1 \). Then \( 3q^2 = 6j + 3 = 2(3j + 1) + 1 \) is odd. So \( 3q^2 \) is both even and odd \( [\rulename{\wedge I}] \). No integer is both, (E2), so this is a contradiction \( [\rulename{\neg E}] \). This case cannot occur, and in it \( q \) is even \( [\rulename{\bot E}] \). In both cases \( q \) is even \( [\rulename{\vee E}] \).
 
-So \( p \) and \( q \) are both even \( [\rulename{\wedge I}] \); this contradicts (L) \( [\rulename{\neg E}] \). Hence \( r^2 \ne 6 \) \( [\rulename{\neg I}] \), and since \( r \) was arbitrary, no rational number has square \( 6 \).
+So \( p \) and \( q \) are both even \( [\rulename{\wedge I}] \). This contradicts (L) \( [\rulename{\neg E}] \). Hence \( r^2 \ne 6 \) \( [\rulename{\neg I}] \), and since \( r \) was arbitrary, no rational number has square \( 6 \).
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 - 2: opens with \( \rulename{\neg I} \): a fixed rational \( r \), the assumption \( r^2 = 6 \), and \( r = p/q \) with \( p \), \( q \) not both even from (L).
 - 2: derives \( p \) even from \( p^2 = 2(3q^2) \) by @thm-square-even-implies-even.
-- 3: derives \( q \) even from \( 3q^2 = 2m^2 \), either by ruling out the odd case (a correct parity computation and (E2)) or by showing \( q^2 = 2(m^2 - q^2) \) even and applying @thm-square-even-implies-even.
+- 3: derives \( q \) even from \( 3q^2 = 2m^2 \). One way rules out the odd case, with a correct parity computation and the fact that no integer is both even and odd, (E2). The other shows \( q^2 = 2(m^2 - q^2) \) even and applies @thm-square-even-implies-even.
 - 2: reaches \( \bot \) by clashing "both even" with (L), and concludes \( r^2 \ne 6 \) by \( \rulename{\neg I} \).
 - 1: rules named at the logical steps, and the passage from the arbitrary \( r \) to every rational number.
 
-Fatal errors (0 for the step): applying @thm-square-even-implies-even to \( q \) with only \( 3q^2 \) known to be even; using "if \( 6 \) divides \( n^2 \), then \( 6 \) divides \( n \)" without proof.
+Slips that lose the step: applying @thm-square-even-implies-even to \( q \) with only \( 3q^2 \) known to be even; using "if \( 6 \) divides \( n^2 \), then \( 6 \) divides \( n \)" without proof.
 :::
 
 ::: {#exr-negation-and-contradiction-c2}
@@ -914,10 +967,15 @@ Here is a "proof" that \( \sqrt{4} \) is irrational, modeled on @thm-sqrt2-irrat
 
 (b) The step "\( n^2 \) divisible by \( 4 \) implies \( n \) divisible by \( 4 \)" is a false lemma: for \( n = 2 \), \( n^2 = 4 \) is divisible by \( 4 \), but \( 2 \) is not. It fails exactly on the witness of (a): with \( r = 2/1 \) we have \( p = 2 \), and the lemma would claim that \( 4 \) divides \( 2 \).
 
-(c) The last step is \( \rulename{\neg I} \), applied to the box opened by "\( r^2 = 4 \)". The rule is applied correctly, but the box contains a line that is not justified: the false lemma was used as if it were a premise available everywhere, through \( \rulename{{\to}E} \). A derivation is only as good as its premises. In @thm-sqrt2-irrational the corresponding lemma is @thm-square-even-implies-even, which we proved; here nothing proves the lemma, and nothing could. Compare part (e) of A1, where the honest proof stalls without reaching \( \bot \); here \( \bot \) is "reached" through a false line.
+(c) The last step is \( \rulename{\neg I} \), applied to the box opened by "\( r^2 = 4 \)". The rule is applied correctly, but the box contains a line that is not justified: the false lemma was used as if it were a premise available everywhere, through \( \rulename{{\to}E} \). A derivation is only as good as its premises. In the proof of @thm-sqrt2-irrational, the lemma in the same place is "if \( n^2 \) is even, then \( n \) is even", and that lemma was proved. Here nothing proves the lemma, and nothing could. Compare part (e) of A1, where the honest proof stalls without reaching \( \bot \). Here \( \bot \) is "reached" through a false line.
+
+::: {.uses}
+@thm-square-even-implies-even (\( n^2 \) even gives \( n \) even).
+:::
 :::
 
 <!-- dependency ledger
+def-rules-negation (claim): the unlabelled instance before the rule: x^2 + 1 = 0 gives x^2 = -1 < 0, which contradicts x^2 >= 0 | school algebra, as in exm-square-plus-one (F1.2 blueprint, Allowed prerequisites); AN1.1 (promised); cites nothing later
 def-rules-negation (claim): if the lines above a box hold and the box leads from phi to bot, then phi fails (not-I never leads from true lines to a false one) | argued informally in the text ("Why this rule"); a remark used in no proof
 exm-square-plus-one (example): x^2 >= 0 for real x, i.e. not(x^2 < 0); x^2 = -1 gives x^2 < 0 | school algebra (F1.2 blueprint, Allowed prerequisites); AN1.1 (promised)
 exm-square-plus-one (solution): derivation line 3 "algebra 2": x^2 + 1 = 0 gives x^2 < 0 | school algebra, inline

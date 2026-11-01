@@ -1,12 +1,14 @@
 # Iff, Equivalence, and What a Definition Says
 
-One connective is still without rules: "if and only if". Theorems say "\( n \) is odd if and only if \( n^2 \) is odd", and every definition, though written with a plain "if", is used as an "if and only if". Section 1.1 warned that "if" means different things in a theorem and in a definition; this section explains why. The one new thing here is the pair of rules for \( \leftrightarrow \); the rest of the section (provable equivalence, the layout of an "iff" proof, the convention about definitions, chains of equivalences) is what the rules are used for.
+One connective is still without rules: "if and only if". Theorems say "\( n \) is odd if and only if \( n^2 \) is odd", and every definition, though written with a plain "if", is used as an "if and only if". Section 1.1 warned that "if" means different things in a theorem and in a definition; this section explains why. The one new thing here is the pair of rules for \( \leftrightarrow \). The rest of the section shows what the rules are used for: provable equivalence, the layout of an "iff" proof, how definitions are read, and chains of equivalences.
 
 ## The rules for "if and only if"
 
 "\( P \) if and only if \( Q \)" combines "\( P \) if \( Q \)", which is \( Q \to P \), with "\( P \) only if \( Q \)", which is \( P \to Q \), as Section 1.1 explained. A proof of it travels both ways; a use of it, either way. An implication is proved by a box, opened on the hypothesis and closed on the conclusion (@def-rules-implication); an "if and only if" needs two such boxes.
 
 *An "if and only if" is two implications, and proving it takes two proofs.*
+
+Here is a small case first. Let \( x \) be a real number, and take "\( x > 0 \) if and only if \( 2x > 0 \)". A proof has two parts. One assumes \( x > 0 \) and reaches \( 2x > 0 \); the other assumes \( 2x > 0 \) and reaches \( x > 0 \). Once the statement is proved, it can be used either way: from \( x > 0 \) we may conclude \( 2x > 0 \), and from \( 2x > 0 \) we may conclude \( x > 0 \). The rules below say exactly this, with letters \( \varphi \) and \( \psi \) in place of the two sides.
 
 ::: {#def-rules-biconditional}
 [Rules for the Biconditional]
@@ -42,7 +44,7 @@ $\begin{nd}[schema]
 \end{center}
 ```
 
-The first schema is the rule \( \rulename{{\leftrightarrow}I} \) (**iff-introduction**); its two assumptions are discharged when their boxes close, and each box's last line (\( \psi \) in the first, \( \varphi \) in the second) is a line **of that box itself**, not of a box inside it. The two schemas below it are the two forms of \( \rulename{{\leftrightarrow}E} \) (**iff-elimination**).
+The first schema is the rule \( \rulename{{\leftrightarrow}I} \) (**iff-introduction**). Its two assumptions are discharged when their boxes close. Each box's last line, \( \psi \) in the first and \( \varphi \) in the second, is a line **of that box itself**, not of a box inside it. The two schemas below it are the two forms of \( \rulename{{\leftrightarrow}E} \) (**iff-elimination**).
 :::
 
 As in every schema (@def-rule-schema), \( \varphi \) and \( \psi \) stand for any statements, replaced consistently, and \( i, j, k, l, m \) for line numbers. Read the rules clause by clause.
@@ -52,11 +54,11 @@ As in every schema (@def-rule-schema), \( \varphi \) and \( \psi \) stand for an
 3. **Citation.** The justification cites both boxes as ranges, as in \( \rulename{{\leftrightarrow}I}\ \lines{2}{4}, \lines{5}{7} \).
 4. **Elimination, either way.** From \( \varphi \leftrightarrow \psi \) and \( \varphi \) on available lines, \( \rulename{{\leftrightarrow}E} \) writes \( \psi \); from \( \varphi \leftrightarrow \psi \) and \( \psi \), it writes \( \varphi \). It is modus ponens in whichever direction we need, citing the biconditional first.
 
-In the Givens/Goal table, \( \rulename{{\leftrightarrow}I} \) splits a row in two: \( \varphi \) added to the Givens with the goal \( \psi \), and \( \psi \) added with the goal \( \varphi \).
+In a table of what we know and what we want, \( \rulename{{\leftrightarrow}I} \) splits a row in two. In one, we know \( \varphi \) and want \( \psi \); in the other, we know \( \psi \) and want \( \varphi \).
 
 ## First derivations with iff
 
-The section's goal-directed move: **a goal \( \varphi \leftrightarrow \psi \) opens two boxes**, one on each side, and each box's goal is the other side.
+When a derivation has an iff as its goal, it is built this way: **a goal \( \varphi \leftrightarrow \psi \) opens two boxes**, one on each side, and each box's goal is the other side.
 
 ::: {#exm-iff-symmetric}
 [An iff read both ways]
@@ -68,7 +70,7 @@ The section's goal-directed move: **a goal \( \varphi \leftrightarrow \psi \) op
 :::
 
 ::: {.solution}
-(a) *Idea.* The goal is an iff, so the last line is \( \rulename{{\leftrightarrow}I} \), and we need a box from \( Q \) to \( P \) and a box from \( P \) to \( Q \). Each box's goal is one \( \rulename{{\leftrightarrow}E} \) away: the premise crosses from its assumption to the other side.
+(a) *Idea.* The goal is an iff, so the last line is \( \rulename{{\leftrightarrow}I} \), and we need a box from \( Q \) to \( P \) and a box from \( P \) to \( Q \). Each box's goal is one \( \rulename{{\leftrightarrow}E} \) away: the premise turns the box's assumption into the other side.
 
 The goal at the foot (left), then its two boxes (right).
 
@@ -117,7 +119,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 3 uses the second form of \( \rulename{{\leftrightarrow}E} \) (right to left), line 5 the first.
+Line 3 uses the second form of \( \rulename{{\leftrightarrow}E} \), from the right side of line 1 to its left side. Line 5 uses the first form.
 
 (b) *Idea.* The goal \( \neg P \) is a negation, so open a box on \( P \) and aim at \( \bot \) (Section 2.2). Inside, the premise \( P \leftrightarrow Q \) turns \( P \) into \( Q \), and \( Q \) clashes with \( \neg Q \).
 
@@ -148,7 +150,7 @@ The rules say nothing that the two implications do not say. The next result make
 :::
 
 ::: {.idea}
-Each goal chooses its rule. For the first, the goal is a conjunction of two implications: \( \rulename{\wedge I} \) needs both, and each is built in its own \( \rulename{{\to}I} \) box, crossing the premise with \( \rulename{{\leftrightarrow}E} \) inside. For the second, the goal is an iff: open its two boxes. The premise is a conjunction, so take it apart first (premise-directed), and cross each box with one of its halves by \( \rulename{{\to}E} \).
+Each goal chooses its rule. For the first, the goal is a conjunction of two implications: \( \rulename{\wedge I} \) needs both, and each is built in its own \( \rulename{{\to}I} \) box, with one \( \rulename{{\leftrightarrow}E} \) on the premise inside. For the second, the goal is an iff: open its two boxes. The premise is a conjunction, so take it apart first, guided by the premise. Then each box needs one \( \rulename{{\to}E} \) with one of its halves.
 
 First claim: the two implications as goals (left), then their boxes (right).
 
@@ -273,7 +275,7 @@ Show that \( P \leftrightarrow Q \vdash \neg P \leftrightarrow \neg Q \).
 :::
 
 ::: {.solution}
-*Idea.* The goal is an iff, so there are two boxes, one opened by \( \neg P \) and reaching \( \neg Q \), the other the reverse. Each box's goal is a negation, so each contains a \( \rulename{\neg I} \) box: the goal-directed move applied twice, one inside the other. Inside the inner box, \( \rulename{{\leftrightarrow}E} \) crosses from one side of the premise to the other, and the result clashes with the outer assumption. The second half is part (b) of @exm-iff-symmetric, run inside a box; the first is its mirror image, with the other form of \( \rulename{{\leftrightarrow}E} \).
+*Idea.* The goal is an iff, so there are two boxes, one opened by \( \neg P \) and reaching \( \neg Q \), the other the reverse. Each box's goal is a negation, so each contains a \( \rulename{\neg I} \) box: building from the goal twice, one box inside the other. Inside the inner box, \( \rulename{{\leftrightarrow}E} \) passes from one side of the premise to the other, and the result clashes with the outer assumption. The second half is part (b) of @exm-iff-symmetric, run inside a box; the first is its mirror image, with the other form of \( \rulename{{\leftrightarrow}E} \).
 
 The outer boxes (left), then a \( \rulename{\neg I} \) box inside each (right).
 
@@ -360,7 +362,7 @@ In the derivation of @exm-iff-negations, which line does line 5 cite as \( \neg\
 Line 2, \( \neg P \), the assumption of the outer box \( \lines{2}{6} \), which is still open at line 5.
 :::
 
-The derivation uses only the rules of this section and of Sections 2.1–2.2. Its converse, \( \neg P \leftrightarrow \neg Q \vdash P \leftrightarrow Q \), is also derivable, with the rule of Section 2.5: in the box of \( P \) it must produce the **positive** statement \( Q \), and the natural box, on \( \neg Q \), closes to \( \neg\neg Q \), not \( Q \).
+The derivation uses only the rules of this section and of Sections 2.1–2.2. Its converse, \( \neg P \leftrightarrow \neg Q \vdash P \leftrightarrow Q \), is also derivable, with the rule of Section 2.5. In the box of \( P \) it must produce the **positive** statement \( Q \). The natural box, on \( \neg Q \), closes to \( \neg\neg Q \), not \( Q \).
 
 @exm-iff-negations negated both sides of an iff. Can one side be the negation of the other, a statement equivalent to its own negation?
 
@@ -432,7 +434,7 @@ Line 5 may be cited at lines 6 and 7: it lies in the box \( \lines{1}{7} \), as 
 
 *In words: no statement is equivalent to its own negation; a definition that made a term mean the failure of that very term would define nothing.*
 
-For an instance, let \( x \) be a real number. The sentence "\( x > 0 \) if and only if \( x \le 0 \)" is false whatever \( x \) is: by the convention of Section 2.1, \( x \le 0 \) is \( \neg(x > 0) \), so the sentence is an instance of \( P \leftrightarrow \neg P \), and the lemma, used as a derived rule, refutes every instance.
+For an instance, let \( x \) be a real number. The sentence "\( x > 0 \) if and only if \( x \le 0 \)" is false whatever \( x \) is. By the convention of Section 2.1, \( x \le 0 \) is \( \neg(x > 0) \). So the sentence is an instance of \( P \leftrightarrow \neg P \), and the lemma, used as a derived rule, refutes every instance.
 
 ::: {.check}
 In the proof of @lem-not-iff-own-negation, which two lines use the biconditional, and in which direction?
@@ -444,7 +446,7 @@ Line 3, from the left side \( P \) (line 2) to the right side \( \neg P \); and 
 
 ## Provable equivalence
 
-@prp-iff-two-implications is a pair of sequents, one in each direction. It is not the first such pair: @prp-curry and @prp-distributivity are pairs too. When two statements can each be derived from the other, either may stand in for the other in any derivation, and the situation deserves a name.
+@prp-iff-two-implications is a pair of sequents, one in each direction. It is not the first such pair. @prp-curry is a pair too. So is @prp-distributivity. When two statements can each be derived from the other, either may stand in for the other in any derivation, and the situation deserves a name.
 
 *Two statements are provably equivalent when each can be derived from the other.*
 
@@ -456,15 +458,15 @@ Statements \( P \) and \( Q \) are **provably equivalent**, written \( P \dashv\
 
 In words: there is a derivation with premise \( P \) and last line \( Q \), and **another** with premise \( Q \) and last line \( P \). The symbol is the turnstile of @def-derivable written twice, back to back; two derivations prove the claim.
 
-A first example is \( P \wedge Q \dashv\vdash Q \wedge P \): @prp-and-commutes derives \( Q \wedge P \) from \( P \wedge Q \), and the same derivation with \( P \) and \( Q \) exchanged derives \( P \wedge Q \) from \( Q \wedge P \). By the same exchange, @exm-disjunction-first-derivations gives \( P \vee Q \dashv\vdash Q \vee P \), and part (a) of @exm-iff-symmetric gives \( P \leftrightarrow Q \dashv\vdash Q \leftrightarrow P \).
+A first example is \( P \wedge Q \dashv\vdash Q \wedge P \): @prp-and-commutes derives \( Q \wedge P \) from \( P \wedge Q \), and the same derivation with \( P \) and \( Q \) exchanged derives \( P \wedge Q \) from \( Q \wedge P \). By the same exchange, @exm-disjunction-first-derivations gives \( P \vee Q \dashv\vdash Q \vee P \). Likewise, part (a) of @exm-iff-symmetric gives \( P \leftrightarrow Q \dashv\vdash Q \leftrightarrow P \).
 
 ::: {.second-reading title="Edge cases of provable equivalence"}
-The degenerate example is \( P \dashv\vdash P \): the one-line derivation of part (a) of @exm-derivations serves in both directions.
+The smallest example is \( P \dashv\vdash P \): the one-line derivation of part (a) of @exm-derivations serves in both directions.
 
-A minimal change gives a one-way street. @exm-double-negation-introduction derived \( P \vdash \neg\neg P \), but the converse, \( \neg\neg P \vdash P \), would have to remove two negations, and no rule met so far removes one. So we cannot claim \( P \dashv\vdash \neg\neg P \): the clause "\( Q \vdash P \)" is the one missing. (It holds once Section 2.5 adds its rule.) Likewise @prp-contrapositive derives \( \neg Q \to \neg P \) from \( P \to Q \), but not yet the reverse.
+A small change gives a sequent that holds in one direction only. @exm-double-negation-introduction derived \( P \vdash \neg\neg P \), but the converse, \( \neg\neg P \vdash P \), would have to remove two negations, and no rule met so far removes one. So we cannot claim \( P \dashv\vdash \neg\neg P \): the clause "\( Q \vdash P \)" is the one missing. (It holds once Section 2.5 adds its rule.) Likewise @prp-contrapositive derives \( \neg Q \to \neg P \) from \( P \to Q \), but not yet the reverse.
 :::
 
-The connective \( \leftrightarrow \) and the relation \( \dashv\vdash \) are two sides of one idea; the next result makes the link exact, and shows that \( \dashv\vdash \) behaves as an equivalence should.
+The connective \( \leftrightarrow \) and the relation \( \dashv\vdash \) are two sides of one idea. For instance, \( P \wedge Q \dashv\vdash Q \wedge P \), and the two boxes of \( \rulename{{\leftrightarrow}I} \), one from \( P \wedge Q \) to \( Q \wedge P \) and one back, derive \( (P \wedge Q) \leftrightarrow (Q \wedge P) \) from no premises. The next result makes the link exact, and shows that \( \dashv\vdash \) behaves as an equivalence should.
 
 ::: {#prp-provable-equivalence-basics}
 [Provable Equivalence and the Biconditional]
@@ -485,13 +487,13 @@ Everything here moves whole derivations around. To prove \( \vdash P \leftrighta
 :::
 
 ::: {.proof}
-We use one observation twice. Let \( D \) be a derivation, and copy its lines, in order and with their numbers shifted, to some place in another derivation, with every line of the copy inside the same boxes as that place. Then every citation inside the copy is still available: if line \( i \) of \( D \) is available at line \( k \) of \( D \), every box of \( D \) containing line \( i \) contains line \( k \), and the boxes added around the copy contain both lines. Closed boxes cited in \( D \) are handled the same way. So each copied line is justified by the same rule as before.
+We use one observation twice. Let \( D \) be a derivation, and copy its lines, in order and with their numbers shifted, to some place in another derivation. Every line of the copy lies inside the same boxes as that place. Then every citation inside the copy is still available. Indeed, if line \( i \) of \( D \) is available at line \( k \) of \( D \), every box of \( D \) containing line \( i \) contains line \( k \). The boxes added around the copy contain both lines. Closed boxes cited in \( D \) are handled the same way. So each copied line is justified by the same rule as before.
 
-\( (\Rightarrow) \) in (a). Suppose \( P \vdash Q \) and \( Q \vdash P \), by derivations \( D_1 \) and \( D_2 \). Build a derivation with no premises as follows. Open a box with the assumption \( P \) and, below it, copy \( D_1 \), turning each of its premise lines \( P \) into a repetition of the assumption by (D3) of @def-derivation. By the observation, the copy is justified, and its last line \( Q \) is a line of the box itself, since the last line of \( D_1 \) lies in none of \( D_1 \)'s boxes. Close the box. Open a second box with \( Q \), copy \( D_2 \) in the same way, and close it on \( P \). Then \( \rulename{{\leftrightarrow}I} \) on the two boxes gives \( P \leftrightarrow Q \). So \( \vdash P \leftrightarrow Q \).
+\( (\Rightarrow) \) in (a). Suppose \( P \vdash Q \) and \( Q \vdash P \), by derivations \( D_1 \) and \( D_2 \). Build a derivation with no premises as follows. Open a box with the assumption \( P \) and, below it, copy \( D_1 \). Each of its premise lines \( P \) becomes a repetition of the assumption, by the clause of @def-derivation that copies an available line, (D3). By the observation, the copy is justified, and its last line \( Q \) is a line of the box itself, since the last line of \( D_1 \) lies in none of \( D_1 \)'s boxes. Close the box. Open a second box with \( Q \), copy \( D_2 \) in the same way, and close it on \( P \). Then \( \rulename{{\leftrightarrow}I} \) on the two boxes gives \( P \leftrightarrow Q \). So \( \vdash P \leftrightarrow Q \).
 
 \( (\Leftarrow) \) in (a). Suppose \( \vdash P \leftrightarrow Q \), by a derivation \( D \) with no premises. For \( P \vdash Q \), start with the premise \( P \), copy \( D \) below it, and write \( Q \) by \( \rulename{{\leftrightarrow}E} \) from the last line of the copy, \( P \leftrightarrow Q \), and line 1. Both cited lines lie in no box, so both are available. For \( Q \vdash P \), do the same with premise \( Q \), using the other form of \( \rulename{{\leftrightarrow}E} \). So \( P \dashv\vdash Q \).
 
-(b) The one-line derivation consisting of the premise \( P \) shows \( P \vdash P \), in both directions, so \( P \dashv\vdash P \). Symmetry holds because @def-provable-equivalence says the same thing about \( P, Q \) as about \( Q, P \). For transitivity it is enough to show that \( P \vdash Q \) and \( Q \vdash R \) give \( P \vdash R \), since the reverse direction is the same statement with \( P \) and \( R \) exchanged. Take a derivation \( D_1 \) of \( Q \) from \( P \), and below its last line copy a derivation \( D_2 \) of \( R \) from \( Q \), turning each premise line \( Q \) of \( D_2 \) into a repetition of the last line of \( D_1 \). That line lies in no box, so it is available everywhere below it, and by the observation the rest of the copy is justified. The result has premise \( P \) and last line \( R \). This proves the proposition.
+(b) The one-line derivation consisting of the premise \( P \) shows \( P \vdash P \), in both directions, so \( P \dashv\vdash P \). Symmetry holds because @def-provable-equivalence says the same thing about \( P, Q \) as about \( Q, P \). For transitivity it is enough to show that \( P \vdash Q \) and \( Q \vdash R \) give \( P \vdash R \), since the reverse direction is the same statement with \( P \) and \( R \) exchanged. Take a derivation \( D_1 \) of \( Q \) from \( P \), and below its last line copy a derivation \( D_2 \) of \( R \) from \( Q \). Each premise line \( Q \) of \( D_2 \) becomes a repetition of the last line of \( D_1 \). That line lies in no box, so it is available everywhere below it, and by the observation the rest of the copy is justified. The result has premise \( P \) and last line \( R \). This proves the proposition.
 :::
 :::
 
@@ -503,10 +505,10 @@ Here are equivalences derived so far. Each row gives two derived rules (@def-der
 | \( P \vee Q \dashv\vdash Q \vee P \) | @exm-disjunction-first-derivations, likewise |
 | \( (P \wedge Q) \to R \dashv\vdash P \to (Q \to R) \) | @prp-curry |
 | \( P \wedge (Q \vee R) \dashv\vdash (P \wedge Q) \vee (P \wedge R) \) | @prp-distributivity |
-| \( (P \to R) \wedge (Q \to R) \dashv\vdash (P \vee Q) \to R \) | @exm-cases-on-hypothesis and @exm-or-hypothesis-split |
+| \( (P \to R) \wedge (Q \to R) \dashv\vdash (P \vee Q) \to R \) | @exm-cases-on-hypothesis. The converse: @exm-or-hypothesis-split |
 | \( P \leftrightarrow Q \dashv\vdash (P \to Q) \wedge (Q \to P) \) | @prp-iff-two-implications |
 | \( P \leftrightarrow Q \dashv\vdash Q \leftrightarrow P \) | @exm-iff-symmetric (a), with the letters exchanged |
-| \( \neg\neg\neg P \dashv\vdash \neg P \) | @exm-triple-negation, and @exm-double-negation-introduction (a) with \( \neg P \) for \( P \) |
+| \( \neg\neg\neg P \dashv\vdash \neg P \) | @exm-triple-negation. The converse: @exm-double-negation-introduction (a), with \( \neg P \) for \( P \) |
 
 The fourth row is distributivity of \( \wedge \) over \( \vee \) as a provable equivalence. Some familiar laws are not in the table, because the text has derived them in one direction only; associativity of \( \vee \) is one (@exm-disjunction-regroup).
 
@@ -518,7 +520,11 @@ A sequent in one direction is not an equivalence. \( P \wedge Q \vdash P \) hold
 
 In a written proof, the two boxes of \( \rulename{{\leftrightarrow}I} \) become two paragraphs: \( (\Rightarrow) \) assumes the left side and reaches the right, \( (\Leftarrow) \) the reverse. Neither may borrow the other's assumption: they are two separate boxes.
 
-The first example completes the story of parity. We use the facts (E1)–(E3) of Section 2.1: every integer is even or odd; no integer is both even and odd; the square of an odd integer is odd.
+The first example completes the story of parity. We use three facts about integers from Section 2.1:
+
+- (E1) every integer is even or odd;
+- (E2) no integer is both even and odd;
+- (E3) the square of an odd integer is odd.
 
 ::: {#thm-odd-iff-square-odd}
 [Odd Square, Odd Number]
@@ -527,7 +533,7 @@ Let \( n \) be an integer. Then \( n \) is odd if and only if \( n^2 \) is odd.
 :::
 
 ::: {.idea}
-Two boxes. Forwards is (E3). Backwards, "\( n^2 \) is odd" gives nothing to compute with, so split on (E1) and show the even case impossible, as in @exm-impossible-case.
+Two boxes. Forwards is (E3), the fact about odd squares. Backwards, "\( n^2 \) is odd" gives nothing to compute with. So split on (E1), "even or odd", and show the even case impossible, as in @exm-impossible-case.
 :::
 
 ::: {.proof}
@@ -538,9 +544,9 @@ Two boxes. Forwards is (E3). Backwards, "\( n^2 \) is odd" gives nothing to comp
 This proves the theorem \( [\rulename{{\leftrightarrow}I}] \).
 :::
 
-With the derived rules of Section 2.3, \( (\Leftarrow) \) fits in one breath, "\( n \) cannot be even, since then \( n^2 \) would be even; so \( n \) is odd": \( \rulename{\neg I} \) with (E2), then \( \rulename{MT} \), then \( \rulename{DS} \) on (E1).
+With the derived rules of Section 2.3, \( (\Leftarrow) \) takes one sentence: "\( n \) cannot be even, since then \( n^2 \) would be even; so \( n \) is odd". Its steps are \( \rulename{\neg I} \) with (E2), then \( \rulename{MT} \), then \( \rulename{DS} \) on (E1).
 
-The next example is about real numbers, and its two directions do different work. Each hypothesis is needed: dropping either one breaks one of the two directions, as the remark after the proof shows.
+The next example is about real numbers, and its two directions do different work. Each hypothesis is needed: dropping either one breaks one of the two directions.
 
 ::: {#thm-squares-order}
 [Squaring Preserves Order]
@@ -567,7 +573,7 @@ This proves the theorem \( [\rulename{{\leftrightarrow}I}] \).
 Each hypothesis has a job. The direction \( (\Rightarrow) \) needs \( x \ge 0 \), and fails without it: \( x = -2 \), \( y = 1 \) gives \( x \le y \) but \( x^2 = 4 > 1 = y^2 \). (Its proof also multiplied by \( y \ge 0 \), but there \( y \ge 0 \) already follows from \( y \ge x \ge 0 \).) The direction \( (\Leftarrow) \) used only \( y \ge 0 \), and fails without it: \( x = 1 \), \( y = -2 \) gives \( x^2 = 1 \le 4 = y^2 \) but \( x > y \).
 :::
 
-A payoff comes at once. For \( a, b \ge 0 \), apply @thm-squares-order to \( x = \sqrt{a} \) and \( y = \sqrt{b} \): \( \sqrt{a} \le \sqrt{b} \) if and only if \( a \le b \). Taking square roots preserves order, a fact used constantly in estimates. (That square roots of non-negative numbers exist is a school fact here.)
+One consequence follows at once. For \( a, b \ge 0 \), apply @thm-squares-order to \( x = \sqrt{a} \) and \( y = \sqrt{b} \): \( \sqrt{a} \le \sqrt{b} \) if and only if \( a \le b \). Taking square roots preserves order, a fact used constantly in estimates. (That square roots of non-negative numbers exist is a school fact here.)
 
 ::: {.check}
 Here is a proof of the statement "for a real number \( x \), \( x^2 = 1 \) if and only if \( x = 1 \) or \( x = -1 \)".
@@ -584,7 +590,7 @@ The proof assumes the right side, "\( x = 1 \) or \( x = -1 \)", splits it into 
 :::
 
 ::: {.warning}
-A proof of an iff can prove one direction twice and look complete. For "\( n \) is odd if and only if \( n^2 \) is odd", a proof that shows "if \( n \) is odd, then \( n^2 \) is odd" and then "if \( n^2 \) is not odd, then \( n \) is not odd" has proved \( (\Rightarrow) \) and its contrapositive (@prp-contrapositive), which is \( (\Rightarrow) \) again. The direction \( (\Leftarrow) \), "if \( n^2 \) is odd, then \( n \) is odd", is still missing; its contrapositive would be "if \( n \) is not odd, then \( n^2 \) is not odd". Before writing "this proves the theorem", check that one paragraph assumes each side.
+A proof of an iff can prove one direction twice and look complete. Take "\( n \) is odd if and only if \( n^2 \) is odd". Suppose a proof shows "if \( n \) is odd, then \( n^2 \) is odd" and then "if \( n^2 \) is not odd, then \( n \) is not odd". It has proved \( (\Rightarrow) \) and its contrapositive (@prp-contrapositive), which is \( (\Rightarrow) \) again. The direction \( (\Leftarrow) \), "if \( n^2 \) is odd, then \( n \) is odd", is still missing; its contrapositive would be "if \( n \) is not odd, then \( n^2 \) is not odd". Before writing "this proves the theorem", check that one paragraph assumes each side.
 :::
 
 ## What a definition says
@@ -593,11 +599,11 @@ Here is a definition written the way this book and most others write definitions
 
 > A function \( f \colon \nR \to \nR \) is **strictly increasing** if, for all real numbers \( x \) and \( y \), \( x < y \) implies \( f(x) < f(y) \).
 
-Grammatically the sentence is an implication, "\( f \) is strictly increasing **if** [condition]", and read as a theorem it would allow only one move, from the condition to the term. But a definition is not a theorem. It introduces a new term, and the new term means **exactly** the condition: no more, since nothing else was said about the term, and no less, since the condition is all the term was made to express. So the definition is used in both directions, as an \( \leftrightarrow \) between the term and the condition, and \( \rulename{{\leftrightarrow}E} \) is how it is used.
+Grammatically the sentence is an implication, "\( f \) is strictly increasing **if** [condition]", and read as a theorem it would allow only one move, from the condition to the term. But a definition is not a theorem. It introduces a new term, and the new term means **exactly** the condition. It means no more, since nothing else was said about the term. It means no less, since the condition is all the term was made to express. So the definition is used in both directions, as an \( \leftrightarrow \) between the term and the condition, and \( \rulename{{\leftrightarrow}E} \) is how it is used.
 
 *In a definition, "if" means "if and only if".*
 
-This is a convention of mathematical language, not a rule of logic. Some books write "iff" or \( :\Leftrightarrow \) in definitions; this book, like most, writes "if" and puts the term defined in **bold**, which signals that the "if" is an "iff". Here it is used three ways.
+This is a convention of mathematical language, not a rule of logic. This book writes "if" and puts the term defined in **bold**; the bold signals that the "if" is an "iff". You may also meet definitions written with "iff" or \( :\Leftrightarrow \). Here it is used three ways.
 
 ::: {#exm-strictly-increasing-both-ways}
 [A definition used in both directions]
@@ -610,11 +616,11 @@ This is a convention of mathematical language, not a rule of logic. Some books w
 :::
 
 ::: {.solution}
-(a) Let \( x \) and \( y \) be real numbers with \( x < y \). Multiplying by \( 3 > 0 \) gives \( 3x < 3y \), and subtracting \( 5 \) gives \( 3x - 5 < 3y - 5 \), that is, \( f(x) < f(y) \). So \( f \) satisfies the condition, and by the definition, read from right to left, \( f \) is strictly increasing \( [\rulename{{\leftrightarrow}E}] \).
+(a) Let \( x \) and \( y \) be real numbers with \( x < y \). Multiplying by \( 3 > 0 \) gives \( 3x < 3y \), and subtracting \( 5 \) gives \( 3x - 5 < 3y - 5 \), that is, \( f(x) < f(y) \). So \( f \) satisfies the condition, and by the definition, used from the condition to the term, \( f \) is strictly increasing \( [\rulename{{\leftrightarrow}E}] \).
 
-(b) Since \( g \) is strictly increasing, the definition, read from left to right, says that \( x < y \) implies \( g(x) < g(y) \) for all real \( x \) and \( y \) \( [\rulename{{\leftrightarrow}E}] \). Taking \( x = 1 \) and \( y = 2 \), and using \( 1 < 2 \), we get \( g(1) < g(2) \) \( [\rulename{{\to}E}] \).
+(b) Since \( g \) is strictly increasing, the definition, used from the term to the condition, says that \( x < y \) implies \( g(x) < g(y) \) for all real \( x \) and \( y \) \( [\rulename{{\leftrightarrow}E}] \). Taking \( x = 1 \) and \( y = 2 \), and using \( 1 < 2 \), we get \( g(1) < g(2) \) \( [\rulename{{\to}E}] \).
 
-(c) Suppose \( h \) were strictly increasing \( [\text{assumption for } \rulename{\neg I}] \). By the definition read from left to right, as in (b), \( -1 < 0 \) would give \( h(-1) < h(0) \), that is, \( 1 < 0 \), which is false \( [\rulename{\neg E}] \). So \( h \) is not strictly increasing \( [\rulename{\neg I}] \).
+(c) Suppose \( h \) were strictly increasing \( [\text{assumption for } \rulename{\neg I}] \). By the definition used from the term to the condition, as in (b), \( -1 < 0 \) would give \( h(-1) < h(0) \), that is, \( 1 < 0 \), which is false \( [\rulename{\neg E}] \). So \( h \) is not strictly increasing \( [\rulename{\neg I}] \).
 :::
 
 Part (a) uses the definition from the condition to the term; parts (b) and (c) use it from the term to the condition. A definition read only as an "if" would permit (a) and nothing else. Because the term means exactly the condition, a candidate condition is judged against the intended meaning. Had the definition said "\( x < y \) implies \( f(x) \le f(y) \)", it would be too broad: the constant function \( f(x) = 0 \) would count as strictly increasing. Had it said "\( x < y \) implies \( f(y) - f(x) \ge 1 \)", it would be too narrow: \( f(x) = x \) would not count, since \( 0 < \frac{1}{2} \) and \( \frac{1}{2} - 0 < 1 \).
@@ -641,7 +647,7 @@ The converse is "if \( x^2 > 4 \), then \( x > 2 \)". The value \( x = -3 \) bre
 \[
 \text{(a)} \Rightarrow \text{(b)} \Rightarrow \text{(c)} \Rightarrow \text{(a)} .
 \]
-Once the cycle is proved, any condition leads to any other by following the arrows round. Here is the derivation behind that sentence.
+Once the cycle is proved, any condition leads to any other by following the arrows round. The next proposition proves this with a derivation.
 
 ::: {#prp-equivalence-cycle}
 [Proving Equivalence by a Cycle]
@@ -708,7 +714,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Now replace \( P \), \( Q \), \( R \) throughout by \( Q \), \( R \), \( P \) respectively. The premises \( P \to Q \), \( Q \to R \), \( R \to P \) become \( Q \to R \), \( R \to P \), \( P \to Q \), the same three statements in a different order, and every line remains justified by the same rule, since the letters stood for any statements (as in clause 2 after @def-derived-rule). So the renamed derivation derives \( Q \leftrightarrow R \) from the same premises. Rotating once more gives \( R \leftrightarrow P \). This proves the proposition.
+Now replace \( P \), \( Q \), \( R \) throughout by \( Q \), \( R \), \( P \) respectively. The premises \( P \to Q \), \( Q \to R \), \( R \to P \) become \( Q \to R \), \( R \to P \), \( P \to Q \), the same three statements in a different order. Every line remains justified by the same rule. The reason is that the letters stood for any statements, and may be replaced by any statements, the same for each occurrence (@def-derived-rule). So the renamed derivation derives \( Q \leftrightarrow R \) from the same premises. Rotating once more gives \( R \leftrightarrow P \). This proves the proposition.
 :::
 
 In a cycle every condition reaches every other along the arrows; longer cycles work the same way, with longer chains of \( \rulename{{\to}E} \) in the boxes.
@@ -734,7 +740,7 @@ By @prp-equivalence-cycle it suffices to prove (a) \( \Rightarrow \) (b) \( \Rig
 
 *(a) \( \Rightarrow \) (b).* Suppose \( 0 < x < 1 \). Multiplying \( x < 1 \) by \( x > 0 \) gives \( x^2 < x \).
 
-*(b) \( \Rightarrow \) (c).* Suppose \( x^2 < x \). First, \( x > 0 \): otherwise \( x \le 0 \), and then \( x \le 0 \le x^2 \), so \( x \le x^2 \), which contradicts \( x^2 < x \). (In rules: we have \( x \le 0 \) or \( x > 0 \); the first is refuted by a \( \rulename{\neg I} \) box, and \( \rulename{DS} \) (@prp-disjunctive-syllogism) leaves the second.) Since \( x > 0 \), we may divide \( x^2 < x \) by \( x \), which gives \( x < 1 \), and then divide \( x < 1 \) by \( x \), which gives \( 1 < 1/x \). So \( x > 0 \) and \( 1/x > 1 \).
+*(b) \( \Rightarrow \) (c).* Suppose \( x^2 < x \). First, \( x > 0 \): otherwise \( x \le 0 \), and then \( x \le 0 \le x^2 \), so \( x \le x^2 \), which contradicts \( x^2 < x \). In rules: we have \( x \le 0 \) or \( x > 0 \). The first is refuted by a \( \rulename{\neg I} \) box, and disjunctive syllogism, \( \rulename{DS} \), leaves the second (@prp-disjunctive-syllogism). Since \( x > 0 \), we may divide \( x^2 < x \) by \( x \), which gives \( x < 1 \), and then divide \( x < 1 \) by \( x \), which gives \( 1 < 1/x \). So \( x > 0 \) and \( 1/x > 1 \).
 
 *(c) \( \Rightarrow \) (a).* Suppose \( x > 0 \) and \( 1/x > 1 \). Multiplying \( 1 < 1/x \) by \( x > 0 \) gives \( x < 1 \). So \( 0 < x < 1 \).
 :::
@@ -743,7 +749,7 @@ The order of the cycle was a choice, made so that each arrow was short: (b) \( \
 
 ## The rule card
 
-Before the card, the two rules at work on large statements.
+Here are the two rules applied to longer statements.
 
 ::: {#exm-biconditional-and-definitions-instances}
 [Instances of \( \rulename{{\leftrightarrow}I} \) and \( \rulename{{\leftrightarrow}E} \)]
@@ -757,32 +763,49 @@ Before the card, the two rules at work on large statements.
 **Not an instance.** From two lines \( P \to Q \) and \( Q \to P \), the line "\( P \leftrightarrow Q \) — \( \rulename{{\leftrightarrow}I} \)" is not an instance: \( \rulename{{\leftrightarrow}I} \) cites two boxes, not two implications. The two lines give the iff through @prp-iff-two-implications used as a derived rule (after \( \rulename{\wedge I} \)), or by opening the two boxes.
 :::
 
-Chapter 1's seven rules are on the card at the end of Section 1.6; here are this chapter's so far.
+Chapter 1's seven rules are listed at the end of Section 1.6. Here are this chapter's rules so far.
 
-| Rule | Shape | You write | Lean |
-|---|---|---|---|
-| \( \rulename{\neg E} \) | \( \varphi \), \( \neg\varphi \) \( \Longrightarrow \) \( \bot \) | "…, which contradicts …" | `exact hn hp` (goal `False`) |
-| \( \rulename{\bot E} \) | \( \bot \) \( \Longrightarrow \) any \( \varphi \) | "This case cannot occur." "So there is nothing to prove." | `exfalso` |
-| \( \rulename{\neg I} \) | box \( \varphi \) … \( \bot \) \( \Longrightarrow \) \( \neg\varphi \) | "Suppose \( P \). … This is a contradiction. Hence not \( P \)." | `intro hp` (goal `False`) |
-| \( \rulename{MT} \) | \( \varphi \to \psi \), \( \neg\psi \) \( \Longrightarrow \) \( \neg\varphi \) (derived) | "Since \( Q \) fails, so does \( P \)." | `mt h hnq` |
-| \( \rulename{CP} \) | \( \varphi \to \psi \) \( \Longrightarrow \) \( \neg\psi \to \neg\varphi \) (derived) | "We prove the contrapositive: suppose not \( Q \); … so not \( P \)." | `mt` |
-| \( \rulename{DS} \) | \( \varphi \vee \psi \), \( \neg\varphi \) \( \Longrightarrow \) \( \psi \) (derived) | "\( P \) is impossible, so \( Q \)." | `h.resolve_left hnp` |
-| \( \rulename{{\leftrightarrow}I} \) | box \( \varphi \) … \( \psi \), box \( \psi \) … \( \varphi \) \( \Longrightarrow \) \( \varphi \leftrightarrow \psi \) | "\( (\Rightarrow) \) Suppose \( P \). … so \( Q \). \( (\Leftarrow) \) Suppose \( Q \). … so \( P \)." | `constructor` |
-| \( \rulename{{\leftrightarrow}E} \) | \( \varphi \leftrightarrow \psi \), \( \varphi \) \( \Longrightarrow \) \( \psi \) (or with \( \psi \), \( \varphi \)) | "Since \( P \) holds if and only if \( Q \) does, and \( P \) holds, so does \( Q \)." | `h.mp hp` / `h.mpr hq` |
+| Rule | Shape | You write |
+|---|---|---|
+| \( \rulename{\neg E} \) | \( \varphi \), \( \neg\varphi \) \( \Longrightarrow \) \( \bot \) | "…, which contradicts …" |
+| \( \rulename{\bot E} \) | \( \bot \) \( \Longrightarrow \) any \( \varphi \) | "This case cannot occur." "So there is nothing to prove." |
+| \( \rulename{\neg I} \) | box \( \varphi \) … \( \bot \) \( \Longrightarrow \) \( \neg\varphi \) | "Suppose \( P \). … This is a contradiction. Hence not \( P \)." |
+| \( \rulename{MT} \) | \( \varphi \to \psi \), \( \neg\psi \) \( \Longrightarrow \) \( \neg\varphi \) (derived) | "Since \( Q \) fails, so does \( P \)." |
+| \( \rulename{CP} \) | \( \varphi \to \psi \) \( \Longrightarrow \) \( \neg\psi \to \neg\varphi \) (derived) | "We prove the contrapositive: suppose not \( Q \); … so not \( P \)." |
+| \( \rulename{DS} \) | \( \varphi \vee \psi \), \( \neg\varphi \) \( \Longrightarrow \) \( \psi \) (derived) | "\( P \) is impossible, so \( Q \)." |
+| \( \rulename{{\leftrightarrow}I} \) | box \( \varphi \) … \( \psi \), box \( \psi \) … \( \varphi \) \( \Longrightarrow \) \( \varphi \leftrightarrow \psi \) | "\( (\Rightarrow) \) Suppose \( P \). … so \( Q \). \( (\Leftarrow) \) Suppose \( Q \). … so \( P \)." |
+| \( \rulename{{\leftrightarrow}E} \) | \( \varphi \leftrightarrow \psi \), \( \varphi \) \( \Longrightarrow \) \( \psi \) (or with \( \psi \), \( \varphi \)) | "Since \( P \) holds if and only if \( Q \) does, and \( P \) holds, so does \( Q \)." |
 
-The rows for this section's rules complete the table for the connectives. The Lean names in the last column come from the two fields of an iff, `mp` ("modus ponens", left to right) and `mpr` (right to left).
+The rows for this section's rules complete the table for the connectives.
+
+::: {.second-reading title="For instructors"}
+In the proof assistant Lean, the rules of this chapter so far are performed by the following code. Nothing in this book depends on it.
+
+| Rule | Lean |
+|---|---|
+| \( \rulename{\neg E} \) | `exact hn hp` (goal `False`) |
+| \( \rulename{\bot E} \) | `exfalso` |
+| \( \rulename{\neg I} \) | `intro hp` (goal `False`) |
+| \( \rulename{MT} \) | `mt h hnq` |
+| \( \rulename{CP} \) | `mt` |
+| \( \rulename{DS} \) | `h.resolve_left hnp` |
+| \( \rulename{{\leftrightarrow}I} \) | `constructor` |
+| \( \rulename{{\leftrightarrow}E} \) | `h.mp hp` / `h.mpr hq` |
+
+The Lean names for \( \rulename{{\leftrightarrow}E} \) come from the two fields of an iff, `mp` ("modus ponens", left to right) and `mpr` (right to left).
+:::
 
 ::: {.warning}
 [Not allowed: \( \rulename{{\leftrightarrow}I} \) and \( \rulename{{\leftrightarrow}E} \)]
 
-Each step below is wrong; the tag names the clause it breaks.
+Each step below is wrong. After it comes the part of the rule it breaks.
 
-- Close \( \rulename{{\leftrightarrow}I} \) with one box: clause 1, two boxes (a single box proves \( \varphi \to \psi \) only).
-- In the second box, cite a line of the first: clause 2, the boxes are siblings (the pair below).
-- Write \( \neg\psi \) by \( \rulename{{\leftrightarrow}E} \) from \( \varphi \leftrightarrow \psi \) and \( \neg\varphi \): clause 4, \( \rulename{{\leftrightarrow}E} \) needs one side itself; \( \neg\psi \) takes a \( \rulename{\neg I} \) box.
-- Write \( \varphi \leftrightarrow \psi \) by \( \rulename{{\leftrightarrow}I} \) citing two implication lines: clause 3, the rule cites boxes, as ranges (the look-alike of @exm-biconditional-and-definitions-instances).
+- Close \( \rulename{{\leftrightarrow}I} \) with one box. This breaks "Two boxes": a single box proves only \( \varphi \to \psi \).
+- In the second box, cite a line of the first. This breaks "Separate boxes": the boxes are siblings, and the derivations below show the error.
+- Write \( \neg\psi \) by \( \rulename{{\leftrightarrow}E} \) from \( \varphi \leftrightarrow \psi \) and \( \neg\varphi \). This breaks "Elimination, either way": \( \rulename{{\leftrightarrow}E} \) needs one side itself, and \( \neg\psi \) takes a \( \rulename{\neg I} \) box.
+- Write \( \varphi \leftrightarrow \psi \) by \( \rulename{{\leftrightarrow}I} \) citing two implication lines. This breaks "Citation": the rule cites boxes, as ranges, as the last part of @exm-biconditional-and-definitions-instances shows.
 
-Clause 2 is where the rule bites: WRONG beside RIGHT, with premises \( P \to Q \), \( R \) and \( (Q \wedge R) \to P \). On the left, line 7 copies \( P \) from the closed first box.
+The second mistake is the easiest to make. Here it is on the left, beside a correct derivation on the right, with premises \( P \to Q \), \( R \) and \( (Q \wedge R) \to P \). On the left, line 7 copies \( P \) from the closed first box.
 
 ```{=latex}
 \begin{center}
@@ -826,7 +849,7 @@ The left list never cites premises 2 and 3, so it would show \( P \to Q \vdash P
 ::: {.remark}
 [Looking ahead]
 
-Chapter 5 uses the lemma \( \neg(P \leftrightarrow \neg P) \) to show that no barber can shave exactly those who do not shave themselves, and in what sense no set can contain exactly the sets that do not contain themselves. *Analysis on the Real Line*, Chapter 1 proves from its axioms that every non-negative real number has a square root, the school fact behind the square-root payoff above.
+Chapter 5 uses the lemma \( \neg(P \leftrightarrow \neg P) \) to show that no barber can shave exactly those who do not shave themselves. It also shows in what sense no set can contain exactly the sets that do not contain themselves. *Analysis on the Real Line*, Chapter 1 proves from its axioms that every non-negative real number has a square root. That is the school fact behind the consequence about square roots above.
 :::
 
 ## Exercises
@@ -839,7 +862,7 @@ Chapter 5 uses the lemma \( \neg(P \leftrightarrow \neg P) \) to show that no ba
 ::: {.enumerate options="label=(\alph*)"}
 1. State the rules \( \rulename{{\leftrightarrow}I} \) and \( \rulename{{\leftrightarrow}E} \), and the definition of \( P \dashv\vdash Q \).
 2. For a real number \( x \ge 0 \), consider "\( x^2 = x \) if and only if \( x = 0 \) or \( x = 1 \)". Write the directions \( (\Rightarrow) \) and \( (\Leftarrow) \) as implications. Which one would a proof begin with "Suppose \( x^2 = x \)"?
-3. True or false, with a reason: from the definition "an integer \( n \) is **even** if there is an integer \( k \) with \( n = 2k \)" and the fact that \( 10 \) is even, we may conclude that \( 10 = 2k \) for some integer \( k \).
+3. True or false, with a reason? The definition reads "an integer \( n \) is **even** if there is an integer \( k \) with \( n = 2k \)", and \( 10 \) is even. From these we may conclude that \( 10 = 2k \) for some integer \( k \).
 4. True or false, with a reason: from the theorem "if \( x > 1 \), then \( x^2 > 1 \)" and the fact that \( x^2 > 1 \), we may conclude that \( x > 1 \).
 :::
 :::
@@ -907,7 +930,7 @@ The parts run from one step, through a missing line, a justification column and 
 
 (f) Line 4 is \( \neg P \) and line 7 is \( Q \) (the first box); line 8 is \( Q \) and line 11 is \( \neg P \) (the second).
 
-(g) (i) assumption, for \( \rulename{\neg I} \); (ii) \( \rulename{{\leftrightarrow}E} \) 1, 3; (iii) \( \rulename{\neg E} \) 2, 4; (iv) \( \rulename{\neg I} \) \( \lines{3}{5} \).
+(g) (i) Assumption, for \( \rulename{\neg I} \). (ii) \( \rulename{{\leftrightarrow}E} \) 1, 3. (iii) \( \rulename{\neg E} \) 2, 4. (iv) \( \rulename{\neg I} \) \( \lines{3}{5} \).
 
 (h) No: \( \rulename{{\leftrightarrow}E} \) needs \( P \) or \( Q \) itself. \( \neg Q \) comes by a \( \rulename{\neg I} \) box, as in part (o).
 
@@ -923,7 +946,7 @@ The parts run from one step, through a missing line, a justification column and 
 
 (n) 4 \( Q \), \( \rulename{{\leftrightarrow}E} \) 2, 3; 5 \( P \), \( \rulename{{\leftrightarrow}E} \) 1, 4.
 
-(o) 3 \( Q \), assumption, for \( \rulename{\neg I} \); 4 \( P \), \( \rulename{{\leftrightarrow}E} \) 1, 3; 5 \( \bot \), \( \rulename{\neg E} \) 4, 2; 6 \( \neg Q \), \( \rulename{\neg I} \) \( \lines{3}{5} \).
+(o) Line 3 is \( Q \), assumption, for \( \rulename{\neg I} \). Line 4 is \( P \), \( \rulename{{\leftrightarrow}E} \) 1, 3. Line 5 is \( \bot \), \( \rulename{\neg E} \) 4, 2. Line 6 is \( \neg Q \), \( \rulename{\neg I} \) \( \lines{3}{5} \).
 :::
 
 ### B. Practice
@@ -977,7 +1000,7 @@ This proves the equivalence.
 ::: {#exr-biconditional-and-definitions-b3}
 [B3: Strict inequalities]
 
-Let \( x \) and \( y \) be real numbers with \( x \ge 0 \) and \( y \ge 0 \). Deduce from @thm-squares-order and @exm-iff-negations that \( x < y \) if and only if \( x^2 < y^2 \). You may use that, for real numbers \( a \) and \( b \), \( a < b \) holds exactly when \( b \le a \) fails.
+Let \( x \) and \( y \) be real numbers with \( x \ge 0 \) and \( y \ge 0 \). Deduce that \( x < y \) if and only if \( x^2 < y^2 \), from two earlier results. The first is @thm-squares-order. The second is @exm-iff-negations. You may use that, for real numbers \( a \) and \( b \), \( a < b \) holds exactly when \( b \le a \) fails.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Apply @thm-squares-order with the roles of \( x \) and \( y \) exchanged. What does it say?
@@ -990,17 +1013,21 @@ Let \( x \) and \( y \) be real numbers with \( x \ge 0 \) and \( y \ge 0 \). De
 ::: {.solution}
 (a) The exchange is allowed, since both numbers are non-negative: \( y \le x \) if and only if \( y^2 \le x^2 \).
 
-(b) With \( P \): "\( y \le x \)" and \( Q \): "\( y^2 \le x^2 \)", @exm-iff-negations, used as a derived rule (@def-derived-rule), gives: \( y \le x \) fails if and only if \( y^2 \le x^2 \) fails.
+(b) Take \( P \): "\( y \le x \)" and \( Q \): "\( y^2 \le x^2 \)". Then @exm-iff-negations, used as a derived rule, gives: \( y \le x \) fails if and only if \( y^2 \le x^2 \) fails.
 
 (c) By the fact quoted, the left side says \( x < y \) and the right side says \( x^2 < y^2 \).
 
 (d) That \( x < y \) if and only if \( x^2 < y^2 \).
+
+::: {.uses}
+@def-derived-rule (a sequent used as a rule).
+:::
 :::
 
 ::: {#exr-biconditional-and-definitions-b4}
 [B4: Both directions]
 
-A search for \( P \leftrightarrow Q \vdash (P \wedge R) \leftrightarrow (Q \wedge R) \) has reached the stage below. *Name the move, then complete it.*
+A search for \( P \leftrightarrow Q \vdash (P \wedge R) \leftrightarrow (Q \wedge R) \) has reached the stage below. *Name the proof method for this goal, then complete the derivation.*
 
 ```{=latex}
 % schema (partial derivation: the gap is unnumbered, lines carry their final numbers)
@@ -1015,7 +1042,7 @@ $\begin{nd}
 :::
 
 ::: {.solution}
-The move is *two boxes for an iff*: the goal's main connective is \( \leftrightarrow \), so line 12 will be \( \rulename{{\leftrightarrow}I} \), with a box from \( P \wedge R \) to \( Q \wedge R \) and a box back. Inside each, take the conjunction apart, cross with \( \rulename{{\leftrightarrow}E} \), and rebuild.
+The method is *two boxes for an iff*: the goal's main connective is \( \leftrightarrow \), so line 12 will be \( \rulename{{\leftrightarrow}I} \), with a box from \( P \wedge R \) to \( Q \wedge R \) and a box back. Inside each, take the conjunction apart, cross with \( \rulename{{\leftrightarrow}E} \), and rebuild.
 
 ```{=latex}
 \begin{center}
@@ -1066,7 +1093,7 @@ For real numbers \( a \), \( b \), \( x \), we want to define "\( x \) lies **st
 ::: {.solution}
 (a) (i) Too narrow: \( a = 5 \), \( b = 2 \), \( x = 3 \) lies between and fails (i). It is not too broad: (i) gives one of the wanted orders.
 
-(ii) Too broad: \( a = 2 \), \( b = 5 \), \( x = 100 \) satisfies \( 2 < 100 \) but does not lie between. And too narrow: \( a = 5 \), \( b = 2 \), \( x = 3 \) lies between, but \( 5 < 3 \) and \( 3 < 2 \) both fail (the triple of (c)).
+(ii) Too broad: \( a = 2 \), \( b = 5 \), \( x = 100 \) satisfies \( 2 < 100 \) but does not lie between. And too narrow: \( a = 5 \), \( b = 2 \), \( x = 3 \) lies between, but \( 5 < 3 \) and \( 3 < 2 \) both fail. Part (c) uses this triple again.
 
 (iii) Right: it lists the two possible orders.
 
@@ -1078,14 +1105,14 @@ For real numbers \( a \), \( b \), \( x \), we want to define "\( x \) lies **st
 
 \( (\Leftarrow) \) Suppose the product is negative. Then neither factor is \( 0 \), and the two factors cannot have the same sign, since a product of two positive or of two negative numbers is positive. So \( x - a > 0 > x - b \), that is \( a < x < b \), or \( x - a < 0 < x - b \), that is \( b < x < a \).
 
-(c) (i), (ii) and (v). With \( a = 2 \), \( b = 5 \), \( x = 3 \), each holds for the ends \( 2, 5 \) and fails for the ends \( 5, 2 \) (for (ii): \( 2 < 3 \), while neither \( 5 < 3 \) nor \( 3 < 2 \)). A definition of "between" should not depend on the order of the two ends; (iii) and (iv) do not, since exchanging \( a \) and \( b \) exchanges the two disjuncts of (iii) and the two factors of (iv).
+(c) (i), (ii) and (v). With \( a = 2 \), \( b = 5 \), \( x = 3 \), each holds for the ends \( 2, 5 \) and fails for the ends \( 5, 2 \). For (ii), this is because \( 2 < 3 \), while neither \( 5 < 3 \) nor \( 3 < 2 \). A definition of "between" should not depend on the order of the two ends. Candidates (iii) and (iv) do not, since exchanging \( a \) and \( b \) exchanges the two disjuncts of (iii) and the two factors of (iv).
 
-**Marking scheme.** (10 points)
-- 4: (a), one point each for (i) and (v) with a correct triple, one for (ii) with **both** triples (too broad and too narrow), and one for calling (iii) and (iv) right.
+**What a complete answer needs.** (10 points)
+- 4: (a), one point each for (i) and (v) with a correct triple, one for (ii) with **both** triples, too broad and too narrow, and one for calling (iii) and (iv) right.
 - 4: (b), each direction 2; the second must say why the factors have opposite signs.
 - 2: (c), (i), (ii) and (v) with one triple.
 
-Fatal error (0 for (b)): proving only one direction and calling the conditions equivalent.
+Slips that lose part (b), with 0 points for it: proving only one direction and calling the conditions equivalent.
 :::
 
 ::: {#exr-biconditional-and-definitions-b6}
@@ -1112,18 +1139,18 @@ We prove the cycle (i) \( \Rightarrow \) (ii) \( \Rightarrow \) (iii) \( \Righta
 
 *(iii) \( \Rightarrow \) (iv).* If \( n^2 - 1 = 8m \), then \( n^2 = 2(4m) + 1 \), which is odd.
 
-*(iv) \( \Rightarrow \) (i).* This is @thm-odd-iff-square-odd, read from right to left.
+*(iv) \( \Rightarrow \) (i).* This is the direction \( (\Leftarrow) \) of @thm-odd-iff-square-odd.
 
-(Exercise B3 of Section 1.6 met the fact (i) \( \Rightarrow \) (iii) by another route.)
+Exercise B3 of Section 1.6 reached the fact (i) \( \Rightarrow \) (iii) by another route.
 
 For the second question: (i) \( \Rightarrow \) (iv) and (iv) \( \Rightarrow \) (i). Both are @thm-odd-iff-square-odd, so they cost nothing. Any two implications joining the two pairs, one in each direction, would do, for instance (ii) \( \Rightarrow \) (iii) and (iv) \( \Rightarrow \) (i); with them every condition reaches every other.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 - 1: a cycle through all four conditions, citing the argument of @prp-equivalence-cycle or arguing that it suffices.
 - 8: 2 for each of the four arrows.
 - 1: the completion question.
 
-Fatal errors (0 for the step): a "cycle" that omits a condition; (iii) \( \Rightarrow \) (iv) or (iv) \( \Rightarrow \) (i) argued by examples.
+Slips that lose the step (0 points for it): a "cycle" that omits a condition; (iii) \( \Rightarrow \) (iv) or (iv) \( \Rightarrow \) (i) argued by examples.
 :::
 
 ::: {#exr-biconditional-and-definitions-b7}
@@ -1265,7 +1292,11 @@ $\begin{nd}
 
 (b) and (g) are the converses of (a) and (f), and (d) replaces the conclusion of (c) by its converse; each of the three breaks. (a) is the \( \vee \)-twin of @exr-biconditional-and-definitions-b4, with a case split inside each box.
 
-**Marking scheme.** (16 points) For each claim: 1 for the verdict; 1 for a derivation every line of which checks, or for a choice of statements and one value of \( x \) at which every member of the counterexample set is true. Fatal errors (0 for the claim): a "break" at which a premise fails; RAA in a derivation; a box of \( \rulename{{\leftrightarrow}I} \) citing its sibling.
+**What a complete answer needs.** (16 points) For each claim:
+- 1 for the verdict;
+- 1 for a derivation every line of which checks, or for a choice of statements and one value of \( x \) at which every member of the counterexample set is true.
+
+Slips that lose the claim (0 points for it): a "break" at which a premise fails; RAA, the rule of Section 2.5, in a derivation; a box of \( \rulename{{\leftrightarrow}I} \) citing its sibling.
 :::
 
 ### C. Going deeper
@@ -1281,7 +1312,7 @@ For integers \( d \) and \( n \), write \( d \mid n \) if \( n = dk \) for some 
 3. \( 6 \mid n^2 \).
 :::
 
-You may use @thm-square-even-implies-even and part (a) of @exr-negation-and-contradiction-b3.
+You may use @thm-square-even-implies-even. You may also use part (a) of @exr-negation-and-contradiction-b3.
 :::
 
 ::: {.solution}
@@ -1305,14 +1336,15 @@ We prove (i) \( \Rightarrow \) (iii) \( \Rightarrow \) (ii) \( \Rightarrow \) (i
 
 *(ii) \( \Rightarrow \) (i).* Suppose \( 2 \mid n \) and \( 3 \mid n \), and write \( n = 3b \) with \( b \) an integer. The integer \( b \) is odd or even. If \( b \) were odd, then \( n = 3b \) would be odd: writing \( b = 2c + 1 \) gives \( 3b = 6c + 3 = 2(3c + 1) + 1 \). But \( n \) is even, and no integer is both, so this case cannot occur \( [\rulename{\neg E}, \rulename{\bot E}] \). Hence \( b \) is even, say \( b = 2c \), and \( n = 6c \), so \( 6 \mid n \).
 
-**Marking scheme.** (10 points)
-- 1: names a cycle through all three conditions and cites @prp-equivalence-cycle (or proves the needed implications explicitly).
+**What a complete answer needs.** (10 points)
+- 1: names a cycle through all three conditions and cites @prp-equivalence-cycle, or proves the needed implications explicitly.
 - 2: (i) \( \Rightarrow \) (iii) by computation.
-- 3: (iii) \( \Rightarrow \) (ii), citing @thm-square-even-implies-even for the factor \( 2 \) and part (a) of @exr-negation-and-contradiction-b3 for the factor \( 3 \).
-- 4: (ii) \( \Rightarrow \) (i), combining the two factors correctly (ruling out \( b \) odd, or \( n = 3n - 2n \), or otherwise).
+- 3: (iii) \( \Rightarrow \) (ii). It cites @thm-square-even-implies-even for the factor \( 2 \). It cites part (a) of @exr-negation-and-contradiction-b3 for the factor \( 3 \).
+- 4: (ii) \( \Rightarrow \) (i), combining the two factors correctly: by ruling out \( b \) odd, by \( n = 3n - 2n \), or otherwise.
 
-Fatal errors (0 for the step): a "cycle" that omits a condition; using "\( 2 \mid n \) and \( 3 \mid n \) gives \( 6 \mid n \)" without proof; using "\( 6 \mid n^2 \) implies \( 6 \mid n \)" as known.
 Any other cycle through the three conditions earns full marks if each of its arrows is proved: 1 point for the cycle and its citation, and 3 points for each of its three arrows.
+
+Slips that lose the step (0 points for it): a "cycle" that omits a condition; using "\( 2 \mid n \) and \( 3 \mid n \) gives \( 6 \mid n \)" without proof; using "\( 6 \mid n^2 \) implies \( 6 \mid n \)" as known.
 :::
 
 ::: {#exr-biconditional-and-definitions-c2}
@@ -1334,7 +1366,9 @@ Any other cycle through the three conditions earns full marks if each of its arr
 
 <!-- dependency ledger
 prp-provable-equivalence-basics (proof): copying a derivation into a new place (inside extra boxes, numbers shifted) keeps every citation available | inline (the "observation" in the proof), from def-derivation's scope rule and (D3)
-prp-equivalence-cycle (proof): uniform renaming of letters in a derivation keeps every line an instance of its rule | def-rule-schema (consistent replacement), def-derivable, clause 2 after def-derived-rule (cited); the semantic counterpart is F1.3 lem-substitution (4.5)
+prp-equivalence-cycle (proof): uniform renaming of letters in a derivation keeps every line an instance of its rule | def-rule-schema (consistent replacement), def-derivable, def-derived-rule (cited inline: letters replaced uniformly by any statements); the semantic counterpart is F1.3 lem-substitution (4.5)
+def-rules-biconditional (claim): (worked instance before the rules) for a real number x, x > 0 iff 2x > 0 | school algebra, taken as known; no label, nothing cites it
+prp-provable-equivalence-basics (claim): (lead-in) P and Q -||- Q and P, and the two boxes of iff-I derive (P and Q) iff (Q and P) from no premises | prp-and-commutes with the letters exchanged (cited in the paragraph before); def-rules-biconditional
 prp-provable-equivalence-basics (proof): a one-line derivation consisting of a premise is a derivation | exm-derivations (cited in the fold before the proposition); def-derivation
 def-provable-equivalence (claim): (warning) the form "from P conclude P and Q" breaks at P: "2 > 1", Q: "1 > 2" | arithmetic; a break by a choice of statements (def-counterexample-set), no soundness claim
 def-provable-equivalence (claim): (fold "Edge cases") not-not-P |- P holds once F1.2 §05 adds its rule | F1.2 §05 (prp-double-negation, a later section of this chapter); nothing here depends on it

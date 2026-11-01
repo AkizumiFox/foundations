@@ -1,6 +1,6 @@
 # Contradiction: Using a Negation
 
-Chapter 1 gave rules for "and", "implies", and "or", and not one of them mentions "not". Yet written proofs are full of sentences such as "this is impossible", "this case cannot occur", and "which contradicts what we assumed". This section gives the two rules that **use** a negation: the first says exactly what a clash between two lines is, and the second says what a clash buys. The rule that **proves** a negation is the subject of the next section.
+Chapter 1 gave rules for "and", "implies", and "or", and not one of them mentions "not". Yet written proofs are full of sentences such as "this is impossible", "this case cannot occur", and "which contradicts what we assumed". This section gives the two rules that **use** a negation: the first says exactly what a clash between two lines is, and the second says what follows from a clash. The rule that **proves** a negation is the subject of the next section.
 
 ## A case that cannot occur
 
@@ -11,7 +11,7 @@ Chapter 1 has a rule for a proof by cases: \( \rulename{\vee E} \) of @def-rules
 Two things are missing, and no rule of Chapter 1 supplies them.
 
 - A way to **record** the impossibility: the lines "\( n^2 \) is even" and "\( n^2 \) is odd", together with "no integer is both", should produce a line that says "contradiction".
-- A way to **close** the impossible box with the goal: from the line "contradiction", the box should be allowed to write "\( n \) is even", so that both boxes end on the same line and \( \rulename{\vee E} \) applies.
+- A way to **close** the impossible box with the goal. From the line "contradiction", the box should be allowed to write "\( n \) is even". Then both boxes end on the same line, and \( \rulename{\vee E} \) applies.
 
 Section 1.1 introduced the symbols for both. The connective \( \neg \) forms the **negation** \( \neg\varphi \), read "not \( \varphi \)". The constant \( \bot \), read "contradiction", is a statement that is false however things stand. There they were symbols only. The two rules below give them their first uses.
 
@@ -43,28 +43,28 @@ $\begin{nd}[schema]
 The left schema is \( \rulename{\neg E} \) (**not-elimination**): if \( \varphi \) and \( \neg\varphi \) stand on lines \( i \) and \( j \) available at line \( k \), write \( \bot \), citing both, the unnegated line first. The right schema is \( \rulename{\bot E} \) (**contradiction-elimination**, or *ex falso*): if \( \bot \) stands on a line \( i \) available at line \( k \), write **any** statement \( \varphi \), citing line \( i \).
 :::
 
-**Why may \( \rulename{\bot E} \) write anything?** A line \( \bot \) can stand only where the premises and open assumptions cannot all hold together: a derivation that reaches \( \bot \) describes a situation that never happens. Nothing said there can ever be caught false, just as a promise whose condition is never met is never broken; the subsection "Vacuous truth" below returns to this.
+**Why may \( \rulename{\bot E} \) write anything?** A line \( \bot \) can stand only where the premises and open assumptions cannot all hold together: a derivation that reaches \( \bot \) describes a situation that never happens. Nothing said there can ever be caught false. In the same way, a promise whose condition is never met is never broken. Vacuous truth, at the end of this section, makes this precise.
 
-As in every schema (@def-rule-schema), \( \varphi \) is one statement, the same wherever it occurs, and \( i, j, k \) are line numbers. We read \( \rulename{\neg E} \) in four bullets.
+As in every schema (@def-rule-schema), \( \varphi \) is one statement, the same wherever it occurs, and \( i, j, k \) are line numbers. There are four points to check in \( \rulename{\neg E} \).
 
 - **Two given lines,** both available (the scope rule of @def-derivation), in either order on the page.
-- **Exactly \( \varphi \) and \( \neg\varphi \):** the second is the first with one \( \neg \) in front of the whole of it, symbol for symbol. "Contradicts it in spirit" is not enough: \( x < 1 \) and \( x > 1 \) cannot both hold, but neither is the other's negation as written (the box below).
+- **Exactly \( \varphi \) and \( \neg\varphi \):** the second is the first with one \( \neg \) in front of the whole of it, symbol for symbol. "Contradicts it in spirit" is not enough: \( x < 1 \) and \( x > 1 \) cannot both hold, but neither is the other's negation as written. The convention on order below says how such negations are written.
 - **The citation** lists the unnegated line first: "\( \rulename{\neg E} \) \( i, j \)" says that line \( i \) is \( \varphi \).
 - **The new line** is \( \bot \) and nothing else; what to do with the clash is the business of \( \rulename{\bot E} \).
 
-And \( \rulename{\bot E} \) in three.
+There are three points in \( \rulename{\bot E} \).
 
-- **Schema.** The right one in the block above.
+- **Schema.** The right schema above.
 - **Reading.** One available line \( \bot \), cited alone; write **any** statement, related to nothing above, a negation or \( \bot \) itself included.
 - **Example.** From line 4 \( \bot \), "\( \rulename{\bot E} \) 4" writes \( R \), or \( \neg R \), or \( x = 7 \).
 
 ::: {.second-reading title="Where a line ⊥ comes from, and why ⊥E is honest"}
-Two more observations complete the reading. First, \( \rulename{\bot E} \) is the **elimination** rule of \( \bot \): it says how a line \( \bot \) is used. There is no introduction rule of its own for \( \bot \). Other rules can pass a \( \bot \) along (\( \rulename{\bot E} \) may write it again, and \( \rulename{{\to}E} \) writes it from \( \varphi \to \bot \) and \( \varphi \)), but each of them (\( \rulename{R} \), \( \rulename{\wedge E} \), \( \rulename{{\to}E} \), \( \rulename{\vee E} \), whenever their new line is \( \bot \)) needs \( \bot \) already written, perhaps inside a longer statement, in a line it uses (\( \rulename{\vee I} \) can bring \( \bot \) in, but only inside a disjunction). Unless \( \bot \) already occurs in a premise or an assumption, the first line of a derivation that is \( \bot \) itself is written by \( \rulename{\neg E} \): it is the one rule whose new line is always \( \bot \), from lines in which \( \bot \) need not occur. So \( \rulename{\neg E} \) plays two parts at once: it is the way a negation is used, and it is the way \( \bot \) is produced.
+First, \( \rulename{\bot E} \) is the **elimination** rule of \( \bot \): it says how a line \( \bot \) is used. There is no introduction rule of its own for \( \bot \). Other rules can pass a \( \bot \) along. For example, \( \rulename{\bot E} \) may write it again, and \( \rulename{{\to}E} \) writes it from \( \varphi \to \bot \) and \( \varphi \). But each such rule needs \( \bot \) already written in a line it uses, perhaps inside a longer statement. This holds for \( \rulename{R} \), \( \rulename{\wedge E} \), \( \rulename{{\to}E} \) and \( \rulename{\vee E} \) whenever their new line is \( \bot \). The rule \( \rulename{\vee I} \) can bring \( \bot \) in, but only inside a disjunction. Now suppose \( \bot \) occurs in no premise and no assumption. Then the first line of a derivation that is \( \bot \) itself is written by \( \rulename{\neg E} \). It is the one rule whose new line is always \( \bot \), from lines in which \( \bot \) need not occur. So \( \rulename{\neg E} \) plays two parts at once: it is the way a negation is used, and it is the way \( \bot \) is produced.
 
-Second, why is \( \rulename{\bot E} \) honest? A rule should never lead from lines that hold to a line that fails. A line \( \bot \) can stand only in a part of a derivation where the premises and the open assumptions cannot all hold together, at least when the \( \bot \) was written by \( \rulename{\neg E} \), from some \( \varphi \) and \( \neg\varphi \) that were both available there; that the rules which only pass a \( \bot \) along keep this property is part of what Section 1.2's Looking-ahead box promised for every rule. In such a place there is no situation in which the conclusion of \( \rulename{\bot E} \) would have to be checked, so it cannot be caught failing.
+Second, why is \( \rulename{\bot E} \) honest? A rule should never lead from lines that hold to a line that fails. A line \( \bot \) can stand only in a part of a derivation where the premises and the open assumptions cannot all hold together. This is clear at least when the \( \bot \) was written by \( \rulename{\neg E} \), from some \( \varphi \) and \( \neg\varphi \) that were both available there. That the rules which only pass a \( \bot \) along keep this property is part of what Section 1.2 promised for every rule. In such a place there is no situation in which the conclusion of \( \rulename{\bot E} \) would have to be checked, so it cannot be caught failing.
 :::
 
-In the Givens/Goal table, \( \rulename{\neg E} \) adds \( \bot \) to the Givens once \( \varphi \) and \( \neg\varphi \) are both there; and with \( \bot \) among the Givens, \( \rulename{\bot E} \) ticks off any goal.
+In the "We know | We want" table, \( \rulename{\neg E} \) adds \( \bot \) to what we know once \( \varphi \) and \( \neg\varphi \) are both there. With \( \bot \) among what we know, \( \rulename{\bot E} \) supplies anything we want.
 
 ::: {.check}
 Which of these pairs of lines are, as written, an instance of the given lines of \( \rulename{\neg E} \), and in which order must each be cited? The pairs are (i) \( Q \wedge R \) and \( \neg(Q \wedge R) \); (ii) \( \neg P \) and \( \neg\neg P \); (iii) \( P \to Q \) and \( \neg P \to Q \).
@@ -75,7 +75,13 @@ Which of these pairs of lines are, as written, an instance of the given lines of
 :::
 
 ::: {.remark}
-**Convention: negations of order and equality.** For real numbers \( a \) and \( b \), exactly one of \( a < b \) and \( a \ge b \) holds. So \( a \ge b \) says the same as \( \neg(a < b) \), and likewise \( a > b \) the same as \( \neg(a \le b) \), \( a \le b \) as \( \neg(a > b) \), and \( a < b \) as \( \neg(a \ge b) \); and \( a \ne b \) **means** \( \neg(a = b) \), by definition. A derivation writes the negation out whenever a rule for "not" must see it (\( \rulename{\neg E} \) here, and the rule of the next section); otherwise, and in prose, the short forms stay. Together with the box of Section 1.5, which writes \( a \le b \) out as \( (a < b) \vee (a = b) \) when \( \rulename{\vee I} \) or \( \rulename{\vee E} \) must see the disjunction, this fixes how an inequality looks on a line.
+**Convention: negations of order and equality.** For real numbers \( a \) and \( b \), exactly one of \( a < b \) and \( a \ge b \) holds. So \( a \ge b \) says the same as \( \neg(a < b) \). Likewise:
+
+- \( a > b \) says the same as \( \neg(a \le b) \);
+- \( a \le b \) says the same as \( \neg(a > b) \);
+- \( a < b \) says the same as \( \neg(a \ge b) \).
+
+And \( a \ne b \) **means** \( \neg(a = b) \), by definition. A derivation writes the negation out whenever a rule for "not" must see it (\( \rulename{\neg E} \) here, and the rule of the next section). Otherwise, and in prose, the short forms stay. Section 1.5 writes \( a \le b \) out as \( (a < b) \vee (a = b) \) when \( \rulename{\vee I} \) or \( \rulename{\vee E} \) must see the disjunction. Together, the two conventions fix how an inequality looks on a line.
 :::
 
 The fact "no integer is both even and odd" is a negation of a conjunction, \( \neg(E \wedge O) \) with \( E \) for "\( n \) is even" and \( O \) for "\( n \) is odd". It clashes only with a line \( E \wedge O \), which \( \rulename{\wedge I} \) builds from separate lines \( E \) and \( O \).
@@ -85,7 +91,7 @@ For a real number \( x \), which pairs are a clash as written, once the conventi
 :::
 
 ::: {.solution}
-(i) Yes: \( x^2 \ge 0 \) is \( \neg(x^2 < 0) \); cite \( x^2 < 0 \) first. (ii) Yes: \( x \ne 2 \) is \( \neg(x = 2) \); cite \( x = 2 \) first. (iii) No: \( x > 1 \) is \( \neg(x \le 1) \), and \( x < 1 \) is not \( x \le 1 \). The line \( x \le 1 \), written out, must first be built by \( \rulename{\vee I} \) (drill A2(l)).
+(i) Yes: \( x^2 \ge 0 \) is \( \neg(x^2 < 0) \); cite \( x^2 < 0 \) first. (ii) Yes: \( x \ne 2 \) is \( \neg(x = 2) \); cite \( x = 2 \) first. (iii) No: \( x > 1 \) is \( \neg(x \le 1) \), and \( x < 1 \) is not \( x \le 1 \). The line \( x \le 1 \), written out, must first be built by \( \rulename{\vee I} \), as in Exercise A2, part (l).
 :::
 
 ::: {.warning}
@@ -98,7 +104,7 @@ A clash must have the exact shape \( \varphi \), \( \neg\varphi \). And some pai
 
 ## First derivations with a clash
 
-The five examples below grow in difficulty. Each Idea says why each rule was chosen, in the two directions Chapter 1 used: from the goal (what does the goal's main connective ask for?) and from the premises (what does an available line's main connective let us do?). This section adds one question to each list. From the goal: *when nothing produces the goal, can a clash produce it?* From the premises: *an available negation \( \neg\varphi \) is used in exactly one way, by \( \rulename{\neg E} \), so it asks for \( \varphi \).*
+The five examples below grow in difficulty. Before each solution we say why each rule was chosen. We look in the two directions Chapter 1 used. From the goal: what does the goal's main connective ask for? From the premises: what does an available line's main connective let us do? This section adds one question to each list. From the goal: *when nothing produces the goal, can a clash produce it?* From the premises: *an available negation \( \neg\varphi \) is used in exactly one way, by \( \rulename{\neg E} \), so it asks for \( \varphi \).*
 
 ::: {#exm-first-contradictions}
 [The first clashes]
@@ -107,7 +113,7 @@ Show that (a) \( \bot \vdash P \), and (b) \( P \wedge Q, \ \neg Q \vdash R \).
 :::
 
 ::: {.idea}
-(a) is the rule \( \rulename{\bot E} \) itself, the degenerate case with no clash to find. In (b), the first premise is a conjunction, so the premise-directed move takes it apart by \( \rulename{\wedge E} \). Its half \( Q \) and the premise \( \neg Q \) are exactly a pair \( \varphi \), \( \neg\varphi \). The goal \( R \) has nothing to do with the premises: no rule builds it from them. Only \( \rulename{\bot E} \) can write it, and \( \rulename{\bot E} \) needs a line \( \bot \), which the clash supplies.
+(a) is the rule \( \rulename{\bot E} \) itself, the simplest case, with no clash to find. In (b), the first premise is a conjunction, so, working from the premises, we take it apart by \( \rulename{\wedge E} \). Its half \( Q \) and the premise \( \neg Q \) are exactly a pair \( \varphi \), \( \neg\varphi \). The goal \( R \) has nothing to do with the premises: no rule builds it from them. Only \( \rulename{\bot E} \) can write it, and \( \rulename{\bot E} \) needs a line \( \bot \), which the clash supplies.
 
 Snapshots for (b): the goal alone; then the goal handed to \( \rulename{\bot E} \), with \( \bot \) as the new goal.
 
@@ -161,7 +167,7 @@ $\begin{nd}
 Line 4 cites line 3 first because line 3 plays \( \varphi \) and line 2 plays \( \neg\varphi \), with \( \varphi = Q \). The half \( P \) of the first premise is never used; a derivation need not use every premise (@def-derivable).
 :::
 
-The next result is the pattern of (b) with nothing extra around it. We state it as a proposition, because later sections cite it.
+The next result is the pattern of (b) with nothing extra around it.
 
 ::: {#prp-ex-falso}
 [Contradictory Premises Prove Anything]
@@ -199,7 +205,7 @@ In the next derivation the clash happens inside a box, and the rule \( \rulename
 :::
 
 ::: {.idea}
-The goal is an implication, so the goal-directed move of Chapter 1 (\( \rulename{{\to}I} \), @def-rules-implication) opens a box with its hypothesis \( P \); the new goal is \( Q \). Nothing available mentions \( Q \), so no rule can build it. But inside the box, the assumption \( P \) and the premise \( \neg P \) clash, and \( \rulename{\bot E} \) writes the box's goal \( Q \). This is the section's goal-directed move: *when nothing produces the goal, look for a clash.*
+The goal is an implication. Working from the goal as in Chapter 1, \( \rulename{{\to}I} \) opens a box with its hypothesis \( P \) (@def-rules-implication). The new goal is \( Q \). Nothing available mentions \( Q \), so no rule can build it. But inside the box, the assumption \( P \) and the premise \( \neg P \) clash, and \( \rulename{\bot E} \) writes the box's goal \( Q \). This is the new question to ask from the goal: *when nothing produces the goal, look for a clash.*
 
 Snapshots: the box with its goal \( Q \); then the clash named as the subgoal.
 
@@ -261,7 +267,7 @@ Show that \( \neg(P \vee Q) \vdash P \to R \).
 :::
 
 ::: {.idea}
-As before, the goal \( P \to R \) opens a box on \( P \), and the new goal \( R \) occurs nowhere else, so a clash must write it. Inside the box there is no \( \neg P \) to clash with. The only negation available is the premise \( \neg(P \vee Q) \), and the premise-directed question says what it asks for: the line \( P \vee Q \). That line is one \( \rulename{\vee I} \) away from the assumption \( P \). So the clash is **manufactured**: the unnegated half of the premise becomes a subgoal, and \( \rulename{\vee I} \) is chosen not because the goal is a disjunction but because the premise's clash needs one.
+As before, the goal \( P \to R \) opens a box on \( P \), and the new goal \( R \) occurs nowhere else, so a clash must write it. Inside the box there is no \( \neg P \) to clash with. The only negation available is the premise \( \neg(P \vee Q) \). An available negation \( \neg\varphi \) asks for \( \varphi \), so this one asks for the line \( P \vee Q \). That line is one \( \rulename{\vee I} \) away from the assumption \( P \). So the clash is **manufactured**: the unnegated half of the premise becomes a subgoal, and \( \rulename{\vee I} \) is chosen not because the goal is a disjunction but because the premise's clash needs one.
 
 Snapshots: the box with its goal \( R \); then the subgoal \( \bot \), for which the premise asks for \( P \vee Q \).
 
@@ -330,7 +336,7 @@ Show that \( P \vee Q, \ P \to R, \ \neg R \vdash Q \).
 :::
 
 ::: {.idea}
-The goal \( Q \) is a letter, so the goal gives no introduction rule to aim at. The premises do: \( P \vee Q \) is a disjunction, and Chapter 1's premise-directed move for a disjunction is \( \rulename{\vee E} \), with two boxes that both end in the current goal \( Q \). The box of \( Q \) ends as soon as it opens: its assumption is already the goal. The box of \( P \) cannot reach \( Q \) honestly, because nothing in it produces \( Q \). So we look for a clash: \( P \) feeds the premise \( P \to R \), and \( R \) clashes with \( \neg R \). The box ends on \( Q \) by \( \rulename{\bot E} \). This is the second new move: *an impossible case closes itself.*
+The goal \( Q \) is a letter, so the goal gives no introduction rule to aim at. The premises do. The premise \( P \vee Q \) is a disjunction, and Chapter 1 uses an available disjunction by \( \rulename{\vee E} \), with two boxes that both end in the current goal \( Q \). The box of \( Q \) ends as soon as it opens: its assumption is already the goal. The box of \( P \) cannot reach \( Q \) honestly, because nothing in it produces \( Q \). So we look for a clash: \( P \) feeds the premise \( P \to R \), and \( R \) clashes with \( \neg R \). The box ends on \( Q \) by \( \rulename{\bot E} \). This is the second new strategy: *an impossible case closes itself.* A case that reaches \( \bot \) ends by \( \rulename{\bot E} \) on the current goal.
 
 Snapshots: the split set up; then the first box's goal handed to \( \rulename{\bot E} \).
 
@@ -394,7 +400,7 @@ $\begin{nd}
 \end{center}
 ```
 
-The second box consists of its assumption alone, a one-line box, just as in the derivation of \( P \vee P \vdash P \) in @exm-disjunction-first-derivations: its last line is its first line, and that line is \( Q \), which is what \( \rulename{\vee E} \) needs. The two boxes are separate: nothing in the second box could cite lines 4–7.
+The second box consists of its assumption alone. It is a one-line box, just as in the derivation of \( P \vee P \vdash P \) in @exm-disjunction-first-derivations. Its last line is its first line, and that line is \( Q \), which is what \( \rulename{\vee E} \) needs. The two boxes are separate: nothing in the second box could cite lines 4–7.
 :::
 
 Look at line 7 of this derivation again. The box of \( P \) is a case "that cannot occur", and line 7 is the sentence "so there is nothing to prove": the case is closed with whatever the other case reaches. Every proof by cases with an impossible case has this line somewhere, usually unwritten.
@@ -403,7 +409,12 @@ Look at line 7 of this derivation again. The box of \( P \) is a case "that cann
 The impossible case must be impossible **from what is available in its own box**. A clash with a line of a sibling box, or of a box that has already closed, is a scope error (@def-derivation), even when the clash "looks right". In @exm-impossible-case the clash in the box of \( P \) uses line 5, from that box, and the premise on line 3; neither lives in another box. Exercise C2 shows the error and what it can prove.
 :::
 
-The moves of this section, in one place. **Goal \( \bot \): find a clash.** Look for \( \varphi \) and \( \neg\varphi \) among the available lines; if only \( \neg\varphi \) is there, make \( \varphi \) a subgoal. **An impossible case closes itself.** In a case split, a case that reaches \( \bot \) ends by \( \rulename{\bot E} \) on the current goal. The next section adds a way to reach the goal \( \bot \) deliberately, by assuming something.
+The two strategies of this section are these.
+
+- **Goal \( \bot \): find a clash.** Look for \( \varphi \) and \( \neg\varphi \) among the available lines. If only \( \neg\varphi \) is there, make \( \varphi \) a subgoal.
+- **An impossible case closes itself.** In a case split, a case that reaches \( \bot \) ends by \( \rulename{\bot E} \) on the current goal.
+
+The next section adds a way to reach the goal \( \bot \) deliberately, by assuming something.
 
 ## How the rules look in a mathematical proof
 
@@ -430,7 +441,7 @@ Let \( n \) be an integer. If \( n^2 \) is even, then \( n \) is even.
 :::
 
 ::: {.idea}
-The hypothesis "\( n^2 \) is even" hands us nothing to compute with: it says \( n^2 = 2j \) for some integer \( j \), and no algebra turns that into a statement about \( n \). The word "odd" does hand us something, since \( n = 2k + 1 \) can be squared. So we split on (E1) and show that the odd case is impossible: there (E3) makes \( n^2 \) odd, which clashes with the hypothesis through (E2). The impossible case then closes itself.
+The hypothesis "\( n^2 \) is even" hands us nothing to compute with: it says \( n^2 = 2j \) for some integer \( j \), and no algebra turns that into a statement about \( n \). The word "odd" does hand us something, since \( n = 2k + 1 \) can be squared. So we split by the fact that every integer is even or odd, (E1), and show that the odd case is impossible. There the fact about odd squares, (E3), makes \( n^2 \) odd. This clashes with the hypothesis through (E2), no integer is both. The impossible case then closes itself.
 :::
 
 ::: {.proof}
@@ -443,7 +454,7 @@ Suppose \( n^2 \) is even \( [\text{assumption for } \rulename{{\to}I}] \). By (
 In both cases \( n \) is even \( [\rulename{\vee E}] \). This proves that if \( n^2 \) is even, then \( n \) is even \( [\rulename{{\to}I}] \).
 :::
 
-The logic of the proof fits in a derivation. Write \( E \) for "\( n \) is even", \( O \) for "\( n \) is odd", \( S \) for "\( n^2 \) is even", and \( T \) for "\( n^2 \) is odd". Then (E1) for \( n \) is \( E \vee O \), (E2) for \( n^2 \) is \( \neg(S \wedge T) \), and (E3) for \( n \) is \( O \to T \); these are the premises.
+The logic of the proof fits in a derivation. Write \( E \) for "\( n \) is even", \( O \) for "\( n \) is odd", \( S \) for "\( n^2 \) is even", and \( T \) for "\( n^2 \) is odd". The three facts become the premises. "Even or odd", (E1), for \( n \) is \( E \vee O \). "Not both", (E2), for \( n^2 \) is \( \neg(S \wedge T) \). "Odd squares are odd", (E3), for \( n \) is \( O \to T \).
 
 ```{=latex}
 \begin{center}
@@ -485,14 +496,14 @@ Each line is one sentence of the proof.
 | 11 | In both cases \( n \) is even. |
 | 12 | This proves that if \( n^2 \) is even, then \( n \) is even. |
 
-Line 8 cites line 4, the assumption of the outer box; it may, since the box \( \lines{4}{11} \) contains line 8 (@def-derivation). Two steps of the proof are not in the derivation: passing from the facts (E1)–(E3), about every integer, to their instances for this \( n \) and this \( n^2 \), and naming the \( k \) of (E3). Both are steps about "every" and "some", used as ordinary reasoning (the note at the start of this chapter).
+Line 8 cites line 4, the assumption of the outer box. It may, since the box \( \lines{4}{11} \) contains line 8 (@def-derivation). Two steps of the proof are not in the derivation. The first passes from the facts (E1)–(E3), about every integer, to their instances for this \( n \) and this \( n^2 \). The second names the \( k \) of (E3). Both are steps about "every" and "some", used as ordinary reasoning, as the start of this chapter explained.
 
 ::: {.check}
 Which sentence of the proof of @thm-square-even-implies-even is the rule \( \rulename{\bot E} \), and what does it write?
 :::
 
 ::: {.solution}
-The sentence "So this case cannot occur, and in it \( n \) is even", line 10 of the derivation. It cites the line \( \bot \) (line 9) and writes \( E \), "\( n \) is even", which is the goal of the case, so that the box of \( O \) ends on the same line as the box of \( E \).
+The sentence "So this case cannot occur, and in it \( n \) is even", line 10 of the derivation. It cites the line \( \bot \), line 9, and writes \( E \), "\( n \) is even". That is the goal of the case, so the box of \( O \) ends on the same line as the box of \( E \).
 :::
 
 Every rule in this proof is a primitive rule: \( \rulename{{\to}I} \), \( \rulename{\vee E} \), \( \rulename{{\to}E} \), \( \rulename{\wedge I} \), \( \rulename{\neg E} \), and \( \rulename{\bot E} \). The next section uses the theorem twice, to prove that no rational number has square \( 2 \). Section 2.3 reads the same proof again with shorter steps, as mathematicians usually write it, "by the contrapositive".
@@ -532,7 +543,7 @@ $\begin{nd}
 \end{center}
 ```
 
-In prose: *suppose \( x^2 < 0 \); this contradicts \( x^2 \ge 0 \); so this case cannot occur, and in it \( x = 7 \); hence if \( x^2 < 0 \), then \( x = 7 \).*
+In prose: *Suppose \( x^2 < 0 \). This contradicts \( x^2 \ge 0 \). So this case cannot occur, and in it \( x = 7 \). Hence if \( x^2 < 0 \), then \( x = 7 \).*
 :::
 
 We wrote out all five lines rather than citing @prp-vacuous-implication as a single step. Using an already proved sequent as one line of a new derivation is a genuine new permission, and Section 2.3 grants it; until then, a derivation repeats the steps.
@@ -541,7 +552,7 @@ An implication whose hypothesis cannot hold is called **vacuously true**. Nothin
 
 Everyday language agrees. A friend says: "if you finish the exercises by Friday, I will buy you lunch". You do not finish them. Whatever your friend does on Friday, the promise has not been broken. *A promise never tested is never broken.*
 
-Vacuous truth is not a curiosity; it is what makes case splits work. In @exm-impossible-case, line 7 closed the impossible case by \( \rulename{\bot E} \), and line 10 of the derivation of @thm-square-even-implies-even did the same.
+Vacuous truth is not a curiosity; it is what makes case splits work. In @exm-impossible-case, line 7 closed the impossible case by \( \rulename{\bot E} \). Line 10 of the derivation for @thm-square-even-implies-even did the same.
 
 ::: {.warning}
 "True" is not "useful". The statements "if \( x^2 < 0 \), then \( x = 7 \)" and "if \( x^2 < 0 \), then \( x \ne 7 \)" are both true, and neither says anything about \( x \) or about \( 7 \). Likewise "if \( n \) is an even prime greater than \( 2 \), then \( n = 17 \)" is true and empty. When a hypothesis turns out to be impossible, suspect the hypothesis; do not believe the conclusion.
@@ -549,18 +560,22 @@ Vacuous truth is not a curiosity; it is what makes case splits work. In @exm-imp
 
 ## Two sequents that sound wrong
 
-Two sequents in hand sound wrong when read aloud with unrelated statements. The first is \( Q \vdash P \to Q \): a box opened with \( P \), whose only other line repeats \( Q \) (line 1 lies in no box), closed by \( \rulename{{\to}I} \), as in Exercise B2 of Section 1.4. The second is \( \neg P \vdash P \to Q \), @prp-vacuous-implication. Read aloud: "\( 7 \) is odd; so, if every square is negative, then \( 7 \) is odd", and "\( 7 \) is not even; so, if \( 7 \) is even, then every square is negative". They are called the **paradoxes of material implication**.
+Two sequents we have already derived sound wrong when read aloud with unrelated statements. The first is \( Q \vdash P \to Q \), as in Exercise B2 of Section 1.4. Its derivation opens a box with \( P \), whose only other line repeats \( Q \) (line 1 lies in no box), and closes it by \( \rulename{{\to}I} \). The second is \( \neg P \vdash P \to Q \), @prp-vacuous-implication. Read aloud: "\( 7 \) is odd; so, if every square is negative, then \( 7 \) is odd", and "\( 7 \) is not even; so, if \( 7 \) is even, then every square is negative". They are called the **paradoxes of material implication**. Here "material implication" means the connective \( \to \), read as this book reads it: true unless the hypothesis holds and the conclusion fails.
 
-Each comes from a rule, so whoever rejects one must say which rule goes: the first rests on \( \rulename{{\to}I} \) closing a box whose assumption no line uses (with \( \rulename{R} \) copying a line in from outside), the second on \( \rulename{\bot E} \). Some logics, built for purposes other than mathematics, do drop \( \rulename{\bot E} \); this book keeps it, and Exercise B3 of Section 2.5 shows that the classical rule would bring it back anyway. The same rule gives @prp-ex-falso: from a clash, anything.
+Each comes from a rule, so whoever rejects one must say which rule goes. The first rests on \( \rulename{{\to}I} \) closing a box whose assumption no line uses, with \( \rulename{R} \) copying a line in from outside. The second rests on \( \rulename{\bot E} \). The same rule gives @prp-ex-falso: from a clash, anything.
 
-Mathematics does not suffer: its "if" almost always sits under "every", joining two statements about one variable, as in "for every integer \( n \), if \( n \) is a multiple of \( 4 \), then \( n \) is even". Instances with a false hypothesis ("if \( 3 \) is a multiple of \( 4 \), then \( 3 \) is even") are true and empty, as the paradoxes say; the content lies where the hypothesis holds, and there the promise is exact. Nobody wants to prove a sentence whose two parts share nothing.
+Mathematics does not suffer: its "if" almost always sits under "every", joining two statements about one variable, as in "for every integer \( n \), if \( n \) is a multiple of \( 4 \), then \( n \) is even". An instance with a false hypothesis, such as "if \( 3 \) is a multiple of \( 4 \), then \( 3 \) is even", is true and empty, as the paradoxes say. The content lies where the hypothesis holds, and there the promise is exact. Nobody wants to prove a sentence whose two parts share nothing.
+
+::: {.second-reading title="For instructors"}
+Some logics, built for purposes other than mathematics, do drop \( \rulename{\bot E} \). This book keeps it, and Exercise B3 of Section 2.5 shows that the classical rule would bring it back anyway.
+:::
 
 ::: {.check}
 Let \( x \) be a real number. Which of the two sequents makes "if \( x^2 < 0 \), then \( x > 5 \)" true, and which makes "if \( x < -3 \), then \( x^2 + 1 > 0 \)" true?
 :::
 
 ::: {.solution}
-The first by \( \neg P \vdash P \to Q \), since \( x^2 < 0 \) fails (\( x^2 \ge 0 \) is \( \neg(x^2 < 0) \), the convention box); the second by \( Q \vdash P \to Q \), since \( x^2 + 1 > 0 \) holds whatever \( x \) is.
+The first by \( \neg P \vdash P \to Q \), since \( x^2 < 0 \) fails (by the convention on order, \( x^2 \ge 0 \) is \( \neg(x^2 < 0) \)); the second by \( Q \vdash P \to Q \), since \( x^2 + 1 > 0 \) holds whatever \( x \) is.
 :::
 
 ::: {.second-reading title="The 'if' of a counterfactual"}
@@ -569,7 +584,7 @@ The first by \( \neg P \vdash P \to Q \), since \( x^2 < 0 \) fails (\( x^2 \ge 
 
 ## The rule card
 
-Before the card, the two rules at work on large statements, one use per row.
+Here are the two rules at work on large statements, one use per row.
 
 ::: {#exm-contradiction-and-vacuous-truth-instances}
 [Instances of \( \rulename{\neg E} \) and \( \rulename{\bot E} \)]
@@ -585,21 +600,30 @@ Before the card, the two rules at work on large statements, one use per row.
 
 Chapter 1's seven rules are on the card at the end of Section 1.6; here are this chapter's so far.
 
-| Rule | Shape | You write | Lean |
-|---|---|---|---|
-| \( \rulename{\neg E} \) | \( \varphi \), \( \neg\varphi \) \( \Longrightarrow \) \( \bot \) | "…, which contradicts …" | `exact hn hp` (goal `False`) |
-| \( \rulename{\bot E} \) | \( \bot \) \( \Longrightarrow \) any \( \varphi \) | "This case cannot occur." "So there is nothing to prove." | `exfalso` |
+| Rule | Shape | You write |
+|---|---|---|
+| \( \rulename{\neg E} \) | \( \varphi \), \( \neg\varphi \) \( \Longrightarrow \) \( \bot \) | "…, which contradicts …" |
+| \( \rulename{\bot E} \) | \( \bot \) \( \Longrightarrow \) any \( \varphi \) | "This case cannot occur." "So there is nothing to prove." |
 
-In Lean the two steps are often taken together: `absurd hp hn` closes any goal from a proof `hp` of \( P \) and a proof `hn` of \( \neg P \), which is \( \rulename{\neg E} \) followed by \( \rulename{\bot E} \), and the tactic `contradiction` finds such a pair by itself.
+::: {.second-reading title="For instructors"}
+In the proof assistant Lean, these rules are performed by the following code. Nothing in this book depends on it.
+
+| Rule | Lean |
+|---|---|
+| \( \rulename{\neg E} \) | `exact hn hp` (goal `False`) |
+| \( \rulename{\bot E} \) | `exfalso` |
+
+In Lean the two steps are often taken together. `absurd hp hn` closes any goal from a proof `hp` of \( P \) and a proof `hn` of \( \neg P \). This is \( \rulename{\neg E} \) followed by \( \rulename{\bot E} \). The tactic `contradiction` finds such a pair by itself.
+:::
 
 ::: {.warning}
 [Not allowed: \( \rulename{\neg E} \) and \( \rulename{\bot E} \)]
 
-Each step breaks the bullet of the rule's reading named after it.
+Each of these steps is wrong, for the reason given.
 
-- "\( \bot \) from \( x < 1 \) and \( x > 1 \), as written": the lines must be exactly \( \varphi \) and \( \neg\varphi \) (*Exactly \( \varphi \) and \( \neg\varphi \)*; the convention box, drill A2(l)).
-- "\( \bot \) — \( \rulename{\neg E} \) \( j, i \)", with line \( j \) the negation: the unnegated line is cited first (*The citation*).
-- "\( \bot \) from the one line \( P \)": \( \rulename{\neg E} \) needs two lines, and \( \rulename{\bot E} \) runs from \( \bot \), never to it (*Two given lines*; the warning that \( \rulename{\bot E} \) does not run backwards).
+- "\( \bot \) from \( x < 1 \) and \( x > 1 \), as written": the lines must be exactly \( \varphi \) and \( \neg\varphi \). The convention on order and Exercise A2, part (l), show how to make these two lines clash.
+- "\( \bot \) — \( \rulename{\neg E} \) \( j, i \)", with line \( j \) the negation: the unnegated line must be cited first.
+- "\( \bot \) from the one line \( P \)": \( \rulename{\neg E} \) needs two given lines, and \( \rulename{\bot E} \) runs from \( \bot \), never to it.
 :::
 
 ::: {.remark}
@@ -617,7 +641,7 @@ Chapter 4 gives each connective a truth table. The rows of \( \to \) with a fals
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Write the schemas of \( \rulename{\neg E} \) and \( \rulename{\bot E} \) from memory.
-2. Match each sentence, taken from proofs, with the rule it uses, \( \rulename{\neg E} \) or \( \rulename{\bot E} \): "But \( n \) was assumed odd, and we have just shown it is even"; "In this case \( x^2 < 0 \), which is impossible, so there is nothing to prove".
+2. The two sentences below are taken from proofs. Match each with its rule, \( \rulename{\neg E} \) or \( \rulename{\bot E} \): "But \( n \) was assumed odd, and we have just shown it is even"; "In this case \( x^2 < 0 \), which is impossible, so there is nothing to prove".
 3. True or false, with a reason: \( \rulename{\bot E} \) lets us write \( \bot \) from any line.
 4. In @exm-impossible-case, why is the second box only one line long?
 5. In the derivation after @thm-square-even-implies-even, why does line 8 need line 4, and why may it cite it?
@@ -627,7 +651,7 @@ Chapter 4 gives each connective a truth table. The rows of \( \to \) with a fals
 ::: {.solution}
 (a) \( \rulename{\neg E} \): from a line \( i \) with \( \varphi \) and a line \( j \) with \( \neg\varphi \), both available, write \( \bot \) at line \( k \), citing \( i, j \). \( \rulename{\bot E} \): from an available line \( i \) with \( \bot \), write any statement \( \varphi \) at line \( k \), citing \( i \). The two schemas are those of @def-rules-contradiction.
 
-(b) The first is \( \rulename{\neg E} \): "odd" and "even" clash through (E2), and the sentence records the clash. The second is \( \rulename{\bot E} \): "impossible" records a clash (an \( \rulename{\neg E} \) against \( x^2 \ge 0 \), left unsaid), and "there is nothing to prove" closes the case with whatever the case needs.
+(b) The first is \( \rulename{\neg E} \): "odd" and "even" clash through (E2), no integer is both, and the sentence records the clash. The second is \( \rulename{\bot E} \): "impossible" records a clash (an \( \rulename{\neg E} \) against \( x^2 \ge 0 \), left unsaid), and "there is nothing to prove" closes the case with whatever the case needs.
 
 (c) False. \( \rulename{\bot E} \) runs from \( \bot \) to any statement, not from any statement to \( \bot \). \( \rulename{\bot E} \) needs a line \( \bot \) to start from. The rule that records a clash as \( \bot \) is \( \rulename{\neg E} \), and it needs two lines \( \varphi \) and \( \neg\varphi \).
 
@@ -783,13 +807,13 @@ $\begin{nd}
 
 The second is the same, with \( x < -100 \) on lines 4 and 5: \( \rulename{\bot E} \) may write any statement.
 
-No real number is both greater than \( 100 \) and less than \( -100 \). That is no paradox, because neither implication ever applies: its hypothesis holds for no real \( x \). Both are vacuously true, and both say nothing about \( x \), as the warning on vacuous truth says.
+No real number is both greater than \( 100 \) and less than \( -100 \). That is no paradox, because neither implication ever applies: its hypothesis holds for no real \( x \). Both are vacuously true, and both say nothing about \( x \): true is not the same as useful.
 :::
 
 ::: {#exr-contradiction-and-vacuous-truth-b4}
 [B4: An impossible case, scaffolded]
 
-A search for \( P \vee Q, \ P \to R, \ Q \to S, \ \neg R \vdash S \) has reached the stage below. *Name the move, then complete it.*
+A search for \( P \vee Q, \ P \to R, \ Q \to S, \ \neg R \vdash S \) has reached the stage below. *Name the strategy, then complete it.*
 
 ```{=latex}
 % schema (partial derivation: the gap is unnumbered, lines carry their final numbers)
@@ -816,7 +840,7 @@ $\begin{nd}
 :::
 
 ::: {.solution}
-The move is *an impossible case closes itself*. The case \( P \) cannot reach \( S \) honestly: nothing in it produces \( S \). So it reaches a clash: \( P \) fires line 2, and \( R \) clashes with line 4. The case \( Q \) reaches \( S \) by firing line 3.
+The strategy is *an impossible case closes itself*. The case \( P \) cannot reach \( S \) honestly: nothing in it produces \( S \). So it reaches a clash: \( P \) fires line 2, and \( R \) clashes with line 4. The case \( Q \) reaches \( S \) by firing line 3.
 
 ```{=latex}
 \begin{center}
@@ -844,7 +868,7 @@ $\begin{nd}
 ::: {#exr-contradiction-and-vacuous-truth-b5}
 [B5: Derive or break]
 
-For each claim, either derive it with the rules of Chapter 1 and of this section (\( \rulename{\neg E} \) and \( \rulename{\bot E} \); no other rule for "not" yet), or break it by statements about a real number \( x \) that make its counterexample set true at one value of \( x \).
+For each claim, either derive it or break it. To derive it, use the rules of Chapter 1 and of this section, \( \rulename{\neg E} \) and \( \rulename{\bot E} \), and no other rule for "not" yet. To break it, give statements about a real number \( x \) that make its counterexample set true at one value of \( x \).
 
 ::: {.enumerate options="label=(\alph*)"}
 1. \( (P \wedge \neg Q) \vee R, \ Q \vdash R \).
@@ -939,9 +963,13 @@ $\begin{nd}
 \end{center}
 ```
 
-The four that break are look-alikes. (b) draws the wrong conclusion from a refuted disjunct: the disjunctive syllogism of Section 2.3, after putting the disjunction in the other order, gives \( P \), not \( \neg P \). (d) denies the antecedent, the look-alike of the modus tollens that Section 2.3 derives. (g) is a look-alike of @exm-impossible-case, whose conclusion is the other disjunct. (f) is a look-alike of a De Morgan law of Section 2.5. The four that derive follow worked patterns of this section: @exm-impossible-case for (a), @prp-ex-falso for (c), @prp-vacuous-implication for (e) and (h).
+The four that break are look-alikes. (b) draws the wrong conclusion from a refuted disjunct: the disjunctive syllogism of Section 2.3, after putting the disjunction in the other order, gives \( P \), not \( \neg P \). (d) denies the antecedent, the look-alike of the modus tollens that Section 2.3 derives. (g) is a look-alike of @exm-impossible-case, whose conclusion is the other disjunct. (f) is a look-alike of a De Morgan law of Section 2.5. The four that derive follow worked patterns of this section:
 
-**Marking scheme.** (16 points) For each claim: 1 for the verdict; 1 for a derivation every line of which checks, or for a choice of statements and one value of \( x \) at which **every** member of the counterexample set is true. Fatal errors (0 for the claim): a "break" at which some premise is false; a derivation that uses a rule not yet available (\( \rulename{\neg I} \), \( \rulename{RAA} \) or a derived rule of Section 2.3).
+- (a) follows @exm-impossible-case;
+- (c) follows @prp-ex-falso;
+- (e) and (h) follow @prp-vacuous-implication.
+
+**What a complete answer needs.** (16 points) For each claim, 1 point for the verdict. A second point for a derivation every line of which checks, or for a choice of statements and one value of \( x \) at which **every** member of the counterexample set is true. Slips that lose the claim (0 points for it): a "break" at which some premise is false, and a derivation that uses a rule not yet available. The rules not yet available are \( \rulename{\neg I} \), \( \rulename{RAA} \) and the derived rules of Section 2.3.
 :::
 
 ::: {#exr-contradiction-and-vacuous-truth-b6}
@@ -951,7 +979,7 @@ The four that break are look-alikes. (b) draws the wrong conclusion from a refut
 1. List the rules used by a derivation of \( \neg P \vdash P \to Q \) and by one of \( Q \vdash P \to Q \).
 2. Suppose \( \rulename{\bot E} \) were dropped. Derive \( \neg P \vdash P \to \bot \) without it, and say what this derivation stops short of.
 3. Suppose instead \( \rulename{{\to}I} \) were allowed only when the box's assumption is cited by some line of the box or is itself the box's last line. Which of the two derivations of (a) is lost? Is the one-line box of \( \vdash P \to P \) lost? Is the sequent \( Q \vdash P \to Q \) lost?
-4. Let \( n \) be an integer. For \( n = 3 \), \( n = 6 \) and \( n = 8 \), write the instance of "if \( n \) is a multiple of \( 4 \), then \( n \) is even", and say for each whether the first sequent of (a), the second, or neither, decides its truth.
+4. Let \( n \) be an integer. For \( n = 3 \), \( n = 6 \) and \( n = 8 \), write the instance of "if \( n \) is a multiple of \( 4 \), then \( n \) is even". Say for each whether the first sequent of (a), the second, or neither, decides its truth.
 :::
 :::
 
@@ -995,7 +1023,7 @@ The restriction kills one derivation, not the sequent; a logic that really rejec
 
 (d) \( n = 3 \): "if \( 3 \) is a multiple of \( 4 \), then \( 3 \) is even"; hypothesis and conclusion are both false, so only \( \neg P \vdash P \to Q \) decides it. \( n = 6 \): "if \( 6 \) is a multiple of \( 4 \), then \( 6 \) is even"; the hypothesis is false and the conclusion true, so either sequent decides it. \( n = 8 \): "if \( 8 \) is a multiple of \( 4 \), then \( 8 \) is even"; both parts are true (\( 8 = 4 \cdot 2 \)), so the first sequent does not apply and the second does, since the conclusion is true. This is the one instance of the three whose hypothesis holds, the kind in which the theorem says something: here it can be fired by \( \rulename{{\to}E} \).
 
-**Marking scheme.** (10 points) 2: (a), both rule lists. 2: (b), a correct four-line derivation (1) and the remark that the step to \( Q \) is \( \rulename{\bot E} \)'s (1). 3: (c), the right derivation lost and the reason, that the assumption is never cited (1); \( \vdash P \to P \) kept (1); and a derivation of \( Q \vdash P \to Q \) that meets the restriction (1). 3: (d), one point per value: the truth values of hypothesis and conclusion, and the right sequent (\( n = 3 \): the first only; \( n = 6 \): either; \( n = 8 \): the second). Fatal error (0 for (b)): a derivation of \( P \to Q \) itself without \( \rulename{\bot E} \) that cites a line inside a closed box.
+**What a complete answer needs.** (10 points) 2: (a), both rule lists. 2: (b), a correct four-line derivation (1) and the remark that the step to \( Q \) is \( \rulename{\bot E} \)'s (1). 3: (c), the right derivation lost and the reason, that the assumption is never cited (1); \( \vdash P \to P \) kept (1); and a derivation of \( Q \vdash P \to Q \) that meets the restriction (1). 3: (d), one point per value: the truth values of hypothesis and conclusion, and the right sequent (\( n = 3 \): the first only; \( n = 6 \): either; \( n = 8 \): the second). Slips that lose the step, scoring 0 for (b): a derivation of \( P \to Q \) itself without \( \rulename{\bot E} \) that cites a line inside a closed box.
 :::
 
 ### C. Going deeper
@@ -1061,7 +1089,7 @@ $\begin{nd}
 ::: {.enumerate options="label=(\alph*)"}
 1. Is the sequent \( \neg P \vdash P \to Q \) derivable?
 2. Find the first line that is not justified, and name the clause of @def-derivation it breaks.
-3. Show that the move made at that line can lead from a true premise to a false conclusion.
+3. Show that the step made at that line can lead from a true premise to a false conclusion.
 4. Write a correct derivation.
 :::
 :::
@@ -1071,7 +1099,7 @@ $\begin{nd}
 
 (b) Line 4. It cites line 3, which lies inside the box \( \lines{2}{3} \), and that box has closed before line 4. By the scope rule of @def-derivation, a line inside a closed box is not available. (Lines 1–3 are fine: a box may close without a rule discharging it, although nothing then leaves it. Lines 5–7 would be fine if line 4 were.)
 
-(c) Lines 1–4 alone would "derive" \( \neg P \vdash Q \) by the same move. Read \( P \) as "\( x > 0 \)" and \( Q \) as "\( x = 7 \)", and take \( x = -1 \). The premise \( \neg(x > 0) \) is true, and the conclusion \( x = 7 \) is false. So the move "write, outside a box, what a closed box's \( \bot \) would allow" can lead from a true premise to a false line. The line \( \bot \) on line 3 holds only under the assumption \( P \); once the box closes, that assumption is gone, and so is the clash.
+(c) Lines 1–4 alone would "derive" \( \neg P \vdash Q \) by the same step. Read \( P \) as "\( x > 0 \)" and \( Q \) as "\( x = 7 \)", and take \( x = -1 \). The premise \( \neg(x > 0) \) is true, and the conclusion \( x = 7 \) is false. So the step "write, outside a box, what a closed box's \( \bot \) would allow" can lead from a true premise to a false line. The line \( \bot \) on line 3 holds only under the assumption \( P \); once the box closes, that assumption is gone, and so is the clash.
 
 (d) Move the \( \rulename{\bot E} \) inside the box, where the clash is:
 
@@ -1089,13 +1117,13 @@ $\begin{nd}
 \end{center}
 ```
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 - 2: answers (a) yes, citing @prp-vacuous-implication or giving a derivation.
 - 3: names line 4 as the first failure and the scope rule (a line inside a closed box is not available) as the clause broken.
 - 3: gives a counterexample **to the step**, not only to some conclusion: a reading of \( P \), \( Q \) under which lines 1–4 go from a true premise to a false line.
 - 2: a correct derivation, with every citation available.
 
-Fatal errors (0 for the step): blaming line 7 or line 6 (they are correct once line 4 is); saying that \( \rulename{\bot E} \) itself is the error.
+Slips that lose the step (0 for the step): blaming line 7 or line 6 (they are correct once line 4 is); saying that \( \rulename{\bot E} \) itself is the error.
 :::
 
 <!-- dependency ledger
@@ -1109,7 +1137,7 @@ thm-square-even-implies-even (proof): instantiating (E1)-(E3) at n and n^2; nami
 prp-vacuous-implication (example): "Two sequents that sound wrong": 7 is odd and not even; no square is negative (x^2 >= 0); 3 is not a multiple of 4 and not even | school arithmetic and algebra
 prp-vacuous-implication (example): vacuous-truth warning: an even n > 2 has the divisor 2 with 1 < 2 < n, so is not prime | school arithmetic
 prp-vacuous-implication (example): "Two sequents that sound wrong": 4k = 2(2k), so every multiple of 4 is even | inline arithmetic
-prp-vacuous-implication (claim): some logics drop bot-E (relevance and paraconsistent logics; none named) | remark about other logics, used in no proof; 2.5 B3 derives bot-E from RAA and repetition
+prp-vacuous-implication (claim): some logics drop bot-E (relevance and paraconsistent logics; none named) | remark about other logics, used in no proof, now in the "For instructors" fold after "Two sequents that sound wrong" (STYLE §13 B9); 2.5 B3 derives bot-E from RAA and repetition
 prp-vacuous-implication (solution): Quick check on the paradoxes: x^2 < 0 fails for every real x; x^2 + 1 > 0 for every real x | school algebra; AN1.1 (promised)
 prp-vacuous-implication (example): fold on the counterfactual: 7 is not divisible by 2 and not divisible by 3 | arithmetic
 exr-contradiction-and-vacuous-truth-a2 (solution): (j) x >= 1 and x <= 1 both hold at x = 1; (l) x > 1 is not(x <= 1), and x <= 1 is written (x < 1) or (x = 1) | arithmetic; the convention box

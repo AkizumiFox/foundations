@@ -80,6 +80,14 @@ items:
       ⊥E can write a line that is ⊥ itself, and each needs ⊥ already in a cited line or box line. ∨I brings
       ⊥ in only as a disjunct, and the only way to take it back out is ∨E, which needs an assumption ⊥.
       So '
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-contradiction-and-vacuous-truth
+    hash: 5d16c9d045e5
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: schemas and readings unchanged; Givens/Goal -> We know | We want; fold split
+      into sentences with the same rule lists'
 - key: check:01-contradiction-and-vacuous-truth:1
   kind: check
   file: 01-contradiction-and-vacuous-truth.md
@@ -124,11 +132,18 @@ items:
     model: claude-opus-5-5
     evidence: '70-75: (i) φ=Q∧R; (ii) φ=¬P, cited ¬P first; (iii) main connective of ¬P→Q is →, per @def-main-connective.
       All correct'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-contradiction-and-vacuous-truth
+    hash: 7063f1905a9a
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: order convention now a list; the four equivalences unchanged'
 - key: check:01-contradiction-and-vacuous-truth:2
   kind: check
   file: 01-contradiction-and-vacuous-truth.md
-  line: 83
-  hash: ce92dd0d7068
+  line: 89
+  hash: ec36ebd7d18c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -168,10 +183,17 @@ items:
     model: claude-opus-5-5
     evidence: '84-89: (i) and (ii) follow the convention box at 78; (iii) ''No'' is right as written;
       the pointer to A2(l) matches 656/686'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-contradiction-and-vacuous-truth
+    hash: ec36ebd7d18c
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: ''(drill A2(l))'' -> ''as in Exercise A2, part (l)'''
 - key: exm-first-contradictions
   kind: exm
   file: 01-contradiction-and-vacuous-truth.md
-  line: 103
+  line: 109
   hash: e685b02cc968
   verdicts:
   - stage: S5a
@@ -212,10 +234,17 @@ items:
     evidence: '106-162: (a) and (b) check (check_fitch, 0 errors); ¬E 3,2 has φ=Q; ''need not use every
       premise'' agrees with @def-derivable (''premises all belong to Γ''). R3 §4.1 item 5 exempts (a)
       from snapshots'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-contradiction-and-vacuous-truth
+    hash: e685b02cc968
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: Idea reworded; derivations byte-identical'
 - key: prp-ex-falso
   kind: prp
   file: 01-contradiction-and-vacuous-truth.md
-  line: 166
+  line: 172
   hash: d048d248344a
   verdicts:
   - stage: S5a
@@ -258,7 +287,7 @@ items:
 - key: proof:prp-ex-falso
   kind: proof
   file: 01-contradiction-and-vacuous-truth.md
-  line: 176
+  line: 182
   hash: 60a84d8125e4
   verdicts:
   - stage: S5a
@@ -300,7 +329,7 @@ items:
 - key: prp-vacuous-implication
   kind: prp
   file: 01-contradiction-and-vacuous-truth.md
-  line: 195
+  line: 201
   hash: 93aeb134eb69
   verdicts:
   - stage: S5a
@@ -339,10 +368,17 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 198; the Idea and its snapshots (201-231) agree with the proof
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-contradiction-and-vacuous-truth
+    hash: 93aeb134eb69
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: Idea reworded; statement and snapshots unchanged'
 - key: proof:prp-vacuous-implication
   kind: proof
   file: 01-contradiction-and-vacuous-truth.md
-  line: 233
+  line: 239
   hash: 39468218b10f
   verdicts:
   - stage: S5a
@@ -386,7 +422,7 @@ items:
 - key: exm-manufactured-clash
   kind: exm
   file: 01-contradiction-and-vacuous-truth.md
-  line: 257
+  line: 263
   hash: ca8265834fb9
   verdicts:
   - stage: S5a
@@ -425,10 +461,18 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: '260-314: ∨I 2, then ¬E 3,1, then ⊥E 4, then →I 2-5; the mirror image is B1(a) as stated'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-contradiction-and-vacuous-truth
+    hash: ca8265834fb9
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: ''premise-directed question'' -> ''question for an available negation'';
+      steps unchanged'
 - key: check:01-contradiction-and-vacuous-truth:3
   kind: check
   file: 01-contradiction-and-vacuous-truth.md
-  line: 316
+  line: 322
   hash: 42908557d62b
   verdicts:
   - stage: S5a
@@ -448,7 +492,7 @@ items:
 - key: exm-impossible-case
   kind: exm
   file: 01-contradiction-and-vacuous-truth.md
-  line: 326
+  line: 332
   hash: 9cfcb577c5f8
   verdicts:
   - stage: S5a
@@ -502,10 +546,17 @@ items:
       lines' (def-derivation). The new sentence 'nothing in the second box could cite lines 4–7' is right
       by the scope rule, since box 4–7 does not contain line 8; the wrong reason flagged in S5a is gone.
       The meta-claim no
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-contradiction-and-vacuous-truth
+    hash: 9cfcb577c5f8
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: ''move'' -> ''strategy''; one true restating sentence added'
 - key: thm-square-even-implies-even
   kind: thm
   file: 01-contradiction-and-vacuous-truth.md
-  line: 426
+  line: 437
   hash: 37b96aa0d5bf
   verdicts:
   - stage: S5a
@@ -545,10 +596,17 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 429; (E1)-(E3) are stated at 412-424, and (E3) is computed inline
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-contradiction-and-vacuous-truth
+    hash: 37b96aa0d5bf
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: (E1)-(E3) glossed in words; statement unchanged'
 - key: proof:thm-square-even-implies-even
   kind: proof
   file: 01-contradiction-and-vacuous-truth.md
-  line: 436
+  line: 447
   hash: 0c2a6d22deb4
   verdicts:
   - stage: S5a
@@ -591,11 +649,18 @@ items:
     evidence: '437-444 and the derivation 448-471: each tag matches its line; ledger 1106-1108 covers
       (E1)-(E3), the instances and naming k; STATUS rows 89 and 92 hold the promises; ''every rule is
       primitive'' (498) holds'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-contradiction-and-vacuous-truth
+    hash: 0c2a6d22deb4
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: premises glossed; steps and derivation byte-identical; sidecar passes'
 - key: check:01-contradiction-and-vacuous-truth:4
   kind: check
   file: 01-contradiction-and-vacuous-truth.md
-  line: 490
-  hash: bdad13330343
+  line: 501
+  hash: 24dc580c2565
   verdicts:
   - stage: S5a
     verdict: correct
@@ -611,10 +676,17 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: '491-496: line 10, ⊥E 9, writes E'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-contradiction-and-vacuous-truth
+    hash: 24dc580c2565
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: answer still line 10, bot-E writing E'
 - key: exm-vacuous-square
   kind: exm
   file: 01-contradiction-and-vacuous-truth.md
-  line: 508
+  line: 519
   hash: d71daf7945a5
   verdicts:
   - stage: S5a
@@ -654,11 +726,19 @@ items:
     model: claude-opus-5-5
     evidence: '511-536: a 5-line derivation with the school fact as premise; ledger 1105 has x^2>=0 (AN1.1,
       STATUS row 94); R3 exempts it from snapshots'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-contradiction-and-vacuous-truth
+    hash: d71daf7945a5
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: prose split; ''some logics drop bot-E'' moved to For instructors fold; sidecar
+      passes'
 - key: check:01-contradiction-and-vacuous-truth:5
   kind: check
   file: 01-contradiction-and-vacuous-truth.md
-  line: 558
-  hash: c8683cad9301
+  line: 573
+  hash: ce1742be0d0f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -676,10 +756,17 @@ items:
     model: claude-opus-5-5
     evidence: '559-564: x^2<0 always fails, so ¬P⊢P→Q decides the first; x^2+1>0 always holds, so Q⊢P→Q
       decides the second; ledger 1111'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-contradiction-and-vacuous-truth
+    hash: ce1742be0d0f
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: ''the convention box'' -> ''by the convention on order'''
 - key: exm-contradiction-and-vacuous-truth-instances
   kind: exm
   file: 01-contradiction-and-vacuous-truth.md
-  line: 574
+  line: 589
   hash: 9ea0f233ae8e
   verdicts:
   - stage: S5a
@@ -698,11 +785,26 @@ items:
     model: claude-opus-5-5
     evidence: '577-584: three compound instances and two look-alikes, verbatim from the blueprint §4.1
       item 3; each reason is correct'
+  - stage: S5e
+    verdict: minor
+    by: s5e-01-contradiction-and-vacuous-truth
+    hash: 9ea0f233ae8e
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only; table and Not-allowed box unchanged; minor: Lean paragraph after the rule
+      card left on the main line (STYLE 13 B9)'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 9ea0f233ae8e
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'fixed: Lean column and paragraph moved into a For instructors fold, as in 2.2-2.4'
 - key: exr-contradiction-and-vacuous-truth-a1
   kind: exr
   file: 01-contradiction-and-vacuous-truth.md
-  line: 615
-  hash: e720a9e929ce
+  line: 639
+  hash: a1c6234f5b7e
   verdicts:
   - stage: S5a
     verdict: minor
@@ -772,10 +874,17 @@ items:
     evidence: 01:615-635. I worked (a)-(e) before reading the solution and got the same answers. (d) matches
       exm-impossible-case line 397. (e) matches the derivation at 01:448-471 and the scope remark at 01:488.
       Part (e) is the proof-comprehension part the key proof needs.
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-contradiction-and-vacuous-truth
+    hash: a1c6234f5b7e
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: part (b) split into two sentences, same task'
 - key: exr-contradiction-and-vacuous-truth-a2
   kind: exr
   file: 01-contradiction-and-vacuous-truth.md
-  line: 639
+  line: 663
   hash: 0f59e152c174
   verdicts:
   - stage: S5a
@@ -804,10 +913,17 @@ items:
       order (b), (d), (k) (unnegated line first, per 01:43, 01:52), and (l), which follows the convention
       box at 01:78. The (k) item is flawed only at line 5. The ramp order follows STYLE 12.8: (a)-(d)
       one step, (e)-(f) missing line, (g) justification column, (h)-(k) judging, (l)-(o) derivations.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-contradiction-and-vacuous-truth
+    hash: 0f59e152c174
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: (E2) glossed; derivation answers unchanged'
 - key: exr-contradiction-and-vacuous-truth-b1
   kind: exr
   file: 01-contradiction-and-vacuous-truth.md
-  line: 697
+  line: 721
   hash: 7ec9fa8fa6cf
   verdicts:
   - stage: S5a
@@ -866,7 +982,7 @@ items:
 - key: exr-contradiction-and-vacuous-truth-b2
   kind: exr
   file: 01-contradiction-and-vacuous-truth.md
-  line: 743
+  line: 767
   hash: 52adfcf5c5f9
   verdicts:
   - stage: S5a
@@ -940,8 +1056,8 @@ items:
 - key: exr-contradiction-and-vacuous-truth-b3
   kind: exr
   file: 01-contradiction-and-vacuous-truth.md
-  line: 761
-  hash: f2f2a36a0064
+  line: 785
+  hash: dcce4ec8485a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -995,11 +1111,18 @@ items:
     model: claude-opus-5-5
     evidence: 01:761-786. Derivation checks. It follows exm-vacuous-square (01:508). x^2 + 1 >= 1 > 0.
       The no-paradox explanation is correct.
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-contradiction-and-vacuous-truth
+    hash: dcce4ec8485a
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: closing clause restates the vacuous-truth warning; sidecar passes'
 - key: exr-contradiction-and-vacuous-truth-b4
   kind: exr
   file: 01-contradiction-and-vacuous-truth.md
-  line: 789
-  hash: ac10ee27a637
+  line: 813
+  hash: 5e4a3d550864
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1024,11 +1147,18 @@ items:
     model: claude-opus-5-5
     evidence: '01:789-841. The move is named as in 01:333/406 (''an impossible case closes itself'').
       The completion checks (check_fitch: 0 errors). The stem carries \purpose{\oe}.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-contradiction-and-vacuous-truth
+    hash: 5e4a3d550864
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: ''Name the move'' -> ''Name the strategy''; derivation unchanged'
 - key: exr-contradiction-and-vacuous-truth-b5
   kind: exr
   file: 01-contradiction-and-vacuous-truth.md
-  line: 844
-  hash: 4fc45c9bafb1
+  line: 868
+  hash: 756e11d41485
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1070,11 +1200,27 @@ items:
       with P: x > 0, Q: x > 5, the set P∨Q, ¬Q, ¬¬P is true. (d) at x = 2 is true, and P→Q holds for every
       x. (f) at x = 1: ¬(P∧Q) is true and ¬P∨Q is false. (g) at x = 1: P→R holds for every x, and P∨Q,
       ¬R, ¬P are true. T'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-contradiction-and-vacuous-truth
+    hash: 756e11d41485
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: task split; 16 points unchanged; nit ''lose the step (0 for the claim)'';
+      sidecar passes'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 756e11d41485
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'fixed: ''Slips that lose the step (0 for the claim)'' -> ''Slips that lose the claim (0
+      points for it)'''
 - key: exr-contradiction-and-vacuous-truth-b6
   kind: exr
   file: 01-contradiction-and-vacuous-truth.md
-  line: 947
-  hash: 6722312cfbc8
+  line: 975
+  hash: 1ee9b7c67ccd
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1113,10 +1259,17 @@ items:
       so it meets the restriction. (d) For n = 3, both parts are false, so only the first sequent decides
       it. For n = 6, the hypothesis is false and the conclusion true, so either sequent does. For n =
       8, both are true
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-contradiction-and-vacuous-truth
+    hash: 1ee9b7c67ccd
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: part 4 split, n=3,6,8 unchanged; 10 points unchanged; sidecar passes'
 - key: exr-contradiction-and-vacuous-truth-c1
   kind: exr
   file: 01-contradiction-and-vacuous-truth.md
-  line: 1003
+  line: 1031
   hash: 9e8930d2106c
   verdicts:
   - stage: S5a
@@ -1175,8 +1328,8 @@ items:
 - key: exr-contradiction-and-vacuous-truth-c2
   kind: exr
   file: 01-contradiction-and-vacuous-truth.md
-  line: 1037
-  hash: 6df5f42a97df
+  line: 1065
+  hash: d2ccda809cea
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1237,6 +1390,13 @@ items:
       legal, and lines 5-7 would be legal if line 4 were. The counterexample is P: x>0, Q: x=7 at x=-1:
       the premise is true and line 4 is false (checked), which defeats the step itself. The scheme covers
       an alternative cou'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-contradiction-and-vacuous-truth
+    hash: d2ccda809cea
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: ''move'' -> ''step''; counterexample x=-1 unchanged; sidecar passes'
 - key: def-rules-negation
   kind: def
   file: 02-negation-and-contradiction.md
@@ -1282,10 +1442,18 @@ items:
       def-rules-contradiction (01:24); ''every box rule shares it'' (02:45) matches ch01 07:58,65,839;
       ''asm, for →I'' in Section 1.4 = 05-proving-an-implication (files 04/05 display as 1.3/1.4, cf.
       ch01 05:3); ledger 02:920 covers ''Why this rule'''
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-negation-and-contradiction
+    hash: 991ec9ab1484
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: definition block unchanged; true worked instance x^2+1=0 added before the
+      rule; phi->bot remark to For instructors'
 - key: exm-square-plus-one
   kind: exm
   file: 02-negation-and-contradiction.md
-  line: 93
+  line: 97
   hash: 02ec329fccf2
   verdicts:
   - stage: S5a
@@ -1325,10 +1493,17 @@ items:
     model: claude-opus-5-5
     evidence: '02:93-121: x^2+1=0 gives x^2=-1<0; derivation lines 1-5 well formed; x^2>=0 ledgered 02:921-922
       to AN1.1, STATUS row 94 (F1.2 §02 school algebra -> AN1.1); snapshot exemption (ii) granted in ch02-revision.md:235'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-negation-and-contradiction
+    hash: 02ec329fccf2
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: one semicolon -> full stop'
 - key: check:02-negation-and-contradiction:1
   kind: check
   file: 02-negation-and-contradiction.md
-  line: 123
+  line: 127
   hash: 824ac2ba1124
   verdicts:
   - stage: S5a
@@ -1370,7 +1545,7 @@ items:
 - key: exm-double-negation-introduction
   kind: exm
   file: 02-negation-and-contradiction.md
-  line: 135
+  line: 139
   hash: fd0f235de216
   verdicts:
   - stage: S5a
@@ -1411,11 +1586,18 @@ items:
     evidence: '02:135-232: (a) 4 lines, (b) 6 lines, both check; snapshots final-numbered; ''assumption
       used twice'' (02:167) = lines 3 and 5 cite 2; 02:231 true; 02:234 ''no rule so far ...'' checked
       against the 7-rule card ch01 07:780-786 plus ¬E, ⊥E, ¬I'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-negation-and-contradiction
+    hash: fd0f235de216
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: captions and Idea reworded; derivations and line numbers unchanged'
 - key: check:02-negation-and-contradiction:2
   kind: check
   file: 02-negation-and-contradiction.md
-  line: 236
-  hash: 52e2e2001baf
+  line: 240
+  hash: 20e0cabda7bf
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1454,10 +1636,17 @@ items:
     model: claude-opus-5-5
     evidence: '02:236-258: 5-line derivation checks; comparison with exm-manufactured-clash (01:257, premise
       ¬(P∨Q), goal P→R) is accurate'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-negation-and-contradiction
+    hash: 20e0cabda7bf
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: ''aim at bot; vI turns'' split; derivation unchanged'
 - key: exm-triple-negation
   kind: exm
   file: 02-negation-and-contradiction.md
-  line: 262
+  line: 266
   hash: 5ee2b942e726
   verdicts:
   - stage: S5a
@@ -1498,10 +1687,17 @@ items:
     evidence: '02:262-322: 7-line derivation checks; ''only negation available is the premise'' true inside
       box 2; ''first derivation in which a ¬I box is opened for a subgoal that a clash created'' true
       of 2.2''s earlier derivations; line 4 citing line 2 justified'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-negation-and-contradiction
+    hash: 5ee2b942e726
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: ''premise-directed question'' reworded; derivation and lines 2-6 unchanged'
 - key: thm-sqrt2-irrational
   kind: thm
   file: 02-negation-and-contradiction.md
-  line: 332
+  line: 336
   hash: 9486a38cf874
   verdicts:
   - stage: S5a
@@ -1553,11 +1749,18 @@ items:
       √2 with square 2 exists, it is irrational'. That follows directly from the first sentence and no
       longer assumes √2 exists, so it agrees with :382 ('does not need √2 to exist'). The S5a and S5b
       findings are resolved.
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-negation-and-contradiction
+    hash: 9486a38cf874
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: statement word for word; Idea semicolon split; both refs kept
 - key: proof:thm-sqrt2-irrational
   kind: proof
   file: 02-negation-and-contradiction.md
-  line: 342
-  hash: 3daec1a36b88
+  line: 346
+  hash: 09e922fdce8b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1609,10 +1812,17 @@ items:
       on 6,8 with p=2m; 11 is ∧I on 8,10; 12 is ¬E on 11,2; 13 is ¬I on 5-12. The box opens on r^2=2 and
       ends on ⊥. The meta-claim at :380 now names three quantifier steps outside the derivation: instantiating
       @thm-square-e'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-negation-and-contradiction
+    hash: 09e922fdce8b
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: one semicolon split; steps, rule tags and numbers unchanged; sidecar passes'
 - key: check:02-negation-and-contradiction:3
   kind: check
   file: 02-negation-and-contradiction.md
-  line: 348
+  line: 352
   hash: 980b9f22dcfc
   verdicts:
   - stage: S5a
@@ -1630,10 +1840,17 @@ items:
     model: claude-opus-5-5
     evidence: '02:348-354: the cited lines are 11 and 2 and the step is line 12, matching \ne{11,2} at
       02:373'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-negation-and-contradiction
+    hash: 980b9f22dcfc
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: block unchanged; prose after it split into a list, true
 - key: exm-negation-and-contradiction-instances
   kind: exm
   file: 02-negation-and-contradiction.md
-  line: 390
+  line: 400
   hash: 04e5ed5f1441
   verdicts:
   - stage: S5a
@@ -1654,11 +1871,19 @@ items:
     evidence: '02:390-400: three compound instances and the look-alike match ch02-deepen §4.2 item 2;
       the WRONG/RIGHT pair in the following warning breaks at x=1 (Q, R false so the premise holds; P
       true so ¬P is false), ledgered 02:926; clause tags 3,3,4,4,4 match deepen item 12'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-negation-and-contradiction
+    hash: 04e5ed5f1441
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: block unchanged; rule card cells match, Lean column to For instructors; Not-allowed bullets
+      name conditions in words
 - key: exr-negation-and-contradiction-a1
   kind: exr
   file: 02-negation-and-contradiction.md
-  line: 465
-  hash: e91c6349970c
+  line: 485
+  hash: 1f76693b41b9
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1713,11 +1938,18 @@ items:
     evidence: '02:465-486. (c) correctly says line 8 cites lines 3 and 7. (d): 2 = 4/2 has both even.
       (e): p^2 = 4q^2 and p = 2k give q^2 = k^2, so the proof stalls, and r = 2/1 has q odd. These are
       the proof-comprehension parts on thm-sqrt2-irrational.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-negation-and-contradiction
+    hash: 1f76693b41b9
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: solutions (b),(c),(e) split; refs kept; sidecar passes'
 - key: exr-negation-and-contradiction-a2
   kind: exr
   file: 02-negation-and-contradiction.md
-  line: 489
-  hash: dd130340f036
+  line: 509
+  hash: 57a6f9a83bd7
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1745,11 +1977,19 @@ items:
     evidence: '02:489-579. All 15 parts re-solved and they agree. (j) is flawed only at line 7 (check_fitch:
       expected invalid, and is). (l): the identity x^2 + 4 - 2x = (x-1)^2 + 3 is verified with sympy.
       (m)-(o) derivations check by hand.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 57a6f9a83bd7
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only (checked against 9f9dbb8): solutions (g),(m),(n),(o) become lists with the
+      same lines and rule tags; (k) ''clause 3'' said in words'
 - key: exr-negation-and-contradiction-b1
   kind: exr
   file: 02-negation-and-contradiction.md
-  line: 582
-  hash: 2252985cdd1f
+  line: 626
+  hash: 4be572d854e6
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1802,11 +2042,18 @@ items:
     model: claude-opus-5-5
     evidence: '02:582-620. The nested →I/¬I completion checks. Scope remark correct. Worked type: exm-triple-negation
       (nested boxes).'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 4be572d854e6
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: ''Name the move'' -> ''Name the reasoning''; solution boxes and lines unchanged'
 - key: exr-negation-and-contradiction-b2
   kind: exr
   file: 02-negation-and-contradiction.md
-  line: 623
-  hash: cae78b474921
+  line: 667
+  hash: 070ece27149a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1858,11 +2105,18 @@ items:
     model: claude-opus-5-5
     evidence: 02:623-640. (x - 1/2)^2 + 3/4 = x^2 - x + 1 is verified with sympy. The pattern of exm-square-plus-one
       is followed. The hint names a tool only.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 070ece27149a
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: one semicolon -> full stop; steps and rule tags unchanged'
 - key: exr-negation-and-contradiction-b3
   kind: exr
   file: 02-negation-and-contradiction.md
-  line: 643
-  hash: 6d658b0c5f9b
+  line: 687
+  hash: 35b8bc2bcbd8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1916,10 +2170,18 @@ items:
     model: claude-opus-5-5
     evidence: '02:643-674. (3k+1)^2 = 3(3k^2+2k)+1 and (3k+2)^2 = 3(3k^2+4k+1)+1 are verified. (b) is
       a valid ¬I frame: q^2 = 3m^2 gives 3 | q^2. The closing remark about ''not both even'' is correct.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 35b8bc2bcbd8
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: two given facts split into sentences; (a),(b) semicolons split; argument
+      unchanged'
 - key: exr-negation-and-contradiction-b4
   kind: exr
   file: 02-negation-and-contradiction.md
-  line: 677
+  line: 721
   hash: 0e3a691aaf87
   verdicts:
   - stage: S5a
@@ -1975,8 +2237,8 @@ items:
 - key: exr-negation-and-contradiction-b5
   kind: exr
   file: 02-negation-and-contradiction.md
-  line: 705
-  hash: e14aa59a4e11
+  line: 749
+  hash: eead1a7fc937
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2021,11 +2283,19 @@ items:
       L, and 9 is a witness against E_9. The C1 pointer is now present tense (''does it by another route'')
       and correctly describes C1''s route, which uses (L) and @thm-square-even-implies-even instead of
       (E_6). The (L_p) pr'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: eead1a7fc937
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: semicolons split; (b) names thm-square-even-implies-even by content and Uses
+      line; marking renamed, 10 points unchanged'
 - key: exr-negation-and-contradiction-b6
   kind: exr
   file: 02-negation-and-contradiction.md
-  line: 739
-  hash: 23860e1a7489
+  line: 787
+  hash: 060d204bd5e5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2063,11 +2333,19 @@ items:
       I checked the 7-line derivation: ∧I on 3,2, →E on 1,4, ¬E on 3,5, ¬I on 3-6, with the box ending
       on ⊥. verify/ch02/exr-negation-and-contradiction-b6.py has been updated to the new (c) and passes.
       The other claims and'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 060d204bd5e5
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: break task split; (d),(h) split; x=1 witness unchanged; marking list, 16
+      points unchanged'
 - key: exr-negation-and-contradiction-c1
   kind: exr
   file: 02-negation-and-contradiction.md
-  line: 863
-  hash: 2c33072b400c
+  line: 916
+  hash: 7bde407582a4
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2150,11 +2428,26 @@ items:
       for the odd-case parity argument or for q^2=3q^2-2q^2=2(m^2-q^2) followed by @thm-square-even-implies-even.
       I checked that algebra and it is correct. The alternative stays within the allowed facts and does
       not h
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 7bde407582a4
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: (E1)-(E3) and (L) named in words; same allowed facts'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 7bde407582a4
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'fixed: ''the facts about even and odd integers, (E1)-(E3)'' -> ''the facts (E1)-(E3) about
+      even and odd integers''; same allowed facts'
 - key: exr-negation-and-contradiction-c2
   kind: exr
   file: 02-negation-and-contradiction.md
-  line: 898
-  hash: cb755ae68036
+  line: 951
+  hash: d270c4dc70ce
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2210,6 +2503,13 @@ items:
     evidence: 02:897-918. The false lemma fails at n = 2 (4 | 4, 4 does not divide 2), on the witness
       r = 2/1. That lemma is the only flawed step (it is used twice). (L4) is true. (c) correctly names
       ¬I.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: d270c4dc70ce
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: (c) states the lemma in words with a Uses line; same content'
 - key: prp-modus-tollens
   kind: prp
   file: 03-derived-rules.md
@@ -2440,7 +2740,7 @@ items:
   kind: check
   file: 03-derived-rules.md
   line: 181
-  hash: f578df01f407
+  hash: b503b98b4bd9
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2477,10 +2777,17 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 03:181-187 matches the figure at 03:156-175
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: b503b98b4bd9
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: ''In the figure'' -> ''In the two derivations above'''
 - key: lem-weakening-cut
   kind: lem
   file: 03-derived-rules.md
-  line: 218
+  line: 220
   hash: e00358ac6626
   verdicts:
   - stage: S5a
@@ -2517,8 +2824,8 @@ items:
 - key: proof:lem-weakening-cut
   kind: proof
   file: 03-derived-rules.md
-  line: 239
-  hash: 80e4ee530d83
+  line: 241
+  hash: aaf0a9cb04c9
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2539,11 +2846,18 @@ items:
     evidence: '03:240-256: the edge case (E''s last line is a premise) is handled; the redirect to the
       last line of D_i is justified because alpha_i is not in Gamma; nesting and availability are checked
       against def-derivation; (b) and (c) follow from (*) and (a)'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: aaf0a9cb04c9
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: case split and availability argument split into sentences; every step unchanged'
 - key: check:03-derived-rules:2
   kind: check
   file: 03-derived-rules.md
-  line: 260
-  hash: 0a73927f9931
+  line: 262
+  hash: 1b64df4da23a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2561,10 +2875,17 @@ items:
     model: claude-opus-5-5
     evidence: '03:260-266: prp-vacuous-implication is ¬P |- P->Q (01:195-198); (c) with m=1 works, and
       so does (a) then (b)'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 1b64df4da23a
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: question split into sentences; answers (a) and (c) with m=1 unchanged'
 - key: prp-disjunctive-syllogism
   kind: prp
   file: 03-derived-rules.md
-  line: 272
+  line: 274
   hash: a25df75c2bdb
   verdicts:
   - stage: S5a
@@ -2618,7 +2939,7 @@ items:
 - key: proof:prp-disjunctive-syllogism
   kind: proof
   file: 03-derived-rules.md
-  line: 282
+  line: 284
   hash: 6c393628acc6
   verdicts:
   - stage: S5a
@@ -2661,8 +2982,8 @@ items:
 - key: exm-derived-rules-in-use
   kind: exm
   file: 03-derived-rules.md
-  line: 310
-  hash: ce82569ea5a8
+  line: 312
+  hash: 5cf7f4cf12b4
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2711,10 +3032,17 @@ items:
       (03:190), which is where that expansion is defined. 03:420 ''lines 3-7 of the derivation of prp-disjunctive-syllogism
       (five lines)'' counts the same way as (a): two boxes plus ∨E, citing lines 1 and 2 directly. Part
       (a): the eleven-line expansion (03:358-378) checks: ->E 2,4; ¬E 5,3; ¬I 4-6; ->E 1,8; ¬E 9,7; ¬I '
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 5cf7f4cf12b4
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: ''move'' -> ''new step''; fold pointer stated by content'
 - key: check:03-derived-rules:3
   kind: check
   file: 03-derived-rules.md
-  line: 423
+  line: 425
   hash: 6d77bcc50682
   verdicts:
   - stage: S5a
@@ -2734,7 +3062,7 @@ items:
 - key: exm-modus-tollens-instance
   kind: exm
   file: 03-derived-rules.md
-  line: 437
+  line: 439
   hash: 87a95a723107
   verdicts:
   - stage: S5a
@@ -2789,7 +3117,7 @@ items:
 - key: check:03-derived-rules:4
   kind: check
   file: 03-derived-rules.md
-  line: 460
+  line: 462
   hash: 1ac4060aebe8
   verdicts:
   - stage: S5a
@@ -2809,7 +3137,7 @@ items:
 - key: exm-square-even-via-contrapositive
   kind: exm
   file: 03-derived-rules.md
-  line: 478
+  line: 480
   hash: 3f0b5e214bc0
   verdicts:
   - stage: S5a
@@ -2866,7 +3194,7 @@ items:
 - key: exm-derived-rules-instances
   kind: exm
   file: 03-derived-rules.md
-  line: 534
+  line: 536
   hash: afe0d9121544
   verdicts:
   - stage: S5a
@@ -2887,8 +3215,8 @@ items:
 - key: exr-derived-rules-a1
   kind: exr
   file: 03-derived-rules.md
-  line: 581
-  hash: b0f3ff796481
+  line: 596
+  hash: 6be2c8dc70d4
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2940,11 +3268,18 @@ items:
     model: claude-opus-5-5
     evidence: '03:581-623. (b) expansion checks. (c): CP applied to ¬Q→¬P gives ¬¬P→¬¬Q (φ := ¬Q, ψ :=
       ¬P); I verified the substitution.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 6be2c8dc70d4
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: the derived-rule statement split into sentences, same conditions'
 - key: exr-derived-rules-a2
   kind: exr
   file: 03-derived-rules.md
-  line: 626
-  hash: d003f9e5c1e6
+  line: 641
+  hash: b8c4772be8b5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2971,10 +3306,17 @@ items:
     evidence: '03:626-681. All 15 re-solved and they agree: (b) Q with φ := ¬P; (d) ¬¬R; (f) (R∧S)→T;
       (g) (P∧Q)∨(R→S); (h) DS 1,2; MT 5,4; MT 3,6; (l) breaks at P false, Q true; (o) MT with φ := ¬P.
       The ramp order is respected.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: b8c4772be8b5
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: (e) figure pointer named; (j) parenthesis removed; (m) lines unchanged'
 - key: exr-derived-rules-b1
   kind: exr
   file: 03-derived-rules.md
-  line: 684
+  line: 699
   hash: 3dcaf5ad00e9
   verdicts:
   - stage: S5a
@@ -3030,7 +3372,7 @@ items:
 - key: exr-derived-rules-b2
   kind: exr
   file: 03-derived-rules.md
-  line: 717
+  line: 732
   hash: bf2b2eaffb15
   verdicts:
   - stage: S5a
@@ -3089,8 +3431,8 @@ items:
 - key: exr-derived-rules-b3
   kind: exr
   file: 03-derived-rules.md
-  line: 741
-  hash: 9291b8448282
+  line: 756
+  hash: 95be0c28cd40
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3141,11 +3483,18 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 03:741-786. Completion checks (check_fitch). MT instance correctly named.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 95be0c28cd40
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: ''move'' -> ''method'', ''manufactured'' -> ''built'''
 - key: exr-derived-rules-b4
   kind: exr
   file: 03-derived-rules.md
-  line: 789
-  hash: f4bcc0a18f9d
+  line: 804
+  hash: 730812557bb3
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3194,13 +3543,20 @@ items:
       and the look-alike breaks at x=0 (x>5, x>3). (d) The replacement F,N,E,T into (b) is right. The
       S8 promise is now delivered: F1.7''s blueprint fd1/authoring/blueprints/ch03-deepen.md:896-897 cites
       @exr-derived-ru'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 730812557bb3
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: marking renamed, 10 points unchanged'
   note: 'used later (D8): F1.7 §03''s library of standard sequents cites this item for the CD and MPT
     forms (ch02-deepen §6.3); ch03 S4 confirms the seam or removes the marker'
 - key: exr-derived-rules-b5
   kind: exr
   file: 03-derived-rules.md
-  line: 872
-  hash: c39e34f3efd6
+  line: 887
+  hash: 62876960f998
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3240,10 +3596,17 @@ items:
       (b) derivation checks (¬E 2,5 with Q, ¬Q); (c) breaks at x=1 (¬P->Q true, ¬Q true, ¬P false); (d)
       DS then ∧E; (e) MT, then a ¬I box; (f) DS 4,2 refutes the left disjunct Q; (g) breaks at x=0 with
       the premise tr'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 62876960f998
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: task split; (b) ''manufacture'' -> ''build''; marking 16 points unchanged'
 - key: exr-derived-rules-c1
   kind: exr
   file: 03-derived-rules.md
-  line: 972
+  line: 989
   hash: 261e46611949
   verdicts:
   - stage: S5a
@@ -3300,7 +3663,7 @@ items:
 - key: exr-derived-rules-c2
   kind: exr
   file: 03-derived-rules.md
-  line: 1024
+  line: 1041
   hash: fa0f319743b3
   verdicts:
   - stage: S5a
@@ -3371,8 +3734,8 @@ items:
 - key: exr-derived-rules-c3
   kind: exr
   file: 03-derived-rules.md
-  line: 1075
-  hash: fd899f5808d3
+  line: 1092
+  hash: ad8cba4ebbbd
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3427,11 +3790,18 @@ items:
     evidence: '03:1075-1137. My labeling agrees: →I frame; E→S premise; ¬S by ¬I with ∧I/¬E; CP + →E (or
       MT); DS on E∨O with E refuted. The derivation checks. The scheme awards MT or CP equally, and premise
       or →I box equally.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: ad8cba4ebbbd
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: (E1),(E2) glossed in words; marking renamed, points unchanged'
 - key: def-rules-biconditional
   kind: def
   file: 04-biconditional-and-definitions.md
-  line: 11
-  hash: b3bbf383c677
+  line: 13
+  hash: cffbeef1bdbe
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3471,11 +3841,18 @@ items:
     evidence: '04:11-55: the ↔I and ↔E schemas, clauses 1-4 and the purpose sentence match ch02-deepen
       §4.4 item 1. The scope rule is cited correctly to @def-derivation. The calculus fold (626) is ledgered
       to AN1.7, and STATUS row 97 covers it.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: cffbeef1bdbe
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: paragraph after schemas split; schemas unchanged'
 - key: exm-iff-symmetric
   kind: exm
   file: 04-biconditional-and-definitions.md
-  line: 61
-  hash: 5b4a752e26ab
+  line: 63
+  hash: e682d2a9d717
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3515,10 +3892,18 @@ items:
     evidence: '04:61-140: both derivations check (check_fitch reports 0 errors). Line 3 uses the second
       form and line 5 the first, as stated. The claim at 139 holds: 03:120 has the MT derivation with
       lines 3-6 of the same shape.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: e682d2a9d717
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: ''right to left'' -> ''from the right side of line 1 to its left side'';
+      derivation unchanged'
 - key: prp-iff-two-implications
   kind: prp
   file: 04-biconditional-and-definitions.md
-  line: 144
+  line: 146
   hash: 33f7c312cf25
   verdicts:
   - stage: S5a
@@ -3559,7 +3944,7 @@ items:
 - key: proof:prp-iff-two-implications
   kind: proof
   file: 04-biconditional-and-definitions.md
-  line: 219
+  line: 221
   hash: 33719d08b6c8
   verdicts:
   - stage: S5a
@@ -3602,8 +3987,8 @@ items:
 - key: exm-iff-negations
   kind: exm
   file: 04-biconditional-and-definitions.md
-  line: 269
-  hash: 12be5a0ce027
+  line: 271
+  hash: 326632d3682b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3654,10 +4039,18 @@ items:
       by ¬I, 12 by ↔I over the sibling boxes 2-6 and 7-11. The S5b finding is resolved: the Idea (04:276)
       now says only the second half is exm-iff-symmetric (b) inside a box (04:120-131, the same lines
       8-10) and the first h'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 326632d3682b
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: Idea reworded (''goal-directed move'' -> ''building from the goal''); derivation
+      unchanged'
 - key: check:04-biconditional-and-definitions:1
   kind: check
   file: 04-biconditional-and-definitions.md
-  line: 355
+  line: 357
   hash: e2310c91d175
   verdicts:
   - stage: S5a
@@ -3698,7 +4091,7 @@ items:
 - key: lem-not-iff-own-negation
   kind: lem
   file: 04-biconditional-and-definitions.md
-  line: 367
+  line: 369
   hash: aef77a59e2c9
   verdicts:
   - stage: S5a
@@ -3720,7 +4113,7 @@ items:
 - key: proof:lem-not-iff-own-negation
   kind: proof
   file: 04-biconditional-and-definitions.md
-  line: 408
+  line: 410
   hash: f9651eb76bbb
   verdicts:
   - stage: S5a
@@ -3741,7 +4134,7 @@ items:
 - key: check:04-biconditional-and-definitions:2
   kind: check
   file: 04-biconditional-and-definitions.md
-  line: 437
+  line: 439
   hash: 8bea6c795259
   verdicts:
   - stage: S5a
@@ -3761,7 +4154,7 @@ items:
 - key: def-provable-equivalence
   kind: def
   file: 04-biconditional-and-definitions.md
-  line: 451
+  line: 453
   hash: 7f492f9f05be
   verdicts:
   - stage: S5a
@@ -3805,7 +4198,7 @@ items:
 - key: prp-provable-equivalence-basics
   kind: prp
   file: 04-biconditional-and-definitions.md
-  line: 469
+  line: 471
   hash: 258ef389fe78
   verdicts:
   - stage: S5a
@@ -3846,8 +4239,8 @@ items:
 - key: proof:prp-provable-equivalence-basics
   kind: proof
   file: 04-biconditional-and-definitions.md
-  line: 487
-  hash: c7096a172ef2
+  line: 489
+  hash: 5cc6a87fed2f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3888,10 +4281,17 @@ items:
     evidence: '04:487-494: the copying observation agrees with the scope rule of def-derivation (05:370).
       (D3) is R. ''The last line lies outside every box'' is in def-derivation. Ledger 1335-1336 covers
       it.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 5cc6a87fed2f
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: observation and copies split into sentences; (D3) named in words; steps unchanged'
 - key: thm-odd-iff-square-odd
   kind: thm
   file: 04-biconditional-and-definitions.md
-  line: 523
+  line: 529
   hash: 02dfb9b03792
   verdicts:
   - stage: S5a
@@ -3932,7 +4332,7 @@ items:
 - key: proof:thm-odd-iff-square-odd
   kind: proof
   file: 04-biconditional-and-definitions.md
-  line: 533
+  line: 539
   hash: 082696ed6b0e
   verdicts:
   - stage: S5a
@@ -3975,7 +4375,7 @@ items:
 - key: thm-squares-order
   kind: thm
   file: 04-biconditional-and-definitions.md
-  line: 545
+  line: 551
   hash: 8dcde642927a
   verdicts:
   - stage: S5a
@@ -4019,7 +4419,7 @@ items:
 - key: proof:thm-squares-order
   kind: proof
   file: 04-biconditional-and-definitions.md
-  line: 558
+  line: 564
   hash: 4177bac3b4ff
   verdicts:
   - stage: S5a
@@ -4062,7 +4462,7 @@ items:
 - key: check:04-biconditional-and-definitions:3
   kind: check
   file: 04-biconditional-and-definitions.md
-  line: 572
+  line: 578
   hash: 8d0471ff8c83
   verdicts:
   - stage: S5a
@@ -4083,8 +4483,8 @@ items:
 - key: exm-strictly-increasing-both-ways
   kind: exm
   file: 04-biconditional-and-definitions.md
-  line: 602
-  hash: e7ed5e1ad60f
+  line: 608
+  hash: b15baf4c066a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4133,10 +4533,18 @@ items:
       1/2-0<1, so the other wording is too narrow. A new ledger line covers it. The S5b finding is resolved:
       STATUS.md row 89 now lists §04 exm-strictly-increasing-both-ways (b), (c) under the index note,
       and says only §'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: b15baf4c066a
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: ''read from right/left'' -> ''used from the condition to the term'' and back;
+      same directions'
 - key: check:04-biconditional-and-definitions:4
   kind: check
   file: 04-biconditional-and-definitions.md
-  line: 630
+  line: 636
   hash: 6891b6460240
   verdicts:
   - stage: S5a
@@ -4156,7 +4564,7 @@ items:
 - key: prp-equivalence-cycle
   kind: prp
   file: 04-biconditional-and-definitions.md
-  line: 646
+  line: 652
   hash: dc2a87f9ee1f
   verdicts:
   - stage: S5a
@@ -4206,8 +4614,8 @@ items:
 - key: proof:prp-equivalence-cycle
   kind: proof
   file: 04-biconditional-and-definitions.md
-  line: 688
-  hash: 0dfc8ce43777
+  line: 694
+  hash: 31f6c51e0b56
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4257,11 +4665,19 @@ items:
       finding is resolved. The renaming step now cites clause 2 after @def-derived-rule (03-derived-rules.md:154):
       the letters stood for arbitrary statements (@def-derivable), so uniform replacement is allowed.
       A new ledger line sources this to def-rule-schema, def-derivable and that clause, with F1.3 lem-substitutio'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 31f6c51e0b56
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: ''clause 2 after def-derived-rule'' stated as uniform substitution; same
+      argument'
 - key: exm-unit-interval-tfae
   kind: exm
   file: 04-biconditional-and-definitions.md
-  line: 720
-  hash: 6ff6247ba7e8
+  line: 726
+  hash: 236fdf7233c8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4300,10 +4716,17 @@ items:
     model: claude-opus-5-5
     evidence: '04:719-741: all three arrows check. @prp-disjunctive-syllogism is cited. ''The only case
       split'' (741) is true of the page. Ledger 1347 and a sidecar cover it.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 236fdf7233c8
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: parenthesis about rules made sentences; DS named; argument unchanged'
 - key: exm-biconditional-and-definitions-instances
   kind: exm
   file: 04-biconditional-and-definitions.md
-  line: 748
+  line: 754
   hash: de7a68d530a5
   verdicts:
   - stage: S5a
@@ -4325,8 +4748,8 @@ items:
 - key: exr-biconditional-and-definitions-a1
   kind: exr
   file: 04-biconditional-and-definitions.md
-  line: 836
-  hash: d0640697987a
+  line: 859
+  hash: f12eff8ab7bc
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4378,11 +4801,18 @@ items:
     model: claude-opus-5-5
     evidence: '04:835-854. Solved all four parts first, and the book agrees: (b) (⇒) begins ''Suppose
       x^2=x''; (c) True, k=5; (d) False, x=-2 gives x^2=4>1 with x<1.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: f12eff8ab7bc
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: item 3 split into sentences, same claim'
 - key: exr-biconditional-and-definitions-a2
   kind: exr
   file: 04-biconditional-and-definitions.md
-  line: 857
-  hash: f64e9ec2782a
+  line: 880
+  hash: 125d7dd976ce
   verdicts:
   - stage: S5a
     verdict: minor
@@ -4421,10 +4851,17 @@ items:
       is False, and the key says P ⊢ Q and Q ⊢ P, with ⊢ P→Q only half of it. The ambiguity raised at
       S5a, S5b and S6 is resolved. I re-solved the other parts. (a) P; (e) line 5 is P; (f) lines 4/7/8/11
       are ¬P/Q/Q/¬P; (g) the justifications are right; (m), (n) and (o) check line by line.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 125d7dd976ce
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: (g),(o) split; lines and rule tags unchanged'
 - key: exr-biconditional-and-definitions-b1
   kind: exr
   file: 04-biconditional-and-definitions.md
-  line: 931
+  line: 954
   hash: d29f3f59a62e
   verdicts:
   - stage: S5a
@@ -4480,7 +4917,7 @@ items:
 - key: exr-biconditional-and-definitions-b2
   kind: exr
   file: 04-biconditional-and-definitions.md
-  line: 963
+  line: 986
   hash: fe30a0711cf6
   verdicts:
   - stage: S5a
@@ -4536,8 +4973,8 @@ items:
 - key: exr-biconditional-and-definitions-b3
   kind: exr
   file: 04-biconditional-and-definitions.md
-  line: 977
-  hash: 9295aa984c88
+  line: 1000
+  hash: d45107c6d178
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4592,11 +5029,18 @@ items:
     model: claude-opus-5-5
     evidence: 04:976-997. Parts (a), (b) and (d) are right. Part (c) at 04:994 swaps sides inside an iff
       with no cited step; see the finding. [finding refuted by skeptics]
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: d45107c6d178
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: two refs into separate sentences; def-derived-rule to Uses line'
 - key: exr-biconditional-and-definitions-b4
   kind: exr
   file: 04-biconditional-and-definitions.md
-  line: 1000
-  hash: f8212dec8be5
+  line: 1027
+  hash: 4eb25fcb8674
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4620,11 +5064,18 @@ items:
     model: claude-opus-5-5
     evidence: 04:999-1043. All 12 lines check and no line cites the sibling box. The scaffold stem is
       §12.8's 'Name the move' item.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 4eb25fcb8674
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: ''move'' -> ''proof method'''
 - key: exr-biconditional-and-definitions-b5
   kind: exr
   file: 04-biconditional-and-definitions.md
-  line: 1046
-  hash: 477dfdaba844
+  line: 1073
+  hash: 8f96ce71f641
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4653,11 +5104,18 @@ items:
       narrow; (iii) and (iv) right; (v) narrow only. The triples (5,2,3), (2,5,100) and (2,5,3) behave
       as claimed, and the (2,5,3)/(5,2,3) symmetry failure holds for (i), (ii) and (v). (b) both directions
       are sound. Scheme sums to 10 and grades my alternative (b), a sign-case analysis on x-a.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 8f96ce71f641
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: parentheses split; triples unchanged; marking renamed, 10 points unchanged'
 - key: exr-biconditional-and-definitions-b6
   kind: exr
   file: 04-biconditional-and-definitions.md
-  line: 1091
-  hash: 41bc83125a59
+  line: 1118
+  hash: b61dcf924c56
   verdicts:
   - stage: S5a
     verdict: minor
@@ -4699,11 +5157,19 @@ items:
       relies on ''the argument of'' prp-equivalence-cycle, namely chains of →E inside the two ↔I boxes,
       and 04:714 says the same. The S6 ''most cheaply'' finding is resolved: the answer is now (i)⇒(iv)
       and (iv)⇒(i), both fr'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: b61dcf924c56
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: ''(iv)=>(i) read right to left'' -> ''direction (<=) of thm-odd-iff-square-odd''
+      (checked: n^2 odd => n odd)'
 - key: exr-biconditional-and-definitions-b7
   kind: exr
   file: 04-biconditional-and-definitions.md
-  line: 1129
-  hash: d525ca5411ca
+  line: 1156
+  hash: 64c5b34e1090
   verdicts:
   - stage: S5a
     verdict: minor
@@ -4742,11 +5208,18 @@ items:
       holds, while Q→P fails; (g) at x=1. The converse finding is resolved: 04:1266 now says (b) and (g)
       are the converses of (a) and (f), and that (d) replaces (c)''s conclusion P→Q by its converse Q→P.
       That is accurate. T'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 64c5b34e1090
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: marking as a list, 16 points unchanged; RAA glossed'
 - key: exr-biconditional-and-definitions-c1
   kind: exr
   file: 04-biconditional-and-definitions.md
-  line: 1273
-  hash: 8db1a6eaf2af
+  line: 1304
+  hash: 3b4244961a8b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4817,10 +5290,17 @@ items:
     evidence: '04:1272-1315. Each arrow checks: 3b with b odd is odd; ''n=3n-2n'' also works. Script:
       the three conditions agree for |n|<=500. Hint 1 names the tool, hint 2 gives the cycle order without
       executing the idea. The scheme covers other cycles and other combinations.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 3b4244961a8b
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: two allowed results in two sentences'
 - key: exr-biconditional-and-definitions-c2
   kind: exr
   file: 04-biconditional-and-definitions.md
-  line: 1318
+  line: 1350
   hash: 7f37a8292d4e
   verdicts:
   - stage: S5a
@@ -5108,7 +5588,7 @@ items:
   kind: proof
   file: 05-reductio-and-classical-rules.md
   line: 149
-  hash: 77960e16ba8e
+  hash: 2c961d354c7c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5147,10 +5627,17 @@ items:
     model: claude-opus-5-5
     evidence: '05:149-181: both derivations check. Line 3''s citations 2,1 give not-P and not-not-P in
       the right order. (a) matches exm-double-negation-introduction (a)'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 2c961d354c7c
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: def-rules-negation moved to Uses line; derivations unchanged'
 - key: prp-contrapositive-converse
   kind: prp
   file: 05-reductio-and-classical-rules.md
-  line: 214
+  line: 218
   hash: 8938cfd5dff7
   verdicts:
   - stage: S5a
@@ -5206,7 +5693,7 @@ items:
 - key: proof:prp-contrapositive-converse
   kind: proof
   file: 05-reductio-and-classical-rules.md
-  line: 256
+  line: 260
   hash: b533a28d21d1
   verdicts:
   - stage: S5a
@@ -5248,7 +5735,7 @@ items:
 - key: prp-excluded-middle
   kind: prp
   file: 05-reductio-and-classical-rules.md
-  line: 284
+  line: 288
   hash: c3957f3c8cc6
   verdicts:
   - stage: S5a
@@ -5290,7 +5777,7 @@ items:
 - key: proof:prp-excluded-middle
   kind: proof
   file: 05-reductio-and-classical-rules.md
-  line: 322
+  line: 326
   hash: 9a73eaa74206
   verdicts:
   - stage: S5a
@@ -5333,7 +5820,7 @@ items:
 - key: prp-peirce
   kind: prp
   file: 05-reductio-and-classical-rules.md
-  line: 353
+  line: 357
   hash: 81e0a4d292b9
   verdicts:
   - stage: S5a
@@ -5377,7 +5864,7 @@ items:
 - key: proof:prp-peirce
   kind: proof
   file: 05-reductio-and-classical-rules.md
-  line: 370
+  line: 374
   hash: eb46c3f49dc7
   verdicts:
   - stage: S5a
@@ -5420,7 +5907,7 @@ items:
 - key: prp-de-morgan
   kind: prp
   file: 05-reductio-and-classical-rules.md
-  line: 406
+  line: 410
   hash: 7c7fc47b6206
   verdicts:
   - stage: S5a
@@ -5463,7 +5950,7 @@ items:
 - key: proof:prp-de-morgan
   kind: proof
   file: 05-reductio-and-classical-rules.md
-  line: 540
+  line: 544
   hash: ef6fe859262b
   verdicts:
   - stage: S5a
@@ -5521,7 +6008,7 @@ items:
 - key: check:05-reductio-and-classical-rules:3
   kind: check
   file: 05-reductio-and-classical-rules.md
-  line: 651
+  line: 655
   hash: 7a6b4ecc4976
   verdicts:
   - stage: S5a
@@ -5543,7 +6030,7 @@ items:
 - key: prp-implication-as-disjunction
   kind: prp
   file: 05-reductio-and-classical-rules.md
-  line: 663
+  line: 667
   hash: 635fc11fb4ac
   verdicts:
   - stage: S5a
@@ -5585,7 +6072,7 @@ items:
 - key: proof:prp-implication-as-disjunction
   kind: proof
   file: 05-reductio-and-classical-rules.md
-  line: 765
+  line: 769
   hash: 0b35014e4af1
   verdicts:
   - stage: S5a
@@ -5628,7 +6115,7 @@ items:
 - key: thm-classical-rules-interderivable
   kind: thm
   file: 05-reductio-and-classical-rules.md
-  line: 828
+  line: 839
   hash: a588e5bda400
   verdicts:
   - stage: S5a
@@ -5671,8 +6158,8 @@ items:
 - key: proof:thm-classical-rules-interderivable
   kind: proof
   file: 05-reductio-and-classical-rules.md
-  line: 910
-  hash: e02222a1cd5a
+  line: 932
+  hash: e28f05c75d1b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5714,10 +6201,17 @@ items:
     model: claude-opus-5-5
     evidence: '05:910-961: fragments 1-3 check. Line k+4 uses bot-E (the base-list remark at 961 is true).
       The chaining in 958 is valid'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: e28f05c75d1b
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: two sentences split; replacements and line numbers unchanged'
 - key: exm-raa-zero
   kind: exm
   file: 05-reductio-and-classical-rules.md
-  line: 979
+  line: 1002
   hash: de9ed07a262f
   verdicts:
   - stage: S5a
@@ -5774,7 +6268,7 @@ items:
 - key: check:05-reductio-and-classical-rules:4
   kind: check
   file: 05-reductio-and-classical-rules.md
-  line: 1006
+  line: 1029
   hash: 23b7f967f41d
   verdicts:
   - stage: S5a
@@ -5794,8 +6288,8 @@ items:
 - key: exm-reductio-and-classical-rules-instances
   kind: exm
   file: 05-reductio-and-classical-rules.md
-  line: 1032
-  hash: 1db1541cddec
+  line: 1055
+  hash: c92db7c6efdb
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5814,10 +6308,17 @@ items:
     model: claude-opus-5-5
     evidence: '05:1032-1044: table rows, look-alike and the WRONG/RIGHT break at x=0 (ledger 2001, sidecar
       passes) all check; matches blueprint 4.5 items 3-4'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: c92db7c6efdb
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: fold pointer stated by title; table unchanged'
 - key: check:05-reductio-and-classical-rules:5
   kind: check
   file: 05-reductio-and-classical-rules.md
-  line: 1109
+  line: 1148
   hash: f5fcc226b8f5
   verdicts:
   - stage: S5a
@@ -5838,8 +6339,8 @@ items:
 - key: exr-reductio-and-classical-rules-a1
   kind: exr
   file: 05-reductio-and-classical-rules.md
-  line: 1127
-  hash: c99f176db9ac
+  line: 1166
+  hash: e5c8a6ff5da1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5902,11 +6403,18 @@ items:
     model: claude-opus-5-5
     evidence: 05:1127-1155. (a) ¬I, (b) RAA, (c) →I. (f) lines 5 and 9 cite line 2, checked against the
       de Morgan (d) derivation (05:~620-640). (g) the box is 2-5 and line 6 is ¬¬(x<=1) by ¬I (05:859-865).
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: e5c8a6ff5da1
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: (e),(g) split; valuations unchanged'
 - key: exr-reductio-and-classical-rules-a2
   kind: exr
   file: 05-reductio-and-classical-rules.md
-  line: 1157
-  hash: e2ddbc79baeb
+  line: 1196
+  hash: b3282551a6c5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5933,10 +6441,18 @@ items:
     model: claude-opus-5-5
     evidence: '05:1157-1245. All 15 answers check. (k): line 7 is the only illegal line (RAA 2-5 is not
       a box; box 2-6 ends in ¬(P∧Q)). (j) matches how MT and DS were derived in 2.3 (no RAA).'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: b3282551a6c5
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: (g),(m),(n),(o) split; lines and tags unchanged; (l) ''clause 3'' said in
+      words'
 - key: exr-reductio-and-classical-rules-b1
   kind: exr
   file: 05-reductio-and-classical-rules.md
-  line: 1249
+  line: 1288
   hash: 14757518e989
   verdicts:
   - stage: S5a
@@ -5993,7 +6509,7 @@ items:
 - key: exr-reductio-and-classical-rules-b2
   kind: exr
   file: 05-reductio-and-classical-rules.md
-  line: 1311
+  line: 1350
   hash: c815c0babb38
   verdicts:
   - stage: S5a
@@ -6049,7 +6565,7 @@ items:
 - key: exr-reductio-and-classical-rules-b3
   kind: exr
   file: 05-reductio-and-classical-rules.md
-  line: 1350
+  line: 1389
   hash: b2b8070a005e
   verdicts:
   - stage: S5a
@@ -6106,8 +6622,8 @@ items:
 - key: exr-reductio-and-classical-rules-b4
   kind: exr
   file: 05-reductio-and-classical-rules.md
-  line: 1375
-  hash: 6e3cea69d7c6
+  line: 1414
+  hash: 0c99f5167a46
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6130,11 +6646,18 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 05:1375-1416. RAA box 3-9 checks; the scaffold stem has no open box, so no \purpose is needed.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 0c99f5167a46
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: ''Name the move'' -> ''Say which step comes next'''
 - key: exr-reductio-and-classical-rules-b5
   kind: exr
   file: 05-reductio-and-classical-rules.md
-  line: 1418
-  hash: b38ac159d69b
+  line: 1457
+  hash: d61c938c74e6
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6184,14 +6707,30 @@ items:
       RAA 12-20, <->I 2-10,11-21. (h) RAA 2-13; the premise holds and P->R fails at x=1. The breaks (b),
       (d), (g) at x=1 make every member of the counterexample set true. The 'Worked examples' list now
       names text items o
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: d61c938c74e6
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: (h) split, witnesses unchanged; worked examples as list, same refs; marking
+      16 points unchanged'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: d61c938c74e6
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'fixed: ''Slips that lose the step (0 for the claim)'' -> ''Slips that lose the claim (0
+      points for it)'''
   note: 'used later (D8): F1.7 §02''s def-inconsistent-set reads this item''s stem (an RAA derivation
     derives ⊥ from the counterexample set) (ch02-deepen §6.3); ch03 S4 confirms the seam or removes the
     marker'
 - key: exr-reductio-and-classical-rules-b6
   kind: exr
   file: 05-reductio-and-classical-rules.md
-  line: 1604
-  hash: 930920cb279a
+  line: 1653
+  hash: 2bd7eb1eec8c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6218,10 +6757,18 @@ items:
     model: claude-opus-5-5
     evidence: '05:1604-1625. (b) checked: at n=2 Q→P holds and P→Q fails; at n=7 the reverse. (d) both
       breaks hold at x=1. exr-finding-derivations-c2 is ⊢(P→Q)∨(Q→P). Scheme sums to 10.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 2bd7eb1eec8c
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: ''move'' -> ''step''; heading pointer renamed to ''Where to expect RAA'',
+      which exists at 05:126; points unchanged'
 - key: exr-reductio-and-classical-rules-c1
   kind: exr
   file: 05-reductio-and-classical-rules.md
-  line: 1629
+  line: 1678
   hash: c3cc8da64d5c
   verdicts:
   - stage: S5a
@@ -6292,8 +6839,8 @@ items:
 - key: exr-reductio-and-classical-rules-c2
   kind: exr
   file: 05-reductio-and-classical-rules.md
-  line: 1674
-  hash: 5d9da5d994f8
+  line: 1723
+  hash: f20b7c1bf14f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6359,11 +6906,18 @@ items:
     evidence: 05:1674-1742. Line 6 (cites line 3 of the closed box 3-4) is the only faulty line; lines
       2, 7, 8 and 9 are well formed. The (c) break of P∨Q ⊢ P (P false, Q true) defeats the move. (d)
       has 11 lines and checks.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: f20b7c1bf14f
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: ''move'' -> ''step''; (c) split; counter-valuation unchanged'
 - key: exr-reductio-and-classical-rules-c3
   kind: exr
   file: 05-reductio-and-classical-rules.md
-  line: 1744
-  hash: c7bccc42eb3a
+  line: 1793
+  hash: c149d57f336a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6442,11 +6996,18 @@ items:
       RAA 1-8), and line 9 is the only classical line. The second route matches @prp-excluded-middle''s
       eight lines (05:322-345). Its marking scheme now reads ''ending with Q by botE'', which is the right
       rule. The marks total 10 and both routes are scored. The earlier S5b finding is resolved.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: c149d57f336a
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: Exit check -> Chapter check; search split; marking as lists, points unchanged'
 - key: exr-reductio-and-classical-rules-c4
   kind: exr
   file: 05-reductio-and-classical-rules.md
-  line: 1788
-  hash: 58b3bb188d79
+  line: 1849
+  hash: 5e8ead9ca66d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6476,11 +7037,18 @@ items:
     evidence: '05:1788-1850. (a) replacement and MT (9 lines) check. (b) checks without ⊥E/RAA, and the
       fold ''Edge cases of not-introduction'' exists (02:49). (c): 13 = Ch1''s 7 including R, plus 6,
       so dropping two leaves 11. (d) matches 01:552. Scheme sums to 10.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 5e8ead9ca66d
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: item 1 split; fold pointer by title; marking as list, points unchanged'
 - key: exr-reductio-and-classical-rules-r1
   kind: exr
   file: 05-reductio-and-classical-rules.md
-  line: 1854
-  hash: 8c4a115cc67e
+  line: 1922
+  hash: c3f548236a87
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6536,11 +7104,18 @@ items:
       that no rule of this chapter is needed is accurate, since neither case contains a clash. The ledger
       line at 05:2022 covers the arithmetic, the cited F1.1 method, and naming k as F1.4 (promised; def-rules-existential).
       STATUS row 89 now lists this exercise under the index note, so the bookkeeping gap is closed.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: c3f548236a87
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: (E1) glossed; sentence split; same refs'
 - key: exr-reductio-and-classical-rules-r2
   kind: exr
   file: 05-reductio-and-classical-rules.md
-  line: 1872
-  hash: fbbc6a771832
+  line: 1940
+  hash: 59ba0986861f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6587,11 +7162,19 @@ items:
       04:11), so the S5b and S6 findings are resolved. The values at 4, 6, 7 and 9 are right. In (b),
       left to right: LEM on line 2, <->E 1,3 and 1,8, not-E 9,7, not-I 8-10, vE 2,3-6,7-13, all checked.
       Right to left: '
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 59ba0986861f
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: def-rules-biconditional to Uses line; heading pointer renamed; values at
+      4,6,7,9 unchanged'
 - key: exr-reductio-and-classical-rules-r3
   kind: exr
   file: 05-reductio-and-classical-rules.md
-  line: 1957
-  hash: 31dc43ef7588
+  line: 2029
+  hash: de36cbae787b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6629,3 +7212,10 @@ items:
       true), which I checked; (iv) @prp-implication-as-disjunction, the direction P->Q |- not-P v Q, uses
       LEM (Idea at 05:722); (v) the derivation checks (->E 1,2, ^I 2,3, ->I 2-4). The answer that (iv)
       is the only classi'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: de36cbae787b
+    date: '2026-11-01'
+    model: claude-opus-5-5
+    evidence: 'wording only: six statements as a list; parenthesis on 6k=2(3k) made a sentence'

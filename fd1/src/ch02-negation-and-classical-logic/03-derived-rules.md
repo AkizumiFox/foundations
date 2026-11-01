@@ -25,7 +25,7 @@ The pattern of the two arguments is: from an implication and the negation of its
 :::
 
 ::: {.idea}
-Read the skeleton off the goal. The goal \( \neg P \) is a negation, and Section 2.2's move for a negated goal is a box opened on what is negated, here \( P \), with goal \( \bot \). Inside the box, look for a clash (Section 2.1's move for the goal \( \bot \)). The premise \( \neg Q \) will clash with \( Q \), so \( Q \) is the subgoal, and the premise \( P \to Q \) gives it from the box's own assumption. In the pictures, the box on \( P \) stands with its goal \( \bot \); then \( \rulename{\neg E} \) writes \( \bot \) from the subgoal \( Q \), still unjustified.
+Read the skeleton off the goal. The goal \( \neg P \) is a negation, and Section 2.2's method for a negated goal is a box opened on what is negated, here \( P \), with goal \( \bot \). Inside the box, look for a clash (Section 2.1's method for the goal \( \bot \)). The premise \( \neg Q \) will clash with \( Q \), so \( Q \) is the subgoal, and the premise \( P \to Q \) gives it from the box's own assumption. In the pictures, the box on \( P \) stands with its goal \( \bot \); then \( \rulename{\neg E} \) writes \( \bot \) from the subgoal \( Q \), still unjustified.
 
 ```{=latex}
 % schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
@@ -88,7 +88,7 @@ A second form of the same fact packs the two premises into one implication. It i
 :::
 
 ::: {.idea}
-The goal is an implication, so Chapter 1's first goal-directed move applies: open a box with its hypothesis \( \neg Q \), and the new goal is \( \neg P \). That goal is a negation, so open a second box, on \( P \), inside the first. Inside both boxes we are exactly where the proof of @prp-modus-tollens was: \( P \) and \( P \to Q \) give \( Q \), which clashes with \( \neg Q \).
+The goal is an implication, so Chapter 1's first goal-directed method applies: open a box with its hypothesis \( \neg Q \), and the new goal is \( \neg P \). That goal is a negation, so open a second box, on \( P \), inside the first. Inside both boxes we are exactly where the proof of @prp-modus-tollens was: \( P \) and \( P \to Q \) give \( Q \), which clashes with \( \neg Q \).
 :::
 
 ::: {.proof}
@@ -115,9 +115,9 @@ $\begin{nd}
 Line 5 may cite line 2, because the only box containing line 2, the box \( \lines{2}{6} \), also contains line 5 (the scope rule of @def-derivation). The inner box closes on line 6, a line of the outer box itself, and line 7 closes the outer box. This proves the proposition.
 :::
 
-The statement \( \neg Q \to \neg P \) is called the **contrapositive** of \( P \to Q \). Like modus tollens, its derivation uses only the rules so far: \( \rulename{{\to}I} \), \( \rulename{{\to}E} \), \( \rulename{\neg I} \), and \( \rulename{\neg E} \). The passage back, from \( \neg Q \to \neg P \) to \( P \to Q \), is a different matter (Common errors, below).
+The statement \( \neg Q \to \neg P \) is called the **contrapositive** of \( P \to Q \). Like modus tollens, its derivation uses only the rules so far: \( \rulename{{\to}I} \), \( \rulename{{\to}E} \), \( \rulename{\neg I} \), and \( \rulename{\neg E} \). The passage back, from \( \neg Q \to \neg P \) to \( P \to Q \), is a different matter: it needs a new rule, given in Section 2.5.
 
-Now compare the two derivations. Lines 3–6 of the derivation of @prp-modus-tollens are, line for line and citation for citation, lines 3–6 of the derivation of @prp-contrapositive: \( P \), then \( Q \) by \( \rulename{{\to}E}\ 1, 3 \), then \( \bot \) by \( \rulename{\neg E}\ 4, 2 \), then \( \neg P \) by \( \rulename{\neg I}\ \lines{3}{5} \). And they are the four lines of the two arguments that opened this section. Writing them out every time buries the argument in bookkeeping.
+Now compare the two derivations. In the derivation of @prp-contrapositive, lines 3–6 are \( P \), then \( Q \) by \( \rulename{{\to}E}\ 1, 3 \), then \( \bot \) by \( \rulename{\neg E}\ 4, 2 \), then \( \neg P \) by \( \rulename{\neg I}\ \lines{3}{5} \). These are, line for line and citation for citation, lines 3–6 of the derivation of @prp-modus-tollens. And they are the four lines of the two arguments that opened this section. Writing them out every time buries the argument in bookkeeping.
 
 ## What a derived rule is
 
@@ -142,14 +142,14 @@ $\begin{nd}[schema]
 ```
 :::
 
-In words: a proved sequent is a new rule. Its premises become the cited lines, its conclusion the line written, and its letters the metavariables of a schema (@def-rule-schema). Read the definition clause by clause.
+In words: a proved sequent is a new rule. Its premises become the cited lines, its conclusion the line written, and its letters the metavariables of a schema (@def-rule-schema). Each part of the definition has a reason.
 
 1. **"Already derived."** The sequent must have been derived **before** the line that uses it: earlier in the book, and never inside its own derivation. A derivation that used a sequent to derive that same sequent would prove nothing.
 2. **"Replace each letter … the same statement for every occurrence."** The letters of a derived sequent stood for arbitrary statements all along (@def-derivable), so they may be replaced by any statements, provided the replacement is **uniform**. From \( (A \wedge B) \to C \) and \( \neg C \), the rule \( \rulename{MT} \) gives \( \neg(A \wedge B) \), with the letters \( P \) and \( Q \) of @prp-modus-tollens (written \( \varphi \) and \( \psi \) in the schema) replaced by \( A \wedge B \) and \( C \).
 3. **"Available at line \( k \)."** The scope rule of @def-derivation still governs every citation. A derived rule may not reach into a closed box, just as a primitive rule may not.
 4. **"The resulting instance of \( \beta \)."** The rule writes the conclusion, with the same replacement, and nothing else. The derived rule does not open or close any box of the derivation that uses it.
 
-We give the derived rules of this section short tags: \( \rulename{MT} \) for @prp-modus-tollens, \( \rulename{CP} \) for @prp-contrapositive, and, once it is proved below, \( \rulename{DS} \) for @prp-disjunctive-syllogism. Every other derived sequent is a derived rule too, cited by its name: the four lines 2–5 of @exm-vacuous-square, for instance, are now one line citing @prp-vacuous-implication.
+The derived rules of this section get short tags. \( \rulename{MT} \) stands for modus tollens, @prp-modus-tollens. \( \rulename{CP} \) stands for the contrapositive, @prp-contrapositive. Once it is proved below, \( \rulename{DS} \) stands for disjunctive syllogism, @prp-disjunctive-syllogism. Every other derived sequent is a derived rule too, cited by its name. For instance, the four lines 2–5 of @exm-vacuous-square are now one line. That line cites @prp-vacuous-implication.
 
 **Left: with the derived rule. Right: written out.**
 
@@ -179,7 +179,7 @@ $\begin{nd}
 A derived rule is shorthand for lines we could always write out, so it lets us prove nothing that the primitive rules could not.
 
 ::: {.check}
-In the figure, which lines does line 3 on the left cite, and which lines on the right use those same two premises?
+In the two derivations above, which lines does line 3 on the left cite, and which lines on the right use those same two premises?
 :::
 
 ::: {.solution}
@@ -187,9 +187,9 @@ Lines 1 and 2. On the right, line 4 cites line 1 and line 5 cites line 2.
 :::
 
 ::: {.second-reading title="Why a derived rule adds no power"}
-**Convenience, not power.** A derived-rule line abbreviates a stretch of derivation that we could write out in full. To expand it, repeat each cited line by (D3) of @def-derivation, then copy the derivation of the sequent below the repetitions, with its letters replaced, its premises replaced by the repetitions, and its line numbers shifted. Every citation inside the copy points inside the copy or to a repetition, all in the current box, so every citation is available. The copy's boxes close before its last line, which is the instance of \( \beta \). If the copy itself uses derived rules, expand those lines in the same way; this stops, because each derivation cites only results proved before it. So whatever can be derived with derived rules can be derived with the primitive rules alone.
+**Convenience, not power.** A derived-rule line abbreviates a stretch of derivation that we could write out in full. To expand it, first repeat each cited line, by the clause of @def-derivation that copies an available line, (D3). Then copy the derivation of the sequent below the repetitions. In the copy, the letters are replaced, the premises are replaced by the repetitions, and the line numbers are shifted. Every citation inside the copy points inside the copy or to a repetition, all in the current box, so every citation is available. The copy's boxes close before its last line, which is the instance of \( \beta \). If the copy itself uses derived rules, expand those lines in the same way; this stops, because each derivation cites only results proved before it. So whatever can be derived with derived rules can be derived with the primitive rules alone.
 
-The degenerate case is a sequent with nothing done to its premise, \( P \vdash P \), whose derivation is the single premise line (part (a) of @exm-derivations): as a derived rule it copies an available line, which repetition already does. The first use with content is modus tollens proved a second time, with \( \rulename{CP} \) as a rule. The premise \( P \to Q \) invites \( \rulename{CP} \), and its conclusion \( \neg Q \to \neg P \) is an implication whose hypothesis is the other premise.
+The simplest case is the sequent \( P \vdash P \), which does nothing to its premise. Its derivation is the single premise line, part (a) of @exm-derivations. As a derived rule it copies an available line, which repetition already does. The first use with content is modus tollens proved a second time, with \( \rulename{CP} \) as a rule. The premise \( P \to Q \) invites \( \rulename{CP} \), and its conclusion \( \neg Q \to \neg P \) is an implication whose hypothesis is the other premise.
 
 ```{=latex}
 \begin{center}
@@ -202,18 +202,20 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 3 is the instance of @prp-contrapositive with \( P \) and \( Q \) replaced by themselves; line 4 is modus ponens on it. Written out in full, line 3 would become a repetition of line 1 followed by lines 2–7 of the derivation of @prp-contrapositive. This is honest because @prp-contrapositive was derived from the primitive rules, not from @prp-modus-tollens: the chain of derived rules ends in primitive rules, without a loop.
+Line 3 is the instance of @prp-contrapositive with \( P \) and \( Q \) replaced by themselves; line 4 is modus ponens on it. Written out in full, line 3 would become a repetition of line 1 followed by lines 2–7 of the derivation of @prp-contrapositive. This is honest because the contrapositive was derived from the primitive rules alone. Its derivation did not use @prp-modus-tollens, so the chain of derived rules ends in primitive rules, without a loop.
 :::
 
 ::: {.warning}
 A derived rule must match its sequent exactly, under one uniform replacement of letters. From \( P \to Q \) and \( \neg R \), \( \rulename{MT} \) gives nothing: no single statement in place of \( \psi \) turns the pair into \( \varphi \to \psi \) and \( \neg\psi \). Equally, from \( P \to \neg Q \) and \( Q \), \( \rulename{MT} \) gives nothing yet: it needs the negation of the conclusion, \( \neg\neg Q \), and \( Q \) is not that line. (Here \( \rulename{\neg I} \) would give \( \neg\neg Q \) first, as in @exm-double-negation-introduction, and then \( \rulename{MT} \) applies.) Likewise \( \rulename{DS} \), as stated below, refutes the **left** disjunct; applied blindly to \( P \vee Q \) and \( \neg Q \), it does not match.
 :::
 
-In the Givens/Goal table, a derived rule adds its conclusion to the Givens in one row, as an elimination rule does.
+In a table of what we know and what we want, a derived rule adds its conclusion to what we know in one row, as an elimination rule does.
 
 ## Pasting whole derivations: weakening and cut
 
-The figure expands one derived-rule line inside a derivation. Outside every box there is a cleaner statement, about whole derivations: two derivations can be joined end to end, and premises that are never used do no harm.
+So far a derived-rule line has been expanded inside a derivation. Outside every box there is a cleaner statement, about whole derivations: two derivations can be joined end to end, and premises that are never used do no harm.
+
+Here is each fact in a small case. The derivation of @prp-contrapositive has the single premise \( P \to Q \). That premise belongs to the list \( P \to Q, \ S \), so the same seven lines show \( P \to Q, \ S \vdash \neg Q \to \neg P \): the unused premise \( S \) does no harm. Next, one \( \rulename{{\to}E} \) line derives \( \neg P \) from \( \neg Q \to \neg P \) and \( \neg Q \). Write the seven lines that derive \( \neg Q \to \neg P \) from \( P \to Q \) first, and let the \( \rulename{{\to}E} \) line cite their last line. The result derives \( \neg P \) from \( P \to Q \) and \( \neg Q \) alone.
 
 ::: {#lem-weakening-cut}
 [Weakening and Cut]
@@ -227,9 +229,9 @@ Let \( \Gamma \) and \( \Delta \) be lists of statements, and let \( \varphi \),
 :::
 :::
 
-*In words: (a) extra premises never hurt; (b) a statement that has been derived may be used as a premise; (c) a sequent already proved can be applied to statements already derived. Part (c) is @def-derived-rule for whole derivations, outside every box; inside a box, the expansion of the fold "Why a derived rule adds no power" does the same job.*
+*In words: (a) extra premises never hurt; (b) a statement that has been derived may be used as a premise; (c) a sequent already proved can be applied to statements already derived. Part (c) is @def-derived-rule for whole derivations, outside every box; inside a box, writing the derived-rule line out in full does the same job.*
 
-Chaining and cut are the reason a derived-rule line outside every box is legitimate: the lines it cites lie in no box, so the derivation up to each of them derives it from \( \Gamma \), and (c) then derives the instance of the sequent's conclusion from \( \Gamma \); by (b), the rest of the derivation may use that instance.
+Chaining and cut are the reason a derived-rule line outside every box is legitimate. The lines it cites lie in no box. So the derivation up to each of them derives it from \( \Gamma \). Then (c) derives the instance of the sequent's conclusion from \( \Gamma \), and by (b) the rest of the derivation may use that instance.
 
 ::: {.second-reading title="The proof: pasting derivations"}
 ::: {.idea}
@@ -245,24 +247,24 @@ For (b) and (c) we prove one statement that contains both:
 
 Part (b) is \( (\ast) \) with \( m = 1 \), \( \alpha_1 = \varphi \) and \( \beta = \psi \). Part (c) follows from \( (\ast) \), since \( \alpha_1, \dots, \alpha_m \vdash \beta \) gives \( \Gamma, \alpha_1, \dots, \alpha_m \vdash \beta \) by (a).
 
-To prove \( (\ast) \), let \( D_i \) be a derivation of \( \alpha_i \) with premises in \( \Gamma \), for each \( i \), and let \( E \) be a derivation of \( \beta \) with premises in \( \Gamma, \alpha_1, \dots, \alpha_m \). If the last line of \( E \) is one of its premises, then \( \beta \) is a member of \( \Gamma \), and the one-line derivation whose only line is the premise \( \beta \) shows \( \Gamma \vdash \beta \); or \( \beta \) is some \( \alpha_i \), and \( D_i \) shows \( \Gamma \vdash \beta \). Otherwise, build a list of lines \( F \) as follows.
+To prove \( (\ast) \), let \( D_i \) be a derivation of \( \alpha_i \) with premises in \( \Gamma \), for each \( i \), and let \( E \) be a derivation of \( \beta \) with premises in \( \Gamma, \alpha_1, \dots, \alpha_m \). Suppose first that the last line of \( E \) is one of its premises. Then either \( \beta \) is a member of \( \Gamma \), and the one-line derivation whose only line is the premise \( \beta \) shows \( \Gamma \vdash \beta \). Or \( \beta \) is some \( \alpha_i \), and \( D_i \) shows \( \Gamma \vdash \beta \). Otherwise, build a list of lines \( F \) as follows.
 
 1. First, as premises, every premise of \( D_1, \dots, D_m \), and every premise of \( E \) that is a member of \( \Gamma \).
 2. Then the lines of \( D_1 \) that are not premises, then those of \( D_2 \), and so on up to \( D_m \), each with its boxes.
 3. Then the lines of \( E \) that are not premises, with its boxes.
 
-Renumber the lines, and change each citation as follows. A citation of a premise that is in \( \Gamma \) now cites the premise line of step 1 carrying that statement. A citation in \( E \) of a premise \( \alpha_i \) that is not in \( \Gamma \) now cites the last line of \( D_i \); that line is not a premise of \( D_i \), because the premises of \( D_i \) are in \( \Gamma \) and \( \alpha_i \) is not, so it was copied in step 2. Every other citation follows its line to its new number.
+Renumber the lines, and change each citation as follows. A citation of a premise that is in \( \Gamma \) now cites the premise line of step 1 carrying that statement. A citation in \( E \) of a premise \( \alpha_i \) that is not in \( \Gamma \) now cites the last line of \( D_i \). That line is not a premise of \( D_i \), because the premises of \( D_i \) are in \( \Gamma \) and \( \alpha_i \) is not. So it was copied in step 2. Every other citation follows its line to its new number.
 
-We check that \( F \) is a derivation (@def-derivation). The premises come first and lie in no box. The boxes are those of the \( D_i \) and of \( E \), moved as blocks, so two boxes are still disjoint or nested, each still begins with its assumption, and each line lies in exactly the boxes it lay in before. Hence a line and a box that were available at a citing line are still available there, since the boxes containing each are unchanged. A premise line of step 1 lies in no box and comes first, so it is available at every later line. The last line of \( D_i \) lies in no box (it was the last line of a derivation) and comes before every line of \( E \), so it is available at every line of \( E \). Each line carries the same statement and the same justification as before, citing lines with the same statements, so it is an instance of the same rule. Finally, the last line of \( F \) is the last line of \( E \), namely \( \beta \), and it lies in no box. The premises of \( F \) are all in \( \Gamma \). Therefore \( \Gamma \vdash \beta \), which proves \( (\ast) \).
+We check that \( F \) is a derivation (@def-derivation). The premises come first and lie in no box. The boxes are those of the \( D_i \) and of \( E \), moved as blocks. So two boxes are still disjoint or nested, and each still begins with its assumption. Each line lies in exactly the boxes it lay in before. Hence a line and a box that were available at a citing line are still available there, since the boxes containing each are unchanged. A premise line of step 1 lies in no box and comes first, so it is available at every later line. The last line of \( D_i \) lies in no box (it was the last line of a derivation) and comes before every line of \( E \), so it is available at every line of \( E \). Each line carries the same statement and the same justification as before, citing lines with the same statements, so it is an instance of the same rule. Finally, the last line of \( F \) is the last line of \( E \), namely \( \beta \), and it lies in no box. The premises of \( F \) are all in \( \Gamma \). Therefore \( \Gamma \vdash \beta \), which proves \( (\ast) \).
 :::
 :::
 
 ::: {.check}
-Given @prp-modus-tollens, which part of @lem-weakening-cut gives \( P \to Q, \ \neg Q, \ R \vdash \neg P \) at once? Given also @prp-vacuous-implication, which part gives \( P \to Q, \ \neg Q \vdash P \to R \)?
+Suppose @prp-modus-tollens has been derived. Which part of @lem-weakening-cut then gives \( P \to Q, \ \neg Q, \ R \vdash \neg P \) at once? Suppose @prp-vacuous-implication has been derived too. Which part then gives \( P \to Q, \ \neg Q \vdash P \to R \)?
 :::
 
 ::: {.solution}
-Part (a), weakening, with \( R \) as the extra premise. Part (c), chaining, with \( m = 1 \), \( \alpha_1 = \neg P \) and \( \beta = P \to R \): @prp-modus-tollens gives \( P \to Q, \ \neg Q \vdash \neg P \), and @prp-vacuous-implication with \( R \) in place of \( Q \) gives \( \neg P \vdash P \to R \). (Part (a) and then part (b) do the same.)
+Part (a), weakening, with \( R \) as the extra premise. Part (c), chaining, with \( m = 1 \), \( \alpha_1 = \neg P \) and \( \beta = P \to R \). Here @prp-modus-tollens gives \( P \to Q, \ \neg Q \vdash \neg P \). And @prp-vacuous-implication, with \( R \) in place of \( Q \), gives \( \neg P \vdash P \to R \). Part (a) followed by part (b) does the same.
 :::
 
 ## Disjunctive syllogism: the impossible case, filed
@@ -317,7 +319,7 @@ The rule as stated refutes the **left** disjunct. To refute the right one, first
 :::
 
 ::: {.solution}
-*Idea.* A derived rule is a **premise-directed shortcut**: a line \( \varphi \to \psi \) with a line \( \neg\psi \) invites \( \rulename{MT} \); a disjunction with one side refuted invites \( \rulename{DS} \). This is the move this section adds to the search for derivations: before opening a box by hand, ask whether a derived rule takes the step at once.
+*Idea.* A derived rule is a **premise-directed shortcut**: a line \( \varphi \to \psi \) with a line \( \neg\psi \) invites \( \rulename{MT} \); a disjunction with one side refuted invites \( \rulename{DS} \). This is the new step this section adds to the search for derivations: before opening a box by hand, ask whether a derived rule takes the step at once.
 
 (a) Work backwards from the goal \( \neg P \). The premise \( P \to Q \) would give it by \( \rulename{MT} \) if \( \neg Q \) were available. And \( \neg Q \) comes by \( \rulename{MT} \) from \( Q \to R \) and \( \neg R \). So \( \rulename{MT} \) is used twice, the second time on the conclusion of the first.
 
@@ -379,7 +381,7 @@ $\begin{nd}
 \end{center}
 ```
 
-The literal expansion of the fold "Why a derived rule adds no power" adds a repetition of each cited line and is longer; the natural one cites the available lines directly.
+The general recipe for writing out a derived rule first repeats each cited line, so it gives a longer derivation; the natural expansion cites the available lines directly.
 
 (b) The disjunction \( P \vee Q \) has its left side refuted by \( \neg P \), so \( \rulename{DS} \) gives \( Q \), and then \( Q \to R \) fires.
 
@@ -455,7 +457,7 @@ The claim of @exm-wason-selection (Section 1.3), for one card, is \( E \to R \),
 
 Turning the green card tests exactly the line \( \rulename{MT} \) wrote: an even number there gives \( E \), and with \( \neg R \) and \( E \to R \), \( \rulename{{\to}E} \) and \( \rulename{\neg E} \) reach \( \bot \). Modus tollens is the step people skip.
 
-\( \rulename{CP} \) turns the claim into its contrapositive \( \neg R \to \neg E \), "a card whose color is not red has an odd number", which carries the claim's content to the green card; Section 2.5 derives the passage back, so the two say the same. The converse \( R \to E \), "a red card has an even number", is a different claim, and the card rule never made it.
+\( \rulename{CP} \) turns the claim into its contrapositive \( \neg R \to \neg E \), "a card whose color is not red has an odd number". This carries the claim's content to the green card. Section 2.5 derives the passage back, so the two say the same. The converse \( R \to E \), "a red card has an even number", is a different claim, and the card rule never made it.
 
 ::: {.check}
 Which card would \( \rulename{MT} \) settle if the claim were "if a card's color side is red, then its number is even"?
@@ -473,7 +475,7 @@ A claim about every integer of a kind makes one prediction per instance. "For ev
 
 @thm-square-even-implies-even (Section 2.1) says that for an integer \( n \), if \( n^2 \) is even then \( n \) is even. Section 2.1 proved it by cases, with the odd case shown impossible and closed by \( \rulename{\bot E} \). Here is the same theorem argued as mathematicians usually write it, with the derived rules doing the work. We use the facts (E1)–(E3) of Section 2.1: every integer is even or odd; no integer is both; the square of an odd integer is odd.
 
-Written the way a mathematician would write it, the proof is four sentences: *Suppose \( n^2 \) is even. Then \( n^2 \) is not odd, since no integer is both. By the contrapositive of (E3), \( n \) is not odd. As every integer is even or odd, \( n \) is even.* Each sentence after the first is one named step: \( \rulename{\neg I} \) with (E2); \( \rulename{CP} \) with \( \rulename{{\to}E} \); \( \rulename{DS} \), after exchanging the disjuncts of (E1), as line 11 of the derivation below does. The example below writes the same proof with every step tagged, and then as a derivation.
+Written the way a mathematician would write it, the proof is four sentences: *Suppose \( n^2 \) is even. Then \( n^2 \) is not odd, since no integer is both. By the contrapositive of (E3), \( n \) is not odd. As every integer is even or odd, \( n \) is even.* Each sentence after the first is one named step: \( \rulename{\neg I} \) with (E2); \( \rulename{CP} \) with \( \rulename{{\to}E} \); \( \rulename{DS} \), after exchanging the disjuncts of (E1), as line 11 of the derivation below does. Next comes the same proof with every step tagged, and then as a derivation.
 
 ::: {#exm-square-even-via-contrapositive}
 [Even square, even number, by contraposition]
@@ -516,7 +518,7 @@ Line 11 is @exm-disjunction-first-derivations used as a derived rule, so that li
 :::
 
 ::: {.second-reading title="The two derivations of Even Square, line for line"}
-Compare this with the twelve-line derivation after @thm-square-even-implies-even in Section 2.1. There, line 11 split on (E1) at once, and the odd case, lines 6–10, got \( T \) from (E3), built \( S \wedge T \), clashed with (E2), and closed by \( \rulename{\bot E} \). Here the same work is spread over named steps. The \( \rulename{\neg I} \) box on lines 5–7 does the clash with (E2), which there was lines 8–9. Lines 9 and 10, \( \rulename{CP} \) and \( \rulename{{\to}E} \), abbreviate a box that assumes \( O \), gets \( T \) by (E3), as line 7 did there, and clashes with line 8. Line 12, \( \rulename{DS} \), abbreviates a case split on the disjunction with the case \( O \) closed by \( \rulename{\bot E} \), as lines 5–11 did there. The short version reads the way people talk.
+Compare this with the twelve-line derivation after @thm-square-even-implies-even in Section 2.1. There, the derivation split at once on (E1), that every integer is even or odd. Its odd case got \( T \) from the fact that the square of an odd integer is odd, (E3). It then built \( S \wedge T \), clashed with (E2), that no integer is both, and closed by \( \rulename{\bot E} \). Here the same work is spread over named steps. The \( \rulename{\neg I} \) box on lines 5–7 does the clash with (E2). Lines 9 and 10, \( \rulename{CP} \) and \( \rulename{{\to}E} \), abbreviate a box that assumes \( O \), gets \( T \) because the square of an odd integer is odd, and clashes with line 8. Line 12, \( \rulename{DS} \), abbreviates the case split on the disjunction, with the case \( O \) closed by \( \rulename{\bot E} \). The short version reads the way people talk.
 :::
 
 ## Common errors
@@ -547,25 +549,38 @@ A sequent is proved once, for letters, and used for every statement put in their
 
 Chapter 1's seven rules are on the card at the end of Section 1.6; here are this chapter's so far.
 
-| Rule | Shape | You write | Lean |
-|---|---|---|---|
-| \( \rulename{\neg E} \) | \( \varphi \), \( \neg\varphi \) \( \Longrightarrow \) \( \bot \) | "…, which contradicts …" | `exact hn hp` (goal `False`) |
-| \( \rulename{\bot E} \) | \( \bot \) \( \Longrightarrow \) any \( \varphi \) | "This case cannot occur." "So there is nothing to prove." | `exfalso` |
-| \( \rulename{\neg I} \) | box \( \varphi \) … \( \bot \) \( \Longrightarrow \) \( \neg\varphi \) | "Suppose \( P \). … This is a contradiction. Hence not \( P \)." | `intro hp` (goal `False`) |
-| \( \rulename{MT} \) | (derived) \( \varphi \to \psi \), \( \neg\psi \) \( \Longrightarrow \) \( \neg\varphi \) | "Since \( Q \) fails, so does \( P \)." | `mt h hnq` |
-| \( \rulename{CP} \) | (derived) \( \varphi \to \psi \) \( \Longrightarrow \) \( \neg\psi \to \neg\varphi \) | "We prove the contrapositive: suppose not \( Q \); … so not \( P \)." | `mt` |
-| \( \rulename{DS} \) | (derived) \( \varphi \vee \psi \), \( \neg\varphi \) \( \Longrightarrow \) \( \psi \) | "\( P \) is impossible, so \( Q \)." | `h.resolve_left hnp` |
+| Rule | Shape | You write |
+|---|---|---|
+| \( \rulename{\neg E} \) | \( \varphi \), \( \neg\varphi \) \( \Longrightarrow \) \( \bot \) | "…, which contradicts …" |
+| \( \rulename{\bot E} \) | \( \bot \) \( \Longrightarrow \) any \( \varphi \) | "This case cannot occur." "So there is nothing to prove." |
+| \( \rulename{\neg I} \) | box \( \varphi \) … \( \bot \) \( \Longrightarrow \) \( \neg\varphi \) | "Suppose \( P \). … This is a contradiction. Hence not \( P \)." |
+| \( \rulename{MT} \) | (derived) \( \varphi \to \psi \), \( \neg\psi \) \( \Longrightarrow \) \( \neg\varphi \) | "Since \( Q \) fails, so does \( P \)." |
+| \( \rulename{CP} \) | (derived) \( \varphi \to \psi \) \( \Longrightarrow \) \( \neg\psi \to \neg\varphi \) | "We prove the contrapositive: suppose not \( Q \); … so not \( P \)." |
+| \( \rulename{DS} \) | (derived) \( \varphi \vee \psi \), \( \neg\varphi \) \( \Longrightarrow \) \( \psi \) | "\( P \) is impossible, so \( Q \)." |
+
+::: {.second-reading title="For instructors"}
+In the proof assistant Lean, these rules are performed by the following code. Nothing in this book depends on it.
+
+| Rule | Lean |
+|---|---|
+| \( \rulename{\neg E} \) | `exact hn hp` (goal `False`) |
+| \( \rulename{\bot E} \) | `exfalso` |
+| \( \rulename{\neg I} \) | `intro hp` (goal `False`) |
+| \( \rulename{MT} \) | `mt h hnq` |
+| \( \rulename{CP} \) | `mt` |
+| \( \rulename{DS} \) | `h.resolve_left hnp` |
+:::
 
 ::: {.warning}
 [Not allowed: derived rules]
 
-Each step breaks the clause of the reading of @def-derived-rule shown.
+Each step breaks the condition of @def-derived-rule named after it.
 
-- "\( \rulename{CP} \) on a line of the derivation of @prp-contrapositive": the sequent is not yet derived where it is used (clause 1; Exercise C2).
-- "\( \neg P \) by \( \rulename{MT} \) from \( (P \wedge Q) \to R \) and \( \neg R \)": \( \rulename{MT} \) writes the negation of the whole hypothesis, \( \neg(P \wedge Q) \) (clause 4).
-- "\( \rulename{MT} \) citing a line inside a closed box": the scope rule still governs every citation (clause 3).
-- "\( \neg P \) in one line from \( P \to Q \), \( Q \to R \), \( \neg R \)": one instance per line; @exm-derived-rules-in-use (a) takes two \( \rulename{MT} \) lines (clause 4).
-- "\( P \) by \( \rulename{\neg\neg E} \) from \( \neg\neg P \), here": \( \rulename{\neg\neg E} \) is derived only in Section 2.5 (clause 1).
+- "\( \rulename{CP} \) on a line of the derivation of @prp-contrapositive": the sequent is not yet derived where it is used (the condition "already derived"; Exercise C2).
+- "\( \neg P \) by \( \rulename{MT} \) from \( (P \wedge Q) \to R \) and \( \neg R \)": \( \rulename{MT} \) writes the negation of the whole hypothesis, \( \neg(P \wedge Q) \) (the condition "the resulting instance of \( \beta \)").
+- "\( \rulename{MT} \) citing a line inside a closed box": the scope rule still governs every citation (the condition "available at line \( k \)").
+- "\( \neg P \) in one line from \( P \to Q \), \( Q \to R \), \( \neg R \)": one instance per line; @exm-derived-rules-in-use (a) takes two \( \rulename{MT} \) lines (the condition "the resulting instance of \( \beta \)").
+- "\( P \) by \( \rulename{\neg\neg E} \) from \( \neg\neg P \), here": \( \rulename{\neg\neg E} \) is derived only in Section 2.5 (the condition "already derived").
 :::
 
 ::: {.remark}
@@ -600,7 +615,7 @@ Chapter 4 makes exact the replacement of letters that a derived rule allows, und
 :::
 
 ::: {.solution}
-(a) If a sequent has been derived earlier (not inside the derivation that uses it), then in a later derivation we may replace its letters by statements, each letter by one statement everywhere it occurs, and, when available lines hold the resulting instances of its premises, write the resulting instance of its conclusion on one line, citing the sequent and those lines.
+(a) Suppose a sequent has been derived earlier, and not inside the derivation that uses it. Then in a later derivation we may replace its letters by statements, each letter by one statement everywhere it occurs. When available lines hold the resulting instances of its premises, we may write the resulting instance of its conclusion on one line. That line cites the sequent and those lines.
 
 (b) Line 3 becomes a box on \( R \), then \( \rulename{{\to}E} \), \( \rulename{\neg E} \), and \( \rulename{\neg I} \):
 
@@ -656,7 +671,7 @@ Each part takes a line or two. The parts run from single steps, through a missin
 
 (d) \( \neg\neg R \), with \( \varphi \coloneqq \neg R \) and \( \psi \coloneqq P \vee Q \).
 
-(e) Four: an assumption, \( \rulename{{\to}E} \), \( \rulename{\neg E} \), \( \rulename{\neg I} \) (the figure).
+(e) Four: an assumption, \( \rulename{{\to}E} \), \( \rulename{\neg E} \), \( \rulename{\neg I} \), as in the written-out derivation after @def-derived-rule.
 
 (f) \( (R \wedge S) \to T \).
 
@@ -666,13 +681,13 @@ Each part takes a line or two. The parts run from single steps, through a missin
 
 (i) Not yet: \( \rulename{MT} \) needs \( \neg\neg Q \). Write it from \( Q \) by a \( \rulename{\neg I} \) box first; then \( \rulename{MT} \) gives \( \neg P \).
 
-(j) No: \( \rulename{DS} \) refutes the left disjunct. Use the other form (Exercise B1 (a)) or exchange the disjuncts first.
+(j) No: \( \rulename{DS} \) refutes the left disjunct. Use the other form, Exercise B1 (a), or exchange the disjuncts first.
 
 (k) No: a derived rule may be used only after its sequent has been derived.
 
 (l) Line 3: \( \rulename{MT} \) needs the negation of the conclusion, \( \neg Q \), and gives \( \neg P \); line 3 runs it backwards, from \( \neg P \) to \( \neg Q \). The form breaks at \( P \) false, \( Q \) true.
 
-(m) 3 \( P \), assumption; 4 \( Q \wedge R \), \( \rulename{{\to}E} \) 1, 3; 5 \( R \), \( \rulename{\wedge E} \) 4; 6 \( \bot \), \( \rulename{\neg E} \) 5, 2; 7 \( \neg P \), \( \rulename{\neg I} \) 3–6. (\( \rulename{MT} \) does not match: \( \neg(Q \wedge R) \) is not available.)
+(m) Line 3: \( P \), assumption. Line 4: \( Q \wedge R \), \( \rulename{{\to}E} \) 1, 3. Line 5: \( R \), \( \rulename{\wedge E} \) 4. Line 6: \( \bot \), \( \rulename{\neg E} \) 5, 2. Line 7: \( \neg P \), \( \rulename{\neg I} \) 3–6. (\( \rulename{MT} \) does not match: \( \neg(Q \wedge R) \) is not available.)
 
 (n) 4 \( Q \), \( \rulename{DS} \) 1, 2; 5 \( \bot \), \( \rulename{\neg E} \) 4, 3; 6 \( R \), \( \rulename{\bot E} \) 5.
 
@@ -741,7 +756,7 @@ The order is (iii), (v), (vii), (ii), (vi), (iv), (i), with one box opened by (v
 ::: {#exr-derived-rules-b3}
 [B3: Two refutations]
 
-A search for \( (P \vee Q) \to R, \; \neg R \vdash \neg P \wedge \neg Q \) has reached the stage below. You may use the derived rules of this section. *Name the move, then complete it.*
+A search for \( (P \vee Q) \to R, \; \neg R \vdash \neg P \wedge \neg Q \) has reached the stage below. You may use the derived rules of this section. *Name the method, then complete it.*
 
 ```{=latex}
 % schema (partial derivation: the gap is unnumbered, lines carry their final numbers)
@@ -758,7 +773,7 @@ $\begin{nd}
 :::
 
 ::: {.solution}
-The premises are an implication and the negation of its conclusion, which invites \( \rulename{MT} \): it gives \( \neg(P \vee Q) \). The goal is a conjunction, so we need \( \neg P \) and \( \neg Q \), each a negation, each by a \( \rulename{\neg I} \) box. In the box of \( P \), the clash is manufactured: \( \rulename{\vee I} \) gives \( P \vee Q \), which clashes with line 3. The box of \( Q \) is the same.
+The premises are an implication and the negation of its conclusion, which invites \( \rulename{MT} \): it gives \( \neg(P \vee Q) \). The goal is a conjunction, so we need \( \neg P \) and \( \neg Q \), each a negation, each by a \( \rulename{\neg I} \) box. In the box of \( P \), the clash is built: \( \rulename{\vee I} \) gives \( P \vee Q \), which clashes with line 3. The box of \( Q \) is the same.
 
 ```{=latex}
 \begin{center}
@@ -859,20 +874,20 @@ The look-alike breaks with \( P \): "\( x > 5 \)" and \( Q \): "\( x > 3 \)", at
 
 (d) Write \( F \): "\( n \) is a multiple of \( 4 \)", \( E \): "\( n \) is even", \( N \): "\( n \) is a multiple of \( 9 \)", \( T \): "\( n \) is a multiple of \( 3 \)". The premises are \( (F \to E) \wedge (N \to T) \) (since \( 4k = 2(2k) \) and \( 9k = 3(3k) \)), and the hypothesis is \( \neg E \vee \neg T \). Open a box on the hypothesis; inside it, (b) as a derived rule, with \( P \), \( Q \), \( R \), \( S \) replaced by \( F \), \( N \), \( E \), \( T \), gives \( \neg F \vee \neg N \); then \( \rulename{{\to}I} \) closes the box on \( (\neg E \vee \neg T) \to (\neg F \vee \neg N) \). For instance \( n = 7 \) is odd, and not a multiple of \( 4 \).
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 2: (a), \( \rulename{CD} \) with the replacement \( S \coloneqq R \) named, then \( P \vee P \vdash P \).
 - 3: (b), \( \rulename{MT} \) in each case box, both boxes ending in \( \neg P \vee \neg Q \).
 - 3: (c), the nested \( \rulename{\neg I} \) box inside the \( \rulename{{\to}I} \) box (2), and a correct break of the look-alike (1).
 - 2: (d), the letters, the premises, and the use of (b) inside a \( \rulename{{\to}I} \) box.
 
-Fatal error (0 for (b)): a case box citing a line of the other case box.
+Slips that lose all the points of (b): a case box citing a line of the other case box.
 :::
 
 ::: {#exr-derived-rules-b5}
 [B5: Derive or break]
 
-For each claim, derive it with the rules so far, including \( \rulename{MT} \), \( \rulename{CP} \), \( \rulename{DS} \) and the sequents derived in this book so far, or break it by statements about a real number \( x \) that make its counterexample set true at one value of \( x \).
+For each claim, either derive it or break it. To derive it, use the rules so far, including \( \rulename{MT} \), \( \rulename{CP} \), \( \rulename{DS} \) and the sequents derived in this book so far. To break it, give statements about a real number \( x \) that make its counterexample set true at one value of \( x \).
 
 ::: {.enumerate options="label=(\alph*)"}
 1. \( P \vee Q, \ Q \vdash \neg P \).
@@ -889,7 +904,7 @@ For each claim, derive it with the rules so far, including \( \rulename{MT} \), 
 ::: {.solution}
 (a) Break. Take \( P \): "\( x > 0 \)" and \( Q \): "\( x > 1 \)". At \( x = 2 \), \( P \vee Q \) and \( Q \) are true and \( P \) is true, so the counterexample set (@def-counterexample-set) \( P \vee Q \), \( Q \), \( \neg\neg P \) is true. This is affirming a disjunct (Section 1.6).
 
-(b) Derive. The goal is a negation: open a box on \( R \), and manufacture the premise's hypothesis by \( \rulename{\vee I} \).
+(b) Derive. The goal is a negation: open a box on \( R \), and build the premise's hypothesis by \( \rulename{\vee I} \).
 
 ```{=latex}
 \begin{center}
@@ -962,9 +977,11 @@ $\begin{nd}
 
 (h) Break. Take \( P \): "\( x > 5 \)", \( Q \): "\( x > 9 \)", \( R \): "\( x > 0 \)", \( S \): "\( x > -1 \)". At \( x = 1 \), \( P \to Q \) is true (its hypothesis fails) and \( R \to S \) is true (for every \( x \)), \( \neg Q \vee \neg S \) is true since \( \neg Q \) is, and \( \neg P \wedge \neg R \) is false, since \( R \) is true. So the counterexample set \( (P \to Q) \wedge (R \to S) \), \( \neg Q \vee \neg S \), \( \neg(\neg P \wedge \neg R) \) is true.
 
-(a) and (c) are the look-alikes of \( \rulename{DS} \) and of \( \rulename{CP} \); (g) drops the hypothesis that (f) keeps in its box; (h) is the destructive dilemma of Exercise B4 (b) with the \( \vee \) of its conclusion made \( \wedge \).
+(a) and (c) are the look-alikes of \( \rulename{DS} \) and of \( \rulename{CP} \). (g) drops the hypothesis that (f) keeps in its box. (h) is the destructive dilemma of Exercise B4 (b) with the \( \vee \) of its conclusion made \( \wedge \).
 
-**Marking scheme.** (16 points) For each claim: 1 for the verdict; 1 for a derivation every line of which checks, or for a choice of statements and one value of \( x \) at which **every** member of the counterexample set is true. Fatal errors (0 for the claim): a "break" at which a premise fails; \( \rulename{RAA} \) or \( \rulename{\neg\neg E} \) in a derivation.
+**What a complete answer needs.** (16 points) For each claim, 1 point for the verdict. A second point for a derivation every line of which checks, or for a choice of statements and one value of \( x \) at which **every** member of the counterexample set is true.
+
+Slips that lose the claim (0 points for it): a "break" at which a premise fails; \( \rulename{RAA} \) or \( \rulename{\neg\neg E} \) in a derivation.
 :::
 
 ### C. Going deeper
@@ -1073,13 +1090,13 @@ Yes: lines 3–4 become the one line "\( \neg P \), \( \rulename{MT} \) 1, 2" in
 :::
 
 ::: {#exr-derived-rules-c3}
-[C3: Exit check: labeling a proof]
+[C3: Chapter check: labeling a proof]
 
 Here is a proof that for an integer \( n \), if \( n^2 \) is odd, then \( n \) is odd.
 
 > Suppose \( n^2 \) is odd. If \( n \) were even, \( n = 2k \), then \( n^2 = 2(2k^2) \) would be even; so, by contraposition, since \( n^2 \) is not even (it is odd, and no integer is both), \( n \) is not even. As every integer is even or odd, \( n \) is odd.
 
-Label each sentence, or part of a sentence, with the rule or rules it uses, primitive or derived. Take as premises the facts (E1) and (E2) of Section 2.1 and the school computation "if \( n \) is even, then \( n^2 \) is even".
+Label each sentence, or part of a sentence, with the rule or rules it uses, primitive or derived. Take as premises two facts of Section 2.1, that every integer is even or odd, (E1), and that no integer is both, (E2). Take also the school computation "if \( n \) is even, then \( n^2 \) is even".
 :::
 
 ::: {.solution}
@@ -1119,7 +1136,7 @@ $\begin{nd}
 
 The computation is right: \( (2k)^2 = 4k^2 = 2(2k^2) \), and \( 2k^2 \) is an integer.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 2: identifies the frame as \( \rulename{{\to}I} \), with the box opened on the hypothesis "\( n^2 \) is odd".
 - 2: identifies "\( n^2 \) is not even" as \( \rulename{\neg I} \), naming the clash (with "no integer is both", by \( \rulename{\neg E} \)).
@@ -1127,7 +1144,10 @@ The computation is right: \( (2k)^2 = 4k^2 = 2(2k^2) \), and \( 2k^2 \) is an in
 - 2: identifies \( \rulename{DS} \) on "every integer is even or odd", naming "even" as the refuted side.
 - 1: names the closing \( \rulename{{\to}I} \).
 
-Fatal errors (0 for the step): naming anything but \( \rulename{\neg I} \) for the "not even" step (it concludes a negation from a box on the unnegated statement); applying \( \rulename{CP} \) to the converse, "if \( n^2 \) is even, then \( n \) is even".
+Slips that lose the step (0 points for it):
+
+- naming anything but \( \rulename{\neg I} \) for the "not even" step, which concludes a negation from a box on the unnegated statement;
+- applying \( \rulename{CP} \) to the converse, "if \( n^2 \) is even, then \( n \) is even".
 :::
 
 <!-- dependency ledger
@@ -1137,6 +1157,7 @@ def-derived-rule (claim): letters of a derived sequent may be replaced uniformly
 def-derived-rule (claim): the figure: line 3 on the left stands for lines 3-6 on the right | read off the two derivations (prp-modus-tollens, cited)
 lem-weakening-cut (proof): renumbering lines and moving boxes as blocks preserves nesting, availability and rule instances | inline (checked clause by clause against def-derivation)
 lem-weakening-cut (proof): a one-line derivation whose only line is a premise is a derivation | def-derivation, def-derivable (a premise line; the last line lies in no box)
+lem-weakening-cut (claim): the worked instance before the lemma: P -> Q, S |- not Q -> not P by the seven lines of prp-contrapositive (premises belong to the list); one ->E line on not Q -> not P and not Q, pasted after those seven lines, derives not P from P -> Q, not Q | read off prp-contrapositive (cited), def-derivable, def-rule-implication-elimination; the general facts are lem-weakening-cut (a), (b), proved below
 lem-weakening-cut (claim): chaining and cut are why a derived-rule line outside every box is legitimate | lem-weakening-cut (b), (c), def-derived-rule (cited)
 exm-derived-rules-instances (example): each row is an instance of its rule's sequent under the stated replacement; the look-alike is not | read off prp-modus-tollens, prp-contrapositive, prp-disjunctive-syllogism (cited)
 exm-modus-tollens-instance (example): x > 2 implies x^2 > 4; x^2 <= 4 is the negation of x^2 > 4; x <= 2 is the negation of x > 2 | school algebra, shown inline
