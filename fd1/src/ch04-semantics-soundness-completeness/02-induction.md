@@ -4,9 +4,9 @@ Section 4.1 made formulas into objects: strings built from atoms and \( \bot \) 
 
 ## One argument for infinitely many cases
 
-Here is a claim about every formula: *every formula has as many left parentheses as right ones.* It is believable. The clause (F3) of @def-formula adds one of each, and the other clauses add none. But the claim is about infinitely many strings, and checking them one by one never ends.
+Here is a claim about every formula: *every formula has as many left parentheses as right ones.* It is believable. The clause of @def-formula for the binary connectives, (F3), wraps its result in one pair of parentheses. It adds one of each kind, and the other clauses add none. But the claim is about infinitely many strings, and checking them one by one never ends.
 
-The belief already contains the shape of a proof. Every formula is reached by finitely many building steps from atoms and \( \bot \) (clause (F4)). The starting pieces have no parentheses, so they have equally many of each kind. Each building step turns formulas that balance into a formula that balances. So, step by step along any formation sequence, balance is never lost, and every formula balances.
+The belief already contains the shape of a proof. By the "nothing else" clause, (F4), every formula is reached by finitely many building steps from atoms and \( \bot \). The starting pieces have no parentheses, so they have equally many of each kind. Each building step turns formulas that balance into a formula that balances. So, step by step along any formation sequence, balance is never lost, and every formula balances.
 
 Exactly the same shape appears with numbers. To show that some property holds for every natural number, show that it holds for \( 0 \), and that it passes from each number to the next. Every natural number is reached from \( 0 \) by finitely many steps of "add one", so the property is never lost. This is **induction**. We state it for numbers first, because it is simpler there, then prove the version for formulas from it.
 
@@ -14,7 +14,9 @@ As in Chapters 1 and 2, "for every \( n \in \nN \)" and "there is a \( k \)" are
 
 ## The principle of induction
 
-A **property of natural numbers** is an open sentence \( P(n) \) about a natural number \( n \), such as "\( n^2 \ge n \)" or "\( 2^n > n \)": for each particular \( n \) it becomes a statement, true or false (compare the open sentence \( x > 2 \) of @exm-statements, which became a statement once \( x \) was fixed).
+A **property of natural numbers** is an open sentence \( P(n) \) about a natural number \( n \), such as "\( n^2 \ge n \)" or "\( 2^n > n \)". For each particular \( n \) it becomes a statement, true or false. The open sentence \( x > 2 \) of @exm-statements behaved the same way: it became a statement once \( x \) was fixed.
+
+Take \( P(n) \): "\( 2^n > n \)". To know it for every \( n \), it is enough to know two things. First, that \( P(0) \) holds; it does, since \( 2^0 = 1 > 0 \). Second, that for every \( n \), if \( 2^n > n \), then \( 2^{n + 1} > n + 1 \). The first gives \( P(0) \), and the second then gives \( P(1) \), \( P(2) \), \( P(3) \), and so on. The principle below says that these two facts settle every \( n \) at once.
 
 *If a property holds for \( 0 \), and passes from each number to the next, then it holds for every number.*
 
@@ -39,12 +41,12 @@ In symbols (here \( \forall \) abbreviates the words "for every"):
 
 In words: hypothesis (i) is the **base case**. Hypothesis (ii) is the **inductive step**, and inside it, the assumption "\( P(n) \) holds" is the **induction hypothesis**. The step is **one** implication, proved **once**, for a number \( n \) about which we assume nothing except that it is a natural number with \( P(n) \). The conclusion is about every natural number at once.
 
-**Its status.** We take @ax-induction as a basic property of \( \nN \), given and not proved. It is, in a precise sense, what the three dots in \( \{0, 1, 2, \dots\} \) mean: the natural numbers are what we reach from \( 0 \) by adding one, again and again, and nothing else. Every later use cites this principle.
+**Its status.** We take @ax-induction as a basic property of \( \nN \), given and not proved. It is, in a precise sense, what the three dots in \( \{0, 1, 2, \dots\} \) mean: the natural numbers are what we reach from \( 0 \) by adding one, again and again, and nothing else.
 
 **Dominoes.** The usual picture is a row of dominoes, one for each natural number. The base case knocks over the first. The inductive step says that each domino, if it falls, knocks over the next. Then every domino falls. The picture carries the one point that matters: the step must work for **every** \( n \), the first transition from \( 0 \) to \( 1 \) included. A single domino standing too far from the next stops the whole row, however well the others are placed.
 
 ::: {.second-reading title="Why induction is not a rule of logic"}
-**Not an infinite derivation.** From \( P(0) \) and the instances \( P(0) \to P(1) \), \( P(1) \to P(2) \), \dots{} of the step we could derive \( P(1) \) by \( \rulename{{\to}E} \), then \( P(2) \), and so on; each single \( P(n) \) has a finite derivation, \( n \) lines long or so. But no finite derivation contains all of them, and "and so on" is not a rule. The principle of induction is what licenses the passage, in one step, from the two hypotheses to "for every \( n \)". It is a rule about \( \nN \), not a rule of logic.
+**Not an infinite derivation.** From \( P(0) \) and the instances \( P(0) \to P(1) \), \( P(1) \to P(2) \), \dots{} of the step we could derive \( P(1) \) by \( \rulename{{\to}E} \), then \( P(2) \), and so on. Each single \( P(n) \) has a finite derivation, about \( n \) lines long. But no finite derivation contains all of them, and "and so on" is not a rule. The principle of induction is what licenses the passage, in one step, from the two hypotheses to "for every \( n \)". It is a rule about \( \nN \), not a rule of logic.
 :::
 
 **The step as a box.** In the language of Chapter 1, the inductive step is proved by a \( \rulename{{\to}I} \) box. We fix a natural number \( n \), knowing nothing about it except what the step allows, and open a box assuming \( P(n) \); inside the box we reach \( P(n + 1) \); closing the box gives the implication.
@@ -67,7 +69,7 @@ For now, "let \( n \in \nN \)" means what Chapter 1 made it mean (Section 1.1): 
 
 **Starting from another number.** Often a property is claimed only from some \( b \in \nN \) on, as in "for every \( n \ge 1 \)". Then it suffices to prove \( P(b) \), and, for every \( n \in \nN \) with \( n \ge b \), that \( P(n) \) implies \( P(n + 1) \). Indeed, apply @ax-induction to the property \( Q(m) \): "\( P(b + m) \) holds". Its base case \( Q(0) \) is \( P(b) \), and its step from \( Q(m) \) to \( Q(m + 1) \) is the step from \( P(b + m) \) to \( P(b + m + 1) \), where \( b + m \ge b \). So \( Q(m) \) holds for every \( m \in \nN \), and every natural number \( n \ge b \) is \( b + m \) for the natural number \( m = n - b \). We call this induction **started at** \( b \); it is @ax-induction applied to \( Q \).
 
-Here is the first proof by induction, with every part labeled.
+Here is a first proof by induction, with its base case, inductive step and conclusion written out separately.
 
 ::: {#exm-sum-consecutive-products}
 [A sum of products of neighbors]
@@ -79,7 +81,7 @@ Prove that for every natural number \( n \ge 1 \),
 :::
 
 ::: {.solution}
-Let \( P(n) \) be the displayed equation. Its left side is the sum of the \( n \) terms \( k(k + 1) \) for \( k = 1, \dots, n \), so the left side for \( n + 1 \) is the left side for \( n \) plus the one new term \( (n + 1)(n + 2) \). Before proving anything, test small cases. For \( n = 1, 2, 3 \) the left side is \( 2 \), \( 2 + 6 = 8 \) and \( 8 + 12 = 20 \), and the right side is \( \frac{1 \cdot 2 \cdot 3}{3} = 2 \), \( \frac{2 \cdot 3 \cdot 4}{3} = 8 \) and \( \frac{3 \cdot 4 \cdot 5}{3} = 20 \). The claim is plausible. It starts at \( n = 1 \), so we use induction started at \( 1 \) (see above).
+Let \( P(n) \) be the displayed equation. Its left side is the sum of the \( n \) terms \( k(k + 1) \) for \( k = 1, \dots, n \), so the left side for \( n + 1 \) is the left side for \( n \) plus the one new term \( (n + 1)(n + 2) \). Before proving anything, test small cases. For \( n = 1, 2, 3 \) the left side is \( 2 \), \( 2 + 6 = 8 \) and \( 8 + 12 = 20 \), and the right side is \( \frac{1 \cdot 2 \cdot 3}{3} = 2 \), \( \frac{2 \cdot 3 \cdot 4}{3} = 8 \) and \( \frac{3 \cdot 4 \cdot 5}{3} = 20 \). The claim is plausible. It starts at \( n = 1 \), so we use induction started at \( 1 \).
 
 *Base case.* For \( n = 1 \) the left side is the single term \( 1 \cdot 2 = 2 \), and the right side is \( \frac{1 \cdot 2 \cdot 3}{3} = 2 \). So \( P(1) \) holds.
 
@@ -98,7 +100,7 @@ where the first equality is the induction hypothesis and the second takes out th
 Notice where the induction hypothesis entered: exactly once, to replace the sum of the first \( n \) terms by a closed expression. A proof by induction that never uses its induction hypothesis is either not an induction or is hiding a gap.
 :::
 
-The inductive step of an inequality usually has a second ingredient besides the hypothesis: a crude estimate that finishes the job.
+The inductive step of an inequality usually has a second ingredient besides the hypothesis: a rough estimate that completes the step.
 
 ::: {#exm-power-inequality}
 [An inequality by induction]
@@ -131,7 +133,7 @@ Base case: \( 5^0 - 1 = 0 = 4 \cdot 0 \). Step: for every \( n \in \nN \), if \(
 :::
 
 ::: {.warning}
-The inductive step must hold for **every** \( n \), including the first transition. Try to prove "\( 2^n \ge n^2 \) for every \( n \in \nN \)": the base case \( 1 \ge 0 \) holds, and the step \( 2^{n + 1} = 2 \cdot 2^n \ge 2n^2 \ge (n + 1)^2 \) looks fine, but its last inequality holds only for \( n \ge 3 \), so the steps from \( 0 \) to \( 1 \), from \( 1 \) to \( 2 \) and from \( 2 \) to \( 3 \) are not covered. The claim survives the first two gaps (at \( n = 1 \), \( 2 \ge 1 \), and at \( n = 2 \) both sides are \( 4 \)), but it is false at \( n = 3 \), where \( 2^3 = 8 < 9 = 3^2 \); it is true again from \( n = 4 \) on.
+The inductive step must hold for **every** \( n \), including the first transition. Try to prove "\( 2^n \ge n^2 \) for every \( n \in \nN \)". The base case \( 1 \ge 0 \) holds. The step \( 2^{n + 1} = 2 \cdot 2^n \ge 2n^2 \ge (n + 1)^2 \) looks fine, but its last inequality holds only for \( n \ge 3 \). So the steps from \( 0 \) to \( 1 \), from \( 1 \) to \( 2 \) and from \( 2 \) to \( 3 \) are not covered. The claim survives the first two gaps: at \( n = 1 \), \( 2 \ge 1 \), and at \( n = 2 \) both sides are \( 4 \). But it is false at \( n = 3 \), where \( 2^3 = 8 < 9 = 3^2 \). It is true again from \( n = 4 \) on.
 :::
 
 ::: {.remark}
@@ -142,7 +144,7 @@ The inductive step must hold for **every** \( n \), including the first transiti
 2. *Property.* Write \( P \) as an open sentence about **one** object. Everything the step will need must be inside it, restrictions such as "if \( n \ge 8 \)" included.
 3. *Base cases.* Which objects does the step not reach from earlier ones: those not built from others, or, in strong induction, those whose step would reach outside the range? Check every one of them.
 4. *Steps.* One for each way of building, proved for an arbitrary object, using the hypothesis only for objects built earlier: the one before, any earlier one, or the immediate parts.
-5. *Principle.* Name it (@ax-induction, @thm-strong-induction) and say what it gives.
+5. *Principle.* Name it and say what it gives. Ordinary induction is @ax-induction. Strong induction, proved next, is @thm-strong-induction.
 :::
 
 Every induction in this chapter can be checked against these five questions, and Sections 4.3 and 4.7 do so.
@@ -151,6 +153,8 @@ Every induction in this chapter can be checked against these five questions, and
 ## Strong induction
 
 Sometimes the step from \( n \) to \( n + 1 \) is the wrong shape. The immediate parts of a formula \( (\varphi \circ \psi) \) are shorter than it, but not by exactly one symbol; a natural number may be best understood through a smaller one that is not its predecessor. In such cases we want to assume the property not just for \( n \), but for **every** smaller number.
+
+For instance, take \( 14 \) and ask whether it is a sum of threes and fives. The number just below, \( 13 \), does not help directly. The number three below, \( 11 \), does: \( 11 = 3 \cdot 2 + 5 \), so one more three gives \( 14 = 3 \cdot 3 + 5 \). The useful smaller case is three steps back, not one.
 
 *If a property holds for \( n \) whenever it holds for all smaller numbers, then it holds for every number.*
 
@@ -162,7 +166,7 @@ Let \( P(n) \) be a property of natural numbers. Suppose that **for every** \( n
 
 This form is also called **course-of-values induction**: the hypothesis may use the whole course of values \( P(0), \dots, P(n - 1) \), not just the last one. Its induction hypothesis is stronger (we assume more), so its step is easier to prove; the theorem says we lose nothing by it.
 
-There seems to be no base case. There is one, hidden. For \( n = 0 \), the hypothesis says: if \( P(k) \) holds for every \( k \in \nN \) with \( k < 0 \), then \( P(0) \) holds. No natural number is less than \( 0 \), so "\( P(k) \) holds for every \( k \in \nN \) with \( k < 0 \)" is **vacuously** true: for each \( k \in \nN \), the implication "if \( k < 0 \), then \( P(k) \)" has a false hypothesis, and an implication with a false hypothesis holds (@prp-vacuous-implication: from \( \neg (k < 0) \) we get \( (k < 0) \to P(k) \)). So at \( n = 0 \) the hypothesis of the theorem hands us \( P(0) \) outright. In practice, the proof of the step usually treats small \( n \) separately, and that is where the base cases live.
+There seems to be no base case. There is one, hidden. For \( n = 0 \), the hypothesis says: if \( P(k) \) holds for every \( k \in \nN \) with \( k < 0 \), then \( P(0) \) holds. No natural number is less than \( 0 \). So "\( P(k) \) holds for every \( k \in \nN \) with \( k < 0 \)" is **vacuously** true. For each \( k \in \nN \), the implication "if \( k < 0 \), then \( P(k) \)" has a false hypothesis, and an implication with a false hypothesis holds. That is @prp-vacuous-implication: from \( \neg (k < 0) \) we get \( (k < 0) \to P(k) \). So at \( n = 0 \) the hypothesis of the theorem gives \( P(0) \) outright. In practice, the proof of the step usually treats small \( n \) separately, and those small cases are the base cases.
 
 ::: {.idea}
 Strong induction is ordinary induction applied to a stronger property. Let \( Q(n) \) say "\( P(k) \) holds for **every** \( k \le n \)". Then \( Q(n) \) is exactly the hypothesis the theorem needs at \( n + 1 \), since the numbers below \( n + 1 \) are those up to \( n \); so the theorem's hypothesis moves us from \( Q(n) \) to \( Q(n + 1) \). Ordinary induction on \( Q \) does the rest, and \( Q(n) \) contains \( P(n) \).
@@ -176,10 +180,14 @@ Suppose the hypothesis of the theorem holds. For \( n \in \nN \), let \( Q(n) \)
 *Inductive step.* Let \( n \in \nN \) and suppose \( Q(n) \). The natural numbers \( k < n + 1 \) are exactly those with \( k \le n \), since no natural number lies strictly between \( n \) and \( n + 1 \). So \( Q(n) \) says that \( P(k) \) holds for every \( k \in \nN \) with \( k < n + 1 \), and the hypothesis of the theorem at \( n + 1 \) gives \( P(n + 1) \). A natural number \( k \le n + 1 \) satisfies \( k \le n \) or \( k = n + 1 \), and \( P(k) \) holds in both cases. Hence \( Q(n + 1) \).
 
 By @ax-induction, \( Q(n) \) holds for every \( n \in \nN \). Given \( n \in \nN \), \( Q(n) \) applied to \( k = n \) gives \( P(n) \). This proves the theorem.
+
+::: {.uses}
+@prp-vacuous-implication (false hypothesis, true implication).
+:::
 :::
 
 ::: {.check}
-In the proof of @thm-strong-induction, to which property is @ax-induction applied, and why is it not applied to \( P(n) \) itself?
+The proof of @thm-strong-induction uses ordinary induction. To which property is @ax-induction applied there, and why is it not applied to \( P(n) \) itself?
 :::
 
 ::: {.solution}
@@ -207,7 +215,7 @@ For \( n \in \nN \), let \( P(n) \) be "if \( n \ge 8 \), then \( n = 3a + 5b \)
 
 In every case \( P(n) \) holds. By @thm-strong-induction, \( P(n) \) holds for every \( n \in \nN \): every \( n \ge 8 \) is a sum of threes and fives.
 
-The three direct cases are the base cases. They are needed because the general case reaches back three steps: for \( n = 8, 9, 10 \), the number \( n - 3 \) is \( 5, 6, 7 \), which is below \( 8 \), and there the induction hypothesis \( P(n - 3) \) is vacuous and gives us nothing. The bound \( 8 \) cannot be lowered: \( 7 \) is not a sum of threes and fives, since neither \( 7 \) nor \( 7 - 5 = 2 \) is a multiple of \( 3 \).
+The three direct cases are the base cases. They are needed because the general case reaches back three steps. For \( n = 8, 9, 10 \), the number \( n - 3 \) is \( 5, 6, 7 \), which is below \( 8 \). There the induction hypothesis \( P(n - 3) \) is vacuous and gives us nothing. The bound \( 8 \) cannot be lowered: \( 7 \) is not a sum of threes and fives, since neither \( 7 \) nor \( 7 - 5 = 2 \) is a multiple of \( 3 \).
 :::
 
 ## Proving more to prove less
@@ -237,13 +245,13 @@ S_{n+1} = \frac{n}{n+1} + \frac{1}{(n+1)(n+2)} = \frac{n(n+2) + 1}{(n+1)(n+2)} =
 \]
 which is \( Q(n + 1) \).
 
-*Conclusion.* By @ax-induction started at \( 1 \) ("Starting from another number"), \( Q(n) \) holds for every \( n \ge 1 \), and \( \frac{n}{n+1} < 1 \) gives the claim.
+*Conclusion.* By @ax-induction started at \( 1 \), \( Q(n) \) holds for every \( n \ge 1 \), and \( \frac{n}{n+1} < 1 \) gives the claim.
 
 A stronger claim gives the step a stronger hypothesis to use, and asks the step to deliver more; here it can. The same need returns with formulas in Section 4.3, where facts about parentheses are proved together, because one of them, alone, does not pass through the step.
 :::
 
 ::: {.check}
-Run the checklist on @exm-threes-and-fives.
+Answer the five checklist questions for @exm-threes-and-fives.
 :::
 
 ::: {.solution}
@@ -264,7 +272,7 @@ Chapter 5 gives "for every" and "there is" their rules, among them the step from
 [A1]
 
 ::: {.enumerate options="label=(\alph*)"}
-1. For each statement, say which kind of induction fits best (ordinary or strong), and write down its base case(s) and the statement of its inductive step, without proving them: (i) \( 4^n - 1 \) is divisible by \( 3 \) for every \( n \in \nN \); (ii) every natural number \( n \ge 12 \) is \( 4a + 5b \) for some integers \( a, b \ge 0 \).
+1. For each statement, say which kind of induction fits best, ordinary or strong. Then write down its base case(s) and the statement of its inductive step, without proving them. (i) \( 4^n - 1 \) is divisible by \( 3 \) for every \( n \in \nN \); (ii) every natural number \( n \ge 12 \) is \( 4a + 5b \) for some integers \( a, b \ge 0 \).
 2. True or false, with a reason: to apply @thm-strong-induction, one must first check \( P(0) \) separately.
 3. A proof of "\( P(n) \) for every \( n \ge 5 \)" checks \( P(5) \) and proves "if \( P(n) \), then \( P(n + 1) \)" for every \( n \ge 5 \). Which form of @ax-induction is this, and why is \( P(4) \) never needed?
 4. In @exm-strengthen-the-claim, why can "\( S_n < 1 \)" not serve as the induction hypothesis?
@@ -278,15 +286,13 @@ Chapter 5 gives "for every" and "there is" their rules, among them the step from
 
 *(b)* False. At \( n = 0 \) the hypothesis of @thm-strong-induction reads "if \( P(k) \) holds for every \( k \in \nN \) with \( k < 0 \), then \( P(0) \)", and its "if" part holds vacuously, since no natural number is less than \( 0 \). So proving the hypothesis for every \( n \) includes proving \( P(0) \); in practice small \( n \) are treated as separate cases inside the step, as in @exm-threes-and-fives.
 
-*(c)* Induction started at \( 5 \) ("Starting from another number"): @ax-induction applied to \( Q(m) \): "\( P(m + 5) \) holds". The claim is only about \( n \ge 5 \), and no step reaches below \( 5 \), so nothing about \( 4 \) is ever asked.
+*(c)* Induction started at \( 5 \), that is, @ax-induction applied to \( Q(m) \): "\( P(m + 5) \) holds". The claim is only about \( n \ge 5 \), and no step reaches below \( 5 \), so nothing about \( 4 \) is ever asked.
 
 *(d)* It says nothing about how close \( S_n \) is to \( 1 \): a number \( x < 1 \) within \( \frac{1}{(n+1)(n+2)} \) of \( 1 \) has \( x + \frac{1}{(n+1)(n+2)} > 1 \), so from \( S_n < 1 \) alone the step cannot reach \( S_{n+1} < 1 \). The step would need a bound on how close \( S_n \) is to \( 1 \); the stronger \( S_n = \frac{n}{n+1} \) gives one (and so would \( S_n \le \frac{n}{n+1} \)).
 :::
 
 ::: {#exr-induction-a2}
 [A2: Drill]
-
-The parts run from locating the hypothesis, through writing one base case or one step, to judging claims and running the checklist.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. In the inductive step of @exm-power-inequality, where is the induction hypothesis used?
@@ -298,9 +304,9 @@ The parts run from locating the hypothesis, through writing one base case or one
 7. "\( n^2 - n + 41 \) is prime" holds for \( n = 0, 1, \dots, 40 \). Is it true for every \( n \in \nN \)?
 8. A proof shows \( P(0) \) and "if \( P(n) \), then \( P(n + 2) \)" for every \( n \in \nN \). For which \( n \) is \( P(n) \) proved?
 9. In @thm-strong-induction, what may the step assume when \( n = 3 \)?
-10. Run items 1–3 of the checklist on @exm-sum-consecutive-products.
+10. For @exm-sum-consecutive-products, answer the first three checklist questions: objects, property, base cases.
 11. In the step for "\( 3 \mid n^3 + 2n \) for every \( n \in \nN \)", \( (n + 1)^3 + 2(n + 1) = (n^3 + 2n) + 3(n^2 + n + 1) \). Is the hypothesis enough to finish the step?
-12. For "\( S_n < 1 \)" in @exm-strengthen-the-claim, which item of the checklist failed on the first try?
+12. For "\( S_n < 1 \)" in @exm-strengthen-the-claim, which checklist question failed on the first try?
 :::
 :::
 
@@ -327,7 +333,7 @@ The parts run from locating the hypothesis, through writing one base case or one
 
 (k) Yes: \( n^3 + 2n \) is a multiple of \( 3 \) by hypothesis, and so is \( 3(n^2 + n + 1) \).
 
-(l) Item 2: the property was too weak for the step (item 4) to go through.
+(l) Item 2, the property: it was too weak for the step (item 4) to go through.
 :::
 
 ### B. Practice
@@ -371,7 +377,7 @@ By the induction hypothesis, \( 6 \mid n^3 - n \). Since \( n(n + 1) \) is even,
 
 *Conclusion.* By @ax-induction, \( 6 \mid n^3 - n \) for every \( n \in \nN \).
 
-**Marking scheme.** (6 points)
+**What a complete answer needs.** (6 points)
 
 - 1: states the property \( P(n) \).
 - 1: base case.
@@ -398,7 +404,7 @@ a_n = 3a_{n-1} - 2a_{n-2} = 3(2^{n-1} + 1) - 2(2^{n-2} + 1) = 3 \cdot 2^{n-1} - 
 
 By @thm-strong-induction, \( a_n = 2^n + 1 \) for every \( n \in \nN \). The step reaches back two places, so it cannot be used at \( n = 0 \) or \( n = 1 \), where \( n - 2 \) is not a natural number: those two are the base cases.
 
-**Marking scheme.** (6 points)
+**What a complete answer needs.** (6 points)
 
 - 1: names strong induction (or ordinary induction on "\( P(n) \) and \( P(n + 1) \)").
 - 2: both base cases.
@@ -423,7 +429,7 @@ so it holds for \( n + 1 \); by induction it holds for every \( n \ge 1 \).
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Is the claim true for any \( n \ge 1 \)?
-2. Which item of the checklist fails, and which part of the "proof" is correct?
+2. Which checklist question fails, and which part of the "proof" is correct?
 3. Show that the same step "proves" \( 1 + \dots + n = \frac{n^2 + n}{2} + c \) for every number \( c \). What singles out \( c = 0 \)?
 :::
 :::
@@ -431,7 +437,7 @@ so it holds for \( n + 1 \); by induction it holds for every \( n \ge 1 \).
 ::: {.solution}
 *(a)* No. The true sum is \( \frac{n^2 + n}{2} \): that is the case \( c = 0 \) of (c), whose step is correct, with the base case \( 1 = \frac{1 + 1}{2} \). The claimed value is larger by \( 1 \) for every \( n \).
 
-*(b)* Item 3: no base case is checked, and at \( n = 1 \) it fails, since the left side is \( 1 \) and the right side \( \frac{1 + 1 + 2}{2} = 2 \). The step itself is correct algebra.
+*(b)* Item 3, the base cases: no base case is checked, and at \( n = 1 \) it fails, since the left side is \( 1 \) and the right side \( \frac{1 + 1 + 2}{2} = 2 \). The step itself is correct algebra.
 
 *(c)* For every \( c \),
 \[
@@ -439,13 +445,13 @@ so it holds for \( n + 1 \); by induction it holds for every \( n \ge 1 \).
 \]
 so a correct step passes any constant along. Only the base case decides \( c \): at \( n = 1 \), \( 1 = 1 + c \) forces \( c = 0 \).
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 3: (a), with the true sum.
 - 4: (b), naming the missing base case and endorsing the step.
 - 3: (c).
 
-Fatal error (0 for (b)): calling the step wrong, or claiming the formula holds at \( n = 1 \).
+Slips that lose the points for (b): calling the step wrong, or claiming the formula holds at \( n = 1 \).
 :::
 
 ::: {#exr-induction-c5}
@@ -471,7 +477,7 @@ Write \( R_2, R_3, R_4 \) with denominators \( 4, 6, 8 \) and guess a formula fo
 :::
 
 ::: {.solution}
-*The plain claim.* The step multiplies by \( 1 - \frac{1}{(n+1)^2} < 1 \), and the hypothesis \( R_n > \frac12 \) tells us nothing more about \( R_n \): for a number \( x \) just above \( \frac12 \), such as \( x = \frac12 + \frac{1}{4(n+1)^2} \), the number \( x \bigl(1 - \frac{1}{(n+1)^2}\bigr) \) is below \( \frac12 \), so the hypothesis alone does not give the claim for \( n + 1 \).
+*The plain claim.* The step multiplies by \( 1 - \frac{1}{(n+1)^2} < 1 \), and the hypothesis \( R_n > \frac12 \) tells us nothing more about \( R_n \). Take a number \( x \) just above \( \frac12 \), such as \( x = \frac12 + \frac{1}{4(n+1)^2} \). Then the number \( x \bigl(1 - \frac{1}{(n+1)^2}\bigr) \) is below \( \frac12 \), so the hypothesis alone does not give the claim for \( n + 1 \).
 
 *Prove more.* \( R_2 = \frac34 \), \( R_3 = \frac34 \cdot \frac89 = \frac23 \), \( R_4 = \frac23 \cdot \frac{15}{16} = \frac58 \) suggest \( R_n = \frac{n+1}{2n} \). Base case \( n = 2 \): \( R_2 = \frac34 = \frac{2 + 1}{2 \cdot 2} \). Step: let \( n \ge 2 \) and suppose \( R_n = \frac{n+1}{2n} \). Then
 \[
@@ -479,7 +485,7 @@ R_{n+1} = \frac{n+1}{2n} \cdot \frac{(n+1)^2 - 1}{(n+1)^2} = \frac{n+1}{2n} \cdo
 \]
 By @ax-induction started at \( 2 \), \( R_n = \frac{n+1}{2n} \) for every \( n \ge 2 \), and so \( R_n = \frac12 + \frac{1}{2n} > \frac12 \).
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 2: argues that the plain claim does not pass through the step.
 - 2: states the stronger claim.
@@ -487,7 +493,7 @@ By @ax-induction started at \( 2 \), \( R_n = \frac{n+1}{2n} \) for every \( n \
 - 3: the algebra of the step.
 - 1: the conclusion, naming the principle.
 
-Fatal error (0 for the step): "proving" the step from \( R_n > \frac12 \) alone.
+Slips that lose the step (0 points for it): "proving" the step from \( R_n > \frac12 \) alone.
 :::
 
 <!-- dependency ledger
@@ -497,7 +503,9 @@ exm-sum-consecutive-products (example): the sum 1*2 + ... + n(n+1) read as "the 
 exm-power-inequality (example): 3^(n+1) = 3 * 3^n; multiplying an inequality by a positive number; 6n >= 2n for n >= 0 | school algebra; powers by recursion are F2.2 (promised; STATUS row F1.3 §02, paid by def-power); checked by verify/ch04/exm-power-inequality.py
 ax-induction (example): (the warning after exm-power-inequality) 2n^2 >= (n+1)^2 exactly for n >= 3 (fails at n = 0, 1, 2); 2^3 = 8 < 9; 2^n >= n^2 for n = 0, 1, 2 and n >= 4 | school algebra; checked by verify/ch04/ax-induction.py
 thm-strong-induction (proof): no natural number is less than 0; k < n + 1 iff k <= n for natural k (nothing strictly between n and n + 1); k <= n + 1 iff k <= n or k = n + 1 | school facts about N (blueprint, Allowed prerequisites); F2.2 (promised; STATUS row F1.3 §02, paid by lem-naturals-arithmetic (e))
-thm-strong-induction (proof): "for every k < 0, P(k)" holds vacuously | prp-vacuous-implication (cited in the prose before the proof); the rule for "every" is F1.4 (prose pointer)
+thm-strong-induction (proof): "for every k < 0, P(k)" holds vacuously | prp-vacuous-implication (cited in the prose before the proof, and in the proof's Uses line); the rule for "every" is F1.4 (prose pointer)
+thm-strong-induction (claim): (the instance before the theorem) 11 = 3*2 + 5 and 14 = 3*3 + 5 | inline arithmetic; checked by verify/ch04/thm-strong-induction.py
+ax-induction (claim): (the instance before the principle) 2^0 = 1 > 0; P(0) and the step give P(1), P(2), ... one at a time | school arithmetic; informal, motivation only; checked by verify/ch04/ax-induction.py
 exm-threes-and-fives (example): 8 = 3 + 5, 9 = 3*3, 10 = 5*2; 7 is not a sum of threes and fives | inline arithmetic; checked by verify/ch04/exm-threes-and-fives.py
 exr-induction-a1 (solution): 4^(n+1) - 1 = 4(4^n - 1) + 3; 12..15 as 4a + 5b | school algebra; checked by verify/ch04/exr-induction-a1.py
 ax-induction (claim): (the Quick check after exm-power-inequality) 5^0 - 1 = 0; 5^(n+1) - 1 = 5(5^n - 1) + 4 | school algebra; checked by verify/ch04/ax-induction.py

@@ -56,7 +56,7 @@ items:
   kind: check
   file: 01-formulas-and-parse-trees.md
   line: 51
-  hash: d288cfa3a5fe
+  hash: 4be26306890e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -95,6 +95,13 @@ items:
     model: claude-opus-5-5
     evidence: 01:51-73. (a) is a string; (b) and (c) are true metalanguage claims ((b) holds by wedge-E);
       (d) is a pattern; (e) is true by (F1),(F2). Matches blueprint item 1 word for word.
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-formulas-and-parse-trees
+    hash: 4be26306890e
+    date: '2026-11-01'
+    evidence: 'wording only: Two languages paragraph split into sentences; solution (e) cites the same
+      clauses (F1), (F2)'
 - key: def-formula
   kind: def
   file: 01-formulas-and-parse-trees.md
@@ -153,6 +160,13 @@ items:
       entries that are already formulas. That is an informal induction on position. It is not circular,
       because it no longer uses (F4) in the wrong direction. It points to the 4.3 fold "Sets built from
       a base" (03:102)
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-formulas-and-parse-trees
+    hash: fadb99e2bcd1
+    date: '2026-11-01'
+    evidence: 'wording only: statement (F1)-(F4) byte-identical; In words and Why paragraphs split, same
+      steps and numbers'
 - key: check:01-formulas-and-parse-trees:3
   kind: check
   file: 01-formulas-and-parse-trees.md
@@ -178,7 +192,7 @@ items:
   kind: exm
   file: 01-formulas-and-parse-trees.md
   line: 154
-  hash: 195d248c347c
+  hash: e548add94313
   verdicts:
   - stage: S5a
     verdict: correct
@@ -217,6 +231,12 @@ items:
     model: claude-opus-5-5
     evidence: '01:154-174. Each sequence checked entry by entry: entry 5 = (chi3 -> chi4) and entry 6
       = (chi2 v chi5) are right. The pointer to Section 4.3 (structural induction) matches the file layout.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-formulas-and-parse-trees
+    hash: e548add94313
+    date: '2026-11-01'
+    evidence: 'wording only: degenerate -> smallest; atom or bot has no building step, same meaning'
 - key: exm-not-formulas
   kind: exm
   file: 01-formulas-and-parse-trees.md
@@ -287,7 +307,7 @@ items:
 - key: def-parse-tree
   kind: def
   file: 01-formulas-and-parse-trees.md
-  line: 246
+  line: 248
   hash: e3accb71e037
   verdicts:
   - stage: S5a
@@ -339,11 +359,18 @@ items:
       neg-phi is not an atom or bot, or from (T3), since neg-phi does not begin with ''(''. So it comes
       from (T2). A tree for (phi o psi) likewise comes from (T3). The sentence does not claim the parts
       are phi and psi, a'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-formulas-and-parse-trees
+    hash: e3accb71e037
+    date: '2026-11-01'
+    evidence: 'wording only: statement (T1)-(T4) byte-identical; new lead-in instance (p and not q) checked
+      against exm-parse-trees (b)'
 - key: exm-parse-trees
   kind: exm
   file: 01-formulas-and-parse-trees.md
-  line: 267
-  hash: 9b143a713841
+  line: 269
+  hash: 2c5c2ea3645d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -389,10 +416,17 @@ items:
     model: claude-opus-5-5
     evidence: 01:266-313. All three trees match their formulas. (c) uses all five connectives and bot.
       Leaves are p, q, r, bot, p. The depth-1 recipe at 01:315 holds for (c), and 4.3:202 proves it.
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-formulas-and-parse-trees
+    hash: 2c5c2ea3645d
+    date: '2026-11-01'
+    evidence: 'wording only: degenerate -> smallest; steps (T1),(T2),(T3),(T2) in the same order; sidecar
+      passes'
 - key: def-subformula
   kind: def
   file: 01-formulas-and-parse-trees.md
-  line: 322
+  line: 324
   hash: 9a8d496bb0d6
   verdicts:
   - stage: S5a
@@ -445,10 +479,17 @@ items:
       findings that the definition is relative to the chosen tree. 01:340 now says 'walk the tree node
       by node, as we just did', which matches the ten-node listing just before it, so the meta-claim finding
       is resolved
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-formulas-and-parse-trees
+    hash: 9a8d496bb0d6
+    date: '2026-11-01'
+    evidence: 'wording only: statement byte-identical; ''as far as we know'' hedge removed, 4.3 uniqueness
+      pointer kept'
 - key: check:01-formulas-and-parse-trees:5
   kind: check
   file: 01-formulas-and-parse-trees.md
-  line: 344
+  line: 346
   hash: 7191e5d0d871
   verdicts:
   - stage: S5a
@@ -468,7 +509,7 @@ items:
 - key: exm-shorthand-translation
   kind: exm
   file: 01-formulas-and-parse-trees.md
-  line: 372
+  line: 374
   hash: 84e32b0746a1
   verdicts:
   - stage: S5a
@@ -519,11 +560,18 @@ items:
       has the subsection 'Vacuous truth', and the claim is framed as the everyday reading, made exact
       in Section 4.4. That resolves the soundness/derivability finding. 01:403 no longer credits Chapter
       1 with a reason for right grouping; it gives the reason in its ow
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-formulas-and-parse-trees
+    hash: 84e32b0746a1
+    date: '2026-11-01'
+    evidence: 'wording only: template -> pattern; fold steps in order, def-derivation and scope rule still
+      cited; check_fitch 0 errors'
 - key: exr-formulas-and-parse-trees-a1
   kind: exr
   file: 01-formulas-and-parse-trees.md
   line: 482
-  hash: a47656d84279
+  hash: 5dbd166fcf5d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -619,11 +667,18 @@ items:
       built once. (d) and (e) are correct: (F1)-(F3) are satisfied by the set of all strings, and (F4)
       yields the first-symbol test, which rules out ''-> p''. The Section 4.5 pointer in (v) was checked
       in the previous round.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-formulas-and-parse-trees
+    hash: 5dbd166fcf5d
+    date: '2026-11-01'
+    evidence: 'wording only: semicolons between strings (i)-(v) became commas; strings unchanged; sidecar
+      passes'
 - key: exr-formulas-and-parse-trees-a2
   kind: exr
   file: 01-formulas-and-parse-trees.md
   line: 514
-  hash: ee0dc7afba59
+  hash: 75553054fd92
   verdicts:
   - stage: S5a
     verdict: correct
@@ -649,11 +704,17 @@ items:
     model: claude-opus-5-5
     evidence: '01:533-555 all 12 checked by hand: (c) 10 symbols, (h) 4 deletions minimal (no binary connective
       so no official parens), (l) lines q->q,q->p,q,q,p,q->p valid. 12 parts meet §12.8.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-formulas-and-parse-trees
+    hash: 75553054fd92
+    date: '2026-11-01'
+    evidence: 'wording only: semicolons in part 6 list became commas; strings unchanged; sidecar passes'
 - key: exr-formulas-and-parse-trees-b1
   kind: exr
   file: 01-formulas-and-parse-trees.md
   line: 563
-  hash: 54e36ce47b2f
+  hash: f94bb515bf38
   verdicts:
   - stage: S5a
     verdict: correct
@@ -715,6 +776,13 @@ items:
     model: claude-opus-5-5
     evidence: '01:573-594 official forms, trees, subformula counts 5/5/6 agree with mine; prp-curry and
       prp-distributivity (ch01 05:630, 07:383) contain the formulas. Worked example: exm-parse-trees.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-formulas-and-parse-trees
+    hash: f94bb515bf38
+    date: '2026-11-01'
+    evidence: 'wording only: citation split, (a),(b) in prp-curry and (c) in prp-distributivity, checked
+      against Ch1; sidecar passes'
 - key: exr-formulas-and-parse-trees-b2
   kind: exr
   file: 01-formulas-and-parse-trees.md
@@ -853,10 +921,16 @@ items:
     model: claude-opus-5-5
     evidence: 01:643-659 five groupings listed correctly; c4=c1c3+c2c2+c3c1=5; 11 atoms -> Catalan C10=16796
       (script). Hints name a tool/first step only.
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-formulas-and-parse-trees
+    hash: e649d6f7c68f
+    date: '2026-11-01'
+    evidence: 'wording only: tree-shape sentence split; counts c1-c4 = 5 unchanged; sidecar passes'
 - key: ax-induction
   kind: ax
   file: 02-induction.md
-  line: 21
+  line: 23
   hash: 20603e2e255a
   verdicts:
   - stage: S5a
@@ -924,8 +998,8 @@ items:
 - key: exm-sum-consecutive-products
   kind: exm
   file: 02-induction.md
-  line: 72
-  hash: 22fce241351f
+  line: 74
+  hash: 07587a2cf3f0
   verdicts:
   - stage: S5a
     verdict: correct
@@ -986,10 +1060,17 @@ items:
       out (n+1)(n+2), leaving n/3 + 1 = (n+3)/3, which is the right side of P(n+1). The proof uses induction
       started at 1, with a pointer to 02:68. Ledger 02:496 cites STATUS row 124 (F1.3 §02, paid by thm-recursion
       and def-sum-product, both in fd2 ch02/03), so the seam check can find it.
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-induction
+    hash: 07587a2cf3f0
+    date: '2026-11-01'
+    evidence: 'wording only: ''(see above)'' pointer dropped; values 2, 8, 20, base and step unchanged;
+      sidecar passes'
 - key: exm-power-inequality
   kind: exm
   file: 02-induction.md
-  line: 103
+  line: 105
   hash: e03b25b4fb8e
   verdicts:
   - stage: S5a
@@ -1052,7 +1133,7 @@ items:
 - key: check:02-induction:1
   kind: check
   file: 02-induction.md
-  line: 125
+  line: 127
   hash: 3e3fbdcbfedc
   verdicts:
   - stage: S5a
@@ -1095,7 +1176,7 @@ items:
 - key: thm-strong-induction
   kind: thm
   file: 02-induction.md
-  line: 157
+  line: 161
   hash: 301d4805df60
   verdicts:
   - stage: S5a
@@ -1150,8 +1231,8 @@ items:
 - key: proof:thm-strong-induction
   kind: proof
   file: 02-induction.md
-  line: 171
-  hash: 81ea58be4d66
+  line: 175
+  hash: b252d248cf2e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1216,11 +1297,18 @@ items:
       n=0 and ''k<=0 iff k=0''. The step uses ''k<n+1 iff k<=n'' and ''k<=n+1 iff k<=n or k=n+1''. Ledger
       02:499 cites STATUS row 124, paid by lem-naturals-arithmetic (e) (fd2 ch02/01:42: no k with n<k<n+1),
       and the blueprint''s school facts about N. The proof ends with Q(n) at k=n.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-induction
+    hash: b252d248cf2e
+    date: '2026-11-01'
+    evidence: 'wording only: proof steps word for word; Uses line @prp-vacuous-implication added for the
+      vacuous base case'
 - key: check:02-induction:2
   kind: check
   file: 02-induction.md
-  line: 181
-  hash: a67387c479cf
+  line: 189
+  hash: b753efdebf54
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1236,11 +1324,17 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 02:181-187 matches the proof's Q(n) at 02:172
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-induction
+    hash: b753efdebf54
+    date: '2026-11-01'
+    evidence: 'wording only: question split into two sentences, both refs kept, solution unchanged'
 - key: exm-threes-and-fives
   kind: exm
   file: 02-induction.md
-  line: 191
-  hash: d132bbb96e2e
+  line: 199
+  hash: 16c4a0f4af2a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1281,11 +1375,18 @@ items:
     model: claude-opus-5-5
     evidence: '02:191-211: cases n<8, 8-10 and n≥11 are complete; 7 is not a sum (b∈{0,1}, and neither
       7 nor 2 is a multiple of 3); the sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-induction
+    hash: 16c4a0f4af2a
+    date: '2026-11-01'
+    evidence: 'wording only: closing paragraph split; n-3 = 5, 6, 7, bound 8, 7-5 = 2 unchanged; sidecar
+      passes'
 - key: exm-strengthen-the-claim
   kind: exm
   file: 02-induction.md
-  line: 217
-  hash: 7874cfbdeec7
+  line: 225
+  hash: d4a1b2882c91
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1316,11 +1417,18 @@ items:
       finding resolved). S_1..S_3 = 1/2, 2/3, 3/4. Step algebra: n(n+2)+1 = (n+1)^2, giving (n+1)/(n+2).
       The conclusion uses induction started at 1. The pointer to Section 4.3 at 02:242 matches 03:168
       and 03:201 (parts p'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-induction
+    hash: d4a1b2882c91
+    date: '2026-11-01'
+    evidence: 'wording only: prose pointer dropped after ax-induction started at 1; ref, algebra, numbers
+      unchanged'
 - key: check:02-induction:3
   kind: check
   file: 02-induction.md
-  line: 245
-  hash: fa2c825a40b1
+  line: 253
+  hash: fb7248853c51
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1337,11 +1445,18 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: '02:245-251: matches 02:200-210 and checklist items 1-5 (02:140-146)'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-induction
+    hash: fb7248853c51
+    date: '2026-11-01'
+    evidence: 'wording only: ''Run the checklist'' -> ''Answer the five checklist questions''; ref and
+      solution unchanged'
 - key: exr-induction-a1
   kind: exr
   file: 02-induction.md
-  line: 263
-  hash: 0db40138daf3
+  line: 271
+  hash: 6b35ba7ccdfa
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1426,11 +1541,18 @@ items:
       (c): Q(m)=P(m+5). (d) now says ''the stronger S_n = n/(n+1) gives one (and so would S_n <= n/(n+1))''.
       That is true, since S_n <= n/(n+1) gives S_{n+1} <= (n+1)/(n+2), and the false ''only'' is gone
       (S5b finding r'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-induction
+    hash: 6b35ba7ccdfa
+    date: '2026-11-01'
+    evidence: 'wording only: part (a) split; statements (i),(ii) unchanged; Q(m): P(m+5) and ax-induction
+      kept; sidecar passes'
 - key: exr-induction-a2
   kind: exr
   file: 02-induction.md
-  line: 286
-  hash: 0aeddad878b9
+  line: 294
+  hash: 7fa739c1b9ee
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1466,10 +1588,17 @@ items:
       and n >= 4 makes the empty product irrelevant (S5b finding resolved). Answers checked: (b) (n+1)^2+(n+1)
       = (n^2+n)+2(n+1); (d) adds the term 2n+1 to get (n+1)^2; (e) 24 >= 16; (g) 41^2; (h) even n; (i)
       P(0), P(1), P(2); (k) 3(n^2+n+1); (l) checklist item 2.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-induction
+    hash: 7fa739c1b9ee
+    date: '2026-11-01'
+    evidence: 'wording only: lead sentence deleted; item 10 names checklist items 1-3; item 12 renamed;
+      sidecar passes'
 - key: exr-induction-b1
   kind: exr
   file: 02-induction.md
-  line: 335
+  line: 341
   hash: b2c22374f4f4
   verdicts:
   - stage: S5a
@@ -1534,8 +1663,8 @@ items:
 - key: exr-induction-b4
   kind: exr
   file: 02-induction.md
-  line: 355
-  hash: 4cc24b0f6794
+  line: 361
+  hash: d16cf5f9926e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1575,11 +1704,18 @@ items:
       evenness of n(n+1) is given in the item. The 6-point scheme is allowed for a B item: STYLE §11.6
       binds exit checks, Gate problems and write-up C items. Parity goes to STATUS row 97 (F1.3 §02 B4
       solution).'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-induction
+    hash: d16cf5f9926e
+    date: '2026-11-01'
+    evidence: 'wording only: Marking scheme -> What a complete answer needs; 6 points and split unchanged;
+      sidecar passes'
 - key: exr-induction-b5
   kind: exr
   file: 02-induction.md
-  line: 382
-  hash: b8e3dbc6de2a
+  line: 388
+  hash: 81c3fb5f18be
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1605,11 +1741,17 @@ items:
     model: claude-opus-5-5
     evidence: 02:389-399 algebra correct; a_n=2^n+1 checked for n<30 by script; scheme sums to 6 and admits
       ordinary induction on P(n)∧P(n+1).
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-induction
+    hash: 81c3fb5f18be
+    date: '2026-11-01'
+    evidence: 'wording only: heading renamed; 6 points, a_n = 2^n + 1, base cases unchanged; sidecar passes'
 - key: exr-induction-c4
   kind: exr
   file: 02-induction.md
-  line: 411
-  hash: 53271e1d0524
+  line: 417
+  hash: 4034ac4eb5be
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1647,10 +1789,17 @@ items:
       item 3 fails: at n=1, 1 != 2; the step is correct. (c) (n^2+n)/2 + c + (n+1) = ((n+1)^2+(n+1))/2
       + c, and the base case forces c=0. The scheme now totals 10 over 3 steps (3+4+3) and names a fatal
       error, as STYLE §11.6 (lines 392-403) requires (S5b finding resolved).'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-induction
+    hash: 4034ac4eb5be
+    date: '2026-11-01'
+    evidence: 'wording only: checklist question wording; 10 = 3+4+3, 1 vs 2, c = 0 unchanged; Fatal error
+      -> Slips that lose the points; sidecar passes'
 - key: exr-induction-c5
   kind: exr
   file: 02-induction.md
-  line: 451
+  line: 457
   hash: 4d93a771b168
   verdicts:
   - stage: S5a
@@ -1690,10 +1839,17 @@ items:
       t/4 with t = 1/(n+1)^2, and x(1-t) = 1/2 - t/4 - t^2/4 < 1/2 (S5a finding resolved). Hint 2 no longer
       states the formula: it asks for a guess from the denominators 4, 6, 8 followed by an induction.
       This is the '
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-induction
+    hash: 4d93a771b168
+    date: '2026-11-01'
+    evidence: 'wording only: plain-claim sentence split; x = 1/2 + 1/(4(n+1)^2), R_2..R_4 = 3/4, 2/3,
+      5/8 unchanged; sidecar passes'
 - key: thm-structural-induction
   kind: thm
   file: 03-structural-induction.md
-  line: 13
+  line: 15
   hash: 7b38a9bd6d3a
   verdicts:
   - stage: S5a
@@ -1750,8 +1906,8 @@ items:
 - key: proof:thm-structural-induction
   kind: proof
   file: 03-structural-induction.md
-  line: 69
-  hash: 2148db05b2bc
+  line: 77
+  hash: 4302711255dc
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1804,11 +1960,19 @@ items:
     evidence: '03:67-77: strong induction on the position, Q(i) is vacuous for i=0 and i>m, the three
       cases follow the formation-sequence clauses, and ''every entry is a formula'' is in 01:136 and ledgered
       (03:740). Matches the fold F3.2-b plan.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 4302711255dc
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
+      wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
+      hgt=3) checked'
 - key: check:03-structural-induction:1
   kind: check
   file: 03-structural-induction.md
-  line: 92
-  hash: f581cc999d44
+  line: 100
+  hash: dd4485673441
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1864,10 +2028,18 @@ items:
     evidence: '03:90-98: the property ''atom, bot, or begins with ('' holds at atoms and bot and at every
       (phi o psi), and fails at every neg phi, so ''fails exactly at a formula made by the forgotten clause''
       is true.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: dd4485673441
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
+      wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
+      hgt=3) checked'
 - key: lem-parenthesis-count
   kind: lem
   file: 03-structural-induction.md
-  line: 156
+  line: 170
   hash: a49db4e5f646
   verdicts:
   - stage: S5a
@@ -1929,8 +2101,8 @@ items:
 - key: proof:lem-parenthesis-count
   kind: proof
   file: 03-structural-induction.md
-  line: 175
-  hash: b8ea808d1d6e
+  line: 191
+  hash: 2a1e899dc593
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1979,10 +2151,18 @@ items:
     evidence: '03:173-197: the five kinds are disjoint by length and cover every initial segment (u''=empty
       gives ''('', v''=psi gives the proper ''(phi o psi''). The excess values check, and so does the
       example at 03:199 (ex(''(neg(p'')=2). Sidecar lem-parenthesis-count.py passes.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 2a1e899dc593
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
+      wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
+      hgt=3) checked'
 - key: check:03-structural-induction:2
   kind: check
   file: 03-structural-induction.md
-  line: 206
+  line: 222
   hash: 2dacb9214a06
   verdicts:
   - stage: S5a
@@ -2003,7 +2183,7 @@ items:
 - key: thm-unique-readability
   kind: thm
   file: 03-structural-induction.md
-  line: 218
+  line: 234
   hash: de77b32d5100
   verdicts:
   - stage: S5a
@@ -2057,8 +2237,8 @@ items:
 - key: proof:thm-unique-readability
   kind: proof
   file: 03-structural-induction.md
-  line: 237
-  hash: e0f8e122b0e2
+  line: 253
+  hash: ed8f91f8fd6e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2110,10 +2290,18 @@ items:
       first symbol separates the two forms. Case (ii) gives excess 1 before ∘ by lem (a), and ≥2 before
       any other connective by lem (c) for φ and (c)+(a) for ψ, so the lengths and the parts are forced.
       The proof stays on the main line against STYLE §12.12, but that deviation is now recorded in authoring/STATUS.md:268 '
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: ed8f91f8fd6e
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
+      wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
+      hgt=3) checked'
 - key: def-height
   kind: def
   file: 03-structural-induction.md
-  line: 253
+  line: 269
   hash: f0c6edeaaf22
   verdicts:
   - stage: S5a
@@ -2159,7 +2347,7 @@ items:
 - key: thm-structural-recursion
   kind: thm
   file: 03-structural-induction.md
-  line: 273
+  line: 291
   hash: c6bdbfb90b68
   verdicts:
   - stage: S5a
@@ -2211,8 +2399,8 @@ items:
 - key: proof:thm-structural-recursion
   kind: proof
   file: 03-structural-induction.md
-  line: 299
-  hash: 1917cdd3fbf1
+  line: 317
+  hash: b5f58b132181
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2277,10 +2465,18 @@ items:
       Q(m)=P(b+m). A new ledger line covers it. The pointer uses fd1''s local numbering. The base case
       (first-symbol test, 01:142), the step (unique readability; parts of length ≤ n), uniqueness via
       the restriction, and the '
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: b5f58b132181
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
+      wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
+      hgt=3) checked'
 - key: check:03-structural-induction:3
   kind: check
   file: 03-structural-induction.md
-  line: 316
+  line: 334
   hash: 14f76882ac2e
   verdicts:
   - stage: S5a
@@ -2301,8 +2497,8 @@ items:
 - key: exm-recursive-definitions
   kind: exm
   file: 03-structural-induction.md
-  line: 324
-  hash: b6813e75bb49
+  line: 342
+  hash: 748c283fcb19
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2343,11 +2539,19 @@ items:
     evidence: '03:338-347: height 4, atoms {p,q}, 4 connectives, subformula list chi, neg(p and q), (p
       and q), p, q, (q or bot), bot, length 14. All recomputed by hand, and exm-recursive-definitions.py
       passes.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 748c283fcb19
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
+      wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
+      hgt=3) checked'
 - key: exr-structural-induction-a1
   kind: exr
   file: 03-structural-induction.md
-  line: 369
-  hash: f93129ab0b07
+  line: 387
+  hash: 08c2369e536a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2372,11 +2576,19 @@ items:
     model: claude-opus-5-5
     evidence: 03:380-388 all five parts match mine; (d) correctly says the proof uses (a) for φ and (c)
       for φ, ψ, and not (b).
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 08c2369e536a
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
+      wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
+      hgt=3) checked'
 - key: exr-structural-induction-a2
   kind: exr
   file: 03-structural-induction.md
-  line: 393
-  hash: 7c5acba1b89b
+  line: 411
+  hash: 24ddbefbf185
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2403,11 +2615,19 @@ items:
     model: claude-opus-5-5
     evidence: '03:413-435 checked: depths of ¬(p→¬q), excess 3, height 4, list for ¬(p∨¬p), b=2, (p∧¬q)
       has length 6, g(4) gets 4 and 3.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 24ddbefbf185
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
+      wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
+      hgt=3) checked'
 - key: exr-induction-b2
   kind: exr
   file: 03-structural-induction.md
-  line: 442
-  hash: 093f04524b88
+  line: 460
+  hash: a1abeb329726
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2477,11 +2697,19 @@ items:
       n+1 subformulas have distinct lengths. The inequality is strict once a binary connective appears
       (strict at ∘, and kept by ¬). Both S5a/S5b findings are resolved. len is now defined at 03:353 and
       is in NOTATION.md:'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: a1abeb329726
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
+      wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
+      hgt=3) checked'
 - key: exr-induction-b3
   kind: exr
   file: 03-structural-induction.md
-  line: 464
-  hash: 88ed0ef9e794
+  line: 482
+  hash: c11ab29aaa68
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2536,11 +2764,19 @@ items:
     model: claude-opus-5-5
     evidence: 03:469-484 negation and binary steps correct; ((p∧q)∧(r∧p)) has 7=2^3-1 nodes. (No-worked-example
       note is filed under exr-induction-b2.)
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: c11ab29aaa68
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
+      wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
+      hgt=3) checked'
 - key: exr-structural-induction-b3
   kind: exr
   file: 03-structural-induction.md
-  line: 489
-  hash: 8f772fd8404d
+  line: 507
+  hash: 473f90f195f4
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2576,10 +2812,18 @@ items:
     evidence: 03:502-523. I checked (a), the involution in (b), (c) and (d). Marking scheme line 522 now
       gives credit for either the recursive-height induction or the mirrored-tree induction, so the S6
       finding is resolved. Points total 1+3+3+1=8, as stated.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 473f90f195f4
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
+      wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
+      hgt=3) checked'
 - key: exr-induction-c1
   kind: exr
   file: 03-structural-induction.md
-  line: 528
+  line: 546
   hash: 31d39a28a03d
   verdicts:
   - stage: S5a
@@ -2651,8 +2895,8 @@ items:
 - key: exr-induction-c2
   kind: exr
   file: 03-structural-induction.md
-  line: 573
-  hash: b4fd4b15b375
+  line: 591
+  hash: b5d3a719b8d5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2726,11 +2970,19 @@ items:
     evidence: '03:605-612 adds a marking scheme (2+3+3+2=10) with a fatal error, which resolves the S6
       finding. The solution is correct: (a) by lem (a). (b) line 5 applies the hypothesis to the non-formula
       φ∘ψ. (c) the lem (c) property fails on p∧q. (d) applies the hypothesis to φ and ψ.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: b5d3a719b8d5
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
+      wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
+      hgt=3) checked'
 - key: exr-induction-c3
   kind: exr
   file: 03-structural-induction.md
-  line: 615
-  hash: 58f7c97d9639
+  line: 633
+  hash: f1776b91347e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2797,11 +3049,19 @@ items:
       solution (restriction inside P, vacuous cases, ¬ case, conjunction case adding both hypotheses,
       slack ≥3) is correct. 03:651's 'whatever the clauses chosen for them' is harmless with the stem's
       '(these choic
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: f1776b91347e
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
+      wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
+      hgt=3) checked'
 - key: exr-structural-induction-c4
   kind: exr
   file: 03-structural-induction.md
-  line: 674
-  hash: 73f393cee17a
+  line: 692
+  hash: 32900401bec9
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2828,11 +3088,19 @@ items:
     model: claude-opus-5-5
     evidence: 03:676-680 (b) is right that uniqueness follows by structural induction over every split;
       (c) strong induction on positions is complete; scheme sums to 6.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 32900401bec9
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
+      wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
+      hgt=3) checked'
 - key: exr-structural-induction-c5
   kind: exr
   file: 03-structural-induction.md
-  line: 700
-  hash: ba0da2303b54
+  line: 718
+  hash: 1c8702d0c9f8
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2875,6 +3143,14 @@ items:
       into atom, ⊥, Nφ, Kφψ, … with Polish parts. The collection of strings of these forms is closed because
       each such string is Polish. Hint 1 (03:716) and the ledger line match. Both findings are resolved.
       (b): I che'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 1c8702d0c9f8
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
+      wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
+      hgt=3) checked'
 - key: def-valuation
   kind: def
   file: 04-valuations-and-truth-tables.md
@@ -3029,7 +3305,7 @@ items:
   kind: check
   file: 04-valuations-and-truth-tables.md
   line: 153
-  hash: b80039ff7a22
+  hash: 8d1f04d541bb
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3067,11 +3343,18 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: '04:153-159: p or q=T, not r=F, so F'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 8d1f04d541bb
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): (Vi) codes named in words, sentences split,
+      tonk aside cut; steps and values unchanged; new instances checked by verify/ch04/def-truth-table.py'
 - key: check:04-valuations-and-truth-tables:2
   kind: check
   file: 04-valuations-and-truth-tables.md
   line: 161
-  hash: 18e2b7b20fc8
+  hash: aac71664addb
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3109,10 +3392,17 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: '04:161-167: not p=F, q<->bot=T (both F), disjunction T; asserted in def-truth-table.py'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: aac71664addb
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): (Vi) codes named in words, sentences split,
+      tonk aside cut; steps and values unchanged; new instances checked by verify/ch04/def-truth-table.py'
 - key: lem-coincidence
   kind: lem
   file: 04-valuations-and-truth-tables.md
-  line: 177
+  line: 183
   hash: a396e082c256
   verdicts:
   - stage: S5a
@@ -3167,8 +3457,8 @@ items:
 - key: proof:lem-coincidence
   kind: proof
   file: 04-valuations-and-truth-tables.md
-  line: 187
-  hash: be81095e83c1
+  line: 193
+  hash: 2a67ca980804
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3210,10 +3500,17 @@ items:
     model: claude-opus-5-5
     evidence: 04:187-207 every clause of def-formula covered; uses thm-structural-induction (cited) and
       atoms recursion recalled at 04:175 (03:331), ledgered
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 2a67ca980804
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): (Vi) codes named in words, sentences split,
+      tonk aside cut; steps and values unchanged; new instances checked by verify/ch04/def-truth-table.py'
 - key: check:04-valuations-and-truth-tables:3
   kind: check
   file: 04-valuations-and-truth-tables.md
-  line: 221
+  line: 231
   hash: 1352a981a65a
   verdicts:
   - stage: S5a
@@ -3255,7 +3552,7 @@ items:
 - key: def-truth-table
   kind: def
   file: 04-valuations-and-truth-tables.md
-  line: 235
+  line: 247
   hash: 0147a8369e3b
   verdicts:
   - stage: S5a
@@ -3299,8 +3596,8 @@ items:
 - key: exm-truth-table-modus-ponens
   kind: exm
   file: 04-valuations-and-truth-tables.md
-  line: 247
-  hash: a184d1e36961
+  line: 259
+  hash: 5d428d63fdcb
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3351,11 +3648,18 @@ items:
       when phi and psi are the atoms p and q'', where phi and psi are the metavariables of ->E as stated
       at 04:28. ''Section 4.7 proves this for every rule'' points to the local fd1 section 07-soundness,
       which is correct.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 5d428d63fdcb
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): (Vi) codes named in words, sentences split,
+      tonk aside cut; steps and values unchanged; new instances checked by verify/ch04/def-truth-table.py'
 - key: exm-table-contrapositive
   kind: exm
   file: 04-valuations-and-truth-tables.md
-  line: 272
-  hash: 8b37c46eeaef
+  line: 284
+  hash: 9aca5b11bfa0
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3409,11 +3713,18 @@ items:
     model: claude-opus-5-5
     evidence: 04:280-289 recomputed; prp-contrapositive (ch02 03:84, P->Q |- not Q -> not P) and prp-contrapositive-converse
       (ch02 05:214, uses RAA) as described
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 9aca5b11bfa0
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): (Vi) codes named in words, sentences split,
+      tonk aside cut; steps and values unchanged; new instances checked by verify/ch04/def-truth-table.py'
 - key: exm-backwards-from-f
   kind: exm
   file: 04-valuations-and-truth-tables.md
-  line: 296
-  hash: 1d55a45ccf0b
+  line: 308
+  hash: 3b5dda7b29da
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3464,10 +3775,17 @@ items:
       that a consistent case ''completed in every way on the atoms it leaves unset'' gives the rows, and
       that every case ending in a contradiction means no row. This agrees with how B1 (d) and A2 (h) are
       used.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 3b5dda7b29da
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): (Vi) codes named in words, sentences split,
+      tonk aside cut; steps and values unchanged; new instances checked by verify/ch04/def-truth-table.py'
 - key: def-truth-function
   kind: def
   file: 04-valuations-and-truth-tables.md
-  line: 340
+  line: 352
   hash: cff7a698d50f
   verdicts:
   - stage: S5a
@@ -3522,7 +3840,7 @@ items:
 - key: check:04-valuations-and-truth-tables:4
   kind: check
   file: 04-valuations-and-truth-tables.md
-  line: 371
+  line: 383
   hash: 5d4f0869709b
   verdicts:
   - stage: S5a
@@ -3542,8 +3860,8 @@ items:
 - key: check:04-valuations-and-truth-tables:5
   kind: check
   file: 04-valuations-and-truth-tables.md
-  line: 383
-  hash: 81c28488cfe0
+  line: 395
+  hash: 57ba3512f62d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3559,11 +3877,18 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 04:383-389 consistent with the well-definedness paragraph 04:241
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 57ba3512f62d
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): (Vi) codes named in words, sentences split,
+      tonk aside cut; steps and values unchanged; new instances checked by verify/ch04/def-truth-table.py'
 - key: exr-valuations-and-truth-tables-a1
   kind: exr
   file: 04-valuations-and-truth-tables.md
-  line: 401
-  hash: e7f903d108bc
+  line: 413
+  hash: 938ff7f92249
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3625,10 +3950,17 @@ items:
     model: claude-opus-5-5
     evidence: 04:414-450 tables TFTT and TTFT confirmed by script; (c) T under both valuations; (d) 16;
       (e) false.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 938ff7f92249
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): (Vi) codes named in words, sentences split,
+      tonk aside cut; steps and values unchanged; new instances checked by verify/ch04/def-truth-table.py'
 - key: exr-valuations-and-truth-tables-a2
   kind: exr
   file: 04-valuations-and-truth-tables.md
-  line: 453
+  line: 465
   hash: c83f5d44a0f2
   verdicts:
   - stage: S5a
@@ -3658,7 +3990,7 @@ items:
 - key: exr-valuations-and-truth-tables-b1
   kind: exr
   file: 04-valuations-and-truth-tables.md
-  line: 502
+  line: 514
   hash: fa41cce3a4c8
   verdicts:
   - stage: S5a
@@ -3722,8 +4054,8 @@ items:
 - key: exr-valuations-and-truth-tables-b2
   kind: exr
   file: 04-valuations-and-truth-tables.md
-  line: 525
-  hash: 6c66fa9a3891
+  line: 537
+  hash: f52128cb6132
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3777,10 +4109,17 @@ items:
     model: claude-opus-5-5
     evidence: '04:561-572 the blank has one reasonable completion, the same as the ∧ case; (p→q)∧(p∨r)
       has 4 occurrences and 3 connectives. Model: proof of lem-coincidence.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: f52128cb6132
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): (Vi) codes named in words, sentences split,
+      tonk aside cut; steps and values unchanged; new instances checked by verify/ch04/def-truth-table.py'
 - key: exr-valuations-and-truth-tables-b3
   kind: exr
   file: 04-valuations-and-truth-tables.md
-  line: 575
+  line: 587
   hash: b307737540fa
   verdicts:
   - stage: S5a
@@ -3836,8 +4175,8 @@ items:
 - key: exr-valuations-and-truth-tables-b4
   kind: exr
   file: 04-valuations-and-truth-tables.md
-  line: 595
-  hash: a36bd231537f
+  line: 607
+  hash: 0a4adc3f2a34
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3873,11 +4212,18 @@ items:
       6 and -10 all qualify. This matches the text. The atoms are now p and q, as in the language (the
       earlier finding is fixed). A marking scheme is now present. The blueprint (ch04-deepen:387) gives
       a 6-point scheme weigh'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 0a4adc3f2a34
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): (Vi) codes named in words, sentences split,
+      tonk aside cut; steps and values unchanged; new instances checked by verify/ch04/def-truth-table.py'
 - key: exr-valuations-and-truth-tables-b5
   kind: exr
   file: 04-valuations-and-truth-tables.md
-  line: 629
-  hash: bd31711f89b5
+  line: 641
+  hash: 2c27441ce5ef
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3913,10 +4259,17 @@ items:
       n=3, 9 and 21 all qualify. The witnesses 30, 6, 10, 2, 15, 3, 5, 1 give TTT through FFF in order,
       which I checked. The marking scheme is now present. It is the blueprint's 1/3/1/1-of-6 scheme (ch04-deepen:388)
       re
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 2c27441ce5ef
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): (Vi) codes named in words, sentences split,
+      tonk aside cut; steps and values unchanged; new instances checked by verify/ch04/def-truth-table.py'
 - key: exr-valuations-and-truth-tables-c1
   kind: exr
   file: 04-valuations-and-truth-tables.md
-  line: 661
+  line: 673
   hash: 1afb32bb9a85
   verdicts:
   - stage: S5a
@@ -3974,8 +4327,8 @@ items:
 - key: exr-valuations-and-truth-tables-c2
   kind: exr
   file: 04-valuations-and-truth-tables.md
-  line: 706
-  hash: 26568fe5feb4
+  line: 718
+  hash: 05c07033fa3b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4063,11 +4416,18 @@ items:
       claim is true, line (4) contradicts its own hypothesis v_T(phi)=T, p->q shows the stated reason
       fails, and the repair uses the true conclusion. The pointer to ''Section 4.9'' is local to fd1 and
       correct.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 05c07033fa3b
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): (Vi) codes named in words, sentences split,
+      tonk aside cut; steps and values unchanged; new instances checked by verify/ch04/def-truth-table.py'
 - key: exr-valuations-and-truth-tables-c3
   kind: exr
   file: 04-valuations-and-truth-tables.md
-  line: 742
-  hash: 00369edcc15d
+  line: 754
+  hash: 2325517af5f5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4127,6 +4487,13 @@ items:
       ¬ step needs the other half of the hypothesis. The marking scheme is 2+2+1+2+2+1=10, and the fatal
       error it names is apt. verify/ch04/exr-valuations-and-truth-tables-c3.py reports ''all quoted values
       check''.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 2325517af5f5
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): (Vi) codes named in words, sentences split,
+      tonk aside cut; steps and values unchanged; new instances checked by verify/ch04/def-truth-table.py'
 - key: def-tautology
   kind: def
   file: 05-entailment-and-equivalence.md
@@ -4234,7 +4601,7 @@ items:
 - key: def-valid-argument
   kind: def
   file: 05-entailment-and-equivalence.md
-  line: 61
+  line: 63
   hash: 811bb00850ca
   verdicts:
   - stage: S5a
@@ -4281,7 +4648,7 @@ items:
 - key: check:05-entailment-and-equivalence:1
   kind: check
   file: 05-entailment-and-equivalence.md
-  line: 122
+  line: 124
   hash: b45f411118ca
   verdicts:
   - stage: S5a
@@ -4323,7 +4690,7 @@ items:
 - key: exm-affirming-the-consequent
   kind: exm
   file: 05-entailment-and-equivalence.md
-  line: 130
+  line: 132
   hash: c1fddc1a8564
   verdicts:
   - stage: S5a
@@ -4368,8 +4735,8 @@ items:
 - key: exm-three-premise-entailment
   kind: exm
   file: 05-entailment-and-equivalence.md
-  line: 144
-  hash: d7591216af27
+  line: 146
+  hash: c8550564cb03
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4408,10 +4775,18 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: '05:144-154: four forced steps are valid; the sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: c8550564cb03
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, inline sources moved to Uses
+      lines, classical-direction remark moved to For instructors fold; instances (contrary pair, replacement,
+      substitution, modus ponens rows) checked'
 - key: exm-grouping-of-implications
   kind: exm
   file: 05-entailment-and-equivalence.md
-  line: 158
+  line: 160
   hash: eb79b0336cf1
   verdicts:
   - stage: S5a
@@ -4455,7 +4830,7 @@ items:
 - key: check:05-entailment-and-equivalence:2
   kind: check
   file: 05-entailment-and-equivalence.md
-  line: 176
+  line: 178
   hash: 3fe13d14db00
   verdicts:
   - stage: S5a
@@ -4497,7 +4872,7 @@ items:
 - key: def-semantic-equivalence
   kind: def
   file: 05-entailment-and-equivalence.md
-  line: 190
+  line: 192
   hash: 81e3a7854ccc
   verdicts:
   - stage: S5a
@@ -4541,7 +4916,7 @@ items:
 - key: prp-standard-equivalences
   kind: prp
   file: 05-entailment-and-equivalence.md
-  line: 206
+  line: 218
   hash: 32257867292e
   verdicts:
   - stage: S5a
@@ -4614,8 +4989,8 @@ items:
 - key: proof:prp-standard-equivalences
   kind: proof
   file: 05-entailment-and-equivalence.md
-  line: 227
-  hash: a6a61bae5011
+  line: 239
+  hash: fec3136caaff
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4670,10 +5045,18 @@ items:
     model: claude-opus-5-5
     evidence: '05:227-284: all four tables re-evaluated by hand and by verify/ch04/prp-standard-equivalences.py
       (run from fd1/: passes); (d),(f) argued in prose correctly'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: fec3136caaff
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, inline sources moved to Uses
+      lines, classical-direction remark moved to For instructors fold; instances (contrary pair, replacement,
+      substitution, modus ponens rows) checked'
 - key: check:05-entailment-and-equivalence:3
   kind: check
   file: 05-entailment-and-equivalence.md
-  line: 308
+  line: 330
   hash: d585d97dfe6b
   verdicts:
   - stage: S5a
@@ -4695,7 +5078,7 @@ items:
 - key: check:05-entailment-and-equivalence:4
   kind: check
   file: 05-entailment-and-equivalence.md
-  line: 326
+  line: 348
   hash: 3aafdc421d33
   verdicts:
   - stage: S5a
@@ -4717,8 +5100,8 @@ items:
 - key: def-pair-relations
   kind: def
   file: 05-entailment-and-equivalence.md
-  line: 338
-  hash: 6a7542fbab89
+  line: 362
+  hash: 8c33bfe1e1c4
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4735,10 +5118,18 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: '05:336-348: all three table rows verified; def-pair-relations.py passes'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 8c33bfe1e1c4
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, inline sources moved to Uses
+      lines, classical-direction remark moved to For instructors fold; instances (contrary pair, replacement,
+      substitution, modus ponens rows) checked'
 - key: check:05-entailment-and-equivalence:5
   kind: check
   file: 05-entailment-and-equivalence.md
-  line: 352
+  line: 380
   hash: 3dd503d52c53
   verdicts:
   - stage: S5a
@@ -4758,7 +5149,7 @@ items:
 - key: lem-replacement
   kind: lem
   file: 05-entailment-and-equivalence.md
-  line: 366
+  line: 396
   hash: ac43eaa6c067
   verdicts:
   - stage: S5a
@@ -4802,8 +5193,8 @@ items:
 - key: proof:lem-replacement
   kind: proof
   file: 05-entailment-and-equivalence.md
-  line: 379
-  hash: 97e0b9c4723f
+  line: 407
+  hash: 34d7f9173de2
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4844,10 +5235,18 @@ items:
     model: claude-opus-5-5
     evidence: '05:377-390: structural induction with the root/below-root split; uses def-parse-tree (T2),(T3);
       unique readability is in the ledger at 05:882'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 34d7f9173de2
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, inline sources moved to Uses
+      lines, classical-direction remark moved to For instructors fold; instances (contrary pair, replacement,
+      substitution, modus ponens rows) checked'
 - key: exm-substitution-in-one-row
   kind: exm
   file: 05-entailment-and-equivalence.md
-  line: 425
+  line: 459
   hash: a4bec24cadf8
   verdicts:
   - stage: S5a
@@ -4867,7 +5266,7 @@ items:
 - key: lem-substitution
   kind: lem
   file: 05-entailment-and-equivalence.md
-  line: 439
+  line: 473
   hash: d0c1b61b7a90
   verdicts:
   - stage: S5a
@@ -4912,8 +5311,8 @@ items:
 - key: proof:lem-substitution
   kind: proof
   file: 05-entailment-and-equivalence.md
-  line: 454
-  hash: 3f4586dd7f21
+  line: 488
+  hash: 8eb3d4c58e7f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4960,11 +5359,19 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: '05:452-466: the claim is proved by structural induction over all clauses; (a) and (b) follow'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 8eb3d4c58e7f
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, inline sources moved to Uses
+      lines, classical-direction remark moved to For instructors fold; instances (contrary pair, replacement,
+      substitution, modus ponens rows) checked'
 - key: exr-entailment-and-equivalence-a1
   kind: exr
   file: 05-entailment-and-equivalence.md
-  line: 510
-  hash: 97795d8136d2
+  line: 544
+  hash: 19bdd07d5b41
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5025,10 +5432,18 @@ items:
     model: claude-opus-5-5
     evidence: '05:520-526 script: taut, contra, contingent, contra, taut; (b) holds/fails at FF/holds;
       (d) refuting rows FT and TF.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 19bdd07d5b41
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, inline sources moved to Uses
+      lines, classical-direction remark moved to For instructors fold; instances (contrary pair, replacement,
+      substitution, modus ponens rows) checked'
 - key: exr-entailment-and-equivalence-a2
   kind: exr
   file: 05-entailment-and-equivalence.md
-  line: 531
+  line: 568
   hash: b8157fb4a911
   verdicts:
   - stage: S5a
@@ -5057,7 +5472,7 @@ items:
 - key: exr-entailment-and-equivalence-b1
   kind: exr
   file: 05-entailment-and-equivalence.md
-  line: 580
+  line: 617
   hash: b9757b2304d2
   verdicts:
   - stage: S5a
@@ -5135,7 +5550,7 @@ items:
 - key: exr-entailment-and-equivalence-b2
   kind: exr
   file: 05-entailment-and-equivalence.md
-  line: 647
+  line: 684
   hash: 08441a4f9b9f
   verdicts:
   - stage: S5a
@@ -5205,8 +5620,8 @@ items:
 - key: exr-entailment-and-equivalence-b3
   kind: exr
   file: 05-entailment-and-equivalence.md
-  line: 667
-  hash: 2a049bdb6998
+  line: 704
+  hash: 68b79f988e77
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5258,11 +5673,19 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 05:677-683 both directions correct; (a) is (b) with Γ empty.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 68b79f988e77
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, inline sources moved to Uses
+      lines, classical-direction remark moved to For instructors fold; instances (contrary pair, replacement,
+      substitution, modus ponens rows) checked'
 - key: exr-entailment-and-equivalence-b4
   kind: exr
   file: 05-entailment-and-equivalence.md
-  line: 688
-  hash: 4bf102e68417
+  line: 725
+  hash: 3b3cbdd9c9f9
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5298,11 +5721,19 @@ items:
       at FT. (f) none of the three, with TT/T and FF. All match. The marking scheme added at 05:716-720
       (6 points, 1 per part: the class with both witnesses or the reason a case is impossible) matches
       the frozen b'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 3b3cbdd9c9f9
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, inline sources moved to Uses
+      lines, classical-direction remark moved to For instructors fold; instances (contrary pair, replacement,
+      substitution, modus ponens rows) checked'
 - key: exr-entailment-and-equivalence-c1
   kind: exr
   file: 05-entailment-and-equivalence.md
-  line: 727
-  hash: 264898e8ffaa
+  line: 764
+  hash: 38ecaee8f804
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5382,11 +5813,19 @@ items:
       Both findings are resolved. The solution has the right count, eight cases (atom, ⊥, ¬, five binary
       connectives), and each case is correct from (V1), (V2), the old clauses and (V7). The marking scheme
       adds up to 10.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 38ecaee8f804
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, inline sources moved to Uses
+      lines, classical-direction remark moved to For instructors fold; instances (contrary pair, replacement,
+      substitution, modus ponens rows) checked'
 - key: exr-entailment-and-equivalence-c2
   kind: exr
   file: 05-entailment-and-equivalence.md
-  line: 768
-  hash: ffd022ff9817
+  line: 805
+  hash: 7e4aab9dcc4d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5468,10 +5907,18 @@ items:
       literally the two entailments, and lem-substitution (b) applies to each. In the marking scheme,
       the 2-point line now credits each route (''in the entailment route, applies (b) in both directions''),
       so the S6 fi'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 7e4aab9dcc4d
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, inline sources moved to Uses
+      lines, classical-direction remark moved to For instructors fold; instances (contrary pair, replacement,
+      substitution, modus ponens rows) checked'
 - key: exr-entailment-and-equivalence-c3
   kind: exr
   file: 05-entailment-and-equivalence.md
-  line: 791
+  line: 828
   hash: b583409797ea
   verdicts:
   - stage: S5a
@@ -5501,7 +5948,7 @@ items:
 - key: exr-entailment-and-equivalence-c4
   kind: exr
   file: 05-entailment-and-equivalence.md
-  line: 839
+  line: 876
   hash: 96b7b03cce6a
   verdicts:
   - stage: S5a
@@ -5532,7 +5979,7 @@ items:
   kind: check
   file: 06-refuting-row-search.md
   line: 11
-  hash: 6b456e8b9360
+  hash: 760b28f664b2
   verdicts:
   - stage: S5a
     verdict: minor
@@ -5561,11 +6008,19 @@ items:
       and the solution at 06:16 counts that way: one way true and two ways false for the conjunction,
       one way false and two ways true for the implication. Both answers agree with (V3) and (V5). The
       S5a finding is resolved.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 760b28f664b2
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
+      move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
+      q, not p checked'
 - key: def-search-tree
   kind: def
   file: 06-refuting-row-search.md
-  line: 44
-  hash: 249c2b7f7b5b
+  line: 46
+  hash: c6715199f7ba
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5594,11 +6049,19 @@ items:
     evidence: 06:47 now defines 'used on a branch' as 'the branch passes through a node added by its rule,
       so it stays used on every branch extending that one'. This gives the inheritance that proof (a)
       at 06:168 relies on. 06:49 also defines a finished tree. The S5b finding is resolved.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: c6715199f7ba
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
+      move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
+      q, not p checked'
 - key: exm-refuting-row-search-closed
   kind: exm
   file: 06-refuting-row-search.md
-  line: 56
-  hash: b47ca4d104eb
+  line: 58
+  hash: 8b6a05c5be76
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5651,11 +6114,19 @@ items:
       the one left (q F, r T); the row q F, r F makes p→(q∨r) false and lies on neither side; the tally
       is 12+1+3=16. verify/ch04/exm-refuting-row-search-closed.py passes. The blueprint deviation is recorded
       in STATUS (c).'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 8b6a05c5be76
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
+      move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
+      q, not p checked'
 - key: exm-refuting-row-search-open
   kind: exm
   file: 06-refuting-row-search.md
-  line: 98
-  hash: cd49ee5b54c0
+  line: 100
+  hash: ed7298b48823
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5673,11 +6144,19 @@ items:
     model: claude-opus-5-5
     evidence: '06:105-129: the open finished branch p, r, ¬q, ¬s is listed in full; its row makes p→(q∨r)
       and q→s true and p→s false, which checks'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: ed7298b48823
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
+      move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
+      q, not p checked'
 - key: check:06-refuting-row-search:2
   kind: check
   file: 06-refuting-row-search.md
-  line: 132
-  hash: 7d20771ec82c
+  line: 134
+  hash: 244ed9e12001
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5693,11 +6172,19 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: '06:137: every formula on the branch was checked against p=T, q=F, r=T, s=F'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 244ed9e12001
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
+      move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
+      q, not p checked'
 - key: prp-search-decides
   kind: prp
   file: 06-refuting-row-search.md
-  line: 146
-  hash: c8b1def131cb
+  line: 148
+  hash: e645b2c37788
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5723,11 +6210,19 @@ items:
     model: claude-opus-5-5
     evidence: 06:152 now reads 'continued until it is finished', and 'finished tree' is defined at 06:49.
       The last sentence at 06:157 and the line at 06:160 use only defined terms. The S5b finding is resolved.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: e645b2c37788
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
+      move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
+      q, not p checked'
 - key: proof:prp-search-decides
   kind: proof
   file: 06-refuting-row-search.md
-  line: 167
-  hash: 478bfd785a06
+  line: 169
+  hash: 04105f612994
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5759,10 +6254,18 @@ items:
       negation, plus 3 at a binary formula. That is the length clause in 03-structural-induction.md:353,
       and the ''Section 4.3'' pointer is local to fd1. I checked each inequality: phi, psi, not-phi and
       not-psi are all shor'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 04105f612994
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
+      move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
+      q, not p checked'
 - key: check:06-refuting-row-search:3
   kind: check
   file: 06-refuting-row-search.md
-  line: 237
+  line: 243
   hash: 70114556cf48
   verdicts:
   - stage: S5a
@@ -5784,8 +6287,8 @@ items:
 - key: exm-satisfiability-search
   kind: exm
   file: 06-refuting-row-search.md
-  line: 249
-  hash: 3af5d5beb1dc
+  line: 255
+  hash: e4786832dc79
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5804,10 +6307,18 @@ items:
     model: claude-opus-5-5
     evidence: '06:262-282: by truth table on e, f, t, exactly two rows satisfy the list, TTF and FFT (e,f,t);
       n=4 and n=3 realize them; the branch t, followed to the end, gives ¬e, ¬f'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: e4786832dc79
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
+      move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
+      q, not p checked'
 - key: check:06-refuting-row-search:4
   kind: check
   file: 06-refuting-row-search.md
-  line: 287
+  line: 293
   hash: d5aaec8cd2dd
   verdicts:
   - stage: S5a
@@ -5827,8 +6338,8 @@ items:
 - key: exr-refuting-row-search-a1
   kind: exr
   file: 06-refuting-row-search.md
-  line: 326
-  hash: a57ac3e45952
+  line: 339
+  hash: c23f37232ddb
   verdicts:
   - stage: S5a
     verdict: minor
@@ -5863,11 +6374,19 @@ items:
       and the solution at 06:347 answers it. I solved (a) to (d) myself and my answers match: not(p ^
       q) and p <-> q split; the row is p=F, q=F, r=T; (c) and (d) are both false. ''Finished tree'' is
       now defined. The S5a finding is resolved.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: c23f37232ddb
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
+      move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
+      q, not p checked'
 - key: exr-refuting-row-search-a2
   kind: exr
   file: 06-refuting-row-search.md
-  line: 350
-  hash: d1b5671518b9
+  line: 363
+  hash: 8fb601d5e4ce
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5893,10 +6412,18 @@ items:
     model: claude-opus-5-5
     evidence: '06:371-395; (h),(i),(j) checked by my truth-table script (j: all four branches close, list
       unsat); (f) ''Not yet'' = open, with the right continuation'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 8fb601d5e4ce
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
+      move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
+      q, not p checked'
 - key: exr-refuting-row-search-b1
   kind: exr
   file: 06-refuting-row-search.md
-  line: 399
+  line: 412
   hash: c5e660e8c107
   verdicts:
   - stage: S5a
@@ -5960,8 +6487,8 @@ items:
 - key: exr-refuting-row-search-b2
   kind: exr
   file: 06-refuting-row-search.md
-  line: 426
-  hash: 397ed765d77e
+  line: 439
+  hash: ddd1195524b2
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5997,11 +6524,19 @@ items:
       n=12 satisfies (1), (2), (3) and (5) once (4) is dropped; n=6 satisfies (2) to (5) once (1) is dropped,
       (4) being vacuous since 4 does not divide 6. The marking scheme at 06:447-451 (6 points: 1+3+2)
       matches the blueprint at ch04-deepen.md:531 word for word. The S5b finding is resolved.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: ddd1195524b2
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
+      move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
+      q, not p checked'
 - key: exr-refuting-row-search-b3
   kind: exr
   file: 06-refuting-row-search.md
-  line: 454
-  hash: df1665146c62
+  line: 467
+  hash: e6902061ef01
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6035,11 +6570,19 @@ items:
     evidence: 'The solution at 06:472 is correct: split the disjunction; p closes against not-p; q ^ r
       adds q and r, and q closes against not-q. The tree matches. The marking scheme at 06:484-488 (4
       points: 1+2+1) matches the blueprint at ch04-deepen.md:532.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: e6902061ef01
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
+      move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
+      q, not p checked'
 - key: exr-refuting-row-search-c1
   kind: exr
   file: 06-refuting-row-search.md
-  line: 493
-  hash: 70f8e86f1957
+  line: 506
+  hash: 77121edfdc07
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6065,11 +6608,19 @@ items:
     model: claude-opus-5-5
     evidence: 06:493-505; rules read off V7 correctly; (b) valid, (c) p|(p|p) is a tautology (script);
       scheme totals 8
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 77121edfdc07
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
+      move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
+      q, not p checked'
 - key: exr-refuting-row-search-c2
   kind: exr
   file: 06-refuting-row-search.md
-  line: 519
-  hash: 5f05223bd3ed
+  line: 532
+  hash: 2759ad2543d5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6094,11 +6645,19 @@ items:
     model: claude-opus-5-5
     evidence: 06:518-531; (a) valid, (b) row p=T,q=F,r=T refutes it (script); the branch is finished;
       scheme totals 10
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 2759ad2543d5
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
+      move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
+      q, not p checked'
 - key: exr-refuting-row-search-c3
   kind: exr
   file: 06-refuting-row-search.md
-  line: 545
-  hash: 7d645ec6adb1
+  line: 558
+  hash: 65b78ed177ae
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6124,10 +6683,18 @@ items:
     model: claude-opus-5-5
     evidence: 06:539-553; new formulas are immediate parts or their negations; ¬φ is shorter than φ|ψ;
       the (b) and (c) cases are right; my own proof earns full marks
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 65b78ed177ae
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
+      move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
+      q, not p checked'
 - key: check:07-soundness:1
   kind: check
   file: 07-soundness.md
-  line: 73
+  line: 79
   hash: f500b86bd305
   verdicts:
   - stage: S5a
@@ -6171,7 +6738,7 @@ items:
 - key: lem-context-inclusion
   kind: lem
   file: 07-soundness.md
-  line: 89
+  line: 95
   hash: 6365903a115e
   verdicts:
   - stage: S5a
@@ -6216,8 +6783,8 @@ items:
 - key: proof:lem-context-inclusion
   kind: proof
   file: 07-soundness.md
-  line: 130
-  hash: 88253573f8a4
+  line: 136
+  hash: 06c6548c1b90
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6282,11 +6849,18 @@ items:
     evidence: 07:131-137. (a) uses the line clause of the scope rule. (b) uses the box clause ('exactly'),
       the nesting clause, and the 'line of that box itself' sentence. I found that sentence in all five
       cited defs (1.4:54, 2.2:38, 2.5:58, 1.6:58, 2.4:45).
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 06c6548c1b90
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
+      inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
 - key: check:07-soundness:2
   kind: check
   file: 07-soundness.md
-  line: 165
-  hash: 1d7387305c1d
+  line: 175
+  hash: 2ceaddc992af
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6326,10 +6900,17 @@ items:
     model: claude-opus-5-5
     evidence: 07:165-171. Line 5 is the not-E case. Gamma_4 and Gamma_2 are contained in Gamma_5. (V2)
       rules out q and not-q both being true. The context is unsatisfiable, so it entails bottom.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 2ceaddc992af
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
+      inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
 - key: thm-soundness
   kind: thm
   file: 07-soundness.md
-  line: 177
+  line: 187
   hash: 8baab2d38ecf
   verdicts:
   - stage: S5a
@@ -6372,8 +6953,8 @@ items:
 - key: proof:thm-soundness
   kind: proof
   file: 07-soundness.md
-  line: 199
-  hash: 6f94f92ac316
+  line: 213
+  hash: 93498fa0f3a2
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6438,10 +7019,17 @@ items:
       formulas'' subsection (l.47-53: derived rules expand into primitive ones). Step 2''s S(k) with the
       k=0 / k>n vacuous cases matches @thm-strong-induction. ''Cited lines and boxes lie before line k''
       follows from the scop'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 93498fa0f3a2
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
+      inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
 - key: exm-soundness-run
   kind: exm
   file: 07-soundness.md
-  line: 279
+  line: 297
   hash: 0af1b53a2d22
   verdicts:
   - stage: S5a
@@ -6485,7 +7073,7 @@ items:
 - key: cor-refuting-row
   kind: cor
   file: 07-soundness.md
-  line: 389
+  line: 412
   hash: b9d5501db03a
   verdicts:
   - stage: S5a
@@ -6527,7 +7115,7 @@ items:
 - key: proof:cor-refuting-row
   kind: proof
   file: 07-soundness.md
-  line: 395
+  line: 418
   hash: 829afeb5f156
   verdicts:
   - stage: S5a
@@ -6569,7 +7157,7 @@ items:
 - key: check:07-soundness:3
   kind: check
   file: 07-soundness.md
-  line: 401
+  line: 424
   hash: edbcb9884fac
   verdicts:
   - stage: S5a
@@ -6590,7 +7178,7 @@ items:
 - key: check:07-soundness:4
   kind: check
   file: 07-soundness.md
-  line: 429
+  line: 458
   hash: d71fe4f9e37c
   verdicts:
   - stage: S5a
@@ -6612,8 +7200,8 @@ items:
 - key: check:07-soundness:5
   kind: check
   file: 07-soundness.md
-  line: 445
-  hash: 5c4aec92ee1f
+  line: 474
+  hash: cb4f244d5e59
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6629,11 +7217,18 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 07:445-451. The context p->q, not-q, p is unsatisfiable, so every subgoal passes.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: cb4f244d5e59
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
+      inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
 - key: exr-soundness-a1
   kind: exr
   file: 07-soundness.md
-  line: 463
-  hash: a8a18df315c7
+  line: 492
+  hash: c44aa76a9128
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6695,11 +7290,18 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 07:491-511; context table for the vacuous-implication derivation checked; (d) row p=F,q=T
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: c44aa76a9128
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
+      inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
 - key: exr-soundness-a2
   kind: exr
   file: 07-soundness.md
-  line: 513
-  hash: 91af7fa89bbb
+  line: 542
+  hash: 29907643c2a9
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6726,10 +7328,17 @@ items:
     model: claude-opus-5-5
     evidence: 07:534-558; script checked all rows (a),(b),(f),(j),(l); (d) is valid; (g) φ1,φ2,φ4; (h)
       Γk,φ3
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 29907643c2a9
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
+      inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
 - key: exr-soundness-b1
   kind: exr
   file: 07-soundness.md
-  line: 562
+  line: 591
   hash: 9b4e57d26ad1
   verdicts:
   - stage: S5a
@@ -6795,8 +7404,8 @@ items:
 - key: exr-soundness-b2
   kind: exr
   file: 07-soundness.md
-  line: 587
-  hash: 44e9b0df131a
+  line: 616
+  hash: f084156c47a4
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6883,11 +7492,18 @@ items:
       and both S5a/S6 findings are resolved. I solved it myself first: (iii) fixes v; (v) needs (iii);
       (viii) and (iv) need (iii), (vii) and (i); (ii) needs (v), (viii) and (iv). The given order (iii),(v),(vii),(i),(viii),(iv),(ii)
       and the alternative (vii),(i),(iii),(v),(iv),(viii),(ii) both satisfy the stated co'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: f084156c47a4
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
+      inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
 - key: exr-soundness-b3
   kind: exr
   file: 07-soundness.md
-  line: 621
-  hash: 84e91285a1b0
+  line: 657
+  hash: b3e4e6620c2f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6913,11 +7529,18 @@ items:
     model: claude-opus-5-5
     evidence: 07:636-733; the four derivations were checked line by line (citations available, rule forms
       right); rows (c) F,F,T and (e) F,F were checked by script
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: b3e4e6620c2f
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
+      inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
 - key: exr-soundness-b4
   kind: exr
   file: 07-soundness.md
-  line: 735
-  hash: 815382073b70
+  line: 771
+  hash: f1b43e77c592
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6943,10 +7566,17 @@ items:
     model: claude-opus-5-5
     evidence: 07:764-793; row p=T,q=F,r=T refutes the subgoal q; the completion is valid (∨E at line 9
       is the last line of box 3-9)
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: f1b43e77c592
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
+      inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
 - key: exr-soundness-c1
   kind: exr
   file: 07-soundness.md
-  line: 797
+  line: 833
   hash: eeac6261786b
   verdicts:
   - stage: S5a
@@ -7005,8 +7635,8 @@ items:
 - key: exr-soundness-c2
   kind: exr
   file: 07-soundness.md
-  line: 846
-  hash: e78546d16e4a
+  line: 882
+  hash: d93cf9bc9599
   verdicts:
   - stage: S5a
     verdict: correct
@@ -7095,11 +7725,18 @@ items:
       of def-derivation is removed, so the S5b finding is resolved. The →I, ¬I and ∨E cases are checked
       line by line against @lem-context-inclusion (a)/(b) and (V1), (V2), (V4), (V5), and agree with the
       proof '
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: d93cf9bc9599
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
+      inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
 - key: exr-soundness-c3
   kind: exr
   file: 07-soundness.md
-  line: 876
-  hash: 9ac4f7112237
+  line: 917
+  hash: 7dc9d4f924f5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -7135,11 +7772,18 @@ items:
       where p is true and p∨q false under the new table. ∨E still needs only that ''a true disjunction
       has a true side'', which still holds. No other case uses (V4). In (c), p ⊢ p∨q is derivable but
       not valid for the new ta'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 7dc9d4f924f5
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
+      inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
 - key: exr-soundness-c4
   kind: exr
   file: 07-soundness.md
-  line: 904
-  hash: 3ad32b035b9f
+  line: 945
+  hash: 2fea502fd237
   verdicts:
   - stage: S5a
     verdict: correct
@@ -7178,11 +7822,18 @@ items:
       (letter valuation) and `\models_\ell` as local to F1.3 §07 C4. That row is explicit, and the general
       `v, w` row (l.151) does not conflict with it, so the second finding is resolved. Checked from scratch:
       in ¬E, w('
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 2fea502fd237
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
+      inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
 - key: exr-soundness-c5
   kind: exr
   file: 07-soundness.md
-  line: 953
-  hash: 8de65b8cb842
+  line: 994
+  hash: b71f9f67094e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -7266,10 +7917,17 @@ items:
       as `u_{\mathrm{K}}`: Kleene valuation (¬ as 1−u_K, ∧ min, ∨ max, → max{1−u_K(φ),u_K(ψ)}), local
       to F1.3 §07 C5; not the u of thm-raa-independent. The coordinator can add this row. I made no edits
       (read-only).'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: b71f9f67094e
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
+      inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
 - key: thm-raa-independent
   kind: thm
   file: 07-soundness.md
-  line: 1021
+  line: 1062
   hash: fc85c35a2141
   verdicts:
   - stage: S5a
@@ -7326,8 +7984,8 @@ items:
 - key: proof:thm-raa-independent
   kind: proof
   file: 07-soundness.md
-  line: 1031
-  hash: 885280a262ce
+  line: 1072
+  hash: f9bb4c42a37e
   verdicts:
   - stage: S5a
     verdict: minor
@@ -7398,10 +8056,17 @@ items:
     evidence: '07:1032-1048. All 12 RAA-free rules are covered, and each case is correct (I checked not-E,
       not-I, ->I and or-E by hand). At u(p)=1/2: u(not-not-p)=1 and u(p v not-p)=1/2. Peirce at (1/2,
       0) has value 1/2. The sidecar passes.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: f9bb4c42a37e
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
+      inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
 - key: check:08-completeness:1
   kind: check
   file: 08-completeness.md
-  line: 34
+  line: 42
   hash: a4da7a948fea
   verdicts:
   - stage: S5a
@@ -7445,7 +8110,7 @@ items:
 - key: lem-connective-rows
   kind: lem
   file: 08-completeness.md
-  line: 46
+  line: 54
   hash: 592ac0fab4ba
   verdicts:
   - stage: S5a
@@ -7490,8 +8155,8 @@ items:
 - key: proof:lem-connective-rows
   kind: proof
   file: 08-completeness.md
-  line: 80
-  hash: 82e5a38f904d
+  line: 88
+  hash: 0f5a4ca86046
   verdicts:
   - stage: S5a
     verdict: correct
@@ -7535,10 +8200,18 @@ items:
     evidence: '08:117-206: 15 sequents, 7 printed derivations checked by hand; De Morgan (b),(c) RAA-free
       per ch02 05:643 (''The derivations of (a), (b), and (c) ... use no RAA''); VI and exm-double-negation-introduction
       are in 2.1/2.2, before RAA (2.5)'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 0f5a4ca86046
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
+      Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
+      (p,not q |- not(p->q); q |- p or q) checked'
 - key: check:08-completeness:2
   kind: check
   file: 08-completeness.md
-  line: 214
+  line: 226
   hash: f5b0f07dc987
   verdicts:
   - stage: S5a
@@ -7581,7 +8254,7 @@ items:
 - key: lem-truth-table-line
   kind: lem
   file: 08-completeness.md
-  line: 246
+  line: 258
   hash: d5e34e0e1ceb
   verdicts:
   - stage: S5a
@@ -7636,8 +8309,8 @@ items:
 - key: proof:lem-truth-table-line
   kind: proof
   file: 08-completeness.md
-  line: 261
-  hash: cbb96e9d1c3f
+  line: 277
+  hash: 2df4008d098b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -7680,10 +8353,18 @@ items:
     model: claude-opus-5-5
     evidence: '08:261-292: every case checked; m>=1 for every chaining; ⊥ case uses weakening (a), not
       (c) with m=0'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 2df4008d098b
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
+      Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
+      (p,not q |- not(p->q); q |- p or q) checked'
 - key: exm-truth-table-line-run
   kind: exm
   file: 08-completeness.md
-  line: 298
+  line: 323
   hash: aa4763f22ae2
   verdicts:
   - stage: S5a
@@ -7728,8 +8409,8 @@ items:
 - key: check:08-completeness:3
   kind: check
   file: 08-completeness.md
-  line: 324
-  hash: 69399a11e9aa
+  line: 349
+  hash: 6f0eedb4c482
   verdicts:
   - stage: S5a
     verdict: correct
@@ -7746,10 +8427,18 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: '08:324-330: p,q ⊢ ¬(p→¬q) via (→3) with β=¬q, and ¬¬q from (¬1)'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 6f0eedb4c482
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
+      Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
+      (p,not q |- not(p->q); q |- p or q) checked'
 - key: lem-atom-splitting
   kind: lem
   file: 08-completeness.md
-  line: 336
+  line: 361
   hash: d38f18e97ad1
   verdicts:
   - stage: S5a
@@ -7794,8 +8483,8 @@ items:
 - key: proof:lem-atom-splitting
   kind: proof
   file: 08-completeness.md
-  line: 348
-  hash: a4126dbe3fb4
+  line: 377
+  hash: 07ca8501161e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -7837,10 +8526,18 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: '08:348-358: pasting, the degenerate last-line cases, availability; all check'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 07ca8501161e
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
+      Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
+      (p,not q |- not(p->q); q |- p or q) checked'
 - key: thm-completeness
   kind: thm
   file: 08-completeness.md
-  line: 389
+  line: 418
   hash: 4aa9519d8500
   verdicts:
   - stage: S5a
@@ -7883,8 +8580,8 @@ items:
 - key: exm-completeness-run
   kind: exm
   file: 08-completeness.md
-  line: 404
-  hash: c4750e4469ff
+  line: 437
+  hash: 0121305c463b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -7936,10 +8633,18 @@ items:
       so the earlier finding is resolved. That solution has 13 lines and splits once on Q, as 08:477 says.
       I checked the 20-line derivation line by line: (→2) on 4, (→1) on 7 with α=q, line 14 and line 17
       cite line 11, which is still available, and the ∨E ran'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 0121305c463b
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
+      Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
+      (p,not q |- not(p->q); q |- p or q) checked'
 - key: check:08-completeness:4
   kind: check
   file: 08-completeness.md
-  line: 480
+  line: 513
   hash: e444aff953e5
   verdicts:
   - stage: S5a
@@ -7959,8 +8664,8 @@ items:
 - key: proof:exm-completeness-run
   kind: proof
   file: 08-completeness.md
-  line: 488
-  hash: 8668bdca43d7
+  line: 521
+  hash: ea611af3aa5d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -7981,10 +8686,18 @@ items:
     model: claude-opus-5-5
     evidence: '08:488-528 (proof of thm-completeness): Steps 1-4, S(j)→S(j−1) with v±, and the descent
       fold 08:531 (ax-induction) all check; uses of def-valuation and lem-weakening-cut are cited'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: ea611af3aa5d
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
+      Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
+      (p,not q |- not(p->q); q |- p or q) checked'
 - key: cor-derivable-iff-valid
   kind: cor
   file: 08-completeness.md
-  line: 542
+  line: 579
   hash: d098d7704e91
   verdicts:
   - stage: S5a
@@ -8042,8 +8755,8 @@ items:
 - key: proof:cor-derivable-iff-valid
   kind: proof
   file: 08-completeness.md
-  line: 552
-  hash: 4436167bcbef
+  line: 589
+  hash: c24a3645e4d1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -8075,10 +8788,18 @@ items:
     model: claude-opus-5-5
     evidence: 08:552-554. (=>) is thm-soundness and (<=) is thm-completeness. lem-coincidence applies
       to each member of Gamma and to psi.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: c24a3645e4d1
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
+      Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
+      (p,not q |- not(p->q); q |- p or q) checked'
 - key: def-rule-taut
   kind: def
   file: 08-completeness.md
-  line: 620
+  line: 657
   hash: ca1f8cef4970
   verdicts:
   - stage: S5a
@@ -8100,8 +8821,8 @@ items:
 - key: exm-taut-step
   kind: exm
   file: 08-completeness.md
-  line: 630
-  hash: d35728d9b7ad
+  line: 667
+  hash: 9c0167970eea
   verdicts:
   - stage: S5a
     verdict: minor
@@ -8131,10 +8852,18 @@ items:
       line 2, ¬E 3,1, RAA 2-4, R 6 inside the inner box (available), →I 7-8, ¬E 9,1, ¬I 6-10, ∧I 5,11.
       The row check is right. The title ''[One line for twelve]'' is the frozen blueprint''s and reads
       as one TAUT line standing'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 9c0167970eea
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
+      Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
+      (p,not q |- not(p->q); q |- p or q) checked'
 - key: check:08-completeness:5
   kind: check
   file: 08-completeness.md
-  line: 678
+  line: 715
   hash: ff71917eb903
   verdicts:
   - stage: S5a
@@ -8154,8 +8883,8 @@ items:
 - key: exr-completeness-a1
   kind: exr
   file: 08-completeness.md
-  line: 707
-  hash: 8f707c1b2c91
+  line: 744
+  hash: 98bb0a0e99a8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -8217,10 +8946,18 @@ items:
     model: claude-opus-5-5
     evidence: 08:722-734; (d) Case 2 gives p,¬p,q ⊢ p∨q; (e) the distinctness is used in Step 3's v+/v-
       argument
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 98bb0a0e99a8
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
+      Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
+      (p,not q |- not(p->q); q |- p or q) checked'
 - key: exr-completeness-a2
   kind: exr
   file: 08-completeness.md
-  line: 736
+  line: 777
   hash: 2b7e1e17c209
   verdicts:
   - stage: S5a
@@ -8250,7 +8987,7 @@ items:
 - key: exr-completeness-b1
   kind: exr
   file: 08-completeness.md
-  line: 785
+  line: 826
   hash: 35f3789379c5
   verdicts:
   - stage: S5a
@@ -8306,8 +9043,8 @@ items:
 - key: exr-completeness-b2
   kind: exr
   file: 08-completeness.md
-  line: 851
-  hash: 5030303185d7
+  line: 892
+  hash: 6277a5decf4a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -8363,10 +9100,18 @@ items:
     model: claude-opus-5-5
     evidence: 08:857-925; the 21-line derivation is checked line by line; each row's case is right; the
       split order (q inside p) matches Step 3
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 6277a5decf4a
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
+      Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
+      (p,not q |- not(p->q); q |- p or q) checked'
 - key: exr-completeness-b3
   kind: exr
   file: 08-completeness.md
-  line: 927
+  line: 968
   hash: d89f2a376800
   verdicts:
   - stage: S5a
@@ -8435,8 +9180,8 @@ items:
 - key: exr-completeness-b4
   kind: exr
   file: 08-completeness.md
-  line: 979
-  hash: dbc5ac640667
+  line: 1020
+  hash: e24671775fe1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -8471,11 +9216,19 @@ items:
       It rescales the blueprint''s 6-point scheme with the same split, as STYLE §11.6 requires. I solved
       it myself and both derivations check: →E 1,3; ∧E 4; ¬E 5,2; ¬I 3-6. The answer to (b) is right,
       and in (c) ¬(p∧¬q) and p→q are both false exactly at p=T, q=F.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: e24671775fe1
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
+      Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
+      (p,not q |- not(p->q); q |- p or q) checked'
 - key: exr-completeness-b5
   kind: exr
   file: 08-completeness.md
-  line: 1026
-  hash: 9ac6480f42c4
+  line: 1067
+  hash: b307875451ab
   verdicts:
   - stage: S5a
     verdict: correct
@@ -8511,11 +9264,19 @@ items:
       point in each part, matching the blueprint''s intent. The S5b finding is resolved. I re-solved all
       three parts. (a) →E, →E, ¬E is correct. (b) The search closes: under p,q the formula ¬p∨¬q closes
       both ways, and under ¬p,¬q the formula p∨q does; the conclusion cites prp-search-decides and thm-completenes'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: b307875451ab
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
+      Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
+      (p,not q |- not(p->q); q |- p or q) checked'
 - key: exr-completeness-c1
   kind: exr
   file: 08-completeness.md
-  line: 1068
-  hash: d6efab821e82
+  line: 1109
+  hash: 0a4f300c2407
   verdicts:
   - stage: S5a
     verdict: correct
@@ -8582,11 +9343,19 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 08:1061-1087; all seven value cases use the right sequent
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 0a4f300c2407
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
+      Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
+      (p,not q |- not(p->q); q |- p or q) checked'
 - key: exr-completeness-c2
   kind: exr
   file: 08-completeness.md
-  line: 1102
-  hash: f3a34c7f0b76
+  line: 1143
+  hash: f550e04debd8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -8665,11 +9434,19 @@ items:
       used, LEM or RAA. That resolves the S6 finding. The RAA alternative works: inside the box, a ¬I
       box on p using D gives ¬p, then E gives ψ, which clashes with ¬ψ. Points sum to 10. I checked solution
       (a) against th'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: f550e04debd8
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
+      Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
+      (p,not q |- not(p->q); q |- p or q) checked'
 - key: exr-normal-forms-c3
   kind: exr
   file: 08-completeness.md
-  line: 1147
-  hash: e6bbc347436f
+  line: 1199
+  hash: d931f9f7b564
   verdicts:
   - stage: S5a
     verdict: correct
@@ -8730,11 +9507,19 @@ items:
     model: claude-opus-5-5
     evidence: 08:1147-1207; the (a),(d) derivations are valid; rows (b) T,F,F and (c) T,T,F refute (script);
       moved with its label per blueprint §3.1
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: d931f9f7b564
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
+      Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
+      (p,not q |- not(p->q); q |- p or q) checked'
 - key: exr-completeness-c4
   kind: exr
   file: 08-completeness.md
-  line: 1222
-  hash: 88dab3349ba3
+  line: 1274
+  hash: 563ff8c72c0e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -8772,11 +9557,19 @@ items:
       (02/05:284) is derived with ∨I at lines 6 and 7 of its derivation, so ''twice'' is right. (b) and
       (c) are unchanged and correct: with ∨ read as ∧, ∨E is sound, p∨¬p is never true, and p=T, q=F refutes
       p⊢'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 563ff8c72c0e
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
+      Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
+      (p,not q |- not(p->q); q |- p or q) checked'
 - key: exr-completeness-c5
   kind: exr
   file: 08-completeness.md
-  line: 1250
-  hash: 3afbf57c8c7c
+  line: 1302
+  hash: 78872a3e2f32
   verdicts:
   - stage: S5a
     verdict: correct
@@ -8836,10 +9629,18 @@ items:
       (03-02:376). (c) Uses @prp-search-decides (06:146) (a) and (c). The RAA and LEM locations are listed
       correctly: the ↔ case uses only ¬I plus LEM through atom-splitting. Scheme: 1+2+5+1+1=10, with four
       one-way and five two-way cases, which matches the table. No remaining issues.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 78872a3e2f32
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
+      Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
+      (p,not q |- not(p->q); q |- p or q) checked'
 - key: exr-normal-forms-r1
   kind: exr
   file: 08-completeness.md
-  line: 1302
+  line: 1360
   hash: 5a150781b436
   verdicts:
   - stage: S5a
@@ -8896,7 +9697,7 @@ items:
 - key: exr-normal-forms-r2
   kind: exr
   file: 08-completeness.md
-  line: 1334
+  line: 1392
   hash: 458d9daaa285
   verdicts:
   - stage: S5a
@@ -8970,8 +9771,8 @@ items:
 - key: exr-normal-forms-r3
   kind: exr
   file: 08-completeness.md
-  line: 1348
-  hash: 87bf8e5d1e60
+  line: 1406
+  hash: 004e23108f46
   verdicts:
   - stage: S5a
     verdict: correct
@@ -9023,10 +9824,18 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 08:1341-1370; tautology (script); RAA-free derivation valid; look-alike tool named
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 004e23108f46
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
+      Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
+      (p,not q |- not(p->q); q |- p or q) checked'
 - key: def-literal
   kind: def
   file: 09-normal-forms.md
-  line: 24
+  line: 22
   hash: 7e972d0fc283
   verdicts:
   - stage: S5a
@@ -9070,7 +9879,7 @@ items:
 - key: def-dnf
   kind: def
   file: 09-normal-forms.md
-  line: 39
+  line: 37
   hash: 75e08570cdea
   verdicts:
   - stage: S5a
@@ -9113,7 +9922,7 @@ items:
 - key: def-cnf
   kind: def
   file: 09-normal-forms.md
-  line: 45
+  line: 43
   hash: f49149f55c1a
   verdicts:
   - stage: S5a
@@ -9155,7 +9964,7 @@ items:
 - key: check:09-normal-forms:1
   kind: check
   file: 09-normal-forms.md
-  line: 68
+  line: 66
   hash: ee02e658ce6b
   verdicts:
   - stage: S5a
@@ -9206,8 +10015,8 @@ items:
 - key: exm-dnf-exclusive-or
   kind: exm
   file: 09-normal-forms.md
-  line: 88
-  hash: 0e3ec8ac2fbc
+  line: 86
+  hash: 45bfa4f827e3
   verdicts:
   - stage: S5a
     verdict: correct
@@ -9245,10 +10054,18 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 09:88-100; the minterms of rows TF and FT; all four rows checked
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 45bfa4f827e3
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
+      read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
+      monotonicity) checked'
 - key: thm-dnf
   kind: thm
   file: 09-normal-forms.md
-  line: 104
+  line: 102
   hash: 98ac4b13c65d
   verdicts:
   - stage: S5a
@@ -9290,8 +10107,8 @@ items:
 - key: proof:thm-dnf
   kind: proof
   file: 09-normal-forms.md
-  line: 114
-  hash: feadd4a4f74e
+  line: 112
+  hash: c6f7b5683127
   verdicts:
   - stage: S5a
     verdict: correct
@@ -9331,10 +10148,18 @@ items:
     model: claude-opus-5-5
     evidence: 09:114-124; it uses lem-coincidence, eq-many-term-values and eq-row-conjunct; the 2^n rows,
       the existence of a valuation and atoms(¬φ)=atoms(φ) are all ledgered (09:858-860)
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: c6f7b5683127
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
+      read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
+      monotonicity) checked'
 - key: thm-cnf
   kind: thm
   file: 09-normal-forms.md
-  line: 138
+  line: 142
   hash: 9f4dd8898d0c
   verdicts:
   - stage: S5a
@@ -9407,8 +10232,8 @@ items:
 - key: proof:thm-cnf
   kind: proof
   file: 09-normal-forms.md
-  line: 148
-  hash: 4f8c19909c01
+  line: 152
+  hash: 2d677f89b0e0
   verdicts:
   - stage: S5a
     verdict: correct
@@ -9458,10 +10283,18 @@ items:
       (line 15): the long conjunction K, the disjunction K_i combined with the opposite-literal fact from
       def-literal (line 30), the conjunction C_i, and the long disjunction. So ''used at each step'' is
       accurate and the S5b finding (three vs four uses) is resolved. The atom clause follows from thm-dn'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 2d677f89b0e0
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
+      read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
+      monotonicity) checked'
 - key: check:09-normal-forms:2
   kind: check
   file: 09-normal-forms.md
-  line: 166
+  line: 174
   hash: 95b63c3c4af2
   verdicts:
   - stage: S5a
@@ -9512,8 +10345,8 @@ items:
 - key: exm-normal-forms-two-routes
   kind: exm
   file: 09-normal-forms.md
-  line: 176
-  hash: fcf883c3af06
+  line: 191
+  hash: 27f928e97001
   verdicts:
   - stage: S5a
     verdict: minor
@@ -9568,10 +10401,18 @@ items:
     evidence: 09:168-210; I recomputed all 8 rows of the table; the rewriting steps cite the right letters
       of prp-standard-equivalences (05:206-218); the absorption of the tautologous clause is ledgered
       inline (09:863)
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 27f928e97001
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
+      read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
+      monotonicity) checked'
 - key: prp-cnf-validity
   kind: prp
   file: 09-normal-forms.md
-  line: 228
+  line: 243
   hash: 4911e5219143
   verdicts:
   - stage: S5a
@@ -9613,8 +10454,8 @@ items:
 - key: proof:prp-cnf-validity
   kind: proof
   file: 09-normal-forms.md
-  line: 243
-  hash: 0c32e16f868d
+  line: 258
+  hash: adc06670e3e8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -9661,11 +10502,19 @@ items:
     model: claude-opus-5-5
     evidence: 09:235-247; the valuation is well defined as argued; every step cites eq-many-term-values
       or def-truth-value
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: adc06670e3e8
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
+      read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
+      monotonicity) checked'
 - key: exm-cnf-validity-glance
   kind: exm
   file: 09-normal-forms.md
-  line: 263
-  hash: ce41aa0cd08f
+  line: 282
+  hash: 016fbda3d1c0
   verdicts:
   - stage: S5a
     verdict: correct
@@ -9725,10 +10574,18 @@ items:
     model: claude-opus-5-5
     evidence: 09:255-270; the pairs are correct; 4 atoms give 16 rows; the refuting row s=r=T, q=F makes
       the third clause F
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 016fbda3d1c0
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
+      read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
+      monotonicity) checked'
 - key: prp-more-equivalences
   kind: prp
   file: 09-normal-forms.md
-  line: 284
+  line: 303
   hash: 8d7b91a7d817
   verdicts:
   - stage: S5a
@@ -9748,8 +10605,8 @@ items:
 - key: proof:prp-more-equivalences
   kind: proof
   file: 09-normal-forms.md
-  line: 299
-  hash: bbcf0268de28
+  line: 318
+  hash: 261f8e11eb6d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -9765,11 +10622,19 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 09:290-312; I checked both tables entry by entry; (V1),(V2) give v(⊥)=F and v(¬⊥)=T (04:84-85)
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 261f8e11eb6d
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
+      read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
+      monotonicity) checked'
 - key: exm-simplify-by-calculation
   kind: exm
   file: 09-normal-forms.md
-  line: 322
-  hash: 482945bae14e
+  line: 341
+  hash: 39937efcd453
   verdicts:
   - stage: S5a
     verdict: correct
@@ -9787,11 +10652,19 @@ items:
     model: claude-opus-5-5
     evidence: 09:314-332; step 2 is (g) second form read right to left with φ=¬p, ψ=q, χ=¬q (05:213);
       steps 3 and 4 are prp-more-equivalences (c) and (a)
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 39937efcd453
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
+      read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
+      monotonicity) checked'
 - key: check:09-normal-forms:3
   kind: check
   file: 09-normal-forms.md
-  line: 342
-  hash: 2d0c558a2b21
+  line: 361
+  hash: 87591dce7849
   verdicts:
   - stage: S5a
     verdict: correct
@@ -9817,11 +10690,19 @@ items:
       right to left (05-entailment-and-equivalence.md:218). Then ≡ p∨⊥ by prp-more-equivalences (c) first
       form inside, via lem-replacement. Then ≡ p by (a) second form. Every citation checked and the result
       p is correct.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 87591dce7849
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
+      read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
+      monotonicity) checked'
 - key: def-occurrence-polarity
   kind: def
   file: 09-normal-forms.md
-  line: 354
-  hash: e9a651ebe18f
+  line: 379
+  hash: d06c9958852b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -9839,10 +10720,18 @@ items:
     model: claude-opus-5-5
     evidence: 09:338-342; occurrence is defined in 4.5 (05:362) and unique readability is in 4.3 (03:216),
       as cited; the figure's signs for (¬p→q)∧¬r are correct
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: d06c9958852b
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
+      read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
+      monotonicity) checked'
 - key: thm-monotonicity
   kind: thm
   file: 09-normal-forms.md
-  line: 382
+  line: 412
   hash: 5bbdf57133ba
   verdicts:
   - stage: S5a
@@ -9864,8 +10753,8 @@ items:
 - key: proof:thm-monotonicity
   kind: proof
   file: 09-normal-forms.md
-  line: 395
-  hash: b048bf8363e1
+  line: 425
+  hash: d49ee541052b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -9884,10 +10773,18 @@ items:
     model: claude-opus-5-5
     evidence: 09:378-396; all the cases are handled; the monotone and antitone facts for V3-V5 are ledgered
       inline (09:874)
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: d49ee541052b
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
+      read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
+      monotonicity) checked'
 - key: check:09-normal-forms:4
   kind: check
   file: 09-normal-forms.md
-  line: 414
+  line: 453
   hash: ec96b5d65ad7
   verdicts:
   - stage: S8
@@ -9900,7 +10797,7 @@ items:
 - key: def-adequate
   kind: def
   file: 09-normal-forms.md
-  line: 438
+  line: 483
   hash: a41e6e70d28b
   verdicts:
   - stage: S5a
@@ -9942,7 +10839,7 @@ items:
 - key: check:09-normal-forms:5
   kind: check
   file: 09-normal-forms.md
-  line: 458
+  line: 503
   hash: 72fbf1ba7fb7
   verdicts:
   - stage: S8
@@ -9955,7 +10852,7 @@ items:
 - key: thm-adequate-connectives
   kind: thm
   file: 09-normal-forms.md
-  line: 466
+  line: 511
   hash: 8b63dbcfaa6d
   verdicts:
   - stage: S5a
@@ -9997,8 +10894,8 @@ items:
 - key: proof:thm-adequate-connectives
   kind: proof
   file: 09-normal-forms.md
-  line: 479
-  hash: 355044c332bd
+  line: 524
+  hash: 34d384fe330c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -10060,10 +10957,18 @@ items:
     model: claude-opus-5-5
     evidence: 09:463-491; the DNF construction for any f; the Claim's value cases agree with V2-V4; (b)
       concludes from v_T, with the conclusion of the implication true (matching 04:716)
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 34d384fe330c
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
+      read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
+      monotonicity) checked'
 - key: exr-normal-forms-a1
   kind: exr
   file: 09-normal-forms.md
-  line: 521
+  line: 574
   hash: caa2a9de6430
   verdicts:
   - stage: S5a
@@ -10127,8 +11032,8 @@ items:
 - key: exr-normal-forms-a2
   kind: exr
   file: 09-normal-forms.md
-  line: 545
-  hash: d9bc2549abb0
+  line: 598
+  hash: d035f054eb9c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -10152,11 +11057,19 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 09:550-574; equivalences (a)-(d),(i),(j) checked by script; signs (e)-(g) follow def-occurrence-polarity
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: d035f054eb9c
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
+      read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
+      monotonicity) checked'
 - key: exr-normal-forms-b1
   kind: exr
   file: 09-normal-forms.md
-  line: 594
-  hash: 4a5742169354
+  line: 647
+  hash: 5e4c2d1a03c5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -10216,10 +11129,18 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 09:590-596; all DNF/CNF equivalences checked by script; the row checks are right
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 5e4c2d1a03c5
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
+      read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
+      monotonicity) checked'
 - key: exr-normal-forms-b2
   kind: exr
   file: 09-normal-forms.md
-  line: 614
+  line: 667
   hash: 7e81ab6a0ccf
   verdicts:
   - stage: S5a
@@ -10275,8 +11196,8 @@ items:
 - key: exr-normal-forms-b3
   kind: exr
   file: 09-normal-forms.md
-  line: 637
-  hash: 516adfd2dd75
+  line: 690
+  hash: c196d15bde36
   verdicts:
   - stage: S5a
     verdict: correct
@@ -10344,11 +11265,19 @@ items:
       clause that omits an atom is T in two rows that differ there, and one of them has even parity, so
       the DNF would be T on an even row. So every useful clause is a full minterm, T in one row, and four
       T-r
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: c196d15bde36
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
+      read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
+      monotonicity) checked'
 - key: exr-normal-forms-c1
   kind: exr
   file: 09-normal-forms.md
-  line: 655
-  hash: 862da60e834f
+  line: 715
+  hash: d876bc26a3f0
   verdicts:
   - stage: S5a
     verdict: correct
@@ -10435,10 +11364,18 @@ items:
       connectives is noted. The revised scheme awards the 3 points for any two equivalences expressing
       an adequate set from thm-adequate-connectives (a), with the NAND/∧ pair given only as an example.
       A route through {¬,∨'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: d876bc26a3f0
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
+      read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
+      monotonicity) checked'
 - key: exr-normal-forms-c2
   kind: exr
   file: 09-normal-forms.md
-  line: 683
+  line: 747
   hash: 23ea3bfa9772
   verdicts:
   - stage: S5a
@@ -10521,8 +11458,8 @@ items:
 - key: exr-normal-forms-c4
   kind: exr
   file: 09-normal-forms.md
-  line: 721
-  hash: 9ec0b0de4e35
+  line: 785
+  hash: d454a2eef71d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -10589,11 +11526,19 @@ items:
       TFF, FTT, and the DNF and CNF checks on those rows are right. The table-route clause ¬p∨¬q∨r for
       row TTF is right. The scheme''s first 2 points now also go to ''the T-rows and F-rows read off a
       correc'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: d454a2eef71d
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
+      read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
+      monotonicity) checked'
 - key: exr-normal-forms-c5
   kind: exr
   file: 09-normal-forms.md
-  line: 771
-  hash: 14d66cf9b1f7
+  line: 835
+  hash: 9c128682e836
   verdicts:
   - stage: S5a
     verdict: correct
@@ -10630,11 +11575,19 @@ items:
       by NOTATION.md:121. (a) uses De Morgan, prp-standard-equivalences (b). (b) uses distributivity (g),
       first form. In (c) the backward-from-F argument is correct, and so is the step from the formula
       to collection
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 9c128682e836
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
+      read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
+      monotonicity) checked'
 - key: exr-normal-forms-c6
   kind: exr
   file: 09-normal-forms.md
-  line: 799
-  hash: 55e5fd5fa2a7
+  line: 863
+  hash: 573c707ec7be
   verdicts:
   - stage: S5a
     verdict: minor
@@ -10695,10 +11648,18 @@ items:
       #φ=0: the result is p_1∧¬p_1 (or p∧¬p), a conjunctive clause but no minterm. That justifies the
       restriction to satisfiable φ. Both cited labels exist and say what is claimed. The marking scheme
       matches the parts.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 573c707ec7be
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
+      read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
+      monotonicity) checked'
 - key: exr-normal-forms-c7
   kind: exr
   file: 09-normal-forms.md
-  line: 827
+  line: 891
   hash: b07268551655
   verdicts:
   - stage: S5a
@@ -10806,7 +11767,7 @@ items:
   kind: proof
   file: 10-compactness.md
   line: 46
-  hash: f57f9b792d3c
+  hash: fece976b2c64
   verdicts:
   - stage: S5a
     verdict: minor
@@ -10834,10 +11795,18 @@ items:
       per length holds. 10:51 now says each stage n lists at least a_n, which is new because earlier stages
       had only a_1..a_{n-1}. That is true and resolves the ''may list nothing new'' finding. Coverage:
       stage max{l,m} >= 1 works, since atoms count as single symbols (len, 03:353).'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: fece976b2c64
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, sequents of lem-connective-rows
+      written out, classical remark in For instructors fold; Lindenbaum, truth lemma, completeness and
+      compactness proofs unchanged'
 - key: lem-lindenbaum
   kind: lem
   file: 10-compactness.md
-  line: 67
+  line: 68
   hash: 72455e1be8b0
   verdicts:
   - stage: S5a
@@ -10859,8 +11828,8 @@ items:
 - key: proof:lem-lindenbaum
   kind: proof
   file: 10-compactness.md
-  line: 77
-  hash: 1b9877ab98ce
+  line: 78
+  hash: d4a204f22620
   verdicts:
   - stage: S5a
     verdict: minor
@@ -10889,10 +11858,18 @@ items:
       (02:21) with the key step (10:65). 10:91 now says 'N = 0 if the list is empty', so a derivation
       with no premises gives Δ_0 = Γ ⊢ ⊥, which contradicts consistency. The empty-list finding is resolved.
       The ledger has a new line for the maximum of a finite set (F2.2 prp-finite-max) and cites the 'recursion;
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: d4a204f22620
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, sequents of lem-connective-rows
+      written out, classical remark in For instructors fold; Lindenbaum, truth lemma, completeness and
+      compactness proofs unchanged'
 - key: check:10-compactness:2
   kind: check
   file: 10-compactness.md
-  line: 96
+  line: 98
   hash: 8f550c1bd629
   verdicts:
   - stage: S5a
@@ -10912,7 +11889,7 @@ items:
 - key: lem-maximal-consistent
   kind: lem
   file: 10-compactness.md
-  line: 108
+  line: 110
   hash: a65576ec9fdf
   verdicts:
   - stage: S5a
@@ -10932,8 +11909,8 @@ items:
 - key: proof:lem-maximal-consistent
   kind: proof
   file: 10-compactness.md
-  line: 127
-  hash: 29a4c29c57cb
+  line: 129
+  hash: 18f305922126
   verdicts:
   - stage: S5a
     verdict: correct
@@ -10951,10 +11928,18 @@ items:
     model: claude-opus-5-5
     evidence: 10:127-143. (∨3), (→1), (→2) and (↔1)-(↔4) checked against lem-connective-rows (08:46-58).
       Their premises match how the proof uses them.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 18f305922126
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, sequents of lem-connective-rows
+      written out, classical remark in For instructors fold; Lindenbaum, truth lemma, completeness and
+      compactness proofs unchanged'
 - key: lem-truth-lemma
   kind: lem
   file: 10-compactness.md
-  line: 148
+  line: 150
   hash: df960a6cf9b2
   verdicts:
   - stage: S5a
@@ -10974,8 +11959,8 @@ items:
 - key: proof:lem-truth-lemma
   kind: proof
   file: 10-compactness.md
-  line: 158
-  hash: 9b6f1cc518bc
+  line: 160
+  hash: 64048003d290
   verdicts:
   - stage: S5a
     verdict: correct
@@ -10993,10 +11978,18 @@ items:
     model: claude-opus-5-5
     evidence: 10:158-166. (V1)-(V3) are the clause names in 04:114. The ⊥ case uses lem-maximal-consistent
       (b). Checked.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 64048003d290
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, sequents of lem-connective-rows
+      written out, classical remark in For instructors fold; Lindenbaum, truth lemma, completeness and
+      compactness proofs unchanged'
 - key: thm-completeness-infinite
   kind: thm
   file: 10-compactness.md
-  line: 170
+  line: 176
   hash: ea6673eb2d88
   verdicts:
   - stage: S5a
@@ -11016,8 +12009,8 @@ items:
 - key: proof:thm-completeness-infinite
   kind: proof
   file: 10-compactness.md
-  line: 180
-  hash: cb1f55960112
+  line: 186
+  hash: be1655525df4
   verdicts:
   - stage: S5a
     verdict: correct
@@ -11035,10 +12028,18 @@ items:
     model: claude-opus-5-5
     evidence: 10:180-184. The RAA step, the Lindenbaum extension and the truth lemma are all cited. The
       equivalence argument via (V1) is correct in both directions.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: be1655525df4
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, sequents of lem-connective-rows
+      written out, classical remark in For instructors fold; Lindenbaum, truth lemma, completeness and
+      compactness proofs unchanged'
 - key: thm-compactness
   kind: thm
   file: 10-compactness.md
-  line: 194
+  line: 208
   hash: e91405f94e16
   verdicts:
   - stage: S5a
@@ -11058,8 +12059,8 @@ items:
 - key: proof:thm-compactness
   kind: proof
   file: 10-compactness.md
-  line: 200
-  hash: 5988be9bead3
+  line: 214
+  hash: 8f166dac9976
   verdicts:
   - stage: S5a
     verdict: correct
@@ -11077,11 +12078,19 @@ items:
     model: claude-opus-5-5
     evidence: 10:200-204. 'Satisfiable ⇒ consistent' is from Section 4.7 (ledger 10:431). Section 4.5's
       reduction exists at 05:93. Each step of the iff chain checked.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 8f166dac9976
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, sequents of lem-connective-rows
+      written out, classical remark in For instructors fold; Lindenbaum, truth lemma, completeness and
+      compactness proofs unchanged'
 - key: exm-compactness-chain
   kind: exm
   file: 10-compactness.md
-  line: 206
-  hash: b17837e5d54a
+  line: 220
+  hash: 66d18a139e34
   verdicts:
   - stage: S5a
     verdict: minor
@@ -11110,10 +12119,18 @@ items:
       from another number' and the phrasing used at 03:300/306. The intro (10:5) now indexes the atoms
       by n >= 1. The ⊢ p_3 derivation (two →E) and the ⊨ argument are right. The earlier finding is resolved,
       and the same fix is made in B-level 10:218 (a).
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 66d18a139e34
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, sequents of lem-connective-rows
+      written out, classical remark in For instructors fold; Lindenbaum, truth lemma, completeness and
+      compactness proofs unchanged'
 - key: exr-compactness-a1
   kind: exr
   file: 10-compactness.md
-  line: 239
+  line: 253
   hash: e3fbec8d3af0
   verdicts:
   - stage: S5a
@@ -11140,8 +12157,8 @@ items:
 - key: exr-compactness-a2
   kind: exr
   file: 10-compactness.md
-  line: 263
-  hash: 40344d1b05d6
+  line: 277
+  hash: f6812c1c70a9
   verdicts:
   - stage: S5a
     verdict: correct
@@ -11177,11 +12194,19 @@ items:
       p∨q∈Δ iff q∈Δ; (j) p, q, ⊥ = 3; (k) No, by @thm-compactness''s second sentence (10:197); (l) the
       alternating row works. The preamble now ends with ''and end with one more collection to judge'',
       which matches (l)'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: f6812c1c70a9
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, sequents of lem-connective-rows
+      written out, classical remark in For instructors fold; Lindenbaum, truth lemma, completeness and
+      compactness proofs unchanged'
 - key: exr-compactness-b1
   kind: exr
   file: 10-compactness.md
-  line: 312
-  hash: e6e158112634
+  line: 324
+  hash: af43b18678ef
   verdicts:
   - stage: S5a
     verdict: correct
@@ -11206,11 +12231,19 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 10:318-335; the four stages and v_Δ (p F, q T) are right; worked by the Quick check at 10:96
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: af43b18678ef
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, sequents of lem-connective-rows
+      written out, classical remark in For instructors fold; Lindenbaum, truth lemma, completeness and
+      compactness proofs unchanged'
 - key: exr-compactness-b2
   kind: exr
   file: 10-compactness.md
-  line: 337
-  hash: bc75ae2920a6
+  line: 349
+  hash: fe38f9c52a0e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -11233,11 +12266,19 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 10:343-352; the proof is correct (it repeats the fold proof at 10:140)
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: fe38f9c52a0e
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, sequents of lem-connective-rows
+      written out, classical remark in For instructors fold; Lindenbaum, truth lemma, completeness and
+      compactness proofs unchanged'
 - key: exr-compactness-c1
   kind: exr
   file: 10-compactness.md
-  line: 356
-  hash: 6be228ae8a3e
+  line: 368
+  hash: 3eba3b76c173
   verdicts:
   - stage: S5a
     verdict: correct
@@ -11274,10 +12315,18 @@ items:
       The ledger drops the F2.3 ''finite sets'' promise for everyday finiteness, which is consistent with
       10:5, so no unrecorded promise remains. The solution checks: a satisfying valuation gives exactly
       one color per v'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 3eba3b76c173
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, sequents of lem-connective-rows
+      written out, classical remark in For instructors fold; Lindenbaum, truth lemma, completeness and
+      compactness proofs unchanged'
 - key: exr-compactness-c2
   kind: exr
   file: 10-compactness.md
-  line: 385
+  line: 400
   hash: 602fe7e13b0c
   verdicts:
   - stage: S5a

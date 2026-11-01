@@ -21,15 +21,23 @@ The plan has two ideas, one per row and one for all the rows together.
 1. **One row gives one derivation.** Fix a row of the truth table, that is, a valuation \( v \). Write each atom as it stands in that row: \( p \) if \( v \) makes \( p \) true, \( \neg p \) if \( v \) makes it false. From these signed atoms we will derive the formula \( \psi \) if \( \psi \) is true in the row, and \( \neg\psi \) if it is false. The derivation climbs the parse tree of \( \psi \), one connective at a time.
 2. **The rows are glued by excluded middle.** If \( \Gamma \models \psi \), the first idea gives \( \psi \) from \( \Gamma \) and the signed atoms of **each** row. Two rows that differ only at the atom \( p \) have derivations from "\( \ldots, p \)" and from "\( \ldots, \neg p \)". The rule \( \rulename{\vee E} \) applied to \( p \vee \neg p \) merges them into one derivation that no longer mentions \( p \). Removing the atoms one at a time leaves a derivation from \( \Gamma \) alone.
 
-We keep the premises \( \Gamma \) throughout, and we isolate the two ingredients as lemmas so that each can be checked on its own. Before either, we need a little bookkeeping about derivations.
+The premises \( \Gamma \) stay in place throughout. Each of the two ideas becomes a lemma, which can be checked on its own. First we recall how derivations combine.
 
-::: {.second-reading title="Where the route comes from"}
+::: {.second-reading title="For instructors"}
 The first idea is known as Kalmár's lemma, and gluing rows by excluded middle is the standard way to finish; the route is the classical one.
 :::
 
 ## Bookkeeping: adding premises and chaining derivations
 
-In Chapter 2 we learned to use a proved sequent as a single line (@def-derived-rule), and Section 2.3 proved what that gives, @lem-weakening-cut: (a) extra premises never hurt; (b) a statement already derived may be used as a premise; (c) a sequent already proved may be applied to statements already derived. The completeness proof uses (a) and (c) dozens of times. They also made Step 1 of the proof of @thm-soundness honest: for whole derivations, part (c) is the precise form of "abbreviates".
+In Chapter 2 we learned to use a proved sequent as a single line (@def-derived-rule). Section 2.3 proved what that gives, in @lem-weakening-cut:
+
+::: {.enumerate options="label=(\alph*)"}
+1. extra premises never hurt;
+2. a statement already derived may be used as a premise;
+3. a sequent already proved may be applied to statements already derived.
+:::
+
+Part (a) is called weakening, and part (c) chaining. The completeness proof uses both dozens of times. Part (c) also underlies Step 1 of the proof of @thm-soundness: for whole derivations, it says exactly what "a derived rule abbreviates a derivation" means.
 
 ::: {.check}
 Suppose \( \Gamma \vdash \alpha \) and \( \Gamma \vdash \neg\alpha \). Which part of @lem-weakening-cut, applied to which proved sequent, gives \( \Gamma \vdash \chi \) for every formula \( \chi \)?
@@ -41,7 +49,7 @@ Part (c) with \( m = 2 \), \( \alpha_1 = \alpha \), \( \alpha_2 = \neg\alpha \) 
 
 ## The rules prove their own truth tables
 
-Each line of the truth table of a connective says something like "with \( \alpha \) true and \( \beta \) false, \( \alpha \to \beta \) comes out false". Read with signs, that line is a sequent: from \( \alpha \) and \( \neg\beta \), conclude \( \neg(\alpha \to \beta) \). If every such sequent is derivable, then the rules know the truth tables. This is the key to the first idea of the plan. Section 4.4 began by reading the tables off the rules; the lemma below makes that reading exact: every line of every table is a derivable sequent.
+Each line of the truth table of a connective says something like "with \( \alpha \) true and \( \beta \) false, \( \alpha \to \beta \) comes out false". Read with signs, that line is a sequent: from \( \alpha \) and \( \neg\beta \), conclude \( \neg(\alpha \to \beta) \). If every such sequent is derivable, then the rules know the truth tables. This is the key to the first idea of the plan. Section 4.4 began by reading the tables off the rules. The next lemma makes that reading exact: every line of every table is a derivable sequent.
 
 ::: {#lem-connective-rows}
 [The Rules Prove the Truth Tables]
@@ -74,7 +82,7 @@ Each sequent has as premises **only the parts it needs**, each as itself or nega
 Most of the sequents are already in the book: rules of Chapter 1, or results of Chapter 2 with \( \alpha \) and \( \beta \) put in for the letters. The others are short derivations of the kinds Chapter 2 practiced: a box that repeats a premise, or a \( \rulename{\neg I} \) box that reaches a clash. The only thing to watch is that no step, and no cited result, uses \( \rulename{RAA} \).
 :::
 
-The derivations, with a check that none uses \( \rulename{RAA} \), are in the fold below.
+The proof gives all fifteen derivations and checks that none uses \( \rulename{RAA} \).
 
 ::: {.second-reading title="The fifteen derivations"}
 ::: {.proof}
@@ -100,7 +108,7 @@ The table lists, for each sequent, the rows of the truth table it covers (by @de
 
 In the second column, "F, anything give F" means: if \( \alpha \) is F, then \( \alpha \wedge \beta \) is F whatever the value of \( \beta \).
 
-The seven printed derivations follow. First \( ({\to}2) \) and \( ({\to}3) \) (the first is the derivation of @exr-proving-an-implication-b2 (a), printed again because a proof does not rest on an exercise): an implication whose conclusion we already have, and the refutation of an implication by a true hypothesis with a false conclusion.
+The seven printed derivations follow. First come \( ({\to}2) \) and \( ({\to}3) \). The first is an implication whose conclusion we already have; it is the same derivation as in @exr-proving-an-implication-b2 (a). The second refutes an implication by a true hypothesis with a false conclusion.
 
 ```{=latex}
 \begin{center}
@@ -162,7 +170,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Then \( ({\leftrightarrow}3) \), \( ({\leftrightarrow}4) \) and \( (\bot 1) \). The first two assume the biconditional and use it in the direction that clashes with a premise; the last is a box whose assumption \( \bot \) is already the \( \bot \) that \( \rulename{\neg I} \) asks for, the degenerate box of Section 2.2.
+Then come \( ({\leftrightarrow}3) \), \( ({\leftrightarrow}4) \) and \( (\bot 1) \). The first two assume the biconditional and use it in the direction that clashes with a premise. The last is a one-line box, as in Section 2.2: its assumption \( \bot \) is already the \( \bot \) that \( \rulename{\neg I} \) asks for.
 
 ```{=latex}
 \begin{center}
@@ -201,7 +209,11 @@ $\begin{nd}
 \end{center}
 ```
 
-None of these derivations uses \( \rulename{RAA} \): their boxes close by \( \rulename{{\to}I} \), \( \rulename{\neg I} \) and \( \rulename{{\leftrightarrow}I} \). Nor do the cited results: @prp-vacuous-implication and @exm-double-negation-introduction come from Sections 2.1 and 2.2, before \( \rulename{RAA} \) was introduced, and Chapter 2 derived De Morgan's laws (b) and (c) without it (it says so right after the derivations of @prp-de-morgan). This proves the lemma.
+None of these derivations uses \( \rulename{RAA} \): their boxes close by \( \rulename{{\to}I} \), \( \rulename{\neg I} \) and \( \rulename{{\leftrightarrow}I} \). Nor do the cited results. Vacuous implication and double-negation introduction come from Sections 2.1 and 2.2, before \( \rulename{RAA} \) was introduced. Chapter 2 derived De Morgan's laws (b) and (c) without it, as it notes right after the derivations of @prp-de-morgan. This proves the lemma.
+
+::: {.uses}
+@prp-vacuous-implication (proved before RAA); @exm-double-negation-introduction (proved before RAA).
+:::
 :::
 :::
 
@@ -241,7 +253,7 @@ For a valuation \( v \) and a formula \( \varphi \), the **signed formula** \( \
 \]
 The superscript \( v \) is a label naming the row, not an exponent. In particular, for an atom \( p \), the **signed atom** \( p^{v} \) is \( p \) or \( \neg p \). For example, if \( v(p) = \mathrm{T} \) and \( v(q) = \mathrm{F} \), then \( p^{v} = p \), \( q^{v} = \neg q \), \( (p \to q)^{v} = \neg(p \to q) \) and \( (q \to p)^{v} = q \to p \). Whatever \( v \) is, \( v(\varphi^{v}) = \mathrm{T} \): the signed formula is always the true one of \( \varphi \) and \( \neg\varphi \), by the clause for \( \neg \) in @def-truth-value.
 
-The signed atoms \( p_1^{v}, \dots, p_n^{v} \) describe the row of \( v \) completely, as far as \( p_1, \dots, p_n \) go. The next lemma says they are enough premises to derive the signed version of any formula built from these atoms.
+The signed atoms \( p_1^{v}, \dots, p_n^{v} \) describe the row of \( v \) completely, as far as \( p_1, \dots, p_n \) go. The next lemma says they are enough premises to derive the signed version of any formula built from these atoms. For instance, in the row with \( p \) true and \( q \) false, the signed atoms are \( p \) and \( \neg q \), and \( p \to q \) is false. The lemma will give \( p, \neg q \vdash \neg(p \to q) \).
 
 ::: {#lem-truth-table-line}
 [One Row of the Truth Table Is Derivable]
@@ -252,10 +264,14 @@ p_1^{v}, \dots, p_n^{v} \vdash \varphi^{v} .
 \]
 :::
 
-In words: in each row of the truth table of \( \varphi \), the value of \( \varphi \) can be derived from the values of its atoms, where "value T" is written as the formula and "value F" as its negation.
+In words: write "value T" as the formula itself and "value F" as its negation. Then, in each row of the truth table of \( \varphi \), the value of \( \varphi \) can be derived from the values of its atoms.
 
 ::: {.idea}
-Climb the parse tree. At an atom, \( \varphi^{v} \) is one of the premises. At a connective, the induction hypothesis gives the signed parts \( \alpha^{v} \), \( \beta^{v} \), and @lem-connective-rows has a sequent from (some of) those signed parts to the signed whole. So structural induction (@thm-structural-induction), with @lem-weakening-cut (c) to chain, does the whole job. The only care is to pick, for each pair of values, the row whose premises are the signs we actually have.
+Climb the parse tree. At an atom, \( \varphi^{v} \) is one of the premises. At a connective, the induction hypothesis gives the signed parts \( \alpha^{v} \), \( \beta^{v} \), and @lem-connective-rows has a sequent from (some of) those signed parts to the signed whole. So structural induction does the whole job, with chaining to combine the steps. The only care is to pick, for each pair of values, the row whose premises are the signs we actually have.
+
+::: {.uses}
+@thm-structural-induction (induction on formulas); @lem-weakening-cut (chaining).
+:::
 :::
 
 ::: {.proof}
@@ -263,15 +279,15 @@ Fix the atoms \( p_1, \dots, p_n \) and the valuation \( v \), and write \( \Sig
 
 > if every atom of \( \varphi \) is among \( p_1, \dots, p_n \), then \( \Sigma \vdash \varphi^{v} \).
 
-Every atom of an immediate part \( \alpha \) or \( \beta \) of a formula is an atom of the formula itself, so when \( \varphi \) satisfies the "if", so do its immediate parts, and the induction hypothesis applies to them.
+Let \( \alpha \) or \( \beta \) be an immediate part of a formula. Every atom of that part is an atom of the formula itself. So when \( \varphi \) satisfies the "if", so do its immediate parts, and the induction hypothesis applies to them.
 
 *Atoms.* Let \( \varphi \) be an atom among \( p_1, \dots, p_n \), say \( \varphi = p_i \). Then \( \varphi^{v} = p_i^{v} \) is a member of \( \Sigma \), and the one-line derivation whose only line is the premise \( p_i^{v} \) shows \( \Sigma \vdash \varphi^{v} \).
 
-*The formula \( \bot \).* By @def-truth-value, \( v(\bot) = \mathrm{F} \), so \( \bot^{v} = \neg\bot \). By \( (\bot 1) \) of @lem-connective-rows, \( \vdash \neg\bot \), and weakening (@lem-weakening-cut (a)) gives \( \Sigma \vdash \neg\bot \).
+*The formula \( \bot \).* By @def-truth-value, \( v(\bot) = \mathrm{F} \), so \( \bot^{v} = \neg\bot \). By \( (\bot 1) \) of @lem-connective-rows, \( \vdash \neg\bot \). Weakening, part (a) of @lem-weakening-cut, gives \( \Sigma \vdash \neg\bot \).
 
 *Negation.* Let \( \varphi = \neg\alpha \), and assume \( \Sigma \vdash \alpha^{v} \).
 
-- *Case \( v(\alpha) = \mathrm{T} \).* Then \( \alpha^{v} = \alpha \), and \( v(\neg\alpha) = \mathrm{F} \), so \( \varphi^{v} = \neg\neg\alpha \). From \( \Sigma \vdash \alpha \) and \( (\neg 1) \), \( \alpha \vdash \neg\neg\alpha \), chaining (@lem-weakening-cut (c)) gives \( \Sigma \vdash \neg\neg\alpha \).
+- *Case \( v(\alpha) = \mathrm{T} \).* Then \( \alpha^{v} = \alpha \), and \( v(\neg\alpha) = \mathrm{F} \), so \( \varphi^{v} = \neg\neg\alpha \). From \( \Sigma \vdash \alpha \) and \( (\neg 1) \), \( \alpha \vdash \neg\neg\alpha \), chaining gives \( \Sigma \vdash \neg\neg\alpha \).
 - *Case \( v(\alpha) = \mathrm{F} \).* Then \( \alpha^{v} = \neg\alpha \), and \( v(\neg\alpha) = \mathrm{T} \), so \( \varphi^{v} = \neg\alpha = \alpha^{v} \). The hypothesis is already the claim.
 
 *Conjunction.* Let \( \varphi = \alpha \wedge \beta \), and assume \( \Sigma \vdash \alpha^{v} \) and \( \Sigma \vdash \beta^{v} \). By @def-truth-value, \( v(\alpha \wedge \beta) = \mathrm{T} \) exactly when \( v(\alpha) = v(\beta) = \mathrm{T} \).
@@ -286,12 +302,21 @@ Every atom of an immediate part \( \alpha \) or \( \beta \) of a formula is an a
 - *Case \( v(\alpha) = \mathrm{T} \), \( v(\beta) = \mathrm{T} \).* Then \( \varphi^{v} = \alpha \to \beta \) and \( \beta^{v} = \beta \). Chaining \( \Sigma \vdash \beta \) with \( ({\to}2) \), \( \beta \vdash \alpha \to \beta \), gives \( \Sigma \vdash \alpha \to \beta \).
 - *Case \( v(\alpha) = \mathrm{T} \), \( v(\beta) = \mathrm{F} \).* Then \( \varphi^{v} = \neg(\alpha \to \beta) \), \( \alpha^{v} = \alpha \) and \( \beta^{v} = \neg\beta \). Chaining \( \Sigma \vdash \alpha \) and \( \Sigma \vdash \neg\beta \) with \( ({\to}3) \), \( \alpha, \neg\beta \vdash \neg(\alpha \to \beta) \), gives \( \Sigma \vdash \neg(\alpha \to \beta) \).
 
-*Disjunction and biconditional.* These go as for implication. For each pair of values of \( \alpha \) and \( \beta \), the table in the proof of @lem-connective-rows names a sequent whose premises are among \( \alpha^{v} \), \( \beta^{v} \) and whose conclusion is \( \varphi^{v} \): for \( \vee \), \( (\vee 1) \) if \( v(\alpha) = \mathrm{T} \), \( (\vee 2) \) if \( v(\alpha) = \mathrm{F} \) and \( v(\beta) = \mathrm{T} \), \( (\vee 3) \) if both are F; for \( \leftrightarrow \), \( ({\leftrightarrow}1) \) to \( ({\leftrightarrow}4) \) for the value pairs T T, F F, T F, F T. Chaining the induction hypotheses for those premises with that sequent gives \( \Sigma \vdash \varphi^{v} \).
+*Disjunction and biconditional.* These go as for implication. For each pair of values of \( \alpha \) and \( \beta \), the table in the proof of @lem-connective-rows names a sequent. Its premises are among \( \alpha^{v} \), \( \beta^{v} \), and its conclusion is \( \varphi^{v} \):
+
+- for \( \vee \), it is \( (\vee 1) \) if \( v(\alpha) = \mathrm{T} \), \( (\vee 2) \) if \( v(\alpha) = \mathrm{F} \) and \( v(\beta) = \mathrm{T} \), and \( (\vee 3) \) if both are F;
+- for \( \leftrightarrow \), it is \( ({\leftrightarrow}1) \) to \( ({\leftrightarrow}4) \) for the value pairs T T, F F, T F, F T.
+
+Chaining the induction hypotheses for those premises with that sequent gives \( \Sigma \vdash \varphi^{v} \).
 
 The atoms and \( \bot \) have the property, and each formation clause preserves it, so by @thm-structural-induction every formula has it. This proves the lemma.
+
+::: {.uses}
+@lem-weakening-cut (chaining).
+:::
 :::
 
-Each case used the induction hypothesis only for the parts named in the premises of its sequent: the conjunction case with \( \alpha \) false never looked at \( \beta \). That is the economy of @lem-connective-rows at work. The disjunction and biconditional cases are written out in @exr-completeness-c1.
+Each case used the induction hypothesis only for the parts named in the premises of its sequent: the conjunction case with \( \alpha \) false never looked at \( \beta \). This works because each sequent of @lem-connective-rows has only the premises it needs. The disjunction and biconditional cases are written out in @exr-completeness-c1.
 
 Here is the lemma run on one formula, with every chained sequent written as a line.
 
@@ -322,7 +347,7 @@ The premise \( q \) is never cited. It was used only in computing which case app
 :::
 
 ::: {.check}
-Let \( \varphi = p \to \neg q \) and \( v(p) = v(q) = \mathrm{T} \). What sequent does @lem-truth-table-line provide, and which sequent of @lem-connective-rows does the proof use at the root?
+Let \( \varphi = p \to \neg q \) and \( v(p) = v(q) = \mathrm{T} \). What sequent does @lem-truth-table-line provide? Which tagged sequent does its proof use at the root?
 :::
 
 ::: {.solution}
@@ -331,7 +356,7 @@ Here \( v(\neg q) = \mathrm{F} \), so \( v(\varphi) = \mathrm{F} \), and the lem
 
 ## Gluing the rows: splitting on an atom
 
-@lem-truth-table-line derives a formula from the signed atoms of **one** row. A sequent \( \Gamma \vdash \psi \) mentions no row at all. The signed atoms must be removed, and the tool for that is excluded middle.
+@lem-truth-table-line derives a formula from the signed atoms of **one** row. A sequent \( \Gamma \vdash \psi \) mentions no row at all. The signed atoms must be removed, and the tool for that is excluded middle. For instance, \( q, p \vdash p \vee q \) and \( q, \neg p \vdash p \vee q \) both hold, by \( \rulename{\vee I} \) from \( q \). The next lemma removes \( p \) and gives \( q \vdash p \vee q \).
 
 ::: {#lem-atom-splitting}
 [Splitting on an Atom]
@@ -340,9 +365,13 @@ Let \( \Delta \) be a list of formulas, \( p \) an atom and \( \psi \) a formula
 :::
 
 ::: {.idea}
-This is proof by cases on \( p \vee \neg p \). @prp-excluded-middle gives \( p \vee \neg p \) with no premises, and \( \rulename{\vee E} \) (@def-rules-disjunction) needs a box that reaches \( \psi \) from \( p \) and a box that reaches \( \psi \) from \( \neg p \). The two given derivations are exactly the contents of those boxes, once their premise \( p \) (or \( \neg p \)) is replaced by the box's assumption.
+This is proof by cases on \( p \vee \neg p \). @prp-excluded-middle gives \( p \vee \neg p \) with no premises. The rule \( \rulename{\vee E} \) then needs a box that reaches \( \psi \) from \( p \) and a box that reaches \( \psi \) from \( \neg p \). The two given derivations are exactly the contents of those boxes, once their premise \( p \) (or \( \neg p \)) is replaced by the box's assumption.
 
-*Before reading on: this is the only place in the completeness proof where a classical rule enters. Where exactly, and why could the \( \rulename{\neg I} \) of Chapter 2 not do the job?*
+*Before reading on: this is the only place in the completeness proof where a classical rule enters. Find exactly where, and explain to yourself why the \( \rulename{\neg I} \) of Chapter 2 could not do the job.*
+
+::: {.uses}
+@def-rules-disjunction (the rule ∨E).
+:::
 :::
 
 ::: {.proof}
@@ -350,11 +379,11 @@ Let \( D \) be a derivation of \( \psi \) with premises in \( \Delta, p \), and 
 
 1. As premises, every premise of \( D \) or of \( E \) that is a member of \( \Delta \).
 2. The line \( p \vee \neg p \), justified by @prp-excluded-middle (\( \rulename{LEM} \)) with \( p \) for \( P \); it cites nothing.
-3. A box that opens with the assumption \( p \), followed by the lines of \( D \) that are not premises, with their boxes. A citation of a premise of \( D \) that is in \( \Delta \) now cites the premise line of step 1; a citation of the premise \( p \) now cites the assumption. If the last line of \( D \) is itself a premise, the box is shorter: if that premise is \( p \), the box is the assumption alone, which is then its last line; otherwise the box is the assumption followed by \( \psi \), by \( \rulename{R} \), citing the premise line carrying \( \psi \).
+3. A box that opens with the assumption \( p \), followed by the lines of \( D \) that are not premises, with their boxes. A citation of a premise of \( D \) that is in \( \Delta \) now cites the premise line of step 1; a citation of the premise \( p \) now cites the assumption. If the last line of \( D \) is itself a premise, the box is shorter. If that premise is \( p \), the box is the assumption alone, which is then its last line. Otherwise the box is the assumption followed by \( \psi \), by \( \rulename{R} \), citing the premise line carrying \( \psi \).
 4. A second box, built from \( E \) in the same way, opening with the assumption \( \neg p \).
 5. The line \( \psi \), by \( \rulename{\vee E} \), citing line 2 of this list and the two boxes.
 
-This is a derivation (@def-derivation). The premises lie in no box and come first, so they are available everywhere. Inside the first box, the lines of \( D \) keep their boxes, which now sit inside the new box, and they cite the same lines and boxes as before, or a premise line, or the assumption, which is available at every line of its own box. As in the proof of @lem-weakening-cut, each line is still an instance of its rule. The last line of the first box is \( \psi \), and it is a line of that box itself and not of a box inside it: it was the last line of \( D \), which lies in no box of \( D \) (or it is the assumption itself, or the repetition line). The same holds for the second box. Both boxes and the line \( p \vee \neg p \) lie in no box, and neither does the last line, so they are available at it. Hence the last line is an instance of \( \rulename{\vee E} \), and the list is a derivation of \( \psi \) whose premises are all in \( \Delta \). So \( \Delta \vdash \psi \).
+This is a derivation (@def-derivation). The premises lie in no box and come first, so they are available everywhere. Inside the first box, the lines of \( D \) keep their boxes, which now sit inside the new box. They cite the same lines and boxes as before, or a premise line, or the assumption, which is available at every line of its own box. As in the proof of @lem-weakening-cut, each line is still an instance of its rule. The last line of the first box is \( \psi \), and it is a line of that box itself, not of a box inside it. It was the last line of \( D \), which lies in no box of \( D \) (or it is the assumption itself, or the repetition line). The same holds for the second box. Both boxes and the line \( p \vee \neg p \) lie in no box, and neither does the last line, so they are available at it. Hence the last line is an instance of \( \rulename{\vee E} \), and the list is a derivation of \( \psi \) whose premises are all in \( \Delta \). So \( \Delta \vdash \psi \).
 :::
 
 Here is its shape, with \( \Delta \) standing for the premise lines:
@@ -380,7 +409,7 @@ $\begin{nd}[schema]
 \end{center}
 ```
 
-The answer to the prompt: the classical rule enters at line \( i \). @prp-excluded-middle was derived in Chapter 2 with \( \rulename{RAA} \), and nothing else in the proof of this lemma is classical. \( \rulename{\neg I} \) could not replace it: \( \rulename{\neg I} \) produces a negation, and here we need a disjunction with no premises to split on. Nothing in the proof uses that \( p \) is an atom; the lemma holds for any formula in place of \( p \), but atoms are all we shall split on.
+The classical rule enters at line \( i \). @prp-excluded-middle was derived in Chapter 2 with \( \rulename{RAA} \), and nothing else in the proof of this lemma is classical. \( \rulename{\neg I} \) could not replace it: \( \rulename{\neg I} \) produces a negation, and here we need a disjunction with no premises to split on. Nothing in the proof uses that \( p \) is an atom; the lemma holds for any formula in place of \( p \), but atoms are all we shall split on.
 
 ## The completeness theorem
 
@@ -395,26 +424,30 @@ Let \( \Gamma \) be a list of formulas and \( \psi \) a formula. If \( \Gamma \m
 A list is finite, as in @def-derivable. That matters: the proof works with the atoms that occur in \( \Gamma \) and \( \psi \), and it needs them to be finitely many.
 
 ::: {.idea}
-**Step roadmap.** ① List the atoms \( p_1, \dots, p_n \) of \( \Gamma \) and \( \psi \). ② **Claim:** for **every** valuation \( v \), \( \Gamma, p_1^{v}, \dots, p_n^{v} \vdash \psi \). If \( v \) makes all of \( \Gamma \) true, then \( \psi \) is true in that row, and @lem-truth-table-line derives it. If \( v \) makes some premise \( \gamma \) false, the lemma derives \( \neg\gamma \), which clashes with the premise \( \gamma \). ③ Remove the signed atoms one at a time, the last first, by @lem-atom-splitting: an induction on the number of atoms removed. To remove \( p_j \) we need derivations from both \( p_j \) and \( \neg p_j \) with the same other signed atoms: two rows that differ only at \( p_j \). That is why the Claim must hold for every valuation, not just one.
+**Step roadmap.**
+
+- ① List the atoms \( p_1, \dots, p_n \) of \( \Gamma \) and \( \psi \).
+- ② **Claim:** for **every** valuation \( v \), \( \Gamma, p_1^{v}, \dots, p_n^{v} \vdash \psi \). If \( v \) makes all of \( \Gamma \) true, then \( \psi \) is true in that row, and @lem-truth-table-line derives it. If \( v \) makes some premise \( \gamma \) false, the lemma derives \( \neg\gamma \), which clashes with the premise \( \gamma \).
+- ③ Remove the signed atoms one at a time, the last first, by @lem-atom-splitting: an induction on the number of atoms removed. To remove \( p_j \) we need derivations from both \( p_j \) and \( \neg p_j \) with the same other signed atoms: two rows that differ only at \( p_j \). That is why the Claim must hold for every valuation, not just one.
 :::
 
-Let us run the method of the roadmap on the tautology of the opening.
+Here is the method run on the tautology from the start of the section.
 
 
 ::: {#exm-completeness-run}
 [The method on a tautology]
 
-Run the roadmap of @thm-completeness on \( \models (p \to q) \vee (q \to p) \), and write the derivation it produces, citing the sequents of @lem-connective-rows as derived rules.
+Run the roadmap of @thm-completeness on \( \models (p \to q) \vee (q \to p) \). Write the derivation it produces, citing the sequents of @lem-connective-rows as derived rules.
 :::
 
 ::: {.solution}
-Write \( \chi \) for \( (p \to q) \vee (q \to p) \). The list \( \Gamma \) is empty and the atoms are \( p_1 = p \), \( p_2 = q \). Every valuation makes \( \chi \) true (if \( v(q) = \mathrm{T} \) the left side is true; otherwise the right side is), so the Claim ② always falls in its first case (the row makes the premises, here none, true), and @lem-truth-table-line produces four short derivations, one per row:
+Write \( \chi \) for \( (p \to q) \vee (q \to p) \). The list \( \Gamma \) is empty and the atoms are \( p_1 = p \), \( p_2 = q \). Every valuation makes \( \chi \) true: if \( v(q) = \mathrm{T} \) the left side is true, and otherwise the right side is. So the Claim ② always falls in its first case, where the row makes the premises (here none) true. Then @lem-truth-table-line produces four short derivations, one per row:
 
 - \( p, q \vdash \chi \): \( p \to q \) by \( ({\to}2) \) from \( q \), then \( \rulename{\vee I} \);
 - \( p, \neg q \vdash \chi \): \( q \to p \) by \( ({\to}1) \) from \( \neg q \), then \( \rulename{\vee I} \);
 - \( \neg p, q \vdash \chi \) and \( \neg p, \neg q \vdash \chi \): \( p \to q \) by \( ({\to}1) \) from \( \neg p \), then \( \rulename{\vee I} \).
 
-(In the row \( p = \mathrm{F} \), \( q = \mathrm{T} \), both \( ({\to}1) \) and \( ({\to}2) \) would do; the proof of @lem-truth-table-line uses \( ({\to}1) \) whenever \( \alpha \) is false.) ③ first splits on \( q = p_2 \), twice: once with \( p \) and once with \( \neg p \) among the premises. Then it splits on \( p = p_1 \), once. Three uses of @lem-atom-splitting in two rounds. Pasting as in its proof, the last split is the outermost:
+In the row \( p = \mathrm{F} \), \( q = \mathrm{T} \), both \( ({\to}1) \) and \( ({\to}2) \) would do. The proof of @lem-truth-table-line uses \( ({\to}1) \) whenever \( \alpha \) is false. ③ first splits on \( q = p_2 \), twice: once with \( p \) and once with \( \neg p \) among the premises. Then it splits on \( p = p_1 \), once. Three uses of @lem-atom-splitting in two rounds. Pasting as in its proof, the last split is the outermost:
 
 ```{=latex}
 \begin{center}
@@ -474,7 +507,7 @@ $\begin{nd}
 \end{center}
 ```
 
-The derivation has 20 lines. The one found by search in @exr-finding-derivations-c2 has 13, and splits only once. Here the split on \( q \) inside the box of \( \neg p \) (lines 12–19) is wasted: both of its boxes do the same thing, because in the rows with \( p \) false the value of \( q \) does not matter. The proof is a **method** that always works, not a recipe for short derivations; to find a short one, search as in Section 3.1.
+The derivation has 20 lines. The one found by search in @exr-finding-derivations-c2 has 13, and splits only once. Here the split on \( q \) inside the box of \( \neg p \) (lines 12–19) is wasted. Both of its boxes do the same thing, because in the rows with \( p \) false the value of \( q \) does not matter. The proof is a **method** that always works, not a recipe for short derivations; to find a short one, search as in Section 3.1.
 :::
 
 ::: {.check}
@@ -497,9 +530,13 @@ For every valuation \( v \), \( \ \Gamma, p_1^{v}, \dots, p_n^{v} \vdash \psi \)
 ::: {.proofofclaim}
 Let \( v \) be a valuation, and write \( \Sigma \) for \( p_1^{v}, \dots, p_n^{v} \).
 
-*Case 1: \( v(\gamma) = \mathrm{T} \) for every member \( \gamma \) of \( \Gamma \).* Since \( \Gamma \models \psi \), by @def-valid-argument \( v(\psi) = \mathrm{T} \), so \( \psi^{v} = \psi \). Every atom of \( \psi \) is among \( p_1, \dots, p_n \), so @lem-truth-table-line gives \( \Sigma \vdash \psi \), and weakening (@lem-weakening-cut (a)) gives \( \Gamma, \Sigma \vdash \psi \).
+*Case 1: \( v(\gamma) = \mathrm{T} \) for every member \( \gamma \) of \( \Gamma \).* Since \( \Gamma \models \psi \), by @def-valid-argument \( v(\psi) = \mathrm{T} \), so \( \psi^{v} = \psi \). Every atom of \( \psi \) is among \( p_1, \dots, p_n \), so @lem-truth-table-line gives \( \Sigma \vdash \psi \). Weakening then gives \( \Gamma, \Sigma \vdash \psi \).
 
-*Case 2: \( v(\gamma) = \mathrm{F} \) for some member \( \gamma \) of \( \Gamma \).* Then \( \gamma^{v} = \neg\gamma \). Every atom of \( \gamma \) is among \( p_1, \dots, p_n \), so @lem-truth-table-line gives \( \Sigma \vdash \neg\gamma \), and by weakening \( \Gamma, \Sigma \vdash \neg\gamma \). Also \( \Gamma, \Sigma \vdash \gamma \), by the one-line derivation whose only line is the premise \( \gamma \). By @prp-ex-falso, \( \gamma, \neg\gamma \vdash \psi \). Chaining (@lem-weakening-cut (c)) gives \( \Gamma, \Sigma \vdash \psi \).
+*Case 2: \( v(\gamma) = \mathrm{F} \) for some member \( \gamma \) of \( \Gamma \).* Then \( \gamma^{v} = \neg\gamma \). Every atom of \( \gamma \) is among \( p_1, \dots, p_n \), so @lem-truth-table-line gives \( \Sigma \vdash \neg\gamma \), and by weakening \( \Gamma, \Sigma \vdash \neg\gamma \). Also \( \Gamma, \Sigma \vdash \gamma \), by the one-line derivation whose only line is the premise \( \gamma \). By @prp-ex-falso, \( \gamma, \neg\gamma \vdash \psi \). Chaining gives \( \Gamma, \Sigma \vdash \psi \).
+
+::: {.uses}
+@lem-weakening-cut (weakening and chaining).
+:::
 :::
 
 **Step 3.** For each integer \( j \) with \( 0 \le j \le n \), let \( S(j) \) be the statement
@@ -513,7 +550,7 @@ If \( 1 \le j \le n \) and \( S(j) \) holds, then \( S(j - 1) \) holds.
 :::
 
 ::: {.proofofclaim}
-Let \( v \) be a valuation. Let \( v^{+} \) be the valuation that agrees with \( v \) at every atom except that \( v^{+}(p_j) = \mathrm{T} \), and \( v^{-} \) the one that agrees with \( v \) except that \( v^{-}(p_j) = \mathrm{F} \); by @def-valuation, a valuation may assign any value to each atom, so both exist. The atoms \( p_1, \dots, p_{j-1} \) are different from \( p_j \), so \( v^{+} \) and \( v^{-} \) agree with \( v \) on them, and \( p_i^{v^{+}} = p_i^{v^{-}} = p_i^{v} \) for \( i < j \). Also \( p_j^{v^{+}} = p_j \) and \( p_j^{v^{-}} = \neg p_j \). Applying \( S(j) \) to \( v^{+} \) and to \( v^{-} \) gives, with \( \Delta \) standing for the list \( \Gamma, p_1^{v}, \dots, p_{j-1}^{v} \),
+Let \( v \) be a valuation. Let \( v^{+} \) be the valuation that agrees with \( v \) at every atom except that \( v^{+}(p_j) = \mathrm{T} \). Let \( v^{-} \) be the one that agrees with \( v \) except that \( v^{-}(p_j) = \mathrm{F} \). By @def-valuation, a valuation may assign any value to each atom, so both exist. The atoms \( p_1, \dots, p_{j-1} \) are different from \( p_j \), so \( v^{+} \) and \( v^{-} \) agree with \( v \) on them, and \( p_i^{v^{+}} = p_i^{v^{-}} = p_i^{v} \) for \( i < j \). Also \( p_j^{v^{+}} = p_j \) and \( p_j^{v^{-}} = \neg p_j \). Applying \( S(j) \) to \( v^{+} \) and to \( v^{-} \) gives, with \( \Delta \) standing for the list \( \Gamma, p_1^{v}, \dots, p_{j-1}^{v} \),
 \[
 \Delta, p_j \vdash \psi
 \quad\text{and}\quad
@@ -522,7 +559,7 @@ Let \( v \) be a valuation. Let \( v^{+} \) be the valuation that agrees with \(
 By @lem-atom-splitting, \( \Delta \vdash \psi \). Since \( v \) was arbitrary, this is \( S(j - 1) \).
 :::
 
-Step 2 is \( S(n) \). Applying the Claim with \( j = n \), then \( j = n - 1 \), and so on down to \( j = 1 \), removes the signed atoms one at a time and reaches \( S(0) \). This descent is an induction on the number of atoms removed; the fold after the proof writes it out.
+Step 2 is \( S(n) \). Applying the Claim with \( j = n \), then \( j = n - 1 \), and so on down to \( j = 1 \), removes the signed atoms one at a time and reaches \( S(0) \). This descent is an induction on the number of atoms removed, written out in full below.
 
 **Step 4.** \( S(0) \) says that \( \Gamma \vdash \psi \), for every valuation \( v \); there is at least one valuation (for instance the one making every atom true), so \( \Gamma \vdash \psi \). This proves the theorem.
 :::
@@ -550,24 +587,24 @@ In particular, whether \( \Gamma \vdash \psi \) holds can be decided by checking
 :::
 
 ::: {.proof}
-\( (\Rightarrow) \) is @thm-soundness and \( (\Leftarrow) \) is @thm-completeness. For the second sentence, let \( p_1, \dots, p_n \) be the atoms occurring in \( \Gamma \) and \( \psi \). By @lem-coincidence, the values of the members of \( \Gamma \) and of \( \psi \) under a valuation depend only on its values at \( p_1, \dots, p_n \), so \( \Gamma \models \psi \) holds exactly when it holds in each of the \( 2^n \) rows of the joint truth table. That is a finite check, and by the first sentence it decides \( \Gamma \vdash \psi \).
+\( (\Rightarrow) \) is @thm-soundness. \( (\Leftarrow) \) is @thm-completeness. For the second sentence, let \( p_1, \dots, p_n \) be the atoms occurring in \( \Gamma \) and \( \psi \). By @lem-coincidence, the values of the members of \( \Gamma \) and of \( \psi \) under a valuation depend only on its values at \( p_1, \dots, p_n \). So \( \Gamma \models \psi \) holds exactly when it holds in each of the \( 2^n \) rows of the joint truth table. That is a finite check, and by the first sentence it decides \( \Gamma \vdash \psi \).
 :::
 
 So a question that looks as if it needs a search through infinitely many possible derivations can be settled by a finite table. The search for a derivation may still be the quicker way to a **yes**, and one row is the quickest way to a **no** (@cor-refuting-row), but neither is needed.
 
-**Consistent and satisfiable coincide.** Section 4.7 showed that a satisfiable list is consistent. Completeness gives the converse. If \( \Delta \) is unsatisfiable, no row makes \( \Delta \) true, so \( \Delta \models \bot \) (there is no row to check), and \( \Delta \vdash \bot \) by @thm-completeness: \( \Delta \) is inconsistent. So a finite list is consistent exactly when it is satisfiable. The word of Section 3.2 and the word of Section 4.5 pick out the same lists, though one speaks of derivations and the other of rows; Section 3.2's task "derive \( \bot \)" and Section 4.6's search on a list always give the same answer.
+**Consistent and satisfiable coincide.** Section 4.7 showed that a satisfiable list is consistent. Completeness gives the converse. If \( \Delta \) is unsatisfiable, no row makes \( \Delta \) true, so \( \Delta \models \bot \) (there is no row to check), and \( \Delta \vdash \bot \) by @thm-completeness: \( \Delta \) is inconsistent. So a finite list is consistent exactly when it is satisfiable. The word "consistent" of Section 3.2 speaks of derivations, and the word "satisfiable" of Section 4.5 speaks of rows. Yet they pick out the same lists. Section 3.2's task "derive \( \bot \)" and Section 4.6's search on a list always give the same answer.
 
 ::: {.second-reading title="Why two definitions of 'follows' are enough"}
-Before Chapter 1, "\( \psi \) follows from \( \Gamma \)" had only an informal meaning: whatever a careful mathematician accepts as a valid inference, by any means. That is not a definition, but two things about it are clear for propositional forms. If \( \Gamma \vdash \psi \), then \( \psi \) follows informally: each rule is an inference every mathematician accepts, and a chain of accepted inferences is accepted. If \( \psi \) follows informally from \( \Gamma \) by form alone, then \( \Gamma \models \psi \): an inference valid by its form cannot have a row, which is one way of reading the atoms, making the premises true and the conclusion false. So the informal notion is squeezed between \( \vdash \) and \( \models \), and completeness makes the two ends meet: for propositional forms, the informal notion coincides with both. An argument of this shape is due to Georg Kreisel.
+Before Chapter 1, "\( \psi \) follows from \( \Gamma \)" had only an informal meaning: whatever a careful mathematician accepts as a valid inference, by any means. That is not a definition, but two things about it are clear for propositional forms. If \( \Gamma \vdash \psi \), then \( \psi \) follows informally: each rule is an inference every mathematician accepts, and a chain of accepted inferences is accepted. If \( \psi \) follows informally from \( \Gamma \) by form alone, then \( \Gamma \models \psi \). A row is one way of reading the atoms, and an inference valid by its form cannot have a row making the premises true and the conclusion false. So the informal notion is squeezed between \( \vdash \) and \( \models \), and completeness makes the two ends meet: for propositional forms, the informal notion coincides with both. An argument of this shape is due to Georg Kreisel.
 :::
 
 ::: {.second-reading title="Infinitely many premises"}
-We defined \( \Gamma \vdash \psi \) only for a list, that is, for finitely many premises. One may allow an infinite collection \( \Gamma \) of premises and say \( \Gamma \vdash \psi \) when \( \psi \) is derivable from finitely many members of \( \Gamma \) (a derivation has finitely many lines, so it can only use finitely many). The equivalence with \( \Gamma \models \psi \) still holds for infinite \( \Gamma \) (completeness for infinitely many premises); together with the finiteness of derivations it gives the compactness theorem of propositional logic. The optional Section 4.10 proves both; nothing in the core depends on them. Our proof does not reach infinite \( \Gamma \): Step 1 needs finitely many atoms.
+We defined \( \Gamma \vdash \psi \) only for a list, that is, for finitely many premises. One may allow an infinite collection \( \Gamma \) of premises and say \( \Gamma \vdash \psi \) when \( \psi \) is derivable from finitely many members of \( \Gamma \) (a derivation has finitely many lines, so it can only use finitely many). The equivalence with \( \Gamma \models \psi \) still holds for infinite \( \Gamma \) (completeness for infinitely many premises); together with the finiteness of derivations it gives the compactness theorem of propositional logic. The optional Section 4.10 proves both; nothing in the main text depends on them. Our proof does not reach infinite \( \Gamma \): Step 1 needs finitely many atoms.
 :::
 
 ## Two columns that agree
 
-Section 4.5 set the two meanings of "follows" side by side. Here is the full table, now that both theorems are proved: they agree row by row (@cor-derivable-iff-valid and the paragraph on consistency above).
+Section 4.5 set the two meanings of "follows" side by side. Now that both theorems are proved, here is the full table. Its two columns agree row by row, by @cor-derivable-iff-valid and because consistent and satisfiable coincide.
 
 | Notion | In terms of derivations | In terms of rows |
 |---|---|---|
@@ -599,14 +636,14 @@ In every row where the premise is T, so is the conclusion. So \( \neg(p \wedge q
 
 **Peirce's law.** Is \( (p \to q) \to p \models p \)? Work backwards from F (Section 4.4). A refuting row would need \( p \) false. Then \( p \to q \) is true, so \( (p \to q) \to p \) is "true implies false", which is false. So no row makes the premise true and the conclusion false: \( (p \to q) \to p \models p \), and by @thm-completeness, \( (p \to q) \to p \vdash p \).
 
-Both answers came before anyone found a derivation. Chapter 2 found both by hand (@prp-de-morgan (d), and @prp-peirce, whose \( \vdash ((P \to Q) \to P) \to P \) gives the sequent by \( \rulename{{\to}E} \)), and the derivations there use \( \rulename{RAA} \). Completeness explains why a search had to succeed; it does not say how.
+Both answers came before anyone found a derivation. Chapter 2 found both by hand. The first is @prp-de-morgan (d). The second follows from @prp-peirce, \( \vdash ((P \to Q) \to P) \to P \), by \( \rulename{{\to}E} \). The derivations there use \( \rulename{RAA} \). Completeness explains why a search had to succeed; it does not say how.
 
 ::: {.second-reading title="What the proof used"}
 A common alternative route first turns \( \Gamma \models \psi \) into a single tautology, \( \models \gamma_1 \to (\gamma_2 \to \cdots \to (\gamma_k \to \psi)) \), proves completeness for tautologies, and then unpacks the implications with \( \rulename{{\to}E} \). Keeping \( \Gamma \) as premises, as Step 2 does, costs one extra case (a false premise) and saves that detour.
 
-Section 4.5 remarked that the tables do not see which of Chapter 2's laws needed \( \rulename{RAA} \). Now we can say why they cannot. A table decides \( \Gamma \models \psi \), and by @cor-derivable-iff-valid that is the same as derivability with **all** the rules, \( \rulename{RAA} \) included. A table has no column recording which rules a derivation uses. Whether a sequent can be derived without \( \rulename{RAA} \) is a question about a shorter list of rules, and for that list the completeness theorem is false, as the next paragraph explains. So no truth-table check can tell the laws that need \( \rulename{RAA} \) from those that do not.
+Section 4.5 remarked that the tables do not see which of Chapter 2's laws needed \( \rulename{RAA} \). Now we can say why they cannot. A table decides \( \Gamma \models \psi \), and by @cor-derivable-iff-valid that is the same as derivability with **all** the rules, \( \rulename{RAA} \) included. A table has no column recording which rules a derivation uses. Whether a sequent can be derived without \( \rulename{RAA} \) is a question about a shorter list of rules, and for that list the completeness theorem is false. So no truth-table check can tell the laws that need \( \rulename{RAA} \) from those that do not.
 
-Which rules did the proof of completeness itself use? @lem-weakening-cut only pastes derivations. @lem-connective-rows uses no \( \rulename{RAA} \), as its proof checks. @lem-truth-table-line and the Claim chain those sequents, together with @prp-ex-falso, which Chapter 2 derived before \( \rulename{RAA} \) appeared. The one classical step is the line \( p \vee \neg p \) of @lem-atom-splitting. So the theorem is really about the full list of rules, \( \rulename{RAA} \) included. Without \( \rulename{RAA} \) the list is sound but not complete, as the optional @thm-raa-independent shows for \( \vdash p \vee \neg p \) and \( \neg\neg p \vdash p \); the proof above breaks exactly at the splitting.
+Which rules did the proof of completeness itself use? @lem-weakening-cut only pastes derivations. @lem-connective-rows uses no \( \rulename{RAA} \), as its proof checks. @lem-truth-table-line and the Claim chain those sequents. They also use @prp-ex-falso, which Chapter 2 derived before \( \rulename{RAA} \) appeared. The one classical step is the line \( p \vee \neg p \) of @lem-atom-splitting. So the theorem is really about the full list of rules, \( \rulename{RAA} \) included. Without \( \rulename{RAA} \) the list is sound but not complete, as the optional @thm-raa-independent shows for \( \vdash p \vee \neg p \) and \( \neg\neg p \vdash p \); the proof above breaks exactly at the splitting.
 :::
 
 ::: {.warning}
@@ -615,7 +652,7 @@ Completeness does not say that a tautology has a derivation **without** \( \rule
 
 ## A truth-table step: TAUT
 
-Completeness has a practical consequence. Any step from earlier lines to a new one that a truth table confirms can be filled in by a derivation, so the step may be written as one line and the filling left to the theorem.
+Completeness has a practical consequence. Suppose a truth table confirms a step from earlier lines to a new one. Then the step can be filled in by a derivation, so it may be written as one line and the filling left to the theorem.
 
 ::: {#def-rule-taut}
 [The Step TAUT]
@@ -623,9 +660,9 @@ Completeness has a practical consequence. Any step from earlier lines to a new o
 In a derivation of formulas of @def-formula, a line \( \psi \) may be justified by **TAUT**, citing lines \( i_1, \dots, i_m \) (\( m \ge 0 \)) available at it, if \( \varphi_{i_1}, \dots, \varphi_{i_m} \models \psi \): every row that makes the cited lines true makes \( \psi \) true. For \( m = 0 \), \( \psi \) must be a tautology.
 :::
 
-A TAUT line abbreviates a derivation in the rules of Chapters 1 and 2: by @cor-derivable-iff-valid, \( \varphi_{i_1}, \dots, \varphi_{i_m} \vdash \psi \), and that derivation is pasted in as a derived rule's is (@def-derived-rule; @lem-weakening-cut for a line in no box). So TAUT derives nothing new, and @thm-soundness holds for derivations that use it. A TAUT line is checked by a table, not found by a search; its justification reads "TAUT" with the cited lines.
+A TAUT line abbreviates a derivation in the rules of Chapters 1 and 2. By @cor-derivable-iff-valid, \( \varphi_{i_1}, \dots, \varphi_{i_m} \vdash \psi \). That derivation is pasted in as a derived rule's is (@def-derived-rule). For a TAUT line in no box, the pasting is @lem-weakening-cut. So TAUT derives nothing new, and @thm-soundness holds for derivations that use it. A TAUT line is checked by a table, not found by a search; its justification reads "TAUT" with the cited lines.
 
-**Convention.** TAUT is a license, not a style. It is used only for a step that a written proof would pass over without comment, such as a rearrangement of connectives ("so if \( p \), then \( q \)"), never to hide the step an argument is about.
+**Convention.** TAUT is a license, not a style. That is, it is used only for a step that a written proof would pass over without comment, such as a rearrangement of connectives ("so if \( p \), then \( q \)"). It is never used to hide the step an argument is about.
 
 ::: {#exm-taut-step}
 [One line for twelve]
@@ -643,7 +680,7 @@ $\begin{nd}
 \end{center}
 ```
 
-The check: the premise is true only in the row \( p = \mathrm{T} \), \( q = \mathrm{F} \), since an implication is false only there, and \( p \wedge \neg q \) is true in that row. Written out with the rules of Chapter 2, the derivation takes twelve lines (fold below). It is a step a written proof passes over ("an implication fails only with a true hypothesis and a false conclusion"), so the convention allows it.
+The check: the premise is true only in the row \( p = \mathrm{T} \), \( q = \mathrm{F} \), since an implication is false only there, and \( p \wedge \neg q \) is true in that row. Written out with the rules of Chapter 2, the derivation takes twelve lines. It is a step a written proof passes over ("an implication fails only with a true hypothesis and a false conclusion"), so the convention allows it.
 :::
 
 ::: {.second-reading title="The step written out"}
@@ -686,7 +723,7 @@ Yes. In a row making lines 1 and 2 true, either \( p \) is true, and then \( r \
 ::: {.warning}
 [Not allowed: TAUT]
 
-The first three steps break a clause of @def-rule-taut, named in the tag; the fourth is legal and breaks the convention.
+The first three steps each break a clause of @def-rule-taut, named after the step. The fourth is legal, but breaks the convention.
 
 - "\( q \to p \), TAUT 1", with line 1 \( p \to q \). The row \( p = \mathrm{F} \), \( q = \mathrm{T} \) makes line 1 true and the new line false. *Clause "every row that makes the cited lines true".*
 - Citing by TAUT a line inside a box that has closed. *Clause "available"*: the scope rule of @def-derivation.
@@ -707,7 +744,7 @@ Chapter 6 extends TAUT to formulas with quantifiers, reading each quantified par
 ::: {#exr-completeness-a1}
 [A1]
 
-These questions are about @lem-truth-table-line and @thm-completeness.
+These questions are about the two main proofs of this section.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. In the conjunction case of the proof of @lem-truth-table-line, suppose \( v(\alpha) = \mathrm{F} \) and \( v(\beta) = \mathrm{T} \). Which sequent of @lem-connective-rows is used, and which induction hypotheses?
@@ -722,15 +759,19 @@ These questions are about @lem-truth-table-line and @thm-completeness.
 ::: {.solution}
 *(a)* \( (\wedge 2) \), \( \neg\alpha \vdash \neg(\alpha \wedge \beta) \), and only the hypothesis for \( \alpha \), \( \Sigma \vdash \neg\alpha \). The hypothesis for \( \beta \) is not needed, because \( \alpha \wedge \beta \) is false once \( \alpha \) is.
 
-*(b)* Only inside @lem-atom-splitting, at the line \( p \vee \neg p \): @prp-excluded-middle was derived with \( \rulename{RAA} \). The sequents of @lem-connective-rows are derived without it, @lem-weakening-cut only pastes derivations, and @prp-ex-falso comes before \( \rulename{RAA} \) in Chapter 2.
+*(b)* Only inside @lem-atom-splitting, at the line \( p \vee \neg p \). That line comes from @prp-excluded-middle, which was derived with \( \rulename{RAA} \). Nothing else uses it:
 
-*(c)* Each row of the truth table gives a derivation of the conclusion from the premises and that row's signed atoms: by @lem-truth-table-line if the row makes every premise true, and from a clash with a false premise otherwise. Two rows that differ at one atom are merged by excluded middle and proof by cases, and after all the atoms are merged the signed atoms are gone.
+- the sequents of @lem-connective-rows are derived without it;
+- @lem-weakening-cut only pastes derivations;
+- @prp-ex-falso comes before \( \rulename{RAA} \) in Chapter 2.
 
-*(d)* The valuation makes the premise \( p \) false, so Case 2 applies with \( \gamma = p \). @lem-truth-table-line gives \( \neg p, q \vdash \neg p \) (the atom case), the premise gives \( p \), and @prp-ex-falso gives \( p \vee q \). The sequent proved is \( p, \neg p, q \vdash p \vee q \).
+*(c)* Each row gives a derivation of the conclusion from the premises and the row's signed atoms, by @lem-truth-table-line or, if a premise is false in the row, by a clash with it. Two rows that differ at one atom are merged by excluded middle and proof by cases, and after all the atoms are merged the signed atoms are gone.
+
+*(d)* The valuation makes the premise \( p \) false, so Case 2 applies with \( \gamma = p \). @lem-truth-table-line gives \( \neg p, q \vdash \neg p \) (the atom case), and the premise gives \( p \). Then @prp-ex-falso gives \( p \vee q \). The sequent proved is \( p, \neg p, q \vdash p \vee q \).
 
 *(e)* In the Claim of Step 3: \( v^{+} \) and \( v^{-} \) change only the value at \( p_j \), and they agree with \( v \) on \( p_1, \dots, p_{j-1} \) only because those atoms differ from \( p_j \). If \( p_j \) also appeared as some \( p_i \) with \( i < j \), then \( p_i^{v^{+}} = p_j \) and \( p_i^{v^{-}} = \neg p_j \) would differ, and the two sequents would not share the list \( \Delta \) that @lem-atom-splitting needs.
 
-*(f)* Step 1. Infinitely many atoms may occur, so there is no finite list \( p_1, \dots, p_n \): the Claim would need infinitely many signed atoms as premises, which is not a list, and Step 3's descent from \( S(n) \) has no \( n \) to start from.
+*(f)* Step 1. Infinitely many atoms may occur, so there is no finite list \( p_1, \dots, p_n \). The Claim would need infinitely many signed atoms as premises, which is not a list, and Step 3's descent from \( S(n) \) has no \( n \) to start from.
 :::
 
 ::: {#exr-completeness-a2}
@@ -851,7 +892,7 @@ The three derivations have 5, 5 and 9 lines, and none uses \( \rulename{RAA} \):
 ::: {#exr-completeness-b2}
 [B2: The method on modus ponens]
 
-Apply the method of @thm-completeness to \( p, \ p \to q \models q \): list the four rows and the case of Step 2 that each falls under, and write the derivation that the proof produces, citing \( \rulename{LEM} \) and the sequents of @lem-connective-rows as single lines. (It is long; that is expected, and the usual length of an exercise answer does not apply.) Compare it with the derivation by \( \rulename{{\to}E} \).
+Apply the method of @thm-completeness to \( p, \ p \to q \models q \). List the four rows and the case of Step 2 that each falls under. Write the derivation that the proof produces, citing \( \rulename{LEM} \) and the sequents of @lem-connective-rows as single lines. It is long, and that is expected. Compare it with the derivation by \( \rulename{{\to}E} \).
 :::
 
 ::: {.solution}
@@ -921,7 +962,7 @@ $\begin{nd}
 \end{center}
 ```
 
-The box at line 6 has one line: in the row \( p = q = \mathrm{T} \) the goal \( q \) is the signed atom itself, so, as in the proof of @lem-atom-splitting, the box is its assumption alone. The result has 21 lines. The derivation by \( \rulename{{\to}E} \) has 3: the two premises and \( q \) by \( \rulename{{\to}E} \) citing lines 2 and 1. The method is uniform, not short: it does the same thing for every valid sequent, and pays for that with a split on every atom.
+The box at line 6 has one line: in the row \( p = q = \mathrm{T} \) the goal \( q \) is the signed atom itself, so, as in the proof of @lem-atom-splitting, the box is its assumption alone. The result has 21 lines. The derivation by \( \rulename{{\to}E} \) has 3: the two premises and \( q \) by \( \rulename{{\to}E} \) citing lines 2 and 1. The method is uniform, not short: it does the same thing for every valid sequent, and so it splits on every atom.
 :::
 
 ::: {#exr-completeness-b3}
@@ -1015,7 +1056,7 @@ $\begin{nd}
 
 (c) 8 \( p \to q \), TAUT 7. The two formulas are equivalent (each is false exactly at \( p = \mathrm{T} \), \( q = \mathrm{F} \)), and the step is a rearrangement a written proof makes without comment.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 3: (a) the TAUT derivation, with the row check.
 - 2: (a) the primitive derivation.
@@ -1052,11 +1093,11 @@ $\begin{nd}
 \end{center}
 ```
 
-(b) Inconsistent. A search closes: \( p \leftrightarrow q \) gives \( p, q \) or \( \neg p, \neg q \); under the first, \( \neg p \vee \neg q \) closes both ways; under the second, \( p \vee q \) closes both ways. So the list is unsatisfiable (@prp-search-decides), hence inconsistent, by @thm-completeness ("Consistent and satisfiable coincide").
+(b) Inconsistent. A search closes: \( p \leftrightarrow q \) gives \( p, q \) or \( \neg p, \neg q \); under the first, \( \neg p \vee \neg q \) closes both ways; under the second, \( p \vee q \) closes both ways. So the list is unsatisfiable, by @prp-search-decides. Hence it is inconsistent, by @thm-completeness, since consistent and satisfiable coincide.
 
-(c) Consistent. The row with \( p \), \( q \), \( r \) all false makes all three members true (false hypotheses), so the list is satisfiable, hence consistent (Section 4.7, by @thm-soundness).
+(c) Consistent. The row with \( p \), \( q \), \( r \) all false makes all three members true, since each has a false hypothesis. So the list is satisfiable, hence consistent (Section 4.7, by @thm-soundness).
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 3: (a) the verdict (1) and the derivation of \( \bot \) (2).
 - 4: (b) the verdict (1) and the closed search with the results that make it a proof (3).
@@ -1089,18 +1130,18 @@ Throughout, \( \Sigma \) is \( p_1^{v}, \dots, p_n^{v} \), and the induction hyp
 
 The cases cover all four pairs of values, so in each the property holds for \( \varphi \).
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 4: the \( \vee \) case: the three value cases, each with the right sequent of @lem-connective-rows and only the hypotheses its premises need.
 - 4: the \( \leftrightarrow \) case: the four value cases, each with the right sequent and both hypotheses.
 - 1: names chaining (@lem-weakening-cut (c)) as the step that combines the hypotheses with the sequent.
 - 1: says that the cases cover every pair of values.
 
-Fatal errors (0 for the step): using a sequent whose premises are not the signed parts \( \alpha^{v} \), \( \beta^{v} \) of that case.
+Slips that lose the step (0 for it): using a sequent whose premises are not the signed parts \( \alpha^{v} \), \( \beta^{v} \) of that case.
 :::
 
 ::: {#exr-completeness-c2}
-[C2: Exit check: completeness]
+[C2: Chapter check: completeness]
 
 *Close the section first, and write from memory.*
 
@@ -1123,7 +1164,15 @@ For (b): let \( S(j) \) say "for every valuation \( v \), \( \Gamma, p_1^{v}, \d
 :::
 
 ::: {.solution}
-*(a)* Let \( D \) derive \( \psi \) from premises in \( \Delta, p \), and \( E \) from premises in \( \Delta, \neg p \). Write, as premises, those of \( D \) and \( E \) that lie in \( \Delta \); then \( p \vee \neg p \) by \( \rulename{LEM} \) (@prp-excluded-middle, a derived rule with no premises); then a box opening with \( p \) containing the non-premise lines of \( D \), in which citations of the premise \( p \) now cite the assumption and citations of premises in \( \Delta \) cite the premise lines; then a box opening with \( \neg p \), built from \( E \) in the same way; then \( \psi \) by \( \rulename{\vee E} \), citing the line \( p \vee \neg p \) and the two boxes. (If \( D \) or \( E \) ends on a premise, its box is the assumption alone when that premise is the assumption's formula, and otherwise the assumption followed by \( \psi \) by \( \rulename{R} \).) Every copied line keeps its boxes, now inside the new box, and cites lines still available to it. The last line of each box is \( \psi \), as a line of that box itself, because the last line of \( D \) or \( E \) lay in no box. The two boxes and the \( \rulename{LEM} \) line lie in no box, so they are available at the final line. So the result is a derivation of \( \psi \) from premises in \( \Delta \), and \( \Delta \vdash \psi \).
+*(a)* Let \( D \) derive \( \psi \) from premises in \( \Delta, p \), and \( E \) from premises in \( \Delta, \neg p \). Write, in this order:
+
+1. as premises, those of \( D \) and \( E \) that lie in \( \Delta \);
+2. \( p \vee \neg p \) by \( \rulename{LEM} \) (@prp-excluded-middle, a derived rule with no premises);
+3. a box opening with \( p \), containing the non-premise lines of \( D \), in which citations of the premise \( p \) now cite the assumption and citations of premises in \( \Delta \) cite the premise lines;
+4. a box opening with \( \neg p \), built from \( E \) in the same way;
+5. \( \psi \) by \( \rulename{\vee E} \), citing the line \( p \vee \neg p \) and the two boxes.
+
+If \( D \) or \( E \) ends on a premise, its box is the assumption alone when that premise is the assumption's formula. Otherwise it is the assumption followed by \( \psi \) by \( \rulename{R} \). Every copied line keeps its boxes, now inside the new box, and cites lines still available to it. The last line of each box is \( \psi \), as a line of that box itself, because the last line of \( D \) or \( E \) lay in no box. The two boxes and the \( \rulename{LEM} \) line lie in no box, so they are available at the final line. So the result is a derivation of \( \psi \) from premises in \( \Delta \), and \( \Delta \vdash \psi \).
 
 *(b)* For \( 0 \le j \le n \), let \( S(j) \) be: for every valuation \( v \), \( \Gamma, p_1^{v}, \dots, p_j^{v} \vdash \psi \). The Claim of Step 2 is \( S(n) \).
 
@@ -1133,21 +1182,24 @@ For (b): let \( S(j) \) say "for every valuation \( v \), \( \Gamma, p_1^{v}, \d
 
 (Inducting downwards on \( j \), or on the number of atoms removed, is the same argument; either earns full marks.)
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
-- 3: (a) builds one derivation from the two given ones with premises in \( \Delta \) (for instance by pasting them into the two boxes of a \( \rulename{\vee E} \) on \( p \vee \neg p \), or by an \( \rulename{RAA} \) box on \( \neg\psi \)), with each premise \( p \) or \( \neg p \) replaced by an available line, and says why every citation is still available.
+- 3: (a) builds one derivation with premises in \( \Delta \) from the two given ones, with each premise \( p \) or \( \neg p \) replaced by an available line. It may paste them into the two boxes of a \( \rulename{\vee E} \) on \( p \vee \neg p \), or use an \( \rulename{RAA} \) box on \( \neg\psi \). It says why every citation is still available.
 - 1: (a) names the classical step (\( \rulename{LEM} \), @prp-excluded-middle, or \( \rulename{RAA} \)).
 - 3: (b) sets up an induction on the number of atoms removed (or downward on \( j \)) with a statement quantified over **every** valuation, and names the induction principle.
 - 2: (b) in the step, applies the hypothesis to **both** valuations that differ at \( p_j \), and notes that they agree with \( v \) on the other atoms.
 - 1: (b) concludes \( \Gamma \vdash \psi \) from \( S(0) \).
 
-Fatal errors (0 for the step): splitting on an atom using the Claim for a single valuation only; an induction statement that fixes \( v \) before the induction, so that the two valuations of the step are not covered by the hypothesis.
+Slips that lose the step (0 for it):
+
+- splitting on an atom using the Claim for a single valuation only;
+- an induction statement that fixes \( v \) before the induction, so that the hypothesis does not cover the two valuations of the step.
 :::
 
 ::: {#exr-normal-forms-c3}
-[C3: Exit check: deciding sequents]
+[C3: Chapter check: deciding sequents]
 
-For each sequent, decide whether it holds. If it does, justify this by a derivation, or by a truth table and the theorem that turns the table into a derivation; if it does not, give a refuting row and say which theorem turns the row into a proof that no derivation exists.
+For each sequent, decide whether it holds. If it does, justify this by a derivation, or by a truth table and the theorem that turns the table into a derivation. If it does not, give a refuting row, and say which theorem turns the row into a proof that no derivation exists.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. \( (p \to q) \vee (p \to r) \vdash p \to (q \vee r) \).
@@ -1158,7 +1210,7 @@ For each sequent, decide whether it holds. If it does, justify this by a derivat
 :::
 
 ::: {.solution}
-*(a)* Derivable. The goal is an implication: a box on \( p \), with the goal \( q \vee r \); the premise is a disjunction, used by \( \rulename{\vee E} \) inside the box; in each case \( \rulename{{\to}E} \) with \( p \) gives one side, and \( \rulename{\vee I} \) gives the goal.
+*(a)* Derivable. The goal is an implication: a box on \( p \), with the goal \( q \vee r \). The premise is a disjunction, used by \( \rulename{\vee E} \) inside the box. In each case \( \rulename{{\to}E} \) with \( p \) gives one side, and \( \rulename{\vee I} \) gives the goal.
 
 ```{=latex}
 \begin{center}
@@ -1211,12 +1263,12 @@ $\begin{nd}
 
 Neither derivation uses \( \rulename{RAA} \). As the problem allows, (a) and (d) may instead be justified by a table (or backwards from F) showing the entailment, followed by @thm-completeness.
 
-**Marking scheme.** (10 points; 2.5 per sequent)
+**What a complete answer needs.** (10 points; 2.5 per sequent)
 
 - 1 per sequent: the correct verdict.
-- 1.5 per sequent: its justification: a derivation in which every line is justified and every citation available, or a table check with @thm-completeness; or a row that makes **every** premise true and the conclusion false, checked, with @cor-refuting-row (or @thm-soundness) cited.
+- 1.5 per sequent: its justification. For a derivable sequent, a derivation in which every line is justified and every citation available, or a table check with @thm-completeness. For the others, a row that makes **every** premise true and the conclusion false, checked, with @cor-refuting-row cited. Citing @thm-soundness instead is also fine.
 
-Fatal errors (0 for the sequent's justification): a "refuting row" that makes some premise false; a derivation citing a line that is not available.
+Slips that lose the sequent's justification (0 for it): a "refuting row" that makes some premise false; a derivation citing a line that is not available.
 :::
 
 ::: {#exr-completeness-c4}
@@ -1225,26 +1277,26 @@ Fatal errors (0 for the sequent's justification): a "refuting row" that makes so
 Strike \( \rulename{\vee I} \) from the primitive rules.
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Which sequents of @lem-connective-rows lose the derivations given in its proof (the table of the fold "The fifteen derivations"), and which step of the proof of @thm-completeness also uses \( \rulename{\vee I} \), through a result of Chapter 2?
+1. Which sequents of @lem-connective-rows lose the derivations given in the table of its proof? Which step of the proof of @thm-completeness also uses \( \rulename{\vee I} \), through a result of Chapter 2?
 2. Read \( \vee \) as \( \wedge \): a valuation now makes \( \varphi \vee \psi \) true exactly when it makes both parts true; every other clause stays. Show that every remaining primitive rule is sound for this reading.
 3. Deduce that neither \( p \vdash p \vee q \) nor \( \vdash p \vee \neg p \) is derivable without \( \rulename{\vee I} \) (and without derived rules derived with it), although both are valid: the shorter list of rules is sound but not complete.
 :::
 :::
 
 ::: {.solution}
-(a) \( (\vee 1) \) and \( (\vee 2) \) are \( \rulename{\vee I} \) itself; \( (\wedge 2) \) and \( (\wedge 3) \) are derived by \( \rulename{\vee I} \) and then @prp-de-morgan (c). And @lem-atom-splitting uses @prp-excluded-middle, whose derivation in Section 2.5 uses \( \rulename{\vee I} \) twice; that is Step 3 of the proof, where @lem-atom-splitting removes the signed atoms.
+(a) \( (\vee 1) \) and \( (\vee 2) \) are \( \rulename{\vee I} \) itself; \( (\wedge 2) \) and \( (\wedge 3) \) are derived by \( \rulename{\vee I} \) and then @prp-de-morgan (c). The derivation of @prp-excluded-middle in Section 2.5 uses \( \rulename{\vee I} \) twice. Excluded middle enters through @lem-atom-splitting, which removes the signed atoms in Step 3 of the proof.
 
 (b) Only the cases \( \rulename{\vee I} \) and \( \rulename{\vee E} \) of the proof of @thm-soundness use the clause for \( \vee \), and \( \rulename{\vee I} \) is gone. \( \rulename{\vee E} \): if a valuation makes \( \Gamma_k \) true, it makes \( \varphi \vee \psi \) true, hence, in the new reading, both \( \varphi \) and \( \psi \); by the first box it makes \( \chi \) true. Every other case is unchanged.
 
-(c) The valuation with \( p \) true and \( q \) false makes \( p \) true and, in the new reading, \( p \vee q \) false; every valuation makes \( p \vee \neg p \) false in the new reading, since \( p \) and \( \neg p \) are never both true. By (b), and Step 1 of the proof of @thm-soundness (a derived rule derived without \( \rulename{\vee I} \) expands, by that step, into a pasted derivation in the remaining primitive rules), neither sequent has a derivation without \( \rulename{\vee I} \) and the derived rules that use it, such as @prp-excluded-middle. Both are valid in the ordinary tables.
+(c) The valuation with \( p \) true and \( q \) false makes \( p \) true and, in the new reading, \( p \vee q \) false. Every valuation makes \( p \vee \neg p \) false in the new reading, since \( p \) and \( \neg p \) are never both true. Step 1 of the proof of @thm-soundness expands a derived rule into a pasted derivation. For a derived rule derived without \( \rulename{\vee I} \), that derivation is in the remaining primitive rules. So, by (b), neither sequent has a derivation without \( \rulename{\vee I} \) and the derived rules that use it, such as @prp-excluded-middle. Both are valid in the ordinary tables.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 3: (a), all four sequents and the excluded-middle step.
 - 4: (b), with the \( \rulename{\vee E} \) case argued and the other cases said to be unchanged.
 - 3: (c), both valuations and the conclusion, with Step 1's restriction to derived rules derived without \( \rulename{\vee I} \).
 
-Fatal errors (0 for the step): in (c), using the ordinary tables.
+Slips that lose the step (0 for it): in (c), using the ordinary tables.
 :::
 
 ::: {#exr-completeness-c5}
@@ -1255,7 +1307,7 @@ Let a search tree (Section 4.6) for \( \Gamma, \neg\psi \) have every branch clo
 ::: {.enumerate options="label=(\alph*)"}
 1. Prove, by induction on the number of nodes below \( X \), that if every branch through \( X \) is closed, then \( \Delta \vdash \bot \), where \( \Delta \) is the path list of \( X \). Treat a closed leaf and each rule of the table of search rules, naming the derivable sequents you use.
 2. Deduce \( \Gamma \vdash \psi \).
-3. Explain why (a), (b) and @prp-search-decides give a second proof of @thm-completeness, and where it uses \( \rulename{RAA} \) or \( \rulename{LEM} \).
+3. The theorem @thm-completeness can be proved a second way. Explain why (a), (b) and @prp-search-decides give such a proof, and where it uses \( \rulename{RAA} \) or \( \rulename{LEM} \).
 :::
 :::
 
@@ -1280,13 +1332,19 @@ For \( \varphi \to \psi \), split as \( \neg\varphi \) or \( \psi \): with \( \D
 
 *One-way rules.* It suffices to show \( \Delta \vdash \alpha \) for each added \( \alpha \), and then chain (@lem-weakening-cut (c), after weakening). \( \varphi \wedge \psi \): \( \rulename{\wedge E} \). \( \neg(\varphi \vee \psi) \vdash \neg\varphi \): a \( \rulename{\neg I} \) box on \( \varphi \), \( \rulename{\vee I} \), \( \rulename{\neg E} \); likewise \( \neg\psi \). \( \neg(\varphi \to \psi) \vdash \varphi \): an \( \rulename{RAA} \) box on \( \neg\varphi \), in which @prp-vacuous-implication gives \( \varphi \to \psi \), then \( \rulename{\neg E} \). \( \neg(\varphi \to \psi) \vdash \neg\psi \): a \( \rulename{\neg I} \) box on \( \psi \), in which an inner box gives \( \varphi \to \psi \) by \( \rulename{R} \) and \( \rulename{{\to}I} \), then \( \rulename{\neg E} \). \( \neg\neg\varphi \vdash \varphi \): @prp-double-negation.
 
-*Two-way rules.* \( \varphi \vee \psi \): \( \rulename{\vee E} \) on the line \( \varphi \vee \psi \), with the two derivations of \( \bot \) pasted into the boxes as in the proof of @lem-atom-splitting. \( \neg(\varphi \wedge \psi) \): from \( \Delta, \neg\varphi \vdash \bot \), \( \Delta \vdash \varphi \) by \( \rulename{RAA} \); likewise \( \Delta \vdash \psi \); then \( \rulename{\wedge I} \), and \( \rulename{\neg E} \) with \( \neg(\varphi \wedge \psi) \). \( \varphi \to \psi \): \( \Delta \vdash \varphi \) by \( \rulename{RAA} \) from the first child; \( \rulename{{\to}E} \) gives \( \psi \); cut with \( \Delta, \psi \vdash \bot \). \( \varphi \leftrightarrow \psi \): from \( \Delta, \varphi, \psi \vdash \bot \) and \( \Delta, \varphi \vdash \psi \) (by \( \rulename{{\leftrightarrow}E} \)), cut gives \( \Delta, \varphi \vdash \bot \); from \( \Delta, \neg\varphi, \neg\psi \vdash \bot \) and \( \Delta, \neg\varphi \vdash \neg\psi \) (a \( \rulename{\neg I} \) box on \( \psi \): \( \varphi \) by \( \rulename{{\leftrightarrow}E} \), clash), cut gives \( \Delta, \neg\varphi \vdash \bot \); join the two by @lem-atom-splitting, which holds for any formula in place of the atom (the remark after its proof). \( \neg(\varphi \leftrightarrow \psi) \): \( \Delta, \varphi \vdash \neg\psi \) (a \( \rulename{\neg I} \) box on \( \psi \): \( \varphi \leftrightarrow \psi \) by \( \rulename{{\leftrightarrow}I} \) with two two-line boxes, each closed by \( \rulename{R} \), then the clash with \( \neg(\varphi \leftrightarrow \psi) \)), so \( \Delta, \varphi \vdash \bot \) by cut with the first child; \( \Delta, \neg\varphi \vdash \psi \) (an \( \rulename{RAA} \) box on \( \neg\psi \): \( \varphi \leftrightarrow \psi \) by \( \rulename{{\leftrightarrow}I} \), each box closing by a clash and \( \rulename{\bot E} \), then the clash with \( \neg(\varphi \leftrightarrow \psi) \)), so \( \Delta, \neg\varphi \vdash \bot \) by cut with the second child; join by @lem-atom-splitting.
+*Two-way rules.*
+
+- \( \varphi \vee \psi \): \( \rulename{\vee E} \) on the line \( \varphi \vee \psi \), with the two derivations of \( \bot \) pasted into the boxes as in the proof of @lem-atom-splitting.
+- \( \neg(\varphi \wedge \psi) \): from \( \Delta, \neg\varphi \vdash \bot \), \( \Delta \vdash \varphi \) by \( \rulename{RAA} \); likewise \( \Delta \vdash \psi \); then \( \rulename{\wedge I} \), and \( \rulename{\neg E} \) with \( \neg(\varphi \wedge \psi) \).
+- \( \varphi \to \psi \): \( \Delta \vdash \varphi \) by \( \rulename{RAA} \) from the first child; \( \rulename{{\to}E} \) gives \( \psi \); cut with \( \Delta, \psi \vdash \bot \).
+- \( \varphi \leftrightarrow \psi \): from \( \Delta, \varphi, \psi \vdash \bot \) and \( \Delta, \varphi \vdash \psi \) (by \( \rulename{{\leftrightarrow}E} \)), cut gives \( \Delta, \varphi \vdash \bot \). Next, \( \Delta, \neg\varphi \vdash \neg\psi \) by a \( \rulename{\neg I} \) box on \( \psi \), in which \( \rulename{{\leftrightarrow}E} \) gives \( \varphi \), and a clash. From this and \( \Delta, \neg\varphi, \neg\psi \vdash \bot \), cut gives \( \Delta, \neg\varphi \vdash \bot \). Join the two by @lem-atom-splitting. Its proof never uses that \( p \) is an atom, so it holds for any formula in place of the atom.
+- \( \neg(\varphi \leftrightarrow \psi) \): first, \( \Delta, \varphi \vdash \neg\psi \) by a \( \rulename{\neg I} \) box on \( \psi \). In it, \( \rulename{{\leftrightarrow}I} \) with two two-line boxes, each closed by \( \rulename{R} \), gives \( \varphi \leftrightarrow \psi \), which clashes with \( \neg(\varphi \leftrightarrow \psi) \). So \( \Delta, \varphi \vdash \bot \) by cut with the first child. Next, \( \Delta, \neg\varphi \vdash \psi \) by an \( \rulename{RAA} \) box on \( \neg\psi \). In it, \( \rulename{{\leftrightarrow}I} \) gives \( \varphi \leftrightarrow \psi \), each box closing by a clash and \( \rulename{\bot E} \), and this clashes with \( \neg(\varphi \leftrightarrow \psi) \). So \( \Delta, \neg\varphi \vdash \bot \) by cut with the second child. Join by @lem-atom-splitting.
 
 (b) At the root, \( \Gamma, \neg\psi \vdash \bot \); an \( \rulename{RAA} \) box on \( \neg\psi \) holding that derivation gives \( \Gamma \vdash \psi \) (@prp-derivable-iff-negation-inconsistent (b)).
 
-(c) If \( \Gamma \models \psi \), a search tree for \( \Gamma, \neg\psi \) can be continued until every branch is closed or finished (@prp-search-decides (a)), and it has no open finished branch, since by (c) of that proposition its row would refute \( \Gamma \models \psi \). So every branch is closed, and (a), (b) give \( \Gamma \vdash \psi \). \( \rulename{RAA} \) enters in the cases \( \neg(\varphi \to \psi) \), \( \neg\neg\varphi \), \( \neg(\varphi \wedge \psi) \), \( \varphi \to \psi \), \( \neg(\varphi \leftrightarrow \psi) \) and at the root; \( \rulename{LEM} \) in the two biconditional cases. The derivation follows the tree, so it is often far shorter than the \( 2^n \) rows of the first proof.
+(c) If \( \Gamma \models \psi \), a search tree for \( \Gamma, \neg\psi \) can be continued until every branch is closed or finished, by @prp-search-decides (a). It has no open finished branch, since by (c) of that proposition its row would refute \( \Gamma \models \psi \). So every branch is closed, and (a), (b) give \( \Gamma \vdash \psi \). \( \rulename{RAA} \) enters in the cases \( \neg(\varphi \to \psi) \), \( \neg\neg\varphi \), \( \neg(\varphi \wedge \psi) \), \( \varphi \to \psi \), \( \neg(\varphi \leftrightarrow \psi) \) and at the root; \( \rulename{LEM} \) in the two biconditional cases. The derivation follows the tree, so it is often far shorter than the \( 2^n \) rows of the first proof.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 1: the closed leaf.
 - 2: the four one-way cases.
@@ -1294,7 +1352,7 @@ For \( \varphi \to \psi \), split as \( \neg\varphi \) or \( \psi \): with \( \D
 - 1: (b).
 - 1: (c), with the classical steps located.
 
-Fatal errors (0 for the step): treating a split by assuming one side only.
+Slips that lose the step (0 for it): treating a split by assuming one side only.
 :::
 
 ### R. Review
@@ -1354,7 +1412,7 @@ Is \( (p \wedge (q \vee r)) \to ((p \wedge q) \vee r) \) a tautology? Is it deri
 ::: {.solution}
 *A tautology.* Work backwards from F (Section 4.4). The formula is false only if \( p \wedge (q \vee r) \) is true and \( (p \wedge q) \vee r \) is false. The second needs \( r \) false and \( p \wedge q \) false; the first needs \( p \) true and \( q \vee r \) true, so with \( r \) false, \( q \) true. But then \( p \wedge q \) is true. No row makes the formula false, so it is a tautology (@def-tautology).
 
-*Derivable without \( \rulename{RAA} \).* Completeness (@thm-completeness) says it is derivable, but not how, and its proof uses \( \rulename{LEM} \) in @lem-atom-splitting, so it does not answer the second question. A search does: the goal is an implication, so a box on \( p \wedge (q \vee r) \); split it by \( \rulename{\wedge E} \) and use \( q \vee r \) by \( \rulename{\vee E} \).
+*Derivable without \( \rulename{RAA} \).* Completeness (@thm-completeness) says it is derivable, but not how. Its proof uses \( \rulename{LEM} \), in @lem-atom-splitting, so it does not answer the second question. A search does: the goal is an implication, so a box on \( p \wedge (q \vee r) \); split it by \( \rulename{\wedge E} \) and use \( q \vee r \) by \( \rulename{\vee E} \).
 
 ```{=latex}
 \begin{center}
@@ -1414,6 +1472,11 @@ exr-completeness-c4 (solution): the or-as-and reading: every primitive rule exce
 exr-completeness-c4 (solution): prp-excluded-middle is derived with or-I; De Morgan (c) gives the (and 2), (and 3) rows | F1.2 §05 (prp-excluded-middle, prp-de-morgan), cited
 exr-completeness-c5 (solution): each case's sequents are derivable | verify/ch04/exr-completeness-c5.py (one tools/check_fitch.py derivation per case, schematic letters)
 exr-completeness-c5 (solution): strong induction on the number of nodes below X | thm-strong-induction (F1.3 §02), cited
+exr-completeness-c5 (solution): lem-atom-splitting holds for any formula in place of the atom | the remark after lem-atom-splitting (this section); the solution now gives the reason inline (its proof never uses that p is an atom) instead of pointing to the remark
+lem-connective-rows (proof): prp-vacuous-implication, exm-double-negation-introduction | moved from the sentence to the proof's Uses line (STYLE §13 B1); exr-proving-an-implication-b2 (a) is named as the same derivation, not relied on
+lem-truth-table-line (proof): weakening and chaining | lem-weakening-cut (a), (c): named once inline, also in the proof's Uses line
+thm-completeness (proof): weakening and chaining in the Claim of Step 2 | lem-weakening-cut (a), (c): moved to the claim's Uses line
+lem-atom-splitting (idea): the rule or-E | def-rules-disjunction, in the idea's Uses line
 exr-completeness-c5 (solution): the search rules; a finished tree with no open branch has every branch closed | prp-search-decides, the table of search rules (F1.3 §06), cited
 exr-normal-forms-c3 (solution): moved here with its label from the normal-forms section; content unchanged | verify/ch04/exr-normal-forms-c3.py
 exr-normal-forms-r1 (solution): moved here with its label from the normal-forms section; content unchanged | verify/ch04/exr-normal-forms-r1.py

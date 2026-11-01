@@ -46,7 +46,7 @@ Which of these is a formula, and which is a name for formulas or for a list: \( 
 \( (p \to q) \) is a formula. \( (\varphi \to q) \) is not a formula, since \( \varphi \) is no symbol of the language; it is a pattern, and each formula put in for \( \varphi \) gives a formula. \( \Gamma \) names a list of formulas.
 :::
 
-**Two languages.** Everything in this chapter is said in two languages at once. The **object language** is the language of formulas: its expressions are strings over the alphabet above, such as \( (p \to q) \). The **metalanguage** is the language in which we talk about those strings: English with ordinary mathematics, together with names for formulas (\( \varphi, \psi \)) and for lists (\( \Gamma \)), and claims such as \( \Gamma \vdash \psi \) and, from Section 4.5 on, \( \Gamma \models \psi \). Neither \( \vdash \) nor \( \models \) is a symbol of the alphabet. The sentence "\( (p \to q) \) has length \( 5 \)" belongs to the metalanguage and speaks about a string of the object language; \( (p \to q) \) on its own is a string, not a claim. The theorems of this chapter, unique readability, soundness and completeness, are theorems **about** the object language, proved in the metalanguage by ordinary mathematics: induction, cases, counting. To speak about a symbol we name it, as we name a word. "\( p \) is an atom" mentions the symbol \( p \), in the way that "'seven' has five letters" mentions a word.
+**Two languages.** Everything in this chapter is said in two languages at once. The **object language** is the language of formulas: its expressions are strings over the alphabet above, such as \( (p \to q) \). The **metalanguage** is the language in which we talk about those strings. It is English with ordinary mathematics, together with names for formulas, such as \( \varphi \) and \( \psi \), and names for lists, such as \( \Gamma \). It also has claims such as \( \Gamma \vdash \psi \) and, from Section 4.5 on, \( \Gamma \models \psi \). Neither \( \vdash \) nor \( \models \) is a symbol of the alphabet. The sentence "\( (p \to q) \) has length \( 5 \)" belongs to the metalanguage and speaks about a string of the object language; \( (p \to q) \) on its own is a string, not a claim. The theorems of this chapter, unique readability, soundness and completeness, are theorems **about** the object language, proved in the metalanguage by ordinary mathematics: induction, cases, counting. To speak about a symbol we name it, as we name a word. "\( p \) is an atom" mentions the symbol \( p \), in the way that "'seven' has five letters" mentions a word.
 
 ::: {.check}
 Sort into strings of the object language, claims of the metalanguage, and neither:
@@ -69,7 +69,7 @@ Sort into strings of the object language, claims of the metalanguage, and neithe
 
 *(d)* Neither. The letter \( \varphi \) is a metavariable, not a symbol, so the expression is a pattern; each formula put in for \( \varphi \) gives a formula.
 
-*(e)* A claim of the metalanguage, and true: \( \bot \) is a formula, and \( \neg \) in front of a formula gives a formula (clauses (F1) and (F2) of the definition below).
+*(e)* A claim of the metalanguage, and true. The definition below says that \( \bot \) is a formula, in its clause (F1), and that \( \neg \) in front of a formula gives a formula, in its clause (F2).
 :::
 
 ## Formulas
@@ -105,7 +105,7 @@ Chapter 1 described a statement as something "built from smaller ones by a conne
 
 Each entry is an atom, or is built from earlier entries by one connective. The atom \( p \) is used twice and listed once.
 
-A list like this is called a formation sequence. The definition below has one more clause than the building steps. Its clause (F4) says that the formulas are exactly the last entries of such lists: the list you just saw, in general.
+A list like this is called a formation sequence. The definition below has one more clause than the building steps. Its clause (F4) says that the formulas are exactly the strings that come last in such a list, as \( ((p \wedge \neg q) \to p) \) comes last in the list above.
 
 In clause (F4) below, \( \circ \) stands for any one of the four binary connectives, as \( \varphi \) stands for any formula: \( (\chi_j \circ \chi_l) \) means any one of \( (\chi_j \wedge \chi_l) \), \( (\chi_j \vee \chi_l) \), \( (\chi_j \to \chi_l) \), \( (\chi_j \leftrightarrow \chi_l) \).
 
@@ -129,11 +129,11 @@ In words, clause by clause.
 - *(F1), the starting pieces.* A single atom is a formula, and so is \( \bot \). These are the only formulas of length one.
 - *(F2), negation.* Writing \( \neg \) in front of a formula gives a formula. No parentheses are added: \( \neg p \) and \( \neg\neg p \) are formulas, and \( \neg\neg p \) is \( \neg \) in front of the formula \( \neg p \).
 - *(F3), the binary connectives.* Writing a binary connective between two formulas **and** wrapping the result in one pair of parentheses gives a formula. The two formulas may be the same: \( (p \wedge p) \) is a formula.
-- *(F4), nothing else.* Clauses (F1)–(F3) say which strings **are** formulas. They do not say that other strings are **not**. Clause (F4) does: a formula is exactly something we can reach from atoms and \( \bot \) by finitely many uses of (F2) and (F3), and the formation sequence is the written record of such a reaching. Think of building blocks: (F1) lists the blocks, (F2) and (F3) the two ways of joining them, and (F4) says that only what is built in this way counts.
+- *(F4), nothing else.* Clauses (F1)–(F3) say which strings **are** formulas. They do not say that other strings are **not**. Clause (F4) does. A formula is exactly something we can reach from atoms and \( \bot \) by finitely many uses of negation, (F2), and the binary clause, (F3). The formation sequence is the written record of such a reaching. Think of building blocks. (F1) lists the blocks. (F2) gives one way of joining them, with \( \neg \). (F3) gives the other, with a binary connective. Last, (F4) says that only what is built in this way counts.
 
 Two facts about formation sequences are used constantly, and both are immediate from the definition.
 
-First, **every entry of a formation sequence is a formula.** Walk along the list. The first entry \( \chi_1 \) is an atom or \( \bot \), so it is a formula by (F1). Each later entry is an atom or \( \bot \), a formula by (F1), or it is \( \neg\chi_j \) or \( (\chi_j \circ \chi_l) \) for earlier entries that are already formulas, and so it is a formula by (F2) or (F3). (Section 4.3 makes this walk exact with strong induction, in the fold "Sets built from a base".)
+First, **every entry of a formation sequence is a formula.** Walk along the list. The first entry \( \chi_1 \) is an atom or \( \bot \), so it is a formula by the starting clause, (F1). Each later entry may again be an atom or \( \bot \), a formula by the starting clause. Otherwise it is \( \neg\chi_j \) or \( (\chi_j \circ \chi_l) \) for earlier entries that are already formulas, and so it is a formula by negation, (F2), or by the binary clause, (F3). Section 4.3 makes this walk exact with strong induction, when it studies sets built from a base.
 
 Second, **every formula was made by one of the clauses from formulas.** Take a formula \( \chi \) and a formation sequence ending in it. Its last entry \( \chi \) is an atom or \( \bot \), or it is \( \neg\chi_j \), or it is \( (\chi_j \circ \chi_l) \), where the earlier entries \( \chi_j, \chi_l \) are formulas by the first fact. So every formula is an atom, or \( \bot \), or \( \neg\varphi \) for a formula \( \varphi \), or \( (\varphi \circ \psi) \) for formulas \( \varphi, \psi \). We will call this **looking at the last step** of a formula.
 
@@ -141,7 +141,7 @@ Looking at the last step already tells us something about the first symbol. A fo
 
 > **The first-symbol test.** A formula of length one is an atom or \( \bot \). A longer formula begins with \( \neg \) or with \( ( \), and if it begins with \( ( \), it is \( (\varphi \circ \psi) \) for formulas \( \varphi, \psi \) and ends with \( ) \).
 
-(A formula of the form \( \neg\varphi \) has length at least \( 2 \), and one of the form \( (\varphi \circ \psi) \) has length at least \( 5 \), since \( \varphi \) and \( \psi \) each have at least one symbol. So a formula of length one is made by (F1).)
+The first sentence of the test holds because of length. A formula of the form \( \neg\varphi \) has length at least \( 2 \), and one of the form \( (\varphi \circ \psi) \) has length at least \( 5 \), since \( \varphi \) and \( \psi \) each have at least one symbol. So a formula of length one is made by the starting clause, (F1).
 
 ::: {.check}
 Write a formation sequence for \( \neg(p \vee \bot) \), and say which earlier entries each entry uses.
@@ -158,7 +158,7 @@ Write down a formation sequence for each of the strings \( p \), \( \bot \), \( 
 :::
 
 ::: {.solution}
-For \( p \), the one-entry list \( p \) is a formation sequence: its only entry is an atom. Likewise the list \( \bot \). These are the degenerate cases, and they matter: a formula need not have been built at all. Every structural argument in Section 4.3 has to deal with them.
+For \( p \), the one-entry list \( p \) is a formation sequence: its only entry is an atom. Likewise the list \( \bot \). These are the smallest cases, and they matter: an atom or \( \bot \) is a formula with no building step. Every structural argument in Section 4.3 has to deal with them.
 
 For \( \neg\neg q \):
 \[
@@ -219,9 +219,9 @@ Which of the following strings are formulas? For each, give a formation sequence
 
 Each feature of the definition is there because something breaks without it.
 
-**Without (F4),** clauses (F1)–(F3) would be satisfied by far too many collections of strings. The collection of **all** strings contains every atom and \( \bot \), and is closed under writing \( \neg \) in front and under wrapping two strings with a connective in parentheses; so (F1)–(F3) alone cannot tell us that \( p \wedge \to q \) is excluded. Clause (F4) says the formulas are only those strings that the building steps reach. In other words, the formulas are the **smallest** collection of strings closed under (F1)–(F3).
+**Without (F4),** clauses (F1)–(F3) would be satisfied by far too many collections of strings. The collection of **all** strings contains every atom and \( \bot \). It is closed under writing \( \neg \) in front and under wrapping two strings with a connective in parentheses. So (F1)–(F3) alone cannot tell us that \( p \wedge \to q \) is excluded. Clause (F4) says the formulas are only those strings that the building steps reach. In other words, the formulas are the **smallest** collection of strings closed under (F1)–(F3).
 
-**Without the parentheses in (F3),** a string could be read in two ways. Take \( p \wedge q \vee r \). Built one way, it is "\( p \wedge q \)" joined to \( r \) by \( \vee \); built the other way, it is \( p \) joined to "\( q \vee r \)" by \( \wedge \). The two constructions have different parse trees (defined below), and they say different things (the everyday reading of Chapter 1 is enough here): if \( p \) is false and \( r \) is true, then "\( p \) and \( q \), or \( r \)" is true, because \( r \) is, while "\( p \), and \( q \) or \( r \)" is false, because \( p \) is. With the parentheses of (F3) the two constructions give two **different** strings,
+**Without the parentheses in (F3),** a string could be read in two ways. Take \( p \wedge q \vee r \). Built one way, it is "\( p \wedge q \)" joined to \( r \) by \( \vee \); built the other way, it is \( p \) joined to "\( q \vee r \)" by \( \wedge \). The two constructions have different parse trees, which are defined below. They also say different things, and the everyday reading of Chapter 1 is enough to see it. If \( p \) is false and \( r \) is true, then "\( p \) and \( q \), or \( r \)" is true, because \( r \) is. But "\( p \), and \( q \) or \( r \)" is false, because \( p \) is. With the parentheses of (F3) the two constructions give two **different** strings,
 \[
 ((p \wedge q) \vee r) \qquad \text{and} \qquad (p \wedge (q \vee r)) ,
 \]
@@ -230,16 +230,18 @@ and the ambiguity disappears. Section 4.3 proves that it disappears for every fo
 ::: {.second-reading title="Two smaller points"}
 **Why not parentheses around a negation too?** Nothing would break, but nothing would be gained. The symbol \( \neg \) always stands in front of what it negates, so \( \neg\varphi \) can be read in only one way without help. Keeping the official language as lean as possible makes the proofs about it shorter.
 
-**Why atoms, and not sentences like "\( x > 0 \)"?** Because the theorems of this chapter are about **forms**, and the form of an argument is what remains when the content of its atomic statements is forgotten (Chapter 1's slogan: logic studies the forms of arguments). An atom is a statement reduced to a name.
+**Why atoms, and not sentences like "\( x > 0 \)"?** Because the theorems of this chapter are about **forms**. The form of an argument is what remains when the content of its atomic statements is forgotten, and Chapter 1 said that logic studies the forms of arguments. An atom is a statement reduced to a name.
 :::
 
 ::: {.warning}
-A formula is a string of symbols, and questions about formulas are questions about strings. "Is \( (p \wedge p) \) the same formula as \( p \)?" has the answer **no**: the first has length \( 5 \) and the second length \( 1 \), even though they always have the same truth value (Section 4.4 gives the means to check this). Sameness of formulas is letter-for-letter identity; sameness of meaning is a different relation, which Section 4.5 names.
+A formula is a string of symbols, and questions about formulas are questions about strings. "Is \( (p \wedge p) \) the same formula as \( p \)?" has the answer **no**: the first has length \( 5 \) and the second length \( 1 \). This holds even though they always have the same truth value, which Section 4.4 gives the means to check. Sameness of formulas is letter-for-letter identity; sameness of meaning is a different relation, which Section 4.5 names.
 :::
 
 ## Parse trees
 
 A formation sequence records how a formula was built, but it is a list, and a list hides the shape of the building. Chapter 1 drew the shape as a tree, with the main connective at the top (the tree after @def-main-connective). We now make that drawing official.
+
+Take \( (p \wedge \neg q) \). It is built from \( p \) and \( \neg q \) by \( \wedge \), and \( \neg q \) is built from \( q \) by \( \neg \). Its tree has \( \wedge \) at the top, with \( p \) hanging on the left and \( \neg \) on the right, and \( q \) hangs below that \( \neg \). The last step is at the top, and the atoms are at the bottom.
 
 *A parse tree is a formula's construction drawn upside down: the last step at the root, the atoms at the leaves.*
 
@@ -258,9 +260,9 @@ A **parse tree for** a formula is defined along the clauses of @def-formula.
 The **leaves** are the nodes with nothing below them; a **branch** is a path from the root down to a leaf.
 :::
 
-In words: (T1) is the tree of a formula that was not built at all, a single node. (T2) puts a new root \( \neg \) on top of an existing tree. (T3) joins two existing trees under a new root carrying the connective, keeping left and right apart, because \( (p \to q) \) and \( (q \to p) \) are different formulas. (T4), as (F4) did for formulas, says that only trees built this way count; Section 4.3 uses it when it asks how a given tree could have been made. Parentheses do not appear in a parse tree: their only job in the string was to show the grouping, and the tree shows the grouping by its shape.
+In words: (T1) gives the tree of an atom or \( \bot \), a single node. (T2) puts a new root \( \neg \) on top of an existing tree. (T3) joins two existing trees under a new root carrying the connective, keeping left and right apart, because \( (p \to q) \) and \( (q \to p) \) are different formulas. (T4), as (F4) did for formulas, says that only trees built this way count; Section 4.3 uses it when it asks how a given tree could have been made. Parentheses do not appear in a parse tree: their only job in the string was to show the grouping, and the tree shows the grouping by its shape.
 
-**Every formula has a parse tree.** Take a formation sequence of the formula and build a tree for each entry in turn: an atom or \( \bot \) gets (T1), and an entry \( \neg\chi_j \) or \( (\chi_j \circ \chi_l) \) gets (T2) or (T3) from the trees already built for the earlier entries. The tree built for the last entry is a parse tree for the formula.
+**Every formula has a parse tree.** Take a formation sequence of the formula and build a tree for each entry in turn. An atom or \( \bot \) gets the one-node tree of (T1). An entry \( \neg\chi_j \) or \( (\chi_j \circ \chi_l) \) gets its tree from the negation clause, (T2), or the binary clause, (T3), using the trees already built for the earlier entries. The tree built for the last entry is a parse tree for the formula.
 
 Could a formula have **two** different parse trees? That would happen if one string could be built in two different ways, as \( p \wedge q \vee r \) could if parentheses were not written. Section 4.3 proves that it never happens (the unique readability theorem); until then we say "**a** parse tree". After that section, every formula has exactly one, and we speak of **the** parse tree.
 
@@ -271,9 +273,9 @@ Draw a parse tree for each formula: (a) \( p \); (b) \( \neg(p \wedge \neg q) \)
 :::
 
 ::: {.solution}
-*(a)* A single node labeled \( p \), by (T1). This is the degenerate tree: its root is also its only leaf, and its only branch has one node.
+*(a)* A single node labeled \( p \), by the clause for atoms, (T1). This is the smallest tree: its root is also its only leaf, and its only branch has one node.
 
-*(b)* By (T1) the atoms \( p \) and \( q \) get one-node trees; (T2) puts \( \neg \) above \( q \); (T3) joins \( p \) and \( \neg q \) under \( \wedge \); (T2) puts \( \neg \) on top.
+*(b)* By (T1), the atoms \( p \) and \( q \) get one-node trees. Then the negation clause, (T2), puts \( \neg \) above \( q \). The binary clause, (T3), joins \( p \) and \( \neg q \) under \( \wedge \). Last, (T2) puts \( \neg \) on top.
 
 \begin{center}
 \begin{tikzpicture}[level distance=10mm, sibling distance=16mm, every node/.style={font=\normalsize}]
@@ -313,7 +315,7 @@ Draw a parse tree for each formula: (a) \( p \); (b) \( \neg(p \wedge \neg q) \)
 The leaves are \( p \), \( q \), \( r \), \( \bot \) and \( p \) again: the atom \( p \) occurs twice in the formula, and each occurrence is its own leaf.
 :::
 
-To draw a parse tree from a string, find the last step, draw it as the root, and repeat on the parts. For a formula \( (\varphi \circ \psi) \), the last step is the binary connective that sits inside **exactly one** pair of parentheses; in (c), it is the \( \vee \), and every other binary connective sits inside at least two pairs. Section 4.3 proves that this recipe always finds the main connective, and only it.
+To draw a parse tree from a string, find the last step, draw it as the root, and repeat on the parts. For a formula \( (\varphi \circ \psi) \), the last step is the binary connective that sits inside **exactly one** pair of parentheses. In (c), it is the \( \vee \), and every other binary connective sits inside at least two pairs. Section 4.3 proves that this recipe always finds the main connective, and only it.
 
 ## Subformulas
 
@@ -325,9 +327,9 @@ Each node of a parse tree is the root of the part of the tree below it, and that
 The **subformulas** of a formula \( \varphi \) are the formulas whose parse trees hang from the nodes of a parse tree for \( \varphi \): for each node, the formula of which the part of the tree from that node downwards is a parse tree. The formulas at the children of the root are the **immediate subformulas** of \( \varphi \).
 :::
 
-Until Section 4.3 this depends, as far as we know, on the parse tree chosen; Section 4.3 shows there is only one, so the subformulas of \( \varphi \) are determined by \( \varphi \).
+The definition uses a parse tree for \( \varphi \). Section 4.3 shows there is only one, so the subformulas of \( \varphi \) are determined by \( \varphi \).
 
-So the subformulas of \( \varphi \) include \( \varphi \) itself (at the root) and each atom that occurs in \( \varphi \) (at the leaves). A formula of the form \( \neg\varphi \) has one immediate subformula, \( \varphi \); a formula \( (\varphi \circ \psi) \) has the two immediate subformulas \( \varphi \) and \( \psi \) (one, if \( \varphi \) and \( \psi \) are the same formula); an atom or \( \bot \) has none. When we list the subformulas, a formula that sits at several nodes is listed once.
+So the subformulas of \( \varphi \) include \( \varphi \) itself, at the root, and each atom that occurs in \( \varphi \), at the leaves. A formula of the form \( \neg\varphi \) has one immediate subformula, \( \varphi \). A formula \( (\varphi \circ \psi) \) has the two immediate subformulas \( \varphi \) and \( \psi \), or one, if \( \varphi \) and \( \psi \) are the same formula. An atom or \( \bot \) has none. When we list the subformulas, a formula that sits at several nodes is listed once.
 
 For the formula (c) of @exm-parse-trees, the subformulas are
 \[
@@ -430,16 +432,14 @@ $\begin{nd}
 
 In the language of this chapter, read the letters \( P, Q, R \) as three atoms. Then this is a derivation of \( p \to q, \ q \to r \vdash p \to r \) in the official sense, written in shorthand. But Chapter 1 meant more: the derivation was a **pattern**, good for any statements put in for the letters. Here is that promise made exact.
 
-*A derivation written with letters is a template.*
+*A derivation written with letters is a pattern.* It stays a derivation whatever formulas we put in for its atoms, as long as we put them in the same way everywhere.
 
 **Substitution.** Replace each atom of a derivation by a formula, **the same formula at every occurrence of the same atom**, and all such replacements at once. The result is again a derivation.
 
-The fold below checks that every line stays a formula and stays justified.
-
 ::: {.second-reading title="Why the result is again a derivation"}
-Here is why. First, each line becomes a formula. Replacing atoms by formulas in a formula \( \chi \) gives a formula: take a formation sequence of \( \chi \), write in front of it a formation sequence of each formula put in for an atom, and replace the atoms inside the old entries. Each old entry that was an atom has become the last entry of one of the sequences written in front; each old entry built by (F2) or (F3) is now built by the same clause from the replaced versions of the same earlier entries. So the new list is a formation sequence, and its last entry is the replaced \( \chi \).
+Here is why. First, each line becomes a formula. Replacing atoms by formulas in a formula \( \chi \) gives a formula. Take a formation sequence of \( \chi \), and write in front of it a formation sequence of each formula put in for an atom. Then replace the atoms inside the old entries. Each old entry that was an atom has become the last entry of one of the sequences written in front. Each old entry built by negation, (F2), or by the binary clause, (F3), is now built by the same clause from the replaced versions of the same earlier entries. So the new list is a formation sequence, and its last entry is the replaced \( \chi \).
 
-Second, each line is still justified. Each line of the old derivation was a premise, an assumption, a repetition, or an instance of a rule's schema (@def-derivation, clauses (D1)–(D4)). Being an instance means: the line and the lines it cites are the schema with its metavariables replaced by certain formulas. The schema's own symbols are connectives, \( \bot \) and parentheses, never atoms, so replacing atoms in the lines is the same as replacing atoms inside those certain formulas. The new lines are therefore the same schema with its metavariables replaced by the new formulas: an instance of the same rule.
+Second, each line is still justified. Each line of the old derivation was a premise, an assumption, a repetition, or an instance of a rule's schema. These are the four kinds of line, (D1)–(D4), of @def-derivation. Being an instance means: the line and the lines it cites are the schema with its metavariables replaced by certain formulas. The schema's own symbols are connectives, \( \bot \) and parentheses, never atoms, so replacing atoms in the lines is the same as replacing atoms inside those certain formulas. The new lines are therefore the same schema with its metavariables replaced by the new formulas: an instance of the same rule.
 
 Third, nothing about citations changes. The line numbers, the boxes, and which line cites which are untouched, and whether a line or a box is available depends on nothing else (@def-derivation, the scope rule). So the result is a derivation, with the replaced premises and the replaced last line.
 :::
@@ -466,7 +466,7 @@ Line 4 is still \( \rulename{{\to}E} \): lines 1 and 3 are \( \varphi \to \psi \
 The fact is immediate rule by rule, because every rule was stated for arbitrary formulas from the start. It is what the phrase "the letters stand for arbitrary statements" (Chapter 1, Section 1.2) and the clause "replace each letter … the same statement for every occurrence" of @def-derived-rule were relying on. We use it twice later in the chapter, in the soundness proof of Section 4.7 and in the completeness proof of Section 4.8.
 
 ::: {.remark}
-The replacement must be **uniform**. Replacing only the first \( P \) of the derivation above by \( p_1 \wedge p_2 \), and leaving the \( P \) on line 3 alone, would break line 4, which needs the hypothesis of line 1 to be literally the formula on line 3.
+The replacement must be **uniform**. Suppose we replace only the first \( P \) of the derivation above by \( p_1 \wedge p_2 \), and leave the \( P \) on line 3 alone. That breaks line 4, which needs the hypothesis of line 1 to be literally the formula on line 3.
 :::
 
 ::: {.remark}
@@ -483,7 +483,7 @@ Section 4.3 proves that every formula is built in only one way. Then "the parse 
 [A1]
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Decide which of the following strings are formulas. Give a formation sequence for each formula, and for each nonformula name the test or clause it fails: (i) \( (p \vee \bot) \); (ii) \( \neg\neg p \); (iii) \( (p \neg q) \); (iv) \( ((p \to q)) \); (v) \( (p \wedge q \wedge r) \).
+1. Decide which of the following strings are formulas. Give a formation sequence for each formula, and for each nonformula name the test or clause it fails: (i) \( (p \vee \bot) \), (ii) \( \neg\neg p \), (iii) \( (p \neg q) \), (iv) \( ((p \to q)) \), (v) \( (p \wedge q \wedge r) \).
 2. List the subformulas of \( (\neg(p \to q) \vee q) \).
 3. Write a formation sequence of \( ((p \vee q) \wedge \neg(p \vee q)) \) in which \( (p \vee q) \) is listed once.
 4. Why does clause (F3) of @def-formula put parentheses around its result, while (F2) does not?
@@ -522,7 +522,7 @@ Answer each part in a line or two.
 3. How many symbols has \( ((p \to q) \vee \neg r) \)?
 4. Is \( p \wedge q \vdash p \) a formula?
 5. What is the main connective of \( \neg(p \wedge q) \to r \)?
-6. Which of these are subformulas of \( ((p \wedge q) \to r) \): \( (p \wedge q) \); the string \( q) \to r \); \( (q \to r) \); \( r \)?
+6. Which of these are subformulas of \( ((p \wedge q) \to r) \): \( (p \wedge q) \), the string \( q) \to r \), \( (q \to r) \), \( r \)?
 7. Add one symbol to \( (p \wedge \neg q \) to make a formula.
 8. Delete as few symbols as possible from \( ((\neg p)) \) to make a formula.
 9. Insert one pair of parentheses into \( (p \vee q \vee r) \) to make a formula, in two different ways.
@@ -563,7 +563,7 @@ Answer each part in a line or two.
 ::: {#exr-formulas-and-parse-trees-b1}
 [B1: Trees from Chapter 1]
 
-Each formula below appears, with capital letters, in a result of Chapter 1 (@prp-curry and @prp-distributivity); here the letters are atoms. For each, write the official formula, draw its parse tree, and list its subformulas.
+Formulas (a) and (b) below appear, with capital letters, in @prp-curry. Formula (c) appears in the same way in @prp-distributivity. Here the letters are atoms. For each, write the official formula, draw its parse tree, and list its subformulas.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. \( (p \wedge q) \to r \)
@@ -649,9 +649,9 @@ Write \( c_n \) for the number of groupings of a chain of \( n \) atoms, and fin
 - Main connective the **second** arrow: \( (p \to q) \) on the left and \( (r \to s) \) on the right, each grouped in one way. This gives \( ((p \to q) \to (r \to s)) \).
 - Main connective the **third** arrow: \( p \to q \to r \) on the left, grouped in one of two ways, and \( s \) on the right. This gives \( ((p \to (q \to r)) \to s) \) and \( (((p \to q) \to r) \to s) \).
 
-Their parse trees have the root \( \to \) in each case: in the first two, the leaf \( p \) on the left and a chain of two arrows on the right (leaning right, or leaning left); in the third, two one-arrow trees side by side; in the last two, a chain of two arrows on the left and the leaf \( s \) on the right.
+Their parse trees have the root \( \to \) in each case. In the first two, the leaf \( p \) is on the left and a chain of two arrows is on the right, leaning right or leaning left. In the third, two one-arrow trees stand side by side. In the last two, a chain of two arrows is on the left and the leaf \( s \) is on the right.
 
-*(b)* There are \( 5 \). Write \( c_n \) for the number of groupings of a chain of \( n \) atoms joined by one binary connective. A chain of one or two atoms has one grouping: \( c_1 = c_2 = 1 \). For three atoms the main connective is the first or the second arrow, and the side with two atoms has one grouping: \( c_3 = c_1 c_2 + c_2 c_1 = 2 \). For four atoms, choosing the main connective splits the chain into a left part of \( k \) atoms and a right part of \( 4 - k \) atoms, for \( k = 1, 2, 3 \), and the two parts are grouped independently:
+*(b)* There are \( 5 \). Write \( c_n \) for the number of groupings of a chain of \( n \) atoms joined by one binary connective. A chain of one or two atoms has one grouping: \( c_1 = c_2 = 1 \). For three atoms the main connective is the first or the second arrow, and the side with two atoms has one grouping: \( c_3 = c_1 c_2 + c_2 c_1 = 2 \). For four atoms, choosing the main connective splits the chain into a left part of \( k \) atoms and a right part of \( 4 - k \) atoms, for \( k = 1, 2, 3 \). The two parts are grouped independently:
 \[
 c_4 = c_1 c_3 + c_2 c_2 + c_3 c_1 = 2 + 1 + 2 = 5 .
 \]
@@ -668,6 +668,7 @@ def-formula (example): the build-up figure: entries p, q, neg q, (p and neg q), 
 def-formula (claim): ("Two languages") ⊢ and ⊨ are not symbols of the alphabet | def-formula's alphabet (this section)
 def-formula (claim): ("Two languages") "(p -> q) has length 5" | inline (count of symbols); checked by verify/ch04/exr-formulas-and-parse-trees-a2.py
 def-parse-tree (claim): every formula has a parse tree, built along a formation sequence | inline
+def-parse-tree (example): (lead-in instance, before the definition) (p and neg q) is built from p and neg q by and, and neg q from q by neg; its tree has and at the root, p on the left, neg over q on the right | inline (def-formula (F2), (F3)); the same tree as the part below the root in exm-parse-trees (b)
 def-formula (claim): every entry of a formation sequence is a formula | inline ((F1)-(F3) along the list); made exact in F1.3 §03 fold "Sets built from a base"
 def-formula (claim): ("Why this definition") the formulas are the smallest collection closed under (F1)-(F3) | F1.3 §03 fold "Sets built from a base" (made exact there); not used in this section
 exm-shorthand-translation (example): with p, q, r false, p -> (q -> r) is true and (p -> q) -> r is false | informal reading of F1.1-F1.2 (vacuous truth, Section 2.1); made exact in F1.3 §04

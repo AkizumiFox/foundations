@@ -2,14 +2,14 @@
 
 Section 4.5 reduced every question about rows to one: is this list unsatisfiable? A truth table answers it by brute force, and with \( n \) atoms it has \( 2^n \) rows. Working backwards from F (@exm-backwards-from-f) is faster: assume the conclusion false and follow what is forced. But where a value leaves a choice, as a false conjunction or a true disjunction does, it only says "split into cases", and keeps no record of the cases.
 
-This section turns working backwards into a method that keeps that record: take the forced steps first, and when nothing is forced, split into cases and follow every case. On paper the method is a tree. A branch that closes is a case with no row; a branch that stays open hands us a row. The answers are about truth, "valid" or "here is a refuting row"; what they say about derivations is the next section's business.
+This section turns working backwards into a method that keeps that record: take the forced steps first, and when nothing is forced, split into cases and follow every case. On paper the method is a tree. A branch that closes is a case with no row; a branch that stays open hands us a row. The answers are about truth, "valid" or "here is a refuting row"; what they say about derivations is the subject of the next section.
 
 ## The rules of the search
 
 To decide \( \Gamma \models \psi \), we look for one row that makes every formula of the counterexample set \( \Gamma, \neg\psi \) true; the entailment holds exactly when there is none. To decide whether a list \( \Delta \) is satisfiable, we look for one row that makes all of \( \Delta \) true. Requirements on the row are kept as formulas: "\( \varphi \) must be true" is written \( \varphi \), and "\( \varphi \) must be false" is written \( \neg\varphi \).
 
 ::: {.check}
-From the tables of (V3)–(V5), counting each way as a condition on one or both parts: in how many ways can \( \varphi \wedge \psi \) be true? In how many ways can it be false? In how many ways can \( \varphi \to \psi \) be false? In how many ways can it be true?
+From the tables for conjunction, disjunction and implication, (V3)–(V5), counting each way as a condition on one or both parts: in how many ways can \( \varphi \wedge \psi \) be true? In how many ways can it be false? In how many ways can \( \varphi \to \psi \) be false? In how many ways can it be true?
 :::
 
 ::: {.solution}
@@ -23,7 +23,7 @@ Each requirement on a compound formula is traded for requirements on its parts, 
 | \( \varphi \wedge \psi \) | (V3): both parts true | \( \varphi \), \( \psi \) |
 | \( \neg(\varphi \vee \psi) \) | (V4): both parts false | \( \neg\varphi \), \( \neg\psi \) |
 | \( \neg(\varphi \to \psi) \) | (V5): hypothesis true, conclusion false | \( \varphi \), \( \neg\psi \) |
-| \( \neg\neg\varphi \) | (V2) twice: \( \varphi \) true | \( \varphi \) |
+| \( \neg\neg\varphi \) | negation flips, (V2), twice: \( \varphi \) true | \( \varphi \) |
 
 Then the requirements met in two ways; each splits the search into two cases.
 
@@ -37,14 +37,16 @@ Then the requirements met in two ways; each splits the search into two cases.
 
 An atom, a negated atom, and \( \neg\bot \) (true in every row) need no rule. A list of requirements that holds some formula together with its negation, or holds \( \bot \), describes no row at all: it is **closed**. The one-way rules are the forced steps of working backwards from F, with \( \neg\neg \) added; the two-way rules are where it split into cases, with \( \leftrightarrow \) added.
 
-The two ways of a split need not exclude each other (a row may make both \( \varphi \) and \( \psi \) true); they need only **cover** every row that makes the formula true.
+The two ways of a split need not exclude each other: a row may make both \( \varphi \) and \( \psi \) true. They need only **cover** every row that makes the formula true.
 
 ## The search, drawn as a tree
+
+Here is the smallest case. Test the list \( p \vee q, \ \neg p \). The rule of \( p \vee q \) splits the search into the case \( p \) and the case \( q \). The case \( p \) holds \( p \) and \( \neg p \), so no row fits it. The case \( q \) holds \( p \vee q \), \( \neg p \) and \( q \), and nothing in it is left to split. Its row, \( p \) false and \( q \) true, makes the whole list true. Drawn on paper, the two cases hang below the list like two branches of a tree.
 
 ::: {#def-search-tree}
 [Search Tree]
 
-Let \( \Delta \) be a finite list of formulas. A **search tree** for \( \Delta \) is built in stages. It begins as one node, the **root**, carrying the formulas of \( \Delta \). At each stage, choose an open branch \( B \) and a formula \( \chi \) on \( B \) that is not an atom, a negated atom, \( \bot \) or \( \neg\bot \), and that is not yet **used** on \( B \); then, below the last node of \( B \), add \( \chi \)'s rule: one new node with the formulas of its one way, or two new nodes side by side with the formulas of its two ways. On each new branch, \( \chi \) (and every formula equal to it) is now used: a formula is **used** on a branch exactly when the branch passes through a node added by its rule, so it stays used on every branch extending that one. Being used is a property of a formula **on a branch**: a formula at the root may be used on one branch and not on another.
+Let \( \Delta \) be a finite list of formulas. A **search tree** for \( \Delta \) is built in stages. It begins as one node, the **root**, carrying the formulas of \( \Delta \). At each stage, choose an open branch \( B \) and a formula \( \chi \) on \( B \) that is not yet **used** on \( B \). The formula \( \chi \) must not be an atom, a negated atom, \( \bot \) or \( \neg\bot \). Then, below the last node of \( B \), add \( \chi \)'s rule. A one-way rule adds one new node with the formulas of its one way; a two-way rule adds two new nodes side by side with the formulas of its two ways. On each new branch, \( \chi \) and every formula equal to it are now used. In general, a formula is **used** on a branch exactly when the branch passes through a node added by its rule. So it stays used on every branch extending that one. Being used is a property of a formula **on a branch**: a formula at the root may be used on one branch and not on another.
 
 A **branch** is a path from the root down to a node with nothing below it, and its formulas are those on its nodes. A branch is **closed** if it holds some formula together with its negation, or holds \( \bot \); otherwise it is **open**. An open branch is **finished** if every formula on it, other than an atom, a negated atom or \( \neg\bot \), is used on it. A search tree is **finished** if each of its branches is closed or finished.
 :::
@@ -60,7 +62,7 @@ Decide whether \( p \to (q \vee r), \ q \to s, \ r \to s \models p \to s \).
 :::
 
 ::: {.solution}
-This is the list of Section 3.2's exit check (@exr-four-kinds-of-task-c1), which derived the claim; now a search shows it valid.
+This is the list of the chapter check at the end of Section 3.2, which derived the claim (@exr-four-kinds-of-task-c1). Now a search shows it valid.
 
 The root carries the counterexample set: the three premises and \( \neg(p \to s) \).
 
@@ -70,7 +72,7 @@ The root carries the counterexample set: the three premises and \( \neg(p \to s)
 - Stage 4, on the branch \( q \): \( q \to s \) gives \( \neg q \), which closes against \( q \), or \( s \), which closes against \( \neg s \).
 - Stage 5, on the branch \( r \): \( r \to s \) gives \( \neg r \) or \( s \), both closed.
 
-(The branch \( r \) closes without \( q \to s \), so that formula is never used there.) Every branch is closed: no row makes the counterexample set true, and the entailment holds.
+The branch \( r \) closes without \( q \to s \), so that formula is never used there. Every branch is closed: no row makes the counterexample set true, and the entailment holds.
 
 ```{=latex}
 \begin{center}
@@ -104,7 +106,7 @@ Decide whether \( p \to (q \vee r), \ q \to s \models p \to s \).
 ::: {.solution}
 The first three stages are the same as before. On the branch \( q \), the rule of \( q \to s \) closes both sides, as before.
 
-On the branch \( r \), at a stage of its own, \( q \to s \) gives \( \neg q \) or \( s \). (A formula used on one branch may be used again on another.) The side \( s \) closes against \( \neg s \); the side \( \neg q \) does not. That branch carries \( p \to (q \vee r) \) (used), \( q \to s \) (used), \( \neg(p \to s) \) (used), \( p \), \( \neg s \), \( q \vee r \) (used), \( r \) and \( \neg q \): it is open and finished.
+On the branch \( r \), at a stage of its own, \( q \to s \) gives \( \neg q \) or \( s \). A formula used on one branch may be used again on another. The side \( s \) closes against \( \neg s \); the side \( \neg q \) does not. That branch carries the used formulas \( p \to (q \vee r) \), \( q \to s \), \( \neg(p \to s) \) and \( q \vee r \), and also \( p \), \( \neg s \), \( r \) and \( \neg q \). It is open and finished.
 
 ```{=latex}
 \begin{center}
@@ -134,14 +136,14 @@ On the open branch of the second tree, check that its row makes every formula on
 :::
 
 ::: {.solution}
-\( p \), \( r \), \( \neg q \) and \( \neg s \) are true; \( q \vee r \) is true, by \( r \); \( p \to (q \vee r) \) is true, its conclusion being true; \( q \to s \) is true, its hypothesis being false; and \( \neg(p \to s) \) is true, since \( p \to s \) is false.
+\( p \), \( r \), \( \neg q \) and \( \neg s \) are true. \( q \vee r \) is true, since \( r \) is. \( p \to (q \vee r) \) is true, since its conclusion is true. \( q \to s \) is true, since its hypothesis is false. And \( \neg(p \to s) \) is true, since \( p \to s \) is false.
 :::
 
 ## What a closed tree proves
 
-*Each rule passes a row on.* If a row makes every formula on a branch true and a rule is applied there, the row makes true all the formulas of at least one new node, since each rule was read off its table. So a row making the root true runs down some branch to its end with every formula true there. A closed branch holds \( \varphi \) and \( \neg\varphi \), or \( \bot \), which no row makes true.
+*Each rule passes a row on.* Suppose a row makes every formula on a branch true, and a rule is applied there. Then the row makes true all the formulas of at least one new node, since each rule was read off its table. So a row making the root true runs down some branch to its end with every formula true there. A closed branch holds \( \varphi \) and \( \neg\varphi \), or \( \bot \), which no row makes true.
 
-*An open finished branch hands over a row.* Make the atoms that stand on it true and all other atoms false. A negated atom on it is then true, since its atom is not on the open branch; every other formula on it is used, so the branch carries the shorter formulas of one of its ways, and it is true by its clause once they are. From the shortest up, every formula on the branch is true.
+*An open finished branch gives a row.* Make the atoms that stand on it true and all other atoms false. A negated atom on it is then true, since its atom is not on the open branch. Every other formula on it is used, so the branch carries the shorter formulas of one of its ways. Once those are true, the formula is true by its clause. From the shortest up, every formula on the branch is true.
 
 ::: {#prp-search-decides}
 [The Search Decides]
@@ -151,55 +153,59 @@ Let \( \Delta \) be a finite list of formulas.
 ::: {.enumerate options="label=(\alph*)"}
 1. Every search tree for \( \Delta \) can be continued until it is finished, and it has only finitely many stages.
 2. If every branch of a search tree for \( \Delta \) is closed, then \( \Delta \) is unsatisfiable.
-3. If a search tree for \( \Delta \) has an open finished branch \( B \), then the valuation \( v_B \) that makes the atoms on \( B \) true and every other atom false makes every formula on \( B \) true, in particular every formula of \( \Delta \).
+3. Let a search tree for \( \Delta \) have an open finished branch \( B \), and let \( v_B \) be the valuation that makes the atoms on \( B \) true and every other atom false. Then \( v_B \) makes every formula on \( B \) true, in particular every formula of \( \Delta \).
 :::
 
 So, for a list \( \Gamma \) and a formula \( \psi \): a search tree for \( \Gamma, \neg\psi \), continued as in (a), either closes, and then \( \Gamma \models \psi \), or has an open finished branch, whose row refutes \( \Gamma \models \psi \).
 :::
 
-*In words: the search always ends; a closed tree proves unsatisfiability, and an open finished branch exhibits a satisfying row.* Since (b) and (c) cannot both apply to finished trees of one list, every order of moves gives the same verdict.
+*In words: the search always ends; a closed tree proves unsatisfiability, and an open finished branch exhibits a satisfying row.* In plain terms: whatever order the rules are applied in, the search stops, and its answer is correct. Since (b) and (c) cannot both apply to finished trees of one list, every order of stages gives the same verdict.
 
 ::: {.idea}
-(a) Every new formula is shorter than the one whose rule added it, and is a subformula of a root formula or the negation of one. (b) and (c) are the two observations, made exact by induction (on the stages for (b), on the length of a formula for (c)). The proof is in the fold below.
+(a) Every new formula is shorter than the one whose rule added it, and is a subformula of a root formula or the negation of one. (b) and (c) are the two observations above, made exact by induction. For (b) the induction is on the stages, and for (c) on the length of a formula.
 :::
 
 ::: {.second-reading title="The proof: why the search decides"}
 ::: {.proof}
-(a) Let \( N \) be the number of formulas that are subformulas of formulas of \( \Delta \), or negations of such. Every formula ever added to the tree is one of these. Each rule adds immediate parts of the used formula, or negations of them, or, for \( \neg\neg\varphi \), the formula \( \varphi \); and if the used formula is a subformula of a root formula or the negation of one, then so are the formulas it adds. Once a formula is used on a branch, it and every formula equal to it stay used on every branch below, so a stage below a given node never uses a formula already used above it. Hence each of the \( N \) formulas is used at most once along a branch, and a branch has at most \( N \) stages below the root. A stage adds at most two nodes, below one branch, so a branch splits at most \( N \) times, and the tree never has more than \( 2^N \) branches, each with at most \( N + 1 \) nodes. Each stage adds a node, so there are only finitely many stages. When no stage is possible, no open branch carries an unused formula other than an atom, a negated atom, \( \bot \) or \( \neg\bot \); since \( \bot \) is on no open branch, every branch is closed or finished.
+(a) Let \( N \) be the number of formulas that are subformulas of formulas of \( \Delta \), or negations of such. Every formula ever added to the tree is one of these. Each rule adds immediate parts of the used formula, or negations of them, or, for \( \neg\neg\varphi \), the formula \( \varphi \). So if the used formula is a subformula of a root formula or the negation of one, then so are the formulas it adds. Once a formula is used on a branch, it and every formula equal to it stay used on every branch below. So a stage below a given node never uses a formula already used above it. Hence each of the \( N \) formulas is used at most once along a branch, and a branch has at most \( N \) stages below the root. A stage adds at most two nodes, below one branch, so a branch splits at most \( N \) times, and the tree never has more than \( 2^N \) branches, each with at most \( N + 1 \) nodes. Each stage adds a node, so there are only finitely many stages. When no stage is possible, no open branch carries an unused formula other than an atom, a negated atom, \( \bot \) or \( \neg\bot \); since \( \bot \) is on no open branch, every branch is closed or finished.
 
 (b) *Claim:* at every stage, if a valuation \( v \) makes every formula of \( \Delta \) true, then some branch has all its formulas true under \( v \). At the start this is the root. Suppose it holds before a stage, and the stage applies \( \chi \)'s rule below the chosen branch \( B' \). A branch \( B \) all of whose formulas are true under \( v \) is either another branch, which the stage leaves unchanged, or \( B' \) itself. In the second case \( v \) makes \( \chi \) true, since \( \chi \) is on \( B' \), and by the clause of @def-truth-value from which the rule was read, \( v \) makes true every formula of one new node. One rule at a time:
 
-- \( \varphi \wedge \psi \) true: \( \varphi \) and \( \psi \) true, by (V3).
-- \( \neg(\varphi \vee \psi) \) true: \( \varphi \vee \psi \) false, so \( \neg\varphi \) and \( \neg\psi \) true, by (V2) and (V4).
-- \( \neg(\varphi \to \psi) \) true: \( \varphi \to \psi \) false, so \( \varphi \) and \( \neg\psi \) true, by (V2) and (V5).
-- \( \neg\neg\varphi \) true: \( \neg\varphi \) false, so \( \varphi \) true, by (V2) twice.
-- \( \varphi \vee \psi \) true: \( \varphi \) true or \( \psi \) true, by (V4).
-- \( \neg(\varphi \wedge \psi) \) true: \( \varphi \wedge \psi \) false, so \( \neg\varphi \) true or \( \neg\psi \) true, by (V2) and (V3).
-- \( \varphi \to \psi \) true: \( \varphi \) false or \( \psi \) true, so \( \neg\varphi \) true or \( \psi \) true, by (V5) and (V2).
-- \( \varphi \leftrightarrow \psi \) true: the parts agree, so both are true, or \( \neg\varphi \) and \( \neg\psi \) are both true, by (V6) and (V2).
-- \( \neg(\varphi \leftrightarrow \psi) \) true: the parts differ, so \( \varphi \) and \( \neg\psi \) are true, or \( \neg\varphi \) and \( \psi \) are, by (V2) and (V6).
+- \( \varphi \wedge \psi \) true: \( \varphi \) and \( \psi \) true, since a conjunction needs both parts, (V3).
+- \( \neg(\varphi \vee \psi) \) true: \( \varphi \vee \psi \) false, so \( \neg\varphi \) and \( \neg\psi \) true, since negation flips, (V2), and a false disjunction has both parts false, (V4).
+- \( \neg(\varphi \to \psi) \) true: \( \varphi \to \psi \) false, so \( \varphi \) and \( \neg\psi \) true, since a false implication has a true hypothesis and a false conclusion, (V5), and negation flips.
+- \( \neg\neg\varphi \) true: \( \neg\varphi \) false, so \( \varphi \) true, since negation flips twice.
+- \( \varphi \vee \psi \) true: \( \varphi \) true or \( \psi \) true, since a disjunction needs a true part.
+- \( \neg(\varphi \wedge \psi) \) true: \( \varphi \wedge \psi \) false, so \( \neg\varphi \) true or \( \neg\psi \) true, since a false conjunction has a false part and negation flips.
+- \( \varphi \to \psi \) true: \( \varphi \) false or \( \psi \) true, so \( \neg\varphi \) true or \( \psi \) true, since a true implication has a false hypothesis or a true conclusion, and negation flips.
+- \( \varphi \leftrightarrow \psi \) true: the parts agree, so both are true, or \( \neg\varphi \) and \( \neg\psi \) are both true, since a biconditional says the parts agree, (V6), and negation flips.
+- \( \neg(\varphi \leftrightarrow \psi) \) true: the parts differ, so \( \varphi \) and \( \neg\psi \) are true, or \( \neg\varphi \) and \( \psi \) are, since the parts differ and negation flips.
 
-So the new branch through that node has all its formulas true under \( v \), and the claim holds after the stage. By @ax-induction on the number of stages, it holds for the tree at hand. A closed branch holds \( \varphi \) and \( \neg\varphi \), or \( \bot \), and \( v \) cannot make all of these true, by (V2) and (V1). So if every branch is closed, no valuation makes every formula of \( \Delta \) true: \( \Delta \) is unsatisfiable.
+So the new branch through that node has all its formulas true under \( v \), and the claim holds after the stage. By @ax-induction on the number of stages, it holds for the tree at hand. A closed branch holds \( \varphi \) and \( \neg\varphi \), or \( \bot \). Since negation flips and \( \bot \) is always false, (V1), \( v \) cannot make all of these true. So if every branch is closed, no valuation makes every formula of \( \Delta \) true: \( \Delta \) is unsatisfiable.
 
 (c) Let \( B \) be open and finished. We prove that \( v_B(\chi) = \mathrm{T} \) for every formula \( \chi \) on \( B \), by @thm-strong-induction on the length of \( \chi \): assume it for every formula on \( B \) shorter than \( \chi \).
 
 - An atom \( p \) on \( B \) is true, by the definition of \( v_B \).
 - \( \bot \) is not on \( B \), since \( B \) is open.
-- \( \neg\bot \) is true, by (V1) and (V2).
+- \( \neg\bot \) is true, since \( \bot \) is false and negation flips.
 - A negated atom \( \neg p \): \( p \) is not on \( B \), else \( B \) would be closed, so \( v_B(p) = \mathrm{F} \) and \( \neg p \) is true.
-- Any other \( \chi \) is used on \( B \), since \( B \) is finished. So \( B \) passes through a node carrying the formulas of one of \( \chi \)'s ways. Each of them is shorter than \( \chi \): by the count of symbols in Section 4.3, \( \neg\varphi \) has one symbol more than \( \varphi \), and \( (\varphi \circ \psi) \) has the symbols of \( \varphi \) and \( \psi \) plus \( 3 \), so each of \( \varphi \), \( \psi \), \( \neg\varphi \), \( \neg\psi \) is shorter than \( (\varphi \circ \psi) \) and than its negation, and \( \varphi \) is shorter than \( \neg\neg\varphi \). So each is true under \( v_B \) by the hypothesis, and then \( \chi \) is true by the clause of its row in the bullets of (b), read from right to left.
+- Any other \( \chi \) is used on \( B \), since \( B \) is finished. So \( B \) passes through a node carrying the formulas of one of \( \chi \)'s ways. Each of them is shorter than \( \chi \), by the count of symbols in Section 4.3. There, \( \neg\varphi \) has one symbol more than \( \varphi \), and \( (\varphi \circ \psi) \) has the symbols of \( \varphi \) and \( \psi \) plus \( 3 \). So each of \( \varphi \), \( \psi \), \( \neg\varphi \), \( \neg\psi \) is shorter than \( (\varphi \circ \psi) \) and than its negation, and \( \varphi \) is shorter than \( \neg\neg\varphi \). So each is true under \( v_B \) by the hypothesis. Then \( \chi \) is true, by the same clause that gave its case in (b), used in the other direction: if every formula of one of \( \chi \)'s ways is true, then \( \chi \) is true.
 
 The formulas of \( \Delta \) are at the root, which is on \( B \), so all of them are true under \( v_B \).
 
 The last sentence of the statement: apply (a), and then (b) or (c), to the list \( \Delta = \Gamma, \neg\psi \). By Section 4.5, \( \Gamma \models \psi \) exactly when this list is unsatisfiable, and a valuation making it true makes every formula of \( \Gamma \) true and \( \psi \) false.
+
+::: {.uses}
+@def-truth-value (clauses V1 to V6); @ax-induction (induction on the stages); @thm-strong-induction (induction on length).
+:::
 :::
 :::
 
 ::: {.warning}
-A split needs **both** sides. Had we said, in the first tree, "suppose \( q \) is true", closed that branch and stopped, we would have shown only that no refuting row makes \( q \) true; the rows with \( q \) false and \( r \) true were never examined. A clash reached under a guess refutes the guess, not the claim. The converse slip: an open branch proves something only when it is **finished**. While a formula on it is unused, it may still close.
+A split needs **both** sides. Suppose that in the first tree we had said "suppose \( q \) is true", closed that branch and stopped. We would have shown only that no refuting row makes \( q \) true. The rows with \( q \) false and \( r \) true were never examined. A clash reached under a guess refutes the guess, not the claim. The converse slip: an open branch proves something only when it is **finished**. While a formula on it is unused, it may still close.
 :::
 
-## Choosing the next move
+## Choosing the next step
 
 Every order gives the same verdict; the work differs. Five tactics keep a tree small.
 
@@ -279,7 +285,7 @@ Take the atoms \( e \): "\( n \) is even", \( t \): "\( n \) is a multiple of \(
 
 A number with its row (\( e \), \( f \) true, \( t \) false) is \( n = 4 \): even, a multiple of \( 4 \), not a multiple of \( 3 \). All three claims hold for it. The branch \( t \) need not be followed.
 
-The search treats \( e \), \( f \) and \( t \) as independent letters. Here both rows that satisfy the list, \( e, f, \neg t \) and \( \neg e, \neg f, t \) (the branch \( t \), followed to the end), happen to be rows of integers, \( 4 \) and \( 3 \); nothing in the search guarantees it. A row such as \( e = \mathrm{F} \), \( f = \mathrm{T} \), which no integer has (a multiple of \( 4 \) is even), is a row like any other to the search, as the warning at the end of Section 4.4 says.
+The search treats \( e \), \( f \) and \( t \) as independent letters. Here both rows that satisfy the list, \( e, f, \neg t \) and \( \neg e, \neg f, t \) (the branch \( t \), followed to the end), happen to be rows of integers, \( 4 \) and \( 3 \); nothing in the search guarantees it. Take a row such as \( e = \mathrm{F} \), \( f = \mathrm{T} \). No integer has it, since a multiple of \( 4 \) is even. To the search it is a row like any other, as Section 4.4 warned.
 :::
 
 Section 3.2 asked whether a list is **inconsistent**; the search asks whether it is **unsatisfiable**, and Sections 4.7 and 4.8 prove that the two questions always have the same answer.
@@ -293,30 +299,37 @@ No. The rule of \( p \to q \) gives \( \neg p \), which closes against \( p \), 
 :::
 
 ::: {.second-reading title="A tree is a table with rows merged"}
-Each branch of a search tree stands for the rows that agree with its atoms and negated atoms and make true every formula split above it: a branch carrying \( p \) and \( \neg s \), with no split above it, stands for every row with \( p \) true and \( s \) false. A closed branch stands for no row at all. A split keeps the rows of its branch that make the split formula true and divides them into two groups, which may overlap; a row of the branch that makes the formula false lies on neither side and is struck out at the split itself. So a tree whose branches all close is a truth table whose rows have been grouped and struck out a group at a time. In the first tree of this section, the root's \( p \) and \( \neg s \) leave four of the sixteen rows on \( p, q, r, s \) as candidates; the branch through \( q \) and its closed leaves strike out the two of those with \( q \) true, the branch through \( r \) the one left with \( q \) false and \( r \) true, and the row with \( q \) and \( r \) both false lies on neither side of the split of \( p \to (q \vee r) \), which it makes false. Between them, the root's atoms, the splits and the five closed branches strike out all sixteen rows as candidates for a refuting row, and nobody had to write any of them down.
+Each branch of a search tree stands for certain rows: those that agree with its atoms and negated atoms and make true every formula split above it. For example, a branch carrying \( p \) and \( \neg s \), with no split above it, stands for every row with \( p \) true and \( s \) false. A closed branch stands for no row at all. A split keeps the rows of its branch that make the split formula true, and divides them into two groups, which may overlap. A row of the branch that makes the formula false lies on neither side, and is struck out at the split itself. So a tree whose branches all close is a truth table whose rows have been grouped and struck out a group at a time. Take the first tree of this section. The root's \( p \) and \( \neg s \) leave four of the sixteen rows on \( p, q, r, s \) as candidates. The branch through \( q \) and its closed leaves strike out the two of those with \( q \) true. The branch through \( r \) strikes out the one left with \( q \) false and \( r \) true. The row with \( q \) and \( r \) both false makes \( p \to (q \vee r) \) false, so it lies on neither side of that split. Between them, the root's atoms, the splits and the five closed branches strike out all sixteen rows as candidates for a refuting row, and nobody had to write any of them down.
 :::
 
 ## The withheld verdicts
 
-Section 3.2's derive-or-break items withheld the verdict, and a claim that resisted both deriving and breaking by hand stayed open. The search settles each **semantically**: a closed tree shows the claim valid, an open finished branch gives a refuting row, always in finitely many steps.
+The exercises of Section 3.2 that asked you to derive a claim or break it gave no verdict in advance, and a claim that resisted both deriving and breaking by hand stayed open. The search settles each **semantically**: a closed tree shows the claim valid, an open finished branch gives a refuting row, always in finitely many steps.
 
 Here are the four claims that Exercise B3 of Section 3.2 broke (@exr-four-kinds-of-task-b3, used later), read as entailments, each with the row its search returns. \( \times \) marks a side that closes.
 
 | Claim | Refuting row | The search |
 |---|---|---|
-| (a) \( \neg p \vee \neg q \models \neg(p \vee q) \) | \( p = \mathrm{F} \), \( q = \mathrm{T} \) | root \( \neg p \vee \neg q \), \( \neg\neg(p \vee q) \); add \( p \vee q \); split \( \neg p \vee \neg q \); under \( \neg p \), \( p \vee q \) gives \( p \) \( \times \) or \( q \): open |
+| (a) \( \neg p \vee \neg q \models \neg(p \vee q) \) | \( p = \mathrm{F} \), \( q = \mathrm{T} \) | root \( \neg p \vee \neg q \), \( \neg\neg(p \vee q) \). Add \( p \vee q \). Split \( \neg p \vee \neg q \). Under \( \neg p \), \( p \vee q \) gives \( p \) \( \times \) or \( q \): open |
 | (d) \( p \to q, \ \neg p \to (r \vee q), \ \neg r \models p \) | \( p = \mathrm{F} \), \( q = \mathrm{T} \), \( r = \mathrm{F} \) | \( p \to q \): \( \neg p \) or \( q \); under \( \neg p \), \( \neg p \to (r \vee q) \) gives \( \neg\neg p \) \( \times \) or \( r \vee q \); then \( r \) \( \times \) or \( q \): open |
 | (f) \( (p \to q) \to r, \ \neg r \models q \) | \( p = \mathrm{T} \), \( q = \mathrm{F} \), \( r = \mathrm{F} \) | \( \neg(p \to q) \) or \( r \) \( \times \); \( \neg(p \to q) \) gives \( p, \neg q \): open |
 | (g) \( p \vee q, \ p \models \neg q \) | \( p = q = \mathrm{T} \) | \( \neg\neg q \) gives \( q \); \( p \vee q \): \( p \) or \( q \), both open |
 
-Each row is the row of Section 3.2's break, whose statements about \( x \) take these values: in (a) they are \( x > 2 \) and \( x > 0 \) at \( x = 1 \); in (d), \( x > 5 \), \( x > 0 \) and \( x > 10 \) at \( x = 1 \); in (f), \( x > 0 \), \( x > 2 \) and \( x > 3 \) at \( x = 1 \); in (g), \( x > 1 \) and \( x > 2 \) at \( x = 3 \). Section 3.2 found these rows by hand; the search finds them without a guess, and would have said "valid" had there been none.
+Each row is the row of Section 3.2's break, whose statements about \( x \) take these values:
 
-Two questions remain, and they are the next two sections': does a refuting row show that no derivation exists, and does a valid claim always have a derivation? (Sections 4.7 and 4.8.)
+- in (a), \( x > 2 \) and \( x > 0 \) at \( x = 1 \);
+- in (d), \( x > 5 \), \( x > 0 \) and \( x > 10 \) at \( x = 1 \);
+- in (f), \( x > 0 \), \( x > 2 \) and \( x > 3 \) at \( x = 1 \);
+- in (g), \( x > 1 \) and \( x > 2 \) at \( x = 3 \).
+
+Section 3.2 found these rows by hand; the search finds them without a guess, and would have said "valid" had there been none.
+
+Two questions remain. Does a refuting row show that no derivation exists? Does a valid claim always have a derivation? Sections 4.7 and 4.8 answer them.
 
 ::: {.remark}
 [Looking ahead]
 
-Section 4.7 proves that a refuting row rules out every derivation. With it, a search that stays open on a subgoal tells a derivation search to stop chasing that subgoal: the move *test the subgoal*.
+Section 4.7 proves that a refuting row rules out every derivation. With it, a search that stays open on a subgoal tells a derivation search to stop chasing that subgoal: the proof method *test the subgoal*.
 :::
 
 ## Exercises
@@ -327,8 +340,8 @@ Section 4.7 proves that a refuting row rules out every derivation. With it, a se
 [A1]
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Which of these formulas split when used: \( p \wedge q \); \( \neg(p \wedge q) \); \( \neg(p \to q) \); \( p \leftrightarrow q \); \( \neg\neg p \)?
-2. An open finished branch carries \( p \to q \) (used), \( \neg q \), \( \neg p \), \( r \). Which row does it give?
+1. Which of these formulas split when used: \( p \wedge q \), \( \neg(p \wedge q) \), \( \neg(p \to q) \), \( p \leftrightarrow q \), \( \neg\neg p \)?
+2. An open finished branch carries the used formula \( p \to q \), and \( \neg q \), \( \neg p \), \( r \). Which row does it give?
 3. True or false: if some branch of a finished tree for \( \Gamma, \neg\psi \) is closed, then \( \Gamma \models \psi \).
 4. True or false: two finished trees for the same list, built in different orders, can give different verdicts.
 5. Why does the warning say that a clash reached under a guess refutes the guess, not the claim?
@@ -359,7 +372,7 @@ The parts run from writing one rule, through closing a branch and reading off a 
 4. What does \( \neg\neg(p \wedge q) \) add?
 5. Is the branch \( p \vee q, \ \neg p, \ \neg q, \ q \) closed?
 6. Is the branch \( p \to q, \ \neg q, \ p \) closed?
-7. An open finished branch carries \( \neg(p \wedge q) \) (used), \( p \), \( \neg q \). Which row does it give?
+7. An open finished branch carries the used formula \( \neg(p \wedge q) \), and \( p \), \( \neg q \). Which row does it give?
 8. Search: does \( p \vee q \models p \) hold?
 9. Search: does \( p \wedge q \models p \vee r \) hold?
 10. Is the list \( p \leftrightarrow q, \ q \leftrightarrow \neg p \) satisfiable?
@@ -385,7 +398,7 @@ The parts run from writing one rule, through closing a branch and reading off a 
 
 (h) No. Root \( p \vee q, \ \neg p \); split: \( p \) closes, and \( q \) is open and finished. The row \( p = \mathrm{F} \), \( q = \mathrm{T} \) refutes it.
 
-(i) Yes. Root \( p \wedge q, \ \neg(p \vee r) \); one way: \( p, q \); one way: \( \neg p, \neg r \); closed, so valid.
+(i) Yes. Root \( p \wedge q, \ \neg(p \vee r) \). One way: \( p, q \). One way: \( \neg p, \neg r \). Closed, so valid.
 
 (j) No. The first gives \( p, q \) or \( \neg p, \neg q \). Under each, the second gives \( q, \neg p \) or \( \neg q, \neg\neg p \), and all four branches close. The last one, \( \neg p, \neg q, \neg q, \neg\neg p \), closes at once: \( \neg\neg p \) is the negation of \( \neg p \).
 
@@ -444,7 +457,7 @@ Let \( n \) be an integer, and consider:
 
 (b) Drop (4). In the tree without it, the branch \( s, f, t \), with \( o \) false, is open and finished. The integer \( n = 12 \) is divisible by \( 6 \), \( 4 \) and \( 3 \), and not odd, so it satisfies (1), (2), (3) and (5). Dropping (1) instead also works: under \( s \), the rule of \( f \to \neg t \) gives \( \neg f \), then \( s \to t \) gives \( t \), and the branch \( s, \neg f, t \), with \( o \) false, is open and finished; \( n = 6 \) realizes it.
 
-**Marking scheme.** (6 points)
+**What a complete answer needs.** (6 points)
 
 - 1: the formulas.
 - 3: the closed tree.
@@ -452,7 +465,7 @@ Let \( n \) be an integer, and consider:
 :::
 
 ::: {#exr-refuting-row-search-b3}
-[B3: Name the move, then complete it]
+[B3: Name the next step, then complete it]
 
 A search for \( p \vee (q \wedge r) \models p \vee q \) has reached this stage.
 
@@ -465,11 +478,11 @@ A search for \( p \vee (q \wedge r) \models p \vee q \) has reached this stage.
 \end{center}
 ```
 
-*Name the move, then complete it.*
+*Name the next step, then complete it.*
 :::
 
 ::: {.solution}
-No one-way formula is left unused, so the move is to split the disjunction \( p \vee (q \wedge r) \). The side \( p \) closes against \( \neg p \). The side \( q \wedge r \) is one way: it adds \( q, r \), and closes against \( \neg q \). Every branch is closed: the entailment holds.
+No one-way formula is left unused, so the next step is to split the disjunction \( p \vee (q \wedge r) \). The side \( p \) closes against \( \neg p \). The side \( q \wedge r \) is one way: it adds \( q, r \), and closes against \( \neg q \). Every branch is closed: the entailment holds.
 
 ```{=latex}
 \begin{center}
@@ -481,9 +494,9 @@ No one-way formula is left unused, so the move is to split the disjunction \( p 
 \end{center}
 ```
 
-**Marking scheme.** (4 points)
+**What a complete answer needs.** (4 points)
 
-- 1: the move named (split, since nothing one-way is left).
+- 1: the next step named (split, since nothing one-way is left).
 - 2: the completed tree.
 - 1: the verdict.
 :::
@@ -493,7 +506,7 @@ No one-way formula is left unused, so the move is to split the disjunction \( p 
 ::: {#exr-refuting-row-search-c1}
 [C1: Rules for a new connective]
 
-Add the connective \( \mathbin{|} \) ("not both"), with the clause (V7) of @exr-entailment-and-equivalence-c1: \( \varphi \mathbin{|} \psi \) is \( \mathrm{F} \) exactly when both parts are \( \mathrm{T} \).
+Add the connective \( \mathbin{|} \) ("not both"), with the clause for "not both", (V7), of @exr-entailment-and-equivalence-c1: \( \varphi \mathbin{|} \psi \) is \( \mathrm{F} \) exactly when both parts are \( \mathrm{T} \).
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Read search rules for \( \varphi \mathbin{|} \psi \) and for \( \neg(\varphi \mathbin{|} \psi) \) off (V7), and say which is one way.
@@ -509,7 +522,7 @@ Add the connective \( \mathbin{|} \) ("not both"), with the clause (V7) of @exr-
 
 (c) The root is the negated formula, \( \neg(p \mathbin{|} (p \mathbin{|} p)) \). It is one way: it adds \( p \) and \( p \mathbin{|} p \). The latter gives \( \neg p \) \( \times \) or \( \neg p \) \( \times \). The tree is closed, so the negation is unsatisfiable and the formula is a tautology. It says "not both \( p \) and not \( p \)", since \( p \mathbin{|} p \) is true exactly when \( p \) is false.
 
-**Marking scheme.** (8 points)
+**What a complete answer needs.** (8 points)
 
 - 3: (a), with each rule tied to its rows of (V7).
 - 2: (b).
@@ -517,9 +530,9 @@ Add the connective \( \mathbin{|} \) ("not both"), with the clause (V7) of @exr-
 :::
 
 ::: {#exr-refuting-row-search-c2}
-[C2: Exit check: refuting-row search]
+[C2: Chapter check: refuting-row search]
 
-*Close the section first.* For each claim, run a search tree, state the tactics you used in your order of moves, give the verdict, and say which part of @prp-search-decides justifies it.
+*Close the section first.* For each claim, run a search tree, state the tactics you used in your order of stages, give the verdict, and say which part of @prp-search-decides justifies it.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. \( p \to (q \vee r), \ \neg r \models p \to q \)
@@ -532,14 +545,14 @@ Add the connective \( \mathbin{|} \) ("not both"), with the clause (V7) of @exr-
 
 (b) The conclusion first: \( \neg(q \vee \neg r) \) adds \( \neg q, \neg\neg r \), and then \( \neg\neg r \) adds \( r \) (one way before two ways). Split \( p \vee q \), whose side \( q \) closes at once: \( p \), or \( q \) \( \times \). Under \( p \): \( p \to r \) gives \( \neg p \) \( \times \) or \( r \), and the branch is open and finished (stop at the first finished open branch). By (c), its row \( p = \mathrm{T} \), \( q = \mathrm{F} \), \( r = \mathrm{T} \) makes every root formula true: \( p \vee q \) is \( \mathrm{T} \), \( p \to r \) is \( \mathrm{T} \), and \( q \vee \neg r \) is \( \mathrm{F} \). The claim is refuted.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 1 + 1: the roots, which are the counterexample sets.
 - 3 + 3: the trees.
 - 1: the tactics named.
 - 1: the parts of @prp-search-decides cited correctly, (b) for (a) and (c) for (b).
 
-Fatal errors (0 for the part): a root without the negated conclusion; a verdict from an unfinished open branch.
+Slips that lose the step (0 for the part): a root without the negated conclusion; a verdict from an unfinished open branch.
 :::
 
 ::: {#exr-refuting-row-search-c3}
@@ -551,17 +564,17 @@ Extend search trees by the rules of C1 for \( \mathbin{|} \). Prove that @prp-se
 ::: {.solution}
 (a) The new rules add immediate parts or their negations, so every added formula is still a subformula of a root formula or the negation of one, and the count of the proof is unchanged.
 
-(b) New cases of the claim. If \( v \) makes \( \varphi \mathbin{|} \psi \) true, then by (V7) not both parts are true, so \( v \) makes \( \neg\varphi \) or \( \neg\psi \) true: one of the two new nodes. If \( v \) makes \( \neg(\varphi \mathbin{|} \psi) \) true, then \( \varphi \mathbin{|} \psi \) is false, so both parts are true: the one new node.
+(b) New cases of the claim. If \( v \) makes \( \varphi \mathbin{|} \psi \) true, then not both parts are true, by the clause for "not both", (V7), so \( v \) makes \( \neg\varphi \) or \( \neg\psi \) true: one of the two new nodes. If \( v \) makes \( \neg(\varphi \mathbin{|} \psi) \) true, then \( \varphi \mathbin{|} \psi \) is false, so both parts are true: the one new node.
 
-(c) New cases of the induction. A used \( \varphi \mathbin{|} \psi \) on \( B \) has \( \neg\varphi \) or \( \neg\psi \) on \( B \), which is shorter and true by the hypothesis, so one part of \( \varphi \mathbin{|} \psi \) is false and \( \varphi \mathbin{|} \psi \) is true by (V7). A used \( \neg(\varphi \mathbin{|} \psi) \) has \( \varphi \) and \( \psi \) on \( B \), both shorter and true by the hypothesis, so \( \varphi \mathbin{|} \psi \) is false and its negation true. The base cases are unchanged: an atom, a negated atom, \( \bot \) and \( \neg\bot \).
+(c) New cases of the induction. A used \( \varphi \mathbin{|} \psi \) on \( B \) has \( \neg\varphi \) or \( \neg\psi \) on \( B \), which is shorter and true by the hypothesis, so one part of \( \varphi \mathbin{|} \psi \) is false. Then \( \varphi \mathbin{|} \psi \) is true, by its clause, (V7). A used \( \neg(\varphi \mathbin{|} \psi) \) has \( \varphi \) and \( \psi \) on \( B \), both shorter and true by the hypothesis, so \( \varphi \mathbin{|} \psi \) is false and its negation true. The base cases are unchanged: an atom, a negated atom, \( \bot \) and \( \neg\bot \).
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 2: (a).
 - 4: (b), both rules.
 - 4: (c), both rules, with the hypothesis applied to shorter formulas.
 
-Fatal error: in (c), using the hypothesis for \( \varphi \mathbin{|} \psi \) itself.
+Slips that lose the step: in (c), using the hypothesis for \( \varphi \mathbin{|} \psi \) itself.
 :::
 
 <!-- dependency ledger
@@ -572,6 +585,7 @@ prp-search-decides (proof): induction on the number of stages in (b) | ax-induct
 prp-search-decides (proof): a tree with at most N splits along each branch has at most 2^N branches | inline (each split at most doubles the branches below it)
 prp-search-decides (claim): the two observations before the statement | inline; made exact in the folded proof
 prp-search-decides (claim): Gamma |= psi iff Gamma, not-psi unsatisfiable | F1.3 §05 (display after def-valid-argument), cited as "Section 4.5"
+def-search-tree (example, unlabeled, before the definition): the list p v q, not-p; case p closes, case q is finished with the row p F, q T | inline (two-atom check by the tables)
 exm-refuting-row-search-closed (claim): the tree, its five closed branches and the verdict | inline; checked by verify/ch04/exm-refuting-row-search-closed.py
 exm-refuting-row-search-open (claim): the open finished branch and its row p, r true, q, s false | inline; checked by verify/ch04/exm-refuting-row-search-open.py
 exm-satisfiability-search (example): 4 is even, a multiple of 4, not of 3; 3 is odd, a multiple of 3, not of 4 | school arithmetic; checked by verify/ch04/exm-satisfiability-search.py

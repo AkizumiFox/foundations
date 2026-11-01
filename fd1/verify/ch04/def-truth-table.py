@@ -68,4 +68,12 @@ g = P(r"\neg(p \wedge q)")
 for v in ({"p": True, "q": False}, {"p": False, "q": True}):
     assert ver(g, v) and V(g, v)
 assert fal(P("q"), {"q": False}) and fal(P("p"), {"p": False})   # the conjunct chosen is false
+# Worked instances before lem-coincidence, def-truth-table, def-truth-function (S3e)
+for r in (True, False):   # v, w make p true, q false, differ on r: p and not q is T
+    assert V(P(r"p \wedge \neg q"), {"p": True, "q": False, "r": r}) is True
+assert [L.tv(r, "p", "q") for r in L.rows("pq")] == [(True, True), (True, False), (False, True), (False, False)]
+assert [V(P(r"p \wedge q"), r) for r in L.rows("pq")] == [True, False, False, False]
+for a in (True, False):
+    for b in (True, False):
+        assert V(P(r"p_1 \wedge p_2"), {"p_1": a, "p_2": b}) == (a and b)
 print("def-truth-table: all quoted values check")

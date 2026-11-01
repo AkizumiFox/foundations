@@ -2,7 +2,7 @@
 
 This section is optional, and nothing outside it depends on it.
 
-Every list of premises in this chapter has been finite, and the proof of completeness needed that: its Step 1 lists the atoms of \( \Gamma \) and \( \psi \), and there are only finitely many of them because \( \Gamma \) is a finite list (@thm-completeness). But a statement about infinitely many objects can come with infinitely many premises. Give each \( n \ge 1 \) an atom \( p_n \), read "the \( n \)-th lamp is on", and the rules "the first lamp is on" and "if the \( n \)-th lamp is on, so is the next" are one premise for each \( n \). This section defines \( \vdash \) and \( \models \) for such collections of premises, proves completeness for them by a route different from that of Section 4.8, and deduces from it the compactness theorem: a collection of formulas can be made true all at once as soon as each finite part of it can. The word "collection" keeps its everyday sense throughout; nothing here needs more.
+Every list of premises in this chapter has been finite, and the proof of completeness needed that (@thm-completeness). It began by listing the atoms of \( \Gamma \) and \( \psi \). There are only finitely many of them because \( \Gamma \) is a finite list. But a statement about infinitely many objects can come with infinitely many premises. Give each \( n \ge 1 \) an atom \( p_n \), read "the \( n \)-th lamp is on". Then the rules "the first lamp is on" and "if the \( n \)-th lamp is on, so is the next" are one premise for each \( n \). This section defines \( \vdash \) and \( \models \) for such collections of premises. It proves completeness for them by a route different from that of Section 4.8. From that it deduces the compactness theorem: a collection of formulas can be made true all at once as soon as each finite part of it can. The word "collection" has its everyday meaning throughout.
 
 ## Infinitely many premises
 
@@ -14,9 +14,9 @@ Every list of premises in this chapter has been finite, and the proof of complet
 Let \( \Gamma \) be a collection of formulas, finite or infinite, and \( \psi \) a formula. \( \Gamma \vdash \psi \) if \( \psi \) is derivable from some finite list of members of \( \Gamma \); \( \Gamma \) is **consistent** if \( \Gamma \nvdash \bot \). \( \Gamma \models \psi \) if every valuation that makes every member of \( \Gamma \) true makes \( \psi \) true; \( \Gamma \) is **satisfiable** if some valuation makes every member of \( \Gamma \) true.
 :::
 
-In words: a derivation has finitely many lines, so it can cite only finitely many premises. That is why \( \vdash \) goes through finite lists of members, while \( \models \) looks at all of \( \Gamma \) at once. For a finite list the new definitions agree with the old. A derivation from part of a list is a derivation from the list, by @lem-weakening-cut (a), so \( \vdash \) means what @def-derivable said, and *consistent* means what @def-inconsistent-set said. The definitions of \( \models \) and *satisfiable* say for a finite list exactly what @def-valid-argument and @def-satisfiable said. "Finite list of members" allows repetitions and any order; neither matters, by @lem-weakening-cut (a) and by the definitions of \( \models \) and *satisfiable*.
+In words: a derivation has finitely many lines, so it can cite only finitely many premises. That is why \( \vdash \) goes through finite lists of members, while \( \models \) looks at all of \( \Gamma \) at once. For a finite list the new definitions agree with the old. A derivation from part of a list is a derivation from the whole list, by weakening (@lem-weakening-cut (a)). So \( \vdash \) means what it meant in @def-derivable. Likewise, *consistent* means what it meant in @def-inconsistent-set. For a finite list, the definition of \( \models \) says exactly what @def-valid-argument said. The definition of *satisfiable* says exactly what @def-satisfiable said. "Finite list of members" allows repetitions and any order. Neither matters: for \( \vdash \) by @lem-weakening-cut (a), and for \( \models \) and *satisfiable* by their definitions.
 
-An example. Let \( \Gamma \) consist of \( p_1 \) and every formula \( p_n \to p_{n+1} \) with \( n \ge 1 \). Then \( \Gamma \vdash p_3 \): from the finite list \( p_1, \ p_1 \to p_2, \ p_2 \to p_3 \), two \( \rulename{{\to}E} \) lines give \( p_2 \) and then \( p_3 \). And \( \Gamma \models p_n \) for every \( n \ge 1 \): a valuation making every member of \( \Gamma \) true makes \( p_1 \) true, and makes \( p_{n+1} \) true whenever it makes \( p_n \) true, so it makes every \( p_n \) true, by @ax-induction on \( n \), started at \( 1 \).
+An example. Let \( \Gamma \) consist of \( p_1 \) and every formula \( p_n \to p_{n+1} \) with \( n \ge 1 \). Then \( \Gamma \vdash p_3 \): from the finite list \( p_1, \ p_1 \to p_2, \ p_2 \to p_3 \), two \( \rulename{{\to}E} \) lines give \( p_2 \) and then \( p_3 \). And \( \Gamma \models p_n \) for every \( n \ge 1 \). A valuation making every member of \( \Gamma \) true makes \( p_1 \) true. It also makes \( p_{n+1} \) true whenever it makes \( p_n \) true. So it makes every \( p_n \) true, by induction on \( n \) started at \( 1 \) (@ax-induction).
 
 ::: {.check}
 Is the collection consisting of \( p_1 \vee p_2 \) and every \( \neg p_n \) with \( n \ge 2 \) satisfiable? Is it consistent?
@@ -48,6 +48,7 @@ Write the atoms in one list \( a_1, a_2, a_3, \dots \) (say \( p, q, r, p_1, p_2
 \[
 a_1, \dots, a_n, \ \bot, \ \neg, \ \wedge, \ \vee, \ \to, \ \leftrightarrow, \ (, \ ) .
 \]
+
 There are finitely many such strings (at most \( (n+8)^n \) of each length up to \( n \)), so finitely many of them are formulas. Stage \( n \) lists, in any order, the formulas among them that no earlier stage listed. Write the stages one after another and number the entries \( \varphi_0, \varphi_1, \dots \). Each stage \( n \) lists at least the atom \( a_n \), which is available for the first time, so the stages together list infinitely many formulas.
 
 Every formula occurs. Let \( \varphi \) have length \( \ell \), and let its atoms be among \( a_1, \dots, a_m \) (with \( m = 0 \) if it has none). At stage \( n = \max\{\ell, m\} \) (note \( \ell \ge 1 \)), \( \varphi \) is a string of length at most \( n \) over the symbols of that stage, so it is listed then, or earlier.
@@ -56,13 +57,13 @@ Every formula occurs. Let \( \varphi \) have length \( \ell \), and let its atom
 
 ## Lindenbaum's construction
 
-The new proof of completeness works the other way round from Section 4.8. It does not build a derivation. It starts from a consistent collection and builds a row that makes all of it true. The row is read off a collection that has made up its mind about every formula.
+The new proof of completeness works the other way round from Section 4.8. It does not build a derivation. It starts from a consistent collection and builds a row that makes all of it true. The row is read off a collection that contains, for every formula, either the formula or its negation.
 
 A collection \( \Delta \) is **maximal consistent** if it is consistent and, for every formula \( \varphi \), \( \varphi \) is in \( \Delta \) or \( \neg\varphi \) is.
 
-The construction rests on one step. Exercise C2 of Section 3.2 (@exr-four-kinds-of-task-c2) proved it for finite lists; here it is again, for collections, with its proof.
+The construction rests on one step. For finite lists it is Exercise C2 of Section 3.2 (@exr-four-kinds-of-task-c2). Here it is for collections, with its proof.
 
-**The key step.** *If \( \Delta \) is consistent, then \( \Delta \) with \( \varphi \) added, or \( \Delta \) with \( \neg\varphi \) added, is consistent.* Suppose both were inconsistent. Then there are finite lists \( \Delta_1 \) and \( \Delta_2 \) of members of \( \Delta \) with \( \Delta_1, \varphi \vdash \bot \) and \( \Delta_2, \neg\varphi \vdash \bot \) (if a derivation of \( \bot \) does not use \( \varphi \), or \( \neg\varphi \), adding it as a premise changes nothing, by weakening). By weakening, both hold with the list \( \Delta_1, \Delta_2 \) in place of \( \Delta_1 \) and of \( \Delta_2 \). A \( \rulename{\neg I} \) box on \( \varphi \) gives \( \Delta_1, \Delta_2 \vdash \neg\varphi \), and an \( \rulename{RAA} \) box on \( \neg\varphi \) gives \( \Delta_1, \Delta_2 \vdash \varphi \) (this is @prp-derivable-iff-negation-inconsistent). Then \( \rulename{\neg E} \), by chaining (@lem-weakening-cut (c)), gives \( \Delta_1, \Delta_2 \vdash \bot \), and \( \Delta \) would be inconsistent.
+**The key step.** *If \( \Delta \) is consistent, then \( \Delta \) with \( \varphi \) added, or \( \Delta \) with \( \neg\varphi \) added, is consistent.* Suppose both were inconsistent. Then there are finite lists \( \Delta_1 \) and \( \Delta_2 \) of members of \( \Delta \) with \( \Delta_1, \varphi \vdash \bot \) and \( \Delta_2, \neg\varphi \vdash \bot \). A derivation of \( \bot \) that does not use \( \varphi \), or \( \neg\varphi \), still gives this: adding the formula as a premise changes nothing, by weakening. By weakening, both hold with the list \( \Delta_1, \Delta_2 \) in place of \( \Delta_1 \) and of \( \Delta_2 \). A \( \rulename{\neg I} \) box on \( \varphi \) gives \( \Delta_1, \Delta_2 \vdash \neg\varphi \), and an \( \rulename{RAA} \) box on \( \neg\varphi \) gives \( \Delta_1, \Delta_2 \vdash \varphi \) (this is @prp-derivable-iff-negation-inconsistent). Then \( \rulename{\neg E} \), by chaining (@lem-weakening-cut (c)), gives \( \Delta_1, \Delta_2 \vdash \bot \), and \( \Delta \) would be inconsistent.
 
 ::: {#lem-lindenbaum}
 [Lindenbaum's Lemma]
@@ -84,6 +85,7 @@ Let \( \Gamma \) be consistent, and let \( \varphi_0, \varphi_1, \dots \) be the
 \Delta_n \text{ with } \neg\varphi_n \text{ added}, & \text{otherwise.}
 \end{cases}
 \]
+
 Every \( \Delta_n \) is consistent, by @ax-induction: \( \Delta_0 = \Gamma \) is; and if \( \Delta_n \) is, then \( \Delta_{n+1} \) is, by its definition in the first case and by the key step in the second. Each \( \Delta_n \) contains the one before.
 
 Let \( \Delta \) consist of the formulas that belong to some \( \Delta_n \). Then \( \Delta \) contains \( \Gamma = \Delta_0 \).
@@ -103,7 +105,7 @@ Start from \( \Gamma = \{p \vee q, \ \neg p\} \) with a list of formulas beginni
 
 ## A row from a maximal consistent collection
 
-A maximal consistent collection behaves like the collection of formulas that are true in one row: it contains a negation exactly when it lacks the negated formula, a conjunction exactly when it contains both parts, and so on through the clauses of @def-truth-value.
+A maximal consistent collection behaves like the collection of formulas that are true in one row. It contains a negation exactly when it lacks the negated formula. It contains a conjunction exactly when it contains both parts. The other connectives follow the clauses of @def-truth-value in the same way.
 
 ::: {#lem-maximal-consistent}
 [Maximal Consistent Collections]
@@ -121,7 +123,7 @@ In words: whatever \( \Delta \) derives, it already contains; it decides every f
 
 ::: {.second-reading title="The proof: a maximal collection decides everything"}
 ::: {.idea}
-For each clause, find the derivable sequent that says the same thing as the truth table, and let (a) put what \( \Delta \) derives into \( \Delta \); where a formula must be shown missing, derive its negation instead and use (b).
+For each clause, find the derivable sequent that says the same thing as the truth table. Then (a) puts what \( \Delta \) derives into \( \Delta \). Where a formula must be shown missing, derive its negation instead and use (b).
 :::
 
 ::: {.proof}
@@ -135,11 +137,11 @@ Derivations from \( \Delta \) are combined by @lem-weakening-cut throughout: two
 
 \( \wedge \). If \( \varphi \wedge \psi \in \Delta \), then \( \rulename{\wedge E} \) gives \( \Delta \vdash \varphi \) and \( \Delta \vdash \psi \), so both are in \( \Delta \) by (a). If both are in \( \Delta \), \( \rulename{\wedge I} \) gives \( \Delta \vdash \varphi \wedge \psi \), so it is in \( \Delta \) by (a).
 
-\( \vee \). If \( \varphi \in \Delta \) or \( \psi \in \Delta \), then \( \rulename{\vee I} \) gives \( \Delta \vdash \varphi \vee \psi \), so it is in \( \Delta \) by (a). If neither is in \( \Delta \), then \( \neg\varphi, \neg\psi \in \Delta \) by (b), and \( (\vee 3) \) of @lem-connective-rows gives \( \Delta \vdash \neg(\varphi \vee \psi) \); so \( \neg(\varphi \vee \psi) \in \Delta \) by (a), and \( \varphi \vee \psi \notin \Delta \) by (b).
+\( \vee \). If \( \varphi \in \Delta \) or \( \psi \in \Delta \), then \( \rulename{\vee I} \) gives \( \Delta \vdash \varphi \vee \psi \), so it is in \( \Delta \) by (a). If neither is in \( \Delta \), then \( \neg\varphi, \neg\psi \in \Delta \) by (b). The sequent \( \neg\varphi, \neg\psi \vdash \neg(\varphi \vee \psi) \), \( (\vee 3) \) of @lem-connective-rows, gives \( \Delta \vdash \neg(\varphi \vee \psi) \); so \( \neg(\varphi \vee \psi) \in \Delta \) by (a), and \( \varphi \vee \psi \notin \Delta \) by (b).
 
-\( \to \). If \( \varphi \to \psi \in \Delta \) and \( \varphi \in \Delta \), then \( \rulename{{\to}E} \) gives \( \Delta \vdash \psi \), so \( \psi \in \Delta \) by (a); hence \( \varphi \notin \Delta \) or \( \psi \in \Delta \). Conversely, if \( \varphi \notin \Delta \), then \( \neg\varphi \in \Delta \) by (b), and \( ({\to}1) \) gives \( \Delta \vdash \varphi \to \psi \); if \( \psi \in \Delta \), then \( ({\to}2) \) gives it. Either way \( \varphi \to \psi \in \Delta \) by (a).
+\( \to \). If \( \varphi \to \psi \in \Delta \) and \( \varphi \in \Delta \), then \( \rulename{{\to}E} \) gives \( \Delta \vdash \psi \), so \( \psi \in \Delta \) by (a); hence \( \varphi \notin \Delta \) or \( \psi \in \Delta \). Conversely, if \( \varphi \notin \Delta \), then \( \neg\varphi \in \Delta \) by (b), and \( ({\to}1) \), \( \neg\varphi \vdash \varphi \to \psi \), gives \( \Delta \vdash \varphi \to \psi \). If \( \psi \in \Delta \), then \( ({\to}2) \), \( \psi \vdash \varphi \to \psi \), gives it. Either way \( \varphi \to \psi \in \Delta \) by (a).
 
-\( \leftrightarrow \). If both \( \varphi \), \( \psi \) are in \( \Delta \), \( ({\leftrightarrow}1) \) gives \( \Delta \vdash \varphi \leftrightarrow \psi \); if neither, then \( \neg\varphi, \neg\psi \in \Delta \) and \( ({\leftrightarrow}2) \) gives it; in both cases \( \varphi \leftrightarrow \psi \in \Delta \) by (a). If exactly one is in \( \Delta \), the other's negation is in \( \Delta \) by (b), and \( ({\leftrightarrow}3) \) or \( ({\leftrightarrow}4) \) gives \( \Delta \vdash \neg(\varphi \leftrightarrow \psi) \); so \( \neg(\varphi \leftrightarrow \psi) \in \Delta \) by (a), and \( \varphi \leftrightarrow \psi \notin \Delta \) by (b). (With \( \varphi \leftrightarrow \psi \in \Delta \), \( \rulename{{\leftrightarrow}E} \) passes membership from either part to the other, which is the same fact read from the other side.)
+\( \leftrightarrow \). If both \( \varphi \), \( \psi \) are in \( \Delta \), the sequent \( \varphi, \psi \vdash \varphi \leftrightarrow \psi \), \( ({\leftrightarrow}1) \), gives \( \Delta \vdash \varphi \leftrightarrow \psi \). If neither, then \( \neg\varphi, \neg\psi \in \Delta \), and \( \neg\varphi, \neg\psi \vdash \varphi \leftrightarrow \psi \), \( ({\leftrightarrow}2) \), gives it. In both cases \( \varphi \leftrightarrow \psi \in \Delta \) by (a). If exactly one is in \( \Delta \), the other's negation is in \( \Delta \) by (b). Then \( \varphi, \neg\psi \vdash \neg(\varphi \leftrightarrow \psi) \), \( ({\leftrightarrow}3) \), or \( \neg\varphi, \psi \vdash \neg(\varphi \leftrightarrow \psi) \), \( ({\leftrightarrow}4) \), gives \( \Delta \vdash \neg(\varphi \leftrightarrow \psi) \). So \( \neg(\varphi \leftrightarrow \psi) \in \Delta \) by (a), and \( \varphi \leftrightarrow \psi \notin \Delta \) by (b). If \( \varphi \leftrightarrow \psi \in \Delta \), then \( \rulename{{\leftrightarrow}E} \) passes membership from either part to the other. This is the same fact in contrapositive form.
 :::
 :::
 
@@ -152,17 +154,21 @@ Let \( \Delta \) be maximal consistent, and let \( v_\Delta \) be the valuation 
 :::
 
 ::: {.idea}
-Induct on \( \varphi \). Each clause of @def-truth-value has a twin in @lem-maximal-consistent: part (b) for \( \neg \), part (c) for the binary connectives. The induction hypothesis turns "true under \( v_\Delta \)" into "in \( \Delta \)" for the parts, and the twin does the rest.
+Induct on \( \varphi \). Each clause of @def-truth-value has a twin in the lemma above. Part (b) of @lem-maximal-consistent is the twin for \( \neg \), and part (c) for the binary connectives. The induction hypothesis turns "true under \( v_\Delta \)" into "in \( \Delta \)" for the parts, and the twin clause finishes the step.
 :::
 
 ::: {.proof}
 By @thm-structural-induction, with the property "\( v_\Delta(\varphi) = \mathrm{T} \) iff \( \varphi \in \Delta \)".
 
-*Atoms:* this is the definition of \( v_\Delta \). *\( \bot \):* \( v_\Delta(\bot) = \mathrm{F} \) by (V1), and \( \bot \notin \Delta \) by @lem-maximal-consistent (b), so both sides of the "iff" fail.
+*Atoms:* this is the definition of \( v_\Delta \). *\( \bot \):* \( v_\Delta(\bot) = \mathrm{F} \), since \( \bot \) is false under every valuation, (V1). And \( \bot \notin \Delta \) by @lem-maximal-consistent (b), so both sides of the "iff" fail.
 
-*\( \neg\varphi \):* \( v_\Delta(\neg\varphi) = \mathrm{T} \) iff \( v_\Delta(\varphi) = \mathrm{F} \), by (V2); iff \( \varphi \notin \Delta \), by the induction hypothesis; iff \( \neg\varphi \in \Delta \), by @lem-maximal-consistent (b).
+*\( \neg\varphi \):* \( v_\Delta(\neg\varphi) = \mathrm{T} \) iff \( v_\Delta(\varphi) = \mathrm{F} \), since negation flips the value, (V2); iff \( \varphi \notin \Delta \), by the induction hypothesis; iff \( \neg\varphi \in \Delta \), by @lem-maximal-consistent (b).
 
-*\( \varphi \wedge \psi \):* \( v_\Delta(\varphi \wedge \psi) = \mathrm{T} \) iff \( v_\Delta(\varphi) = \mathrm{T} \) and \( v_\Delta(\psi) = \mathrm{T} \), by (V3); iff \( \varphi \in \Delta \) and \( \psi \in \Delta \), by the induction hypothesis; iff \( \varphi \wedge \psi \in \Delta \), by @lem-maximal-consistent (c). The cases \( \vee \), \( \to \), \( \leftrightarrow \) are the same: the clause of @def-truth-value for the connective and the clause of @lem-maximal-consistent (c) for it say the same thing, once "true under \( v_\Delta \)" is read as "in \( \Delta \)" for the two parts, as the induction hypothesis allows. This proves the lemma.
+*\( \varphi \wedge \psi \):* \( v_\Delta(\varphi \wedge \psi) = \mathrm{T} \) iff \( v_\Delta(\varphi) = \mathrm{T} \) and \( v_\Delta(\psi) = \mathrm{T} \), since a conjunction needs both parts, (V3); iff \( \varphi \in \Delta \) and \( \psi \in \Delta \), by the induction hypothesis; iff \( \varphi \wedge \psi \in \Delta \), by @lem-maximal-consistent (c). The cases \( \vee \), \( \to \), \( \leftrightarrow \) are the same. For each, the truth-value clause for the connective and its clause in @lem-maximal-consistent (c) say the same thing. This needs "true under \( v_\Delta \)" read as "in \( \Delta \)" for the two parts, as the induction hypothesis allows. This proves the lemma.
+
+::: {.uses}
+@def-truth-value (the clauses for each connective).
+:::
 :::
 
 ## Completeness again
@@ -178,15 +184,23 @@ If \( \Gamma \) does not derive \( \psi \), then adding \( \neg\psi \) cannot le
 :::
 
 ::: {.proof}
-We prove the contrapositive of the first sentence. Suppose \( \Gamma \nvdash \psi \). Then \( \Gamma \) with \( \neg\psi \) added is consistent. For suppose some finite list of its members derived \( \bot \); adding \( \neg\psi \) to the list if it is not there (weakening), we have \( \Gamma_0, \neg\psi \vdash \bot \) for a finite list \( \Gamma_0 \) of members of \( \Gamma \), and an \( \rulename{RAA} \) box on \( \neg\psi \) gives \( \Gamma_0 \vdash \psi \), so \( \Gamma \vdash \psi \). By @lem-lindenbaum, \( \Gamma \) with \( \neg\psi \) is contained in a maximal consistent \( \Delta \). By @lem-truth-lemma, \( v_\Delta \) makes every member of \( \Delta \) true, in particular every member of \( \Gamma \), and \( \neg\psi \). So \( v_\Delta \) makes \( \psi \) false, and \( \Gamma \not\models \psi \).
+We prove the contrapositive of the first sentence. Suppose \( \Gamma \nvdash \psi \). Then \( \Gamma \) with \( \neg\psi \) added is consistent. For suppose some finite list of its members derived \( \bot \). Add \( \neg\psi \) to the list if it is not there, by weakening. Then \( \Gamma_0, \neg\psi \vdash \bot \) for a finite list \( \Gamma_0 \) of members of \( \Gamma \). An \( \rulename{RAA} \) box on \( \neg\psi \) gives \( \Gamma_0 \vdash \psi \), so \( \Gamma \vdash \psi \). By @lem-lindenbaum, \( \Gamma \) with \( \neg\psi \) is contained in a maximal consistent \( \Delta \). By @lem-truth-lemma, \( v_\Delta \) makes every member of \( \Delta \) true, in particular every member of \( \Gamma \), and \( \neg\psi \). So \( v_\Delta \) makes \( \psi \) false, and \( \Gamma \not\models \psi \).
 
-The equivalence: by @def-infinite-entailment and (V1), \( \Gamma \) is satisfiable iff \( \Gamma \not\models \bot \), and consistent iff \( \Gamma \nvdash \bot \). So the first sentence with \( \psi = \bot \) is the second. Conversely, given the second, if \( \Gamma \nvdash \psi \), then \( \Gamma \) with \( \neg\psi \) is consistent, as just shown, hence satisfiable, by a row that refutes \( \Gamma \models \psi \).
+The equivalence: \( \Gamma \) is satisfiable iff \( \Gamma \not\models \bot \), since \( \bot \) is false under every valuation, (V1). And \( \Gamma \) is consistent iff \( \Gamma \nvdash \bot \). So the first sentence with \( \psi = \bot \) is the second. Conversely, given the second, if \( \Gamma \nvdash \psi \), then \( \Gamma \) with \( \neg\psi \) is consistent, as just shown, hence satisfiable, by a row that refutes \( \Gamma \models \psi \).
+
+::: {.uses}
+@lem-weakening-cut (a) (weakening); @def-infinite-entailment (satisfiable, consistent).
+:::
 :::
 
 **Two proofs, two prices.** Section 4.8 glued the rows of a truth table into one derivation. That is a construction one can carry out, from \( 2^n \) row derivations for \( n \) atoms, but only for finitely many premises. This section never writes a derivation. It shows that if none exists, then a row exists, by a construction that passes through infinitely many formulas, one at a time, and cannot be finished by hand. The first proof is effective (it writes the derivation down) and limited to finite lists; the second reaches infinite collections and produces no derivation. The second is the route that extends beyond propositional logic.
 
 ::: {.second-reading title="A remark on the list of formulas"}
-Besides the rules, and the structural induction and recursion of Section 4.3, the proof used one new fact about the formulas: that they can be listed (@lem-formula-enumeration). The construction then decides the formulas in the order of the list, and a different list may give a different \( \Delta \) and a different row; any of them refutes \( \Gamma \models \psi \). The proof cites @prp-excluded-middle nowhere, but its key step uses \( \rulename{RAA} \), and so does the step from \( \Gamma \nvdash \psi \) to the consistency of \( \Gamma \) with \( \neg\psi \). It is classical in the same way as the splitting of Section 4.8, which used excluded middle.
+Besides the rules, and the structural induction and recursion of Section 4.3, the proof used one new fact about the formulas: that they can be listed (@lem-formula-enumeration). The construction then decides the formulas in the order of the list. A different list may give a different \( \Delta \) and a different row, and any of them refutes \( \Gamma \models \psi \).
+:::
+
+::: {.second-reading title="For instructors"}
+The proof cites @prp-excluded-middle nowhere, but its key step uses \( \rulename{RAA} \), and so does the step from \( \Gamma \nvdash \psi \) to the consistency of \( \Gamma \) with \( \neg\psi \). It is classical in the same way as the splitting of Section 4.8, which used excluded middle.
 :::
 
 ## Compactness
@@ -200,7 +214,7 @@ A collection \( \Gamma \) of formulas is satisfiable if and only if every finite
 ::: {.proof}
 "Only if": a valuation making every member of \( \Gamma \) true makes every member of each finite list true. "If": every finite list of members of \( \Gamma \) is satisfiable, hence consistent, by Section 4.7. So \( \Gamma \) is consistent, since a derivation of \( \bot \) from \( \Gamma \) would use a finite list of members. By @thm-completeness-infinite, \( \Gamma \) is satisfiable.
 
-For the second sentence: \( \Gamma \models \psi \) iff \( \Gamma \) with \( \neg\psi \) added is unsatisfiable (a valuation making \( \Gamma \) true and \( \psi \) false is exactly one making both \( \Gamma \) and \( \neg\psi \) true); iff, by the first sentence, some finite list of its members is unsatisfiable; iff some finite list \( \Gamma_0 \) of members of \( \Gamma \) has \( \Gamma_0, \neg\psi \) unsatisfiable (adding \( \neg\psi \) to an unsatisfiable list keeps it unsatisfiable, and \( \Gamma_0, \neg\psi \) is itself such a list); iff \( \Gamma_0 \models \psi \), by Section 4.5's reduction of entailment to unsatisfiability.
+For the second sentence, \( \Gamma \models \psi \) iff \( \Gamma \) with \( \neg\psi \) added is unsatisfiable. Indeed, a valuation making \( \Gamma \) true and \( \psi \) false is exactly one making both \( \Gamma \) and \( \neg\psi \) true. By the first sentence, this holds iff some finite list of its members is unsatisfiable. That holds iff some finite list \( \Gamma_0 \) of members of \( \Gamma \) has \( \Gamma_0, \neg\psi \) unsatisfiable. Here adding \( \neg\psi \) to an unsatisfiable list keeps it unsatisfiable, and \( \Gamma_0, \neg\psi \) is itself such a list. Finally, \( \Gamma_0, \neg\psi \) is unsatisfiable iff \( \Gamma_0 \models \psi \), by Section 4.5's reduction of entailment to unsatisfiability.
 :::
 
 ::: {#exm-compactness-chain}
@@ -219,7 +233,7 @@ Let \( \Gamma \) consist of \( p_1 \) and every \( p_n \to p_{n+1} \) with \( n 
 
 *(b)* Take the valuation making \( p_1, \dots, p_{50} \) true and every other atom false. It makes \( p_1 \) true; it makes \( p_n \to p_{n+1} \) true for \( n < 50 \) (true conclusion) and for \( n > 50 \) (false hypothesis); only \( p_{50} \to p_{51} \) is false. So it makes every member of the finite list true, and \( p_{100} \) false.
 
-Compactness says that this is no accident: an entailment from infinitely many premises always rests on finitely many of them. Here every finite list that entails \( p_{100} \) must contain all ninety-nine implications up to \( p_{99} \to p_{100} \), since (b)'s argument works with any \( p_k \to p_{k+1} \), \( k < 100 \), in place of \( p_{50} \to p_{51} \), and it must contain \( p_1 \), since the valuation making every atom false makes all the implications true.
+Compactness says that this is no accident: an entailment from infinitely many premises always rests on finitely many of them. Here every finite list that entails \( p_{100} \) must contain all ninety-nine implications up to \( p_{99} \to p_{100} \). The reason: the argument of (b) works with any \( p_k \to p_{k+1} \), \( k < 100 \), in place of \( p_{50} \to p_{51} \). The list must also contain \( p_1 \), since the valuation making every atom false makes all the implications true.
 :::
 
 ::: {.warning}
@@ -262,8 +276,6 @@ Chapter 7 states completeness and compactness for predicate logic (Section 7.6, 
 
 ::: {#exr-compactness-a2}
 [A2: Drill]
-
-The parts run from judging collections, through the definitions and single stages of the construction, to the lemmas and the theorem, and end with one more collection to judge.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Is the collection of all \( p_n \) with \( n \ge 1 \) satisfiable?
@@ -328,7 +340,7 @@ Run the construction of @lem-lindenbaum on \( \Gamma = \{p \vee q, \ \neg p\} \)
 
 Whatever the rest of the list, \( \neg p \) and \( q \) are in \( \Delta \), so \( p \notin \Delta \) by @lem-maximal-consistent (b), and \( v_\Delta \) makes \( p \) false and \( q \) true. Later stages only add formulas, so they cannot change this.
 
-**Marking scheme.** (6 points)
+**What a complete answer needs.** (6 points)
 
 - 4: one per stage, with its justification (a row checked, or a derivation of \( \bot \)).
 - 2: the row of \( v_\Delta \) on \( p \), \( q \), and why later stages cannot change it.
@@ -337,7 +349,7 @@ Whatever the rest of the list, \( \neg p \) and \( q \) are in \( \Delta \), so 
 ::: {#exr-compactness-b2}
 [B2: The clause for implication]
 
-Prove the \( \to \) clause of @lem-maximal-consistent (c) in full, from parts (a) and (b) and the sequents of @lem-connective-rows.
+Prove the \( \to \) clause of @lem-maximal-consistent (c) in full. Use parts (a) and (b) and the sequents of @lem-connective-rows.
 :::
 
 ::: {.solution}
@@ -345,7 +357,7 @@ Prove the \( \to \) clause of @lem-maximal-consistent (c) in full, from parts (a
 
 (\( \Leftarrow \)) If \( \varphi \notin \Delta \), then \( \neg\varphi \in \Delta \) by (b), and \( ({\to}1) \), \( \neg\varphi \vdash \varphi \to \psi \), shows \( \Delta \vdash \varphi \to \psi \); so \( \varphi \to \psi \in \Delta \) by (a). If \( \psi \in \Delta \), then \( ({\to}2) \), \( \psi \vdash \varphi \to \psi \), does the same.
 
-**Marking scheme.** (6 points)
+**What a complete answer needs.** (6 points)
 
 - 3: (\( \Rightarrow \)), with (a) cited.
 - 3: (\( \Leftarrow \)), both cases, with (b) used in the first.
@@ -366,20 +378,23 @@ Let \( \Gamma \) consist of three kinds of formulas:
 - \( \neg(c_{n,i} \wedge c_{n,j}) \), for every vertex \( n \) and all \( i \ne j \);
 - \( \neg(c_{m,i} \wedge c_{n,i}) \), for every joined pair \( m \), \( n \) and every \( i \).
 
-A valuation making every member of \( \Gamma \) true gives each vertex exactly one color (the first two kinds), and joined vertices different colors (the third kind): it is a 3-coloring, coloring \( n \) with the \( i \) for which \( c_{n,i} \) is true.
+A valuation making every member of \( \Gamma \) true gives each vertex exactly one color, by the first two kinds. It gives joined vertices different colors, by the third kind. So it is a 3-coloring: color \( n \) with the \( i \) for which \( c_{n,i} \) is true.
 
-Every finite list \( \Gamma_0 \) of members of \( \Gamma \) is satisfiable. Its members mention finitely many vertices; call that finite set \( F \). By hypothesis, \( F \) with the joins among its vertices has a 3-coloring \( \kappa \). Let \( v \) make \( c_{n,i} \) true exactly when \( n \in F \) and \( \kappa(n) = i \). Each member of \( \Gamma_0 \) mentions only vertices of \( F \), and \( v \) makes it true: the first kind because \( \kappa \) colors every vertex of \( F \), the second because it gives each one color, the third because \( \kappa \) colors joined vertices of \( F \) differently.
+Every finite list \( \Gamma_0 \) of members of \( \Gamma \) is satisfiable. Its members mention finitely many vertices; call that finite set \( F \). By hypothesis, \( F \) with the joins among its vertices has a 3-coloring \( \kappa \). Let \( v \) make \( c_{n,i} \) true exactly when \( n \in F \) and \( \kappa(n) = i \). Each member of \( \Gamma_0 \) mentions only vertices of \( F \), and \( v \) makes it true. A member of the first kind is true because \( \kappa \) colors every vertex of \( F \). One of the second kind is true because \( \kappa \) gives each vertex one color. One of the third kind is true because \( \kappa \) colors joined vertices of \( F \) differently.
 
 By @thm-compactness, \( \Gamma \) is satisfiable, and a satisfying valuation is a 3-coloring of the whole graph.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 3: the collection \( \Gamma \), with all three kinds.
 - 2: a valuation making \( \Gamma \) true gives a 3-coloring.
 - 4: every finite part satisfiable, with the restriction to the vertices it mentions.
 - 1: @thm-compactness cited.
 
-Fatal errors (0 for the step): coloring the vertices one at a time and claiming the choices can always be continued, with no argument; a "finite part" argument that colors only the vertices \( 1, \dots, n \) without checking that every member of \( \Gamma_0 \) mentions only them.
+Slips that lose the step:
+
+- coloring the vertices one at a time and claiming, with no argument, that the choices can always be continued;
+- a "finite part" argument that colors only the vertices \( 1, \dots, n \) without checking that every member of \( \Gamma_0 \) mentions only them.
 :::
 
 ::: {#exr-compactness-c2}
@@ -403,19 +418,25 @@ For (a), suppose neither value works, and take one finite list witnessing each f
 :::
 
 ::: {.solution}
-*(a)* \( P_0 \) is the hypothesis. Suppose \( P_n \) holds and neither value of \( a_{n+1} \) works. Then there is a finite list \( F_1 \) that no valuation agreeing with the choices and making \( a_{n+1} \) true satisfies, and a finite list \( F_2 \) that no valuation agreeing with the choices and making \( a_{n+1} \) false satisfies. By \( P_n \), the finite list \( F_1, F_2 \) is satisfied by some valuation \( u \) agreeing with the choices for \( a_1, \dots, a_n \). If \( u \) makes \( a_{n+1} \) true, it satisfies \( F_1 \); if false, it satisfies \( F_2 \). Either way a contradiction. So some value works: choose \( \mathrm{T} \) if \( \mathrm{T} \) works, and \( \mathrm{F} \) otherwise. This gives \( P_{n+1} \), and the rule defines the values by recursion on \( n \).
+*(a)* \( P_0 \) is the hypothesis. Suppose \( P_n \) holds and neither value of \( a_{n+1} \) works. Then there is a finite list \( F_1 \) that no valuation satisfies if it agrees with the choices and makes \( a_{n+1} \) true. There is also a finite list \( F_2 \) that no valuation satisfies if it agrees with the choices and makes \( a_{n+1} \) false. By \( P_n \), the finite list \( F_1, F_2 \) is satisfied by some valuation \( u \) agreeing with the choices for \( a_1, \dots, a_n \). If \( u \) makes \( a_{n+1} \) true, it satisfies \( F_1 \); if false, it satisfies \( F_2 \). Either way a contradiction. So some value works: choose \( \mathrm{T} \) if \( \mathrm{T} \) works, and \( \mathrm{F} \) otherwise. This gives \( P_{n+1} \), and the rule defines the values by recursion on \( n \).
 
 *(b)* By (a) and @ax-induction, \( P_n \) holds for every \( n \). Let \( \gamma \in \Gamma \), with its atoms among \( a_1, \dots, a_N \). By \( P_N \), the one-member list \( \gamma \) is made true by some valuation agreeing with \( v \) on \( a_1, \dots, a_N \). By @lem-coincidence, \( v \) makes \( \gamma \) true.
 
-*(c)* @lem-coincidence, @ax-induction (\( P_n \) for every \( n \), from (a)), and a definition by recursion on \( n \) (each choice depends on the earlier ones). No derivation and no completeness theorem is used: this proves @thm-compactness directly.
+*(c)* Part (b) uses three earlier results:
 
-**Marking scheme.** (10 points)
+- @lem-coincidence;
+- @ax-induction, for \( P_n \) for every \( n \), from (a);
+- a definition by recursion on \( n \), since each choice depends on the earlier ones.
+
+No derivation and no completeness theorem is used: this proves @thm-compactness directly.
+
+**What a complete answer needs.** (10 points)
 
 - 5: (a), with the joint list \( F_1, F_2 \) and both cases of \( u \).
-- 4: (b), with \( N \) chosen from the atoms of \( \gamma \), \( P_N \) obtained from (a) by @ax-induction, and @lem-coincidence cited.
+- 4: (b), with \( N \) chosen from the atoms of \( \gamma \), \( P_N \) obtained from (a) by induction, and @lem-coincidence cited.
 - 1: (c).
 
-Fatal errors (0 for the step): in (a), choosing a value that works for each finite list separately, possibly different for different lists.
+Slips that lose the step: in (a), choosing a value that works for each finite list separately, possibly different for different lists.
 :::
 
 <!-- dependency ledger
@@ -428,7 +449,8 @@ lem-lindenbaum (proof): the key step: Delta consistent implies Delta with phi or
 lem-lindenbaum (proof): the key step's derivations | rules neg-I, RAA, neg-E; lem-weakening-cut (a), (c); prp-derivable-iff-negation-inconsistent (cited)
 lem-maximal-consistent (proof): each clause from a derivable sequent | lem-connective-rows (vee 3), (to 1), (to 2), (iff 1)-(iff 4); rules and-E, and-I, vee-I, to-E
 lem-truth-lemma (proof): structural induction; the clauses of the truth value | thm-structural-induction, def-truth-value (cited)
-thm-completeness-infinite (proof): Gamma not deriving psi makes Gamma with not-psi consistent | RAA, lem-weakening-cut (a) (argued inline)
+thm-completeness-infinite (proof): Gamma not deriving psi makes Gamma with not-psi consistent | RAA, lem-weakening-cut (a) (argued inline; weakening cited in the Uses line)
+thm-completeness-infinite (proof): satisfiable iff not entailing bot | def-infinite-entailment (Uses line), def-truth-value (V1) in words
 thm-compactness (proof): satisfiable implies consistent | F1.3 §07, in prose (thm-soundness, cor-refuting-row: a satisfiable list derives no bot)
 thm-compactness (proof): Gamma_0 entails psi iff Gamma_0, not-psi is unsatisfiable | F1.3 §05, the reduction after def-valid-argument (unlabeled), recalled in prose
 exm-compactness-chain (example): truth passed along p_n -> p_(n+1) reaches every p_n | ax-induction, started at 1 (cited)

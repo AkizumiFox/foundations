@@ -11,4 +11,6 @@ assert 2 ** 3 == 8 and 3 ** 2 == 9 and 2 ** 4 == 16 == 4 ** 2
 for n in range(0, 200):
     assert (5 ** n - 1) % 4 == 0 and 5 ** (n + 1) - 1 == 5 * (5 ** n - 1) + 4
 assert 5 ** 0 - 1 == 0
+# the instance before the principle: P(0) for "2^n > n"
+assert 2 ** 0 == 1 > 0
 print("ax-induction: all quoted values check")
