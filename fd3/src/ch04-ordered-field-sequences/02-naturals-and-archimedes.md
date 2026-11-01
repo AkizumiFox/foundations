@@ -289,7 +289,7 @@ Applied again, the theorem shows that an interval of an Archimedean field contai
 
 ## A field that is not Archimedean
 
-Section 3.2 proved the Archimedean property of \( \nQ \) from the construction of \( \nQ \): every rational is a quotient of integers. Nothing in (F1)–(F9) and (O1)–(O4) forces it. The standard witness uses polynomials, which this volume has not built; *Algebraic Preliminaries*, Chapter 4 builds them as formal polynomials. We use the school algebra of polynomials in this one example, and say so. No proof of a numbered result in this chapter cites it; it serves only as a counterexample, in prose, warnings and exercises.
+Section 3.2 proved the Archimedean property of \( \nQ \) from the construction of \( \nQ \): every rational is a quotient of integers. Nothing in (F1)–(F9) and (O1)–(O4) forces it. The standard witness uses polynomials, which this volume has not built; *Preliminaries for Analysis and Algebra*, Chapter 6 builds them as formal polynomials. We use the school algebra of polynomials in this one example, and say so. No proof of a numbered result in this chapter cites it; it serves only as a counterexample, in prose, warnings and exercises.
 
 ::: {#exm-rational-function-field}
 [A Non-Archimedean Ordered Field]

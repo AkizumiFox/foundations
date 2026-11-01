@@ -27,7 +27,7 @@ That is the danger of the whole chapter. A formula that looks fine on pairs can 
 ## Threads
 
 - **Well-definedness, the level below and positive sets.** Section 2.1 makes integers from pairs of naturals, Section 3.1 makes rationals from pairs of integers, and Chapter 5 makes real numbers from classes of sequences of rationals, each time by the lemma and the check of Section 2.2, the move of Section 2.3 and the order of Section 2.4.
-- **Least elements.** Chapter 1 proves it for \( \nN \), Section 2.4 for sets of integers bounded below, Section 2.5 uses it for the remainder, and *Algebraic Preliminaries*, Chapter 1 takes it up for divisibility and the Euclidean algorithm.
+- **Least elements.** Chapter 1 proves it for \( \nN \), Section 2.4 for sets of integers bounded below, Section 2.5 uses it for the remainder, and *Preliminaries for Analysis and Algebra*, Chapter 2 takes it up for divisibility and the Euclidean algorithm.
 - **The copy of \( \nN \).** Section 2.2 identifies \( n \) with \( [(n, 0)] \); every later chapter writes \( \nN \subseteq \nZ \subseteq \nQ \) without further comment.
 
 ## Summary

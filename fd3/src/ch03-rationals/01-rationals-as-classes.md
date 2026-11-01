@@ -61,7 +61,7 @@ In words: a rational number is a **set of pairs**, all the pairs \( (r, s) \) wi
 - \( [(1, 2)] = \{ (k, 2k) : k \in \nZ_{>0} \} \). Indeed, \( (r, s) \sim (1, 2) \) means \( 2r = s \). Then \( 2r > 0 \), and \( r \le 0 \) would give \( 2r = r + r \le 0 \) (@prp-ordered-ring-rules (b)), so \( r > 0 \). Conversely each \( (k, 2k) \) with \( k > 0 \) has \( 2k > 0 \) and \( k \cdot 2 = 2k \cdot 1 \). Its elements with denominator at most \( 6 \) are \( (1, 2) \), \( (2, 4) \), \( (3, 6) \).
 - \( [(-2, 1)] = \{ (-2s, s) : s \in \nZ_{>0} \} \), since \( (r, s) \sim (-2, 1) \) means \( r = -2s \). This is the class that will be the integer \( -2 \).
 - The degenerate case: \( [(0, 1)] = \{ (0, s) : s \in \nZ_{>0} \} \), since \( (r, s) \sim (0, 1) \) means \( r \cdot 1 = 0 \cdot s = 0 \). Every fraction with numerator \( 0 \) lies in this one class, whatever its denominator; it will be the zero of \( \nQ \).
-- \( [(2, 3)] \) contains \( (4, 6) \) and \( (6, 9) \), since \( 2 \cdot 6 = 4 \cdot 3 \) and \( 2 \cdot 9 = 6 \cdot 3 \). It does not contain \( (-4, -6) \), which is not even an element of \( \nZ \times \nZ_{>0} \). Describing the whole class needs lowest terms, proved in *Algebraic Preliminaries*, Chapter 1.
+- \( [(2, 3)] \) contains \( (4, 6) \) and \( (6, 9) \), since \( 2 \cdot 6 = 4 \cdot 3 \) and \( 2 \cdot 9 = 6 \cdot 3 \). It does not contain \( (-4, -6) \), which is not even an element of \( \nZ \times \nZ_{>0} \). Describing the whole class needs lowest terms, proved in *Preliminaries for Analysis and Algebra*, Chapter 2.
 
 **Why positive denominators?** Non-zero denominators of either sign give a set in bijection with \( \nQ \), with matching classes (Exercise C3). The difference appears with the order: with positive denominators, "\( [(p, q)] \) is positive" can mean "\( p > 0 \)", one inequality in \( \nZ \); Section 3.2 shows what breaks otherwise.
 
@@ -468,7 +468,7 @@ Since \( 1 \) is the only element of \( \nZ_{>0} \) below \( 2 \) (discreteness)
 - 2: (b) gets a least element from @prp-integer-least-element, with the lower bound named.
 - 2: (b) explains why this defines exactly one function (one value per class; any such function has those values).
 - 2: (c) shows \( 4p = 6 \) has no integer solution and exhibits \( (3, 2) \).
-Fatal errors (0 for the step): defining \( N([(p, q)]) \) as "\( q \) divided by a common factor" (the formula uses a representative, and lowest terms come only in *Algebraic Preliminaries*, Chapter 1); in (c), "\( 4p = 6 \) has no solution since \( p = 3/2 \)" (uses division in \( \nQ \) to decide a question about \( \nZ \) without the discreteness argument).
+Fatal errors (0 for the step): defining \( N([(p, q)]) \) as "\( q \) divided by a common factor" (the formula uses a representative, and lowest terms come only in *Preliminaries for Analysis and Algebra*, Chapter 2); in (c), "\( 4p = 6 \) has no solution since \( p = 3/2 \)" (uses division in \( \nQ \) to decide a question about \( \nZ \) without the discreteness argument).
 :::
 
 ::: {#exr-rationals-as-classes-c2}
@@ -522,7 +522,7 @@ So \( I \) is a bijection: the two constructions have "the same" rational number
 prp-rational-pairs-equivalence (proof): s in Z_{>0} gives s > 0, hence s != 0 | thm-integers-ordered-ring (b) (recalled before the statement) and (O1)
 prp-rational-pairs-equivalence (claim): aftermath, F2.5 §02 met the transitivity failure for Z x N | F2.5 §02, exercise B1 (b) (prose comparison only; nothing depends on it)
 def-rationals-as-classes (example): (r, s) ~ (1, 2) forces r > 0 | prp-ordered-ring-rules (b) (cited) and 2r = r + r by (F9), (F7)
-def-rationals-as-classes (example): describing the whole class [(2, 3)] needs lowest terms | F5.1, prp-rationals-lowest-terms (prose pointer to Algebraic Preliminaries, Chapter 1; nothing depends on it)
+def-rationals-as-classes (example): describing the whole class [(2, 3)] needs lowest terms | F5.1, prp-rationals-lowest-terms (prose pointer to Preliminaries for Analysis and Algebra, Chapter 2; nothing depends on it)
 def-rationals-as-classes (claim): "Why positive denominators?", non-zero denominators give a set in bijection with Q; the order breaks without positivity | exr-rationals-as-classes-c3 and Section 3.2 (prose pointers within the chapter; nothing depends on them)
 prp-rational-operations-well-defined (proof): reordering products and sums in Z | thm-integers-commutative-ring (F1), (F2), (F5), (F6), (F9) (cited at the start of the proof)
 prp-rational-operations-well-defined (proof): second argument by symmetry, g_+(y, x) = g_+(x, y) and g_.(y, x) = g_.(x, y) as pairs | (F1) for ps + rq = rq + ps, (F6) for qs = sq and pr = rp, in Z (thm-integers-commutative-ring)
@@ -538,6 +538,6 @@ exr-rationals-as-classes-b3 (solution): (d) 2s = 1 has no solution in Z | cor-in
 exr-rationals-as-classes-c1 (solution): (p, q) in x implies x = [(p, q)] | fd2:def-quotient-set, fd2:def-equivalence-class, fd2:thm-classes-partition (b) (cited)
 exr-rationals-as-classes-c1 (solution): elements of Z_{>0} are >= 0, so 0 is a lower bound; 1 is the only element of Z_{>0} below 2 | thm-integers-ordered-ring (b), (c) (cited)
 exr-rationals-as-classes-c1 (solution): 4 < 6 < 8 in Z | thm-integers-ordered-ring (a) (order of N extended), computed in N
-exr-rationals-as-classes-c1 (solution): marking scheme, lowest terms come only later | F5.1 (prose pointer to Algebraic Preliminaries, Chapter 1; nothing depends on it)
+exr-rationals-as-classes-c1 (solution): marking scheme, lowest terms come only later | F5.1 (prose pointer to Preliminaries for Analysis and Algebra, Chapter 2; nothing depends on it)
 exr-rationals-as-classes-c3 (solution): the proof of prp-rational-pairs-equivalence uses of the denominators only that the middle one is non-zero | prp-rational-pairs-equivalence (proof, cited); (O1) for the case split q > 0 or q < 0
 -->

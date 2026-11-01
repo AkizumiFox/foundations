@@ -148,11 +148,11 @@
       "url": "https://akizumifox.github.io/math-atlas/fd2/",
       "labels": "../fd2/_build/crossref_labels.json"
     },
-    "fd5": {
-      "title": "Algebraic Preliminaries",
-      "short": "F5",
-      "url": "https://akizumifox.github.io/math-atlas/fd5/",
-      "labels": "../fd5/_build/crossref_labels.json"
+    "fd4": {
+      "title": "Preliminaries for Analysis and Algebra",
+      "short": "F4",
+      "url": "https://akizumifox.github.io/math-atlas/fd4/",
+      "labels": "../fd4/_build/crossref_labels.json"
     },
     "an1": {
       "title": "Analysis on the Real Line",

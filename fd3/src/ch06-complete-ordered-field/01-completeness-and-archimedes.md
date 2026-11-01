@@ -38,7 +38,7 @@ Two consequences come free. A strictly increasing map is injective: if \( a \ne 
 The zero map \( \chi(a) \coloneqq 0_L \) preserves sums and products, since \( 0 + 0 = 0 \) and \( 0 \cdot 0 = 0 \). It fails the unit clause, because \( 1_L \ne 0_L \) in a field, and it fails strict increase. In @def-cof-order-preserving-map the unit clause in fact follows from the other three: additivity gives \( \chi(0) = \chi(0) + \chi(0) \), so \( \chi(0) = 0 \); strict increase then gives \( \chi(1) > \chi(0) = 0 \); and \( \chi(1) = \chi(1)^2 \) with \( \chi(1) \ne 0 \) forces \( \chi(1) = 1 \). It is stated anyway because @prp-cof-map-fixes-rationals, @thm-cof-field-automorphism-identity and the remark after its proof assume sums, products and the unit but no order. Without the unit hypothesis, the zero map would be a counterexample to each of them.
 :::
 
-**Why this definition.** Preserving sums, products and the unit is what makes \( \chi \) a dictionary for the field operations; strict increase makes it a dictionary for the order. *Algebraic Preliminaries*, Chapter 2 meets a map of \( \nQ(\sqrt 2) \) to itself that respects sums, products and the unit but sends a positive element to a negative one, so the order clause does not follow from the others in general. Section 6.3 shows that for complete ordered fields it does.
+**Why this definition.** Preserving sums, products and the unit is what makes \( \chi \) a dictionary for the field operations; strict increase makes it a dictionary for the order. *Preliminaries for Analysis and Algebra*, Chapter 4 meets a map of \( \nQ(\sqrt 2) \) to itself that respects sums, products and the unit but sends a positive element to a negative one, so the order clause does not follow from the others in general. Section 6.3 shows that for complete ordered fields it does.
 
 ::: {.check}
 Which clauses of @def-cof-order-preserving-map does the map \( \chi \colon \nQ \to \nQ \), \( \chi(x) \coloneqq -x \), satisfy?
@@ -269,7 +269,7 @@ Both cases are impossible, so \( s^2 = a \) by trichotomy (O1), and \( b \colone
 
 For \( a \ge 0 \) in a complete ordered field we write \( \sqrt a \) for this \( b \). In the constructed reals, the class \( r \) of @exm-sqrt2-class has \( r > 0 \) and \( r^2 = 2 \), so \( r = \sqrt 2 \) by the uniqueness clause, and @exm-cof-rationals-below-sqrt2 describes \( \nQ_{\nR}(\sqrt 2) \).
 
-Completeness was used once, to produce \( s \); the rest is ordered-field arithmetic. Without completeness the statement fails: \( 2 \) has no square root in \( \nQ \), and *Algebraic Preliminaries*, Chapter 2 meets \( \nQ(\sqrt 2) \), an Archimedean field that still lacks square roots.
+Completeness was used once, to produce \( s \); the rest is ordered-field arithmetic. Without completeness the statement fails: \( 2 \) has no square root in \( \nQ \), and *Preliminaries for Analysis and Algebra*, Chapter 4 meets \( \nQ(\sqrt 2) \), an Archimedean field that still lacks square roots.
 
 ::: {#exm-method-point-as-supremum}
 [Method: construct a point as a supremum]
@@ -443,7 +443,7 @@ def-cof-order-preserving-map (claim): strictly increasing implies injective and 
 def-cof-order-preserving-map (example): x -> 2x and x -> -x on Q fail the unit and product clauses | arithmetic in Q; inline
 def-cof-order-preserving-map (claim): the zero map preserves + and . but not 1; 1_L != 0_L in a field | def-commutative-ring-and-field (1 != 0); inline
 def-cof-order-preserving-map (claim): the unit clause follows from additivity, multiplicativity and strict increase (chi(0) = 0, chi(1) > 0, chi(1) = chi(1)^2) | field cancellation (lem-field-fraction-rules (d)); inline, fold only
-def-cof-order-preserving-map (claim): pointers to Algebraic Preliminaries, Chapter 2 (conjugation of Q(sqrt 2)) and to Section 6.3 | prose pointers; nothing depends on them
+def-cof-order-preserving-map (claim): pointers to Preliminaries for Analysis and Algebra, Chapter 4 (conjugation of Q(sqrt 2)) and to Section 6.3 | prose pointers; nothing depends on them
 thm-cof-complete-archimedean (proof): "not an upper bound" gives n with n * 1_F > s - 1, and n * 1_F > x for each x once iota_F(N) is not bounded above | totality (prp-ordered-field-halves (a)), fd1:prp-bounded-quantifier-negation (a); inline
 thm-cof-complete-archimedean (proof): s - 1 < s; (s - 1) + 1 = s | (O3), field arithmetic; inline
 exm-cof-sup-one-minus-reciprocals (solution): iota_F(1 - 1/n) < 1_F; iota_F(1/N) = 1/(N * 1_F); iota_F(1 - 1/N) = 1_F - 1/(N * 1_F) | thm-rationals-embed-ordered-field (sums, products, strictly increasing, iota_F(n) = n * 1_F), lem-field-fraction-rules (a), prp-ring-algebra (a) (negatives); inline
@@ -460,7 +460,7 @@ prp-cof-square-roots (proof): (s + h)^2 <= s^2 + h(2s + 1) for 0 < h <= 1, s >= 
 prp-cof-square-roots (proof): h <= 1 and h > 0 give h^2 <= h; y > 1 gives y^2 > y | prp-ordered-ring-rules (c); inline
 prp-cof-square-roots (proof): h = (s^2 - a)/(2s) > 0 and s - h = (s^2 + a)/(2s) > 0 | prp-reciprocal-order (a), (O4); inline
 prp-cof-square-roots (proof): b = -c <= 0 <= b forces b = 0 | prp-ordered-ring-rules (a), antisymmetry; inline
-prp-cof-square-roots (claim): Q(sqrt 2) is Archimedean and lacks square roots | Algebraic Preliminaries, Chapter 2; prose pointer, nothing depends on it
+prp-cof-square-roots (claim): Q(sqrt 2) is Archimedean and lacks square roots | Preliminaries for Analysis and Algebra, Chapter 4; prose pointer, nothing depends on it
 exm-method-point-as-supremum (claim): the template covers square roots, exm-cof-separating-element, the map of Section 6.2 and Exercise C3 of Section 6.3 | prose pointers to later sections of this chapter; fd2:exm-method-construct-and-verify; nothing depends on them
 exm-cof-separating-element (solution): sup A exists and a <= sup A <= b | def-complete-ordered-field, fd2:def-order-supremum (S1), (S2); inline
 exm-cof-separating-element (solution): a <= c, c' <= b gives |c - c'| <= b - a | prp-ordered-ring-rules (a), (b), prp-absolute-value-ordered-field (d); inline; verify/ch06/exm-cof-separating-element.py

@@ -127,7 +127,7 @@ where the step from the first line to the second is (F9) in \( \sC \). For (F4):
 Finally, \( 0_{\nR} \ne 1_{\nR} \): otherwise \( (1)_n \sim (0)_n \) (@fd2:thm-classes-partition (b)), that is, \( (1)_n \) is null; but for \( \varepsilon = 1/2 \) every term has \( \abs{1 - 0} = 1 \ge 1/2 \). This proves the theorem.
 :::
 
-In the language of *Algebraic Preliminaries*, Chapter 1, the null sequences form an ideal \( \sN \) of the ring \( \sC \), and \( \nR \) is the quotient ring \( \sC/\sN \); the proof above is that volume's quotient theorem, done by hand for one ring.
+In the language of *Preliminaries for Analysis and Algebra*, Chapter 2, the null sequences form an ideal \( \sN \) of the ring \( \sC \), and \( \nR \) is the quotient ring \( \sC/\sN \); the proof above is that volume's quotient theorem, done by hand for one ring.
 
 ## Inverses
 

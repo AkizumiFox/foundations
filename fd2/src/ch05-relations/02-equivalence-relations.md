@@ -602,7 +602,7 @@ In @exm-fraction-map-factorization, which of \( q \), \( \bar f \), \( \iota \) 
 ::: {.remark}
 [Looking ahead]
 
-The clock does not stop here. *Algebraic Preliminaries*, Section 1.3 builds \( \nZ/n \) again, on the constructed integers, as a quotient ring: the check of @prp-congruence-arithmetic is made once for every ideal, and the sum and product obey the laws of a ring.
+The clock does not stop here. *Preliminaries for Analysis and Algebra*, Section 2.3 builds \( \nZ/n \) again, on the constructed integers, as a quotient ring: the check of @prp-congruence-arithmetic is made once for every ideal, and the sum and product obey the laws of a ring.
 :::
 
 ## Exercises

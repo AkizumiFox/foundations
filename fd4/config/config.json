@@ -13,7 +13,7 @@
     "deploy-domain",
     "deploy-push-url"
   ],
-  "title": "Analytic Preliminaries",
+  "title": "Preliminaries for Analysis and Algebra",
   "author": "Akizumi",
   "output": {
     "html": "_build/html",
@@ -97,7 +97,16 @@
   },
   "reading-paths": [],
   "chapters": [
-    "src/ch01-complex-numbers"
+    "src/ch01-sums-inequalities-and-powers",
+    "src/ch02-divisibility-and-congruences",
+    "src/ch03-complex-numbers",
+    "src/ch04-fields",
+    "src/ch05-groups-and-permutations",
+    "src/ch06-formal-polynomials",
+    "src/ch07-polynomials-over-a-field",
+    "src/ch08-real-functions",
+    "src/ch09-coordinates-and-vectors",
+    "src/ch10-lines-hyperplanes-convex-sets"
   ],
   "macros": "../latex/macros.tex",
   "deploy-dir": "site",
@@ -126,7 +135,9 @@
       "prefix": "numbers"
     }
   ],
-  "mention-exempt-titles": [],
+  "mention-exempt-titles": [
+    "Equal Squares"
+  ],
   "external-books": {
     "fd1": {
       "title": "Logic and Proof",
@@ -145,12 +156,6 @@
       "short": "F3",
       "url": "https://akizumifox.github.io/math-atlas/fd3/",
       "labels": "../fd3/_build/crossref_labels.json"
-    },
-    "fd5": {
-      "title": "Algebraic Preliminaries",
-      "short": "F5",
-      "url": "https://akizumifox.github.io/math-atlas/fd5/",
-      "labels": "../fd5/_build/crossref_labels.json"
     },
     "an1": {
       "title": "Analysis on the Real Line",

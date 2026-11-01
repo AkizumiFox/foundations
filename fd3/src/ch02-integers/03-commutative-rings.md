@@ -347,7 +347,7 @@ Fatal errors (0 for the step): assuming the laws for \( \oplus \), \( \odot \) i
 :::
 
 <!-- dependency ledger
-def-commutative-ring-and-field (example): the integers modulo 6 satisfy (F1)-(F7), (F9), and [2][3] = [0] (the warning after the definition) | not proved here: operations well defined by F2.5 §02 (prp-congruence-arithmetic, school integers), laws pass to classes through representatives; marked in the text; illustration only, nothing depends on it; F5.1 (Algebraic Preliminaries, Chapter 1) rebuilds it on the constructed Z
+def-commutative-ring-and-field (example): the integers modulo 6 satisfy (F1)-(F7), (F9), and [2][3] = [0] (the warning after the definition) | not proved here: operations well defined by F2.5 §02 (prp-congruence-arithmetic, school integers), laws pass to classes through representatives; marked in the text; illustration only, nothing depends on it; F5.1 (Preliminaries for Analysis and Algebra, Chapter 2) rebuilds it on the constructed Z
 def-commutative-ring-and-field (claim): prose pointer, (F1)-(F9) match the field axioms of the linear-algebra companion, Chapter 0, and of the ordered fields of AN1.1 | AN1.1, companion ch 0 (prose pointer; nothing here depends on it)
 def-commutative-ring-and-field (claim): (the warning) in a field ab = 0 forces a = 0 or b = 0, since b = a^{-1}(ab) | F3.9 §01 lem-field-fraction-rules (d) (forward prose pointer, Section 4.1; nothing here depends on it)
 def-commutative-ring-and-field (example): the zero ring satisfies (F1)-(F7), (F9) | inline (every equation reads 0 = 0)

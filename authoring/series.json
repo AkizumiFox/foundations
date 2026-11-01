@@ -156,7 +156,7 @@
   {
    "prefix": "fd4",
    "id": "F4",
-   "title": "Analytic Preliminaries",
+   "title": "Preliminaries for Analysis and Algebra",
    "repo": "foundations",
    "checkout": "foundations",
    "dir": "fd4",
@@ -168,68 +168,48 @@
     },
     {
      "n": 2,
-     "id": "F4.7",
-     "title": "Real Functions and Their Graphs"
-    },
-    {
-     "n": 3,
-     "id": "F4.8",
-     "title": "Coordinates and Vectors in \\(\\nR^n\\)"
-    },
-    {
-     "n": 4,
-     "id": "F4.9",
-     "title": "Lines, Convexity, and Isometries of \\(\\nR^n\\)"
-    },
-    {
-     "n": 5,
-     "id": "F4.1",
-     "title": "Complex Numbers"
-    },
-    {
-     "n": 6,
-     "id": "F4.10",
-     "title": "Rotations, Angles, and the Complex Plane"
-    },
-    {
-     "n": 7,
-     "id": "F4.11",
-     "title": "Metrics and Norms"
-    }
-   ]
-  },
-  {
-   "prefix": "fd5",
-   "id": "F5",
-   "title": "Algebraic Preliminaries",
-   "repo": "foundations",
-   "checkout": "foundations",
-   "dir": "fd5",
-   "chapters": [
-    {
-     "n": 1,
      "id": "F5.1",
      "title": "Divisibility and Congruences"
     },
     {
-     "n": 2,
+     "n": 3,
+     "id": "F4.1",
+     "title": "Complex Numbers"
+    },
+    {
+     "n": 4,
      "id": "F5.2",
      "title": "Fields"
     },
     {
-     "n": 3,
+     "n": 5,
      "id": "F5.3",
      "title": "Groups, Subgroups, and Homomorphisms"
     },
     {
-     "n": 4,
+     "n": 6,
      "id": "F5.4",
      "title": "Formal Polynomials"
     },
     {
-     "n": 5,
+     "n": 7,
      "id": "F5.5",
      "title": "Polynomials over a Field"
+    },
+    {
+     "n": 8,
+     "id": "F4.7",
+     "title": "Real Functions and Their Graphs"
+    },
+    {
+     "n": 9,
+     "id": "F4.8",
+     "title": "Coordinates and Vectors in \\(\\nR^n\\)"
+    },
+    {
+     "n": 10,
+     "id": "F4.9",
+     "title": "Lines, Hyperplanes, and Convex Sets"
     }
    ]
   },

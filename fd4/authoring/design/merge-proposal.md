@@ -1,6 +1,6 @@
 # fd4 + fd5: merge proposal (one volume for the shared preliminaries)
 
-**Status.** 提案，尚未核准（2026-10-26）。在作者核准、並回答 §6 的問題之前，`fd4/src`、`fd5/src`、任何 config、ledger、sidecar 與 math-atlas registry 都不動。fd3 目前有另一個 workflow 在改，本提案對 fd3 的修補（§5.4）一律排在那個 workflow 收尾之後。
+**Status.** **Approved 2026-10-26** (the author's answers in §7). Paused by the author the same day until fd3 was finished; resumed after the fd3 wrap-up (「fd4+fd5 合併恢復」). Structural commit 2026-11-01 (§7.3). 原提案文字（以下 §1–§6）保留不改，作為紀錄。
 
 **Conventions.**（沿用 fd2、fd3 re-cut）
 - 章號按位置計；atlas id 與章號脫鉤（F4.1 早就不是 fd4 的第 1 章了）。
@@ -245,3 +245,35 @@ LA split 對 fd5 的引用合計 409 次（120 個 src 檔），對 fd4 的 109 
 **Q4. 篇幅超過 ~250 h full，接受哪一種？**
 (a) 接受整冊約 271 core／386 full，以兩條讀者路線（代數 258、分析 233 full）為篇幅尺度，F4.10 併入 F4.9 與 F4.1；(b) 再把 F4.9 的等距分類移到 GEO／LA3，並減 C 題，整冊約 257／326；(c) 不合併，維持兩冊（330／467，重教的部分照 spec/08 寫）。
 **建議 (a)**：已成稿六章就有 220 h full，整冊壓不到 250；合併已經靠去重省下 80 h full，每位讀者實際走的路線都在 250 h 上下。(b) 會拿掉作者在 spec/08 要的「不用線代證等距分類」。
+
+---
+
+## 7. Record: the author's answers, pause, resume
+
+### 7.1 Answers (2026-10-26, verbatim)
+
+The request that opened the proposal: 「fd4 與 fd5 可以合併成一本嗎，我覺得裡面講的東西兩邊都會用到」.
+
+| Question | Answer (verbatim) | Reading |
+|---|---|---|
+| Q1 slot and ids | 「留 fd4，fd5 退役」 | (a): fd4 kept, fd5 retired; F5.1–F5.5 keep their atlas ids (renumbering would make the renames cyclic: F4.2–F4.5 are already old names of F5.2–F5.5) |
+| Q2 title | 「Preliminaries for Analysis and Algebra」 | (a): slug `preliminaries` |
+| Q3 F4.11 Metrics and Norms | 「移到 AN1」 | (a): into AN2.1, AN1 Chapter 3 (renames F4.11 → AN2.1) |
+| Q4 size | 「再砍到約 257/326 小時」 | (b): F4.9 keeps lines, hyperplanes, nearest points and convex sets; at S2 (`merged-ch10-f49.md`) F4.9 was cut to Sections 10.1–10.3, and the isometry classification, F4.10's rotations and arguments left the book (GEO/LA3, CA.1 opening); C items reduced in every new chapter |
+
+**Approved 2026-10-26.**
+
+### 7.2 Pause and resume
+
+- Pause, 2026-10-26: 「fd45 可以先停嗎？只專心把 fd3 寫完就好」. Nothing had been moved; the four new-chapter blueprints (`merged-ch01-f46.md`, `merged-ch08-f47.md`, `merged-ch09-f48.md`, `merged-ch10-f49.md`) were already frozen after S2.
+- Resume, after the fd3 wrap-up (fd3 Chapters 1–6 approved pending S9): 「fd4+fd5 合併恢復」, with the pipeline to run through (blind review and S7 after drafting); branch merges and S9 stay with the author.
+
+### 7.3 Structural commit (2026-11-01)
+
+Merged order: Ch1 F4.6 (stub), Ch2 F5.1, Ch3 F4.1, Ch4 F5.2, Ch5 F5.3, Ch6 F5.4, Ch7 F5.5, Ch8 F4.7 (stub), Ch9 F4.8 (stub), Ch10 F4.9 (stub, directory `ch10-lines-hyperplanes-convex-sets/` per its blueprint).
+
+- `git mv` of the six written chapters, their sidecars (`verify/chNN/`), ledgers (re-keyed `chapter`/`dir`, verdict history kept, a `note` naming the old key), blueprints (frozen text unchanged except bare same-book references and a move note), `fd5/authoring/ledger/archive/` and `fd5/authoring/parked/` into fd4. `fd5/config/known-unresolved.json` moved into `fd4/config/` with its paths re-aimed. fd5's `build.py`, `tests/`, `latex/`, `spelling.txt` (identical to fd4's) and config removed; `fd5/README.md` points here.
+- Prose pointers renumbered (old fd5 1→2, 2→4, 3→5, 4→6, 5→7; old fd4 1→3), with pointers into other volumes left alone; `@fd4:`/`@fd5:` inside the volume made bare; other volumes' *Algebraic Preliminaries* / *Analytic Preliminaries* pointers re-aimed at *Preliminaries for Analysis and Algebra*.
+- **Deferred:** the seven labelled blocks that `merged-ch01-f46.md` §0 rule 3 moves into Chapter 1 (`prp-power-laws-commutative-ring`, `lem-difference-of-powers`, `lem-ring-finite-sums`, `def-binomial-coefficients`, `prp-binomial-absorption`, `thm-binomial-commutative-ring`, `lem-reals-nth-root`) stay in Chapters 3 and 4 until Chapter 1 is drafted (S3). Moved alone, they leave Chapter 1's section files without the section contract (Quick check, warning, Exercises), two moved proofs cite `lem-integer-multiples` of Chapter 4 (a forward proof dependency the blueprint removes with `lem-natural-multiples`), and the `thm-binomial-commutative-ring` sidecar quotes numbers that stay in Section 4.6; `build.py check` fails on all three. The S3 drafter moves them with the seam edits of the blueprint's §9.
+- math-atlas: volumes (F5 removed, F4 retitled), chapters (merged order; F4.9 retitled), renames (moves F5.1–F5.5 → F4; ids F4.10 → F4.9, F4.11 → AN2.1; titles; volumes with aliases), plan-edges, chapter-constraints, exam-targets, `site/books.json` (slug `preliminaries`, aliases `fd4`, `fd5`, `analytic-preliminaries`, `algebraic-preliminaries`); `series.json` refreshed in foundations and analysis-series.
+

@@ -9,8 +9,8 @@ analysis-book on 2026-10-12 with its full history (math-atlas spec/06,
 | `fd1/` | F1 | Logic and Proof | book |
 | `fd2/` | F2 | Sets and Functions | book |
 | `fd3/` | F3 | Number Systems: From \(\nN\) to \(\nR\) | book |
-| `fd4/` | F4 | Analytic Preliminaries | book (Chapter 1; F4.6–F4.11 planned) |
-| `fd5/` | F5 | Algebraic Preliminaries | book |
+| `fd4/` | F4 | Preliminaries for Analysis and Algebra | book (Chapters 2–7 written; 1, 8–10 in drafting; fd5 merged in 2026-10-26) |
+| `fd5/` | F5 | (retired: merged into fd4) | README only |
 | `st/` | ST | Axiomatic Set Theory | planned |
 
 A volume with sources is a book: `config/config.json`, `src/`, `verify/` (numeric sidecars),

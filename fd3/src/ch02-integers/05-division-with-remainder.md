@@ -176,7 +176,7 @@ So \( -7 = (-4) \cdot 2 + 1 \) is odd and not even, as school says, and now by p
 ::: {.remark}
 [Looking ahead]
 
-*Algebraic Preliminaries*, Chapter 1 builds on this section: greatest common divisors and Bézout's identity, primes and unique factorization, and arithmetic modulo \( n \), all on the constructed \( \nZ \). Chapter 3 of this volume builds the rationals as classes of fractions, and its integer part of \( a/n \) is the quotient found here.
+*Preliminaries for Analysis and Algebra*, Chapter 2 builds on this section: greatest common divisors and Bézout's identity, primes and unique factorization, and arithmetic modulo \( n \), all on the constructed \( \nZ \). Chapter 3 of this volume builds the rationals as classes of fractions, and its integer part of \( a/n \) is the quotient found here.
 :::
 
 ## Exercises
@@ -358,7 +358,7 @@ cor-integers-even-odd (proof): contraposition | fd1 (classical reasoning, F1.2),
 cor-integers-even-odd (claim): (opening) [(0, 7)] is the integer school calls -7 | prp-naturals-embed-integers ([(a, b)] = a - b after the identification of Section 2.2), (F3)
 cor-integers-even-odd (claim): (the paragraph after the proof) -7 = (-4) * 2 + 1 | numerals, sign by prp-ring-algebra (c) (opening paragraph); verify/ch02/cor-integers-even-odd.py
 cor-integers-even-odd (claim): (the paragraph after the proof) part (a) is fd2:thm-even-or-odd on the constructed Z; part (b) is fd1:thm-square-even-implies-even, whose proof used (a) and the computation as school facts; for a in N, (a) is prp-omega-powers-parity (d) | read against fd2 F2.1 §01 and fd1 F1.2 §01 (compared, not used); prp-omega-powers-parity (d) cited
-cor-integers-even-odd (claim): (Looking ahead) F5.1 builds gcd, Bezout, primes, unique factorization and congruences on the constructed Z; Chapter 3's integer part of a/n is the quotient | prose pointer: F5.1 (Algebraic Preliminaries, Chapter 1); F3.11 §02 exr-ordered-field-of-rationals-b4 (recut-ch03.md, 3.2 B3); nothing depends on it
+cor-integers-even-odd (claim): (Looking ahead) F5.1 builds gcd, Bezout, primes, unique factorization and congruences on the constructed Z; Chapter 3's integer part of a/n is the quotient | prose pointer: F5.1 (Preliminaries for Analysis and Algebra, Chapter 2); F3.11 §02 exr-ordered-field-of-rationals-b4 (recut-ch03.md, 3.2 B3); nothing depends on it
 prp-divisibility-rules-integers (example): (the instances before it and the paragraph after it) 3 | -12, -4 | 0, 0 | 0, 5 does not divide 12, 2 | -2 | 2 | numerals; verify/ch02/prp-divisibility-rules-integers.py
 cor-integers-even-odd (proof): the identity for (2q + 1)^2 | verify/ch02/cor-integers-even-odd.py
 exr-division-with-remainder-a1 (solution): 47 = 7 * 6 + 5, -47 = (-8) * 6 + 1 | numerals; verify/ch02/exr-division-with-remainder-a1.py

@@ -330,7 +330,7 @@ The three laws with three variables can be checked over the eight triples \( (a,
 *No order.* If \( < \) made \( R \) an ordered commutative ring, then, as \( 1 \ne 0 \), @prp-ordered-ring-rules (h) would give \( 2 \cdot 1 > 0 \). But \( 2 \cdot 1 = 1 \cdot 1 + 1 = (0 + 1) + 1 = 0 \) by the definition of multiples, and \( 0 > 0 \) is forbidden by (O1).
 :::
 
-The argument uses only \( 1 \ne 0 \) and \( n \cdot 1 = 0 \) for some \( n \ge 1 \). So **no commutative ring with \( 1 \ne 0 \) in which \( n \cdot 1 = 0 \) for some \( n \in \nN \), \( n \ge 1 \), can be ordered**. The integers modulo \( n \ge 2 \) of *Sets and Functions*, Section 5.2 are such rings (their ring laws taken for granted, as in the warning after @def-commutative-ring-and-field), since \( n \cdot [1] = [n] = [0] \); *Algebraic Preliminaries*, Chapter 1 rebuilds them on the constructed \( \nZ \).
+The argument uses only \( 1 \ne 0 \) and \( n \cdot 1 = 0 \) for some \( n \ge 1 \). So **no commutative ring with \( 1 \ne 0 \) in which \( n \cdot 1 = 0 \) for some \( n \in \nN \), \( n \ge 1 \), can be ordered**. The integers modulo \( n \ge 2 \) of *Sets and Functions*, Section 5.2 are such rings (their ring laws taken for granted, as in the warning after @def-commutative-ring-and-field), since \( n \cdot [1] = [n] = [0] \); *Preliminaries for Analysis and Algebra*, Chapter 2 rebuilds them on the constructed \( \nZ \).
 
 ## Exercises
 
@@ -472,7 +472,7 @@ Fatal errors (0 for the step): inducting on \( m \) and \( k \) at once without 
 
 <!-- dependency ledger
 def-ordered-ring-and-field (claim): prose pointer before the definition, (O1)-(O4) match the ordered fields of AN1.1 (with "field" relaxed to "commutative ring") | AN1.1 (prose pointer; nothing here depends on it)
-exm-finite-ring-not-orderable (claim): the remark after it, that the integers modulo n >= 2 form a commutative ring with [1] != [0] and n.[1] = [n] = [0] | ring laws as for the modulo-6 example (not proved here, marked in the text); [1] != [0] since n does not divide 1; k.[1] = [k] by induction on the recursion for multiples; illustration only; F5.1 (*Algebraic Preliminaries*, Chapter 1) rebuilds it on the constructed Z
+exm-finite-ring-not-orderable (claim): the remark after it, that the integers modulo n >= 2 form a commutative ring with [1] != [0] and n.[1] = [n] = [0] | ring laws as for the modulo-6 example (not proved here, marked in the text); [1] != [0] since n does not divide 1; k.[1] = [k] by induction on the recursion for multiples; illustration only; F5.1 (*Preliminaries for Analysis and Algebra*, Chapter 2) rebuilds it on the constructed Z
 prp-ordered-ring-rules (solution): the Quick check "Is Z a field?" uses (1 + 1)x = x + x | def-commutative-ring-and-field (F6), (F9), (F7) (cited inline)
 prp-order-from-positives (proof): -(b - a) = a - b, (c - b) + (b - a) = c - a, -(a + c) = (-a) + (-c), -0 = 0 | inline (from prp-ring-algebra (a))
 thm-integers-ordered-ring (proof): (a, b) ~ (0, 0) iff a = b | def-integers-as-classes with def-omega-arithmetic (a) (cited)
