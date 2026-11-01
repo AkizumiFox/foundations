@@ -183,7 +183,7 @@ where \( h \circ \ell \) gives each variable \( x \) the value \( h(\ell(x)) \).
 
 *In words: renaming the elements, consistently, changes the truth of nothing.* Every sentence true in one of two isomorphic structures is true in the other.
 
-The theorem is most often used backwards: a sentence true in one structure and false in another shows that the two are **not** isomorphic. The sentence \( \forall x\, \exists y\, (y + y = x) \), "every element is a sum of two equal ones", is true in \( (\nQ; +) \): take \( y = x/2 \). It is false in \( (\nZ; +) \), at \( x = 1 \). So no bijection \( \nQ \to \nZ \) carries addition to addition. Bijections \( \nQ \to \nZ \) do exist: *Sets and Functions*, Chapter 4, proved that the rationals can be listed like the integers. The converse of the theorem fails: two structures can satisfy the same sentences without being isomorphic, and the optional Section 7.6 meets such a pair.
+The theorem is most often used backwards: a sentence true in one structure and false in another shows that the two are **not** isomorphic. The sentence \( \forall x\, \exists y\, (y + y = x) \), "every element is a sum of two equal ones", is true in \( (\nQ; +) \): take \( y = x/2 \). It is false in \( (\nZ; +) \), at \( x = 1 \). So no bijection \( \nQ \to \nZ \) carries addition to addition. Bijections \( \nQ \to \nZ \) do exist: *Sets and Functions*, Chapter 4, proves that the rationals can be listed like the integers. The converse of the theorem fails: two structures can satisfy the same sentences without being isomorphic, and the optional Section 7.6 meets such a pair.
 
 ::: {.second-reading title="The proof: terms, then formulas"}
 ::: {.idea}

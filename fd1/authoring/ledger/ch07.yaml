@@ -43,6 +43,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: (M1)-(M4) word for word; prose split; new instance (forall y exists x R(x,y):
       true on Z with >, false on N with < at y=0) is true and in the ledger.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6560db661605
+    date: '2026-11-01'
+    evidence: 'Wording only. The definition block (M1)-(M4) is word for word. The surrounding prose was
+      split, and @def-term and @def-first-order-formula are still inline. New worked instance before the
+      definition: ∀y∃xR(x,y) is true on Z with R as > and false on N with R as < (fails at y=0). ...'
 - key: check:01-structures-and-satisfaction:1
   kind: check
   file: 01-structures-and-satisfaction.md
@@ -113,6 +121,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: definition unchanged; new instance in (N,<) (x=3, y=0, others 0; x changed
       to 5) is a valid assignment.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 38cf320cab4a
+    date: '2026-11-01'
+    evidence: 'Wording only. The definition is unchanged. New instance in (N,<): x=3, y=0, all other variables
+      0, and changing x to 5 gives a second assignment. It is a valid assignment under the definition.
+      The term-value sentence was split, with @def-term and @thm-structural-recursion kept. ...'
 - key: def-satisfaction
   kind: def
   file: 01-structures-and-satisfaction.md
@@ -153,6 +169,15 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: (S1)-(S7) word for word; new instance on {1,2,3} with P={1,2} (forall false
       at 3, exists true at 1) correct; sidecar passes.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d03a42009a0c
+    date: '2026-11-01'
+    evidence: 'Wording only. Clauses (S1)-(S7) are word for word. New instance: on {1,2,3} with P={1,2},
+      ∀xP(x) is false at 3 and ∃xP(x) is true at 1, which is correct. The clause-by-clause reading, the
+      trace on N and on {1,2,3}, the well-definedness fold (''Degenerate'' became ''Edge cases'') and
+      ...'
 - key: check:01-structures-and-satisfaction:2
   kind: check
   file: 01-structures-and-satisfaction.md
@@ -222,6 +247,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: solution reworded around (M3); verdicts R no at d=-1, [0,inf) yes, C yes
       unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: db02726ede4b
+    date: '2026-11-01'
+    evidence: Wording only. In the solution, '(M3)' became 'as (M3) requires' and the parenthesis on complex
+      square roots became a sentence of its own. The verdicts (R no at d=-1, [0,∞) yes, C yes) are unchanged.
 - key: lem-free-coincidence
   kind: lem
   file: 01-structures-and-satisfaction.md
@@ -263,6 +295,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: statement word for word; lead-in split; free-variable description now a four-item
       list with the same clauses.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 7a7db16d22cd
+    date: '2026-11-01'
+    evidence: Wording only. The statement is word for word. The lead-in was split, and @def-sentence,
+      @lem-coincidence and @def-free-variable are kept. The recursive description of free variables became
+      a four-item list with the same four clauses. In the idea block, '(S6)' became 'the ∀ ...
 - key: proof:lem-free-coincidence
   kind: proof
   file: 01-structures-and-satisfaction.md
@@ -295,6 +335,14 @@ items:
     hash: 49ff5d05922e
     date: '2026-11-01'
     evidence: 'wording only: same steps in the same order; @def-term moved to the Uses line; (S3) glossed.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 49ff5d05922e
+    date: '2026-11-01'
+    evidence: 'Every step is the same and in the same order: terms, atomic, connectives, ∀, ∃, closing.
+      The text ''(@def-term; the pattern of @thm-structural-induction)'' became ''in the pattern of @thm-structural-induction'',
+      and @def-term moved to a {.uses} block at the end of the proof (allowed ...'
 - key: check:01-structures-and-satisfaction:4
   kind: check
   file: 01-structures-and-satisfaction.md
@@ -374,6 +422,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: definition word for word; surrounding paragraphs split, same content; example
       names the clauses.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 15ef7893014a
+    date: '2026-11-01'
+    evidence: Wording only. The definition is word for word (its 36-word sentence is the kept check_beginner
+      finding). The 'Sentences' paragraph before it and the 'In words' paragraph were split, with the
+      same content. The first entailment example (∀x(P→Q), P(c) ⊨ Q(c)) has the same steps, ...
 - key: exm-clause-by-clause
   kind: exm
   file: 01-structures-and-satisfaction.md
@@ -404,6 +460,14 @@ items:
     hash: 54d967fcacaf
     date: '2026-11-01'
     evidence: 'wording only: statement and steps 1-7 unchanged; sidecar passes.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 54d967fcacaf
+    date: '2026-11-01'
+    evidence: 'The statement and steps 1-7 are unchanged. The lead-in says ''names the clause behind every
+      step'' instead of ''writes every step with the clause that licenses it''. The closing ''Section
+      7.2 draws why'' became ''shows why with a picture'': same meaning, no new pointer. The sidecar ...'
 - key: check:01-structures-and-satisfaction:5
   kind: check
   file: 01-structures-and-satisfaction.md
@@ -431,6 +495,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: ''item 6'' became ''the step that takes the witness d for x'', the same step
       of exm-clause-by-clause.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 0d479f85b0d3
+    date: '2026-11-01'
+    evidence: '''In item 6'' became ''In the step that takes the witness d for x''. Step 6 of exm-clause-by-clause
+      begins ''Take the witness d for x'', so the target is the same. The solution''s parenthesis ''(the
+      paragraph after @def-assignment)'' became ''This was noted right after @def-assignment'', ...'
 - key: exm-drinker-by-meaning
   kind: exm
   file: 01-structures-and-satisfaction.md
@@ -460,6 +532,14 @@ items:
     hash: 0f7ac791fe48
     date: '2026-11-01'
     evidence: 'wording only: cases 1 and 2 same steps with clauses named; @exr-first-order-search-c1 kept.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 0f7ac791fe48
+    date: '2026-11-01'
+    evidence: Cases 1 and 2 have the same steps, with the clauses glossed by name. The closing paragraph
+      was split, and @exr-first-order-search-c1 is kept. 'as in the next subsection' was dropped; it only
+      pointed to the subsection right after. The 'Why domains are non-empty' text in this ...
 - key: exr-models-a1
   kind: exr
   file: 01-structures-and-satisfaction.md
@@ -553,6 +633,15 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: statement unchanged; item numbers renamed to the same steps of exm-clause-by-clause;
       verdict table unchanged; sidecar passes.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 785f4dc99542
+    date: '2026-11-01'
+    evidence: 'Statement unchanged. In the solution, (ii) now says ''the ∀ clause (S6) fails''. In (d),
+      ''item 2'', ''item 6'' and ''item 3'' became ''the second step'', ''the step that takes the witness''
+      and ''the third step''. These are the same steps of exm-clause-by-clause: step 2 is (S7) on the
+      ...'
 - key: exr-structures-and-satisfaction-a2
   kind: exr
   file: 01-structures-and-satisfaction.md
@@ -609,6 +698,14 @@ items:
     hash: 77a8fb438fbc
     date: '2026-11-01'
     evidence: 'wording only: (j) same verdict and reason, (M3) glossed; sidecar passes.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 77a8fb438fbc
+    date: '2026-11-01'
+    evidence: 'Statement unchanged. In the solution, (j) changed from ''No: (M3) fails, since 0−1∉N''
+      to ''No: a function symbol must give a value in the domain at every input, (M3), and 0−1∉N''. Same
+      verdict and same reason. The sidecar passes.'
 - key: exr-structures-and-satisfaction-b1
   kind: exr
   file: 01-structures-and-satisfaction.md
@@ -648,6 +745,14 @@ items:
     hash: 07ab0a69bee7
     date: '2026-11-01'
     evidence: 'wording only: rubric headings renamed; points and criteria unchanged; sidecar passes.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 07ab0a69bee7
+    date: '2026-11-01'
+    evidence: Only the rubric headings were renamed ('Marking scheme' became 'What a complete answer needs',
+      'Fatal errors' became 'Slips that lose the step'). The points (8+2) and the criteria are unchanged,
+      and the sidecar passes.
 - key: exr-models-b2
   kind: exr
   file: 01-structures-and-satisfaction.md
@@ -716,6 +821,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: rubric headings renamed; points and sqrt(x) criterion unchanged; sidecar
       passes.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: de0510abf1e5
+    date: '2026-11-01'
+    evidence: Only the rubric headings were renamed. The points (6+...+2) and the √x criterion are unchanged,
+      and the sidecar passes.
 - key: exr-structures-and-satisfaction-c1
   kind: exr
   file: 01-structures-and-satisfaction.md
@@ -772,6 +884,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: (a) same steps with clauses glossed; rubric renamed, points 4/3/3 unchanged;
       sidecar passes.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 7b51f6c9781e
+    date: '2026-11-01'
+    evidence: 'In the solution, (a) has the same steps with the clauses glossed (∧ clause of (S5), ∀ clause
+      (S6)). The rubric headings were renamed, with points 4/3/3 unchanged. The slip criterion was split
+      into three sentences with the same content: an arbitrary d is required, and a ...'
 - key: exr-structures-and-satisfaction-c2
   kind: exr
   file: 01-structures-and-satisfaction.md
@@ -812,6 +932,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: statement parenthesis reworded with the same meaning; same induction cases;
       rubric points unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 1196a4dda290
+    date: '2026-11-01'
+    evidence: The statement's parenthesis 'This is the claim after @def-first-order-entailment that extra
+      meanings change nothing' became 'This proves that a structure's extra meanings change nothing, as
+      claimed after @def-first-order-entailment'. That is a wording-only change with the same ...
 - key: check:02-counter-models:1
   kind: check
   file: 02-counter-models.md
@@ -876,6 +1004,13 @@ items:
     hash: eccddfac3de7
     date: '2026-11-01'
     evidence: 'wording only: (S7), (S1) named in words; same element d=b and membership test.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: eccddfac3de7
+    date: '2026-11-01'
+    evidence: Solution only renames (S7) and (S1) as 'the clause for ∃, (S7)' and 'the clause for atomic
+      formulas, (S1)', and splits a semicolon. Same element d = b and same membership test.
 - key: exm-counter-model-swap
   kind: exm
   file: 02-counter-models.md
@@ -916,6 +1051,14 @@ items:
     hash: cd8231be4837
     date: '2026-11-01'
     evidence: 'wording only: clauses named; same structures, witness d=e+1, failure at e=d; sidecar passes.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: cd8231be4837
+    date: '2026-11-01'
+    evidence: Only '(S6) and (S7)' became 'the ∀ clause (S6), then the ∃ clause (S7)', and a semicolon
+      became a full stop. The structures (ℤ with >, and {a,b} with R = {(a,a),(b,b)}), the witness d =
+      e+1 and the failure at e = d are the same. The sidecar verify/ch07/exm-counter-model-swap.py ...
 - key: check:02-counter-models:3
   kind: check
   file: 02-counter-models.md
@@ -944,6 +1087,13 @@ items:
     hash: 13ceba8b4aae
     date: '2026-11-01'
     evidence: 'wording only: (S5) named; structure D={a,b}, P={a}, Q empty and failure at d=a unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 13ceba8b4aae
+    date: '2026-11-01'
+    evidence: '''so by (S5) the premise is true'' became ''so the premise is true by the clause for →,
+      (S5)''. The structure D={a,b}, P={a}, Q=∅ and the failure at d=a are unchanged.'
 - key: exm-counter-model-procedure
   kind: exm
   file: 02-counter-models.md
@@ -1109,6 +1259,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: (b) same two clauses (S2),(S6); (a),(c),(d) unchanged; new tautology gloss
       matches @def-tautology; sidecar passes.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6913c0be7e26
+    date: '2026-11-01'
+    evidence: (b) 'Valid, by (S2) and (S6)' became 'every element equals itself, by the clause for equations,
+      (S2), and the ∀ clause (S6) then gives the sentence'. The same two clauses do the same job. (a),
+      (c) and (d), including the one-element structure with S(a)=a, are unchanged. The new ...
 - key: check:02-counter-models:7
   kind: check
   file: 02-counter-models.md
@@ -1135,6 +1293,14 @@ items:
     hash: 10bb3e9a8f70
     date: '2026-11-01'
     evidence: 'wording only: run-on split into the same two cases with (S6),(S5) named.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 10bb3e9a8f70
+    date: '2026-11-01'
+    evidence: 'The ''Valid: if ... then by (S6) ... so does ...'' run-on became separate sentences. It
+      now reads ''Suppose ∀x(x<S(x)) holds ... Then the ∀ clause (S6) at d = 0^M gives 0<S(0), and the
+      clause for →, (S5), makes the implication true. If it fails, (S5) makes the implication true ...'
 - key: exr-counter-models-a1
   kind: exr
   file: 02-counter-models.md
@@ -1191,6 +1357,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: (d) drops a prose pointer to the warning; the example forall x exists y (x<y)
       in (N,<) still inline.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e1ca1fe11a16
+    date: '2026-11-01'
+    evidence: '(d) dropped the pointer ''(the warning after the soundness statement)''. It was a prose
+      pointer, not an @ref. The ledger row ''exr-counter-models-a1 (solution): ... (d) the warning''s
+      example | inline'' still covers it, and the example ∀x∃y(x<y) in (N,<) is still given inline. ...'
 - key: exr-counter-models-a2
   kind: exr
   file: 02-counter-models.md
@@ -1230,6 +1404,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: part guide became a list with the same part ranges; (j) renames clauses;
       sidecar passes.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 4ee60f4f53ed
+    date: '2026-11-01'
+    evidence: 'The statement''s run-on part guide became a four-bullet list. It gives the same part ranges:
+      (a)–(c) and (d); (e)–(h); (i)–(k) with the three-way classification; (l). In the solution, (j) only
+      renames the clauses (S6) and (S5). The sidecar passes.'
 - key: exr-models-b1
   kind: exr
   file: 02-counter-models.md
@@ -1286,6 +1468,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: (i)-(iii) rename (S5),(S6),(S7) and split sentences; same elements a, b and
       verdicts.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 056719558cdc
+    date: '2026-11-01'
+    evidence: (i)–(iii) only rename the clauses ((S5), (S6), (S7)) and split sentences. In (ii) 'by (S5)
+      the implication fails' became 'the clause for →, (S5), makes the implication fail', which means
+      the same. The structures, the assignment ℓ(x)=b and the conclusion about the passage law are ...
 - key: exr-counter-models-b2
   kind: exr
   file: 02-counter-models.md
@@ -1340,6 +1530,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): (e) names (S5); look-alike sentence split; rubric
       headings renamed, points unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 713fd47ddaba
+    date: '2026-11-01'
+    evidence: (e) adds the name 'the clause for →' before (S5). A semicolon is split. 'Marking scheme'
+      became 'What a complete answer needs' and 'Fatal errors' became 'Slips that lose the step'. Both
+      renames are prescribed by STYLE §11.6 and §13 B4 (authoring/STYLE.md:245, 653). Points and ...
 - key: exr-models-b3
   kind: exr
   file: 02-counter-models.md
@@ -1416,6 +1614,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): pointer to ''What this certifies'' became ''earlier
       in this section, over N'', which matches the reading over N with P even, Q odd; (S5),(S6) named.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 734263c6d6df
+    date: '2026-11-01'
+    evidence: '''this section settled that converse above, in "What this certifies", with an infinite
+      structure'' became ''Earlier in this section, an infinite structure over ℕ settled that converse.''
+      ''over ℕ'' is true: the Section 5.4 bullet of ''What this certifies'' reads it over ℕ. The ...'
 - key: exr-counter-models-b4
   kind: exr
   file: 02-counter-models.md
@@ -1477,6 +1683,14 @@ items:
     evidence: 'wording only (checked against 9f9dbb8): ''second row of the side-condition table'' now
       names that row, ''flag in no premise'', whose RIGHT entry is P(x0) |- exists x P(x); same counter-model
       Z, P even, l(x0)=2; rubric renamed.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e4c765063b0d
+    date: '2026-11-01'
+    evidence: 'The title ''Each side condition earns its place'' became ''Why each side condition is needed''.
+      In (a), ''This is the RIGHT entry of the second row of the side-condition table, generalized'' became
+      ''This generalizes the RIGHT step of the row "flag in no premise": P(x0) ⊢ ∃x P(x), by ...'
 - key: exr-models-c1
   kind: exr
   file: 02-counter-models.md
@@ -1526,6 +1740,14 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: Title marker only. 06:297 and fd2 come back to it.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: dcce4736ef71
+    date: '2026-11-01'
+    evidence: (a) only renames the clauses ((S5); (S6), (S5), (S2); (S6), (S7), (S2)), and 'Marking scheme'
+      and 'Fatal errors' are renamed per §13 B4. The argument (injective on a finite set, so surjective)
+      is unchanged. The sidecar passes.
 - key: exr-models-c2
   kind: exr
   file: 02-counter-models.md
@@ -1575,6 +1797,14 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: Title marker only.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 889f9f2ac185
+    date: '2026-11-01'
+    evidence: 'The base case cites ''(M1) of @def-structure'', as before. The empty-domain remark was
+      split: ''Each of the three conjuncts begins with ∀, so all three would hold in it. It has no elements
+      at all, so ... would fail'', which is the same claim. The step only renames (S6) and (S7). The ...'
 - key: exr-models-c3
   kind: exr
   file: 02-counter-models.md
@@ -1624,6 +1854,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): (M3) glossed; (c) sentence split; negations and
       rubric points unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6193b45f5c91
+    date: '2026-11-01'
+    evidence: 'The title ''Exit check'' became ''Chapter check'', as prescribed by STYLE §13 B4 (authoring/STYLE.md:224).
+      The remark on 1/n now says ''by the clause (M3) of @def-structure, which asks a two-place function
+      symbol for a value at every pair''. That gloss is true: ...'
 - key: exr-counter-models-c4
   kind: exr
   file: 02-counter-models.md
@@ -1657,6 +1895,13 @@ items:
     evidence: '02:830-862. Script: least sizes are 3 for (a), 3 for (b) (none of size 1 or 2 exists) and
       2 for (c), matching the book. The counter-models check. The hint names the counting tool without
       doing the count.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 8307460f01ff
+    date: '2026-11-01'
+    evidence: Only the headings changed ('Marking scheme' and 'Fatal errors', renamed per §13 B4). Points
+      and contents are unchanged. The sidecar passes.
 - key: lem-term-substitution
   kind: lem
   file: 03-first-order-soundness.md
@@ -1699,6 +1944,14 @@ items:
       recursive description at 02:~362, and psi[t/x]=psi for x not free is the claim proved at 02:301.
       The step a_{l[y->d]}=a_l uses the claim for terms in lem-free-coincidence (11:153), and swapping
       the two assignment
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 72867aa07439
+    date: '2026-11-01'
+    evidence: 'The statement is byte-identical. The new instance before it (phi = y<x, t = y+1, l(y)=3:
+      phi[t/x] is y<y+1, true since 3<4; with x set to 4, y<x is also 3<4) is correct and unlabelled.
+      verify/ch07/lem-term-substitution.py now asserts it (''instance value'' 4) and passes.'
 - key: proof:lem-term-substitution
   kind: proof
   file: 03-first-order-soundness.md
@@ -1734,6 +1987,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): same cases in order; sentences split, clauses named;
       @def-assignment moved to the Uses line; sidecar passes.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: c473d2444844
+    date: '2026-11-01'
+    evidence: 'wording only: sentences split, ''the clause for X, (Sn)'' glosses added, ''(@def-assignment)''
+      moved to the new Uses line. One inline ''@def-substitution'' was dropped in the sentence ''Second,
+      substitution passes through connectives''. It is still cited inline twice in the same proof, ...'
 - key: check:03-first-order-soundness:1
   kind: check
   file: 03-first-order-soundness.md
@@ -1772,6 +2033,14 @@ items:
     evidence: 12:112-121. The hypothesis 'z not appearing in phi' and the scope 'anywhere inside' match
       the renaming convention at 02:392. Part (b)'s 'structure for the symbols of psi' covers part (a)'s
       requirement, because a renaming does not change the symbols.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: eadd90e54358
+    date: '2026-11-01'
+    evidence: 'The statement is unchanged; the 42-word sentence in (b) was kept word for word. The new
+      example before it is true: in Z, both ''exists y (y > x)'' and ''exists z (z > x)'' hold at every
+      x, with witness x+1. It is recorded in the ledger and checked in the lem-term-substitution ...'
 - key: proof:cor-renaming-bound-variables
   kind: proof
   file: 03-first-order-soundness.md
@@ -1796,6 +2065,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): same steps; @def-free-for moved to the Uses line;
       clauses (S4)-(S7) named.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 53d85c49d45a
+    date: '2026-11-01'
+    evidence: 'wording only: in (a), ''(@def-free-for)'' moved to the Uses line and (S6)/(S7) are glossed.
+      In (b), the induction-hypothesis sentence was reordered without changing what it claims. A Uses
+      line was added (def-free-for, def-satisfaction S4-S7, thm-structural-induction), and all ...'
 - key: thm-first-order-soundness
   kind: thm
   file: 03-first-order-soundness.md
@@ -1911,6 +2188,21 @@ items:
     evidence: 'wording only (checked against 9f9dbb8): same four steps and claims; subsection pointers
       reworded to the same targets; =E step spells out the iff from the lemma for t2 with the t1 step
       already given; @def-free-for to Uses.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 0adc3d9f67b2
+    date: '2026-11-01'
+    evidence: 'wording only: Steps 1-4, (*), (**), Claims 1-3 and every case keep their order and content.
+      The =E case drops ''read from right to left'' and spells out the biconditional; the logic is the
+      same. The parenthesis in Step 1 is now prose. Three Uses lines were added: ...'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 0adc3d9f67b2
+    date: '2026-11-01'
+    evidence: 'Step 4: ''To do this, fix some e'' (dangling after ''Then M'' interprets every symbol'')
+      now reads ''The expansion goes as follows. Fix some e''; wording only, mathematics unchanged'
 - key: cor-counter-model
   kind: cor
   file: 03-first-order-soundness.md
@@ -2063,6 +2355,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): (a) split into sentences, same two uses of the
       side conditions.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: fd29eb4fc80e
+    date: '2026-11-01'
+    evidence: 'wording only: in solution (a), ''to show/to pass'' became ''the proof shows/passes''. Solution
+      (c) gained ''notice the change''. Both make the same claims. The sidecar exr-first-order-soundness-a1.py
+      passes.'
 - key: exr-first-order-soundness-b1
   kind: exr
   file: 03-first-order-soundness.md
@@ -2125,6 +2425,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): (S7) named; counterexample on Z with R as <= split
       into sentences, unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ec0cedf92a30
+    date: '2026-11-01'
+    evidence: 'wording only: the closing remark is split into sentences. The counter-example (forall y
+      R(y,y) read as (forall y R(x,y))[y/x]; exists x forall y x<=y is false in Z) is unchanged and true.
+      The (S7) gloss was added.'
 - key: exr-first-order-soundness-b2
   kind: exr
   file: 03-first-order-soundness.md
@@ -2223,6 +2531,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): statement split into three sentences with the same
       requirements; lemma counts (three, once) unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b86dae9e6013
+    date: '2026-11-01'
+    evidence: 'wording only: the statement''s requirements (data of line k, side condition, what the hypothesis
+      gives, the argument naming each clause) are now split into two sentences. ''Marking scheme'' became
+      ''What a complete answer needs'' and ''Fatal errors'' became ''Slips that lose the step (0 ...'
 - key: exr-first-order-soundness-c2
   kind: exr
   file: 03-first-order-soundness.md
@@ -2275,6 +2591,14 @@ items:
     hash: fbbe16c20c0c
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): the three things to give became a list.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: fbbe16c20c0c
+    date: '2026-11-01'
+    evidence: 'wording only: the three requirements are now a bulleted list, word for word. In the solution,
+      ''it needs'' became ''That step needs'' and the (S6) gloss was added. ''Marking scheme'' and ''Fatal
+      errors'' were renamed as in C1. The sidecar exr-first-order-soundness-c2.py passes.'
 - key: def-theory
   kind: def
   file: 04-theories-and-models.md
@@ -2297,6 +2621,14 @@ items:
     model: claude-opus-5-5
     evidence: 04:13-19 matches blueprint ch07-deepen §4.4 item 2 verbatim; finite list, n>=0; def-derivable
       at ch01/02:214
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 8515c9ea8425
+    date: '2026-11-01'
+    evidence: 'wording only: the label and statement are unchanged. The new lead-in instance (Section
+      7.2''s three strict-order sentences taken as axioms) is a backward reference, true, and has no label.
+      It is sourced by the new ledger line ''def-theory (example)''. The sentence ''"T ⊢ σ" reads ...'
 - key: def-model-of-theory
   kind: def
   file: 04-theories-and-models.md
@@ -2318,6 +2650,14 @@ items:
     model: claude-opus-5-5
     evidence: 04:23-29; lem-free-coincidence (ch07/01:219) and def-first-order-entailment (01:280) exist
       and are cited correctly
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 03002d0bcd55
+    date: '2026-11-01'
+    evidence: 'wording only: the statement is unchanged. The new instance (N,<) is checked: irreflexive,
+      transitive, d+1 > d. The same check appears in 7.2 (02-counter-models.md:124), and the extended
+      ledger line covers it. ''by @lem-free-coincidence'' moved to the end of the sentence and the ...'
 - key: check:04-theories-and-models:1
   kind: check
   file: 04-theories-and-models.md
@@ -2351,6 +2691,14 @@ items:
     model: claude-opus-5-5
     evidence: It now has a ledger line, def-model-of-theory (example), sourced as school arithmetic. The
       solution is unchanged and correct.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 5f6c5891c8c6
+    date: '2026-11-01'
+    evidence: 'wording only: the check and its solution are unchanged. Only the gallery intro that follows
+      in its span was reworded: names are explained via (Refl) ''reflexive'', (F1)-(F9) keep their series
+      numbering, and they are not the clauses (S1)-(S7). @def-satisfaction is kept. The old ...'
 - key: exm-axioms-and-models
   kind: exm
   file: 04-theories-and-models.md
@@ -2409,6 +2757,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): sentences split; (F1)-(F9), (1 != 0) display unchanged;
       (F8) glossed as reciprocals; non-model Z at 2 unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: fe677073fd6f
+    date: '2026-11-01'
+    evidence: 'wording only: the (Refl)/(Sym)/(Trans) sentence was split. The fields sentence was reworded:
+      ''ten axioms; the first nine (F1)-(F9) … the tenth is (1≠0)'' has the same content. (F8) is named
+      ''the axiom of reciprocals''. All numbers and tables are unchanged, and the sidecar passes.'
 - key: check:04-theories-and-models:2
   kind: check
   file: 04-theories-and-models.md
@@ -2436,6 +2792,14 @@ items:
     hash: d0a37da66356
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): sentence split, (S5) named.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d0a37da66356
+    date: '2026-11-01'
+    evidence: 'wording only: the solution is split, and ''(S5)'' now reads ''an implication with a false
+      hypothesis holds, by the clause for →, (S5)'', which is true. The lead-in after it, ''The groups
+      part promised…'', became the question ''Is there a model … in which commutativity, (Comm), is ...'
 - key: exm-triangle-group
   kind: exm
   file: 04-theories-and-models.md
@@ -2474,6 +2838,15 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): table unchanged; ''the fold below'' became a pointer
       to the corner-following argument in ''Why the table is associative without 216 checks''.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 8e34cda56dd6
+    date: '2026-11-01'
+    evidence: 'wording only: the table-reading sentence was reworded (''entry in row x and column y is
+      x·y''). The Assoc bullet ''The fold below says this once more'' became ''Following one corner through
+      both bracketings proves this; the details are below''. This matches the fold, which is still in
+      ...'
 - key: check:04-theories-and-models:3
   kind: check
   file: 04-theories-and-models.md
@@ -2528,6 +2901,14 @@ items:
     model: claude-opus-5-5
     evidence: The follow-up prose at 04:268 now gives the Z and triangle instances with the two-sided
       hypothesis of the stated theorem. The statement itself is unchanged.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 2f1df64a419e
+    date: '2026-11-01'
+    evidence: 'wording only: the statement and Fitch proof are unchanged. The new unlabelled instance
+      in (Z;+,0) is: x+d=d at d=0 gives x+0=0, and x+0=x, so x=0. Its arithmetic is correct, and it mirrors
+      proof lines 4 and 6–7 (assumption at e, then (Id) at x0). It cites nothing later and is ...'
 - key: proof:prp-group-identity-unique
   kind: proof
   file: 04-theories-and-models.md
@@ -2628,6 +3009,15 @@ items:
     hash: 22a9194abcd3
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): (S3) glossed as ''bottom is never satisfied''.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 22a9194abcd3
+    date: '2026-11-01'
+    evidence: 'wording only: ''which (S3) forbids'' became ''But ⊥ is never satisfied, by the clause for
+      ⊥, (S3)''. This is the same step. The Section 7.2 link is kept. In the prose that follows in its
+      span, ''the text says which theorem makes them agree'' became ''That they agree is a theorem, not
+      ...'
 - key: check:04-theories-and-models:4
   kind: check
   file: 04-theories-and-models.md
@@ -2657,6 +3047,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): derivation steps split into sentences; parenthesis
       on completeness kept with the same meaning.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 3ae77d96fee3
+    date: '2026-11-01'
+    evidence: 'wording only: the ∃E/∀E/¬E steps are the same and in the same order. The side condition
+      is unchanged. The parenthetical became ''No structure is a model either. But that fact alone would
+      show inconsistency only through the completeness theorem.'' This is logically the same as the ...'
 - key: prp-model-shows-independence
   kind: prp
   file: 04-theories-and-models.md
@@ -2703,6 +3101,15 @@ items:
     hash: ae8c8ccbf445
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): (b) same step, (S4) glossed.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ae8c8ccbf445
+    date: '2026-11-01'
+    evidence: 'wording only: (b) is the same step. ''¬σ, which the second model makes false, by (S4)''
+      became ''The second model makes ¬σ false, since σ is true there and negation flips truth, (S4)'',
+      which is true by the hypothesis of (b). In the ''Finding the two models'' prose that follows in
+      its ...'
 - key: exm-independence-rst
   kind: exm
   file: 04-theories-and-models.md
@@ -2725,6 +3132,14 @@ items:
     model: claude-opus-5-5
     evidence: '04:335-345: the three relations have exactly two properties each; first two equal B5 (d),
       (f) of ch05/04:1095 solution with 0,1 -> a,b'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: a11ad63f13d0
+    date: '2026-11-01'
+    evidence: 'wording only: the example is unchanged. In the warning within its span, ''broke the claim
+      with this reading, @exr-universal-introduction-b5 (d)'' became ''refuted the claim with this reading
+      (@exr-universal-introduction-b5 (d))''. The @ref is kept and nothing else changed.'
 - key: check:04-theories-and-models:5
   kind: check
   file: 04-theories-and-models.md
@@ -2745,6 +3160,13 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: '04:387-393: (Q,<) dense, (Z,<) not at 0<1'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 90cebc1f3918
+    date: '2026-11-01'
+    evidence: 'wording only: the check and its solution are unchanged. In the Looking-ahead remark within
+      its span, a semicolon became a period. The volume names and chapter numbers are unchanged.'
 - key: exr-theories-and-models-a1
   kind: exr
   file: 04-theories-and-models.md
@@ -2886,6 +3308,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): pointer ''the last warning'' now names its claim
       (symmetric and transitive implies reflexive); chain list unchanged; rubric renamed.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 8da5883f9d17
+    date: '2026-11-01'
+    evidence: 'wording only: statement (iv) changed from ''the "proof" in the last warning of this section''
+      to ''the tempting "proof" that a symmetric and transitive relation is reflexive''. It points to
+      the same object (the warning). In solution (i), the four chains are the same and are now a ...'
 - key: exr-theories-and-models-b2
   kind: exr
   file: 04-theories-and-models.md
@@ -2922,6 +3352,14 @@ items:
     hash: 5811652c3d90
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): rubric headings renamed, points unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 5811652c3d90
+    date: '2026-11-01'
+    evidence: 'wording only: only the headings changed: ''Marking scheme'' became ''What a complete answer
+      needs'', and ''Fatal error (0 for the part)'' became ''Slips that lose the step, scoring 0 for the
+      part''. The points are 2.5 = 1+1+0.5, as before.'
 - key: exr-theories-and-models-b3
   kind: exr
   file: 04-theories-and-models.md
@@ -2962,6 +3400,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): derivation unchanged; =E list and side conditions
       became lists; {0,1} example split; rubric points unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 074e27a556e9
+    date: '2026-11-01'
+    evidence: 'wording only: the Fitch derivation is byte-identical. The four =E steps (lines 11, 12,
+      13, 16 with their φ) are unchanged and are now bullets. The (Inv) counter-model ({0,1};·,1) is split
+      into sentences with the same checks. The marking points 2/3/2/1/2 and the side conditions ...'
 - key: exr-theories-and-models-c1
   kind: exr
   file: 04-theories-and-models.md
@@ -2999,6 +3445,14 @@ items:
     hash: f2e712f13f88
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): (S6),(S2),(S7) named; same argument; rubric renamed.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: f2e712f13f88
+    date: '2026-11-01'
+    evidence: 'wording only: in (a), ''(S6) at d and e meets x=y with different values, which (S2) rejects''
+      became ''The clause for ∀, (S6), applied at d and e, meets … An equation holds only when both sides
+      name the same object, (S2), so it fails''. This is the same step. In (d), (S7) now comes ...'
 - key: exr-theories-and-models-c2
   kind: exr
   file: 04-theories-and-models.md
@@ -3034,6 +3488,13 @@ items:
     hash: 6076d554a905
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): rubric headings renamed, points unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6076d554a905
+    date: '2026-11-01'
+    evidence: 'wording only: the only changes are the marking heading and the ''Slips that lose the step''
+      line. The points 3 per axiom plus 1 are unchanged.'
 - key: exr-theories-and-models-c3
   kind: exr
   file: 04-theories-and-models.md
@@ -3090,6 +3551,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): model check of nonnegative rationals split; propositional
       argument split; rubric items listed, points unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 893f47b33901
+    date: '2026-11-01'
+    evidence: 'wording only: the title ''Exit check'' became ''Chapter check'', as STYLE line 224 requires.
+      The statement is unchanged. In (b), the parenthetical model check is split into sentences with the
+      same content. The TAUT row argument is split with the same steps (¬A → B → ¬C → D → E, a ...'
 - key: def-definable-set
   kind: def
   file: 05-definability-and-isomorphism.md
@@ -3113,6 +3582,14 @@ items:
     model: claude-opus-5-5
     evidence: 05:15-25 matches blueprint; independence of ℓ by @lem-free-coincidence (07/01:219) checked;
       (S4)/(S5) at 05:29 match def-satisfaction clauses (S4 ¬, S5 ∧∨→↔).
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 06c7691b15ef
+    date: '2026-11-01'
+    evidence: Wording only (this is prose under the definition, not the block). The connectives paragraph
+      is split into sentences. The S-clause citations now read 'the clause for negation, (S4), and the
+      clause for the other connectives, (S5), of @def-satisfaction', which matches ...
 - key: exm-definable-sets
   kind: exm
   file: 05-definability-and-isomorphism.md
@@ -3144,6 +3621,14 @@ items:
     hash: b2543b44a25a
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): four cases split into sentences, same cases.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b2543b44a25a
+    date: '2026-11-01'
+    evidence: 'Wording only. In (d) the semicolon chain is split into sentences. The prime case analysis
+      is unchanged: x=0 fails at y=z=0 since 0*0=0, x=1 fails the first conjunct, a composite fails at
+      its factors, a prime has a factor 1. In the ''two directions'' paragraph after the block, ...'
 - key: check:05-definability-and-isomorphism:1
   kind: check
   file: 05-definability-and-isomorphism.md
@@ -3240,6 +3725,14 @@ items:
     hash: 2d00e5db717b
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): formulas unchanged; supremum example split.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 2d00e5db717b
+    date: '2026-11-01'
+    evidence: Wording only. In (a) and (b) the sentences are split ('Take a structure ... Then', 'Similarly,',
+      'The phrase'). The formulas for greatest, maximal, upper bound and supremum are identical. The sup
+      [0,1)=1 argument and the witness max(0,(z+1)/2) are unchanged. In the following ...
 - key: check:05-definability-and-isomorphism:3
   kind: check
   file: 05-definability-and-isomorphism.md
@@ -3292,6 +3785,14 @@ items:
     model: claude-opus-5-5
     evidence: The paragraph at 146 now claims only that clause (iii) is needed in both directions, and
       the identity-map example shows exactly that. The F2.1 ledger line is now marked paid.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: '977871745292'
+    date: '2026-11-01'
+    evidence: 'The definition block is unchanged. The new prose before it: (1) The everyday sense of function
+      and bijection is split into two sentences with the same content. (2) A new worked instance doubles
+      N onto the evens: 0->0, 1->2, 2->4; each even number is hit exactly once; 1<2 goes to ...'
 - key: thm-isomorphism-invariance
   kind: thm
   file: 05-definability-and-isomorphism.md
@@ -3325,6 +3826,21 @@ items:
     evidence: ∀x∃y(y+y=x) is true in (Q;+) with y=x/2. It is false in (Z;+) at x=1, since y≤0 gives y+y≤0
       and y≥1 gives y+y≥2. Bijections Q→Z exist (fd2 thm-integers-rationals-countable), so the example
       now does real work. The ledger lines are present.
+  - stage: S5e
+    verdict: minor
+    by: s5e-referee
+    hash: a5ca785bab3b
+    date: '2026-11-01'
+    evidence: 'The statement is unchanged. B13 adds a plain-words sentence: ''Every sentence true in one
+      of two isomorphic structures is true in the other.'' It is true and is exactly the last clause of
+      the statement. The Q/Z paragraph is split with the same mathematics. One new sentence ...'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: a5ca785bab3b
+    date: '2026-11-01'
+    evidence: '05 line 186: ''Sets and Functions, Chapter 4, proved'' now reads ''proves'' (present tense
+      for a later volume); mathematics unchanged'
 - key: proof:thm-isomorphism-invariance
   kind: proof
   file: 05-definability-and-isomorphism.md
@@ -3356,6 +3872,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): same cases; clauses named; Uses line added with
       @def-satisfaction and @def-isomorphism-of-structures.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ebd294dfc152
+    date: '2026-11-01'
+    evidence: 'Wording only. The proof steps correspond one to one and in order: terms; atomic (S1) with
+      clause (iii); equations (S2) with injectivity; bot (S3); connectives (S4)/(S5); forall (S6) with
+      onto; exists (S7); sentences via @lem-free-coincidence. The bot step is reworded as ''Since ...'
 - key: check:05-definability-and-isomorphism:4
   kind: check
   file: 05-definability-and-isomorphism.md
@@ -3424,6 +3948,14 @@ items:
     hash: 60c88bd9317a
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): Uses line added (@def-definable-set); body unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 60c88bd9317a
+    date: '2026-11-01'
+    evidence: The proof text is unchanged. The only addition is a Uses line '@def-definable-set (the set
+      phi defines)', which is a backward reference in the same section and is recorded in the ledger.
+      The proof already uses that definition implicitly in 'The first says d in S'.
 - key: exm-shift-automorphism
   kind: exm
   file: 05-definability-and-isomorphism.md
@@ -3521,6 +4053,13 @@ items:
     hash: 75c2fc2242a3
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): sentence split; same failure at 0 versus h(0)=1.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 75c2fc2242a3
+    date: '2026-11-01'
+    evidence: 'Wording only. In (e) the sentence is split (''The formula ... The reason is that ...'').
+      The counterexample is the same: d->d+1 is not onto, forall y not(y<x) holds at 0 and fails at h(0)=1.'
 - key: exr-definability-and-isomorphism-a2
   kind: exr
   file: 05-definability-and-isomorphism.md
@@ -3607,6 +4146,14 @@ items:
     hash: 0a61a295d4f6
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): rubric renamed, points unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 0a61a295d4f6
+    date: '2026-11-01'
+    evidence: 'Wording only. ''Marking scheme'' became ''What a complete answer needs'' (STYLE §11.6 naming).
+      ''Fatal error (0 for the part): a free variable left over'' became ''Slips that lose the step. A
+      free variable left over ... loses the whole part.'' The points and the penalty are the same. ...'
 - key: exr-definability-and-isomorphism-b2
   kind: exr
   file: 05-definability-and-isomorphism.md
@@ -3644,6 +4191,14 @@ items:
     hash: 8a2236f3164a
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): rubric renamed, points unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 8a2236f3164a
+    date: '2026-11-01'
+    evidence: Wording only. The marking heading is renamed. The fatal error (0 for the part, for ignoring
+      the structure in (v)) is now 'loses the whole part', with the same meaning. The solutions are unchanged
+      and the sidecar passes.
 - key: exr-definability-and-isomorphism-b3
   kind: exr
   file: 05-definability-and-isomorphism.md
@@ -3683,6 +4238,13 @@ items:
     hash: e9dae2367689
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): rubric renamed, points unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e9dae2367689
+    date: '2026-11-01'
+    evidence: Wording only. 'Fatal error (0 for (b))' is now 'loses all of (b)', the same penalty. The
+      4/4/2 points are unchanged. The solutions are unchanged and the sidecar passes.
 - key: exr-definability-and-isomorphism-c1
   kind: exr
   file: 05-definability-and-isomorphism.md
@@ -3720,6 +4282,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): ''defines a set of pairs'' became ''is a set of
       pairs'', same argument; rubric renamed.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b0533a7a2dfe
+    date: '2026-11-01'
+    evidence: Wording only. In (c), '"y = x + 1" defines a set of pairs' became 'The relation "y = x +
+      1" is a set of pairs'. In context this means the same (the relation defined by the formula), and
+      the shift argument is unchanged. 'Fatal error (0 for (a))' is now 'loses all of (a)'. The ...
 - key: exr-definability-and-isomorphism-c2
   kind: exr
   file: 05-definability-and-isomorphism.md
@@ -3756,6 +4326,14 @@ items:
     hash: 2c485a8e25fe
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): rubric renamed, points unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 2c485a8e25fe
+    date: '2026-11-01'
+    evidence: 'Wording only. ''Fatal error (0 for (b))'' with x->2x alone is now ''loses all of (b): that
+      map fixes 0, so it cannot move 0'', with the same reason and penalty. The points 3/4/3 are unchanged
+      and the sidecar passes.'
 - key: exr-models-r1
   kind: exr
   file: 05-definability-and-isomorphism.md
@@ -3810,6 +4388,14 @@ items:
     hash: 03f38d6a6b1f
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): sentence split, same search steps.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 03f38d6a6b1f
+    date: '2026-11-01'
+    evidence: 'Wording only. In (b) the semicolon and parenthesis are split: ''The premise needs p->q,
+      and a box on p produces it by repeating q. These are the goal-directed and premise-directed steps
+      of ... Section 3.1.'' The derivation and the refuting row in (a) are unchanged. check_fitch ...'
 - key: exr-models-r2
   kind: exr
   file: 05-definability-and-isomorphism.md
@@ -3869,6 +4455,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): rule labels moved to the Uses line; @prp-double-negation
       kept inline.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 139dfd08316d
+    date: '2026-11-01'
+    evidence: Citation move only. @def-rules-negation, @def-rules-contradiction and @def-rules-implication
+      (from the old inline parenthesis) and @def-rule-raa (from inline) are now in the Uses line, with
+      the rules they give (negI, negE, botE, toI; the RAA box). @prp-vacuous-implication, ...
 - key: exr-models-r3
   kind: exr
   file: 05-definability-and-isomorphism.md
@@ -4001,6 +4595,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): (S5) named; truth-table remark split, @prp-forall-implies-exists
       kept.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 3ee5c005a920
+    date: '2026-11-01'
+    evidence: Wording only. '(S5)' became 'the clause for implication, (S5)', which is correct per def-satisfaction.
+      'A truth table is the wrong look-alike' became 'looks like the right tool, and is not', with the
+      same point. The forall P -> exists P comparison via @prp-forall-implies-exists ...
 - key: thm-first-order-completeness
   kind: thm
   file: 06-limits-of-first-order-logic.md
@@ -4033,6 +4635,15 @@ items:
     model: claude-opus-5-5
     evidence: 06:29 now says the last part 'states, without proof' that no method works in every case.
       This matches the undecidability remark, which is stated without proof.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 0de8e56a32c4
+    date: '2026-11-01'
+    evidence: 'Statement unchanged word for word. Following prose: the definitions of T⊢σ and T⊨σ are
+      split with the same @def-theory and @def-model-of-theory refs; the reformulation ''take T with ¬σ
+      added... Then T⊨σ means this theory has no model'' keeps the same argument. ''Section 7.4 treated
+      ...'
 - key: thm-first-order-compactness
   kind: thm
   file: 06-limits-of-first-order-logic.md
@@ -4056,6 +4667,14 @@ items:
     model: claude-opus-5-5
     evidence: '06:49-55: short argument cites thm-first-order-completeness, def-inconsistent-theory (04:274),
       prp-model-shows-consistency (04:282); valid. sigma_n claim at 06:63 correct.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 014cc44c6375
+    date: '2026-11-01'
+    evidence: Statement unchanged. The short argument is split at 'So some finite list...' with the same
+      steps and refs. The pattern after it becomes a numbered 1-3 list with the same three steps, and
+      'Listed' paragraph only splits a sentence at a semicolon.
 - key: check:06-limits-of-first-order-logic:1
   kind: check
   file: 06-limits-of-first-order-logic.md
@@ -4138,6 +4757,14 @@ items:
     model: claude-opus-5-5
     evidence: '06:95 now states: complete listable model would be isomorphic to R (fd3 Ch6), so R listable;
       contradiction'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 8208f4c9f1e8
+    date: '2026-11-01'
+    evidence: Statement unchanged. The R-supremum paragraph only splits sentences ('Each of these sentences
+      is true in R'; 'The listable model is an ordered field... Any two complete ordered fields are isomorphic
+      (Number Systems, Ch 6). So...'). The chain of reasoning is identical.
 - key: check:06-limits-of-first-order-logic:3
   kind: check
   file: 06-limits-of-first-order-logic.md
@@ -4208,6 +4835,14 @@ items:
     model: claude-opus-5-5
     evidence: 06:123 adds forall x not(x<0) to the bounding sentences, covering s = 0; trichotomy then
       gives standard below non-standard
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: df800317a316
+    date: '2026-11-01'
+    evidence: The example body is unchanged. In the follow-up prose, standard elements lie at the bottom
+      and the not-isomorphic paragraph is split only. In the induction-schema argument, φ's other free
+      variables are fixed at e_i, the same as before, with the @lem-term-substitution premises ...
 - key: check:06-limits-of-first-order-logic:4
   kind: check
   file: 06-limits-of-first-order-logic.md
@@ -4284,6 +4919,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): pointer now names the argument that no formula
       defines the standard elements.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 517dd8588133
+    date: '2026-11-01'
+    evidence: 'Solution (d): the pointer to the subsection title is replaced by ''the argument that no
+      formula defines the standard elements'', which names the same argument. Nothing else changed.'
 - key: exr-limits-of-first-order-logic-a2
   kind: exr
   file: 06-limits-of-first-order-logic.md
@@ -4337,6 +4979,12 @@ items:
     hash: 16ef203c9541
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): sentence split, same argument via @exr-limits-of-first-order-logic-b1.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 16ef203c9541
+    date: '2026-11-01'
+    evidence: Solution (l) only splits sentences at the colon and the comma. The a2 sidecar passes.
 - key: exr-limits-of-first-order-logic-b1
   kind: exr
   file: 06-limits-of-first-order-logic.md
@@ -4389,6 +5037,14 @@ items:
     hash: 26d079f3f50b
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): rubric as a list, points 3/3/2/2 unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 26d079f3f50b
+    date: '2026-11-01'
+    evidence: Statement and solution are unchanged. The marking scheme is renamed 'What a complete answer
+      needs' with the same 3/3/2/2 = 10 points and the same criteria. 'Fatal error (0 for the proof)'
+      becomes '...loses the whole proof', which means the same. The b1 sidecar passes.
 - key: exr-limits-of-first-order-logic-b2
   kind: exr
   file: 06-limits-of-first-order-logic.md
@@ -4442,6 +5098,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): (iii) split; (v) ''the monadic remark'' named in
       words; rubric points unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: cbdbe75b5cc5
+    date: '2026-11-01'
+    evidence: (iii) is split only. In (v), 'The monadic remark' becomes 'The decidability of sentences
+      with one-place predicate symbols only, stated in this section', which matches the question's wording
+      and the same remark. The marking scheme keeps 2 per part and the same (iii) split. 'Fatal ...
 - key: exr-limits-of-first-order-logic-c1
   kind: exr
   file: 06-limits-of-first-order-logic.md
@@ -4474,6 +5138,14 @@ items:
       maps, empty relations) and then applies B1, which matches my proof. My direct compactness proof,
       {phi} with the sigma_n added, also earns 10/10 ('B1 or compactness directly'). Hint 1 names a tool
       and Hint 2 gives the first line; neither executes the size construction.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 1d284058f592
+    date: '2026-11-01'
+    evidence: In the solution, 'fix one element a. Read each constant as a, ...' is the same construction.
+      The marking scheme is 3/4/3 = 10 with the same criteria, and the fatal error becomes '...loses the
+      whole proof'.
 - key: exr-limits-of-first-order-logic-c2
   kind: exr
   file: 06-limits-of-first-order-logic.md
@@ -4531,6 +5203,14 @@ items:
     hash: a6dda71952ed
     date: '2026-11-01'
     evidence: 'wording only (checked against 9f9dbb8): rubric as a list, points 4/4/2 unchanged.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: a6dda71952ed
+    date: '2026-11-01'
+    evidence: The solution is unchanged. In the marking scheme, the 4 points for (a) are now shown as
+      four bullet points under that one item, and the criteria are the same. (b) gets 4 and the contradiction
+      2. 'Fatal error (0 for (a))' becomes 'loses all of part (a)', which is the same.
 - key: check:review:1
   kind: check
   file: review.md
