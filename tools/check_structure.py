@@ -40,8 +40,11 @@ Exercises heading of its own -- its problems are the section -- so the Exercises
 A/B/C rules do not apply to it, and its check and warning rules are advisory.
 
 A chapter's `index.md` is exempt from the section rules, but must have (fatal) its
-**What you need**, **Roadmap** and **Named moves** parts, as a heading or as a bold
-lead-in (STYLE §2); a missing **Time** line is advisory.
+**What you need** and **Roadmap** parts, as a heading or as a bold lead-in (STYLE §2),
+and the chapter must list its proof methods: a **Proof methods** part (STYLE §13 B4/B8),
+or the older **Named moves**, in `index.md` or on the chapter's review page `review.md`.
+A missing **Time** line is advisory. The review page (STYLE §2, §13 B8) is exempt from the
+section rules too; `tools/check_beginner.py` reads its prose.
 
     python3 tools/check_structure.py                          # all of src/
     python3 tools/check_structure.py src/ch11-least-upper-bound
@@ -79,7 +82,10 @@ FOLD = "second-reading"             # the second-reading fold (STYLE §12)
 WORDS_PER_QUARTER_HOUR = 400        # research-reader.md B1: 15 minutes per 400 words
 IDEA_LINES = 3
 GROUPS = ("A", "B", "C")
-INDEX_PARTS = ("What you need", "Roadmap", "Named moves")
+INDEX_PARTS = ("What you need", "Roadmap")
+# The chapter's list of proof methods: in index.md, or on the review page (STYLE §13 B8)
+METHODS_PART = r"(Proof methods|Named moves)"
+REVIEW = "review.md"
 INDEX_ADVISORY = ("Time",)
 HINT = re.compile(r"^\[Hint\s*\d+\]")
 LEDGER_LINE = re.compile(r"^(none:.*|[a-z]+-[\w-]+ \((proof|idea|claim|solution|example)\): .+\|.+)$")
@@ -295,12 +301,16 @@ def check_section(text: str, idea_lines: int = IDEA_LINES, last: bool = True):
     return fatal, advisory
 
 
-def check_index(text: str):
+def check_index(text: str, review: str = ""):
+    """(fatal, advisory) for a chapter's index.md; `review` is its review.md's text, if any."""
     fatal = []
     for part in INDEX_PARTS:
         pat = rf"^(#{{2,3}}\s+{part}\b|\*\*{part}\b)"
         if not re.search(pat, text, flags=re.M | re.I):
             fatal.append((1, f"index.md has no '{part}' part (a ## heading or a **bold** lead-in)"))
+    methods = rf"^(#{{2,3}}\s+{METHODS_PART}|\*\*{METHODS_PART})"
+    if not any(re.search(methods, t, flags=re.M | re.I) for t in (text, review)):
+        fatal.append((1, "no 'Proof methods' part (or 'Named moves') in index.md or review.md"))
     advisory = []
     for part in INDEX_ADVISORY:
         if not re.search(rf"^(#{{2,3}}\s+{part}\b|\*\*{part}\b)", text, flags=re.M | re.I):
@@ -330,9 +340,15 @@ def find_violations(root: Path, idea_lines: int = IDEA_LINES):
         if is_stub(text):
             advisory.append((f, 1, "stub (a title line only): in preparation; the contract applies once drafted"))
             continue
+        if f.name == REVIEW:
+            continue        # the chapter review page: no section contract (STYLE §13 B8)
         sections = sorted(p.name for p in f.parent.glob("[0-9]*.md"))
         last = not sections or f.name == sections[-1]
-        fa, ad = check_index(text) if f.name == "index.md" else check_section(text, idea_lines, last)
+        if f.name == "index.md":
+            review = f.parent / REVIEW
+            fa, ad = check_index(text, review.read_text(encoding="utf-8") if review.exists() else "")
+        else:
+            fa, ad = check_section(text, idea_lines, last)
         fatal += [(f, ln, m) for ln, m in fa]
         advisory += [(f, ln, m) for ln, m in ad]
     return fatal, advisory

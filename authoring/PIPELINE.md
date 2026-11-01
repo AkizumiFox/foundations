@@ -23,6 +23,7 @@ First tranche, required before Wave 1 (being built now; each documents its own u
 | `tools/check_structure.py` | The STYLE contract per section: opening frame, check + sibling solution, warning, A/B/C (and R in the last section), a solution after every exercise, Idea for long proofs, word budget, titles, the dependency ledger present; per chapter, exit checks and a find-the-error item. | S4 |
 | `tools/check_fitch.py` | Checks every fitch.sty derivation (line availability, box scope, rule shape, cited lines, RAA placement) and every truth table; honors the expect-invalid marker for deliberate non-examples. | S4 (Part 0, and any later derivation) |
 | `tools/promises.py` | Finds prose pointers without an `@ref`, reconciles them with STATUS's promise table, lists the promises a chapter must pay, and verifies that each paid one names an existing label. | S4, S8, S10 |
+| `tools/check_beginner.py` | STYLE §13 on reader-facing prose, per section: sentences with more than one inline `@ref` outside a Uses line, sentences over 35 words, nested parentheses, more than two semicolons, authoring terms printed (B4; list configurable with `--terms`), codes used alone (B7); per chapter index, the old Time-line template, Named moves / Summary / Terms in the opening, What you need over five links (B8). Read-only and advisory; `--strict` fails on any finding; `--summary` prints counts per chapter. | S4 (introductory volumes), S5e |
 | `tools/check_rendered.py` | Lints the built HTML and the PDF logs: backslashes in code, raw TeX or `\qedhere` on the page, MathJax errors, `??`, prose rendered as code. | S4 (after the build) |
 | `tools/ledger.py` | `authoring/ledger/chNN.yaml`: every result, proof, example, check and exercise with its label, kind and content hash; verdicts (stage, reviewer, model, verdict, evidence); `--stale` lists verdicts whose hash no longer matches. Retired ledgers live in `authoring/ledger/archive/`, which the tool never reads. | every stage records here; S10 requires no stale or missing verdict |
 
@@ -82,14 +83,14 @@ Each stage: who, what the brief must contain, what it produces, exit criterion. 
 **Exit:** every section delivered; blueprint deviations sent back to S2a before S5 starts on the affected sections.
 
 ### S4. Mechanical gates (scripts, no agent)
-Run, on a clean copy: `./build.py check`; `tools/check_structure.py`; `tools/check_fitch.py`; `tools/promises.py`; the sidecars (`verify/chNN/*.py`, later `tools/check_numbers.py`); `./build.py html` and `pdf`, then `tools/check_rendered.py`; `blueprint/originality.py`; `tools/ledger.py` to register the chapter's blocks and hashes; Lean compile once `lean/` exists.
+Run, on a clean copy: `./build.py check`; `tools/check_structure.py`; `tools/check_fitch.py`; `tools/promises.py`; in an introductory volume (fd1–fd3, and fd4 as it is drafted) `tools/check_beginner.py` on the chapter (advisory: its findings go to the drafter with the S4 output, and a finding the drafter keeps must be listed in the reply with a reason); the sidecars (`verify/chNN/*.py`, later `tools/check_numbers.py`); `./build.py html` and `pdf`, then `tools/check_rendered.py`; `blueprint/originality.py`; `tools/ledger.py` to register the chapter's blocks and hashes; Lean compile once `lean/` exists.
 **Exit:** all pass. A failure goes back to the drafter with the tool's output; no referee reads the chapter until S4 is clean.
 
-### S5. Two blind referees per section
-Each gets: the section, the frozen blueprint, the text of every label it cites, its dependency ledger, its sidecars, and the Lean statuses. Neither sees the other's report. Chunk by section pairs if needed for context.
+### S5. Two blind referees per section, and a beginner reader for new or reworded text
+Referees A and B each get: the section, the frozen blueprint, the text of every label it cites, its dependency ledger, its sidecars, and the Lean statuses. Neither sees the other's report. Chunk by section pairs if needed for context. In an introductory volume (STYLE §13), **Referee C** also reads every section whose text is new or reworded.
 
 **Referee A brief (proofs):**
-- "Your job is to find a false or unjustified step. For every proof, idea and claim: name the reason for each step (hypothesis, definition, cited label) and check the cited label says that, with the hypotheses available here."
+- "Your job is to find a false or unjustified step. For every proof, idea and claim: name the reason for each step (hypothesis, definition, cited label) and check the cited label says that, with the hypotheses available here. A reason may be inline, in the block's Uses line (`::: {.uses}`, its last block) or in the dependency ledger (STYLE §13 B1–B2): a step whose source is in any of the three is justified. Do not ask for an inline citation of routine arithmetic or algebra; if a source is missing, the fix is a Uses entry or a ledger line."
 - "Write out the quantifier order of every ε/δ/N argument and what each chosen constant depends on. Flag any constant that depends on something chosen after it."
 - "For every exchange of limits, sums, integrals or derivatives, name the licensing theorem and check its hypotheses on the page."
 - "Check each hypothesis of each theorem is used somewhere in its proof."
@@ -99,14 +100,20 @@ Each gets: the section, the frozen blueprint, the text of every label it cites, 
 **Referee B brief (claims and bookkeeping); reads bottom-up, starting from the exercises:**
 - "Your job is to find false sentences and missing bookkeeping. List every prose meta-claim (a sentence about the book's own text: 'the classical step comes later', 'everything else fails', 'we never used X') and check each against the page."
 - "Check every table, and every claim of the form 'all/none/only', against the prose and the earlier sections."
-- "Read each proof and list every fact it uses without an `@ref`. Diff your list against the dependency ledger; each fact missing from the ledger is a finding, and each `chNN (promised)` source must be in STATUS's promise table."
-- "Check notation against NOTATION.md: every symbol introduced before use, none with a second meaning."
+- "Read each proof and list every fact it uses without an `@ref` (a reference in the block's Uses line is an `@ref`). Diff your list against the dependency ledger; each fact missing from the ledger is a finding, and each `chNN (promised)` source must be in STATUS's promise table. In an introductory volume the other direction counts too: a sentence with two or more inline references, or an inline citation of a routine step that STYLE §13 B2 leaves to the Uses line, is a `minor` finding (the fix moves it; it never deletes a source)."
+- "Check notation against NOTATION.md: every symbol introduced before use, none with a second meaning. Check every meta-claim names the mathematics it is about, not a device of the page (STYLE §13 B3)."
 - "Check the forward-reference budget (STYLE §12.1): no `@ref` to a result the reader has not met used as a reason, in a proof or in prose; in an introductory volume, at most one 'Looking ahead' box per section. Check effort is proportional to difficulty (§12.2): a trivial rule or notion read clause by clause, or a hard one rushed, is a finding. Close every second-reading fold and check the main line still teaches the section (§12.0)."
 - "Check the worked examples obey the advice the section gives the reader, and the section obeys STYLE §9's checklist and §11's counts."
 - "Look at the rendered page for anything check_rendered.py cannot see (a sentence that reads wrongly after rendering)."
 
+**Referee C brief (a beginner reader; introductory volumes, new or reworded text only):**
+- "You have just finished school and are reading this book alone, with no one to ask. Read the main line only, top to bottom, with every second-reading fold closed. Do not read the ledger, the blueprint, the sidecars or the Uses lines' sources. You may look back at earlier sections, but not ahead."
+- "Report every place you stop, with file:line, the quoted text, a category, a severity and a plainer wording that keeps the mathematics: categories `process-jargon` (the book talks about how it was made: core track, fold, prompt, method box, Givens/Goal, ...), `undefined-term`, `citation-clutter`, `step-size` (too big a step, or a fuss over the obvious), `long-sentence`, `tone` (hedging, talking to readers of other books), `meta-talk` (sentences about the page itself), `notation-load` (a code like (Eq3) or a symbol you have to look up), `abstract-before-example`, `nominal-style`; severities `stuck` (you could not go on), `slowed` (you had to reread) and `annoyed` (you understood, but were interrupted)."
+- "Give each section an overall difficulty from 1 to 5 and say in two sentences what made it hard."
+- Verdicts: `stuck` is a `gap`, `slowed` a `minor`, `annoyed` a note. Each goes through S7 like any other finding, and the fix must not change the mathematics (a fix that does goes to Referee A). Referee C's verdicts are recorded per section in the review file, and in the ledger on the items it names (`--stage S5c`). The brief and categories are those of the readability audit (`authoring/design/beginner-readability-audit.md` §1).
+
 Where a second model family is available, run one of A or B on it; otherwise vary the persona and reading order as above. At a Part pilot, also run both referees on a copy with seeded errors and record recall.
-**Exit:** every ledger item has an A and a B verdict recorded.
+**Exit:** every ledger item has an A and a B verdict recorded; in an introductory volume, every new or reworded section has Referee C's report with no `stuck` left open.
 
 ### S6. Exercise verification (1 agent per chapter; 2 for a long chapter)
 **Brief:**
@@ -123,9 +130,24 @@ Where a second model family is available, run one of A or B on it; otherwise var
 The drafter or a fresh reviser fixes every `minor`, `gap` and `error`. A fix is accepted only when a **fresh re-referee, given the finding and the diff**, agrees. A dispute (the drafter says a finding is wrong) goes to a third agent with both arguments; if still open, to the author. Re-run S4 after the fixes.
 **Exit:** no open finding; `tools/ledger.py --stale` empty for re-refereed items.
 
+### Wording-only rewrites (S5e: equivalence re-review)
+A rewrite whose purpose is the wording, not the mathematics (STYLE §13 applied to reviewed text; moving sources into Uses lines; renaming printed devices; splitting sentences; adding a worked instance before a statement), does not go back through S5 and S6 from scratch. Rule 4 still holds: every edited item's verdicts go stale, and each must get a fresh one.
+
+**The rewrite (S3e).** One reviser per section (a strong model: wording quality is the point), given STYLE §13, the section, its ledger and the readability findings for it. The reviser keeps every label, every statement, every proof step in its order and every number; it may move a citation between the sentence, the Uses line and the ledger, but never drop one. It reports any change it could not make without touching the mathematics, and makes none of them: those are listed for the author.
+
+**The equivalence re-referee (S5e).** One fresh agent per section, given the diff (old and new text side by side), the section's ledger and `tools/check_beginner.py`'s output on both versions. It checks, per ledger item:
+1. the item's label, statement and proof steps correspond one to one with the old ones; a statement is word for word unless the item is a wording-only change to a statement, and then means exactly the same;
+2. every `@ref` of the old text is still in the item, inline or in its Uses line, or its fact is in the ledger (an inline-to-Uses or Uses-to-ledger move is not a mathematical change, and needs no other review);
+3. no new forward reference, no new reference to an exercise or an optional result, and no new fact used without a source;
+4. every number is unchanged, and the sidecars still pass;
+5. every new sentence is true (a new worked instance is checked like an example: its arithmetic, and a sidecar if it quotes a computed value).
+
+It records one verdict per item, like S7r: `tools/ledger.py set <ch> <key> --stage S5e --verdict correct --by <agent> --evidence "wording only: <one line>"`, or `gap`/`error` with the line where the mathematics changed. A `gap` or `error` sends the item to Referee A (S5) and, for an exercise, to S6. Then Referee C reads a sample of the rewritten sections (five or six per volume, or every section of a chapter opening) to confirm the reading improved; its `stuck` findings go through S7.
+**Exit:** every edited item has an S5e verdict `correct` (or has passed S5/S6 again); `tools/ledger.py stale` is empty; S4 is clean, including `./build.py check`; `check_beginner.py`'s counts for the section went down, and any finding kept is listed with its reason.
+
 ### S8. Seam referee (1 agent per chapter)
 **Brief:**
-- "Read `index.md` against the sections: What you need, Time, Roadmap and Named moves are true of the delivered text."
+- "Read `index.md` and the Chapter review page `review.md` against the sections: What you need, Time, Roadmap, Proof methods (formerly Named moves), Summary, Terms and Results used from earlier volumes are true of the delivered text. In an introductory volume, the opening is for someone who has not read the chapter (STYLE §13 B8): What you need has at most five items and five links, and the opening uses no word the chapter defines."
 - "Find any result re-proved from an earlier chapter or section, and any result credited to the wrong place."
 - "Run `tools/promises.py`: every promise this chapter owed is paid by a named, existing label; every promise it opened is in the list for STATUS and targets a chapter whose blueprint delivers it."
 - "Check notation across the chapter's sections, and against the Part so far."

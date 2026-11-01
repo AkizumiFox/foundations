@@ -247,6 +247,20 @@ class IndexAndFilesTests(unittest.TestCase):
         _, advisory = cs.check_index(self.INDEX.replace("**Time.**", ""))
         self.assertEqual(len(advisory), 1)
 
+    def test_proof_methods_on_the_review_page(self):
+        """STYLE §13 B8: the methods list may move to review.md, under its new name."""
+        bare = self.INDEX.replace("## Named moves\n\n- b\n", "")
+        self.assertEqual(len(cs.check_index(bare)[0]), 1)
+        self.assertEqual(cs.check_index(bare, "# Chapter Review\n\n## Proof methods in this chapter\n\n- b\n"),
+                         ([], []))
+        with tempfile.TemporaryDirectory() as tmp:
+            ch = Path(tmp) / "src" / "ch01-x"
+            ch.mkdir(parents=True)
+            (ch / "index.md").write_text(bare)
+            (ch / "review.md").write_text("# Chapter Review\n\n## Proof methods in this chapter\n\n- b\n")
+            fatal, _ = cs.find_violations(Path(tmp) / "src")
+            self.assertEqual(fatal, [])      # review.md has no section contract
+
     def test_directory_and_cli(self):
         with tempfile.TemporaryDirectory() as tmp:
             ch = Path(tmp) / "src" / "ch01-x"

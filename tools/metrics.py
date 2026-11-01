@@ -13,7 +13,7 @@ leaves its columns blank and is named in the row's `notes` column:
   prose words per section against the 2,500-5,000 budget (`tools/check_structure.py`'s
   count; `words_per_section` reads `01:4100+900` when 900 more are folded), results, proofs, examples,
   exercises, % of exercises followed by a solution, exit checks
-  (`[C…: Exit check: …]`), Quick checks, dependency-ledger lines and those whose
+  (`[C…: Exit check: …]`, or `[C…: Chapter check: …]` after STYLE §13), Quick checks, dependency-ledger lines and those whose
   source is `(promised)`;
 * **the claim ledger** (`authoring/ledger/chNN.yaml`, via `tools/ledger.py`; needs
   PyYAML, so run this tool with `.venv/bin/python` to get these columns): every
@@ -76,7 +76,7 @@ SEVERITIES = ("minor", "gap", "error")
 STAGES = ("S2", "S5a", "S5b", "S5", "S6", "S8", "S9")
 LATE_STAGES = ("S8", "S9", "S10", "later")
 RESULT_KINDS = ("thm", "lem", "cor", "prp", "ax")
-EXIT_CHECK = re.compile(r"^\[C\d*:\s*Exit check", re.I)
+EXIT_CHECK = re.compile(r"^\[C\d*:\s*(Exit|Chapter) check", re.I)   # STYLE §6; "Chapter check" from §13 B4
 PROMISED = re.compile(r"\(promised\)")
 
 COLUMNS = [
