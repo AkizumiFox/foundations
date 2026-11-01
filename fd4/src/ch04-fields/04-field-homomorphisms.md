@@ -2,7 +2,7 @@
 
 Section 4.3 looked at fields inside fields. This section looks at maps between fields. Two such maps have appeared already. Complex conjugation \( z \mapsto \conj{z} \) turns sums into sums and products into products (@thm-conjugate-properties (a), (b)), and so does \( a + b\sqrt 2 \mapsto a - b\sqrt 2 \) on \( \nQ(\sqrt 2) \) (@exm-cof-sqrt2-conjugation). A map that respects both operations carries every equation that holds in one field to an equation in the other. That single observation decides where such a map can send an element, shows that it never collapses two elements, and rules out most maps between most pairs of fields.
 
-Throughout, \( F \) and \( L \) are fields, and \( n \cdot a \) for \( n \in \nN \) is the multiple of *Number Systems: From \(\nN\) to \(\nR\)*, Section 2.4 ("Multiples"): \( 0 \cdot a \coloneqq 0 \), \( (n + 1) \cdot a \coloneqq n \cdot a + a \). Powers in a field are defined by the same recursion with products: \( a^0 \coloneqq 1 \) and \( a^{n+1} \coloneqq a^n a \) for \( n \in \nN \), as @fd2:def-power does for real numbers; the power laws \( a^{m+n} = a^m a^n \), \( (a^m)^n = a^{mn} \) and \( (ab)^n = a^n b^n \) of @fd2:prp-power-laws have proofs that use only (F1)–(F7), (F9) and induction, and hold in every field with the same proofs.
+Throughout, \( F \) and \( L \) are fields, and \( n \cdot a \) for \( n \in \nN \) is the multiple of *Number Systems: From \(\nN\) to \(\nR\)*, Section 2.4 ("Multiples"): \( 0 \cdot a \coloneqq 0 \), \( (n + 1) \cdot a \coloneqq n \cdot a + a \). Powers in a field are the powers of Section 1.1, defined in every commutative ring by the same recursion with products: \( a^0 \coloneqq 1 \) and \( a^{n+1} \coloneqq a^n a \) for \( n \in \nN \). The power laws \( a^{m+n} = a^m a^n \), \( (a^m)^n = a^{mn} \) and \( (ab)^n = a^n b^n \) hold in every commutative ring (@prp-power-laws-commutative-ring), so in every field.
 
 ## Maps that respect both operations
 
@@ -296,7 +296,7 @@ The conclusion is **true**: the repair below proves it, and Section 4.5 proves i
 :::
 
 <!-- dependency ledger
-prp-field-homomorphism-properties (proof): powers a^n in a field and the power laws | fd2:def-power and fd2:prp-power-laws as templates with F in place of the school R (fd2:thm-recursion read on omega); proofs use only (F1)-(F7), (F9) and induction; stated in the section's opening paragraph
+prp-field-homomorphism-properties (proof): powers a^n in a field and the power laws | powers paragraph of Section 1.1 and prp-power-laws-commutative-ring (a)-(c), read in a field; stated in the section's opening paragraph
 prp-field-homomorphism-properties (proof): multiples n.a in a commutative ring | F3.2 Section 4.4 "Multiples" (cited by position, recalled in the opening paragraph)
 prp-field-homomorphism-properties (proof): a - b = 0 implies a = b | (F1), (F2), (F3), (F4), named inline
 prp-field-homomorphism-properties (claim): composite of bijections is bijective (transitivity of isomorphism) | fd2:thm-composition-injective-surjective (c), cited

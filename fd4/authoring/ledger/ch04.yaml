@@ -592,7 +592,7 @@ items:
   kind: exm
   file: 02-finite-fields-from-modular-arithmetic.md
   line: 13
-  hash: 5b97f767bb04
+  hash: 16560891e8db
   verdicts:
   - stage: S5a
     verdict: correct
@@ -612,6 +612,14 @@ items:
     evidence: 02:13-45 checked against fd3 thm-quotient-ring-by-ideal (b), def-integers-mod-n-ring, thm-integers-mod-n-ring
       (a)-(c); the Z/2Z tables are right; the comparison at 02:47 with fd3:exm-finite-ring-not-orderable
       holds (same tables); the 'warning on order' pointer matches 01:301
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 16560891e8db
+    date: '2026-11-01'
+    evidence: Changed only to 'All of this was proved in Chapter 2'. The solution cites thm-quotient-ring-by-ideal
+      (b), def-integers-mod-n-ring and thm-integers-mod-n-ring (a)-(c), all from fd4 ch02 (Sections 2.3-2.4),
+      so the attribution is right. The mathematics is unchanged.
 - key: lem-bezout-integers
   kind: lem
   file: 02-finite-fields-from-modular-arithmetic.md
@@ -1159,6 +1167,14 @@ items:
       in R, and bringing it back to Q needs κ to be injective (fd3:thm-rational-embedding (b)). fd3''s
       own proof cites this step (''s^2 = 2 since ι_R is injective''). Ledger line 367 cites only (a),
       (c). The arithmetic is correct and the sidecar passes. [finding refuted by skeptics]'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 2155be3e57b7
+    date: '2026-11-01'
+    evidence: The only change in this item's span is the HTML note at line 122, which is a non-rendered
+      comment. It now names the correct volume, chapter and parked path, and that path exists. The rendered
+      mathematics (the product 7, the inverse (-1+2√2)/7) is unchanged.
 - key: check:03-subfields:1
   kind: check
   file: 03-subfields.md
@@ -1590,6 +1606,14 @@ items:
     model: claude-opus-5-5
     evidence: 03:338-358. Line (2) is the only flawed line, and (N9) fits. Sympy confirms (1+sqrt2)(1+sqrt2/2)=2+3sqrt2/2
       and that the inverse of 1+sqrt2 is sqrt2-1.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: eaa5854f48f9
+    date: '2026-11-01'
+    evidence: The trailing ledger comment in this span only changed its sidecar paths (now verify/ch04/,
+      all of which exist) and the Multiples source (now F3.2 §04 = fd3 Section 2.4, which matches the
+      source). The solution text itself is unchanged.
 - key: def-field-homomorphism
   kind: def
   file: 04-field-homomorphisms.md
@@ -2102,7 +2126,7 @@ items:
   kind: proof
   file: 05-characteristic-and-prime-subfield.md
   line: 49
-  hash: b65c57186159
+  hash: 32633f14c294
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2154,6 +2178,25 @@ items:
       a=1, b=k·1, then (F6)+(F7), then rule (iv). (a) is rule (i) with a=1. 'Chapter 1' is the correct
       local pointer. The one problem is at line 50, which uses the first-person 'I write them below',
       against the no-first-person house manner (STYLE §1 line 33, §12 line 626).
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 32633f14c294
+    date: '2026-11-01'
+    evidence: 'The first-person phrase is gone (line 50). Rules (i)–(iv) are @lem-natural-multiples (a)–(d),
+      verified against ch01 01-finite-sums.md:89-92. Lemma (a) is rule (i) with a=1. Lemma (c) is @lem-natural-multiples
+      (e). For (b), (m·1)(k·1) = m·(1(k·1)) by rule (iii) with a=1, b=k·1; then = m·(k·1) by identity/commutativity;
+      then = (mk)·1 by rule (iv). Part (d) is deferred to the fold. Not introduced by this diff: the proof
+      cites (F6)/(F7) for a lemma stated for a commutative ring. This is harmless, because these are just
+      commutativity and the identity law.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 32633f14c294
+    date: '2026-11-01'
+    evidence: Wording change only ('I write them below as' becomes 'below we call them'). Rules (i)-(iv)
+      still match lem-natural-multiples (a)-(d) in ch01 01-finite-sums.md:89-92, and (e) is cited correctly
+      for (m.1)a = m.a.
 - key: proof:lem-integer-multiples#2
   kind: proof
   file: 05-characteristic-and-prime-subfield.md
@@ -2990,7 +3033,7 @@ items:
   kind: proof
   file: 06-frobenius-and-fermat.md
   line: 71
-  hash: 1a0aa6ef23c9
+  hash: 40bf85711ca8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3020,6 +3063,14 @@ items:
     evidence: 06-frobenius-and-fermat.md:80 cites (xy)^p = x^p y^p as 'the third power law of this section's
       opening paragraph (@fd2:prp-power-laws (c), read in F)'. The opening paragraph no longer recalls
       power laws, because they moved to Ch1. 1^p = 1 is also asserted with no reason.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 40bf85711ca8
+    date: '2026-11-01'
+    evidence: '06:80 now gives (xy)^p = x^p y^p by @prp-power-laws-commutative-ring (c) ((zw)^n = z^n
+      w^n in any commutative ring, ch01 01-finite-sums.md:38), and a field is one. 1^p = 1 by an explicit
+      induction: 1^0 = 1, 1^{n+1} = 1^n.1 = 1. The ledger line at 06:346 matches.'
 - key: thm-fermat-little
   kind: thm
   file: 06-frobenius-and-fermat.md
@@ -3400,7 +3451,7 @@ items:
   kind: exr
   file: 06-frobenius-and-fermat.md
   line: 301
-  hash: 5350c8b74c8c
+  hash: c19794a660a1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3443,6 +3494,15 @@ items:
     evidence: 06-frobenius-and-fermat.md:308 rests on @prp-cof-sqrt2-field-archimedean (a) and @prp-cof-sqrt2-field-incomplete,
       which exist in no src/. It also credits the method to 'Number Systems, Chapter 6', which no longer
       contains it.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: c19794a660a1
+    date: '2026-11-01'
+    evidence: 'The mathematics is unchanged: unique representation; 2ab = 0 gives a = 0 or b = 0; (7,2)
+      and (14,3) satisfy k^2 < n < (k+1)^2. The attribution now points to Section 4.3 and @prp-cof-sqrt2-field-incomplete
+      (3 has no square root), which 03-subfields.md:123 states. That label is still unresolved until the
+      parked Q(sqrt 2) block is merged (F007, deferred and tracked in known-unresolved.json).'
 - key: exr-frobenius-and-fermat-r3
   kind: exr
   file: 06-frobenius-and-fermat.md

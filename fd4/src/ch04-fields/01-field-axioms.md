@@ -1,6 +1,6 @@
 # The Field Axioms and the First Examples
 
-*Number Systems: From \( \nN \) to \( \nR \)* defined fields (@fd3:def-commutative-ring-and-field) and built \( \nQ \), \( \nR \) and, for each prime \( p \), the field \( \nZ/p\nZ \). Chapter 3 added \( \nC \). This chapter looks at fields as a kind of object in their own right. Its first section restates the definition under the name that the linear-algebra volumes use, collects the rules that hold in every field, solves one and two linear equations in any field, and sorts the standard examples from the standard non-examples, naming in each case the clause that fails.
+*Number Systems: From \( \nN \) to \( \nR \)* defined fields (@fd3:def-commutative-ring-and-field) and built \( \nQ \) and \( \nR \). Chapter 2 built, for each prime \( p \), the field \( \nZ/p\nZ \), and Chapter 3 added \( \nC \). This chapter looks at fields as a kind of object in their own right. Its first section restates the definition under the name that the linear-algebra volumes use, collects the rules that hold in every field, solves one and two linear equations in any field, and sorts the standard examples from the standard non-examples, naming in each case the clause that fails.
 
 ## What solving equations needs
 

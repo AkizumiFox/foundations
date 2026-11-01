@@ -47,7 +47,7 @@ For natural numbers everything is one induction each, on the recursion that defi
 :::
 
 ::: {.proof}
-For natural numbers the four rules are @lem-natural-multiples (a)–(d), proved in Chapter 1: (a) is the sum law, (b) the distributive law, (c) the product law and (d) the composition law, and I write them below as rules (i)–(iv) in that order, \( (m + k) \cdot a = m \cdot a + k \cdot a \), \( m \cdot (a + b) = m \cdot a + m \cdot b \), \( (m \cdot a) b = m \cdot (ab) \) and \( (mk) \cdot a = m \cdot (k \cdot a) \).
+For natural numbers the four rules are @lem-natural-multiples (a)–(d), proved in Chapter 1: (a) is the sum law, (b) the distributive law, (c) the product law and (d) the composition law, and below we call them rules (i)–(iv), in that order: \( (m + k) \cdot a = m \cdot a + k \cdot a \), \( m \cdot (a + b) = m \cdot a + m \cdot b \), \( (m \cdot a) b = m \cdot (ab) \) and \( (mk) \cdot a = m \cdot (k \cdot a) \).
 
 Now (a) of the present lemma is rule (i) with \( a = 1 \). For (c), \( (m \cdot 1) a = m \cdot a \) is @lem-natural-multiples (e). For (b), \( (m \cdot 1)(k \cdot 1) = m \cdot (1 (k \cdot 1)) = m \cdot (k \cdot 1) = (mk) \cdot 1 \) by rule (iii), (F6) with (F7), and rule (iv). Part (d) is proved in the fold below. This proves the lemma.
 :::

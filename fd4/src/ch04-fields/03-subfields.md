@@ -119,7 +119,7 @@ By @prp-subfield-test (c), \( \nQ(\sqrt 2) \) is a subfield of \( \nR \), and by
 Check: \( (1 + 2\sqrt 2)(-1 + 2\sqrt 2) = -1 + 2\sqrt 2 - 2\sqrt 2 + 8 = 7 \).
 :::
 
-The move "multiply by the conjugate" is the one that inverted complex numbers in @prp-complex-inverse. <!-- S3 (fd5 next revision): the ℚ(√2) group of fd3's old Section 6.4 (def-cof-sqrt2-field, prp-cof-sqrt2-field-archimedean, prp-cof-sqrt2-field-incomplete, exm-cof-sqrt2-conjugation) is parked in fd5/authoring/parked/from-fd3/from-6.4-q-sqrt2.md and merges into this section and the next, labels unchanged; until then these references are listed in config/known-unresolved.json. -->
+The move "multiply by the conjugate" is the one that inverted complex numbers in @prp-complex-inverse. <!-- S3 (next revision of fd4 Chapter 4, F5.2): the ℚ(√2) group of fd3's old Section 6.4 (def-cof-sqrt2-field, prp-cof-sqrt2-field-archimedean, prp-cof-sqrt2-field-incomplete, exm-cof-sqrt2-conjugation) is parked in fd4/authoring/parked/from-fd3/from-6.4-q-sqrt2.md and merges into this section and the next, labels unchanged; until then these references are listed in config/known-unresolved.json. -->
 The same facts hold for \( \nQ(\sqrt 2) \) as part of an ordered field (@prp-cof-sqrt2-field-archimedean), and \( \nQ(\sqrt 2) \) does not contain a square root of \( 3 \) (@prp-cof-sqrt2-field-incomplete).
 
 ::: {.check}
@@ -366,18 +366,18 @@ def-subfield (example): a subfield of a subfield is a subfield | inline (each cl
 def-subfield (example): 2x = 1 has no integer solution | fd3:cor-integers-even-odd (a), cited
 prp-subfield-test (proof): 1 + (-1) = 0, 0 + (-b) = -b, 1 * b^{-1} = b^{-1} | (F1), (F3), (F4), (F6), (F7) of def-field, named inline
 exm-q-sqrt2-field (solution): sqrt 2 exists in R; R complete | fd3:thm-reals-complete-ordered-field, fd3:prp-cof-square-roots, cited (soft citation of F3.4/F3.10, example only)
-exm-q-sqrt2-field (solution): product formula, (c + d sqrt 2)(c - d sqrt 2) = c^2 - 2d^2, N = -7, inverse (-1 + 2 sqrt 2)/7 | inline expansion with fd3:prp-ring-algebra (c); verify/ch02/exm-q-sqrt2-field.py
+exm-q-sqrt2-field (solution): product formula, (c + d sqrt 2)(c - d sqrt 2) = c^2 - 2d^2, N = -7, inverse (-1 + 2 sqrt 2)/7 | inline expansion with fd3:prp-ring-algebra (c); verify/ch04/exm-q-sqrt2-field.py
 exm-q-sqrt2-field (solution): rational arithmetic computed in Q agrees with that in R | fd3:thm-rational-embedding (a), (c) (identification), as recalled in the def-subfield examples
 exm-subfields-gaussian (solution): every square in Q is non-negative | fd3:prp-ordered-ring-rules (e), fd3:prp-ring-algebra (b), cited
 exm-subfields-gaussian (solution): the inverse of 2 in C is the real 1/2; zero and one of C are the real 0, 1 | thm-complex-numbers-field, prp-complex-arithmetic-laws (d), prp-reals-embed-complex (identification), cited
-exm-subfields-gaussian (solution): product formula in C from i^2 = -1; (c + di)(c - di) = c^2 + d^2 | def-complex-numbers, prp-reals-embed-complex (F4.1, see edge; example only); verify/ch02/exm-subfields-gaussian.py
+exm-subfields-gaussian (solution): product formula in C from i^2 = -1; (c + di)(c - di) = c^2 + d^2 | def-complex-numbers, prp-reals-embed-complex (F4.1, see edge; example only); verify/ch04/exm-subfields-gaussian.py
 exm-subfields-gaussian (solution): the copy of R in C is a field because it is the image of R under an injective map preserving + and . | prp-reals-embed-complex; inline transport of the axioms, written out
 prp-subfield-intersection (proof): the set of subfields containing S exists | fd2:def-power-set, fd2:def-set-builder, cited
-def-prime-subfield (claim): every subfield of F_p contains k.1 for k in N | fd1:ax-induction read on omega (fd3:cor-omega-identification); multiples of F3.2 Section 4.4 "Multiples", recalled in prose
+def-prime-subfield (claim): every subfield of F_p contains k.1 for k in N | fd1:ax-induction read on omega (fd3:cor-omega-identification); multiples of F3.2 §04 (fd3 Section 2.4) "Multiples", recalled in prose
 exr-subfields-b2 (solution): n.1 = n in R for n in N | fd3:thm-rational-embedding (d) with the identification of N inside Q inside R
-exr-subfields-b4 (solution): 1 < 3 < 4, 4 < 6 < 9; (a + b sqrt 3)^2 = a^2 + 3b^2 + 2ab sqrt 3 | inline; verify/ch02/exr-subfields-b4.py
+exr-subfields-b4 (solution): 1 < 3 < 4, 4 < 6 < 9; (a + b sqrt 3)^2 = a^2 + 3b^2 + 2ab sqrt 3 | inline; verify/ch04/exr-subfields-b4.py
 exr-subfields-b4 (solution): no rational squares to 3 or 6 | the claim stated with prp-cof-sqrt2-field-incomplete, cited (soft citation of F3.4, exercise solution)
 exr-subfields-c1 (solution): an injective map K -> K of a finite set is surjective | inline from fd2:thm-finite-no-proper-copy and fd2:def-image
-exr-subfields-c2 (solution): (1 + sqrt 2)(1 + sqrt 2 / 2) = 2 + 3 sqrt 2 / 2; inverse of 1 + sqrt 2 is -1 + sqrt 2 | verify/ch02/exr-subfields-c2.py
-exr-subfields-a1 (solution): [3][x] lies in {[0], [3]} for every x in Z/6Z | inline (six products); verify/ch02/exr-subfields-a1.py
+exr-subfields-c2 (solution): (1 + sqrt 2)(1 + sqrt 2 / 2) = 2 + 3 sqrt 2 / 2; inverse of 1 + sqrt 2 is -1 + sqrt 2 | verify/ch04/exr-subfields-c2.py
+exr-subfields-a1 (solution): [3][x] lies in {[0], [3]} for every x in Z/6Z | inline (six products); verify/ch04/exr-subfields-a1.py
 -->

@@ -1,6 +1,6 @@
 # Finite Fields from Modular Arithmetic
 
-Every field of Section 4.1 is infinite. *Number Systems: From \( \nN \) to \( \nR \)* has already met finite ones: it proved that the integers modulo a prime \( p \) form a field (@thm-integers-mod-prime-field). This section restates that result in the language of @def-field, gives these fields a name of their own, \( \nF_p \), and computes in them: inverses, linear equations, and the elimination method of Section 4.1, now run modulo \( 5 \). Finite fields are not a curiosity; coding theory and computer algebra do linear algebra over them every day.
+Every field of Section 4.1 is infinite. Chapter 2 has already met finite ones: it proved that the integers modulo a prime \( p \) form a field (@thm-integers-mod-prime-field). This section restates that result in the language of @def-field, gives these fields a name of their own, \( \nF_p \), and computes in them: inverses, linear equations, and the elimination method of Section 4.1, now run modulo \( 5 \). Finite fields are not a curiosity; coding theory and computer algebra do linear algebra over them every day.
 
 ## Arithmetic modulo n, recalled
 
@@ -8,7 +8,7 @@ Fix an integer \( n \ge 1 \). The ring \( \nZ/n\nZ \) of @def-integers-mod-n-rin
 \[
 [a] = [b] \iff n \mid a - b .
 \]
-This is the class test of *Number Systems* (@thm-quotient-ring-by-ideal (a), read with @def-integers-mod-n-ring). Sums and products are computed on representatives. The first example collects what is known about this arithmetic, in the language of @def-field.
+This is the class test of Section 2.3 (@thm-quotient-ring-by-ideal (a), read with @def-integers-mod-n-ring). Sums and products are computed on representatives. The first example collects what is known about this arithmetic, in the language of @def-field.
 
 ::: {#exm-finite-fields}
 [Arithmetic on \( \nZ/n\nZ \) and the Field \( \nF_2 \)]
@@ -17,7 +17,7 @@ Let \( n \ge 1 \), and define \( [a] + [b] \coloneqq [a + b] \) and \( [a][b] \c
 :::
 
 ::: {.solution}
-All of this was proved in *Number Systems*, and we collect it.
+All of this was proved in Chapter 2, and we collect it.
 
 *Well-definedness.* The formulas use representatives, so the answer must not depend on which representatives are chosen. For the ideal \( n\nZ \) of \( \nZ \) this is @thm-quotient-ring-by-ideal (b), and \( \nZ/n\nZ \) is defined as that quotient (@def-integers-mod-n-ring).
 
@@ -101,7 +101,7 @@ Find the inverse of \( 3 \) in \( \nF_7 \).
 The inverse is the \( x \in \{1, \dots, 6\} \) with \( 7 \mid 3x - 1 \). Testing the candidates in turn, the products \( 3, 6, 9, 12, 15 \) leave remainders \( 3, 6, 2, 5, 1 \), and \( 3 \cdot 5 = 15 = 2 \cdot 7 + 1 \). So \( 3^{-1} = 5 \) in \( \nF_7 \), and by @thm-field-basic-properties (c) it is the only inverse.
 :::
 
-For small \( p \), trial is fast. For larger \( p \) the Euclidean algorithm of *Number Systems* finds the inverse directly: if \( ax + py = 1 \), then \( \gcd(a, p) = 1 \) by @cor-coprime-iff-combination, and @thm-units-mod-n gives \( [a]^{-1} = [x] \).
+For small \( p \), trial is fast. For larger \( p \) the Euclidean algorithm of Chapter 2 finds the inverse directly: if \( ax + py = 1 \), then \( \gcd(a, p) = 1 \) by @cor-coprime-iff-combination, and @thm-units-mod-n gives \( [a]^{-1} = [x] \).
 
 ::: {#exm-inverses-in-fp}
 [Inverses in \( \nF_7 \) and in \( \nF_{101} \)]

@@ -60,7 +60,7 @@ and \( 1^p = 1 \). So the **Frobenius map** \( \mathrm{Fr} \colon F \to F \), \(
 
 By @thm-characteristic-prime, the hypothesis \( \operatorname{char} F = p > 0 \) already makes \( p \) prime.
 
-*Try it first (ten minutes): expand \( (x + y)^5 \) and \( (x + y)^6 \) in \( \nF_5 \), using the rows \( n = 5 \) and \( n = 6 \) of the table above, and see which coefficients survive.*
+*Try it first (ten minutes): expand \( (x + y)^5 \) and \( (x + y)^6 \) in \( \nF_5 \), using the rows \( n = 5 \) and \( n = 6 \) of the table in Section 1.2, and see which coefficients survive.*
 
 ::: {.idea}
 For \( (x + y)^5 \) the coefficients \( 1, 5, 10, 10, 5, 1 \) become \( 1, 0, 0, 0, 0, 1 \) in \( \nF_5 \), and \( (x + y)^5 = x^5 + y^5 \). For \( (x + y)^6 \) the coefficients \( 1, 6, 15, 20, 15, 6, 1 \) become \( 1, 1, 0, 0, 0, 1, 1 \), and \( (x + y)^6 = x^6 + x^5 y + x y^5 + y^6 \): the extra terms survive because \( 6 \) is not the characteristic. So the plan is: expand by the binomial theorem; every middle coefficient \( \binom{p}{k} \) is a multiple of \( p \); and a multiple of \( p \) acts on \( F \) as \( 0 \), because \( p \cdot 1 = 0 \). The product rule and \( 1^p = 1 \) are power laws, and injectivity is free for a homomorphism of fields.
@@ -77,7 +77,7 @@ The end terms are \( t_0 = 1 \cdot (x^0 y^p) = y^p \) and \( t_p = 1 \cdot (x^p 
 \[
 (x + y)^p = \sum_{k=0}^{p} b_k + \sum_{k=0}^{p} c_k = t_0 + t_p = y^p + x^p ,
 \]
-which is \( x^p + y^p \) by (F1). Next, \( (xy)^p = x^p y^p \) is the third power law of this section's opening paragraph (@fd2:prp-power-laws (c), read in \( F \)), and \( 1^p = 1 \). So \( \mathrm{Fr} \) is a homomorphism (@def-field-homomorphism), and it is injective by @prp-field-homomorphism-properties (c).
+which is \( x^p + y^p \) by (F1). Next, \( (xy)^p = x^p y^p \) by @prp-power-laws-commutative-ring (c), and \( 1^p = 1 \) by induction (\( 1^0 = 1 \), and \( 1^{n+1} = 1^n \cdot 1 = 1 \)). So \( \mathrm{Fr} \) is a homomorphism (@def-field-homomorphism), and it is injective by @prp-field-homomorphism-properties (c).
 
 (b) By @prp-field-homomorphism-properties (a), \( \mathrm{Fr}(x - y) = \mathrm{Fr}(x) - \mathrm{Fr}(y) \).
 
@@ -305,7 +305,7 @@ Show that \( 7 \) has no square root in \( \nQ(\sqrt 2) \).
 :::
 
 ::: {.solution}
-Suppose \( (a + b\sqrt 2)^2 = 7 \) with \( a, b \in \nQ \). Expanding, \( (a^2 + 2b^2) + 2ab\sqrt 2 = 7 + 0 \sqrt 2 \), so by unique representation (@prp-cof-sqrt2-field-archimedean (a)), \( 2ab = 0 \) and \( a^2 + 2b^2 = 7 \). Since \( 2 \ne 0 \) in \( \nQ \) (\( \operatorname{char} \nQ = 0 \), @exm-characteristics, with @prp-characteristic-divides (b)), @thm-field-basic-properties (f) applied twice (to \( 2 \cdot (ab) = 0 \), then to \( ab = 0 \)) gives \( a = 0 \) or \( b = 0 \). If \( b = 0 \), then \( a^2 = 7 \). If \( a = 0 \), then \( 2b^2 = 7 \), so \( (2b)^2 = 14 \). Both are excluded by the claim stated with @prp-cof-sqrt2-field-incomplete: no natural number \( n \) with \( k^2 < n < (k + 1)^2 \) for some \( k \in \nN \) is the square of a rational; take \( (n, k) = (7, 2) \), as \( 4 < 7 < 9 \), and \( (n, k) = (14, 3) \), as \( 9 < 14 < 16 \). So \( 7 \) has no square root in \( \nQ(\sqrt 2) \). This is the method of *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 6, which showed the same for \( 3 \).
+Suppose \( (a + b\sqrt 2)^2 = 7 \) with \( a, b \in \nQ \). Expanding, \( (a^2 + 2b^2) + 2ab\sqrt 2 = 7 + 0 \sqrt 2 \), so by unique representation (@prp-cof-sqrt2-field-archimedean (a)), \( 2ab = 0 \) and \( a^2 + 2b^2 = 7 \). Since \( 2 \ne 0 \) in \( \nQ \) (\( \operatorname{char} \nQ = 0 \), @exm-characteristics, with @prp-characteristic-divides (b)), @thm-field-basic-properties (f) applied twice (to \( 2 \cdot (ab) = 0 \), then to \( ab = 0 \)) gives \( a = 0 \) or \( b = 0 \). If \( b = 0 \), then \( a^2 = 7 \). If \( a = 0 \), then \( 2b^2 = 7 \), so \( (2b)^2 = 14 \). Both are excluded by the claim stated with @prp-cof-sqrt2-field-incomplete: no natural number \( n \) with \( k^2 < n < (k + 1)^2 \) for some \( k \in \nN \) is the square of a rational; take \( (n, k) = (7, 2) \), as \( 4 < 7 < 9 \), and \( (n, k) = (14, 3) \), as \( 9 < 14 < 16 \). So \( 7 \) has no square root in \( \nQ(\sqrt 2) \). This is the method by which Section 4.3 showed the same for \( 3 \) (@prp-cof-sqrt2-field-incomplete).
 :::
 
 ::: {#exr-frobenius-and-fermat-r3}
@@ -343,7 +343,7 @@ so \( \sigma(\sqrt 2) = \sqrt 2 \) or \( \sigma(\sqrt 2) = -\sqrt 2 \) by @cor-f
 <!-- dependency ledger
 lem-prime-divides-binomial (claim): (check) C(7, 3) = 35 | verify/ch02/lem-prime-divides-binomial.py
 lem-prime-divides-binomial (proof): coefficients read in N subset Z; p - 1, k - 1 in N | fd3:prp-naturals-embed-integers (a); arithmetic of omega
-thm-frobenius-homomorphism (proof): (xy)^p = x^p y^p; 1^p = 1 | fd2:prp-power-laws (c) under the template line; inline induction for 1^n
+thm-frobenius-homomorphism (proof): (xy)^p = x^p y^p; 1^p = 1 | prp-power-laws-commutative-ring (c); inline induction for 1^n
 thm-frobenius-homomorphism (idea): try-it-first coefficients of (x + y)^5, (x + y)^6 in F5 | verify/ch02/thm-frobenius-homomorphism.py
 thm-frobenius-homomorphism (claim): (warning) (1 + 1)^2 = 1 in F3; ([1] + [1])^4 = [0] in Z/4Z; C(4, 2) = 6 | verify/ch02/thm-frobenius-homomorphism.py
 thm-frobenius-homomorphism (claim): (opening) 3^5 = 243 = 3, 1 + 32 = 33 = 3 in F5 | verify/ch02/thm-frobenius-homomorphism.py
@@ -351,13 +351,13 @@ thm-frobenius-homomorphism (claim): (after the proof) Fr exchanges two elements 
 thm-fermat-little (proof): p - 1, p - 2 in N for p >= 2 | arithmetic of omega
 thm-fermat-little (proof): [a]^n = [a^n] by induction; [u] = [v] iff p | u - v | thm-quotient-ring-by-ideal (a), (b); fd1:ax-induction; inline
 thm-fermat-little (claim): (after the proof) 2^4 - 2 = 14 and 2^3 - 1 = 7 are not multiples of 4; 4 does not divide 2 | verify/ch02/thm-fermat-little.py
-thm-fermat-little (claim): (after the proof) a^{q(p-1)+r} = (a^{p-1})^q a^r | fd2:prp-power-laws (a), (b) under the template line; inline
+thm-fermat-little (claim): (after the proof) a^{q(p-1)+r} = (a^{p-1})^q a^r | prp-power-laws-commutative-ring (a), (b); inline
 thm-fermat-little (claim): Chapter 6 gives another proof of (b) | F5.4 blueprint, section 04 C4 (prose pointer; nothing depends on it)
 exm-frobenius-computations (example): 7, 101, 31 prime; 100 = 16 * 6 + 4; 81 = 4 in F7; repeated squares of 7 in F31; 31 = 4 * 7 + 3 | small-primes remark (F5.1 §02); remark after lem-least-divisor-prime; verify/ch02/exm-frobenius-computations.py
 thm-fermat-little (claim): (check) 2^6 = 1 in F7; 3^5 = 243 = 1 in F11 | verify/ch02/thm-fermat-little.py
 exr-frobenius-and-fermat-a1 (solution): rows 5 and 6 | verify/ch02/exr-frobenius-and-fermat-a1.py
 exr-frobenius-and-fermat-b1 (solution): 13 prime; 5^38 = 12, 5^{-1} = 8 in F13 | remark after lem-least-divisor-prime; verify/ch02/exr-frobenius-and-fermat-b1.py
-exr-frobenius-and-fermat-b2 (solution): (x^m)^n = x^{mn}; empty sum 0 | fd2:prp-power-laws (b), fd2:def-sum-product, templates
+exr-frobenius-and-fermat-b2 (solution): (x^m)^n = x^{mn}; empty sum 0 | prp-power-laws-commutative-ring (b); empty sum of the sums paragraph of Section 1.1
 exr-frobenius-and-fermat-c2 (solution): [a]^n = [a^n] for every a in Z | induction as in the proof of thm-fermat-little (c), with thm-quotient-ring-by-ideal (b); verify/ch02/exr-frobenius-and-fermat-c2.py
 exr-frobenius-and-fermat-r1 (solution): |-3 + 4i| = 5, (1 + 2i)^2 = -3 + 4i | prp-complex-square-roots (F4.1, see edge; R item); verify/ch02/exr-frobenius-and-fermat-r1.py
 exr-frobenius-and-fermat-r2 (solution): (a + b sqrt2)^2 = (a^2 + 2b^2) + 2ab sqrt2; 4 < 7 < 9, 9 < 14 < 16 | prp-cof-sqrt2-field-archimedean (a); the claim stated with prp-cof-sqrt2-field-incomplete (F3.4, soft); verify/ch02/exr-frobenius-and-fermat-r2.py
