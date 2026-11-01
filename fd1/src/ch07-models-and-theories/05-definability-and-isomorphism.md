@@ -1,6 +1,6 @@
 # Definability and Isomorphism
 
-A sentence is true or false in a structure. A formula with one free variable is different: it is true of some elements of a structure and false of others, so it picks out a set. In \( (\nN; +) \) the formula \( \exists y\, (x = y + y) \) is true of \( 0, 2, 4, \dots \) and false of the odd numbers, so it picks out the even numbers, although the structure has no symbol for "even". This section asks which sets a structure's language can pick out. Its first half writes formulas for sets: points, intervals, orders, the primes, a supremum. Its second half, for a second reading, asks why some sets cannot be picked out at all, and answers with a map that moves the elements of a structure without changing anything a formula can see.
+A sentence is true or false in a structure. A formula with one free variable is different: it is true of some elements of a structure and false of others, so it picks out a set. In \( (\nN; +) \) the formula \( \exists y\, (x = y + y) \) is true of \( 0, 2, 4, \dots \) and false of the odd numbers, so it picks out the even numbers, although the structure has no symbol for "even". This section asks which sets a structure's language can pick out. Its first half writes formulas for sets: points, intervals, orders, the primes, a supremum. Its second half, which can wait for a later reading, asks why some sets cannot be picked out at all. The answer is a map that moves the elements of a structure without changing anything a formula can see.
 
 ::: {.remark}
 [Looking back]
@@ -26,7 +26,7 @@ By @lem-free-coincidence the set does not depend on \( \ell \): the assignments 
 
 Two remarks on the definition. The structure is part of the question: the same formula defines different sets in different structures, and a set is definable **in** \( \fM \), never definable outright. And the formula may use only the symbols of \( \fM \): to define a set in \( (\nN; +) \) we may write \( + \), \( = \), connectives and quantifiers, and nothing else, not even \( 0 \) or \( < \).
 
-The connectives act on defined sets as the set operations do. If \( \varphi \) and \( \psi \) define \( S \) and \( T \) (with the same free variable \( x \)), then by (S4) and (S5) the formula \( \varphi \wedge \psi \) defines \( S \cap T \), \( \varphi \vee \psi \) defines \( S \cup T \), and \( \neg\varphi \) defines \( D \setminus S \), the elements not in \( S \). So the definable sets of a structure are closed under intersection, union and complement, and a set built from definable sets by these operations is definable without further work.
+The connectives act on defined sets as the set operations do. Let \( \varphi \) and \( \psi \) define \( S \) and \( T \), with the same free variable \( x \). Then \( \varphi \wedge \psi \) defines \( S \cap T \), \( \varphi \vee \psi \) defines \( S \cup T \), and \( \neg\varphi \) defines \( D \setminus S \), the elements not in \( S \). This is the clause for negation, (S4), and the clause for the other connectives, (S5), of @def-satisfaction. So the definable sets of a structure are closed under intersection, union and complement, and a set built from definable sets by these operations is definable without further work.
 
 ::: {#exm-definable-sets}
 [Sets Defined by Formulas]
@@ -41,13 +41,13 @@ Each formula is read back in words.
 \[
 \neg U(x) \wedge \forall y\, \forall z\, \bigl( y \cdot z = x \to (U(y) \vee U(z)) \bigr) ,
 \]
-"\( x \) is not \( 1 \), and whenever \( x \) is a product, one factor is \( 1 \)", defines the primes. At \( x = 0 \) the instance \( y = z = 0 \) fails (\( 0 \cdot 0 = 0 \), and neither factor is \( 1 \)); at \( x = 1 \) the first conjunct fails; at a composite \( x = yz \) with \( y, z \ge 2 \) the instance at that \( y \), \( z \) fails; at a prime, every factorization has a factor \( 1 \).
+"\( x \) is not \( 1 \), and whenever \( x \) is a product, one factor is \( 1 \)", defines the primes. At \( x = 0 \) the instance \( y = z = 0 \) fails, since \( 0 \cdot 0 = 0 \) and neither factor is \( 1 \). At \( x = 1 \) the first conjunct fails. At a composite \( x = yz \) with \( y, z \ge 2 \), the instance at that \( y \), \( z \) fails. At a prime, every factorization has a factor \( 1 \).
 :::
 :::
 
 Each definition builds on the last: \( 0 \) and \( 1 \) are not symbols of these structures, yet the language can name them, and once \( 1 \) is defined, "prime" can be written with it. In (d), \( U(y) \) is the formula \( U(x) \) with \( y \) for \( x \) and its bound \( y \) renamed, say \( \forall w\, (y \cdot w = w) \), so that the substituted letter is not captured.
 
-To check that a formula defines a given set, check two directions, as for any equality of sets: every element of the set satisfies the formula, and every element that satisfies the formula is in the set. In (d) the cases \( x = 0 \), \( x = 1 \) and "\( x \) composite" are the second direction, and "at a prime" is the first. Leave out a case and a definition can be wrong at one point. Delete the conjunct \( \neg U(x) \) from (d): at \( x = 1 \) every factorization \( y \cdot z = 1 \) has \( y = z = 1 \), so the remaining formula is true of \( 1 \), and it defines the primes together with \( 1 \). Exactly one element changed sides.
+To check that a formula defines a given set, check two directions, as for any equality of sets. Every element of the set must satisfy the formula, and every element that satisfies the formula must be in the set. In (d) the cases \( x = 0 \), \( x = 1 \) and "\( x \) composite" are the second direction, and "at a prime" is the first. Leave out a case and a definition can be wrong at one point. Delete the conjunct \( \neg U(x) \) from (d): at \( x = 1 \) every factorization \( y \cdot z = 1 \) has \( y = z = 1 \), so the remaining formula is true of \( 1 \), and it defines the primes together with \( 1 \). Exactly one element changed sides.
 
 ::: {.check}
 What does \( \exists y\, (x = y + y) \) define in \( (\nZ; +) \)? In \( (\nQ; +) \)?
@@ -59,7 +59,7 @@ In \( (\nZ; +) \), the even integers. In \( (\nQ; +) \), all of \( \nQ \): every
 
 ## \( \exists \) is a projection
 
-A formula with two free variables defines a set of pairs, and a set of pairs of reals can be drawn. In \( (\nR; \cdot) \), the formula \( y \cdot y = x \) defines \( \{ (d, e) : e^2 = d \} \), a parabola lying on its side. The formula \( \exists y\, (y \cdot y = x) \) has the one free variable \( x \), and by (S7) it is true of \( d \) exactly when some \( e \) puts the point \( (d, e) \) on the parabola. So it defines the set of first coordinates of the points of the parabola: its **shadow** on the \( x \)-axis, \( [0, \infty) \).
+A formula with two free variables defines a set of pairs, and a set of pairs of reals can be drawn. In \( (\nR; \cdot) \), the formula \( y \cdot y = x \) defines \( \{ (d, e) : e^2 = d \} \), a parabola lying on its side. The formula \( \exists y\, (y \cdot y = x) \) has the one free variable \( x \). By the clause for \( \exists \), (S7), it is true of \( d \) exactly when some \( e \) puts the point \( (d, e) \) on the parabola. So it defines the set of first coordinates of the points of the parabola: its **shadow** on the \( x \)-axis, \( [0, \infty) \).
 
 ```{=latex}
 \begin{center}
@@ -79,9 +79,9 @@ A formula with two free variables defines a set of pairs, and a set of pairs of 
 
 The dashed segments drop two points, \( (1, 1) \) and \( (1, -1) \), and the point \( (4, 2) \), onto their shadows \( 1 \) and \( 4 \). No point of the parabola lies above a negative \( x \), so no negative number is in the shadow.
 
-In general, \( \exists y\, \varphi \) defines the **projection** of the set that \( \varphi \) defines: \( d \) is in it exactly when some \( e \) puts \( (d, e) \) in \( \varphi \)'s set, by (S7). Dually, \( \forall y\, \varphi \) keeps the \( d \) whose whole vertical line lies in \( \varphi \)'s set, by (S6). This is the picture behind every \( \exists \) in a definition: to show a set definable, it is often easiest to describe a set of pairs and project.
+In general, \( \exists y\, \varphi \) defines the **projection** of the set that \( \varphi \) defines: \( d \) is in it exactly when some \( e \) puts \( (d, e) \) in \( \varphi \)'s set, by the clause for \( \exists \), (S7). Dually, \( \forall y\, \varphi \) keeps the \( d \) whose whole vertical line lies in \( \varphi \)'s set, by the clause for \( \forall \), (S6). This is the picture behind every \( \exists \) in a definition: to show a set definable, it is often easiest to describe a set of pairs and project.
 
-The two readings are tied by negation. By (S4), (S6) and (S7), \( \forall y\, \varphi \) is satisfied exactly when \( \exists y\, \neg\varphi \) is not, so the set defined by \( \forall y\, \varphi \) is the complement of the projection of the complement of \( \varphi \)'s set: remove \( \varphi \)'s set from the plane, take the shadow of what is left, and keep the points of the axis that are not in that shadow.
+The two readings are tied by negation. By the clauses for negation, (S4), for \( \forall \), (S6), and for \( \exists \), (S7), the formula \( \forall y\, \varphi \) is satisfied exactly when \( \exists y\, \neg\varphi \) is not. So the set defined by \( \forall y\, \varphi \) is the complement of the projection of the complement of \( \varphi \)'s set. In steps: remove \( \varphi \)'s set from the plane, take the shadow of what is left, and keep the points of the axis that are not in that shadow.
 
 ::: {.check}
 In \( (\nR; \le, \cdot) \), which set does \( \forall y\, (x \le y \cdot y) \) define?
@@ -99,8 +99,8 @@ A common task in mathematics is to turn a notion described in words into a formu
 [Maximum, Maximal, Supremum]
 
 ::: {.enumerate options="label=(\alph*)"}
-1. In a structure with one two-place symbol \( \le \) read as a partial order: "\( x \) is a **greatest** element" is \( \forall y\, (y \le x) \), "everything is below \( x \)". "\( x \) is a **maximal** element" is \( \forall y\, (x \le y \to y = x) \), "nothing is above \( x \) except \( x \) itself". In the divisibility order on \( \{ 1, 2, 3 \} \) (\( d \le e \) when \( d \) divides \( e \)), \( 2 \) and \( 3 \) are maximal, and there is no greatest element, since \( 2 \) does not divide \( 3 \) nor \( 3 \) divide \( 2 \). On \( \{ 1, 2, 3, 6 \} \), \( 6 \) is both maximal and greatest.
-2. Add a one-place symbol \( A \) for a set of reals, and work in \( (\nR; \le, A) \). "\( x \) is an upper bound of \( A \)" is the formula \( B(x) \): \( \forall y\, (A(y) \to y \le x) \), "every element of \( A \) is at most \( x \)". "\( x \) is the supremum of \( A \)" is \( B(x) \wedge \forall z\, (B(z) \to x \le z) \), "\( x \) is an upper bound, and below every upper bound". For \( A = [0, 1) \), the supremum is \( 1 \): it is an upper bound, and any \( z < 1 \) is exceeded by an element of \( [0, 1) \), such as the larger of \( 0 \) and \( (z + 1)/2 \), so \( z \) is not one. No element of \( A \) is greatest.
+1. Take a structure with one two-place symbol \( \le \), read as a partial order. Then "\( x \) is a **greatest** element" is \( \forall y\, (y \le x) \), "everything is below \( x \)". Similarly, "\( x \) is a **maximal** element" is \( \forall y\, (x \le y \to y = x) \), "nothing is above \( x \) except \( x \) itself". In the divisibility order on \( \{ 1, 2, 3 \} \) (\( d \le e \) when \( d \) divides \( e \)), \( 2 \) and \( 3 \) are maximal, and there is no greatest element, since \( 2 \) does not divide \( 3 \) nor \( 3 \) divide \( 2 \). On \( \{ 1, 2, 3, 6 \} \), \( 6 \) is both maximal and greatest.
+2. Add a one-place symbol \( A \) for a set of reals, and work in \( (\nR; \le, A) \). The phrase "\( x \) is an upper bound of \( A \)" is the formula \( B(x) \): \( \forall y\, (A(y) \to y \le x) \), "every element of \( A \) is at most \( x \)". The phrase "\( x \) is the supremum of \( A \)" is \( B(x) \wedge \forall z\, (B(z) \to x \le z) \), "\( x \) is an upper bound, and below every upper bound". For \( A = [0, 1) \), the supremum is \( 1 \). It is an upper bound, and any \( z < 1 \) is exceeded by an element of \( [0, 1) \), such as the larger of \( 0 \) and \( (z + 1)/2 \), so \( z \) is not one. No element of \( A \) is greatest.
 3. "\( A \) has a greatest element" is the sentence \( \exists x\, (A(x) \wedge B(x)) \), "some element of \( A \) is an upper bound of \( A \)". It is false for \( A = [0, 1) \) and true for \( A = [0, 1] \).
 :::
 :::
@@ -109,7 +109,7 @@ In (c) the formula \( B(x) \) is used inside a larger formula, as a word is used
 
 Defining a notion goes in three steps. First, say the notion in words that use only the structure's symbols: "upper bound" becomes "every element of \( A \) is at most \( x \)". Second, write each auxiliary notion as a formula with its own free variable, and substitute it where it is used, renaming bound variables so that nothing is captured. Third, check both directions on a small case. The commonest slip is a variable left free. Written without its \( \forall y \), the formula \( A(y) \to y \le x \) has two free variables and defines a set of **pairs**, those \( (d, e) \) with \( d \notin A \) or \( d \le e \); it is not a property of \( x \) at all.
 
-A defined notion can also be given its own symbol, as "even" and "the supremum of \( A \)" are in ordinary mathematics. Section 5.8 showed (@prp-definitional-extension) that such a definition is safe: introducing a predicate symbol by \( \forall x\, (P(x) \leftrightarrow \varphi) \), or a constant for an element that \( \varphi \) is proved to have, proves nothing new about the old symbols. Definability says which notions can be so introduced in a given structure: exactly those some formula of its language defines.
+A defined notion can also be given its own symbol, as "even" and "the supremum of \( A \)" are in ordinary mathematics. Section 5.8 showed that such a definition is safe (@prp-definitional-extension). Introducing a predicate symbol by \( \forall x\, (P(x) \leftrightarrow \varphi) \), or a constant for an element that \( \varphi \) is proved to have, proves nothing new about the old symbols. Definability says which notions can be so introduced in a given structure: exactly those some formula of its language defines.
 
 ::: {.warning}
 Greatest is not maximal. A maximal element has nothing strictly above it; a greatest element is above everything. In the divisibility order on \( \{ 1, 2, 3 \} \), \( 2 \) is maximal and not greatest. Writing \( \forall y\, (y \le x) \) for "maximal" defines the wrong set: in that order it defines \( \emptyset \), while the maximal elements are \( 2 \) and \( 3 \).
@@ -125,7 +125,9 @@ In the divisibility order on \( \{ 1, 2, 3, 4, 6 \} \), which elements are maxim
 
 ## Isomorphic structures (second pass)
 
-This half of the section is for a second reading. It asks when two structures are the same except for the names of their elements, and proves that such structures satisfy the same sentences. From that comes a way to show that a set is **not** definable. It uses functions and bijections in their everyday sense: a rule that sends each element to one element, and, for a bijection, one that matches the two domains one to one, every element of the second domain hit exactly once.
+This half of the section can wait for a later reading. It asks when two structures are the same except for the names of their elements, and proves that such structures satisfy the same sentences. From that comes a way to show that a set is **not** definable. It uses functions and bijections in their everyday sense. A function is a rule that sends each element to one element. A bijection matches the two domains one to one: every element of the second domain is hit exactly once.
+
+A small case first. Double each natural number: \( 0 \mapsto 0 \), \( 1 \mapsto 2 \), \( 2 \mapsto 4 \), and so on. Every even number is hit exactly once, and \( 1 < 2 \) becomes \( 2 < 4 \), \( 0 < 3 \) becomes \( 0 < 6 \). The order of the even numbers is the order of \( \nN \) with every element renamed.
 
 ::: {#def-isomorphism-of-structures}
 [Isomorphism of Structures]
@@ -179,15 +181,13 @@ Let \( h \colon \fM \to \fN \) be an isomorphism. For every formula \( \varphi \
 where \( h \circ \ell \) gives each variable \( x \) the value \( h(\ell(x)) \). In particular, \( \fM \models \sigma \) if and only if \( \fN \models \sigma \), for every sentence \( \sigma \).
 :::
 
-*In words: renaming the elements, consistently, changes the truth of nothing.*
+*In words: renaming the elements, consistently, changes the truth of nothing.* Every sentence true in one of two isomorphic structures is true in the other.
 
-The theorem is most often used backwards: a sentence true in one structure and false in another shows that the two are **not** isomorphic. The sentence \( \forall x\, \exists y\, (y + y = x) \), "every element is a sum of two equal ones", is true in \( (\nQ; +) \) (take \( y = x/2 \)) and false in \( (\nZ; +) \) (at \( x = 1 \)), so no bijection \( \nQ \to \nZ \) carries addition to addition, although bijections \( \nQ \to \nZ \) exist (*Sets and Functions*, Chapter 4). The converse of the theorem fails: two structures can satisfy the same sentences without being isomorphic, and the optional Section 7.6 meets such a pair.
-
-The proof is in the fold below.
+The theorem is most often used backwards: a sentence true in one structure and false in another shows that the two are **not** isomorphic. The sentence \( \forall x\, \exists y\, (y + y = x) \), "every element is a sum of two equal ones", is true in \( (\nQ; +) \): take \( y = x/2 \). It is false in \( (\nZ; +) \), at \( x = 1 \). So no bijection \( \nQ \to \nZ \) carries addition to addition. Bijections \( \nQ \to \nZ \) do exist: *Sets and Functions*, Chapter 4, proved that the rationals can be listed like the integers. The converse of the theorem fails: two structures can satisfy the same sentences without being isomorphic, and the optional Section 7.6 meets such a pair.
 
 ::: {.second-reading title="The proof: terms, then formulas"}
 ::: {.idea}
-An induction on terms and then on formulas, of the kind Section 7.1 gave for @lem-free-coincidence. Each clause of the definition of isomorphism carries one kind of atomic formula across; injectivity carries equations back; and in the quantifier cases, as \( d \) runs over \( D \), its image \( h(d) \) must run over all of \( E \), which is what "onto" gives.
+An induction on terms and then on formulas, of the kind Section 7.1 gave for @lem-free-coincidence. Each clause of the definition of isomorphism carries one kind of atomic formula across, and injectivity carries equations back. In the quantifier cases, as \( d \) runs over \( D \), its image \( h(d) \) must run over all of \( E \). That is what "onto" gives.
 :::
 
 ::: {.proof}
@@ -198,15 +198,19 @@ h\bigl( f^{\fM}(t_1^{\fM, \ell}, \dots, t_n^{\fM, \ell}) \bigr) = f^{\fN}\bigl( 
 
 *Formulas.* Structural induction on \( \varphi \), with the claim stated for **all** assignments \( \ell \) at once, since the quantifier clauses change the assignment.
 
-*Atomic.* By (S1), \( \fM, \ell \models R(t_1, \dots, t_n) \) means that the tuple of the values \( t_i^{\fM, \ell} \) is in \( R^{\fM} \). By clause (iii) that holds exactly when the tuple of their images is in \( R^{\fN} \), and by the claim for terms the images are the values \( t_i^{\fN, h \circ \ell} \): this is (S1) for \( \fN, h \circ \ell \). *Equations.* \( t_1^{\fM, \ell} = t_2^{\fM, \ell} \) implies \( h(t_1^{\fM, \ell}) = h(t_2^{\fM, \ell}) \); the converse holds because \( h \) is **injective**. With the claim for terms, this is (S2) on both sides. \( \bot \) is satisfied on neither side, by (S3).
+*Atomic.* By the clause for atomic formulas, (S1), \( \fM, \ell \models R(t_1, \dots, t_n) \) means that the tuple of the values \( t_i^{\fM, \ell} \) is in \( R^{\fM} \). By clause (iii) that holds exactly when the tuple of their images is in \( R^{\fN} \), and by the claim for terms the images are the values \( t_i^{\fN, h \circ \ell} \): this is (S1) for \( \fN, h \circ \ell \). *Equations.* \( t_1^{\fM, \ell} = t_2^{\fM, \ell} \) implies \( h(t_1^{\fM, \ell}) = h(t_2^{\fM, \ell}) \); the converse holds because \( h \) is **injective**. With the claim for terms, this is the clause for equations, (S2), on both sides. Since \( \bot \) is never satisfied, (S3), it is satisfied on neither side.
 
-*Connectives.* The answers for \( \varphi \) and \( \psi \) agree on the two sides by hypothesis, and (S4), (S5) combine them by the same rule on both sides.
+*Connectives.* The answers for \( \varphi \) and \( \psi \) agree on the two sides by hypothesis. The connective clauses, (S4) for negation, (S5) for the others, combine them by the same rule on both sides.
 
-*Universal quantifier.* \( \fM, \ell \models \forall x\, \varphi \) holds if and only if \( \fM, \ell[x \mapsto d] \models \varphi \) for every \( d \in D \), by (S6); by the hypothesis, applied to the assignment \( \ell[x \mapsto d] \), if and only if \( \fN, h \circ (\ell[x \mapsto d]) \models \varphi \) for every \( d \in D \). Now \( h \circ (\ell[x \mapsto d]) = (h \circ \ell)[x \mapsto h(d)] \): both give \( x \) the value \( h(d) \) and every other variable \( y \) the value \( h(\ell(y)) \). As \( d \) runs over \( D \), \( h(d) \) runs over **all** of \( E \), because \( h \) is **onto**. So the condition says that \( \fN, (h \circ \ell)[x \mapsto e] \models \varphi \) for every \( e \in E \), which is (S6) for \( \fN, h \circ \ell \models \forall x\, \varphi \).
+*Universal quantifier.* \( \fM, \ell \models \forall x\, \varphi \) holds if and only if \( \fM, \ell[x \mapsto d] \models \varphi \) for every \( d \in D \), by the clause for \( \forall \), (S6). By the hypothesis, applied to the assignment \( \ell[x \mapsto d] \), if and only if \( \fN, h \circ (\ell[x \mapsto d]) \models \varphi \) for every \( d \in D \). Now \( h \circ (\ell[x \mapsto d]) = (h \circ \ell)[x \mapsto h(d)] \): both give \( x \) the value \( h(d) \) and every other variable \( y \) the value \( h(\ell(y)) \). As \( d \) runs over \( D \), \( h(d) \) runs over **all** of \( E \), because \( h \) is **onto**. So the condition says that \( \fN, (h \circ \ell)[x \mapsto e] \models \varphi \) for every \( e \in E \), which is (S6) for \( \fN, h \circ \ell \models \forall x\, \varphi \).
 
-*Existential quantifier.* The same, with (S7): some \( d \in D \) works on the left exactly when some \( e = h(d) \in E \) works on the right, and every \( e \in E \) is such an \( h(d) \), since \( h \) is **onto**.
+*Existential quantifier.* The same, with the clause for \( \exists \), (S7): some \( d \in D \) works on the left exactly when some \( e = h(d) \in E \) works on the right, and every \( e \in E \) is such an \( h(d) \), since \( h \) is **onto**.
 
 For a sentence, @lem-free-coincidence makes the assignment irrelevant on both sides, which gives the last sentence of the statement.
+
+::: {.uses}
+@def-satisfaction (the satisfaction clauses); @def-isomorphism-of-structures (its three clauses).
+:::
 :::
 :::
 
@@ -230,6 +234,10 @@ If \( h \) is an automorphism of \( \fM \) and \( S \subseteq D \) is definable 
 
 ::: {.proof}
 Let \( \varphi \), with free variable \( x \), define \( S \), and let \( \ell \) be an assignment with \( \ell(x) = d \). By @thm-isomorphism-invariance with \( \fN = \fM \), \( \fM, \ell \models \varphi \) if and only if \( \fM, h \circ \ell \models \varphi \). The first says \( d \in S \); since \( (h \circ \ell)(x) = h(d) \), the second says \( h(d) \in S \).
+
+::: {.uses}
+@def-definable-set (the set \( \varphi \) defines).
+:::
 :::
 
 So to show that a set is **not** definable, find an automorphism that moves an element of it to an element outside it.
@@ -278,7 +286,7 @@ The rotation sends \( a \) to \( b \) and \( c \) to \( d \), so it moves \( a \
 ::: {.remark}
 [Looking ahead]
 
-*Number Systems: From \(\nN\) to \(\nR\)*, Chapter 6, proves that any two complete ordered fields are isomorphic, by an isomorphism built from the rationals below each element; by this section, they then satisfy the same sentences.
+*Number Systems: From \(\nN\) to \(\nR\)*, Chapter 6, proves that any two complete ordered fields are isomorphic. The isomorphism is built from the rationals below each element. By this section, the two fields then satisfy the same sentences.
 :::
 
 ## Exercises
@@ -307,7 +315,7 @@ The rotation sends \( a \) to \( b \) and \( c \) to \( d \), so it moves \( a \
 
 *(d)* If \( h \colon \fM \to \fN \) is an isomorphism, then \( \fM, \ell \models \varphi \) if and only if \( \fN, h \circ \ell \models \varphi \), for every formula \( \varphi \) and every assignment \( \ell \) in \( \fM \); in particular \( \fM \) and \( \fN \) satisfy the same sentences.
 
-*(e)* Onto: in the \( \forall \) and \( \exists \) cases, so that \( h(d) \) runs over all of \( E \) as \( d \) runs over \( D \). Injective: in the equation case, to go from \( h(t_1^{\fM, \ell}) = h(t_2^{\fM, \ell}) \) back to \( t_1^{\fM, \ell} = t_2^{\fM, \ell} \). The map \( d \mapsto d + 1 \) is not onto, and the \( \forall \) case fails: \( \forall y\, \neg(y < x) \) is satisfied when \( x \) has the value \( 0 \), and not when \( x \) has the value \( h(0) = 1 \), because the element \( 0 \) below \( 1 \) is exactly the one the map never reaches.
+*(e)* Onto: in the \( \forall \) and \( \exists \) cases, so that \( h(d) \) runs over all of \( E \) as \( d \) runs over \( D \). Injective: in the equation case, to go from \( h(t_1^{\fM, \ell}) = h(t_2^{\fM, \ell}) \) back to \( t_1^{\fM, \ell} = t_2^{\fM, \ell} \). The map \( d \mapsto d + 1 \) is not onto, and the \( \forall \) case fails. The formula \( \forall y\, \neg(y < x) \) is satisfied when \( x \) has the value \( 0 \), and not when \( x \) has the value \( h(0) = 1 \). The reason is that the element \( 0 \) below \( 1 \) is exactly the one the map never reaches.
 
 *(f)* It is an automorphism of \( (\nZ, <) \) and moves \( 0 \); it is not an automorphism of \( (\nN, <) \) (not onto), and in \( (\nN, <) \) the set \( \{ 0 \} \) is in fact definable, by \( \forall y\, \neg(y < x) \).
 :::
@@ -386,7 +394,7 @@ Define by a formula, and read each formula back in words. Parts (i)–(iii) are 
 
 (v) \( \exists x\, \bigl( B(x) \wedge \forall z\, (B(z) \to x \le z) \wedge \neg A(x) \bigr) \): "some least upper bound of \( A \) is not in \( A \)".
 
-**Marking scheme.** (10 points) 2 for each part: 1 for the formula, 1 for its reading back, with any auxiliary formula (\( U \), \( B \)) written out or cited. Fatal error (0 for the part): a free variable left over that is not one of the defined set's.
+**What a complete answer needs.** (10 points) 2 for each part: 1 for the formula, 1 for its reading back, with any auxiliary formula, such as \( U \) or \( B \), written out or cited. **Slips that lose the step.** A free variable left over that is not one of the defined set's loses the whole part.
 :::
 
 ::: {#exr-definability-and-isomorphism-b2}
@@ -414,7 +422,7 @@ Describe the set each formula defines.
 
 (v) In \( (\nQ, <) \), \( \emptyset \): between \( x \) and any larger \( y \) lies \( (x + y)/2 \). In \( (\nZ, <) \), all of \( \nZ \): take \( y = x + 1 \).
 
-**Marking scheme.** (10 points) 2 for each part; in (iv), full marks require noticing that \( \nZ \) is not \( \nN \). Fatal error (0 for the part): an answer that ignores the structure, such as the same set for both structures in (v).
+**What a complete answer needs.** (10 points) 2 for each part; in (iv), full marks require noticing that \( \nZ \) is not \( \nN \). **Slips that lose the step.** An answer that ignores the structure, such as the same set for both structures in (v), loses the whole part.
 :::
 
 ::: {#exr-definability-and-isomorphism-b3}
@@ -436,7 +444,7 @@ Describe the set each formula defines.
 
 *(c)* No: it sends the value \( 0 \) of the constant to \( 1 \), and clause (i) of @def-isomorphism-of-structures asks \( h(0) = 0 \).
 
-**Marking scheme.** (10 points) 4 for (a): both automorphisms, with the argument that \( 3 \) and \( 4 \) are fixed. 4 for (b): each definable set with its formula, and each other set with the automorphism that moves it. 2 for (c). Fatal error (0 for (b)): claiming a set definable because no automorphism moving it was found.
+**What a complete answer needs.** (10 points) 4 for (a): both automorphisms, with the argument that \( 3 \) and \( 4 \) are fixed. 4 for (b): each definable set with its formula, and each other set with the automorphism that moves it. 2 for (c). **Slips that lose the step.** Claiming a set definable because no automorphism moving it was found loses all of (b).
 :::
 
 ### C. Going deeper
@@ -458,9 +466,9 @@ Describe the set each formula defines.
 
 *(b)* \( x < y \wedge \neg\exists z\, (x < z \wedge z < y) \), "\( y \) is above \( x \) with nothing in between". In \( \nZ \) it holds of \( (d, e) \) exactly when \( d < e \) and no integer lies strictly between, that is, \( e = d + 1 \): if \( e = d + 1 \), an integer \( z \) with \( d < z < d + 1 \) does not exist; if \( e \ge d + 2 \), then \( z = d + 1 \) lies between.
 
-*(c)* The corollary, and the argument of (a), concern sets of elements. "\( y = x + 1 \)" defines a set of pairs, and a shift moves each pair \( (n, n + 1) \) to another pair \( (m, m + 1) \) of the same set, so the set of pairs is not moved. What (a) forbids is a formula singling out some integers and not others; (b) singles out a relation that every integer has to its successor.
+*(c)* The corollary, and the argument of (a), concern sets of elements. The relation "\( y = x + 1 \)" is a set of pairs. A shift moves each pair \( (n, n + 1) \) to another pair \( (m, m + 1) \) of the same set, so the set of pairs is not moved. What (a) forbids is a formula singling out some integers and not others; (b) singles out a relation that every integer has to its successor.
 
-**Marking scheme.** (10 points) 5 for (a): the shift shown to be an automorphism (bijective and order-preserving), then the corollary applied. 3 for (b), with both directions checked in \( \nZ \). 2 for (c). Fatal error (0 for (a)): using \( d \mapsto -d \), which does not preserve \( < \).
+**What a complete answer needs.** (10 points) 5 for (a): the shift shown to be an automorphism (bijective and order-preserving), then the corollary applied. 3 for (b), with both directions checked in \( \nZ \). 2 for (c). **Slips that lose the step.** Using \( d \mapsto -d \), which does not preserve \( < \), loses all of (a).
 :::
 
 ::: {#exr-definability-and-isomorphism-c2}
@@ -482,7 +490,7 @@ Describe the set each formula defines.
 
 *(c)* In \( (\nQ; <, 0) \) the formula \( 0 < x \) defines it. In \( (\nQ, <) \) it is neither \( \emptyset \) nor \( \nQ \), so by (b) it is not definable.
 
-**Marking scheme.** (10 points) 3 for (a), 4 for (b), 3 for (c). Fatal error (0 for (b)): an argument with \( x \mapsto 2x \) alone, which fixes \( 0 \) and so cannot move \( 0 \) to anything else.
+**What a complete answer needs.** (10 points) 3 for (a), 4 for (b), 3 for (c). **Slips that lose the step.** An argument with \( x \mapsto 2x \) alone loses all of (b): that map fixes \( 0 \), so it cannot move \( 0 \) to anything else.
 :::
 
 ### R. Review
@@ -501,7 +509,7 @@ Decide whether each sequent is derivable, and justify your answer.
 ::: {.solution}
 *(a)* Not derivable. Look for a refuting row, backwards from the conclusion: \( p \to r \) is false only when \( p = \mathrm{T} \) and \( r = \mathrm{F} \). The premise must then be true, so its hypothesis \( p \to q \) must be false, which needs \( q = \mathrm{F} \). In the row \( p = \mathrm{T} \), \( q = \mathrm{F} \), \( r = \mathrm{F} \), the premise is \( \mathrm{F} \to \mathrm{F} \), true, and the conclusion is \( \mathrm{T} \to \mathrm{F} \), false. By @cor-refuting-row there is no derivation.
 
-*(b)* Derivable. The goal is an implication, so open a box on \( q \); the premise is waiting for \( p \to q \), which a box on \( p \) produces by repeating \( q \) (the goal-directed and premise-directed steps of the search method of Section 3.1).
+*(b)* Derivable. The goal is an implication, so open a box on \( q \). The premise needs \( p \to q \), and a box on \( p \) produces it by repeating \( q \). These are the goal-directed and premise-directed steps of the search method of Section 3.1.
 
 ```{=latex}
 \begin{center}
@@ -531,7 +539,7 @@ Derive \( \neg(P \to \neg Q) \vdash \neg\neg P \wedge \neg\neg Q \) without \( \
 :::
 
 ::: {.solution}
-The goal is a conjunction, so derive each conjunct. Each is a negation, so each gets a \( \rulename{\neg I} \) box, whose goal is \( \bot \). The only way to use the premise \( \neg(P \to \neg Q) \) is to clash with it, so inside each box we build \( P \to \neg Q \). In the first box, from \( \neg P \): a \( \rulename{{\to}I} \) box on \( P \) clashes \( P \) with \( \neg P \) and uses \( \rulename{\bot E} \) (the pattern of @prp-vacuous-implication). In the second, from \( \neg Q \): a \( \rulename{{\to}I} \) box on \( P \) simply repeats \( \neg Q \). These are the rules of Chapters 1 and 2 (@def-rules-negation, @def-rules-contradiction, @def-rules-implication).
+The goal is a conjunction, so derive each conjunct. Each is a negation, so each gets a \( \rulename{\neg I} \) box, whose goal is \( \bot \). The only way to use the premise \( \neg(P \to \neg Q) \) is to clash with it, so inside each box we build \( P \to \neg Q \). In the first box, from \( \neg P \): a \( \rulename{{\to}I} \) box on \( P \) clashes \( P \) with \( \neg P \) and uses \( \rulename{\bot E} \) (the pattern of @prp-vacuous-implication). In the second, from \( \neg Q \): a \( \rulename{{\to}I} \) box on \( P \) simply repeats \( \neg Q \). These are the rules of Chapters 1 and 2.
 
 ```{=latex}
 \begin{center}
@@ -563,7 +571,11 @@ $\begin{nd}
 \end{center}
 ```
 
-No \( \rulename{RAA} \) is used. To reach \( P \wedge Q \) we would need \( P \) from \( \neg\neg P \) and \( Q \) from \( \neg\neg Q \), that is, \( \rulename{\neg\neg E} \), which is derived with \( \rulename{RAA} \) (@prp-double-negation), or an \( \rulename{RAA} \) box directly (@def-rule-raa). The look-alike is @exr-finding-derivations-b1 (b), \( \neg(P \to Q) \vdash P \wedge \neg Q \): there the conjunct \( P \) needed \( \rulename{RAA} \), while \( \neg Q \) came by \( \rulename{\neg I} \) alone. Here both conjuncts stop at a double negation. That no derivation of \( P \) (or of \( P \wedge Q \)) from the premise avoids \( \rulename{RAA} \) is true, but we state it without proof, and nothing depends on it.
+No \( \rulename{RAA} \) is used. To reach \( P \wedge Q \) we would need \( P \) from \( \neg\neg P \) and \( Q \) from \( \neg\neg Q \). That is \( \rulename{\neg\neg E} \), which is derived with \( \rulename{RAA} \) (@prp-double-negation), or an \( \rulename{RAA} \) box directly. The look-alike is @exr-finding-derivations-b1 (b), \( \neg(P \to Q) \vdash P \wedge \neg Q \): there the conjunct \( P \) needed \( \rulename{RAA} \), while \( \neg Q \) came by \( \rulename{\neg I} \) alone. Here both conjuncts stop at a double negation. That no derivation of \( P \) (or of \( P \wedge Q \)) from the premise avoids \( \rulename{RAA} \) is true, but we state it without proof, and nothing depends on it.
+
+::: {.uses}
+@def-rules-negation, @def-rules-contradiction, @def-rules-implication (\( \rulename{\neg I} \), \( \rulename{\neg E} \), \( \rulename{\bot E} \), \( \rulename{{\to}I} \)); @def-rule-raa (the \( \rulename{RAA} \) box).
+:::
 :::
 
 ::: {#exr-models-r3}
@@ -620,11 +632,11 @@ Is the sentence \( \forall x\, \exists y\, (x < y) \to \exists y\, \forall x\, (
 :::
 
 ::: {.solution}
-*True in \( (\nN, <) \)?* No. The hypothesis \( \forall x\, \exists y\, (x < y) \) is true in \( (\nN, <) \): each \( d \) has \( d + 1 \) above it. The conclusion \( \exists y\, \forall x\, (x < y) \) is false: a candidate \( e \) fails at \( x = e \), since \( e < e \) is false. By (S5) of @def-satisfaction, an implication with a true hypothesis and a false conclusion is false.
+*True in \( (\nN, <) \)?* No. The hypothesis \( \forall x\, \exists y\, (x < y) \) is true in \( (\nN, <) \): each \( d \) has \( d + 1 \) above it. The conclusion \( \exists y\, \forall x\, (x < y) \) is false: a candidate \( e \) fails at \( x = e \), since \( e < e \) is false. By the clause for implication, (S5) of @def-satisfaction, an implication with a true hypothesis and a false conclusion is false.
 
 *Derivable?* No. By the soundness statement of [Section 7.2](#from-counter-models-to-non-derivability), a derivable sentence is true in every structure; this one is false in \( (\nN, <) \), so no derivation exists.
 
-*Why these tools.* A structure settles the question in two lines, while a derivation search could only fail, and a failed search proves nothing. A truth table is the wrong look-alike: it reads the sentence as \( p \to q \) with two atoms, and a refuting row for \( p \to q \) says nothing here, since the sentence \( \forall x\, P(x) \to \exists x\, P(x) \) has the same shape and is derivable (@prp-forall-implies-exists, then \( \rulename{{\to}I} \)). The soundness statement used here is proved in Section 7.3.
+*Why these tools.* A structure settles the question in two lines, while a derivation search could only fail, and a failed search proves nothing. A truth table looks like the right tool, and is not. It reads the sentence as \( p \to q \) with two atoms. A refuting row for \( p \to q \) says nothing here: the sentence \( \forall x\, P(x) \to \exists x\, P(x) \) has the same shape and is derivable (@prp-forall-implies-exists, then \( \rulename{{\to}I} \)). The soundness statement used here is proved in Section 7.3.
 :::
 
 <!-- dependency ledger
@@ -634,16 +646,19 @@ exm-definable-sets (example): d + d = d iff d = 0; x + z = y with z non-zero iff
 exm-definable-sets (claim): U(y) written with its bound variable renamed so that y is not captured | renaming of bound variables, F1.4 §02 (prose); the formula is written out
 exm-definable-sets (solution): Quick check, x = y + y in Z exactly for the even integers | definition of even; every integer is even or odd and not both, F2.2 (promised, STATUS row F1.1 §01 …)
 exm-definable-sets (solution): Quick check, every rational is y + y with y = x/2 rational | school algebra of fractions
+def-definable-set (claim): conjunction, disjunction, negation define intersection, union, complement | (S4), (S5) of def-satisfaction (cited inline)
 def-definable-set (claim): exists y phi defines the projection; forall y phi keeps the full vertical lines | (S6), (S7) of def-satisfaction (cited by name); def-definable-set
 def-definable-set (solution): Quick check, x <= y*y for all real y iff x <= 0 | school algebra (squares are non-negative, 0 is a square)
 exm-define-by-formula (example): maximal and greatest in the divisibility orders on {1,2,3} and {1,2,3,6}; the Quick check on {1,2,3,4,6} | verify/ch07/exm-define-by-formula.py
 exm-define-by-formula (example): sup [0,1) = 1, the element max(0, (z+1)/2) of [0,1) above z < 1; [0,1) has no greatest element, [0,1] has | school algebra of the order of R
 exm-define-by-formula (claim): a defined predicate or a constant for a proved-existing element proves nothing new | prp-definitional-extension (cited; F1.4 §08, parts (a) and (b))
 def-isomorphism-of-structures (claim): functions, bijections, inverses and composition in the everyday sense | F2.1 (paid: def-function, def-bijective, def-composition, def-inverse-function; everyday sense, prose only)
+def-isomorphism-of-structures (example): instance before the definition, doubling N onto the evens, 1<2 to 2<4, 0<3 to 0<6 | inline arithmetic
 def-isomorphism-of-structures (example): h(d) = 2d is a bijection from N onto the evens preserving <; d -> d + 1 on N preserves < and misses 0; the table of the finite example | inline; verify/ch07/exm-shift-automorphism.py (the finite example)
 thm-isomorphism-invariance (proof): induction on terms and structural induction on formulas for all assignments at once | thm-structural-recursion and structural induction as used for lem-free-coincidence (F1.6 §01); inline
+thm-isomorphism-invariance (proof): clauses (S1)-(S7) and clauses (i)-(iii) | def-satisfaction, def-isomorphism-of-structures (Uses line)
 thm-isomorphism-invariance (proof): h o (l[x -> d]) = (h o l)[x -> h(d)]; h onto, so h(d) runs over all of E | inline (definition of l[x -> d], def-assignment)
-cor-automorphisms-fix-definable-sets (proof): from thm-isomorphism-invariance with N = M | thm-isomorphism-invariance (cited)
+cor-automorphisms-fix-definable-sets (proof): from thm-isomorphism-invariance with N = M | thm-isomorphism-invariance (cited); def-definable-set (Uses line)
 exm-shift-automorphism (example): the shift on Z is a bijection preserving <; forall y not(y < x) defines {0} in (N, <); the rotation of the four-cycle is an automorphism and its powers move any element to any other | inline; verify/ch07/exm-shift-automorphism.py (all 24 permutations of the four-cycle)
 exm-shift-automorphism (solution): Quick check, the rotation moves {a, c} and {b, d} | verify/ch07/exm-shift-automorphism.py
 cor-automorphisms-fix-definable-sets (claim): Looking ahead, any two complete ordered fields are isomorphic | F3.4 thm-cof-uniqueness (exists; Looking ahead only, nothing rests on it)

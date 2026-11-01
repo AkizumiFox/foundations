@@ -1,8 +1,14 @@
 # What First-Order Logic Can and Cannot Say
 
-This section is optional, and nothing outside it depends on it. Every theorem in it is **stated without proof**, except where a short argument from a stated theorem is given and marked as such; its results carry no optional marker of their own, and the section as a whole is the unit a reader may skip.
+This section is optional, and nothing outside it depends on it. Its theorems are **stated without proof**. Where a short argument from a stated theorem is given, it is marked as such.
 
-Section 7.4 asked of a theory two questions that sound different: is it consistent, that is, does no finite list of its axioms derive \( \bot \)? And has it a model? A model answers the first question (@prp-model-shows-consistency), but nothing so far says that a consistent theory must have one. This section states the theorem that says so, Gödel's completeness theorem, and then follows its consequences. The first is compactness: a theory has a model as soon as each finite part of it has one. From compactness come the surprises. A first-order theory cannot fix the size of its infinite models; the true sentences about \( \nN \) have a model with an element larger than every number; and the property "finite" cannot be written as a sentence. The section ends with what can and cannot be decided by a mechanical procedure, and names the incompleteness theorem, which is a different matter from completeness.
+Section 7.4 asked of a theory two questions that sound different: is it consistent, that is, does no finite list of its axioms derive \( \bot \)? And has it a model? A model answers the first question (@prp-model-shows-consistency), but nothing so far says that a consistent theory must have one. This section states the theorem that says so, Gödel's completeness theorem, and then follows its consequences. The first is compactness: a theory has a model as soon as each finite part of it has one. From compactness come three surprises:
+
+- a first-order theory cannot fix the size of its infinite models;
+- the true sentences about \( \nN \) have a model with an element larger than every number;
+- the property "finite" cannot be written as a sentence.
+
+The section ends with what can and cannot be decided by a mechanical procedure, and names the incompleteness theorem, which is a different matter from completeness.
 
 ::: {.remark}
 [Looking back]
@@ -20,11 +26,11 @@ The soundness statement of Section 7.2 runs from derivations to truth: whatever 
 For every theory \( T \) and sentence \( \sigma \): \( T \vdash \sigma \) if and only if \( T \models \sigma \). Equivalently, a theory is consistent if and only if it has a model.
 :::
 
-This theorem is stated without proof. One direction is the soundness statement of Section 7.2; the other is new. Here \( T \vdash \sigma \) and \( T \models \sigma \) are those of @def-theory and @def-model-of-theory: some finite list of axioms derives \( \sigma \), and \( \sigma \) is true in every model of \( T \). The two forms say the same thing. Take \( \sigma = \bot \): \( T \vdash \bot \) says that \( T \) is inconsistent (@def-inconsistent-theory), and \( T \models \bot \) says that no model of \( T \) exists, since \( \bot \) is true in no structure. In the other direction, \( T \models \sigma \) means that the theory \( T \) with \( \neg\sigma \) added, the counterexample set of the claim, has no model; and \( T \vdash \sigma \) means that this theory is inconsistent, by \( \rulename{\neg E} \) in one direction and \( \rulename{RAA} \) in the other.
+This theorem is stated without proof. One direction is the soundness statement of Section 7.2; the other is new. Here \( T \vdash \sigma \) is derivability from a theory (@def-theory): some finite list of axioms derives \( \sigma \). And \( T \models \sigma \) is truth in every model (@def-model-of-theory): \( \sigma \) is true in every model of \( T \). The two forms say the same thing. Take \( \sigma = \bot \): \( T \vdash \bot \) says that \( T \) is inconsistent (@def-inconsistent-theory), and \( T \models \bot \) says that no model of \( T \) exists, since \( \bot \) is true in no structure. In the other direction, take the theory \( T \) with \( \neg\sigma \) added, the counterexample set of the claim. Then \( T \models \sigma \) means that this theory has no model. And \( T \vdash \sigma \) means that this theory is inconsistent, by \( \rulename{\neg E} \) in one direction and \( \rulename{RAA} \) in the other.
 
-What the theorem means for this chapter is best said with its two halves side by side. Faced with a claim \( T \vdash \sigma \), Chapters 5 and 6 searched for a derivation, and this chapter searched for a counter-model, a model of \( T \) in which \( \sigma \) is false. Soundness says that both cannot succeed. Completeness says that one of them must: a stalled derivation search and a missing counter-model cannot both be real. The words "consistent" and "has a model", which Section 7.4 kept apart and never swapped, are now known to coincide, but only here, and with a theorem stated and not proved. Nothing outside this section uses the coincidence.
+What the theorem means for this chapter is best said with its two halves side by side. Faced with a claim \( T \vdash \sigma \), Chapters 5 and 6 searched for a derivation, and this chapter searched for a counter-model, a model of \( T \) in which \( \sigma \) is false. Soundness says that both cannot succeed. Completeness says that one of them must: a stalled derivation search and a missing counter-model cannot both be real. Section 7.4 treated "consistent" and "has a model" as two separate properties. They are now known to coincide, but only with a theorem stated and not proved. No later section relies on the coincidence.
 
-Section 7.4's group axioms show both outcomes. They derive that the identity is unique (@prp-group-identity-unique), and that settles one claim by a derivation. They do not derive (Comm), and the triangle group of @exm-triangle-group, a model of the axioms in which (Comm) is false, settles that claim by a counter-model. Completeness says that every claim about groups is settled in one of these two ways, though it does not say which, or how long the search for either will take.
+Section 7.4's group axioms show both outcomes. They derive that the identity is unique (@prp-group-identity-unique), and that settles one claim by a derivation. They do not derive commutativity, (Comm), and the triangle group of @exm-triangle-group, a model of the axioms in which (Comm) is false, settles that claim by a counter-model. Completeness says that every claim about groups is settled in one of these two ways, though it does not say which, or how long the search for either will take.
 
 The theorem says nothing about how to find the derivation or the model, and the last part of this section states, without proof, that no method finds one of them in every case.
 
@@ -33,13 +39,13 @@ This is a sketch, not a proof. It follows the route of Section 4.10's proof of p
 
 Start from a consistent theory \( T \); we want a model. The idea is to build the model out of the language itself, with the closed terms as its elements. Two difficulties arise, and each has a remedy.
 
-*Witnesses.* A sentence \( \exists x\, \varphi \) of the theory may hold with no closed term to show for it. So add new constants, and for each sentence \( \exists x\, \varphi \) a **witness axiom** \( \exists x\, \varphi \to \varphi[c/x] \), with \( c \) a constant new to everything so far. Adding it keeps the theory consistent, for the same reason the name in an \( \rulename{\exists E} \) box must be fresh: an old name already carries information, and a new one carries none, so assuming that it names a witness can lead to no contradiction that the bare \( \exists x\, \varphi \) did not already give. This is repeated, since the new constants make new sentences, each with its own witness.
+*Witnesses.* A sentence \( \exists x\, \varphi \) of the theory may hold with no closed term to show for it. So add new constants, and for each sentence \( \exists x\, \varphi \) a **witness axiom** \( \exists x\, \varphi \to \varphi[c/x] \), with \( c \) a constant new to everything so far. Adding it keeps the theory consistent, for the same reason the name in an \( \rulename{\exists E} \) box must be fresh. An old name already carries information, and a new one carries none. So assuming that it names a witness can lead to no contradiction that the bare \( \exists x\, \varphi \) did not already give. This is repeated, since the new constants make new sentences, each with its own witness.
 
 *Deciding every sentence.* A consistent theory may leave a sentence undecided, and a structure cannot. So extend the theory, one sentence at a time, to a **maximal** consistent set: list all sentences, and add each one if the result stays consistent. As in Lindenbaum's lemma, the result decides every sentence, containing it or its negation.
 
-*The structure.* Its elements are the closed terms, with two terms identified when the set contains their equation; a constant names itself, a function symbol builds the longer term, and a predicate holds of the terms for which the set says it holds. An induction on sentences, the propositional one of Section 4.10 with a case for each quantifier, where the witness axioms do their work, shows that this structure satisfies exactly the sentences of the set. It satisfies \( T \) in particular.
+*The structure.* Its elements are the closed terms, with two terms identified when the set contains their equation. A constant names itself, a function symbol builds the longer term, and a predicate holds of the terms for which the set says it holds. An induction on sentences shows that this structure satisfies exactly the sentences of the set. It is the propositional induction of Section 4.10 with a case for each quantifier, and the quantifier cases use the witness axioms. It satisfies \( T \) in particular.
 
-The details, for countably many symbols, fill a chapter of a logic text; this book stops at the outline.
+Filling in the details, for countably many symbols, takes a chapter of a logic text.
 :::
 
 ## Compactness
@@ -52,7 +58,7 @@ Completeness ties models to derivations, and a derivation uses only finitely man
 If every finite subset of a theory \( T \) has a model, then \( T \) has a model.
 :::
 
-*A short argument from completeness.* Suppose \( T \) had no model. Then \( T \) is inconsistent, by @thm-first-order-completeness, so some finite list of its axioms derives \( \bot \) (@def-inconsistent-theory). The finite subset made of those axioms is then itself an inconsistent theory, so by @prp-model-shows-consistency it has no model, against the hypothesis.
+*A short argument from completeness.* Suppose \( T \) had no model. Then \( T \) is inconsistent, by @thm-first-order-completeness. So some finite list of its axioms derives \( \bot \) (@def-inconsistent-theory). The finite subset made of those axioms is then itself an inconsistent theory, so by @prp-model-shows-consistency it has no model, against the hypothesis.
 
 ::: {.warning}
 "Every finite subset has a model" is not "has a finite model". The finite subsets are finite lists of **axioms**; the models that satisfy them may be infinite, and the model the theorem gives may be infinite even when every finite subset has a finite model. Compactness never makes a structure smaller.
@@ -60,7 +66,13 @@ If every finite subset of a theory \( T \) has a model, then \( T \) has a model
 
 Read the theorem from the side of what a theory forbids. A structure fails to be a model of \( T \) when some axiom is false in it. The theorem says that a property needing infinitely many axioms at once to fail is never enforced by first-order sentences: whatever a theory forbids, some finite part of it already forbids. That is the source of everything below.
 
-The standard tool is a list of sentences that count. For \( n \ge 2 \), let \( \sigma_n \) be the sentence "there are at least \( n \) elements": \( n \) variables bound by \( \exists \), followed by the conjunction of \( \neg(x_i = x_j) \) for all \( i < j \). It is true in a structure exactly when the domain has \( n \) or more elements. Any finite set of the \( \sigma_n \) is true in a large enough finite structure; all of them together are true only in an infinite one. Every use of compactness below follows one pattern: add infinitely many axioms that no single intended structure satisfies all at once, check that each finite part of the result has a model, and conclude that the whole has one. The model it gives is then a new structure, with properties the intended ones lack.
+The standard tool is a list of sentences that count. For \( n \ge 2 \), let \( \sigma_n \) be the sentence "there are at least \( n \) elements": \( n \) variables bound by \( \exists \), followed by the conjunction of \( \neg(x_i = x_j) \) for all \( i < j \). It is true in a structure exactly when the domain has \( n \) or more elements. Any finite set of the \( \sigma_n \) is true in a large enough finite structure; all of them together are true only in an infinite one. Every use of compactness below follows one pattern:
+
+1. add infinitely many axioms that no single intended structure satisfies all at once;
+2. check that each finite part of the result has a model;
+3. conclude that the whole has one.
+
+The model it gives is then a new structure, with properties the intended ones lack.
 
 ::: {.check}
 Let \( \sigma_n \) say "there are at least \( n \) elements". Write \( \sigma_3 \).
@@ -80,7 +92,7 @@ Yes: the optional Section 4.10 proved it; this section states the first-order ve
 
 ## Large models and small ones
 
-A set can be **listed** if its elements can be written as a sequence \( d_0, d_1, d_2, \dots \) in which every element appears; \( \nN \), \( \nZ \) and \( \nQ \) can, and so can every non-empty finite set (repeat its last element forever). "Listed" here has its everyday meaning.
+A set can be **listed** if its elements can be written as a sequence \( d_0, d_1, d_2, \dots \) in which every element appears. The sets \( \nN \), \( \nZ \) and \( \nQ \) can, and so can every non-empty finite set (repeat its last element forever). "Listed" here has its everyday meaning.
 
 ::: {#thm-lowenheim-skolem}
 [Löwenheim–Skolem Theorem]
@@ -92,7 +104,7 @@ This theorem is stated without proof. Two consequences show its force. First, ta
 
 So no first-order theory with an infinite model fixes the size of its models. Section 7.5 showed that isomorphic structures satisfy the same sentences; here are structures that satisfy the same sentences and are not isomorphic, since one can be listed and the other cannot.
 
-How can a listable structure satisfy every first-order sentence true in \( \nR \), when \( \nR \) is "complete": every non-empty set of reals bounded above has a supremum? The answer is the one the next two subsections give for \( \nN \). Completeness of \( \nR \) speaks of **all** sets of reals. A first-order sentence can speak only of sets defined by formulas (Section 7.5): for each formula there is a sentence "if the set this formula defines is non-empty and bounded above, it has a supremum", and each of these is true in \( \nR \). The listable model satisfies all of them, and fails the statement about all sets, which is not a first-order sentence. It must fail it: the listable model is an ordered field, as \( \nR \) is, and any two complete ordered fields are isomorphic (*Number Systems: From \(\nN\) to \(\nR\)*, Chapter 6), so a complete listable model would make \( \nR \) listable, and \( \nR \) cannot be listed.
+How can a listable structure satisfy every first-order sentence true in \( \nR \), when \( \nR \) is "complete": every non-empty set of reals bounded above has a supremum? The answer is the one the next two subsections give for \( \nN \). Completeness of \( \nR \) speaks of **all** sets of reals. A first-order sentence can speak only of sets defined by formulas (Section 7.5). For each formula there is a sentence "if the set this formula defines is non-empty and bounded above, it has a supremum". Each of these sentences is true in \( \nR \). The listable model satisfies all of them, and fails the statement about all sets, which is not a first-order sentence. It must fail it. The listable model is an ordered field, as \( \nR \) is. Any two complete ordered fields are isomorphic (*Number Systems: From \(\nN\) to \(\nR\)*, Chapter 6). So a complete listable model would make \( \nR \) listable, and \( \nR \) cannot be listed.
 
 ::: {.check}
 A theory \( T \) in countably many symbols has the model \( (\nQ, <) \). Must it also have a model whose domain cannot be listed?
@@ -120,9 +132,9 @@ one for each \( n \in \nN \). Call the result \( T' \).
 *So \( T' \) has a model.* By @thm-first-order-compactness there is a structure \( \fM \) in which every sentence of \( T' \) is true. In \( \fM \) every sentence true in \( \nN \) is true, and \( c^{\fM} \) is above the value in \( \fM \) of every numeral. It differs from each of them: if \( c^{\fM} \) were the value of \( \underline{n} \), the axiom \( \underline{n} < c \) would put an element below itself, while \( \forall x\, \neg(x < x) \) is true in \( \nN \), so in \( T \), so in \( \fM \).
 :::
 
-An element of \( \fM \) that is the value of no numeral is called **non-standard**; the values of numerals are the **standard** elements. \( \fM \) satisfies every first-order sentence that \( \nN \) satisfies, and still has an element that no numeral names. Its standard elements lie at the bottom: the sentences \( \forall x\, (x < \underline{n + 1} \to x = \underline{0} \vee \dots \vee x = \underline{n}) \), one for each \( n \), together with \( \forall x\, \neg(x < \underline{0}) \), are true in \( \nN \) and so in \( \fM \), and they say that nothing non-standard lies below a standard element; since \( \forall x\, \forall y\, (x < y \vee x = y \vee y < x) \) is also true in \( \nN \) and so in \( \fM \), every standard element lies below every non-standard one.
+An element of \( \fM \) that is the value of no numeral is called **non-standard**; the values of numerals are the **standard** elements. \( \fM \) satisfies every first-order sentence that \( \nN \) satisfies, and still has an element that no numeral names. Its standard elements lie at the bottom. The sentences \( \forall x\, (x < \underline{n + 1} \to x = \underline{0} \vee \dots \vee x = \underline{n}) \), one for each \( n \), together with \( \forall x\, \neg(x < \underline{0}) \), are true in \( \nN \) and so in \( \fM \). They say that nothing non-standard lies below a standard element. The sentence \( \forall x\, \forall y\, (x < y \vee x = y \vee y < x) \) is also true in \( \nN \) and so in \( \fM \). So every standard element lies below every non-standard one.
 
-The model \( \fM \) is not \( \nN \) under another name. In \( \nN \) itself, read as usual, no value of \( c \) works for the whole of \( T' \): if \( c \) is read as the number \( n \), the axiom \( \underline{n} < c \) says \( n < n \). Each finite part of \( T' \) is satisfied by \( \nN \), each with its own value for \( c \); the whole set is satisfied only by a structure that compactness supplies, and that structure has elements \( \nN \) lacks. Since \( \fM \) satisfies the same sentences in \( 0, S, +, \cdot, < \) as \( \nN \), no first-order sentence about arithmetic can tell the two apart; yet they are not isomorphic, since an isomorphism would send each numeral's value to the same numeral's value, and \( c^{\fM} \) to an element of \( \nN \) above every number, and there is none.
+The model \( \fM \) is not \( \nN \) under another name. In \( \nN \) itself, read as usual, no value of \( c \) works for the whole of \( T' \): if \( c \) is read as the number \( n \), the axiom \( \underline{n} < c \) says \( n < n \). Each finite part of \( T' \) is satisfied by \( \nN \), each with its own value for \( c \); the whole set is satisfied only by a structure that compactness supplies, and that structure has elements \( \nN \) lacks. Since \( \fM \) satisfies the same sentences in \( 0, S, +, \cdot, < \) as \( \nN \), no first-order sentence about arithmetic can tell the two apart. Yet they are not isomorphic. An isomorphism would send each numeral's value to the same numeral's value, and \( c^{\fM} \) to an element of \( \nN \) above every number, and there is none.
 
 ::: {.check}
 Is \( c^{\fM} = S^{\fM}(d) \) for some element \( d \) of \( \fM \)?
@@ -140,11 +152,11 @@ The **induction schema** of first-order arithmetic is one sentence for each form
 \[
 \bigl( \varphi[0/x] \wedge \forall x\, (\varphi \to \varphi[S(x)/x]) \bigr) \to \forall x\, \varphi ,
 \]
-with its other free variables, if any, bound by \( \forall \) in front. Each instance is true in \( \nN \), by induction, so each is in \( T \) and true in the model \( \fM \) of @exm-non-standard-naturals. Yet the set of standard elements of \( \fM \) contains \( 0^{\fM} \) and is closed under \( S^{\fM} \), and is not all of the domain. There is no contradiction: the schema speaks only about sets **defined by formulas** (Section 7.5), with any other free variables fixed at elements of the domain, and the standard elements are not such a set.
+with its other free variables, if any, bound by \( \forall \) in front. Each instance is true in \( \nN \), by induction, so each is in \( T \) and true in the model \( \fM \) of @exm-non-standard-naturals. Yet the set of standard elements of \( \fM \) contains \( 0^{\fM} \) and is closed under \( S^{\fM} \), and is not all of the domain. There is no contradiction. The schema speaks only about sets **defined by formulas** (Section 7.5), with any other free variables fixed at elements of the domain. The standard elements are not such a set.
 
-The argument is short. Suppose a formula \( \varphi \), with free variable \( x \) and its other free variables \( z_1, \dots, z_k \) (if any) fixed at elements \( e_1, \dots, e_k \) of \( \fM \), defined the standard elements in \( \fM \); every assignment below sends each \( z_i \) to \( e_i \). By @lem-term-substitution (Section 7.3; \( 0 \) is closed, and \( S(x) \) is free for \( x \) in \( \varphi \)), \( \varphi[0/x] \) holds in \( \fM \) exactly when \( \varphi \) holds of \( 0^{\fM} \), and \( \varphi[S(x)/x] \) holds under an assignment \( \ell \) exactly when \( \varphi \) holds of \( S^{\fM}(\ell(x)) \). Then \( \varphi[0/x] \) holds in \( \fM \), since \( 0^{\fM} \) is standard, and \( \forall x\, (\varphi \to \varphi[S(x)/x]) \) holds, since the successor of a standard element is standard. The induction instance for \( \varphi \) is a sentence true in \( \nN \), so it is in \( T \) and true in \( \fM \); read with each \( z_i \) at \( e_i \), it gives \( \forall x\, \varphi \) in \( \fM \), so every element would be standard, against \( c^{\fM} \). (Exercise C2 reaches the same conclusion another way, by least elements.)
+The argument is short. Suppose a formula \( \varphi \) with free variable \( x \) defined the standard elements in \( \fM \). Its other free variables \( z_1, \dots, z_k \), if any, are fixed at elements \( e_1, \dots, e_k \) of \( \fM \), and every assignment below sends each \( z_i \) to \( e_i \). The term \( 0 \) is closed, and \( S(x) \) is free for \( x \) in \( \varphi \). So by @lem-term-substitution (Section 7.3), \( \varphi[0/x] \) holds in \( \fM \) exactly when \( \varphi \) holds of \( 0^{\fM} \). Likewise \( \varphi[S(x)/x] \) holds under an assignment \( \ell \) exactly when \( \varphi \) holds of \( S^{\fM}(\ell(x)) \). Then \( \varphi[0/x] \) holds in \( \fM \), since \( 0^{\fM} \) is standard, and \( \forall x\, (\varphi \to \varphi[S(x)/x]) \) holds, since the successor of a standard element is standard. The induction instance for \( \varphi \) is a sentence true in \( \nN \), so it is in \( T \) and true in \( \fM \). Read with each \( z_i \) at \( e_i \), it gives \( \forall x\, \varphi \) in \( \fM \). So every element would be standard, against \( c^{\fM} \). (Exercise C2 reaches the same conclusion another way, by least elements.)
 
-The induction principle of Section 4.2 (@ax-induction) is stated for **every** property of natural numbers. Read in a structure, that is a statement about all subsets of the domain, not only the definable ones: it quantifies over sets, and is a **second-order** statement. Applied to the set of standard elements, it would rule out non-standard elements at once, and so a structure satisfying it, with \( 0 \) and successor read as usual, has no room for \( c^{\fM} \). First-order logic can state the schema, not the axiom; compactness is the price of its completeness.
+The induction principle of Section 4.2 (@ax-induction) is stated for **every** property of natural numbers. Read in a structure, that is a statement about all subsets of the domain, not only the definable ones: it quantifies over sets, and is a **second-order** statement. Applied to the set of standard elements, it would rule out non-standard elements at once, and so a structure satisfying it, with \( 0 \) and successor read as usual, has no room for \( c^{\fM} \). First-order logic can state the schema, not the axiom; compactness is the price of its completeness. Put plainly: because first-order logic has the completeness theorem, it also has compactness, and compactness is what produced the non-standard model \( \fM \).
 
 ## What can be decided
 
@@ -159,11 +171,11 @@ A question about sentences is **decidable** if a mechanical procedure answers it
 :::
 
 ::: {.remark}
-**Decidable: the monadic fragment.** For sentences with only one-place predicate symbols and no constants, function symbols or \( = \), the bound of Section 7.2's remark makes the counter-model search finite: if such a sentence has a counter-model at all, it has one of bounded size, and there are finitely many structures of each size to try.
+**Decidable: the monadic fragment.** Take sentences with only one-place predicate symbols and no constants, function symbols or \( = \). For them the counter-model search is finite, because of the size bound stated in Section 7.2. If such a sentence has a counter-model at all, it has one of bounded size, and there are finitely many structures of each size to try.
 :::
 
 ::: {.remark}
-**Incompleteness, named.** Gödel showed in 1931 that no consistent theory whose axioms a mechanical procedure can list, and which derives the basic facts of arithmetic, derives every sentence true in \( \nN \). Completeness says every sentence true in **all** models of a theory is derivable from it; incompleteness says that the sentences true in **the** intended model \( \nN \) are not all true in all models of any such theory. The two theorems do not conflict: the non-standard models are where they part.
+**Incompleteness, named.** Gödel showed in 1931 that no consistent theory whose axioms a mechanical procedure can list, and which derives the basic facts of arithmetic, derives every sentence true in \( \nN \). Completeness says every sentence true in **all** models of a theory is derivable from it. Incompleteness says that the sentences true in **the** intended model \( \nN \) are not all true in all models of any such theory. The two theorems do not conflict: the non-standard models are where they part.
 :::
 
 ::: {.check}
@@ -177,7 +189,7 @@ No: by the soundness statement of Section 7.2, \( T \vdash \sigma \) would make 
 ::: {.remark}
 [Looking ahead]
 
-*Number Systems: From \(\nN\) to \(\nR\)*, Chapter 1, takes the second-order induction principle as clause (P5) of a Peano system and proves that any two Peano systems are isomorphic; this section explains why no first-order list of axioms could do the same.
+*Number Systems: From \(\nN\) to \(\nR\)*, Chapter 1, takes the second-order induction principle as clause (P5) of a Peano system. It proves that any two Peano systems are isomorphic. This section explains why no first-order list of axioms could do the same.
 :::
 
 ## Exercises
@@ -203,7 +215,7 @@ No: by the soundness statement of Section 7.2, \( T \vdash \sigma \) would make 
 
 *(c)* An element that is not the value of any numeral \( \underline{n} \).
 
-*(d)* Each instance speaks of a set defined by a formula, and the standard elements are not such a set (the argument in "Induction: a schema and an axiom").
+*(d)* Each instance speaks of a set defined by a formula, and the standard elements are not such a set (the argument that no formula defines the standard elements).
 
 *(e)* Decidable: validity of a propositional claim (or of a monadic sentence). Undecidable: derivability of a first-order sentence.
 :::
@@ -252,7 +264,7 @@ Each part takes a line or two. The parts run from writing a counting sentence, t
 
 (k) Yes, by @thm-lowenheim-skolem.
 
-(l) "At least \( 3 \) and at most \( 3 \) elements" is one sentence, \( \sigma_3 \) with the "at most" sentence. No theory can do it for "finite": such a theory would have a model of every finite size (the structures built in the solution of C1), so by @exr-limits-of-first-order-logic-b1 it would have an infinite model, which is not finite.
+(l) "At least \( 3 \) and at most \( 3 \) elements" is one sentence, \( \sigma_3 \) with the "at most" sentence. No theory can do it for "finite". Such a theory would have a model of every finite size (the structures built in the solution of C1). So by @exr-limits-of-first-order-logic-b1 it would have an infinite model, which is not finite.
 :::
 
 ### B. Practice
@@ -272,7 +284,14 @@ Application. The axioms are (Refl), (Sym), (Trans) for \( R \) and
 \]
 "each \( x \) is related to exactly one element besides itself". For each \( k \ge 1 \), a set of \( 2k \) elements split into \( k \) pairs, with \( R \) "in the same pair", is a model, so there are models with at least \( n \) elements for every \( n \). So an infinite model exists; \( \nZ \) with \( R(x, y) \) read as "\( x \) and \( y \) lie in the same pair \( \{2m, 2m + 1\} \) for some \( m \in \nZ \)" is one.
 
-**Marking scheme.** (10 points) 3 for \( T' \) defined by adding axioms that force infinitely many elements (the \( \sigma_n \), or distinct new constants \( c_i \), the model then cut back to \( T \)'s symbols). 3 for every finite subset having a model, with the size argument. 2 for compactness applied and the model shown infinite. 2 for the application's sentence and models. Fatal error (0 for the proof): applying compactness to \( T' \) without checking its finite subsets.
+**What a complete answer needs.** (10 points)
+
+- 3: defines \( T' \) by adding axioms that force infinitely many elements: the \( \sigma_n \), or distinct new constants \( c_i \) with the model then cut back to \( T \)'s symbols.
+- 3: shows every finite subset has a model, with the size argument.
+- 2: applies compactness and shows the model infinite.
+- 2: gives the application's sentence and models.
+
+Slips that lose the step: applying compactness to \( T' \) without checking its finite subsets loses the whole proof.
 :::
 
 ::: {#exr-limits-of-first-order-logic-b2}
@@ -294,13 +313,18 @@ For each question, say which statement of this section or of Section 7.2 settles
 
 (ii) Completeness, second form: yes.
 
-(iii) No theorem makes it so, and it need not be: the sentence of @exr-models-c1 is true in every finite structure and false in \( \nN \) with \( f \) read as the successor, so it is not valid.
+(iii) No theorem makes it so, and it need not be. The sentence of @exr-models-c1 is true in every finite structure and false in \( \nN \) with \( f \) read as the successor. So it is not valid.
 
 (iv) Compactness: yes (@exm-non-standard-naturals).
 
-(v) The monadic remark: yes.
+(v) The decidability of sentences with one-place predicate symbols only, stated in this section: yes.
 
-**Marking scheme.** (10 points) 2 for each part: 1 for the statement named (in (iii), for saying that no statement settles it), 1 for the answer (in (iii), "no", with a counter-model). Fatal error (0 for (iii)): answering "yes, by completeness".
+**What a complete answer needs.** (10 points)
+
+- 2 for each part: 1 for the statement named, 1 for the answer.
+- In part (iii), the first point is for saying that no statement settles it, and the second for "no", with a counter-model.
+
+Slips that lose the step: answering "yes, by completeness" in part (iii) loses both of its points.
 :::
 
 ### C. Going deeper
@@ -324,9 +348,15 @@ Suppose \( \varphi \) were one, and consider the theory \( T = \{ \varphi \} \).
 :::
 
 ::: {.solution}
-Suppose \( \varphi \) is true in every finite structure for its symbols and in no infinite one. For each \( n \ge 1 \) there is a structure of size \( n \) for the symbols of \( \varphi \): take any \( n \)-element set, read each constant as one fixed element \( a \) of it, each function symbol as the function with the constant value \( a \), and each predicate symbol as the empty relation. It is finite, so \( \varphi \) is true in it. So \( T = \{ \varphi \} \) has finite models of every size, and by @exr-limits-of-first-order-logic-b1 it has an infinite model, in which \( \varphi \) is true: a contradiction.
+Suppose \( \varphi \) is true in every finite structure for its symbols and in no infinite one. For each \( n \ge 1 \) there is a structure of size \( n \) for the symbols of \( \varphi \). Take any \( n \)-element set, and fix one element \( a \) of it. Read each constant as \( a \), each function symbol as the function with the constant value \( a \), and each predicate symbol as the empty relation. It is finite, so \( \varphi \) is true in it. So \( T = \{ \varphi \} \) has finite models of every size, and by @exr-limits-of-first-order-logic-b1 it has an infinite model, in which \( \varphi \) is true: a contradiction.
 
-**Marking scheme.** (10 points) 3 for the supposition stated precisely. 4 for models of every finite size exhibited. 3 for B1 (or compactness directly) applied, and the contradiction named. Fatal error (0 for the proof): a "proof" that only shows that one particular sentence fails.
+**What a complete answer needs.** (10 points)
+
+- 3: states the supposition precisely.
+- 4: exhibits models of every finite size.
+- 3: applies B1 (or compactness directly), and names the contradiction.
+
+Slips that lose the step: a "proof" that only shows that one particular sentence fails loses the whole proof.
 :::
 
 ::: {#exr-limits-of-first-order-logic-c2}
@@ -349,7 +379,17 @@ with any other free variables of \( \psi \) bound by \( \forall \) in front. By 
 
 *(b)* \( \neg\varphi \) is satisfied by \( c^{\fM} \), which is non-standard, so (a) gives a least \( e \) satisfying \( \neg\varphi \): a least non-standard element. \( e \ne 0^{\fM} \), since \( 0^{\fM} \) is standard; and \( \forall x\, (\neg(x = 0) \to \exists y\, (S(y) = x)) \) is true in \( \nN \), so in \( \fM \). Choose \( d \) with \( S^{\fM}(d) = e \). Then \( d < e \) in \( \fM \), since \( \forall y\, (y < S(y)) \) is true in \( \nN \). And \( d \) is non-standard: if \( d \) were the value of \( \underline{n} \), then \( e = S^{\fM}(d) \) would be the value of \( \underline{n + 1} \). So \( d \) satisfies \( \neg\varphi \) and lies below \( e \), against the choice of \( e \).
 
-**Marking scheme.** (10 points) 4 for (a): the sentence, with \( y \) chosen not to occur in \( \psi \), so that it is free for \( x \), and the reading of \( \neg\psi[y/x] \) by @lem-term-substitution, its truth in \( \nN \) by the least-number principle, and the transfer to \( \fM \) through \( T \). 4 for (b): the predecessor \( d \) obtained from a sentence true in \( \nN \), with \( d < e \) and \( d \) non-standard both argued. 2 for the contradiction named. Fatal error (0 for (a)): the least-number principle used for an arbitrary subset of \( \fM \) rather than through a sentence of \( T \).
+**What a complete answer needs.** (10 points)
+
+- 4 for (a), shared among:
+  - the sentence, with \( y \) chosen not to occur in \( \psi \), so that it is free for \( x \);
+  - the reading of \( \neg\psi[y/x] \) by @lem-term-substitution;
+  - its truth in \( \nN \) by the least-number principle;
+  - the transfer to \( \fM \) through \( T \).
+- 4 for (b): the predecessor \( d \) obtained from a sentence true in \( \nN \), with \( d < e \) and \( d \) non-standard both argued.
+- 2: names the contradiction.
+
+Slips that lose the step: using the least-number principle for an arbitrary subset of \( \fM \), rather than through a sentence of \( T \), loses all of part (a).
 :::
 
 <!-- dependency ledger
