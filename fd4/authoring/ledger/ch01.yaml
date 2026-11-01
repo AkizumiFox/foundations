@@ -404,7 +404,7 @@ items:
   kind: proof
   file: 01-finite-sums.md
   line: 396
-  hash: 5ac491bd60b6
+  hash: 3d9303e449fa
   verdicts:
   - stage: S5a
     verdict: minor
@@ -436,10 +436,17 @@ items:
     evidence: 'The new extension sentence is mathematically fine: padding with b_k := 1 for (b) keeps
       every b_k ≠ 0. But 01:397 has no blank line before ''(a) Induction on n.'' at 01:398, so the two
       paragraphs render as one.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 3d9303e449fa
+    date: '2026-11-01'
+    evidence: '01:396-402 checked: extension with b_k:=1 keeps b_k!=0 for (b); (a) and (b) inductions
+      correct; redundant sentence dropped and (a) now its own paragraph.'
 - key: exm-telescoping-reciprocals
   kind: exm
   file: 01-finite-sums.md
-  line: 407
+  line: 408
   hash: 1e7db84f58a6
   verdicts:
   - stage: S5a
@@ -457,7 +464,7 @@ items:
 - key: exm-method-telescoping
   kind: exm
   file: 01-finite-sums.md
-  line: 417
+  line: 418
   hash: c6254ac99e65
   verdicts:
   - stage: S5a
@@ -493,7 +500,7 @@ items:
 - key: lem-difference-of-powers
   kind: lem
   file: 01-finite-sums.md
-  line: 429
+  line: 430
   hash: fa87e5d4b8bb
   verdicts:
   - stage: S5a
@@ -511,8 +518,8 @@ items:
 - key: proof:lem-difference-of-powers
   kind: proof
   file: 01-finite-sums.md
-  line: 443
-  hash: e553c7a0d415
+  line: 444
+  hash: 248e50ed4048
   verdicts:
   - stage: S5a
     verdict: correct
@@ -543,10 +550,17 @@ items:
     hash: e553c7a0d415
     date: '2026-11-01'
     evidence: It adds the one-line induction for 1^j = 1 (1^0 = 1, 1^{j+1} = 1^j·1 = 1), which is correct.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 248e50ed4048
+    date: '2026-11-01'
+    evidence: '01:444-452 checked: (z-w)z^k w^{n-1-k}=b_{k+1}-b_k, telescoping gives z^n-w^n; 1^j=1 by
+      induction; Uses line now lists @fd1:ax-induction (induction on j).'
 - key: exm-telescoping-squares
   kind: exm
   file: 01-finite-sums.md
-  line: 457
+  line: 458
   hash: 1a155655a27d
   verdicts:
   - stage: S5a
@@ -566,7 +580,7 @@ items:
 - key: check:01-finite-sums:3
   kind: check
   file: 01-finite-sums.md
-  line: 486
+  line: 487
   hash: ff94e002b08c
   verdicts:
   - stage: S5a
@@ -592,7 +606,7 @@ items:
 - key: exr-finite-sums-a1
   kind: exr
   file: 01-finite-sums.md
-  line: 510
+  line: 511
   hash: ba8e2619f1bc
   verdicts:
   - stage: S5a
@@ -634,7 +648,7 @@ items:
 - key: exr-finite-sums-b1
   kind: exr
   file: 01-finite-sums.md
-  line: 533
+  line: 534
   hash: 55c340ac8196
   verdicts:
   - stage: S5a
@@ -660,7 +674,7 @@ items:
 - key: exr-finite-sums-b2
   kind: exr
   file: 01-finite-sums.md
-  line: 547
+  line: 548
   hash: 3a4018438af9
   verdicts:
   - stage: S5a
@@ -687,7 +701,7 @@ items:
 - key: exr-finite-sums-b3
   kind: exr
   file: 01-finite-sums.md
-  line: 574
+  line: 575
   hash: 62cde3cc9263
   verdicts:
   - stage: S5a
@@ -728,7 +742,7 @@ items:
 - key: exr-finite-sums-b4
   kind: exr
   file: 01-finite-sums.md
-  line: 591
+  line: 592
   hash: 9d2b006ff008
   verdicts:
   - stage: S5a
@@ -754,7 +768,7 @@ items:
 - key: exr-finite-sums-c1
   kind: exr
   file: 01-finite-sums.md
-  line: 607
+  line: 608
   hash: f23046370786
   verdicts:
   - stage: S5a
@@ -1112,7 +1126,7 @@ items:
   kind: exm
   file: 02-the-binomial-theorem.md
   line: 285
-  hash: de8d685ff92e
+  hash: 5ca5eeb19293
   verdicts:
   - stage: S7r
     verdict: correct
@@ -1129,10 +1143,17 @@ items:
     evidence: This is a new example. Term by term, 4+12+12+4 = 32. Absorption with n = 3 gives (j+1)C(4,j+1)
       = 4C(3,j), and 4·2^3 = 32. The sidecar verify/ch01/exm-binomial-absorbed-sum.py passes. The ledger
       yaml has no entry for it yet (ledger init/refresh needed).
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 5ca5eeb19293
+    date: '2026-11-01'
+    evidence: '02:285-299 checked: sum k C(4,k)=32 term by term and via absorption 4*2^3; wording split
+      (B1/B6), blank line after display; math unchanged.'
 - key: exr-binomial-theorem-a1
   kind: exr
   file: 02-the-binomial-theorem.md
-  line: 305
+  line: 306
   hash: 87cec652179b
   verdicts:
   - stage: S5a
@@ -1160,7 +1181,7 @@ items:
 - key: exr-binomial-theorem-b1
   kind: exr
   file: 02-the-binomial-theorem.md
-  line: 328
+  line: 329
   hash: 246ea4d94978
   verdicts:
   - stage: S5a
@@ -1204,7 +1225,7 @@ items:
 - key: exr-binomial-theorem-b2
   kind: exr
   file: 02-the-binomial-theorem.md
-  line: 344
+  line: 345
   hash: 6ffc8ce016ad
   verdicts:
   - stage: S5a
@@ -1231,10 +1252,17 @@ items:
       and the row sum gives n2^{n-1}. Script check for n=1..19. But no worked example in Section 1.2 applies
       absorption inside a sum; absorption is used only in the proof of prp-binomial-factorial(a), l.106.
       Reported as a finding.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 6ffc8ce016ad
+    date: '2026-11-01'
+    evidence: 02:345 solution correct (n 2^{n-1} via absorption + row sum). The missing worked example
+      is now exm-binomial-absorbed-sum (02:285), which absorbs k inside a binomial sum and re-indexes.
 - key: exr-binomial-theorem-b3
   kind: exr
   file: 02-the-binomial-theorem.md
-  line: 364
+  line: 365
   hash: b9a40cccdb5b
   verdicts:
   - stage: S5a
@@ -1259,8 +1287,8 @@ items:
 - key: exr-binomial-theorem-c1
   kind: exr
   file: 02-the-binomial-theorem.md
-  line: 379
-  hash: 6eafac774c36
+  line: 380
+  hash: 02cb771c7e12
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1302,6 +1330,13 @@ items:
     date: '2026-11-01'
     evidence: The statement adds 'in ℤ'. The alternative-route rubric uses S(n+1) = 2S(n) + 2Σ jC(n,j),
       which I checked via j(j+1) = j(j−1) + 2j; with B2 the algebra gives (n+1)n·2^{n−1}.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 02cb771c7e12
+    date: '2026-11-01'
+    evidence: '02:380-410 checked: sum k(k-1)C(n,k)=n(n-1)2^{n-2} via two absorptions; induction alternative
+      sentence split for B6, marks unchanged (3+4+3=10).'
 - key: lem-bernoulli-strict
   kind: lem
   file: 03-inequalities-for-sums-and-products.md
@@ -1478,7 +1513,7 @@ items:
   kind: proof
   file: 03-inequalities-for-sums-and-products.md
   line: 149
-  hash: c6f1aa52e7b4
+  hash: 60b548f0b3cb
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1515,6 +1550,13 @@ items:
     evidence: The (⇒) summary now gives the two cases, which match the second-reading fold 'The equality
       case of the means'. The Uses line adds ordered-ring-rules (h) and reciprocal-order (a) for 1/m >
       0.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 60b548f0b3cb
+    date: '2026-11-01'
+    evidence: '03:149-168 checked: strict case by contrapositive; step split into two explicit cases (first
+      n not all equal -> strict IH; all equal to A_n and new term differs -> strict Bernoulli). Math unchanged.'
 - key: exm-method-am-gm
   kind: exm
   file: 03-inequalities-for-sums-and-products.md
@@ -1575,6 +1617,13 @@ items:
     evidence: '03:234-244: the math is right (sum n+2, mean 1+1/(n+1), not all equal). The pointer ''*Analysis
       on the Real Line*, Chapter 4'' matches series.py, where an1 Ch 4 = AN1.2. However, STATUS has no
       promise row for F4.6 §03 -> AN1.2 (03:244), although blueprint §8 records it as an opened promise.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: d483ccfd0617
+    date: '2026-11-01'
+    evidence: '03:227-244 checked: n+1 terms with sum n+2, mean 1+1/(n+1), not all equal, so strict AM-GM.
+      AN1 pointer correct; the missing STATUS promise row (F4.6 §03 -> AN1.2) is shared, sent to shared-todo.'
 - key: check:03-inequalities-for-sums-and-products:3
   kind: check
   file: 03-inequalities-for-sums-and-products.md
@@ -2055,7 +2104,7 @@ items:
   kind: exr
   file: 04-estimates-for-limits.md
   line: 258
-  hash: 00cc205db5ec
+  hash: ab3d831dd8e0
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2094,6 +2143,13 @@ items:
     date: '2026-11-01'
     evidence: (c) now names the bounding step and the dominant term (n^3 + 7 ≥ n^3), and the bound 1/n^2
       is right.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: ab3d831dd8e0
+    date: '2026-11-01'
+    evidence: '04:258-276 checked: (c) n^3+7>=n^3>0 gives n/(n^3+7)<=1/n^2; sentence split so each carries
+      one ref (B1). Math unchanged.'
 - key: exr-estimates-for-limits-b1
   kind: exr
   file: 04-estimates-for-limits.md
@@ -2486,6 +2542,13 @@ items:
     evidence: 05:178 says the computations use only parts (a), (c) and identity (d). The m < k computation
       (05:174-176) also uses 1^m = 1, which is none of these. Otherwise both computations are correct,
       and 05:170 now correctly states that (d) for natural exponents is proved first in the sign cases.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 807151ad2e3e
+    date: '2026-11-01'
+    evidence: '05:151-178 checked: m>=k and m<k computations correct; closing claim now lists (a), (c),
+      identity (d) and 1^m=1, which is all the m<k case uses.'
 - key: proof:prp-integer-power-laws
   kind: proof
   file: 05-roots-and-rational-powers.md
@@ -2925,7 +2988,7 @@ items:
   kind: exr
   file: 05-roots-and-rational-powers.md
   line: 511
-  hash: 926f978890f3
+  hash: 09efbff08457
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2964,10 +3027,17 @@ items:
     date: '2026-11-01'
     evidence: The rubric now accepts the direct route over a common denominator, and the points still
       sum to 10.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 09efbff08457
+    date: '2026-11-01'
+    evidence: '05:511-549 checked: reciprocal route scheme restored (2+3+2+2+1); direct route given its
+      own scheme: c=a^{1/n} in (0,1), c^{p-m}<1, c^p=c^m c^{p-m}<c^m (c^m>0), a^r=c^m>c^p=a^s, (ii) (3+2+2+2+1=10).'
 - key: exr-roots-and-rational-powers-c2
   kind: exr
   file: 05-roots-and-rational-powers.md
-  line: 545
+  line: 553
   hash: 9d612e25dfc3
   verdicts:
   - stage: S5a
@@ -3002,8 +3072,8 @@ items:
 - key: exr-roots-and-rational-powers-r1
   kind: exr
   file: 05-roots-and-rational-powers.md
-  line: 594
-  hash: b68e1a9bf6d5
+  line: 602
+  hash: 9e370210ac6c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3041,10 +3111,17 @@ items:
     date: '2026-11-01'
     evidence: The positivity of √k + √(k+1) now comes from √(k+1) > 0, which handles k = 0 correctly.
       The ledger line was added.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 9e370210ac6c
+    date: '2026-11-01'
+    evidence: '05:595-610 checked: sqrt(k+1)>0, sqrt k>=0 so denominator >0; (sqrt(k+1)-sqrt k)(sqrt(k+1)+sqrt
+      k)=1; telescopes to sqrt(n+1)-1. Run-on split into two sentences.'
 - key: exr-roots-and-rational-powers-r2
   kind: exr
   file: 05-roots-and-rational-powers.md
-  line: 611
+  line: 619
   hash: 7b55530e4b8e
   verdicts:
   - stage: S5a
@@ -3069,7 +3146,7 @@ items:
 - key: exr-roots-and-rational-powers-r3
   kind: exr
   file: 05-roots-and-rational-powers.md
-  line: 621
+  line: 629
   hash: 84704498fe38
   verdicts:
   - stage: S5a

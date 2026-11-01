@@ -394,7 +394,8 @@ Let \( R \) be a commutative ring, \( n \in \nN \) and \( b_0, \dots, b_{n+1} \i
 :::
 
 ::: {.proof}
-By the finite-lists remark we may extend \( b_0, \dots, b_{n+1} \) to a sequence \( (b_k)_{k \in \nN} \); for (b) we extend with \( b_k \coloneqq 1 \) for \( k > n + 1 \), so that every \( b_k \ne 0 \). We prove (a) and (b) for every \( n \) by induction.
+By the finite-lists remark we may extend \( b_0, \dots, b_{n+1} \) to a sequence \( (b_k)_{k \in \nN} \); for (b) we extend with \( b_k \coloneqq 1 \) for \( k > n + 1 \), so that every \( b_k \ne 0 \).
+
 (a) Induction on \( n \). For \( n = 0 \) the sum is its one term \( b_1 - b_0 \). If the sum up to \( n \) is \( b_{n+1} - b_0 \), then the sum up to \( n + 1 \) is \( (b_{n+1} - b_0) + (b_{n+2} - b_{n+1}) = b_{n+2} - b_0 \).
 
 (b) The same induction with products. For \( n = 0 \) the product is \( \frac{b_1}{b_0} \). At the step, \( \frac{b_{n+1}}{b_0} \cdot \frac{b_{n+2}}{b_{n+1}} = b_{n+2} b_0^{-1} \bigl( b_{n+1} b_{n+1}^{-1} \bigr) = \frac{b_{n+2}}{b_0} \), since \( b_{n+1} b_{n+1}^{-1} = 1 \).
@@ -448,7 +449,7 @@ Let \( b_k \coloneqq z^k w^{n-k} \) for \( 0 \le k \le n \). For \( 0 \le k \le 
 since \( z z^k = z^{k+1} \) and \( w\, w^{n-1-k} = w^{n-k} \) by the recursion for powers. By @lem-ring-finite-sums (b), the product \( (z - w) \sum_{k=0}^{n-1} z^k w^{n-1-k} \) is therefore \( \sum_{k=0}^{n-1} (b_{k+1} - b_k) \). Since \( n - 1 \in \nN \), @thm-telescoping (a) with \( n - 1 \) in place of \( n \) gives \( b_n - b_0 = z^n w^0 - z^0 w^n = z^n - w^n \). The particular case is \( w = 1 \), since \( 1^j = 1 \) for every \( j \in \nN \) (by induction, \( 1^0 = 1 \) and \( 1^{j+1} = 1^j \cdot 1 = 1 \)).
 
 ::: {.uses}
-@fd3:def-commutative-ring-and-field (F5)–(F7), (F9), ring rules.
+@fd1:ax-induction (induction on j); @fd3:def-commutative-ring-and-field (F5)–(F7), (F9), ring rules.
 :::
 :::
 

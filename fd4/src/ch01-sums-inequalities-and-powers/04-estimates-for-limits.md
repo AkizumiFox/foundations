@@ -271,7 +271,7 @@ Change one hypothesis of @cor-binomial-real (b): keep \( k = 2 \) and allow \( h
 
 (b) On \( \varepsilon \) only. It cannot depend on \( n \): \( N \) is chosen before \( n \) is named, and the claim is about **every** \( n \ge N \).
 
-(c) Bounding the distance by shrinking the denominator (the bounding step of @fd3:exm-method-limit-from-definition), here by keeping its dominant term \( n^3 \) (@exm-method-dominant-term) and dropping the positive \( 7 \), so \( n^3 + 7 \ge n^3 > 0 \) and \( n/(n^3 + 7) \le n/n^3 = 1/n^2 \).
+(c) Bounding the distance by shrinking the denominator, the bounding step of @fd3:exm-method-limit-from-definition. Here we keep the dominant term \( n^3 \) and drop the positive \( 7 \), as in @exm-method-dominant-term. So \( n^3 + 7 \ge n^3 > 0 \) and \( n/(n^3 + 7) \le n/n^3 = 1/n^2 \).
 
 (d) True. Given \( \varepsilon > 0 \), take an integer \( N' > 5/\varepsilon \) and \( N \coloneqq \max\{10, N'\} \). For \( n \ge N \), \( \abs{a_n - 0} \le 5/n \le 5/N < \varepsilon \).
 :::

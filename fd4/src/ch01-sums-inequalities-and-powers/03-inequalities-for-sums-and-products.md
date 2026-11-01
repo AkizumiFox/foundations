@@ -163,7 +163,7 @@ This is the claim for \( n + 1 \), and (a) is proved.
 
 (b) \( (\Leftarrow) \) If every \( a_k \) equals \( a \), then \( A = \frac1n (na) = a \), and both sides of (a) are \( a^n \).
 
-\( (\Rightarrow) \) We prove the contrapositive: if the \( a_k \) are not all equal, then \( a_1 \cdots a_n < A^n \). With a zero among them this is immediate. For positive numbers, the induction of (a) runs again, with the strict Bernoulli inequality (@lem-bernoulli-strict) in place of Bernoulli's inequality. In the step, either the first \( n \) numbers are not all equal, so the induction hypothesis is strict, or they are all equal to \( A_n \), the new number differs from \( A_n \), and the strict Bernoulli inequality applies.
+\( (\Rightarrow) \) We prove the contrapositive: if the \( a_k \) are not all equal, then \( a_1 \cdots a_n < A^n \). With a zero among them this is immediate. For positive numbers, the induction of (a) runs again, with the strict Bernoulli inequality (@lem-bernoulli-strict) in place of Bernoulli's inequality. In the step there are two cases. If the first \( n \) numbers are not all equal, the induction hypothesis is strict. If they are all equal to \( A_n \), the new number differs from \( A_n \), and the strict Bernoulli inequality applies.
 
 ::: {.uses}
 @prp-sum-order (a): sums respect order. @fd2:prp-power-laws (e): powers of positives. @fd3:prp-ordered-ring-rules (c), (h): multiplying by a positive; \( m > 0 \). @fd3:prp-reciprocal-order (a): \( \frac1m > 0 \). @prp-power-laws-commutative-ring (a), (c): power laws.

@@ -291,10 +291,11 @@ Compute \( \sum_{k=1}^{4} k \binom{4}{k} \) in two ways: term by term, and by ab
 ::: {.solution}
 Term by term, with row \( 4 \): \( 1 \cdot 4 + 2 \cdot 6 + 3 \cdot 4 + 4 \cdot 1 = 4 + 12 + 12 + 4 = 32 \).
 
-By absorption: shift the index by \( k = j + 1 \) (@fd2:def-sum-product), so the sum is \( \sum_{j=0}^{3} (j + 1) \binom{4}{j+1} \). @prp-binomial-absorption with \( n = 3 \) gives \( (j + 1) \binom{4}{j+1} = 4 \binom{3}{j} \). Taking the constant \( 4 \) out of the sum (@lem-ring-finite-sums (b)) and using the row sum @cor-binomial-real (a) for \( n = 3 \),
+By absorption: shift the index by \( k = j + 1 \) (@fd2:def-sum-product), so the sum is \( \sum_{j=0}^{3} (j + 1) \binom{4}{j+1} \). @prp-binomial-absorption with \( n = 3 \) gives \( (j + 1) \binom{4}{j+1} = 4 \binom{3}{j} \). The constant \( 4 \) comes out of the sum by @lem-ring-finite-sums (b). The row sum @cor-binomial-real (a) for \( n = 3 \) then gives
 \[
 \sum_{k=1}^{4} k \binom{4}{k} = \sum_{j=0}^{3} 4 \binom{3}{j} = 4 \sum_{j=0}^{3} \binom{3}{j} = 4 \cdot 2^3 = 32 .
 \]
+
 The second computation never uses the entries of row \( 4 \): absorption turns the factor \( k \) into the constant \( 4 \), and what is left is all of row \( 3 \), whose sum is \( 2^3 \).
 :::
 
@@ -406,7 +407,7 @@ Check \( n = 3 \): \( a_2 + a_3 = 2 \cdot 3 + 6 \cdot 1 = 12 = 6 \cdot 2 \).
 - 3: the first absorption, \( k \binom{n}{k} = n \binom{n-1}{k-1} \), with its range \( k \ge 1 \) stated.
 - 3: the second absorption, \( (k - 1) \binom{n-1}{k-1} = (n - 1) \binom{n-2}{k-2} \), with its range \( k \ge 2 \), \( n \ge 2 \) stated.
 - 2: the index shift and the row sum @cor-binomial-real (a) for \( n - 2 \).
-A route through @prp-binomial-factorial (c) earns the absorption points for the equivalent identity \( k(k - 1) \binom{n}{k} = n(n - 1) \binom{n-2}{k-2} \), proved for \( k \ge 2 \). An induction on \( n \) from \( n = 2 \), with Pascal's rule and @exr-binomial-theorem-b2, also earns full marks: 3 for the base case and the set-up, 4 for the Pascal split \( S(n + 1) = 2S(n) + 2 \sum_{j=0}^{n} j \binom{n}{j} \), where \( S(n) \) is the sum, and 3 for the algebra with B2.
+A route through @prp-binomial-factorial (c) earns the absorption points for the equivalent identity \( k(k - 1) \binom{n}{k} = n(n - 1) \binom{n-2}{k-2} \), proved for \( k \ge 2 \). An induction on \( n \) from \( n = 2 \), with Pascal's rule and @exr-binomial-theorem-b2, also earns full marks. It scores 3 for the base case and the set-up, 4 for the Pascal split \( S(n + 1) = 2S(n) + 2 \sum_{j=0}^{n} j \binom{n}{j} \), where \( S(n) \) is the sum, and 3 for the algebra with B2.
 
 **Slips that lose the step.** Applying absorption at \( k = 0 \), where it would need \( \binom{n-1}{-1} \), earns 0 for that step.
 :::

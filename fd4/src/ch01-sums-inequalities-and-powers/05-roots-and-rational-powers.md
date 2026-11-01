@@ -85,7 +85,7 @@ For \( n = 2 \), the number \( \sqrt[2]{a} \) is non-negative and squares to \( 
 :::
 :::
 
-The two values of \( h \) were found by working backwards from what we wanted. Each depends on \( a \), \( n \) and \( s \) only. Completeness was used once, to produce \( s \). For \( a > 0 \) the root is positive, since \( 0^n = 0 \ne a \). For instance \( \sqrt[3]{8} = 2 \) and \( \sqrt[4]{4} = \sqrt 2 \), since \( 2^3 = 8 \) and \( (\sqrt 2)^4 = \bigl((\sqrt 2)^2\bigr)^2 = 4 \), and both are non-negative. In this chapter the symbol \( \sqrt[n]{a} \) is used only for **non-negative real** \( a \) (Chapter 8 adds odd roots of negative reals); Chapter 3 shows why it could not mean "the" \( n \)-th root of a complex number.
+The two values of \( h \) were found by working backwards from what we wanted. Each depends on \( a \), \( n \) and \( s \) only. Completeness was used once, to produce \( s \). For \( a > 0 \) the root is positive, since \( 0^n = 0 \ne a \). For instance \( \sqrt[3]{8} = 2 \) and \( \sqrt[4]{4} = \sqrt 2 \), since \( 2^3 = 8 \) and \( (\sqrt 2)^4 = \bigl((\sqrt 2)^2\bigr)^2 = 4 \), and both are non-negative. In this chapter the symbol \( \sqrt[n]{a} \) is used only for **non-negative real** \( a \). Chapter 8 adds odd roots of negative reals, and Chapter 3 shows why it could not mean "the" \( n \)-th root of a complex number.
 
 The last example already used the working principle of this section. To identify a root, we do not compute it: we take a candidate, check that it is non-negative, and check that its \( n \)-th power is \( a \). Uniqueness in part (b) does the rest. Each equation between roots follows this way from a rule for powers.
 
@@ -175,7 +175,7 @@ If \( m < k \), then \( a^{-k} = (a^{-1})^{m} (a^{-1})^{k-m} \) and \( a^m (a^{-
 \[
 a^m a^{-k} = (a a^{-1})^m \, (a^{-1})^{k-m} = (a^{-1})^{k-m} = a^{-(k-m)} = a^{m+n} .
 \]
-Both computations use only the laws for natural exponents, parts (a) and (c) of @prp-power-laws-commutative-ring, together with that identity.
+Both computations use only the laws for natural exponents, parts (a) and (c) of @prp-power-laws-commutative-ring, together with that identity and \( 1^m = 1 \).
 
 ::: {.second-reading title="The sign cases for integer powers"}
 ::: {.proof}
@@ -534,10 +534,18 @@ a^r = (b^r)^{-1} > (b^s)^{-1} = a^s .
 (ii) Let \( r > 0 \). By (i) with the exponents \( 0 < r \), \( a^r < a^0 \), and \( a^0 = 1 \), since by @prp-rational-power-well-defined \( a^0 \) is the integer power \( a^0 = 1 \).
 
 **What a complete answer needs.** (10 points)
-- 2: reduces to a base above one (\( b = \frac1a > 1 \), with the reason), or proves the reversal of order for a base in \( (0, 1) \) directly.
-- 3: the link to that base, \( a^t = (b^t)^{-1} \) from (c) of the laws and \( 1^t = 1 \); or, over a common denominator, \( c = \sqrt[n]{a} \in (0, 1) \) with the reason.
-- 2: the law (e) applied to a base above one, not to \( a \); or \( c^p < c^m \) from \( m < p \) with positivity.
-- 2: the reversal of order under reciprocals, with positivity from (d); or the corresponding step of the direct route.
+- 2: reduces to a base above one, \( b = \frac1a > 1 \), with the reason.
+- 3: the link to that base, \( a^t = (b^t)^{-1} \) from (c) of the laws and \( 1^t = 1 \).
+- 2: the law (e) applied to a base above one, not to \( a \).
+- 2: the reversal of order under reciprocals, with positivity from (d).
+- 1: (ii) from (i), with \( a^0 = 1 \).
+
+Alternatively, over a common denominator \( r = \frac{m}{n} \), \( s = \frac{p}{n} \):
+
+- 3: \( c = \sqrt[n]{a} \in (0, 1) \) with the reason, and \( m < p \).
+- 2: \( c^{p-m} < 1 \), with the reason (for instance \( (1/c)^{p-m} > 1 \)).
+- 2: \( c^p = c^m c^{p-m} < c^m \), using \( c^m > 0 \).
+- 2: the conclusion \( a^r = c^m > c^p = a^s \).
 - 1: (ii) from (i), with \( a^0 = 1 \).
 Slips that lose the step: applying (e) to a base \( a < 1 \).
 :::
@@ -598,7 +606,7 @@ Compute \( \displaystyle\sum_{k=1}^{n} \frac{1}{\sqrt{k} + \sqrt{k + 1}} \) for 
 :::
 
 ::: {.solution}
-The tool is telescoping (@exm-method-telescoping). Since \( (\sqrt{k+1} - \sqrt k)(\sqrt{k+1} + \sqrt k) = (k + 1) - k = 1 \), and \( \sqrt{k+1} > 0 \) since \( k + 1 > 0 \), so \( \sqrt k + \sqrt{k+1} > 0 \),
+The tool is telescoping (@exm-method-telescoping). Since \( k + 1 > 0 \), \( \sqrt{k+1} > 0 \), so \( \sqrt k + \sqrt{k+1} > 0 \). Since \( (\sqrt{k+1} - \sqrt k)(\sqrt{k+1} + \sqrt k) = (k + 1) - k = 1 \),
 \[
 \frac{1}{\sqrt k + \sqrt{k + 1}} = \sqrt{k + 1} - \sqrt k .
 \]
