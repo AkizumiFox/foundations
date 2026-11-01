@@ -2088,6 +2088,14 @@ items:
       in Section 1.1''; that remark exists at 01-pairs-of-reals.md:260 and proves iota(a^n) = iota(a)^n.
       The induction step (n+1)theta = n theta + theta uses fd3:def-naturals-in-ordered-field (a) (verified:
       (n+1)*1_F = n*1_F + 1_F) with distributivity. r^n > 0 follows from ordered-ring-rules ('
+  - stage: S8
+    verdict: minor
+    by: S8:03
+    hash: 0633e4a7ccc8
+    date: '2026-11-01'
+    evidence: 05-polar-form.md:228 says 'by the remark after @prp-power-laws-commutative-ring in Section
+      3.1'. That label now lives in Chapter 1, Section 1.1, so the 'remark after' it in Section 3.1 is
+      a pre-merge leftover.
 - key: exm-special-angles
   kind: exm
   file: 05-polar-form.md
@@ -2350,6 +2358,47 @@ items:
       then de Moivre at -theta gives e^{in(-theta)} = e^{-in theta}. The S5b finding is resolved: line
       405 now says ''Nothing in this chapter uses negative powers of complex numbers''. A grep of ch01
       shows only ^{-1} inv'
+  - stage: S5a
+    verdict: minor
+    by: A:03/05
+    hash: f377cdad0b21
+    date: '2026-11-01'
+    evidence: '05-polar-form.md:388-405. (a) The expansion checks out: ((c^2-s^2)+2cs i)(c+is) = (c^3-3cs^2)+(3c^2
+      s-s^3)i, then T1 gives 4c^3-3c and 3s-4s^3. thm-de-moivre at n=3 is cited correctly. (b) def-integer-power
+      (Ch1, any field F with a != 0) applies: C is a field, and e^{i theta} != 0 because thm-polar-multiplication
+      (b) gives its inverse. The steps (e^{i theta})^{-n} = ((e^{i theta})^{-1})^n = (e^{i(-theta)})^n
+      = e^{in(-theta)} are justified by the definition, thm-polar-multiplication (b) and thm-de-moivre
+      at -theta. The only problem is wording: theta is unquantified in part (b) (line 390).'
+  - stage: S5b
+    verdict: minor
+    by: B:03/05
+    hash: f377cdad0b21
+    date: '2026-11-01'
+    evidence: '05-polar-form.md:384-406. The math is right: the expansion of (c+is)^3 and the triple-angle
+      identities check, and (b) follows from thm-polar-multiplication (b) plus De Moivre at -θ. Three
+      wording problems: the closing remark at :405 still speaks of "the definition in (b)" now that (b)
+      cites @def-integer-power; θ is never bound in part (b) (:389); and the merge-seam claims about who
+      uses negative powers disagree (see findings).'
+  - stage: S6
+    verdict: minor
+    by: S6:03a
+    hash: f377cdad0b21
+    date: '2026-11-01'
+    evidence: '05-polar-form.md:384-406. Before reading the book''s solution I solved it via De Moivre
+      with n=3: the real part gives 4c^3-3c using T1, and the imaginary part gives 3s-4s^3. For (b), (e^{iθ})^{-1}=e^{-iθ}
+      by thm-polar-multiplication (b), then De Moivre at -θ. The book''s solution matches and is complete.
+      My own script confirms both: the expansion (c+is)^3 = (c^3-3cs^2)+(3c^2s-s^3)i, both identities
+      at 1000 random θ, and (1/e^{iθ})^n = e^{-inθ} for n=0..12. The ''n ∈ ℕ includes 0'' case is covered
+      because De Moivre holds for n ∈ ℕ. An addition-formula proof would also work, and no marking scheme
+      or hint ladder applies. Minor findings only: a stale verify path in the claims table, and the closing
+      remark contradicts a promise in ch01.'
+  - stage: S8
+    verdict: minor
+    by: S8:03
+    hash: f377cdad0b21
+    date: '2026-11-01'
+    evidence: 05-polar-form.md:404 says 'the definition in (b) is for practice only'. Part (b) now cites
+      @def-integer-power from Chapter 1 and defines nothing. The ledger marks this item STALE.
 - key: exr-polar-form-c2
   kind: exr
   file: 05-polar-form.md
@@ -2440,6 +2489,14 @@ items:
     evidence: 06:103-125. z=0 is excluded, then De Moivre and polar uniqueness give (a). (b) passes Z
       into R, covered by ledger 473. (c) uses @fd3:prp-divisibility-rules-integers (e) (a positive multiple
       is >= n) and @fd3:thm-integers-division-remainder (a). Both were checked against fd3's statements.
+  - stage: S8
+    verdict: minor
+    by: S8:03
+    hash: 20e52c5fe6c1
+    date: '2026-11-01'
+    evidence: 06-roots-of-unity.md:37 (also :286 in the C1 solution) cites @lem-reals-nth-root (b) for
+      the root being > 0. Part (b) of the Chapter 1 lemma (ch01/05:18) only gives b >= 0. Positivity is
+      in Chapter 1's prose (05:88), not in the statement.
 - key: exm-roots-of-unity
   kind: exm
   file: 06-roots-of-unity.md
@@ -2856,6 +2913,49 @@ items:
     evidence: 06:413-425. thm-complex-nth-roots (b) gives well-definedness and injectivity, and (a) gives
       surjectivity. Homomorphism via thm-polar-multiplication (a). fd3:def-integers-mod-n-ring allows
       n≥1, so the statement covers n=1. The source is cited with @ref.
+  - stage: S5a
+    verdict: minor
+    by: A:03/06
+    hash: 6fcc5335811f
+    date: '2026-11-01'
+    evidence: fd4/src/ch03-complex-numbers/06-roots-of-unity.md:346-358. The mathematics is correct. Well-definedness
+      and injectivity follow from thm-complex-nth-roots (b) with c = 1 = 1·e^{i0} and the n-th root of
+      1 equal to 1. Surjectivity follows from (a). The homomorphism step follows from thm-polar-multiplication
+      (a), since 2π(k+l)/n = 2πk/n + 2πl/n. The problems are a stale citation left by the merge (the solution
+      cites fd2's school-integer Z/n instead of fd4 Chapter 2's Z/nZ, and gives no citation for [k]+[l]=[k+l])
+      and breaches of STYLE §13 B1 and B11.
+  - stage: S5b
+    verdict: minor
+    by: B:03/06
+    hash: 6fcc5335811f
+    date: '2026-11-01'
+    evidence: '06-roots-of-unity.md:349-357. The mathematics is correct: well-definedness and injectivity
+      come from thm-complex-nth-roots (b), surjectivity from (a), and the homomorphism property from thm-polar-multiplication
+      (a). The problems are at the merge seam. The solution writes Z/nZ, which in this volume is the ring
+      of Chapter 2 (def-integers-mod-n-ring), but cites the Z/n of fd2 instead. The rule [k]+[l]=[k+l]
+      has no citation and no ledger line. The STATUS row and the blueprint still carry pre-merge pointers.
+      All of these are listed under findings.'
+  - stage: S6
+    verdict: minor
+    by: S6:03a
+    hash: 6fcc5335811f
+    date: '2026-11-01'
+    evidence: '06-roots-of-unity.md:346-358. My solution: thm-complex-nth-roots (b) gives well-definedness
+      and injectivity, (a) gives membership in μ_n and surjectivity, and thm-polar-multiplication (a)
+      gives the homomorphism property. The book''s solution matches this and is correct. Script check
+      for n=1..12: f is well defined on k in [-30,30), injective on 0..n-1, lands in μ_n, and is multiplicative.
+      The R item hides its source (''[R2]''), and the solution names its tools with @ref. The ''Chapter
+      5'' pointer is correct: fd4 Ch5 = F5.3, and def-group-homomorphism defines isomorphism as a bijective
+      homomorphism. Minor: after the merge, Z/nZ and its addition are cited from the fd2 school construction,
+      not fd4''s own Chapter 2 ring.'
+  - stage: S8
+    verdict: minor
+    by: S8:03
+    hash: 6fcc5335811f
+    date: '2026-11-01'
+    evidence: '06:346-357. After the merge the previous chapter is fd4 Chapter 2 (Z/nZ, def-integers-mod-n-ring).
+      R2''s solution still cites only fd2, and R1 (fd3 Chapter 6) is now 3 chapters back, so the R1/R2
+      roles of STYLE §11.5 are swapped. Ledger: STALE.'
 - key: exr-roots-of-unity-r3
   kind: exr
   file: 06-roots-of-unity.md
