@@ -468,7 +468,7 @@ This is the school argument of @fd1:thm-sqrt2-irrational, now with every step ci
 
 *A prime \( p \).* The same argument works with "\( p \mid \)" in place of "even": from \( a^2 = p b^2 \), \( p \mid a \cdot a \), so \( p \mid a \) by @cor-prime-divides-product (b); \( a = pc \) gives \( p^2 c^2 = p b^2 \), so \( b^2 = p c^2 \) (cancel \( p \ne 0 \)), and \( p \mid b \) in the same way. Then \( p \mid \gcd(a, b) = 1 \), against \( p \ge 2 \).
 
-*Comparison.* Chapter 2's proof, @fd3:thm-no-rational-square-two, needed neither parity nor gcd: it descended to a smaller denominator using order alone. The argument here is shorter, but it stands on lowest terms, and lowest terms stands on Bézout (@prp-rationals-lowest-terms uses @cor-coprime-iff-combination).
+*Comparison.* The proof in *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 3 (@fd3:thm-no-rational-square-two) needed neither parity nor gcd: it descended to a smaller denominator using order alone. The argument here is shorter, but it stands on lowest terms, and lowest terms stands on Bézout (@prp-rationals-lowest-terms uses @cor-coprime-iff-combination).
 :::
 
 ::: {#exr-units-and-crt-r4}
@@ -492,33 +492,33 @@ if \( 2(3x - 2) = 10k = 2(5k) \), cancel \( 2 \ne 0 \) (@fd3:prp-ordered-ring-ru
 <!-- dependency ledger
 thm-units-mod-n (proof): the class test (opening paragraph) [u] = [v] iff n | u - v | thm-quotient-ring-by-ideal (a) with fd2:thm-classes-partition (b), def-integer-linear-combinations, fd2:def-divides, cited
 def-ring-unit (claim): uniqueness of the inverse, closure under products and inverses, a unit is not a zero divisor | (F5)-(F7) of fd3:def-commutative-ring-and-field, fd3:prp-ring-algebra (b); inline
-def-ring-unit (example): Z^x = {1, -1}; Q^x = Q \ {0}; units of Z/6Z; the products [2][x] | fd3:prp-divisibility-rules-integers (g), fd3:prp-ring-algebra (b), (c), fd3:thm-rationals-field, exm-integers-mod-six, cited; verify/ch03/def-ring-unit.py
+def-ring-unit (example): Z^x = {1, -1}; Q^x = Q \ {0}; units of Z/6Z; the products [2][x] | fd3:prp-divisibility-rules-integers (g), fd3:prp-ring-algebra (b), (c), fd3:thm-rationals-field, exm-integers-mod-six, cited; verify/ch02/def-ring-unit.py
 def-ring-unit (claim): (paragraph after the warning) units form a group | Chapter 5 (F5.3, prose pointer; nothing here depends on it)
 thm-units-mod-n (proof): every element of Z/nZ is a class [x] | fd2:def-quotient-set, cited
-thm-units-mod-n (claim): (quick check after exm-unit-inverse-mod-n) [3]^{-1} = [5] in Z/7Z | inline arithmetic; verify/ch03/thm-units-mod-n.py
-exm-unit-inverse-mod-n (example): Euclidean run on (60, 17), back-substitution, 17 * 53 = 901 = 15 * 60 + 1; gcd(12, 60) = 12; [12][5] = [0] | inline arithmetic; verify/ch03/exm-unit-inverse-mod-n.py
-thm-integers-mod-prime-field (proof): s > 0 from rs = n > 0; s != n by cancellation | fd3:prp-ring-algebra (b), fd3:prp-ordered-ring-rules (c), (f), cited; inline; verify/ch03/thm-integers-mod-prime-field.py (n <= 200)
+thm-units-mod-n (claim): (quick check after exm-unit-inverse-mod-n) [3]^{-1} = [5] in Z/7Z | inline arithmetic; verify/ch02/thm-units-mod-n.py
+exm-unit-inverse-mod-n (example): Euclidean run on (60, 17), back-substitution, 17 * 53 = 901 = 15 * 60 + 1; gcd(12, 60) = 12; [12][5] = [0] | inline arithmetic; verify/ch02/exm-unit-inverse-mod-n.py
+thm-integers-mod-prime-field (proof): s > 0 from rs = n > 0; s != n by cancellation | fd3:prp-ring-algebra (b), fd3:prp-ordered-ring-rules (c), (f), cited; inline; verify/ch02/thm-integers-mod-prime-field.py (n <= 200)
 thm-integers-mod-prime-field (claim): (aftermath) Z/2Z has the tables of fd3:exm-finite-ring-not-orderable; Chapter 4 names these fields | inline comparison of tables; F5.2 prose pointer, nothing here depends on it
 thm-integers-mod-prime-field (claim): (remark) 5 is prime; 5 * [1] = [0]; Z/5Z cannot be ordered | the small-primes remark of Section 2.2; thm-integers-mod-n-ring (d), (e), cited
-thm-chinese-remainder-two (proof): the identities x - a = m(bu - au), x - b = n(av - bv) | fd3:prp-ring-algebra; inline; verify/ch03/thm-chinese-remainder-two.py
+thm-chinese-remainder-two (proof): the identities x - a = m(bu - au), x - b = n(av - bv) | fd3:prp-ring-algebra; inline; verify/ch02/thm-chinese-remainder-two.py
 thm-chinese-remainder-two (proof): componentwise operations on Z/mZ x Z/nZ | defined in the statement; fd2:def-cartesian-product
 thm-chinese-remainder-two (claim): (aftermath) the componentwise product of two commutative rings is a commutative ring | each axiom is an equation, checked in each coordinate; inline, not used in any proof
-thm-chinese-remainder-two (idea): try-it-first numbers e = -5, f = 6, 2e + 3f = 8 | verify/ch03/thm-chinese-remainder-two.py
-exm-chinese-remainder-instances (example): x = 8, 8 + 15Z; 2 + 4Z, 6 - 2 = 4, Phi([0]) = Phi([4]) | inline arithmetic; verify/ch03/exm-chinese-remainder-instances.py
+thm-chinese-remainder-two (idea): try-it-first numbers e = -5, f = 6, 2e + 3f = 8 | verify/ch02/thm-chinese-remainder-two.py
+exm-chinese-remainder-instances (example): x = 8, 8 + 15Z; 2 + 4Z, 6 - 2 = 4, Phi([0]) = Phi([4]) | inline arithmetic; verify/ch02/exm-chinese-remainder-instances.py
 exm-chinese-remainder-instances (example): well-definedness of Phi for non-coprime 2, 4 | first step of the proof of thm-chinese-remainder-two (b), which uses only m | mn and n | mn; inline
-exm-chinese-remainder-instances (claim): (remark after it) [x] -> [2][x] on Z/5Z is injective via [3][2] = [1], hence surjective by counting | (F5)-(F7); thm-integers-mod-n-ring (b); fd2:thm-finite-no-proper-copy, group (i) of F3.1's citing rule (fd3:cor-omega-identification), cited; verify/ch03/exm-chinese-remainder-instances.py
-exr-units-and-crt-a1 (solution): [5]^2 = [1] mod 12; units of Z/12Z; x = -7, 29 + 36Z | verify/ch03/exr-units-and-crt-a1.py
-exr-units-and-crt-b1 (solution): a^2 - 1 = (a - 1)(a + 1); [3]^2 = [1] in Z/8Z, units of Z/8Z square to [1] | fd3:prp-ring-algebra; verify/ch03/exr-units-and-crt-b1.py
-exr-units-and-crt-b2 (solution): the product identity (xs + mt)(xs' + nt') | fd3:prp-ring-algebra; verify/ch03/exr-units-and-crt-b2.py
+exm-chinese-remainder-instances (claim): (remark after it) [x] -> [2][x] on Z/5Z is injective via [3][2] = [1], hence surjective by counting | (F5)-(F7); thm-integers-mod-n-ring (b); fd2:thm-finite-no-proper-copy, group (i) of F3.1's citing rule (fd3:cor-omega-identification), cited; verify/ch02/exm-chinese-remainder-instances.py
+exr-units-and-crt-a1 (solution): [5]^2 = [1] mod 12; units of Z/12Z; x = -7, 29 + 36Z | verify/ch02/exr-units-and-crt-a1.py
+exr-units-and-crt-b1 (solution): a^2 - 1 = (a - 1)(a + 1); [3]^2 = [1] in Z/8Z, units of Z/8Z square to [1] | fd3:prp-ring-algebra; verify/ch02/exr-units-and-crt-b1.py
+exr-units-and-crt-b2 (solution): the product identity (xs + mt)(xs' + nt') | fd3:prp-ring-algebra; verify/ch02/exr-units-and-crt-b2.py
 exr-units-and-crt-b3 (solution): count of a product of finite sets | fd2:exr-finite-sets-c2 (a), an exercise cited from an exercise solution, which STYLE allows; group (i) of F3.1's citing rule (fd3:cor-omega-identification)
 exr-units-and-crt-b3 (solution): fd2 finite-set results read on omega | group (i) of F3.1's citing rule after fd3:cor-omega-identification, cited by label
-exr-units-and-crt-c2 (solution): [2][1] = [2][4] in Z/6Z | verify/ch03/exr-units-and-crt-c2.py
+exr-units-and-crt-c2 (solution): [2][1] = [2][4] in Z/6Z | verify/ch02/exr-units-and-crt-c2.py
 exr-units-and-crt-c2 (solution): (statement) the quoted proof's lines (0) and (4) | thm-integers-mod-n-ring (a), (b), (c); fd2:thm-finite-no-proper-copy, group (i) of F3.1's citing rule (fd3:cor-omega-identification), cited
-exr-units-and-crt-c3 (solution): x_1 = 7, x_2 = -53, 52 + 105Z | verify/ch03/exr-units-and-crt-c3.py
-exr-units-and-crt-r1 (solution): (a + b) - (a' + b') = 2(b - b'); [(a, b)] = a - b | fd3:prp-ring-algebra; remark after fd3:thm-integers-commutative-ring (fd3:prp-naturals-embed-integers), cited; def-integers-mod-n-ring, thm-quotient-ring-by-ideal (a) (congruence mod 2 is the equivalence relation of Z/2Z), cited; verify/ch03/exr-units-and-crt-r1.py
+exr-units-and-crt-c3 (solution): x_1 = 7, x_2 = -53, 52 + 105Z | verify/ch02/exr-units-and-crt-c3.py
+exr-units-and-crt-r1 (solution): (a + b) - (a' + b') = 2(b - b'); [(a, b)] = a - b | fd3:prp-ring-algebra; remark after fd3:thm-integers-commutative-ring (fd3:prp-naturals-embed-integers), cited; def-integers-mod-n-ring, thm-quotient-ring-by-ideal (a) (congruence mod 2 is the equivalence relation of Z/2Z), cited; verify/ch02/exr-units-and-crt-r1.py
 exr-units-and-crt-r2 (solution): powers b^n on omega carried into Z; product of the list L_{m,n} by induction | fd3:prp-omega-powers-parity, fd3:prp-naturals-embed-integers, def-prime-factorization (its recursion), fd1:ax-induction read on omega (fd3:cor-omega-identification (b)); inline
 exr-units-and-crt-r2 (solution): 2^m 3^n > 0 | fd3:prp-ordered-ring-rules (c), induction; inline
 exr-units-and-crt-r2 (solution): fd2:thm-product-countable mentioned for comparison | group (ii) of F3.1's citing rule; R item, prose comparison only
 exr-units-and-crt-r3 (solution): (a/b)^2 = a^2/b^2 | fd3:def-rational-operations, cited
-exr-units-and-crt-r4 (solution): 6x - 4 = 2(3x - 2); [3][2] = [1] mod 5; 20, 50; look-alike 3x = 2 mod 10 loses 9 (25); CRT route via 10 = 2 * 5, [6]_5 = [1]_5 | thm-chinese-remainder-two (b), cited; verify/ch03/exr-units-and-crt-r4.py
+exr-units-and-crt-r4 (solution): 6x - 4 = 2(3x - 2); [3][2] = [1] mod 5; 20, 50; look-alike 3x = 2 mod 10 loses 9 (25); CRT route via 10 = 2 * 5, [6]_5 = [1]_5 | thm-chinese-remainder-two (b), cited; verify/ch02/exr-units-and-crt-r4.py
 -->

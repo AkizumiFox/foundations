@@ -607,6 +607,13 @@ items:
     model: claude-opus-5-5
     evidence: 03:22-26 cites cor-coprime-iff-combination (02:125) and fd2:def-divides; the ring laws are
       named; the display is valid
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: e2e9fda214b8
+    date: '2026-11-01'
+    evidence: Only the word 'move' becomes 'method' in the naming sentence after the proof. The proof
+      and the 4|12 aftermath are unchanged, and their ledger lines now point to verify/ch02, which exists.
 - key: def-prime-factorization
   kind: def
   file: 02-unique-factorization.md
@@ -663,6 +670,15 @@ items:
       164. The non-examples are right: (2,3,2,5) has 3 > 2 at positions 2 < 3, and (2,2,15) fails because
       15 = 3·5 is not prime. The count of twelve orderings of {2,2,3,5} is right, since 4!/2! = 12. No
       remaining defects.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: b96cae27324b
+    date: '2026-11-01'
+    evidence: Line 37 rewording keeps the template use (group (iii), fd3 ch01/04:259) and the citations
+      fd3:thm-rationals-ordered-field and fd3:prp-integers-embed-rationals. The empty-list bullet and
+      'Order and primality' are retitled with the same mathematics. Ledger sidecar paths are fixed and
+      def-prime-factorization.py runs with exit 0.
 - key: check:02-unique-factorization:1
   kind: check
   file: 02-unique-factorization.md
@@ -908,6 +924,14 @@ items:
     evidence: '03:164-184: the greatest element of F comes from the second half of prp-integer-least-element
       (02-03:372); the sign and size of m are argued; the appended list is non-decreasing; the uniqueness
       induction is quantified over l; cancellation uses prp-ordered-ring-rules (f); l-1 in N is ledgered'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 09de9256650d
+    date: '2026-11-01'
+    evidence: Only the lead-in of the paragraph after the proof changed ('Why compare the largest primes?').
+      The claim about last-factor peeling matches the recursion of @def-prime-factorization, and the R2
+      remark ledger now says 04-units-and-crt R2, consistent with prose 'Section 2.4'.
 - key: prp-rationals-lowest-terms
   kind: prp
   file: 02-unique-factorization.md
@@ -1044,7 +1068,7 @@ items:
   kind: exr
   file: 02-unique-factorization.md
   line: 323
-  hash: 7d3a1e9ab750
+  hash: 1d68eb1799b5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1071,11 +1095,26 @@ items:
     evidence: '03:318-324. The move is named ''least positive element, then divide''; if r>0 then r is
       in M with r<L, so r=0 and L|c. This is the one reasonable completion, the same as mine. Worked full
       instance: thm-integers-bezout (b).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1d68eb1799b5
+    date: '2026-11-01'
+    evidence: Prompt and solution now say 'method' instead of 'move'. The completion (r>0 contradicts
+      minimality of L, so r=0 and L|c) is unchanged and correct.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1d68eb1799b5
+    date: '2026-11-01'
+    evidence: 'The only change is 02:43 ''Say which method this is, then complete it'' and 02:47 ''The
+      method is''. The mathematics is unchanged: the least positive common multiple divides every common
+      multiple.'
 - key: exr-unique-factorization-b3
   kind: exr
   file: 02-unique-factorization.md
   line: 343
-  hash: 75dbef0970bf
+  hash: 1bda71f7b543
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1169,11 +1208,29 @@ items:
       ×11 gives 11; Euclid run 1023=1·1001+22, 1001=45·22+11, 22=2·11. Trial divisors d∈{2,3} for 11,13
       and {2..5} for 31 are complete by the remark after lem-least-divisor-prime. Only the pointer re-aim
       changed.'
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 1bda71f7b543
+    date: '2026-11-01'
+    evidence: 'Arithmetic rechecked: 91*46=4186, 93*45=4185, 1001*46-1023*45=46046-46035=11; 1001=7*11*13,
+      1023=3*11*31; the Euclid run 1023=1001+22, 1001=45*22+11, 22=2*11. The uses block''s content is
+      correct ((c) is a|bx+cy). The only problem is format: the block is a prose sentence, not ''@label
+      (≤5 words); ...'' (STYLE.md:294), which is F005''s rejection.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 1bda71f7b543
+    date: '2026-11-01'
+    evidence: 'The solution recomputes correctly: 1001 = 11·91 and 1023 = 11·93; 91·46 − 93·45 = 4186
+      − 4185 = 1; 91 = 45·2 + 1; gcd = 11. The citations of prp-divisibility-rules-integers (c), (e) and
+      def-integer-gcd moved into a .uses block (02:63-65) without loss. Ledger paths now point to verify/ch02,
+      and those files exist.'
 - key: exr-unique-factorization-c1
   kind: exr
   file: 02-unique-factorization.md
-  line: 370
-  hash: d0e217306b36
+  line: 374
+  hash: 8bf1e8410733
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1211,10 +1268,26 @@ items:
       The same 'its proof above is a complete answer' format appears in approved fd3 Chapter 1 (02-pairs-as-sets.md:247).
       The proof it points to (lines 174-184) is complete, so no written rule is broken and the earlier
       finding needs no further change. Scheme item 3 (line 365) now credits 'both largest, or both sm
+  - stage: S7r
+    verdict: minor
+    by: rereferee
+    hash: 8bf1e8410733
+    date: '2026-11-01'
+    evidence: Title 'Chapter check', heading 'What a complete answer needs' and 'Slips that lose the step'
+      are correct, and the points still sum to 10. Line 389 keeps 'is not fatal', a leftover of the banned
+      term, which is F002's rejection.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8bf1e8410733
+    date: '2026-11-01'
+    evidence: 'Wording only: ''Chapter check'', ''What a complete answer needs'', ''Slips that lose the
+      step''. The point allocation and the mathematics are unchanged. The leftover ''is not fatal'' in
+      02:85 now refers to a heading that no longer exists. That is §13 wording, deferred under F018.'
 - key: exr-unique-factorization-c2
   kind: exr
   file: 02-unique-factorization.md
-  line: 388
+  line: 392
   hash: 80fbba319814
   verdicts:
   - stage: S5a
@@ -1245,7 +1318,7 @@ items:
 - key: exr-unique-factorization-c3
   kind: exr
   file: 02-unique-factorization.md
-  line: 408
+  line: 412
   hash: 8ebfdaa8532a
   verdicts:
   - stage: S5a
@@ -1294,6 +1367,13 @@ items:
       Part (c) there asks for the direct proof for lists with k >= 1, so ''including the empty list''
       is accurate. The two school facts it takes as known are ''every m >= 2 has a prime divisor'' and
       ''divides two numbers, divides their difference''. They are replaced here by '
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 8ebfdaa8532a
+    date: '2026-11-01'
+    evidence: Only the rubric heading and lead-in are renamed; the points (2+2+2+3+1=10) and slips are
+      unchanged. Ledger paths are now verify/ch02/exr-unique-factorization-c3.py, which exists.
 - key: def-ideal-commutative-ring
   kind: def
   file: 03-quotient-rings.md
@@ -1344,7 +1424,7 @@ items:
   kind: thm
   file: 03-quotient-rings.md
   line: 55
-  hash: 0233d4fd07ea
+  hash: 6d6df60c613a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1382,11 +1462,18 @@ items:
       and NOTATION.md:274 says 'In fd4, π is only the number ... not used in fd4 under that letter', which
       is false after the merge. NOTATION.md:261 says the clash is to be settled once Ch1/Ch8 are drafted,
       and it is still not settled.
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 6d6df60c613a
+    date: '2026-11-01'
+    evidence: '03:63 (c) reads ''quotient map q: R → R/I, q(a) := [a]'', with q(a+b) = q(a)+q(b), q(ab)
+      = q(a)q(b) and q(1) = [1]. This is consistent with (b), and q does not clash locally.'
 - key: proof:thm-quotient-ring-by-ideal
   kind: proof
   file: 03-quotient-rings.md
   line: 76
-  hash: da813cb8aa28
+  hash: 26e52673fa5f
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1407,6 +1494,13 @@ items:
     evidence: '77-94: Eq1-Eq3 are correct, and the class is a+I. For (b), both hypotheses of thm-well-defined-on-classes
       (b) hold, and (a) holds for the negative. In (c), (F3), (F4), (F7) and (F9) are shown explicitly
       and the rest go the same way. (d) is correct, including -0 = 0 and 1 in I <=> I = R.'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 26e52673fa5f
+    date: '2026-11-01'
+    evidence: '03:92: ''The equations for q are the definitions in (b) read from right to left, and q(1)
+      = [1] by definition of q''. This is correct, and the rest of the proof is unchanged.'
 - key: thm-integer-ideals-principal
   kind: thm
   file: 03-quotient-rings.md
@@ -2369,7 +2463,7 @@ items:
   kind: exr
   file: 04-units-and-crt.md
   line: 458
-  hash: bcd9f34e1ba9
+  hash: 032d1adf4300
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2422,6 +2516,13 @@ items:
     date: '2026-11-01'
     evidence: '04-units-and-crt.md:471 ''Chapter 2''s proof, @fd3:thm-no-rational-square-two'': in fd4
       a bare ''Chapter 2'' is this chapter; the result is in Number Systems, Chapter 3 (fd3/src/ch03-rationals/03-gaps-in-the-rationals.md).'
+  - stage: S7r
+    verdict: correct
+    by: rereferee
+    hash: 032d1adf4300
+    date: '2026-11-01'
+    evidence: '04:471 now reads ''The proof in *Number Systems: From ℕ to ℝ*, Chapter 3 (@fd3:thm-no-rational-square-two)''.
+      The label is in fd3 Ch3, and the comparison claim (descent by order) is unchanged.'
 - key: exr-units-and-crt-r4
   kind: exr
   file: 04-units-and-crt.md

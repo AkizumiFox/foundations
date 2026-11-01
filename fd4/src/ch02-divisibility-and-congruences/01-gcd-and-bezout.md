@@ -413,18 +413,18 @@ Fatal errors (0 for the step): asserting that every common divisor of \( ka \) a
 
 <!-- dependency ledger
 def-integer-linear-combinations (claim): the three closure identities | ring laws of Z (fd3:thm-integers-commutative-ring) and fd3:prp-ring-algebra (c), cited
-def-integer-linear-combinations (example): 6 = 12 * (-3) + 42 * 1, 30 = 42 - 12, 1 = 2 * (-1) + 3 * 1; non-zero N-combinations of 12, 42 are >= 12 | verify/ch03/def-integer-linear-combinations.py
+def-integer-linear-combinations (example): 6 = 12 * (-3) + 42 * 1, 30 = 42 - 12, 1 = 2 * (-1) + 3 * 1; non-zero N-combinations of 12, 42 are >= 12 | verify/ch02/def-integer-linear-combinations.py
 def-integer-linear-combinations (claim): n Z + 0 Z = n Z | fd3:prp-ring-algebra (b), (F6), cited
 def-integer-linear-combinations (example): 0 Z + 0 Z = {0} | case n = 0 of n Z + 0 Z = n Z; 0 Z = {0} by fd3:prp-ring-algebra (b), cited
 def-integer-gcd (claim): (well-definedness) the argument with b in place of a when a = 0 | symmetric repeat of the argument given
-def-integer-gcd (example): 6 = 1 * 4 + 2, 4 = 1 * 3 + 1, and 2 | 4, 2 | 6 | numerals (01-division-with-remainder opening paragraph); verify/ch03/def-integer-gcd.py
+def-integer-gcd (example): 6 = 1 * 4 + 2, 4 = 1 * 3 + 1, and 2 | 4, 2 | 6 | numerals (01-division-with-remainder opening paragraph); verify/ch02/def-integer-gcd.py
 def-integer-gcd (example): a positive d <= 4 lies in {1, 2, 3, 4} | discreteness, fd3:thm-integers-ordered-ring (c), cited
 def-integer-gcd (example): a and -a have the same divisors (gcd(-5, 5), gcd(0, -6)) | fd3:prp-divisibility-rules-integers (d), fd3:prp-ring-algebra (a), cited
 def-integer-gcd (claim): the convention gcd(0, 0) = 0 matches fd2 exm-divisibility-lcm (0 the top of (N, |)) | fd2 F2.5 §03 exm-divisibility-lcm (cited)
 thm-integers-bezout (proof): the case a = 0 is the same with b in place of a | symmetric repeat (a Z + b Z is symmetric in a, b by (F1))
 thm-integers-bezout (proof): r = a - q(a x0 + b y0) = a(1 - q x0) + b(-q y0) | ring laws of Z, fd3:thm-integers-commutative-ring; fd3:prp-ring-algebra (c)
-thm-integers-bezout (claim): the coin hook, 42 - 3 * 12 = 6 and the Try-it-first list | verify/ch03/thm-integers-bezout.py
-thm-integers-bezout (claim): Section 2.2 uses the move for common multiples, Section 2.3 for sets closed under subtraction | blueprint ch03.md, §03 B2 and §04 C2 (faded triple); prose pointers within the chapter, nothing depends on them
+thm-integers-bezout (claim): the coin hook, 42 - 3 * 12 = 6 and the Try-it-first list | verify/ch02/thm-integers-bezout.py
+thm-integers-bezout (claim): Section 2.2 uses the move for common multiples, Section 2.3 for sets closed under subtraction | blueprint ch02.md, its §03 B2 and §04 C2, now Section 2.2 B2 and Section 2.3 C2 (faded triple); prose pointers within the chapter, nothing depends on them
 thm-integers-bezout (claim): (remark) gcd is the infimum in (N, |); a' in N with a' = 0 if a = 0 | fd2 def-order-supremum (cited), fd3:prp-divisibility-rules-integers (h), (d), fd3:prp-ring-algebra (a) (cited)
 cor-coprime-iff-combination (proof): g >= 1 rules out g = -1 | -1 < 0 < 1, fd3:prp-ordered-ring-rules (a), (e)
 lem-gcd-remainder-step (proof): (qb + r)x + by = b(qx + y) + rx and bx + (a - qb)y = ay + b(x - qy) | ring laws of Z, fd3:thm-integers-commutative-ring
@@ -432,10 +432,10 @@ thm-euclidean-algorithm-integers (claim): the step G is a function Z x N -> Z x 
 thm-euclidean-algorithm-integers (proof): x_K Z + 0 Z = x_K Z | def-integer-linear-combinations (the paragraph after it, n Z + 0 Z = n Z)
 thm-euclidean-algorithm-integers (proof): K - 1 in N and K - 1 < K for K >= 1 | omega arithmetic (fd3:cor-omega-identification (c), fd2 lem-naturals-arithmetic subtraction), with fd3:thm-integers-ordered-ring (a)
 thm-euclidean-algorithm-integers (claim): (paragraph after the proof) last non-zero remainder is r_{K-2} when K >= 2; b | a when K = 1 | definition of the step, inline
-exm-euclidean-algorithm-run (example): every division and back-substitution line; the warning's 11 * 252 = 14 * 198 = 2772; the Quick check | verify/ch03/exm-euclidean-algorithm-run.py
-exr-gcd-and-bezout-a1 (solution): 6 = 12 * (-3) + 42 * 1, 12 = 2 * 6, 42 = 7 * 6 | verify/ch03/exr-gcd-and-bezout-a1.py
-exr-gcd-and-bezout-b1 (solution): the chain for (1001, 357) and 7 = 5 * 1001 - 14 * 357 | verify/ch03/exr-gcd-and-bezout-b1.py
+exm-euclidean-algorithm-run (example): every division and back-substitution line; the warning's 11 * 252 = 14 * 198 = 2772; the Quick check | verify/ch02/exm-euclidean-algorithm-run.py
+exr-gcd-and-bezout-a1 (solution): 6 = 12 * (-3) + 42 * 1, 12 = 2 * 6, 42 = 7 * 6 | verify/ch02/exr-gcd-and-bezout-a1.py
+exr-gcd-and-bezout-b1 (solution): the chain for (1001, 357) and 7 = 5 * 1001 - 14 * 357 | verify/ch02/exr-gcd-and-bezout-b1.py
 exr-gcd-and-bezout-b3 (solution): b - k - 1 = b - (k + 1); 0 <= b - K gives K <= b | ring laws of Z; fd3:prp-ordered-ring-rules (a)
 exr-gcd-and-bezout-c2 (solution): (ka)x + (kb)y = k(ax + by); k(md) = m(kd) | ring laws of Z
-exr-gcd-and-bezout-c2 (solution): gcd(12, 42) = 6 gcd(2, 7) instance | verify/ch03/exr-gcd-and-bezout-c2.py
+exr-gcd-and-bezout-c2 (solution): gcd(12, 42) = 6 gcd(2, 7) instance | verify/ch02/exr-gcd-and-bezout-c2.py
 -->

@@ -60,7 +60,7 @@ Let \( R \) be a commutative ring and \( I \) an ideal of \( R \).
 ::: {.enumerate options="label=(\alph*)"}
 1. Setting \( a \sim_I b \iff a - b \in I \) defines an equivalence relation \( \sim_I \) on \( R \), and the class of \( a \) is \( [a] = a + I \coloneqq \{ a + x : x \in I \} \).
 2. The rules \( [a] + [b] \coloneqq [a + b] \), \( [a] \cdot [b] \coloneqq [ab] \) and \( -[a] \coloneqq [-a] \) are well defined on \( R/I \coloneqq R/{\sim_I} \).
-3. \( R/I \), with these operations, is a commutative ring with zero \( [0] \) and one \( [1] \). The **quotient map** \( \pi \colon R \to R/I \), \( \pi(a) \coloneqq [a] \), satisfies \( \pi(a + b) = \pi(a) + \pi(b) \), \( \pi(ab) = \pi(a) \pi(b) \) and \( \pi(1) = [1] \).
+3. \( R/I \), with these operations, is a commutative ring with zero \( [0] \) and one \( [1] \). The **quotient map** \( q \colon R \to R/I \), \( q(a) \coloneqq [a] \), satisfies \( q(a + b) = q(a) + q(b) \), \( q(ab) = q(a) q(b) \) and \( q(1) = [1] \).
 4. \( [a] = [0] \) if and only if \( a \in I \). In particular \( [1] = [0] \) if and only if \( I = R \).
 :::
 :::
@@ -89,7 +89,7 @@ by (F1)–(F4) in the first line, and by (F9), (F6) and @fd3:prp-ring-algebra (c
 \[
 [a]\bigl([b] + [c]\bigr) = [a][b + c] = [a(b + c)] = [ab + ac] = [ab] + [ac] = [a][b] + [a][c] ,
 \]
-using (F9) in \( R \) in the middle; for (F3), \( [a] + [0] = [a + 0] = [a] \); for (F4), \( [a] + (-[a]) = [a] + [-a] = [a + (-a)] = [0] \); for (F7), \( [a][1] = [a \cdot 1] = [a] \). The laws (F1), (F2), (F5) and (F6) go the same way. So \( R/I \) is a commutative ring with zero \( [0] \) and one \( [1] \). The equations for \( \pi \) are the definitions in (b) read from right to left, and \( \pi(1) = [1] \) by definition of \( \pi \).
+using (F9) in \( R \) in the middle; for (F3), \( [a] + [0] = [a + 0] = [a] \); for (F4), \( [a] + (-[a]) = [a] + [-a] = [a + (-a)] = [0] \); for (F7), \( [a][1] = [a \cdot 1] = [a] \). The laws (F1), (F2), (F5) and (F6) go the same way. So \( R/I \) is a commutative ring with zero \( [0] \) and one \( [1] \). The equations for \( q \) are the definitions in (b) read from right to left, and \( q(1) = [1] \) by definition of \( q \).
 
 *(d)* \( [a] = [0] \) holds if and only if \( a \sim_I 0 \) (@fd2:thm-classes-partition (b)), that is, \( a - 0 \in I \); and \( a - 0 = a + 0 = a \), since \( -0 = 0 \) (\( 0 + 0 = 0 \) and @fd3:prp-ring-algebra (a)). So \( [a] = [0] \iff a \in I \). In particular \( [1] = [0] \iff 1 \in I \). If \( 1 \in I \), then \( I = R \), since \( r = r \cdot 1 \in I \) for every \( r \in R \) by (I3); and if \( I = R \), then \( 1 \in I \). This proves the theorem.
 :::
@@ -381,24 +381,24 @@ def-ideal-commutative-ring (example): Z not an ideal of Q: 1/2 not in Z | fd3:co
 thm-quotient-ring-by-ideal (proof): rearrangements (a + b) - (a' + b) = a - a', a = (a - b) + ... | (F1)-(F4), named in the proof
 thm-quotient-ring-by-ideal (proof): -0 = 0 | 0 + 0 = 0 by (F3), uniqueness fd3:prp-ring-algebra (a), named in the proof
 thm-quotient-ring-by-ideal (claim): (answer to prompt) (I3) with arbitrary r is used once in (a), (b), in the product step; elsewhere (I3) only with r = -1 (closure under negatives), otherwise (I1), (I2) | meta-claim about the proof on the page: (a) uses (I1), (I2), negatives; (b) sum uses nothing, product uses (I3), negative uses closure under negatives; (d) uses (I3) to get I = R, outside (a), (b)
-thm-quotient-ring-by-ideal (claim): (warning) Z in Q closed under +, -, contains 0; 1/2 * 1/2 = 1/4, 3/2 * 1/2 = 3/4, 3/4 - 1/4 = 1/2 not in Z | field arithmetic in Q (fd3:thm-rationals-field); 1/2 not in Z as in the non-example; verify/ch03/thm-quotient-ring-by-ideal.py
+thm-quotient-ring-by-ideal (claim): (warning) Z in Q closed under +, -, contains 0; 1/2 * 1/2 = 1/4, 3/2 * 1/2 = 3/4, 3/4 - 1/4 = 1/2 not in Z | field arithmetic in Q (fd3:thm-rationals-field); 1/2 not in Z as in the non-example; verify/ch02/thm-quotient-ring-by-ideal.py
 thm-integer-ideals-principal (proof): r = a + (-q)n | (F1)-(F4), fd3:prp-ring-algebra (c), used silently
 def-integers-mod-n-ring (claim): a - b in nZ iff n | a - b iff a = b mod n | fd2:def-divides, fd2:def-congruence read on the constructed Z (definitions only; blueprint ledger line "definitions on the constructed Z")
 thm-integers-mod-n-ring (proof): r <= n - 1 from r + 1 <= n; n - 1 in N for n >= 1 | (O3); fd3:thm-integers-ordered-ring (b) (cited)
 thm-integers-mod-n-ring (proof): phi o psi is a bijection | fd2:thm-composition-injective-surjective (c) (cited)
 thm-integers-mod-n-ring (proof): {0, ..., n - 1} has n elements by the third example after fd2:def-finite with n - 1 in place of n, read on omega | fd2:def-finite and its examples, group (i) of the F3.1 citing rule (fd3:cor-omega-identification); cited by position as the blueprint allows
-thm-integers-mod-n-ring (proof): multiples k . x defined for every commutative ring by recursion (*Number Systems*, Section 2.4, "Multiples") | F3.2 §03 paragraph before fd3:prp-ordered-ring-rules (cited by section, no label); fd3:prp-ordered-ring-rules (h) (cited) for n . 1 > 0
-thm-integers-mod-n-ring (claim): Z/2Z has the tables of fd3:exm-finite-ring-not-orderable | thm-integers-mod-n-ring (b) and the definitions; computed: 1 + 1 = 2 = 0 mod 2; verify/ch03/exm-integers-mod-six.py
-exm-integers-mod-six (solution): tables of Z/6Z and Z/5Z; 20 = 3*6 + 2; zero divisors; classes with partner of product [1] | numerals; verify/ch03/exm-integers-mod-six.py
-exm-integers-mod-six (claim): units of Section 2.4; *Number Systems*, Chapter 6 uses Z/5Z | blueprint ch03.md 05-units-and-crt (within the chapter) and ch06.md R2 (F3.4, prose pointer); nothing here depends on them
-thm-integers-mod-n-ring (claim): (check) [7] + [8] = [3], [7][8] = [8] in Z/12Z; Z/1Z has one element | numerals; verify/ch03/thm-integers-mod-n-ring.py
+thm-integers-mod-n-ring (proof): multiples k . x defined for every commutative ring by recursion (*Number Systems*, Section 2.4, "Multiples") | F3.2 §04 paragraph before fd3:prp-ordered-ring-rules (cited by section, no label); fd3:prp-ordered-ring-rules (h) (cited) for n . 1 > 0
+thm-integers-mod-n-ring (claim): Z/2Z has the tables of fd3:exm-finite-ring-not-orderable | thm-integers-mod-n-ring (b) and the definitions; computed: 1 + 1 = 2 = 0 mod 2; verify/ch02/exm-integers-mod-six.py
+exm-integers-mod-six (solution): tables of Z/6Z and Z/5Z; 20 = 3*6 + 2; zero divisors; classes with partner of product [1] | numerals; verify/ch02/exm-integers-mod-six.py
+exm-integers-mod-six (claim): units of Section 2.4 | blueprint ch02.md 04-units-and-crt (within the chapter); nothing here depends on it
+thm-integers-mod-n-ring (claim): (check) [7] + [8] = [3], [7][8] = [8] in Z/12Z; Z/1Z has one element | numerals; verify/ch02/thm-integers-mod-n-ring.py
 thm-integers-mod-n-ring (claim): (warning) the class 3 + 12Z | thm-quotient-ring-by-ideal (a) (cited by section)
-exr-quotient-rings-a1 (solution): 2 - 8 = -6, 10 - 40 = -30 = (-5) * 6 | numerals; verify/ch03/exr-quotient-rings-a1.py
+exr-quotient-rings-a1 (solution): 2 - 8 = -6, 10 - 40 = -30 = (-5) * 6 | numerals; verify/ch02/exr-quotient-rings-a1.py
 def-ideal-commutative-ring (example): (non-example N) -1 < 0 | fd3:prp-ordered-ring-rules (a), (e) (cited), with 1 != 0 from fd3:thm-integers-commutative-ring (cited); -0 = 0 used silently
 exr-quotient-rings-b2 (solution): (a) -1 < 0 | as for the non-example N after def-ideal-commutative-ring, cited the same way
 exr-quotient-rings-c1 (solution): [n]_m = [0]_m gives n in mZ | thm-quotient-ring-by-ideal (d) (cited), n - 0 = n as in its proof
-exr-quotient-rings-b1 (solution): tables of Z/4Z | numerals; verify/ch03/exr-quotient-rings-b1.py
-exr-quotient-rings-b2 (solution): 5 = 2*2 + 1 = 1*3 + 2; 4x + 6y = 2(2x + 3y); 2k = 4(-k) + 6k; 1 = (-1)*2 + 1*3; n^2 = 6m gives 2 | nn and 3 | nn | numerals and ring algebra; verify/ch03/exr-quotient-rings-b2.py
+exr-quotient-rings-b1 (solution): tables of Z/4Z | numerals; verify/ch02/exr-quotient-rings-b1.py
+exr-quotient-rings-b2 (solution): 5 = 2*2 + 1 = 1*3 + 2; 4x + 6y = 2(2x + 3y); 2k = 4(-k) + 6k; 1 = (-1)*2 + 1*3; n^2 = 6m gives 2 | nn and 3 | nn | numerals and ring algebra; verify/ch02/exr-quotient-rings-b2.py
 exr-quotient-rings-c2 (solution): induction on k in N | fd1:ax-induction, read on omega through fd3:cor-omega-identification (b) as elsewhere in the chapter
 exr-quotient-rings-c2 (claim): subgroups of (Z, +) studied in Chapter 5 | F5.3 (prose pointer); nothing depends on it
 -->
