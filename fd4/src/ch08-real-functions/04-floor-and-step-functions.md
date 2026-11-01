@@ -12,7 +12,7 @@ For a number such as \( \sqrt 2 + \sqrt 3 \), with no decimal expansion handed t
 - a complete ordered field is Archimedean (@fd3:thm-cof-complete-archimedean);
 - in an Archimedean field every element lies in exactly one interval \( [m, m + 1) \) with \( m \in \nZ \) (@fd3:prp-integer-part-ordered-field).
 
-Throughout, integers are read inside \( \nR \), as in *Number Systems*. The embedding \( \iota_{\nR} \) respects sums, products and order and reflects order (@fd3:thm-rationals-embed-ordered-field). So a sum or comparison of integers means the same in \( \nZ \) and in \( \nR \).
+Throughout, integers are read inside \( \nR \), as in *Number Systems*. The embedding \( \iota_{\nR} \) respects sums, products and order and reflects order (@fd3:thm-rationals-embed-ordered-field). So a sum, product or comparison of integers means the same in \( \nZ \) and in \( \nR \).
 
 *The floor of \( x \) is the integer you reach by stepping down from \( x \) to the nearest integer at or below it.*
 

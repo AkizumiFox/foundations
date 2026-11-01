@@ -4,7 +4,7 @@
 
 A real function is a set of pairs with one value over each input (@def-real-function), and the operations on functions are operations on values. A strictly monotone function is injective, reflects the order, and has a strictly monotone inverse (@thm-monotone-inverse). The values of a function on a non-empty set have a supremum and an infimum when they are bounded. They are found by bounding every value and then producing a witness, and the rules of @thm-sup-function-rules compare them. The floor makes the integer part a function (@def-floor-ceiling), and step functions are built from it. Two of the three borrowed facts about the exponential determine it (@thm-exp-unique), and the logarithm is its inverse. The power \( a^x \) is then defined for every positive \( a \) and real \( x \). It agrees with the roots of Chapter 1 (@prp-real-power-consistent) and obeys the laws of powers (@prp-real-power-laws).
 
-What is open: continuity and limits of functions, which *Real Numbers, Metric Spaces, and Derivatives* defines, and the integral, which *Integration, Series, and Function Spaces* defines; both test them on the functions of Section 8.6. Also open are the three borrowed facts about the exponential.
+What is open: continuity and limits of functions, which *Analysis on the Real Line* defines, and the integral, which *Integration, Series, and Function Spaces* defines; both test them on the functions of Section 8.6. Also open are the three borrowed facts about the exponential.
 
 ## Proof methods in this chapter
 
@@ -70,7 +70,7 @@ Section 8.5 assumes three facts about the exponential function, @ax-exponential,
 
 ## Threads
 
-- **Order and inverses.** The inverse of a strictly monotone function gives roots as functions in Section 8.2. *Real Numbers, Metric Spaces, and Derivatives* proves that a continuous injective function on an interval is strictly monotone. Section 8.2 shows why both hypotheses are needed.
+- **Order and inverses.** The inverse of a strictly monotone function gives roots as functions in Section 8.2. *Analysis on the Real Line* proves that a continuous injective function on an interval is strictly monotone. Section 8.2 shows why both hypotheses are needed.
 - **Suprema of functions.** The rules of Section 8.3 are used again for the spread of values. *Integration, Series, and Function Spaces* calls it the oscillation and measures integrability with it.
 - **Functions that resist drawing.** The functions of Section 8.6 and the distance to the integers of Section 8.4 are where the analysis volumes test continuity, differentiability and the integral. A function that is continuous everywhere and differentiable nowhere is built there from tents of the form \( \dist(2^k x, \nZ)/2^k \). The zigzag of Section 8.6 is replaced by the sine once the sine exists.
 - **The exponential.** The exponential, borrowed in Section 8.5, is constructed in *Integration, Series, and Function Spaces*, Chapter 7. The sine and cosine borrowed in Section 3.5 are constructed there as well.

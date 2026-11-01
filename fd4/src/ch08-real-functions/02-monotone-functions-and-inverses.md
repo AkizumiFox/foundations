@@ -392,7 +392,7 @@ The image is \( (-\infty, 0) \cup [1, \infty) \): values at \( x < 0 \) are the 
 ::: {.remark}
 [Looking ahead]
 
-*Real Numbers, Metric Spaces, and Derivatives*, Chapter 7 proves that a continuous injective function on an interval is strictly monotone. Both words are needed: the swap of @exm-injective-not-monotone lives on an interval but jumps, and \( 1/x \) does not jump but lives on \( \nR \setminus \{0\} \), which is not an interval. The function \( H \) shows that a strictly monotone function may still jump.
+*Analysis on the Real Line*, Chapter 7 proves that a continuous injective function on an interval is strictly monotone. Both words are needed: the swap of @exm-injective-not-monotone lives on an interval but jumps, and \( 1/x \) does not jump but lives on \( \nR \setminus \{0\} \), which is not an interval. The function \( H \) shows that a strictly monotone function may still jump.
 :::
 
 ## Exercises
@@ -583,7 +583,7 @@ thm-monotone-inverse (claim): (quick check) image of g is (-oo, 1); g^{-1}(v) = 
 exm-odd-roots (claim): (lead-in) Chapter 1 proved directly that roots keep order | lem-root-rules (d), cited in prose
 exm-odd-roots (example): a power of a non-negative (positive) real is non-negative (positive) | lem-reals-nth-root (a) with s = 0, and 0^n = 0 for n >= 1; cited, uses line
 exm-odd-roots (claim): (aftermath) for even n = 2k, (-1)^n = 1 = 1^n and x^n = (x^2)^k >= 0 | prp-power-laws-commutative-ring (b); x^2 >= 0 and lem-reals-nth-root (a) with s = 0; inline
-exm-strange-jump (claim): (looking ahead) a continuous injective function on an interval is strictly monotone | Real Numbers, Metric Spaces, and Derivatives, Chapter 7 (AN1.6), prose only
+exm-strange-jump (claim): (looking ahead) a continuous injective function on an interval is strictly monotone | Analysis on the Real Line, Chapter 7 (AN1.6), prose only
 exm-odd-roots (example): (-x)^(2k+1) = ((-x)^2)^k (-x) = -x^(2k+1); (-x)^2 = x^2 | prp-power-laws-commutative-ring (a), (b), fd3:prp-ring-algebra (c), uses line; verify/ch08/exm-odd-roots.py
 exm-odd-roots (example): negating reverses -y^n < -x^n | fd3:prp-ordered-ring-rules (a), stated in words, uses line
 exm-odd-roots (example): every n >= 1 odd is 2k + 1 with k in N | the meaning of "odd" (fd3:cor-integers-even-odd), inline

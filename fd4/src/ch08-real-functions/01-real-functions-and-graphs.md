@@ -161,10 +161,10 @@ What is the domain of \( \sqrt{x} + 1/x \)? Of the composite of \( \sqrt{\cdot} 
 
 Chapter 6 defined, for a polynomial \( p \in \nR[x] \), its polynomial function \( c \mapsto p(c) \) on \( \nR \) (@def-polynomial-evaluation). In this chapter the letter \( x \) usually names a real number, so we write this function as \( x \mapsto p(x) \); the polynomial \( x \in \nR[x] \) has the identity as its function.
 
+For a first instance, the polynomial \( x^2 - 1 \) restricted to \( D = \{0, 1, 2\} \) has the values \( -1 \), \( 0 \), \( 3 \); and \( (x + 1)/(x - 1) \) is defined at every real number except \( 1 \), with value \( 3 \) at \( 2 \).
+
 ::: {#def-polynomial-rational-function}
 [Polynomial Function, Rational Function]
-
-For a first instance, the polynomial \( x^2 - 1 \) restricted to \( D = \{0, 1, 2\} \) has the values \( -1 \), \( 0 \), \( 3 \); and \( (x + 1)/(x - 1) \) is defined at every real number except \( 1 \), with value \( 3 \) at \( 2 \).
 
 Let \( D \subseteq \nR \). A **polynomial function on \( D \)** is the restriction to \( D \) of the polynomial function \( x \mapsto p(x) \) of some \( p \in \nR[x] \). For \( p, q \in \nR[x] \) with \( q \ne 0 \), the **rational function** \( p/q \) is \( x \mapsto p(x)/q(x) \) on \( \{ x \in \nR : q(x) \ne 0 \} \).
 :::

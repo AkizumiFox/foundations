@@ -184,8 +184,8 @@ items:
 - key: def-polynomial-rational-function
   kind: def
   file: 01-real-functions-and-graphs.md
-  line: 164
-  hash: f9e5a33dad1f
+  line: 166
+  hash: 5204e5947711
   verdicts:
   - stage: S5a
     verdict: minor
@@ -220,6 +220,15 @@ items:
     evidence: 'The values are correct: x^2 - 1 on {0,1,2} gives -1, 0, 3, and (2+1)/(2-1) = 3. But the
       ''first instance'' paragraph sits inside the ::: {#def-...} block, before the defining sentence.
       It should go just before the block.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 5204e5947711
+    date: '2026-11-01'
+    evidence: '01:164-170: the instance paragraph now sits before the ::: {#def-polynomial-rational-function}
+      block (STYLE §13 B5), so the block opens with the defining sentence. Values checked: x^2-1 on {0,1,2}
+      gives -1, 0, 3; (x+1)/(x-1) is undefined only at 1, and (2+1)/(2-1)=3. The definition (restriction
+      of p''s function to D; p/q on {q != 0}) is sound.'
 - key: check:01-real-functions-and-graphs:3
   kind: check
   file: 01-real-functions-and-graphs.md
@@ -492,6 +501,14 @@ items:
     evidence: 01:359-362. The case proof is correct and I checked the identity on random samples. Section
       8.1 has no worked example of a pointwise identity proved by cases on |.|, so this B task has no
       model example in the section.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: eec53bd0e5d7
+    date: '2026-11-01'
+    evidence: '01:359-366. Case split f(x)>=g(x) / f(x)<g(x): |f-g| = f-g or g-f gives max and min. f
+      - g, max(a,b) and min(a,b) are now defined in def-function-algebra (01:136), and the worked instance
+      |f| = max(f,-f) by cases (01:142) is the model example.'
 - key: exr-real-functions-and-graphs-b2
   kind: exr
   file: 01-real-functions-and-graphs.md
@@ -2836,6 +2853,13 @@ items:
     evidence: NOTATION has no row for e as Euler's number. Its rows 285 ('never Euler's number in fd5,
       which has no exp') and 275 ('fd4 has no exp') are stale after the merge, and e is now also the group
       identity in fd4 Ch5. The bounds at 05:198-202 are correct.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 88a747a24eb2
+    date: '2026-11-01'
+    evidence: '05:192-204: bounds 9/4 <= e <= 4 are correct. NOTATION now has the \\exp/\\log/e/a^x row
+      (319), and the group-identity row (284) separates e in Ch5 from Euler''s number.'
 - key: def-logarithm
   kind: def
   file: 05-exponential-and-logarithm.md
@@ -2857,6 +2881,14 @@ items:
     evidence: NOTATION has no row for \exp, \log or a^x. Blueprint merged-ch08-f47.md:37 requires those
       amendments, and row 313 covers only a^x. The definition and the claims at 05:218 match thm-monotone-inverse
       (a)-(c) and fd2:prp-strictly-monotone-injective.
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: d01e37e6cc6c
+    date: '2026-11-01'
+    evidence: '05:208-218: exp is a strictly increasing bijection R -> (0,inf) by (b), (c) and E3, so
+      log is its inverse; increasing, with reflected graph, by thm-monotone-inverse (a)-(c). NOTATION
+      row 319 now covers exp, log and a^x.'
 - key: check:05-exponential-and-logarithm:2
   kind: check
   file: 05-exponential-and-logarithm.md
@@ -3478,6 +3510,15 @@ items:
     date: '2026-11-01'
     evidence: 'The transport argument ''sqrt 2 is not rational in R'' (embedding plus fd3:thm-no-rational-square-two)
       is written out three times: 03:216, 05:7 and 06:19-20.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: a4737be38c61
+    date: '2026-11-01'
+    evidence: '06:9-23: x = q + sqrt2 with a - sqrt2 < q < b - sqrt2 by density; x rational would make
+      sqrt2 rational. The irrationality of sqrt2 is now proved once, at 03:222 (Quick check 3 solution,
+      by the embedding and fd3:thm-no-rational-square-two); 05:7 and 06:18 recall it from Section 8.3
+      rather than repeating it.'
 - key: proof:lem-irrationals-dense
   kind: proof
   file: 06-strange-functions.md
@@ -4127,6 +4168,14 @@ items:
     date: '2026-11-01'
     evidence: The solution is correct; Hint 2 is now a question; the choice remark is properly hedged.
       The new alternative-route marking line writes 'f = cq on Q' where it should write f(q) = cq (06:489).
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 5feb6155f8c5
+    date: '2026-11-01'
+    evidence: '06:440-492: the solution is correct (f(q)=cq on Q, c>=0, rational squeeze, c=0 case), and
+      the choice remark (06:482) is hedged. The marking line at 06:489 now reads ''f(q) = cq on Q'', not
+      ''f = cq''.'
 - key: exr-strange-functions-c2
   kind: exr
   file: 06-strange-functions.md
@@ -4260,31 +4309,3 @@ items:
     date: '2026-11-01'
     evidence: 06:548-552; thm-polynomial-identity-from-values (a) with n=d=max(deg p,1) at 0..d gives
       p=x, then p(-1)=-1≠1. The look-alike tools are named and the source is cited by @ref
-- key: exr-bounds-and-suprema-a2
-  kind: exr
-  file: 03-bounds-and-suprema.md
-  line: 429
-  hash: b6cdb05fe98d
-  verdicts:
-  - stage: S5a
-    verdict: correct
-    by: A:08/03
-    hash: b6cdb05fe98d
-    date: '2026-11-01'
-    evidence: 03:429-447; (c) case split is exhaustive (S<0 gives m=-I; I>0 gives m=S)
-  - stage: S5b
-    verdict: minor
-    by: B:08/03
-    hash: b6cdb05fe98d
-    date: '2026-11-01'
-    evidence: '03:429-447. The math is correct: the case split in (c) is exhaustive. STYLE §6 says group
-      A has ''Exactly one exercise with 2–6 lettered parts'', and this section has two A items (A1, A2).
-      This is not a rule section, so the exception for introductory volumes does not apply.'
-  - stage: S6
-    verdict: correct
-    by: S6:08a
-    hash: b6cdb05fe98d
-    date: '2026-11-01'
-    evidence: 03:442-448. (a) is false by exm-sup-not-attained. (b) is true. (c) is true, and the case
-      analysis on the signs of S and I is complete; I checked it on random finite samples.
-  removed: true

@@ -369,7 +369,7 @@ Each row names a function, recalls its definition, lists what has been proved ab
 ::: {.remark}
 [Looking ahead]
 
-The analysis volumes answer these questions. *Real Numbers, Metric Spaces, and Derivatives* settles the continuity and extreme-value questions once it has continuous functions. *Integration, Series, and Function Spaces* settles the integrability questions once it has the integral, and once it has the sine, it replaces \( \dist(1/x, \nZ) \) in the zigzag by the sine. No proof in the main text of this section uses a limit, continuity or a derivative.
+The analysis volumes answer these questions. *Analysis on the Real Line* settles the continuity and extreme-value questions once it has continuous functions. *Integration, Series, and Function Spaces* settles the integrability questions once it has the integral, and once it has the sine, it replaces \( \dist(1/x, \nZ) \) in the zigzag by the sine. No proof in the main text of this section uses a limit, continuity or a derivative.
 :::
 
 ## Exercises
@@ -486,7 +486,7 @@ Without "increasing", additivity alone does not force \( f(x) = cx \) in general
 - 4: for \( c > 0 \), refutes \( f(x) > cx \) with a rational between \( x \) and \( f(x)/c \), using monotonicity in the right direction.
 - 2: the symmetric case \( f(x) < cx \).
 - 2: the case \( c = 0 \).
-Another correct route earns the same points: a two-sided squeeze with rationals \( p < x < q \) closer than \( 1/n \), then Archimedes (2 for \( f = cq \) on \( \nQ \) and \( c \ge 0 \), 4 for \( cp \le f(x) \le cq \), 4 for closing the gap).
+Another correct route earns the same points: a two-sided squeeze with rationals \( p < x < q \) closer than \( 1/n \), then Archimedes (2 for \( f(q) = cq \) on \( \nQ \) and \( c \ge 0 \), 4 for \( cp \le f(x) \le cq \), 4 for closing the gap).
 Slips that lose the step: dividing by \( c \) without \( c > 0 \); assuming \( f \) continuous or taking a limit of rationals.
 :::
 

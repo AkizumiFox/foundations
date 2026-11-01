@@ -4,7 +4,7 @@ Analysis studies functions of a real variable, and it studies them with a short 
 
 A real function is a rule with a domain and a graph, and functions can be added, multiplied and composed. A strictly monotone function has an inverse, and the inverse is monotone too. When the values of a function on a non-empty set are bounded, they have a supremum, and there are rules for comparing suprema. The exponential, the logarithm and real powers are built from three facts about the exponential that *Integration, Series, and Function Spaces* proves. The last section collects strange functions on which later definitions of continuity and the integral will be tested.
 
-Part III of this volume begins here. Its three chapters, 8, 9 and 10, are the tools that *Real Numbers, Metric Spaces, and Derivatives* assumes on its first page. They use the algebra of Part II (Chapters 4–7) only a little, mostly for polynomials.
+Part III of this volume begins here. Its three chapters, 8, 9 and 10, are the tools that *Analysis on the Real Line* assumes on its first page. They use the algebra of Part II (Chapters 4–7) only a little, mostly for polynomials.
 
 **What you need.**
 
