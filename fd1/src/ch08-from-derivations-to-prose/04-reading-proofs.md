@@ -106,7 +106,7 @@ Explain lines 2–4: for each, say what makes it true.
 
 ## Naming the unstated fact
 
-Section 3.3 turned a paragraph of argument into a sequent: its conclusion, its stated premises, and the unstated facts that close its gaps. A proof is read the same way, one line at a time. Often the second question, *where does it come from?*, has an answer the writer did not write: a fact used but not stated. Self-explaining the line means naming that fact, and the fact then turns out to be one of three things. It may be a school fact or a definition: name it. It may be an earlier result: cite it. Or it may be false, and then the line fails. Two lines that look alike:
+Section 3.3 turned a paragraph of argument into a sequent: its conclusion, its stated premises, and the unstated facts that close its gaps. A proof is read the same way, one line at a time. Often the second question, *where does it come from?*, has an answer the writer did not write: a fact used but not stated. Explaining the line to yourself means naming that fact, and the fact then turns out to be one of three things. It may be a school fact or a definition: name it. It may be an earlier result: cite it. Or it may be false, and then the line fails. Two lines that look alike:
 
 - "Since \( n^2 \) is a multiple of \( 3 \), so is \( n \)." The unstated fact, "if \( 3 \mid n^2 \), then \( 3 \mid n \)", is true. A careful proof proves it, by cases on the remainder of \( n \) on division by \( 3 \).
 - "Since \( n^2 \) is a multiple of \( 4 \), so is \( n \)." The unstated fact, "if \( 4 \mid n^2 \), then \( 4 \mid n \)", is false at \( n = 2 \). Chapter 1 met it as a missing premise (@exr-using-an-implication-b5).
@@ -200,7 +200,7 @@ Answer each part in a phrase. The parts ask:
 7. Name the unstated fact: "Since \( 0 < a < b \), \( a^2 < b^2 \)."
 8. Name the unstated fact: "\( \abs{x - 2} < 1 \), so \( x > 1 \)."
 9. Name the unstated facts: "\( x^2 = 9 \) and \( x > 0 \), so \( x = 3 \)."
-10. After three readings, a proof feels clear. Has the reader self-explained it?
+10. After three readings, a proof feels clear. Has the reader explained each line of it to themselves?
 11. "Let \( x < 0 \). Then \( 1/x < 0 \)." Which hypothesis is used, and how?
 12. "Before reading the proof, I tried the claim myself by squaring both sides." Which strategy is this?
 :::

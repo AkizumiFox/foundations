@@ -72,7 +72,7 @@ Most wrong proofs fail in one of a few ways, each breaking a particular rule. Th
 ::: {#exm-not-allowed-catalogue}
 [What is not allowed]
 
-Each error below breaks one rule, given with the section where the rule was stated, and comes with a failing instance. A wrong argument can reach a **true** conclusion or a **false** one, and each instance is marked accordingly.
+Each error below names the rule it breaks, given with the section where the rule was stated, and comes with a failing instance. A wrong argument can reach a **true** conclusion or a **false** one, and each instance is marked accordingly.
 
 ::: {.enumerate options="label=(N\arabic*)"}
 1. **Verifying instances and concluding "for all".** Breaks \( \rulename{\forall I} \), which needs one proof about a fresh name (@def-rules-universal, Section 5.4). Instance: \( n^2 - n + 11 \) is prime for \( n = 0, 1, \dots, 10 \) (the values are \( 11, 11, 13, 17, 23, 31, 41, 53, 67, 83, 101 \)), "so it is prime for every \( n \in \nN \)". **False:** at \( n = 11 \) the value is \( 121 = 11^2 \).
@@ -96,7 +96,7 @@ Each error below breaks one rule, given with the section where the rule was stat
 :::
 
 ::: {.second-reading title="True conclusions behind an 'and so on' and a 'the'"}
-Both new kinds of error can reach a true conclusion. Say the words of the "and so on" instance, (N13), of a non-empty set of natural numbers instead. They then reach a true conclusion, but they leave out why the process ends. A strictly decreasing list of natural numbers that starts at \( a_1 \) has at most \( a_1 + 1 \) terms, and that needs an induction. The argument "Let \( m \) be the least positive integer with \( m^2 > 50 \); since \( 7^2 = 49 \) and \( 8^2 = 64 \), \( m = 8 \)" reaches a true conclusion too. But the existence of a least such integer is a premise the proof must state: naming \( m \) first is an object named before it is shown to exist, (N14). The barber who shaves exactly the villagers who do not shave themselves is the same error. Section 5.6 shows that no such barber can exist (@thm-barber).
+Both new kinds of error can reach a true conclusion. Say the words of the "and so on" instance, (N13), of a non-empty set of natural numbers instead. They then reach a true conclusion, but they leave out why the process ends. A strictly decreasing list of natural numbers that starts at \( a_1 \) has at most \( a_1 + 1 \) terms, and that needs an induction. The argument "Let \( m \) be the least positive integer with \( m^2 > 50 \); since \( 7^2 = 49 \) and \( 8^2 = 64 \), \( m = 8 \)" reaches a true conclusion too. But the existence of a least such integer is a premise the proof must state: naming \( m \) first is (N14), an object named before it is shown to exist. The barber who shaves exactly the villagers who do not shave themselves is the same error. Section 5.6 shows that no such barber can exist (@thm-barber).
 :::
 
 An entry diagnoses a step, not the conclusion: a **false** instance shows the step leading from true premises to a false conclusion, and a **true** one that a correct conclusion does not excuse it. Some entries are errors met before. Verifying instances, (N1), was the first error listed in Section 5.4. Negating a bound and negating an implication wrongly, parts (b) and (c) of (N11), were warnings in Section 6.2.

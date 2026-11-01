@@ -120,6 +120,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: solution sentence split (''It would sit, unjustified, directly in the box
       of line 4. There it is in fact false''); same content'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 60753fbb2e7d
+    date: '2026-11-01'
+    evidence: 'Solution L116: the sentence was split (''It would sit, unjustified, directly in the box
+      of line 4. There it is in fact false, since n^2 is even there''). The content is the same.'
 - key: exm-rhetoric-conjunction
   kind: exm
   file: 01-connective-rhetoric.md
@@ -318,6 +325,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: LEM sentence split; ''The same box can also be closed by not-I and then followed
       by not-not-E'' (fold still below); fold sentence split, same order fact; sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 22589c2d9931
+    date: '2026-11-01'
+    evidence: In the LEM paragraph before the example, one sentence was split ('...excluded middle in
+      logical form. But it is an instance of trichotomy'). In the solution, L268 'The fold below writes
+      the same box closed by ¬I and followed by ¬¬E' became 'The same box can also be closed by ¬...
 - key: exm-rhetoric-biconditional
   kind: exm
   file: 01-connective-rhetoric.md
@@ -444,6 +459,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: ''contrapositive in costume'' -> ''contrapositive proof dressed as a proof
       by contradiction'''
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 8bb96ca275cc
+    date: '2026-11-01'
+    evidence: 'L374: ''contrapositive in costume'' became ''contrapositive proof dressed as a proof by
+      contradiction''. The meaning is the same, and the new wording also removes a use of ''costume''
+      before the Costumes section defines it at L377.'
 - key: exm-costume-direct
   kind: exm
   file: 01-connective-rhetoric.md
@@ -473,6 +496,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: ''holds a false assumption in mind'' -> ''has to keep a false assumption
       in mind''; sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b6eb2472f611
+    date: '2026-11-01'
+    evidence: 'L394: ''holds a false assumption in mind'' became ''has to keep a false assumption in mind''.
+      This is wording only, and the sidecar passes.'
 - key: exm-costume-contrapositive
   kind: exm
   file: 01-connective-rhetoric.md
@@ -579,6 +609,20 @@ items:
     hash: 7dda1cafa30d
     date: '2026-11-01'
     evidence: 'fixed: (b) now reads ''Which of the phrases (i)-(x)''; mathematics unchanged'
+  - stage: S5e
+    verdict: minor
+    by: s5e-referee
+    hash: 7dda1cafa30d
+    date: '2026-11-01'
+    evidence: The ten phrases moved out of item (a) into their own roman list above (a). The statements
+      and labels (i)-(x) are verbatim, and the solution still matches. But L460 (b) still says 'Which
+      of the phrases in (a)', and the phrases are no longer in (a). It should read 'Which of the ...
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 7dda1cafa30d
+    date: '2026-11-01'
+    evidence: current (b) reads 'Which of the phrases (i)-(x)'; already fixed by the finisher
 - key: exr-connective-rhetoric-a2
   kind: exr
   file: 01-connective-rhetoric.md
@@ -627,6 +671,21 @@ items:
     date: '2026-11-01'
     evidence: 'fixed: (h) now ''... suggest. This is the distinction of Section 2.5, face (i) of "by contradiction",
       refuting.''; content unchanged'
+  - stage: S5e
+    verdict: minor
+    by: s5e-referee
+    hash: 0bb768af5716
+    date: '2026-11-01'
+    evidence: '(k) at L518: the gloss ''wrong negation'' was added and the parenthesis removed. That is
+      fine. (h) at L512 now reads ''...whatever the words "for a contradiction" suggest: This is the distinction
+      of Section 2.5: face (i) of "by contradiction", refuting.'' It has a capital after a ...'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 0bb768af5716
+    date: '2026-11-01'
+    evidence: current (h) reads 'suggest. This is the distinction of Section 2.5, face (i)...'; already
+      fixed
 - key: exr-connective-rhetoric-b1
   kind: exr
   file: 01-connective-rhetoric.md
@@ -715,6 +774,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: solution (a) parenthesis and semicolon became sentences; same claim; sidecar
       passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: a6ef3593042d
+    date: '2026-11-01'
+    evidence: 'Solution (a) at L559: the parenthesis and the semicolon became sentences, ending ''So neither
+      test for a costume is met.'' This is the same claim, and the sidecar passes.'
 - key: exr-connective-rhetoric-b3
   kind: exr
   file: 01-connective-rhetoric.md
@@ -784,6 +850,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: solution (b) case list became ''If t>=0 ... If t<0 ...''; same inequalities
       and tags; sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 37d1e0ea8a81
+    date: '2026-11-01'
+    evidence: 'Solution (b) at L577: the colon and semicolon case list became ''If t>=0, then ... If t<0,
+      then ...''. Every inequality, rule tag and step is the same, and the sidecar passes.'
 - key: exr-connective-rhetoric-b4
   kind: exr
   file: 01-connective-rhetoric.md
@@ -840,6 +913,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: (N4) glossed as reused witness name; Marking scheme -> What a complete answer
       needs; points 2/3/3/1/1 unchanged; sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 37d881fe9099
+    date: '2026-11-01'
+    evidence: The (N4) parenthesis became 'as Section 8.6 notes in its entry on reusing a witness name,
+      (N4)'. 'Marking scheme' became 'What a complete answer needs', which is the book-wide convention
+      in the other rewritten files. The point values 2/3/3/1/1 are unchanged. 'Fatal errors (0 f...
 - key: exr-connective-rhetoric-c1
   kind: exr
   file: 01-connective-rhetoric.md
@@ -889,6 +970,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: two known facts split into First/Second, same facts and source; rubric 2/2/4/2
       and both slips unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6e34bbd06562
+    date: '2026-11-01'
+    evidence: In the statement at L624, the two known facts were split into 'First, ... Second, ...'.
+      The facts and the Sets and Functions Ch.3 source are the same. Solution (d) was split into sentences.
+      The rubric points 2/2/4/2 and both fatal entries are unchanged, under the new headings.
 - key: exr-connective-rhetoric-c2
   kind: exr
   file: 01-connective-rhetoric.md
@@ -930,6 +1019,14 @@ items:
       the product-zero fact, and the hypothesis refutes x^2>0. In (b), the case x^2=0 is now tagged [→E],
       and the rule list at :448 now includes →E. The list matches the tags: →I, ∨E, ∀E, ¬E, →E and ⊥E.
       I solved the exercise'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 7e57fd05f37c
+    date: '2026-11-01'
+    evidence: The Section 8.7 sentence was split off. At L692, '(face (iii))' became ', that is, face
+      (iii),'. The points 3/2/3/2, the ¬I/¬¬E alternative and both fatal entries are verbatim. The sidecar
+      passes.
 - key: exm-rhetoric-universal
   kind: exm
   file: 02-quantifier-rhetoric.md
@@ -962,6 +1059,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: ''Two things here are degenerate'' -> ''Two things in this proof are unusually
       simple''; proof and witness N := 0 unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: dba64dfa64fb
+    date: '2026-11-01'
+    evidence: 'wording only: ''Two things here are degenerate'' -> ''Two things in this proof are unusually
+      simple''; proof, witness N := 0 and every line unchanged'
 - key: check:02-quantifier-rhetoric:1
   kind: check
   file: 02-quantifier-rhetoric.md
@@ -1065,6 +1169,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: skeleton paragraph split into three sentences, same claims; eps=0.03, N=34
       unchanged; sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 36cafffae385
+    date: '2026-11-01'
+    evidence: 'wording only: proof untouched; the skeleton paragraph''s 45-word sentence split into three
+      (''choose'' = ∃E on the school fact, ''will do'' = ∃I), same claims; ''in the sense of the row below''
+      dropped (pointer only); eps=0.03, 1/eps=33.3..., N=34 unchanged, sidecar passes'
 - key: check:02-quantifier-rhetoric:2
   kind: check
   file: 02-quantifier-rhetoric.md
@@ -1154,6 +1266,14 @@ items:
     hash: 6092fdd1f217
     date: '2026-11-01'
     evidence: 'wording only: (N4) named in words, ''as the equality table above allows''; refs kept'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6092fdd1f217
+    date: '2026-11-01'
+    evidence: 'wording only: proof untouched; ''Section 8.6 catalogues the error'' -> ''Section 8.6 lists
+      this error, reusing one witness name for two choices'' (matches (N4)''s title in 06-checking-proofs.md:81);
+      second-reading ''as the row allows'' -> ''as the equality table above allows'' (table a...'
 - key: exm-rhetoric-double-inclusion
   kind: exm
   file: 02-quantifier-rhetoric.md
@@ -1186,6 +1306,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: ''unwind ... silent at level 3'' -> ''use the definitions ... silent in plain
       prose'''
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: efb99263bb65
+    date: '2026-11-01'
+    evidence: 'wording only: solution steps unchanged; ''unwind ... silent at level 3'' -> ''use the definitions
+      ... silent in plain prose'' (8.3 line 84 defines Level 3 = plain prose)'
 - key: check:02-quantifier-rhetoric:3
   kind: check
   file: 02-quantifier-rhetoric.md
@@ -1294,6 +1421,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: commentary split into sentences, same uses of a^n>0 and a^n<=1; @ax-induction
       kept'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 1dbdf9d6bb30
+    date: '2026-11-01'
+    evidence: 'wording only: induction proof and (b) unchanged; commentary split into sentences: a^n>0
+      used twice (sign of a^{n+1}, multiplying a<=1 by a^n), a^n<=1 once; a^n<=a fails at n=0 for a<1
+      kept; @ax-induction kept'
 - key: exr-quantifier-rhetoric-a1
   kind: exr
   file: 02-quantifier-rhetoric.md
@@ -1427,6 +1562,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: three readings turned into a displayed list, verbatim; values unchanged;
       sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 496f49e8461f
+    date: '2026-11-01'
+    evidence: 'wording only: closing sentence''s three front-quantified readings turned into a displayed
+      list, text of each reading verbatim; (a)-(c) formulas, x=1/delta, y=1/delta+delta/2, 1+delta^2/4
+      unchanged; sidecar passes'
 - key: exr-quantifier-rhetoric-b2
   kind: exr
   file: 02-quantifier-rhetoric.md
@@ -1527,6 +1670,15 @@ items:
     hash: 28097db82836
     date: '2026-11-01'
     evidence: 'wording only: (N4),(N9) glossed; rubric renamed; points 2+4+2+2 unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 28097db82836
+    date: '2026-11-01'
+    evidence: 'wording only: solution steps and b=2(a-b), n=6(a-b) unchanged; ''(N4)'' glossed ''reuse
+      a witness name'', ''(N9)'' glossed ''a fact used that is not available'' (both match 8.6 entries);
+      ''Marking scheme''->''What a complete answer needs'', ''Fatal errors (0 for the step)''->''Slips
+      that los...'
 - key: exr-quantifier-rhetoric-c1
   kind: exr
   file: 02-quantifier-rhetoric.md
@@ -1569,6 +1721,14 @@ items:
     hash: 6cbe370ee8ca
     date: '2026-11-01'
     evidence: 'wording only: rubric headings renamed; points and counterexample x=-1,y=-2 unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6cbe370ee8ca
+    date: '2026-11-01'
+    evidence: 'wording only (edited though the ledger does not mark it STALE): ''Marking scheme''/''Fatal
+      errors'' renamed, blank line added so the slips line is no longer part of the list; points 2+3+2+2+1=10
+      and counterexample x=-1,y=-2 (1>=2 false) unchanged'
 - key: exr-quantifier-rhetoric-c2
   kind: exr
   file: 02-quantifier-rhetoric.md
@@ -1618,6 +1778,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: one criterion bullet split in two; last paragraph split; @exm-square-not-uniform
       kept'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 309ea3f515d8
+    date: '2026-11-01'
+    evidence: 'wording only: one criterion bullet split into two (a conjunction, same content); last paragraph
+      split: continuity reading true, moving ''for every x'' gives the warning''s sentence, uniform reading
+      refuted by @exm-square-not-uniform (ref kept)'
 - key: check:03-levels-of-abbreviation:1
   kind: check
   file: 03-levels-of-abbreviation.md
@@ -1722,6 +1890,14 @@ items:
     model: claude-opus-5-5
     evidence: Only the ledger line changed. It now names the STATUS rows by content ('the two STATUS rows
       for F1.5 §03, index') instead of using stale line numbers.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6e4cbd7fbeb5
+    date: '2026-11-01'
+    evidence: The definition block is word for word. The lead-in changed from 'the four levels of the
+      next definition' to 'the four levels of proof'. In the fold 'Levels already on the page' the semicolons
+      were split into sentences, 'and the reason is instructive' and the prose pointer '(in...
 - key: def-silent-steps
   kind: def
   file: 03-levels-of-abbreviation.md
@@ -1782,6 +1958,14 @@ items:
     evidence: TAUT paragraph (03:154) now reads 'From Section 6.3 on', which matches its own earlier sentence
       and NOTATION's TAUT entry (over the skeleton from F1.8 §03 = ch06/03, where prp-taut-skeleton is
       at :196). The ledger line was updated to match.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e8572e46621e
+    date: '2026-11-01'
+    evidence: The definition is word for word. 'The eighth and ninth items of the first list' became 'Two
+      of the items ... forall-E at the obvious term, and to-E on a line of the proof'. These are indeed
+      items 8 and 9 of the may-be-silent list, and the ledger was updated. The TAUT paragraph...
 - key: check:03-levels-of-abbreviation:2
   kind: check
   file: 03-levels-of-abbreviation.md
@@ -1866,6 +2050,14 @@ items:
     evidence: 'wording only (coordinator, diff vs 9f9dbb8): sentences split, line lists displayed, line
       mapping 9/10/11 -> 10-14/15-17/18-20 named by content (checked against L230-232), (N3)/(N8) glossed
       as in the catalogue, rubric headings renamed; every line number, point value and route unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 657b2ee52189
+    date: '2026-11-01'
+    evidence: The example statement was split ('Take the proof of @thm-sqrt2-irrational, that no rational
+      number has square 2. Write it at levels 0, 1, 2 and 3 ...'). It means exactly the same. 'The move'
+      became 'the method'. In the solution, 'lines 4-8. Line 4 is forall-E ..., and lines 5-...
 - key: check:03-levels-of-abbreviation:3
   kind: check
   file: 03-levels-of-abbreviation.md
@@ -1899,6 +2091,14 @@ items:
     evidence: 'wording only (coordinator, diff vs 9f9dbb8): sentences split, line lists displayed, line
       mapping 9/10/11 -> 10-14/15-17/18-20 named by content (checked against L230-232), (N3)/(N8) glossed
       as in the catalogue, rubric headings renamed; every line number, point value and route unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b6611272a681
+    date: '2026-11-01'
+    evidence: The level-0 check was split into two questions with the same content. The solution keeps
+      'Eight lines' and all line numbers (5, 10, 19, 13, 16, 14, 17, 21, 22, 24; 1, 2, 3, 4, 6-9, 11,
+      12, 15, 18, 20, 23); only the enumeration became a list.
 - key: check:03-levels-of-abbreviation:4
   kind: check
   file: 03-levels-of-abbreviation.md
@@ -1929,6 +2129,13 @@ items:
     evidence: 'wording only (coordinator, diff vs 9f9dbb8): sentences split, line lists displayed, line
       mapping 9/10/11 -> 10-14/15-17/18-20 named by content (checked against L230-232), (N3)/(N8) glossed
       as in the catalogue, rubric headings renamed; every line number, point value and route unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 327bb2a2a2b8
+    date: '2026-11-01'
+    evidence: The level-1 check was split into two questions. The solution keeps 'Four lines' and the
+      line numbers 4, 12, 13, 15, 1, 2, 3, 5-8, 9, 10, 11 and 14; the enumeration became a list.
 - key: exm-uniform-four-levels
   kind: exm
   file: 03-levels-of-abbreviation.md
@@ -2002,6 +2209,14 @@ items:
     evidence: 'wording only (coordinator, diff vs 9f9dbb8): sentences split, line lists displayed, line
       mapping 9/10/11 -> 10-14/15-17/18-20 named by content (checked against L230-232), (N3)/(N8) glossed
       as in the catalogue, rubric headings renamed; every line number, point value and route unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 21fd8899b3b8
+    date: '2026-11-01'
+    evidence: The level-1 lead-in was split ('Take the full derivation of @exm-uniform-implies-continuous.
+      Every line ...'). The 'Where the dependence is recorded' paragraphs (lines 4 and 3-5) and the fold
+      'lines 7 and 8 ... are the one stretch' were only split; the 'except line 7 ... lines...
 - key: check:03-levels-of-abbreviation:5
   kind: check
   file: 03-levels-of-abbreviation.md
@@ -2066,6 +2281,15 @@ items:
     model: claude-opus-5-5
     evidence: The bottom row now chooses an integer N > 1/ε and derives N ∈ ℕ from 1/ε > 0. This is correct
       and consistent with the summary sentence.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 9a5e1c345294
+    date: '2026-11-01'
+    evidence: 'In ''Expand to check'' the easy expansion now reads ''still open: it is the exists-E box
+      of x_0'', and ''catalogues the error as (N3)'' became ''lists this error, treating a chosen name
+      as arbitrary, as (N3)''. That matches ch08 §06 line 126 (''(N3): a name chosen by exists-E is not
+      ar...'
 - key: check:03-levels-of-abbreviation:6
   kind: check
   file: 03-levels-of-abbreviation.md
@@ -2177,6 +2401,13 @@ items:
     evidence: 'wording only (coordinator, diff vs 9f9dbb8): sentences split, line lists displayed, line
       mapping 9/10/11 -> 10-14/15-17/18-20 named by content (checked against L230-232), (N3)/(N8) glossed
       as in the catalogue, rubric headings renamed; every line number, point value and route unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 87abfdd053ad
+    date: '2026-11-01'
+    evidence: The stem was split into two sentences ('Parts (a)-(c) are about ... Parts (d) and (e) are
+      about ...'). Solution (e) had a semicolon split. The content is unchanged.
 - key: exr-levels-of-abbreviation-a2
   kind: exr
   file: 03-levels-of-abbreviation.md
@@ -2236,6 +2467,14 @@ items:
     evidence: 'wording only (coordinator, diff vs 9f9dbb8): sentences split, line lists displayed, line
       mapping 9/10/11 -> 10-14/15-17/18-20 named by content (checked against L230-232), (N3)/(N8) glossed
       as in the catalogue, rubric headings renamed; every line number, point value and route unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b8ad136414e7
+    date: '2026-11-01'
+    evidence: The stem's semicolons became sentences. In solution (g), the pointer to the warning by its
+      printed title was replaced by 'before the proof is finished'. That pointer was not an @ref, and
+      the claim is the same. In (h), the parenthesis became an appositive. The sidecar passes.
 - key: exr-levels-of-abbreviation-b1
   kind: exr
   file: 03-levels-of-abbreviation.md
@@ -2349,6 +2588,15 @@ items:
     evidence: 'wording only (coordinator, diff vs 9f9dbb8): sentences split, line lists displayed, line
       mapping 9/10/11 -> 10-14/15-17/18-20 named by content (checked against L230-232), (N3)/(N8) glossed
       as in the catalogue, rubric headings renamed; every line number, point value and route unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e9d465708d36
+    date: '2026-11-01'
+    evidence: '''Name the move'' / ''*The move*'' became ''method''. The completion (i)-(ix) became a
+      list with identical formulas, rule names and line ranges (5, 6-8; 10, 11-13; 4, 5-9, 10-14; 15,
+      16-18; 1, 2-19; 1-20; 1-21). (i) adds the words ''every integer is even or odd'', which is exactly
+      how...'
 - key: exr-levels-of-abbreviation-b3
   kind: exr
   file: 03-levels-of-abbreviation.md
@@ -2391,6 +2639,15 @@ items:
     evidence: 'wording only (coordinator, diff vs 9f9dbb8): sentences split, line lists displayed, line
       mapping 9/10/11 -> 10-14/15-17/18-20 named by content (checked against L230-232), (N3)/(N8) glossed
       as in the catalogue, rubric headings renamed; every line number, point value and route unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 9569f91aeda9
+    date: '2026-11-01'
+    evidence: '''Marking scheme'' became ''What a complete answer needs'', and ''Fatal errors (0 for the
+      step)'' became ''Slips that lose the step''. The point values (3/3/2/2, total 10) and the error
+      list are unchanged. ''a case split that does not exhaust'' became ''does not cover every case, a
+      false...'
 - key: exr-levels-of-abbreviation-c1
   kind: exr
   file: 03-levels-of-abbreviation.md
@@ -2453,6 +2710,14 @@ items:
     evidence: 'wording only (coordinator, diff vs 9f9dbb8): sentences split, line lists displayed, line
       mapping 9/10/11 -> 10-14/15-17/18-20 named by content (checked against L230-232), (N3)/(N8) glossed
       as in the catalogue, rubric headings renamed; every line number, point value and route unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 4061b0d242b5
+    date: '2026-11-01'
+    evidence: In the rubric, the 'Other routes' sentence was restructured into 'One is ... provided the
+      neg-neg-E line is written explicitly. Another is a split ... provided the disjunction of the split
+      is justified, from |a-b| >= 0 or by trichotomy.' Each proviso still attaches to the righ...
 - key: exr-levels-of-abbreviation-c2
   kind: exr
   file: 03-levels-of-abbreviation.md
@@ -2504,6 +2769,14 @@ items:
     evidence: 'wording only (coordinator, diff vs 9f9dbb8): sentences split, line lists displayed, line
       mapping 9/10/11 -> 10-14/15-17/18-20 named by content (checked against L230-232), (N3)/(N8) glossed
       as in the catalogue, rubric headings renamed; every line number, point value and route unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 94d35a493986
+    date: '2026-11-01'
+    evidence: 'The title ''Exit check'' became ''Chapter check'', the name used elsewhere in fd1 (ch04,
+      ch06, ch08 §06). The silent-steps sentence was reordered: the old parenthesis, ''the implication
+      of line 11 is line 9, an instance of the property of the chosen N_0, not of a hypothesis or a re...'
 - key: exr-levels-of-abbreviation-c3
   kind: exr
   file: 03-levels-of-abbreviation.md
@@ -2546,6 +2819,14 @@ items:
     evidence: 'wording only (coordinator, diff vs 9f9dbb8): sentences split, line lists displayed, line
       mapping 9/10/11 -> 10-14/15-17/18-20 named by content (checked against L230-232), (N3)/(N8) glossed
       as in the catalogue, rubric headings renamed; every line number, point value and route unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 912e5dab5787
+    date: '2026-11-01'
+    evidence: The run-on 'The prose leaves unsaid ...' became a three-item list. 'Silent' is glossed as
+      'which may be silent', the same claim. The content (E1), or-I and the closings is unchanged. The
+      sidecar passes.
 - key: exm-self-explanation
   kind: exm
   file: 04-reading-proofs.md
@@ -2595,6 +2876,14 @@ items:
       warrant glossed; B1 negation-law refs moved to a Uses line, C1 def-derived-rule to a Uses line;
       ''degenerate cases'' -> ''two special cases'' (matches lem-atom-splitting step 3); (D3) glossed
       as repetition; (N4) glossed; rubric renamed, points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d54bf635e0cf
+    date: '2026-11-01'
+    evidence: 'Only the instruction changed: ''Self-explain each line of the proof.'' -> ''Explain each
+      line of the proof to yourself: say what makes it true.'' The four proof lines and both explanations
+      are unchanged. In the prose after it, ''(the first we return to below)'' became ''(The first se...'
 - key: check:04-reading-proofs:1
   kind: check
   file: 04-reading-proofs.md
@@ -2669,6 +2958,13 @@ items:
       warrant glossed; B1 negation-law refs moved to a Uses line, C1 def-derived-rule to a Uses line;
       ''degenerate cases'' -> ''two special cases'' (matches lem-atom-splitting step 3); (D3) glossed
       as repetition; (N4) glossed; rubric renamed, points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6e5612e7bcaf
+    date: '2026-11-01'
+    evidence: 'Only the instruction changed: ''Self-explain lines 2–4.'' -> ''Explain lines 2–4: for each,
+      say what makes it true.'' The six proof lines and the solution are unchanged.'
 - key: check:04-reading-proofs:3
   kind: check
   file: 04-reading-proofs.md
@@ -2731,6 +3027,14 @@ items:
       warrant glossed; B1 negation-law refs moved to a Uses line, C1 def-derived-rule to a Uses line;
       ''degenerate cases'' -> ''two special cases'' (matches lem-atom-splitting step 3); (D3) glossed
       as repetition; (N4) glossed; rubric renamed, points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 5e38ff056323
+    date: '2026-11-01'
+    evidence: In the (f) solution, a long sentence was split. 'is not zero, being positive' became 'is
+      positive, so not zero', and the parenthetical citation became 'by disjunctive syllogism (@prp-disjunctive-syllogism)'.
+      The citation is kept and the warrant is the same. The sidecar passes.
 - key: exr-reading-proofs-a2
   kind: exr
   file: 04-reading-proofs.md
@@ -2788,6 +3092,21 @@ items:
       warrant glossed; B1 negation-law refs moved to a Uses line, C1 def-derived-rule to a Uses line;
       ''degenerate cases'' -> ''two special cases'' (matches lem-atom-splitting step 3); (D3) glossed
       as repetition; (N4) glossed; rubric renamed, points unchanged'
+  - stage: S5e
+    verdict: minor
+    by: s5e-referee
+    hash: 676810938d7f
+    date: '2026-11-01'
+    evidence: The mathematics is unchanged. The task sentence with five semicolons is now a bullet list.
+      (k) changed from 'locates a hypothesis' to 'where a hypothesis is used', which matches question
+      11 ('Which hypothesis is used, and how?'). The (j) solution now states the warning's point...
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 676810938d7f
+    date: '2026-11-01'
+    evidence: (j) now 'Has the reader explained each line of it to themselves?'; index.md self-explain
+      already gone; prose l.109 also reworded
 - key: exr-reading-proofs-b1
   kind: exr
   file: 04-reading-proofs.md
@@ -2868,6 +3187,14 @@ items:
       warrant glossed; B1 negation-law refs moved to a Uses line, C1 def-derived-rule to a Uses line;
       ''degenerate cases'' -> ''two special cases'' (matches lem-atom-splitting step 3); (D3) glossed
       as repetition; (N4) glossed; rubric renamed, points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ddd3b10bd4bc
+    date: '2026-11-01'
+    evidence: 'The title changed to ''Explaining a counterexample line by line'', and the instruction
+      now says ''Explain each line: say what makes it true''. In rule-by-rule step (1), the inline @prp-bounded-quantifier-negation
+      and @prp-negated-implication are replaced by plain words (''the negat...'
 - key: exr-reading-proofs-b2
   kind: exr
   file: 04-reading-proofs.md
@@ -2920,6 +3247,14 @@ items:
       warrant glossed; B1 negation-law refs moved to a Uses line, C1 def-derived-rule to a Uses line;
       ''degenerate cases'' -> ''two special cases'' (matches lem-atom-splitting step 3); (D3) glossed
       as repetition; (N4) glossed; rubric renamed, points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 95d59d5d600f
+    date: '2026-11-01'
+    evidence: Only the task statement changed. 'Line 1 opens the box; of the rest, ...; one line ...'
+      became sentences split at the semicolons, with 'Of the other lines'. 'Self-explain' became 'Explain'.
+      The claim and the proof lines are identical, and the sidecar passes.
 - key: exr-reading-proofs-b3
   kind: exr
   file: 04-reading-proofs.md
@@ -2979,6 +3314,14 @@ items:
       warrant glossed; B1 negation-law refs moved to a Uses line, C1 def-derived-rule to a Uses line;
       ''degenerate cases'' -> ''two special cases'' (matches lem-atom-splitting step 3); (D3) glossed
       as repetition; (N4) glossed; rubric renamed, points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d2fedc8b6a3a
+    date: '2026-11-01'
+    evidence: 'Only rubric headings changed: ''Marking scheme'' -> ''What a complete answer needs'', and
+      ''Fatal errors (0 for the step)'' -> ''Slips that lose the step''. The point values and the items
+      are unchanged. The values c = -2, -25 and -9 are unchanged, and the sidecar passes.'
 - key: exr-reading-proofs-c1
   kind: exr
   file: 04-reading-proofs.md
@@ -3034,6 +3377,14 @@ items:
       warrant glossed; B1 negation-law refs moved to a Uses line, C1 def-derived-rule to a Uses line;
       ''degenerate cases'' -> ''two special cases'' (matches lem-atom-splitting step 3); (D3) glossed
       as repetition; (N4) glossed; rubric renamed, points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 74d171cf05fb
+    date: '2026-11-01'
+    evidence: 'The task instruction now reads ''Explain each line: say what makes it true''. In solution
+      (3), a 56-word sentence with nested parentheses was split. The content is the same: the definition
+      at ε, ∀E at a non-obvious term, ε > 0 from (2), ∃E with fresh N1 and then N2, and the poin...'
 - key: exr-reading-proofs-c2
   kind: exr
   file: 04-reading-proofs.md
@@ -3122,6 +3473,14 @@ items:
       warrant glossed; B1 negation-law refs moved to a Uses line, C1 def-derived-rule to a Uses line;
       ''degenerate cases'' -> ''two special cases'' (matches lem-atom-splitting step 3); (D3) glossed
       as repetition; (N4) glossed; rubric renamed, points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 19c7052918f4
+    date: '2026-11-01'
+    evidence: 'In Step 2, the inline (@def-derived-rule) moved to a {.uses} block at the end of the solution,
+      so it is not dropped. In Step 3, ''degenerate'' became ''special'', and a gloss of R was added:
+      ''clause (D3), which copies an available line into the current box''. The gloss is true and ...'
 - key: check:05-writing-proofs:1
   kind: check
   file: 05-writing-proofs.md
@@ -3232,6 +3591,14 @@ items:
       about the page''s devices removed; (N1),(N2),(N5),(N9),(E1) glossed as in the catalogue; C3 states
       (L) and the lemma in words, thm-sqrt2-irrational moved to the ledger; derivations, orders and points
       unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 580901dd306d
+    date: '2026-11-01'
+    evidence: 'wording only: Givens/Goal headers became We know | We want (l.44); semicolon chains split
+      (l.53, l.79, l.87); the bounded-rules parenthesis became sentences with @prp-bounded-quantifier-rules
+      still inline; the closing signpost ''The two warnings below concern steps 4 and 5.'' wa...'
 - key: check:05-writing-proofs:2
   kind: check
   file: 05-writing-proofs.md
@@ -3351,6 +3718,14 @@ items:
       about the page''s devices removed; (N1),(N2),(N5),(N9),(E1) glossed as in the catalogue; C3 states
       (L) and the lemma in words, thm-sqrt2-irrational moved to the ledger; derivations, orders and points
       unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 1296be88e1c3
+    date: '2026-11-01'
+    evidence: 'wording only: colon/semicolon chains split into sentences, and the second-reading''s list
+      of silent steps became a bullet list with the same five entries (l.197ff); @def-silent-steps kept;
+      no claim added or dropped'
 - key: exm-write-from-derivation
   kind: exm
   file: 05-writing-proofs.md
@@ -3411,6 +3786,13 @@ items:
       about the page''s devices removed; (N1),(N2),(N5),(N9),(E1) glossed as in the catalogue; C3 states
       (L) and the lemma in words, thm-sqrt2-irrational moved to the ledger; derivations, orders and points
       unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 572473362cf5
+    date: '2026-11-01'
+    evidence: 'wording only: comparison paragraph (l.240) and premises paragraph split into sentences;
+      line 1/line 10 mapping, (E1) and the n=2k instance unchanged'
 - key: exm-generalise-proof
   kind: exm
   file: 05-writing-proofs.md
@@ -3573,6 +3955,14 @@ items:
       about the page''s devices removed; (N1),(N2),(N5),(N9),(E1) glossed as in the catalogue; C3 states
       (L) and the lemma in words, thm-sqrt2-irrational moved to the ledger; derivations, orders and points
       unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 0800ee965815
+    date: '2026-11-01'
+    evidence: 'wording only: grouping sentence rephrased with the same part ranges (l.317); part (l) and
+      its solution say We know/we want instead of Givens/Goal (l.331, l.358); the formulas are unchanged;
+      sidecar passes'
 - key: exr-writing-proofs-b1
   kind: exr
   file: 05-writing-proofs.md
@@ -3660,6 +4050,14 @@ items:
       about the page''s devices removed; (N1),(N2),(N5),(N9),(E1) glossed as in the catalogue; C3 states
       (L) and the lemma in words, thm-sqrt2-irrational moved to the ledger; derivations, orders and points
       unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: cb4f09a2cadd
+    date: '2026-11-01'
+    evidence: 'wording only: the ''Nothing else moves'' list became bullets with the same five entries
+      and @exm-triangle-inequality-cases kept (l.499ff); the (N2) gloss ''a witness that depends on a
+      variable introduced later, while uniformity is claimed'' matches 06-checking-proofs l.134; number...'
 - key: exr-writing-proofs-b3
   kind: exr
   file: 05-writing-proofs.md
@@ -3711,6 +4109,14 @@ items:
       about the page''s devices removed; (N1),(N2),(N5),(N9),(E1) glossed as in the catalogue; C3 states
       (L) and the lemma in words, thm-sqrt2-irrational moved to the ledger; derivations, orders and points
       unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: f5ade40480d3
+    date: '2026-11-01'
+    evidence: 'wording only: ''move'' became ''proof method''/''method'' (l.543, l.547), matching 03-levels''
+      ''the method skeleton first''; the solution''s colon/comma chain was split; the line-8 argument
+      is unchanged'
 - key: exr-writing-proofs-b4
   kind: exr
   file: 05-writing-proofs.md
@@ -3771,6 +4177,14 @@ items:
       about the page''s devices removed; (N1),(N2),(N5),(N9),(E1) glossed as in the catalogue; C3 states
       (L) and the lemma in words, thm-sqrt2-irrational moved to the ledger; derivations, orders and points
       unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 3ca8070521f2
+    date: '2026-11-01'
+    evidence: 'wording only: ''Marking scheme'' became ''What a complete answer needs'' (consistent with
+      ch04/ch06); (E1) now glossed as ''every integer is even or odd''; ''Fatal errors (0 for the step)''
+      became ''Slips that lose the step''; the (N1) and (N9) glosses match the catalogue (06 l.261, l.3...'
 - key: exr-writing-proofs-c1
   kind: exr
   file: 05-writing-proofs.md
@@ -3803,6 +4217,13 @@ items:
     evidence: 05:421-438. I chose delta=eps/2 independently. My script checked (2x+3)-(2a+3)=2(x-a). The
       marking scheme gives my alternative (delta=eps/3, depends on eps only) full marks via 'any 0<delta<=eps/2';
       the points sum to 10. Hint 1 names the object to compute, and hint 2 is the first line.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 7dcbfae518ae
+    date: '2026-11-01'
+    evidence: 'wording only: scheme heading and fatal-error line renamed (l.618, l.624); points and the
+      delta range 0<delta<=eps/2 unchanged; sidecar passes'
 - key: exr-writing-proofs-c2
   kind: exr
   file: 05-writing-proofs.md
@@ -3854,6 +4275,13 @@ items:
       which I checked is correct. The fatal errors are appropriate. Note: the diff also changes verify/ch08/exr-checking-proofs-b1.py,
       which belongs to another section (5.6), not this file. It adds an assert that not(x^2 < 1) when
       x > 1, which matches its docstring, and it runs clean (''all quoted values check'').'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e037d43abf71
+    date: '2026-11-01'
+    evidence: 'wording only: closing paragraph''s semicolons split, and the parenthetical reason became
+      a colon clause; scheme renamed (l.667, l.673); points unchanged; sidecar passes'
 - key: exr-writing-proofs-c3
   kind: exr
   file: 05-writing-proofs.md
@@ -3923,6 +4351,14 @@ items:
       about the page''s devices removed; (N1),(N2),(N5),(N9),(E1) glossed as in the catalogue; C3 states
       (L) and the lemma in words, thm-sqrt2-irrational moved to the ledger; derivations, orders and points
       unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: fdceadf09117
+    date: '2026-11-01'
+    evidence: 'wording only: the statement (l.679) now names sqrt 2''s irrationality in words, with @thm-sqrt2-irrational
+      moved to the ledger line (check 2 allows this); the (L) gloss matches 03-levels l.190 and the thm-square-even-implies-even
+      gloss matches ch02 l.440; (b) drops the subsecti...'
 - key: check:06-checking-proofs:1
   kind: check
   file: 06-checking-proofs.md
@@ -4029,6 +4465,21 @@ items:
       entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
       off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
       unchanged'
+  - stage: S5e
+    verdict: minor
+    by: s5e-referee
+    hash: 59f7f7808076
+    date: '2026-11-01'
+    evidence: 'Wording only. All 14 entry statements, instances and numbers are unchanged, and every @ref
+      is still there; the old and new @ref multisets for the whole file are identical. Changes: (N6) is
+      now two sentences, still with @cor-refuting-row and @exm-affirming-the-consequent (that ...'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 59f7f7808076
+    date: '2026-11-01'
+    evidence: l.75 'names the rule it breaks' (true of N6, N11, N14); l.99 'naming m first is (N14), an
+      object named before it is shown to exist'; sidecar passes
 - key: check:06-checking-proofs:2
   kind: check
   file: 06-checking-proofs.md
@@ -4101,6 +4552,13 @@ items:
       entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
       off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
       unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 69fab42af3ac
+    date: '2026-11-01'
+    evidence: Wording only. Line 134 now names (N2) in words, and two sentences were split at ';' and
+      ', and usually'. The finite-max claim and the (N2) diagnosis are unchanged.
 - key: exm-verify-cases
   kind: exm
   file: 06-checking-proofs.md
@@ -4144,6 +4602,14 @@ items:
       entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
       off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
       unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: f54971703d2b
+    date: '2026-11-01'
+    evidence: Wording only. Line 163 now names (N8) in words as 'cases that do not exhaust', and 'does
+      not apply' became 'does not arise'. The verdict and the bot-E/vee-E analysis are unchanged. Sidecar
+      passes.
 - key: exm-verify-converse
   kind: exm
   file: 06-checking-proofs.md
@@ -4177,6 +4643,14 @@ items:
       entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
       off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
       unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 1c9bb70722f6
+    date: '2026-11-01'
+    evidence: Wording only. Line 183 adds 'it proves the converse' to the verdict, and '; and it' is split
+      into a new sentence beginning 'It also'. @cor-refuting-row is kept, and the x=-2 counterexample
+      is unchanged. Sidecar passes.
 - key: exm-verify-negation
   kind: exm
   file: 06-checking-proofs.md
@@ -4219,6 +4693,13 @@ items:
       entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
       off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
       unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6ec2fa586f32
+    date: '2026-11-01'
+    evidence: Wording only. Line 205 adds 'so no witness name is reused', which is true because k and
+      m differ.
 - key: exm-verify-scope
   kind: exm
   file: 06-checking-proofs.md
@@ -4250,6 +4731,13 @@ items:
       entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
       off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
       unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 5e1dd4154cd4
+    date: '2026-11-01'
+    evidence: Wording only. Line 224 adds 'it uses a line after its box has closed' to the verdict, which
+      is the title of (N10). The x=1/2 instance is unchanged. Sidecar passes.
 - key: exr-checking-proofs-a1
   kind: exr
   file: 06-checking-proofs.md
@@ -4364,6 +4852,14 @@ items:
       entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
       off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
       unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: a8605a128247
+    date: '2026-11-01'
+    evidence: Wording only. Each (N#) in solutions (a)-(d) and (f) is now prefixed with its catalogue
+      title. In (d), '(N11) (part (a)):' became '(N11) part (a):', and a ';' was split into a new sentence.
+      Counterexamples A={0,1}, f(x)=x and the x=0 case are unchanged. Sidecar passes.
 - key: exr-checking-proofs-a2
   kind: exr
   file: 06-checking-proofs.md
@@ -4422,6 +4918,14 @@ items:
       entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
       off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
       unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 31a50711a6f5
+    date: '2026-11-01'
+    evidence: 'Wording only. In (a)-(c), (f)-(k) the entry names are added. In (g), ''A bound negated
+      instead of a quantifier'' matches the title of (N11)(b). In (i), the nested parenthesis is unnested:
+      (N12) is the verdict, the ''since'' still cites an unavailable line (N9), and x=y=3 is still ...'
 - key: exr-checking-proofs-b1
   kind: exr
   file: 06-checking-proofs.md
@@ -4496,6 +5000,13 @@ items:
       entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
       off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
       unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 46740dee9710
+    date: '2026-11-01'
+    evidence: Wording only. Lines 344 and 356 add 'so no witness name is reused' and 'a wrong negation'.
+      The repair and the x=1 counterexample are unchanged. Sidecar passes.
 - key: exr-checking-proofs-b2
   kind: exr
   file: 06-checking-proofs.md
@@ -4546,6 +5057,13 @@ items:
       entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
       off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
       unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 79bf7625c741
+    date: '2026-11-01'
+    evidence: Wording only. On line 370 a ':' became ',' before 'entry (N8)'. The x=1, y=-1 counterexample
+      is unchanged. Sidecar passes.
 - key: exr-checking-proofs-b3
   kind: exr
   file: 06-checking-proofs.md
@@ -4589,6 +5107,14 @@ items:
       entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
       off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
       unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 5c687a1a51af
+    date: '2026-11-01'
+    evidence: Wording only. The prompt's '(N12), (N13), (N14)' is now a displayed list with the catalogue
+      titles, and the task is unchanged. The verdicts in (iii)-(v) are prefixed with the entry names,
+      with the same claims and counterexamples (m=n=0, 1+1+1=3, (x+1/2)^2+3/4). 'Marking scheme...
 - key: exr-checking-proofs-c1
   kind: exr
   file: 06-checking-proofs.md
@@ -4641,6 +5167,14 @@ items:
       entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
       off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
       unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 4d327013bbdd
+    date: '2026-11-01'
+    evidence: Wording only. 'Name the move' became 'Name the proof method', and 'The move:' became 'The
+      method:'. The marking headings are renamed as in B3. Points (10, 2 ...) and the δ/ε content are
+      unchanged. Sidecar passes.
 - key: exr-checking-proofs-c2
   kind: exr
   file: 06-checking-proofs.md
@@ -4686,6 +5220,14 @@ items:
       = (r^2-1)/(2r), and r > 0 justifies the division. Earlier findings: the (N9) criterion is now ''neither
       proved nor a school fact: it is false'', which is consistent with the revised (N9). The scheme now
       accepts th'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 7b0c11ff6c38
+    date: '2026-11-01'
+    evidence: Wording only. On line 509, 'cites nothing:' became 'cites nothing that is available:', which
+      says the same thing as (N9). The marking headings are renamed, and the points are unchanged. Sidecar
+      passes.
 - key: exr-checking-proofs-c3
   kind: exr
   file: 06-checking-proofs.md
@@ -4731,6 +5273,14 @@ items:
       entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
       off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
       unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 3601e16f256d
+    date: '2026-11-01'
+    evidence: Wording only. The title 'Exit check' became 'Chapter check', the same as 03 C2. Entry names
+      are added to verdicts (2)-(4), and in (4) the chain of ';' is replaced by ':' and ','. In (1), the
+      sentence split keeps the (N4) explanation. The marking points (1)+(1)+(0.5) and 2.5 pe...
 - key: exr-checking-proofs-r1
   kind: exr
   file: 06-checking-proofs.md
@@ -4796,6 +5346,14 @@ items:
       entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
       off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
       unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 394c5d0eb8a0
+    date: '2026-11-01'
+    evidence: Wording only. (a) names (N1). In (b), 'By (E1)' became 'Since every integer is even or odd,
+      (E1)'. That is exactly (E1) as given in (d) and in the ledger line ('every integer is even or odd'),
+      so there is no new fact. In (c), ', so' is split into a new sentence. Sidecar passes.
 - key: thm-irrational-power-rational
   kind: thm
   file: 07-excluded-middle.md
@@ -4843,6 +5401,14 @@ items:
       'sqrt 2 is irrational'). Case 2's exponent law and sqrt2·sqrt2 = 2 are in the ledger (ch11/ch20
       promised, STATUS rows 96 and 100). The meta-claim at 149 ('every other step is intuitionistic')
       holds on the page
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 8cdcce6f6603
+    date: '2026-11-01'
+    evidence: 'wording only: the proof lines are unchanged. In the commentary after the proof (new L35),
+      ''The next subsection says why some mathematicians do not accept such a proof'' became ''Some mathematicians
+      do not accept such a proof, because of what they ask a proof to provide.'' It is t...'
 - key: prp-log2-9-irrational
   kind: prp
   file: 07-excluded-middle.md
@@ -4907,6 +5473,15 @@ items:
       same sources; intuitionistic rule list displayed, same rules; survival-table row split into three
       rows with the same all/- entries; B4 lists displayed with the same results; refs moved to Uses lines
       (def-derived-rule, exm-negating-definitions, def-rules-*, def-valid-argument); rubric renamed'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: fb11b13c8425
+    date: '2026-11-01'
+    evidence: 'wording only: ''by (E2) of Section 2.1'' became ''which is (E2) of Section 2.1''. After
+      the proof, the paragraph''s ''@prp-log2-9-irrational'' became ''the proposition''. That reference
+      was the item''s own label in the paragraph right after its proof, so no dependency is lost. The
+      sidec...'
 - key: check:07-excluded-middle:1
   kind: check
   file: 07-excluded-middle.md
@@ -4929,6 +5504,14 @@ items:
     model: claude-opus-5-5
     evidence: '07:69-75 against the proof at 07:53-65: one box on log2 9 = p/q closed by not-I (07:58),
       with the clash from (E2); witness (sqrt2, log2 9) written at 07:60-63.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6f44f6785893
+    date: '2026-11-01'
+    evidence: 'wording only: the BHK clause for the negation now reads ''the reading that Section 2.2
+      found row by row in a table (@def-rules-negation)''. I checked that the table is at ch02/02 L74-80,
+      right after def-rules-negation. The only word dropped is ''exactly''. The Goldbach sentence wa...'
 - key: check:07-excluded-middle:2
   kind: check
   file: 07-excluded-middle.md
@@ -4951,6 +5534,21 @@ items:
     model: claude-opus-5-5
     evidence: '07:111-117. The BHK method for ¬(P∧¬P) is correct: apply the second component to the first.
       It decides nothing'
+  - stage: S5e
+    verdict: minor
+    by: s5e-referee
+    hash: 2793e9acc601
+    date: '2026-11-01'
+    evidence: 'The mathematics is unchanged. The rule list was turned into bullets that match the old
+      list item for item. The TAUT/completeness/LEM sentence was split with the same content, and the
+      soundness sentence was split. One small slip: at new L122 the old pointer ''(the remark in the ...'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 2793e9acc601
+    date: '2026-11-01'
+    evidence: pointer now '(Section 2.5 says so in a remark after @thm-classical-rules-interderivable)',
+      matching ch02/05 fold; Exercise B3 not claimed
 - key: check:07-excluded-middle:3
   kind: check
   file: 07-excluded-middle.md
@@ -5023,6 +5621,14 @@ items:
     model: claude-opus-5-5
     evidence: 07:152 cites exr-four-kinds-of-task-b1 (Section 3.2) as the earlier derivation; ledger 07:813
       records it (S7)
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: c8b5914b6e94
+    date: '2026-11-01'
+    evidence: 'wording only: the statement is unchanged. Only the idea block changed: ''the goal-directed
+      move of Section 2.2 opens'' became ''working from the goal as in Section 2.2, we open''. The prompt
+      ''self-explain lines 5 and 6'' became ''explain to yourself why lines 5 and 6 follow'' (§13 B4).'
 - key: proof:prp-not-not-excluded-middle
   kind: proof
   file: 07-excluded-middle.md
@@ -5055,6 +5661,14 @@ items:
     model: claude-opus-5-5
     evidence: 'The citation of @exr-four-kinds-of-task-b1 is accurate: its lines 6–13 are the same derivation.
       The derivation (lines 1–8, ∨I, ¬E, ¬I) is unchanged and correct.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: a90714ae8f3d
+    date: '2026-11-01'
+    evidence: 'wording only: the Fitch block is unchanged. The fold title ''Non-example by minimal change''
+      became ''What goes wrong if line 8 writes P or not P'' (B4, STYLE L110). The soundness parenthetical
+      was split into two sentences. They keep the propositional case (@thm-soundness, no valu...'
 - key: check:07-excluded-middle:4
   kind: check
   file: 07-excluded-middle.md
@@ -5102,6 +5716,14 @@ items:
       same sources; intuitionistic rule list displayed, same rules; survival-table row split into three
       rows with the same all/- entries; B4 lists displayed with the same results; refs moved to Uses lines
       (def-derived-rule, exm-negating-definitions, def-rules-*, def-valid-argument); rubric renamed'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 431c8b135cb4
+    date: '2026-11-01'
+    evidence: 'wording only: the Glivenko remark was split into sentences with the same content, and a
+      semicolon became a colon. In the solution, ''as does the optional Section 8.8'' became ''and so
+      does''. The table row for modus tollens, disjunctive syllogism and constructive dilemma became th...'
 - key: check:07-excluded-middle:5
   kind: check
   file: 07-excluded-middle.md
@@ -5135,6 +5757,14 @@ items:
       same sources; intuitionistic rule list displayed, same rules; survival-table row split into three
       rows with the same all/- entries; B4 lists displayed with the same results; refs moved to Uses lines
       (def-derived-rule, exm-negating-definitions, def-rules-*, def-valid-argument); rubric renamed'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 2d47dc6fdff1
+    date: '2026-11-01'
+    evidence: 'wording only: in the solution, the fold title ''RAA is never needed to finish a negation''
+      is now stated as a fact Section 2.5 showed, and Section 8.1 ''applied'' it. The Kolmogorov, supremum
+      and IVT sentences were split. The Curry-Howard clauses became a bulleted list with the sa...'
 - key: exr-excluded-middle-a1
   kind: exr
   file: 07-excluded-middle.md
@@ -5186,6 +5816,13 @@ items:
       same sources; intuitionistic rule list displayed, same rules; survival-table row split into three
       rows with the same all/- entries; B4 lists displayed with the same results; refs moved to Uses lines
       (def-derived-rule, exm-negating-definitions, def-rules-*, def-valid-argument); rubric renamed'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: db038dbb0ec2
+    date: '2026-11-01'
+    evidence: 'wording only: a semicolon was split. Part (d) still cites @thm-soundness for valuations
+      and Section 7.2 for structures and assignments, with the same argument.'
 - key: exr-excluded-middle-a2
   kind: exr
   file: 07-excluded-middle.md
@@ -5244,6 +5881,13 @@ items:
       same sources; intuitionistic rule list displayed, same rules; survival-table row split into three
       rows with the same all/- entries; B4 lists displayed with the same results; refs moved to Uses lines
       (def-derived-rule, exm-negating-definitions, def-rules-*, def-valid-argument); rubric renamed'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 51243dfb6a73
+    date: '2026-11-01'
+    evidence: 'wording only: sentences were split in (d) and (k). @prp-bounded-quantifier-negation (a)
+      and @prp-quantifier-negation (a) are both kept.'
 - key: exr-excluded-middle-b1
   kind: exr
   file: 07-excluded-middle.md
@@ -5386,6 +6030,13 @@ items:
       same sources; intuitionistic rule list displayed, same rules; survival-table row split into three
       rows with the same all/- entries; B4 lists displayed with the same results; refs moved to Uses lines
       (def-derived-rule, exm-negating-definitions, def-rules-*, def-valid-argument); rubric renamed'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: f0c14ec3b51c
+    date: '2026-11-01'
+    evidence: 'wording only: in (b), the colon-chained BHK description was split (''That proof is a method
+      that takes any g ...''). The method g(h(p)) and @prp-contrapositive are unchanged.'
 - key: exr-excluded-middle-b3
   kind: exr
   file: 07-excluded-middle.md
@@ -5509,6 +6160,14 @@ items:
       same sources; intuitionistic rule list displayed, same rules; survival-table row split into three
       rows with the same all/- entries; B4 lists displayed with the same results; refs moved to Uses lines
       (def-derived-rule, exm-negating-definitions, def-rules-*, def-valid-argument); rubric renamed'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d2091ff83167
+    date: '2026-11-01'
+    evidence: 'wording only: (a) is now a bulleted list of the same seven results. (b) is now bullets
+      by chapter with the same entries. ''@cor-derivable-iff-valid'' is replaced twice by ''that corollary''
+      or ''the same corollary as TAUT'', and the label still appears in the item. ''@prp-derivable-i...'
 - key: exr-excluded-middle-b5
   kind: exr
   file: 07-excluded-middle.md
@@ -5564,6 +6223,15 @@ items:
       same sources; intuitionistic rule list displayed, same rules; survival-table row split into three
       rows with the same all/- entries; B4 lists displayed with the same results; refs moved to Uses lines
       (def-derived-rule, exm-negating-definitions, def-rules-*, def-valid-argument); rubric renamed'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 156bb5479d25
+    date: '2026-11-01'
+    evidence: 'wording only: in (d), the parenthesis about Section 8.8''s C1 became three sentences with
+      the same claim. ''Marking scheme'' became ''What a complete answer needs'', and ''Fatal errors''
+      became ''Slips that lose the step'', both as STYLE L245 and L653 require. The list of slips has
+      the...'
 - key: exr-excluded-middle-c1
   kind: exr
   file: 07-excluded-middle.md
@@ -5597,6 +6265,13 @@ items:
       iff the odd part of m is 1 (m<2000, q<=3); and that the smallest valid m are 3, 5, 6, 7. The proof
       handles p>=1 and p>2kq. The scheme covers the odd-part (factorization) alternative, and the points
       sum to 10. Hint 1 names the tool and hint 2 gives the first line.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d1321b89d639
+    date: '2026-11-01'
+    evidence: 'wording only: only the headings were renamed (''What a complete answer needs'', ''Slips
+      that lose the step''). The points and the slip contents are unchanged, and the sidecar passes.'
 - key: exr-excluded-middle-c2
   kind: exr
   file: 07-excluded-middle.md
@@ -5633,6 +6308,14 @@ items:
       exm-triple-negation (Section 2.2) at ¬X gives ¬¬¬¬X ⊢ ¬¬X; def-derived-rule licenses the instantiation.
       However, hint 1 (411) carries out step ① in full rather than naming a tool. [finding refuted by
       skeptics]'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d406f4d8e8e9
+    date: '2026-11-01'
+    evidence: 'wording only: the inline (@def-derived-rule) moved to a Uses block at the end of the solution,
+      and the ledger line now says ''cited in the solution''s Uses line''. One sentence was split. The
+      headings were renamed. The steps ①-③ and the points are unchanged.'
 - key: exr-excluded-middle-r1
   kind: exr
   file: 07-excluded-middle.md
@@ -5729,6 +6412,14 @@ items:
       same sources; intuitionistic rule list displayed, same rules; survival-table row split into three
       rows with the same all/- entries; B4 lists displayed with the same results; refs moved to Uses lines
       (def-derived-rule, exm-negating-definitions, def-rules-*, def-valid-argument); rubric renamed'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 97776f2bb8be
+    date: '2026-11-01'
+    evidence: 'wording only: ''compare @exm-negating-definitions'' moved to a Uses block. The display
+      now ends with a period, and the steps are named afterwards: (b) for the first step, then (a) under
+      ∀ via @prp-replacement. I checked this against the display and against prp-bounded-quantifier...'
 - key: exr-excluded-middle-r2
   kind: exr
   file: 07-excluded-middle.md
@@ -5780,6 +6471,14 @@ items:
       same sources; intuitionistic rule list displayed, same rules; survival-table row split into three
       rows with the same all/- entries; B4 lists displayed with the same results; refs moved to Uses lines
       (def-derived-rule, exm-negating-definitions, def-rules-*, def-valid-argument); rubric renamed'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 7c326443dbf3
+    date: '2026-11-01'
+    evidence: 'wording only: the inline references for →I, →E and ∨E (@def-rules-implication, @def-rule-implication-elimination,
+      @def-rules-disjunction) moved to a Uses block. The Fitch block and the quoted model prose are unchanged.
+      The 36-word sentence kept at L793 is the quoted one-senten...'
 - key: exr-excluded-middle-r3
   kind: exr
   file: 07-excluded-middle.md
@@ -5862,6 +6561,14 @@ items:
       same sources; intuitionistic rule list displayed, same rules; survival-table row split into three
       rows with the same all/- entries; B4 lists displayed with the same results; refs moved to Uses lines
       (def-derived-rule, exm-negating-definitions, def-rules-*, def-valid-argument); rubric renamed'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 566b31c7fa07
+    date: '2026-11-01'
+    evidence: 'wording only: the authoring note ''This item reaches back within this volume, since there
+      is no earlier one'' was cut. ''and the entailments of @def-valid-argument'' moved to a Uses block.
+      ''in the remark of this section'' became ''stated earlier in this section'', which is still true...'
 - key: exr-excluded-middle-r4
   kind: exr
   file: 07-excluded-middle.md
@@ -5904,6 +6611,15 @@ items:
       same sources; intuitionistic rule list displayed, same rules; survival-table row split into three
       rows with the same all/- entries; B4 lists displayed with the same results; refs moved to Uses lines
       (def-derived-rule, exm-negating-definitions, def-rules-*, def-valid-argument); rubric renamed'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 8b761142e89c
+    date: '2026-11-01'
+    evidence: 'wording only: ''∨E with three cases (@def-rules-disjunction, used twice)'' became ''∨E
+      used twice, for three cases (@def-rules-disjunction)'', and the ∃I reference moved to the end of
+      its own sentence. The induction sentence was split. The arithmetic is unchanged and the sidecar
+      p...'
 - key: def-kripke-model
   kind: def
   file: 08-kripke-models.md
@@ -5926,6 +6642,14 @@ items:
     model: claude-opus-5-5
     evidence: 08:9-17 matches the blueprint (ch08-deepen 4.8 item 1); reflexive and transitive reachability
       and persistence of letters are all used later (heredity, B1(c), C2)
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: daaaf4d8024a
+    date: '2026-11-01'
+    evidence: Wording only. The definition block is word for word. The new unlabelled instance before
+      it (w0 with nothing known, w1 with p known; w0 reaches w0 and w1, w1 reaches only w1) agrees with
+      reflexivity and transitivity in the definition and is exactly M1. The caption now says 'The...
 - key: def-forcing
   kind: def
   file: 08-kripke-models.md
@@ -5973,6 +6697,14 @@ items:
       def-derivable moved to a Uses line; unlabelled instance M1 added before def-kripke-model (true:
       w0 reaches w0,w1; w0 forces neither p nor not-p), checked by def-kripke-model.py; rubric renamed,
       points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b9f51d64a3b0
+    date: '2026-11-01'
+    evidence: Wording only. Clauses (K1)-(K7) and the refutes sentence are word for word. The intro now
+      names (K5) as the clause for → and (K6) as the clause for ¬, which matches the enumerate. 'the only
+      stage reachable from w is w itself' replaces 'the stages reachable ... are w alone'. 'f...
 - key: check:08-kripke-models:1
   kind: check
   file: 08-kripke-models.md
@@ -6003,6 +6735,13 @@ items:
       def-derivable moved to a Uses line; unlabelled instance M1 added before def-kripke-model (true:
       w0 reaches w0,w1; w0 forces neither p nor not-p), checked by def-kripke-model.py; rubric renamed,
       points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ab8517cefe50
+    date: '2026-11-01'
+    evidence: Wording only. The solution splits one sentence and names the clauses for ¬ (K6) and ∨ (K4).
+      The answers ('Yes to both') are unchanged.
 - key: exm-two-stage-model
   kind: exm
   file: 08-kripke-models.md
@@ -6035,6 +6774,14 @@ items:
       def-derivable moved to a Uses line; unlabelled instance M1 added before def-kripke-model (true:
       w0 reaches w0,w1; w0 forces neither p nor not-p), checked by def-kripke-model.py; rubric renamed,
       points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: aa797e18fdb1
+    date: '2026-11-01'
+    evidence: Wording only. The last bullet splits 'it refutes ¬¬p ⊢ p, and by (K5), applied with w'=w0,
+      ...' into two sentences, with the same content and the same conclusion w0 ⊮ ¬¬p→p. All other steps
+      are unchanged.
 - key: lem-heredity
   kind: lem
   file: 08-kripke-models.md
@@ -6055,6 +6802,13 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: '08:91-95: statement as in the blueprint; the in-words line is on the main line (STYLE 12.12)'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b42b7afda0b4
+    date: '2026-11-01'
+    evidence: The statement is word for word. The 'In words' line keeps @thm-structural-induction and
+      only drops 'it is in the fold.'
 - key: proof:lem-heredity
   kind: proof
   file: 08-kripke-models.md
@@ -6087,6 +6841,14 @@ items:
       def-derivable moved to a Uses line; unlabelled instance M1 added before def-kripke-model (true:
       w0 reaches w0,w1; w0 forces neither p nor not-p), checked by def-kripke-model.py; rubric renamed,
       points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 3dc7b283ed97
+    date: '2026-11-01'
+    evidence: 'Wording only. The case order and steps are the same: letters, ⊥, ∧/∨, →, ¬, ↔. The tags
+      (K1), (K5) and (K7) are now named in words. In the → case, ''by (K5)'' becomes ''by the same clause
+      at w′'', which is the same fact. @thm-structural-induction, @def-kripke-model and @def-formul...'
 - key: check:08-kripke-models:2
   kind: check
   file: 08-kripke-models.md
@@ -6158,6 +6920,14 @@ items:
       def-derivable moved to a Uses line; unlabelled instance M1 added before def-kripke-model (true:
       w0 reaches w0,w1; w0 forces neither p nor not-p), checked by def-kripke-model.py; rubric renamed,
       points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 1bbf818bc7bd
+    date: '2026-11-01'
+    evidence: The statement has a wording-only change that means exactly the same. The old 'If Γ⊢ψ by
+      a derivation every line of which is a formula of @def-formula, in which no line uses RAA or TAUT,
+      nor ... a line outside @def-formula, then ...' becomes 'Suppose that ... formula of @def-fo...
 - key: proof:thm-kripke-soundness
   kind: proof
   file: 08-kripke-models.md
@@ -6209,6 +6979,21 @@ items:
       def-derivable moved to a Uses line; unlabelled instance M1 added before def-kripke-model (true:
       w0 reaches w0,w1; w0 forces neither p nor not-p), checked by def-kripke-model.py; rubric renamed,
       points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 770f98277cc7
+    date: '2026-11-01'
+    evidence: Wording only. Steps 1-4 are in the same order. Step 1 moves the 'as in Step 1 of @thm-soundness'
+      clause into its own sentence. The Step 3 cases are split into sentences with clause names, and the
+      ¬E, ⊥E and ¬I reasoning is the same. Step 4 moves the inline (@def-derivable) to ...
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 770f98277cc7
+    date: '2026-11-01'
+    evidence: 'neg-I case: ''So none does'' -> ''So no stage reachable from w forces phi'', matches (K6);
+      math unchanged'
 - key: cor-kripke-countermodel
   kind: cor
   file: 08-kripke-models.md
@@ -6336,6 +7121,14 @@ items:
       def-derivable moved to a Uses line; unlabelled instance M1 added before def-kripke-model (true:
       w0 reaches w0,w1; w0 forces neither p nor not-p), checked by def-kripke-model.py; rubric renamed,
       points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 28103f835f82
+    date: '2026-11-01'
+    evidence: Wording only. The solution names the clause for ∨. In the following prose, which falls in
+      this item's range, the M3 and M4 descriptions are split, with the same stages and the same known
+      letters, and the 'stated without proof (Section 8.7)' sentence is reordered with the same ...
 - key: exr-kripke-models-a1
   kind: exr
   file: 08-kripke-models.md
@@ -6376,6 +7169,13 @@ items:
       def-derivable moved to a Uses line; unlabelled instance M1 added before def-kripke-model (true:
       w0 reaches w0,w1; w0 forces neither p nor not-p), checked by def-kripke-model.py; rubric renamed,
       points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 53b95c47829b
+    date: '2026-11-01'
+    evidence: Wording only. In solutions (a) and (b), (K5) and (K6) are now named as the clauses for →
+      and ¬. The answers are unchanged, and (c) and (d) are unchanged.
 - key: exr-kripke-models-a2
   kind: exr
   file: 08-kripke-models.md
@@ -6447,6 +7247,14 @@ items:
       def-derivable moved to a Uses line; unlabelled instance M1 added before def-kripke-model (true:
       w0 reaches w0,w1; w0 forces neither p nor not-p), checked by def-kripke-model.py; rubric renamed,
       points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ed2422b3273a
+    date: '2026-11-01'
+    evidence: Wording only. In (a), the clause for ∨ is named. 'Marking scheme' becomes 'What a complete
+      answer needs'. 'Fatal errors (0 for the step)' becomes 'Slips that lose the step', which is the
+      same scoring. The points (5/2/3) and the listed errors are unchanged.
 - key: exr-kripke-models-b2
   kind: exr
   file: 08-kripke-models.md
@@ -6503,6 +7311,14 @@ items:
       def-derivable moved to a Uses line; unlabelled instance M1 added before def-kripke-model (true:
       w0 reaches w0,w1; w0 forces neither p nor not-p), checked by def-kripke-model.py; rubric renamed,
       points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: f5b573ad0588
+    date: '2026-11-01'
+    evidence: Wording only, in the marking scheme. The heading is renamed and 'Fatal errors (0 for that
+      item)' becomes 'Slips that lose the whole item'. The run-on lines are now a bulleted list with the
+      same three errors, and the TAUT parenthetical becomes a colon clause with the same conte...
 - key: exr-kripke-models-c1
   kind: exr
   file: 08-kripke-models.md
@@ -6563,6 +7379,20 @@ items:
       def-derivable moved to a Uses line; unlabelled instance M1 added before def-kripke-model (true:
       w0 reaches w0,w1; w0 forces neither p nor not-p), checked by def-kripke-model.py; rubric renamed,
       points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e99b3e2a8678
+    date: '2026-11-01'
+    evidence: The statement is word for word; check_beginner's one kept refs finding is this comparison
+      sentence, which B1 allows. Solution (c) is split, with @exr-excluded-middle-b5 (c) moved to the
+      end of its sentence and the same claim. In the marking scheme, the old ambiguous '...inside...
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: e99b3e2a8678
+    date: '2026-11-01'
+    evidence: 'marking: ''box that opens at line 2. 2 for...'' wording only; points unchanged'
 - key: exr-kripke-models-c2
   kind: exr
   file: 08-kripke-models.md
@@ -6629,3 +7459,11 @@ items:
       def-derivable moved to a Uses line; unlabelled instance M1 added before def-kripke-model (true:
       w0 reaches w0,w1; w0 forces neither p nor not-p), checked by def-kripke-model.py; rubric renamed,
       points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6b62dc65b216
+    date: '2026-11-01'
+    evidence: 'Wording only. The comparison is split (''The converse, ¬P ⊢ ¬¬¬P, is @prp-double-negation
+      (a) for ¬P''). In the second route, the two derivations are now named in separate sentences: @exm-triple-negation
+      with φ for P, and @prp-double-negation (a) with ¬φ for P. The points (4/5/1...'
