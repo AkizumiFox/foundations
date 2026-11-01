@@ -1,6 +1,6 @@
 # Proving "There Exists": Exhibit a Witness
 
-Sections 5.3 and 5.4 gave the two rules for "for every": \( \rulename{\forall E} \) uses a universal statement, and \( \rulename{\forall I} \) proves one. This section starts on the other quantifier. It gives the rule that **proves** an existential statement, \( \rulename{\exists I} \), and the habit that goes with it: when the goal is "there exists", do not guess the object, but wait until a line of the derivation shows it. The sequent \( \forall x\, P(x) \vdash \exists x\, P(x) \), which no rule so far can finish, is finished here in three lines.
+Sections 5.3 and 5.4 gave the two rules for "for every": \( \rulename{\forall E} \) uses a universal statement, and \( \rulename{\forall I} \) proves one. This section starts on the other quantifier. It gives the rule that **proves** an existential statement, \( \rulename{\exists I} \). It also gives the habit that goes with it: when the goal is "there exists", do not guess the object, but wait until a line of the derivation shows it. The sequent \( \forall x\, P(x) \vdash \exists x\, P(x) \), which no rule so far can finish, is finished here in three lines.
 
 ## Showing that something exists
 
@@ -10,11 +10,11 @@ Look at what the proof does with the witness at the end. The statement proved, "
 
 Chapter 1 used the same pattern from its first page. It recalled that an integer \( n \) is **even** when \( n = 2k \) for **some** integer \( k \), and said that the word "some" has rules of its own, to come in Chapter 5. Here is the first of them. To show that \( 6 \) is even, take \( k = 3 \): then \( 6 = 2 \cdot 3 \). The statement "\( 6 \) is even" is \( \exists k\, (6 = 2 \cdot k) \), and the proof passes from the instance \( 6 = 2 \cdot 3 \) to it. The second rule for "some", how to **use** "\( n = 2k \) for some \( k \)", is the subject of Section 5.6.
 
-There is a helpful way to see the step, which Section 5.1's reading of \( \exists \) suggests. Over a domain with three elements named \( a \), \( b \), \( c \), the sentence \( \exists x\, P(x) \) says what the disjunction
+There is a helpful way to see the step, which Section 5.1's reading of \( \exists \) suggests. Take a domain with three elements named \( a \), \( b \), \( c \). Over it, the sentence \( \exists x\, P(x) \) says the same as the disjunction
 \[
-P(a) \vee P(b) \vee P(c)
+P(a) \vee P(b) \vee P(c) ,
 \]
-says (grouped to the right, as in Section 4.5): at least one of the three has \( P \). An existential is a long "or", with one disjunct for each object of the domain. Proving a disjunction from one of its sides is \( \rulename{\vee I} \) (@def-rule-disjunction-introduction), and proving an existential from one instance is the rule of this section. The analogy is only a guide (a domain such as \( \nN \) has infinitely many elements, and a formula cannot be infinitely long), but it predicts the rule's behavior exactly: it throws information away, and it must never be run backwards.
+grouped to the right as in Section 4.5: at least one of the three has \( P \). An existential is a long "or", with one disjunct for each object of the domain. Proving a disjunction from one of its sides is \( \rulename{\vee I} \) (@def-rule-disjunction-introduction), and proving an existential from one instance is the rule of this section. The analogy is only a guide, since a domain such as \( \nN \) has infinitely many elements, and a formula cannot be infinitely long. Still, it predicts the rule's behavior exactly: the rule throws information away, and it must never be run backwards.
 
 ## The rule of existential introduction
 
@@ -36,11 +36,15 @@ $\begin{nd}[schema]
 The rule given by this schema is called \( \rulename{\exists I} \) (**existential introduction**). Here \( \varphi \) is **any** formula, \( x \) any variable, and \( t \) **any** term, subject to one side condition: **\( t \) is free for \( x \) in \( \varphi \)** (@def-free-for). Line \( i \) must be available at line \( k \) (@def-derivation).
 :::
 
-- **Schema:** the block above: one cited line, no box, no fresh name.
+- **Schema:** the one shown above, with one cited line, no box and no fresh name.
 - **Reading:** from a line that says something about the term \( t \), write "something has that property": mark some occurrences of \( t \) with a variable \( x \) to get \( \varphi \), and write \( \exists x\, \varphi \).
 - **Example:** from \( 6 = 2 \cdot 3 \), marking the \( 3 \) gives \( \exists k\, (6 = 2 \cdot k) \).
 
-**Which occurrences?** Any you like, as the table below shows; the term \( t \) is the **witness**, and it may be a constant, a compound term or a variable: a variable used elsewhere in the derivation, a flag such as \( x_0 \), or even the variable \( x \) itself. Check two things. First, \( \varphi[t/x] \) must be **exactly** the cited line: choose a variable \( x \) that does not appear in the line and mark some occurrences of \( t \) with it, and this marking recipe guarantees it; with an \( x \) that does appear, check directly (from \( R(x, c) \), marking \( c \) gives \( R(x, x) \), and \( R(x, x)[c/x] \) is \( R(c, c) \), not the line). Second, \( t \) must be free for \( x \) in \( \varphi \), the condition of @def-free-for that \( \rulename{\forall E} \) also carries. With a bound, \( \exists x \in A\; \varphi \), the witness needs the line \( t \in A \) too; "A bounded witness" below shows the two steps.
+**Which occurrences?** Any you like, as the table below shows. The term \( t \) is the **witness**. It may be a constant, a compound term or a variable: a variable used elsewhere in the derivation, a flag such as \( x_0 \), or even the variable \( x \) itself. Check two things.
+
+First, \( \varphi[t/x] \) must be **exactly** the cited line. Choose a variable \( x \) that does not appear in the line, and mark some occurrences of \( t \) with it; then \( \varphi[t/x] \) is the line. With an \( x \) that does appear, check directly. For example, from \( R(x, c) \), marking \( c \) gives \( R(x, x) \), and \( R(x, x)[c/x] \) is \( R(c, c) \), not the line.
+
+Second, \( t \) must be free for \( x \) in \( \varphi \), the condition of @def-free-for that \( \rulename{\forall E} \) also carries. With a bound, \( \exists x \in A\; \varphi \), the witness needs the line \( t \in A \) too. A worked case, with \( N = 100 \), comes later in this section.
 
 **One line, several readings.** Let line \( i \) be \( R(c, c) \), with \( R \) a two-place predicate symbol and \( c \) a constant. The witness is \( c \), and \( c \) occurs twice. Each occurrence may be marked with \( x \) or left alone, and each choice is a different \( \varphi \):
 
@@ -50,7 +54,7 @@ The rule given by this schema is called \( \rulename{\exists I} \) (**existentia
 | \( R(c, x) \) | \( R(c, c) \) | \( \exists x\, R(c, x) \) |
 | \( R(x, x) \) | \( R(c, c) \) | \( \exists x\, R(x, x) \) |
 
-All three are legal steps. Read over \( \nN \) with \( R(x, y) \) as "\( x \le y \)" and \( c \) as \( 5 \): the cited line says \( 5 \le 5 \), and the three useful conclusions say that something is at most \( 5 \), that \( 5 \) is at most something, and that something is at most itself. Each is a true and weaker statement.
+All three are legal steps. Read over \( \nN \) with \( R(x, y) \) as "\( x \le y \)" and \( c \) as \( 5 \). Then the cited line says \( 5 \le 5 \). The three conclusions say that something is at most \( 5 \), that \( 5 \) is at most something, and that something is at most itself. Each is a true and weaker statement.
 
 ::: {.second-reading title="A witness that is not marked"}
 A fourth row is legal too:
@@ -59,12 +63,12 @@ A fourth row is legal too:
 |---|---|---|
 | \( R(c, c) \) | \( R(c, c) \) | \( \exists x\, R(c, c) \) |
 
-The last row is the **degenerate** choice: \( \varphi \) has no free \( x \), so \( \varphi[c/x] \) is \( \varphi \) (Section 5.2) and the new line \( \exists x\, R(c, c) \) quantifies over nothing. It is legal, and it says nothing that line \( i \) did not.
+This row marks no occurrence at all. Here \( \varphi \) has no free \( x \), so \( \varphi[c/x] \) is \( \varphi \) (Section 5.2) and the new line \( \exists x\, R(c, c) \) quantifies over nothing. It is legal, and it says nothing that line \( i \) did not.
 :::
 
 **Why this rule.** Under the reading of Section 5.1, \( \exists x\, \varphi \) is true when at least one element of the domain, put in for \( x \), makes \( \varphi \) true. If \( \varphi[t/x] \) is true, then the object that \( t \) names is such an element, so \( \exists x\, \varphi \) is true. The side condition is what makes "\( \varphi[t/x] \) says about \( t \) what \( \varphi \) says about \( x \)" correct: that was the content of "free for" in Section 5.2.
 
-*\( \rulename{\exists I} \) forgets the witness, and keeps the truth.*
+*\( \rulename{\exists I} \) forgets the witness, and keeps the truth.* In plain words: whenever the cited line is true, the new line is true, but the new line no longer says which object has the property.
 
 ::: {.check}
 Line 1 is \( x_0 + 1 > x_0 \). Give an \( \rulename{\exists I} \) line with the witness \( x_0 \), and one with the witness \( x_0 + 1 \).
@@ -86,7 +90,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 2 breaks the side condition: the free occurrence of \( x \) in \( \varphi \) lies in the scope of \( \forall y \), and \( y \) is the variable of the term \( t \), so \( y \) is **not** free for \( x \) in \( \varphi \). The step would be wrong. Read over \( \nZ \) with \( R(x, y) \) as "\( x \le y \)": line 1 says that every integer is at most itself, which is true, and line 2 says that some integer is at most every integer, that is, that there is a least integer, which is false. The \( y \) put in for \( x \) was meant to name one object, and it was captured by \( \forall y \) and made to range over all of them.
+Line 2 breaks the side condition. The free occurrence of \( x \) in \( \varphi \) lies in the scope of \( \forall y \), and \( y \) is the variable of the term \( t \). So \( y \) is **not** free for \( x \) in \( \varphi \), and the step would be wrong. Read over \( \nZ \) with \( R(x, y) \) as "\( x \le y \)". Line 1 says that every integer is at most itself, which is true. Line 2 says that some integer is at most every integer, that is, that there is a least integer, which is false. The \( y \) put in for \( x \) was meant to name one object, and it was captured by \( \forall y \) and made to range over all of them.
 
 ::: {.warning}
 The witness must be **written on a line**. "There is an \( N \) with \( 1/(N + 1) < 1/100 \): take \( N \) large enough" is not an application of \( \rulename{\exists I} \), because "large enough" is not a term, and the rule asks for an instance \( \varphi[t/x] \) on an available line. In a written proof, "large enough" is a promise to name the witness, and the promise is kept by a term such as \( N = 100 \), followed by the check that it works (\( 1/101 < 1/100 \)). Until then nothing has been proved.
@@ -128,16 +132,20 @@ $\begin{nd}
 ```
 
 Line 2 is \( \rulename{\forall E} \) at the term \( x \): with \( \varphi = P(x) \), the instance \( \varphi[x/x] \) is \( P(x) \), and the variable \( x \) is free for \( x \) in every formula (Section 5.2). Line 3 is \( \rulename{\exists I} \) with the same \( \varphi \) and the witness \( x \). This proves the proposition.
+
+::: {.uses}
+@def-rule-universal-elimination (\( \rulename{\forall E} \) at \( x \)); @def-free-for (\( x \) free for \( x \)); @def-rule-existential-introduction (\( \rulename{\exists I} \)).
+:::
 :::
 
-The puzzle is answered by the paragraph "Which occurrences?" after @def-rule-existential-introduction: the witness may be a variable, the variable \( x \) itself included, so no constant is needed. The line \( P(x) \) has \( x \) free; it says that \( P \) holds of whatever \( x \) names. Nothing in the derivation says what that is, and nothing needs to. The same three lines prove \( \forall x\, \varphi \vdash \exists x\, \varphi \) for every formula \( \varphi \), since \( \varphi[x/x] = \varphi \) (Section 5.2).
+This answers the puzzle. The witness of \( \rulename{\exists I} \) may be a variable, the variable \( x \) itself included (@def-rule-existential-introduction), so no constant is needed. The line \( P(x) \) has \( x \) free; it says that \( P \) holds of whatever \( x \) names. Nothing in the derivation says what that is, and nothing needs to. The same three lines prove \( \forall x\, \varphi \vdash \exists x\, \varphi \) for every formula \( \varphi \), since \( \varphi[x/x] = \varphi \) (Section 5.2).
 
 ::: {.remark}
-The rules accept this derivation in any case; it leads from a true premise to a true conclusion only because every domain has **at least one** element, the convention of Section 5.1. Over an empty domain, \( \forall x\, P(x) \) would be true with nothing to check and \( \exists x\, P(x) \) false with no witness; the convention enters at line 2, where \( P(x) \) treats \( x \) as naming an object, and there must be one to name.
+The rules accept this derivation in any case. It leads from a true premise to a true conclusion only because every domain has **at least one** element, the convention of Section 5.1. Over an empty domain, \( \forall x\, P(x) \) would be true with nothing to check, and \( \exists x\, P(x) \) false with no witness. The convention enters at line 2, where \( P(x) \) treats \( x \) as naming an object, and there must be one to name.
 :::
 
 ::: {.second-reading title="The empty set, again"}
-This does not clash with the empty set of Section 5.1, where \( \forall x \in \emptyset\; \varphi \) is true and \( \exists x \in \emptyset\; \varphi \) is false. A bounded quantifier is an abbreviation (@def-bounded-quantifier): \( \forall x \in \emptyset\; \varphi \) is \( \forall x\, (x \in \emptyset \to \varphi) \), and \( \exists x \in \emptyset\; \varphi \) is \( \exists x\, (x \in \emptyset \wedge \varphi) \). The domain is still non-empty; it is the set \( \emptyset \) that has no elements. Running the three lines on the bounded premise gives \( \rulename{\forall E} \) at \( x \), the line \( x \in \emptyset \to \varphi \), and then \( \rulename{\exists I} \) gives only \( \exists x\, (x \in \emptyset \to \varphi) \), an existential with \( \to \) inside. No line \( x \in \emptyset \) is available to fire the implication, so the bounded "every implies some" is not derived, and it should not be.
+This does not clash with the empty set of Section 5.1, where \( \forall x \in \emptyset\; \varphi \) is true and \( \exists x \in \emptyset\; \varphi \) is false. A bounded quantifier is an abbreviation (@def-bounded-quantifier): \( \forall x \in \emptyset\; \varphi \) is \( \forall x\, (x \in \emptyset \to \varphi) \), and \( \exists x \in \emptyset\; \varphi \) is \( \exists x\, (x \in \emptyset \wedge \varphi) \). The domain is still non-empty; it is the set \( \emptyset \) that has no elements. Running the three lines on the bounded premise gives \( \rulename{\forall E} \) at \( x \), the line \( x \in \emptyset \to \varphi \), and then \( \rulename{\exists I} \) gives only \( \exists x\, (x \in \emptyset \to \varphi) \), an existential with \( \to \) inside. No line \( x \in \emptyset \) is available for \( \rulename{{\to}E} \) to use, so the bounded "every implies some" is not derived, and it should not be.
 :::
 
 ## An existential goal: postpone the witness
@@ -185,7 +193,7 @@ $\begin{nd}
 
 Here \( \varphi = P(x) \wedge Q(x) \) and \( t = c \). Marking only the first \( c \), with \( \varphi = P(x) \wedge Q(c) \), would give the legal but weaker line \( \exists x\, (P(x) \wedge Q(c)) \), which is not the goal.
 
-(b) *Idea.* The goal is a conjunction, so it splits into two goals (Section 1.2), and each is an existential with the line \( R(c, c) \) as an instance, read in two different ways (the first and third rows of the table above). The goal at the bottom (left); then the two subgoals that \( \rulename{\wedge I} \) asks for (right).
+(b) *Idea.* The goal is a conjunction, so it splits into two goals (Section 1.2). Each is an existential with the line \( R(c, c) \) as an instance, read in two different ways. These are the first and third rows of the table of readings of \( R(c, c) \). On the left, the goal sits at the bottom. On the right are the two subgoals that \( \rulename{\wedge I} \) asks for.
 
 ```{=latex}
 % schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
@@ -220,9 +228,9 @@ $\begin{nd}
 
 Line 2 uses \( \varphi = R(x, c) \) and line 3 uses \( \varphi = R(x, x) \), both with the witness \( c \).
 
-Now the second question. From the line \( \exists x\, R(x, x) \), the step to \( \exists x\, R(x, c) \) is **not** an \( \rulename{\exists I} \) step. The new line is \( \exists x\, \varphi \) with \( \varphi = R(x, c) \), so the cited line would have to be \( R(t, c) \) for some term \( t \). The line \( \exists x\, R(x, x) \) is not of that form: its main symbol is \( \exists x \), not \( R \). The rule passes from an **instance** to an existential, never from one existential to another. Nor is the step safe by any other route: read over \( \nZ \) with \( R(x, y) \) as "\( x \cdot y = 1 \)" and \( c \) as \( 0 \), the line \( \exists x\, R(x, x) \) is true (take \( x = 1 \)), and \( \exists x\, R(x, c) \), "some integer times \( 0 \) is \( 1 \)", is false.
+Now the second question. From the line \( \exists x\, R(x, x) \), the step to \( \exists x\, R(x, c) \) is **not** an \( \rulename{\exists I} \) step. The new line is \( \exists x\, \varphi \) with \( \varphi = R(x, c) \), so the cited line would have to be \( R(t, c) \) for some term \( t \). The line \( \exists x\, R(x, x) \) is not of that form: its main symbol is \( \exists x \), not \( R \). The rule passes from an **instance** to an existential, never from one existential to another. Nor is the step safe by any other route. Read over \( \nZ \) with \( R(x, y) \) as "\( x \cdot y = 1 \)" and \( c \) as \( 0 \). Then the line \( \exists x\, R(x, x) \) is true (take \( x = 1 \)), and \( \exists x\, R(x, c) \), "some integer times \( 0 \) is \( 1 \)", is false.
 
-(c) *Idea.* The goal is a \( \forall \), so the step of Section 5.4 opens a flagged box with a fresh name \( x_0 \), and the new goal is \( \exists y\, R(x_0, y) \). That is an existential: postpone it and look at the premise. The premise is a \( \forall \); instantiate it at the term the goal mentions, \( x_0 \). The result, \( R(x_0, x_0) \), shows the witness: it is \( x_0 \) itself, a variable used as a term, as \( x \) was in @prp-forall-implies-exists. The box with its postponed goal (left); then the instance that shows the witness (right).
+(c) *Idea.* The goal is a \( \forall \), so the step of Section 5.4 opens a flagged box with a fresh name \( x_0 \), and the new goal is \( \exists y\, R(x_0, y) \). That is an existential: postpone it and look at the premise. The premise is a \( \forall \); instantiate it at the term the goal mentions, \( x_0 \). The result, \( R(x_0, x_0) \), shows the witness: it is \( x_0 \) itself, a variable used as a term, as \( x \) was in @prp-forall-implies-exists. On the left is the box with its postponed goal. On the right is the instance that shows the witness.
 
 ```{=latex}
 % schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
@@ -262,15 +270,15 @@ $\begin{nd}
 
 Line 3 uses \( \varphi = R(x_0, y) \), the variable \( y \), and the witness \( x_0 \); it marks the second occurrence of \( x_0 \) and keeps the first. Line 4 is \( \rulename{\forall I} \) with the flag \( x_0 \) (@def-rules-universal): \( x_0 \) appears in no premise, there is no open assumption, and \( x_0 \) does not appear in line 4. The \( \rulename{\exists I} \) inside the box needed no box of its own, although its witness is a fresh name. Read over \( \nN \) with \( R(x, y) \) as "\( x \le y \)": every number is at most itself, so every number is at most something.
 
-(d) *Idea.* The goal \( \exists y\, Q(y) \) is an existential, and no line yet has the form \( Q(t) \). Postpone, and work forwards. The premise \( \forall x\, (\dots) \) is a \( \forall \); the only term in sight is \( c \), so instantiate at \( c \) (Section 5.3), and \( \rulename{{\to}E} \) with the premise \( P(c) \) fires. The result \( Q(f(c)) \) shows the witness: the compound term \( f(c) \). In the Givens/Goal table:
+(d) *Idea.* The goal \( \exists y\, Q(y) \) is an existential, and no line yet has the form \( Q(t) \). Postpone, and work forwards. The premise \( \forall x\, (\dots) \) is a \( \forall \); the only term in sight is \( c \), so instantiate at \( c \) (Section 5.3), and then \( \rulename{{\to}E} \) applies with the premise \( P(c) \). The result \( Q(f(c)) \) shows the witness: the compound term \( f(c) \). Here is the search as a table:
 
-| Givens | Goal |
+| We know | We want |
 |---|---|
 | \( \forall x\, (P(x) \to Q(f(x))) \), \( P(c) \) | \( \exists y\, Q(y) \): postponed, no instance yet |
 | + \( P(c) \to Q(f(c)) \) (\( \rulename{\forall E} \) at \( c \)) | \( \exists y\, Q(y) \) |
 | + \( Q(f(c)) \) (\( \rulename{{\to}E} \)) | \( \exists y\, Q(y) \) ✓ by \( \rulename{\exists I} \), witness \( f(c) \) |
 
-The postponed goal (left); then the two forward steps, after which the witness is visible (right).
+On the left is the postponed goal. On the right are the two forward steps, after which the witness is visible.
 
 ```{=latex}
 % schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
@@ -304,10 +312,10 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 5 uses \( \varphi = Q(y) \) and \( t = f(c) \). Now see what choosing the witness first would have done. The term in sight at the start is \( c \), and "take \( y = c \)" leaves the goal \( Q(c) \). Nothing gives it: the premise speaks of \( Q \) only at terms of the form \( f(\dots) \), and \( Q(c) \) need not hold at all. Read over \( \nZ \) with \( P \) as "odd", \( Q \) as "even", \( f(x) \) as \( x + 1 \), and \( c \) as \( 3 \): the premises say that the successor of every odd integer is even and that \( 3 \) is odd, the conclusion says that some integer is even, and the witness the derivation finds is \( f(3) = 4 \), while \( Q(c) \) says that \( 3 \) is even. The search stalls exactly because it chose the witness before the derivation had produced it.
+Line 5 uses \( \varphi = Q(y) \) and \( t = f(c) \). Now see what choosing the witness first would have done. The term in sight at the start is \( c \), and "take \( y = c \)" leaves the goal \( Q(c) \). Nothing gives it: the premise speaks of \( Q \) only at terms of the form \( f(\dots) \), and \( Q(c) \) need not hold at all. Read over \( \nZ \) with \( P \) as "odd", \( Q \) as "even", \( f(x) \) as \( x + 1 \), and \( c \) as \( 3 \). The premises say that the successor of every odd integer is even and that \( 3 \) is odd. The conclusion says that some integer is even. The witness the derivation finds is \( f(3) = 4 \), while \( Q(c) \) says that \( 3 \) is even. The search stalls exactly because it chose the witness before the derivation had produced it.
 :::
 
-The four Ideas share a pattern. In (a) and (b) the witness stood on a premise line from the start; in (c) and (d) it appeared only after other rules had run, and in (d) it was a term that no line mentioned at the start. Postponing costs nothing in (a) to (c), where the right witness was already a term in sight when the existential goal appeared (in (c) the goal names \( x_0 \)), and it is necessary in (d), where the only term in sight at the start, \( c \), is the wrong witness.
+The four Ideas share a pattern. In (a) and (b) the witness stood on a premise line from the start. In (c) and (d) it appeared only after other rules had run, and in (d) it was a term that no line mentioned at the start. Postponing costs nothing in (a) to (c). There the right witness was already a term in sight when the existential goal appeared; in (c) the goal names \( x_0 \). Postponing is necessary in (d), where the only term in sight at the start, \( c \), is the wrong witness.
 
 ## How this rule looks in a mathematical proof
 
@@ -347,7 +355,7 @@ Line 4 marks two of the three occurrences of \( 100 \) in line 3 and keeps the o
 
 ## The rule card
 
-Before the card, the rule at work on lines larger than \( R(c, c) \). The schema sees the cited line as \( \varphi[t/x] \) however much is inside \( t \) and \( \varphi \).
+Here is the rule at work on lines larger than \( R(c, c) \). The schema sees the cited line as \( \varphi[t/x] \) however much is inside \( t \) and \( \varphi \).
 
 ::: {#exm-existential-introduction-instances}
 [Instances of \( \rulename{\exists I} \)]
@@ -358,7 +366,7 @@ Before the card, the rule at work on lines larger than \( R(c, c) \). The schema
 | \( \abs{a - b} < \varepsilon/2 \) | \( \abs{a - b} < \delta \) | \( \varepsilon/2 \) | \( \exists \delta\, (\abs{a - b} < \delta) \) |
 | \( (n + 1) \cdot (n + 1) = n \cdot n + 2 \cdot n + 1 \) | \( m \cdot m = n \cdot n + 2 \cdot n + 1 \) | \( n + 1 \) | \( \exists m\, (m \cdot m = n \cdot n + 2 \cdot n + 1) \) |
 
-In each row \( \varphi[t/x] \) is exactly the cited line, and the marked places are whole occurrences of \( t \) (in the third, both factors on the left; the \( n \)'s on the right are not occurrences of \( n + 1 \), and they stay).
+In each row \( \varphi[t/x] \) is exactly the cited line, and the marked places are whole occurrences of \( t \). In the third row they are both factors on the left. The \( n \)'s on the right are not occurrences of \( n + 1 \), and they stay.
 
 **Not an instance.** From \( P(c) \wedge Q(d) \), the line \( \exists x\, (P(x) \wedge Q(x)) \) is not written by \( \rulename{\exists I} \): \( \varphi[t/x] \) puts **one** term in every marked place, and no single \( t \) turns \( P(x) \wedge Q(x) \) into \( P(c) \wedge Q(d) \).
 :::
@@ -371,7 +379,7 @@ Line 1 is \( Q(g(c), c) \). Write the \( \rulename{\exists I} \) line with the w
 \( \exists x\, Q(g(x), c) \), with \( \varphi = Q(g(x), c) \); \( \varphi[c/x] \) is line 1.
 :::
 
-Chapters 1 and 2's thirteen rules are on the card at the end of Section 3.1; here are this chapter's so far. Nothing later depends on the last column, and Section 5.7 collects the whole table.
+The thirteen rules of Chapters 1 and 2 are listed at the end of Section 3.1. Here are this chapter's rules so far; Section 5.7 collects the whole table. Nothing later depends on the Lean column.
 
 | Rule | Shape | Side condition | You write | Lean |
 |---|---|---|---|---|
@@ -381,7 +389,7 @@ Chapters 1 and 2's thirteen rules are on the card at the end of Section 3.1; her
 
 The phrase names the witness and then checks it. A proof that names the witness without the check ("take \( N = 100 \).") has written the line \( \exists x\, \varphi \) without the instance \( \varphi[t/x] \) it cites; the reader must supply the instance, and should be able to.
 
-In the Givens/Goal table, \( \rulename{\exists I} \) ticks off the goal \( \exists x\, \varphi \) once a Given is an instance \( \varphi[t/x] \); until then the goal row waits.
+In a "We know | We want" table, \( \rulename{\exists I} \) ticks off the wanted line \( \exists x\, \varphi \) as soon as something we know is an instance \( \varphi[t/x] \). Until then that row waits.
 
 ::: {.warning}
 [Not allowed: \( \rulename{\exists I} \)]
@@ -390,10 +398,10 @@ Each step is offered as one application of \( \rulename{\exists I} \); each brea
 
 - "From \( P(c) \wedge Q(d) \), write \( \exists x\, (P(x) \wedge Q(x)) \)": the cited line must be exactly \( \varphi[t/x] \), with one term \( t \) in every marked place.
 - "From \( \forall y\, (y < y + 1) \), write \( \exists x\, \forall y\, (y < x) \)": the side condition; the witness \( y + 1 \) is not free for \( x \) in \( \forall y\, (y < x) \).
-- "From \( P(t) \), write \( \exists x \in A\; P(x) \)": the cited line must be the instance; the bounded form is \( \exists x\, (x \in A \wedge P(x)) \), whose instance is \( t \in A \wedge P(t) \) ("A bounded witness").
+- "From \( P(t) \), write \( \exists x \in A\; P(x) \)": the cited line must be the instance; the bounded form is \( \exists x\, (x \in A \wedge P(x)) \), whose instance is \( t \in A \wedge P(t) \), as with \( N = 100 \) above.
 :::
 
-**The search method: one more step.** Each rule section adds a step to the method of Section 3.1.
+**The search method: one more step.** Each new rule adds a step to the search method of Section 3.1.
 
 - **Goal \( \exists x\, \varphi \).** Postpone. Work on the premises and on other goals until an available line is an instance \( \varphi[t/x] \), with \( t \) free for \( x \) in \( \varphi \); then \( \rulename{\exists I} \). The witness may be a compound term that appears only after other rules have run, as \( f(c) \) did in (d).
 
@@ -407,7 +415,7 @@ Each step is offered as one application of \( \rulename{\exists I} \); each brea
 ::: {.enumerate options="label=(\alph*)"}
 1. State \( \rulename{\exists I} \) as a schema, with its side condition.
 2. Line 1 of a derivation is \( R(c, f(c)) \). Which of the following may line 2 be, by one application of \( \rulename{\exists I} \) to line 1? For each that may, give \( \varphi \) and the witness \( t \); for each that may not, say why.
-   (i) \( \exists x\, R(x, f(c)) \); (ii) \( \exists x\, R(c, x) \); (iii) \( \exists x\, R(x, f(x)) \); (iv) \( \exists x\, R(x, x) \); (v) \( \exists x\, R(f(c), x) \).
+   (i) \( \exists x\, R(x, f(c)) \), (ii) \( \exists x\, R(c, x) \), (iii) \( \exists x\, R(x, f(x)) \), (iv) \( \exists x\, R(x, x) \), and (v) \( \exists x\, R(f(c), x) \).
 3. Line 1 of a derivation is \( \forall y\, (y \le y \cdot y) \). Is \( \exists x\, \forall y\, (y \le x \cdot x) \) a legal \( \rulename{\exists I} \) step from line 1? Read both lines over \( \nZ \): which is true?
 4. True or false, with a reason: from the line \( \exists x\, P(x) \), one application of \( \rulename{\exists I} \) gives \( P(c) \).
 5. The current goal of a search is \( \exists x\, \varphi \) and no available line is an instance of \( \varphi \). What does the search method say to do, and why not choose a witness now?
@@ -417,9 +425,11 @@ Each step is offered as one application of \( \rulename{\exists I} \); each brea
 ::: {.solution}
 *(a)* From \( \varphi[t/x] \) on an available line \( i \), write \( \exists x\, \varphi \) on line \( k \), justified "\( \rulename{\exists I} \) \( i \)". Side condition: \( t \) is free for \( x \) in \( \varphi \).
 
-*(b)* (i) Yes: \( \varphi = R(x, f(c)) \), \( t = c \); only the first \( c \) is marked. (ii) Yes: \( \varphi = R(c, x) \), \( t = f(c) \); the witness is the compound term. (iii) Yes: \( \varphi = R(x, f(x)) \), \( t = c \); both occurrences of \( c \) are marked, and \( \varphi[c/x] \) is \( R(c, f(c)) \). (iv) No: the conclusion fixes \( \varphi = R(x, x) \), whose instances \( R(t, t) \) have equal arguments, while the arguments \( c \) and \( f(c) \) of line 1 differ. (v) No: the conclusion fixes \( \varphi = R(f(c), x) \), whose instances \( R(f(c), t) \) have \( f(c) \) as first argument, while line 1 has \( c \) there. (Read over \( \nN \) with \( R(x, y) \) as "\( x < y \)", \( f(x) \) as \( x + 1 \), and \( c \) as \( 0 \): line 1 says \( 0 < 1 \), and (v) says that something exceeds \( 1 \), true but not by this step; (iv) says that some number is less than itself, which is false.)
+*(b)* (i) Yes: \( \varphi = R(x, f(c)) \), \( t = c \); only the first \( c \) is marked. (ii) Yes: \( \varphi = R(c, x) \), \( t = f(c) \); the witness is the compound term. (iii) Yes: \( \varphi = R(x, f(x)) \), \( t = c \); both occurrences of \( c \) are marked, and \( \varphi[c/x] \) is \( R(c, f(c)) \). (iv) No: the conclusion fixes \( \varphi = R(x, x) \), whose instances \( R(t, t) \) have equal arguments, while the arguments \( c \) and \( f(c) \) of line 1 differ. (v) No: the conclusion fixes \( \varphi = R(f(c), x) \), whose instances \( R(f(c), t) \) have \( f(c) \) as first argument, while line 1 has \( c \) there.
 
-*(c)* No. With \( \varphi = \forall y\, (y \le x \cdot x) \), the formula \( \varphi[y/x] \) is line 1, so the witness would be the variable \( y \); but the free occurrences of \( x \) in \( \varphi \) lie in the scope of \( \forall y \), so \( y \) is not free for \( x \) in \( \varphi \). Over \( \nZ \), line 1 is true: for \( y \le 0 \), \( y \le 0 \le y \cdot y \), and for \( y \ge 1 \), \( y \le y \cdot y \) after multiplying \( 1 \le y \) by \( y > 0 \). The other line is false: whatever integer \( x \) is proposed, \( y = x \cdot x + 1 \) gives \( y > x \cdot x \). So the step would lead from a true line to a false one, which is what the side condition prevents.
+Read over \( \nN \) with \( R(x, y) \) as "\( x < y \)", \( f(x) \) as \( x + 1 \), and \( c \) as \( 0 \). Then line 1 says \( 0 < 1 \). Line (v) says that something exceeds \( 1 \), which is true but does not follow by this step. Line (iv) says that some number is less than itself, which is false.
+
+*(c)* No. With \( \varphi = \forall y\, (y \le x \cdot x) \), the formula \( \varphi[y/x] \) is line 1, so the witness would be the variable \( y \). But the free occurrences of \( x \) in \( \varphi \) lie in the scope of \( \forall y \), so \( y \) is not free for \( x \) in \( \varphi \). Over \( \nZ \), line 1 is true: for \( y \le 0 \), \( y \le 0 \le y \cdot y \), and for \( y \ge 1 \), \( y \le y \cdot y \) after multiplying \( 1 \le y \) by \( y > 0 \). The other line is false: whatever integer \( x \) is proposed, \( y = x \cdot x + 1 \) gives \( y > x \cdot x \). So the step would lead from a true line to a false one, which is what the side condition prevents.
 
 *(d)* False. \( \rulename{\exists I} \) concludes an existential from an instance; it never concludes an instance. The line \( P(c) \) does not follow from \( \exists x\, P(x) \) at all: over \( \nZ \) with \( P \) as "even" and \( c \) as \( 3 \), the first is true and the second false.
 
@@ -436,7 +446,7 @@ Each part takes a line or two. The parts run from single steps, through a missin
 2. Line 2 is \( c + c = 2 \cdot c \). Write the \( \rulename{\exists I} \) lines with the witness \( c \) that mark (i) all three occurrences of \( c \), (ii) the two on the left only.
 3. Line 1 is \( P(f(c)) \). Give two different \( \rulename{\exists I} \) conclusions.
 4. Line 5 is \( \exists y\, (y > x_0 + 1) \), justified "\( \rulename{\exists I} \) 4". Give two possible lines 4, with their witnesses.
-5. Justify each line: 1 \( \forall x\, (P(x) \to Q(f(x))) \), premise; 2 \( P(c) \), premise; 3 \( P(c) \to Q(f(c)) \); 4 \( Q(f(c)) \); 5 \( P(c) \wedge Q(f(c)) \); 6 \( \exists x\, (P(x) \wedge Q(f(x))) \).
+5. Justify each line. Lines 1 and 2 are the premises \( \forall x\, (P(x) \to Q(f(x))) \) and \( P(c) \). Line 3 is \( P(c) \to Q(f(c)) \), line 4 is \( Q(f(c)) \), line 5 is \( P(c) \wedge Q(f(c)) \), and line 6 is \( \exists x\, (P(x) \wedge Q(f(x))) \).
 6. Line 1 is \( R(c, c) \). Which of \( \exists x\, R(x, c) \), \( \exists x\, R(c, x) \), \( \exists x\, R(x, y) \) can one \( \rulename{\exists I} \) **not** give?
 7. Line 1 is \( \forall y\, (y = y) \). Is \( \exists x\, \forall y\, (x = y) \) a legal \( \rulename{\exists I} \) line?
 8. True or false: \( \rulename{\exists I} \) may cite \( \exists x\, P(x) \) and write \( P(c) \).
@@ -456,7 +466,7 @@ Each part takes a line or two. The parts run from single steps, through a missin
 
 (d) Any line \( t > x_0 + 1 \) with \( t \) free for \( y \) (every term is, since the formula has no quantifier): for example \( x_0 + 2 > x_0 + 1 \) (witness \( x_0 + 2 \)) or \( 7 > x_0 + 1 \) (witness \( 7 \)).
 
-(e) 3 \( \rulename{\forall E} \) 1 (at \( c \)); 4 \( \rulename{{\to}E} \) 3, 2; 5 \( \rulename{\wedge I} \) 2, 4; 6 \( \rulename{\exists I} \) 5 (witness \( c \), marking the \( c \) of \( P(c) \) and the one inside \( f(c) \)).
+(e) Line 3: \( \rulename{\forall E} \) 1 (at \( c \)). Line 4: \( \rulename{{\to}E} \) 3, 2. Line 5: \( \rulename{\wedge I} \) 2, 4. Line 6: \( \rulename{\exists I} \) 5 (witness \( c \), marking the \( c \) of \( P(c) \) and the one inside \( f(c) \)).
 
 (f) \( \exists x\, R(x, y) \): its instances \( R(t, y) \) have \( y \) in the second place, and line 1 has \( c \).
 
@@ -470,7 +480,7 @@ Each part takes a line or two. The parts run from single steps, through a missin
 
 (k) 2 \( P(f(x)) \), \( \rulename{\forall E} \) 1 (at the term \( f(x) \)); 3 \( \exists x\, P(f(x)) \), \( \rulename{\exists I} \) 2 (with \( \varphi = P(f(x)) \) and the witness \( x \)).
 
-(l) 2 \( \forall y\, R(x, y) \), \( \rulename{\forall E} \) 1 (at \( x \)); 3 \( R(x, x) \), \( \rulename{\forall E} \) 2; 4 \( \exists y\, R(y, x) \), \( \rulename{\exists I} \) 3 (witness \( x \), marking the first place); 5 \( \exists x\, \exists y\, R(y, x) \), \( \rulename{\exists I} \) 4 (witness \( x \)).
+(l) Line 2: \( \forall y\, R(x, y) \), \( \rulename{\forall E} \) 1 (at \( x \)). Line 3: \( R(x, x) \), \( \rulename{\forall E} \) 2. Line 4: \( \exists y\, R(y, x) \), \( \rulename{\exists I} \) 3 (witness \( x \), marking the first place). Line 5: \( \exists x\, \exists y\, R(y, x) \), \( \rulename{\exists I} \) 4 (witness \( x \)).
 :::
 
 ### B. Practice
@@ -478,7 +488,7 @@ Each part takes a line or two. The parts run from single steps, through a missin
 ::: {#exr-existential-introduction-b1}
 [B1: Postpone, then choose]
 
-A search for \( \forall x\, \bigl( P(x) \to Q(x) \bigr), \ P(a) \vdash \exists x\, \bigl( P(x) \wedge Q(x) \bigr) \) has reached the stage below. *Name the move, then complete it, saying for each line whether the goal or a premise chose it.*
+A search for \( \forall x\, \bigl( P(x) \to Q(x) \bigr), \ P(a) \vdash \exists x\, \bigl( P(x) \wedge Q(x) \bigr) \) has reached the stage below. *Name the method, then complete the derivation, saying for each line whether the goal or a premise chose it.*
 
 ```{=latex}
 % schema (partial derivation: the gap is unnumbered, lines carry their final numbers)
@@ -494,7 +504,7 @@ $\begin{nd}
 :::
 
 ::: {.solution}
-The move is *postpone the witness*.
+The method is *postpone the witness*.
 
 *Idea.* The goal is an existential: postpone it. The premise \( \forall x\, (\dots) \) is instantiated at the only term in sight, \( a \), and \( \rulename{{\to}E} \) with \( P(a) \) gives \( Q(a) \); both steps are premise-directed. Now the witness \( a \) is visible, and the instance the goal needs is \( P(a) \wedge Q(a) \), which \( \rulename{\wedge I} \) builds. The last step is the postponed \( \rulename{\exists I} \).
 
@@ -651,15 +661,15 @@ $\begin{nd}
 
 Line 3 has the witness \( x \); the variable names an object, since domains are not empty (Section 5.1).
 
-The pairs: (c) and (d) are look-alikes (one witness for both places, against two witnesses); (e) and (f) differ only in the order of \( \forall \) and \( \exists \), the swap of Section 5.1, and the witness \( f(x_0) \) in (e) depends on the flag; (b) is the converse of @prp-forall-implies-exists. Worked examples of these types: @exm-existential-introduction-derivations; @prp-forall-implies-exists.
+The claims come in pairs. Claims (c) and (d) look alike: one witness for both places, against two witnesses. Claims (e) and (f) differ only in the order of \( \forall \) and \( \exists \), the swap of Section 5.1, and the witness \( f(x_0) \) in (e) depends on the flag. Claim (b) is the converse of @prp-forall-implies-exists. For worked examples of these types, see @exm-existential-introduction-derivations and that proposition.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 1 each: (a), (b), (c), (d), (f), (g), with the derivation or the counter-reading in full.
 - 2: (e), with the flag opened first and the witness \( f(x_0) \) found after it.
 - 2: the closing pairing.
 
-Fatal errors (0 for the claim): an \( \rulename{\exists I} \) whose witness is not free for the variable; a "break" in which the premise is false.
+Slips that lose the step (here, the whole claim): an \( \rulename{\exists I} \) whose witness is not free for the variable; a "break" in which the premise is false.
 :::
 
 ### C. Going deeper
@@ -667,7 +677,7 @@ Fatal errors (0 for the claim): an \( \rulename{\exists I} \) whose witness is n
 ::: {#exr-existential-introduction-c1}
 [C1: The conclusion clause of for-all-introduction, used later]
 
-The side condition of \( \rulename{\forall I} \) (@def-rules-universal) has three clauses about the flag \( x_0 \): it appears in no premise, in no assumption of a box still open at the \( \rulename{\forall I} \) line, and not in the conclusion \( \forall x\, \varphi \). Show that the third clause is needed: give a "derivation" that breaks **only** that clause, from a premise that is true over \( \nN \) to a sentence (@def-sentence) that is false over \( \nN \). Check that every other step is legal.
+The side condition of \( \rulename{\forall I} \) (@def-rules-universal) has three clauses about the flag \( x_0 \). The flag appears in no premise, in no assumption of a box still open at the \( \rulename{\forall I} \) line, and not in the conclusion \( \forall x\, \varphi \). Show that the third clause is needed: give a "derivation" that breaks **only** that clause, from a premise that is true over \( \nN \) to a sentence (@def-sentence) that is false over \( \nN \). Check that every other step is legal.
 :::
 
 ::: {.solution}
@@ -703,14 +713,14 @@ $\begin{nd}
 
 *Over \( \nN \).* Line 1 says that every natural number is at most itself: true. Line 4 says that some natural number is at least every natural number, that is, that there is a largest natural number: false, since for any \( y \), \( x = y + 1 \) is larger.
 
-*What the clause prevents.* The box proved \( y_0 \le y_0 \), a fact about \( y_0 \) in which the two sides are the same name. Line 3 generalized only one side and kept the other, so it claimed that **one** fixed \( y_0 \) is at least every \( x \): a claim about \( y_0 \) that the box never proved. The flag is "let \( y_0 \) be arbitrary"; it must not survive into the statement that "since \( y_0 \) was arbitrary" produces. Line 4 then shows the damage, by turning the leaked name into a witness.
+*What the clause prevents.* The box proved \( y_0 \le y_0 \), a fact about \( y_0 \) in which the two sides are the same name. Line 3 generalized only one side and kept the other, so it claimed that **one** fixed \( y_0 \) is at least every \( x \): a claim about \( y_0 \) that the box never proved. The flag is "let \( y_0 \) be arbitrary"; it must not survive into the statement that "since \( y_0 \) was arbitrary" produces. Line 4 then shows the damage: it uses the flag that survived into line 3 as a witness.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 - 3: a derivation whose only illegal line is a \( \rulename{\forall I} \) whose flag appears in its conclusion.
 - 2: checks the other two clauses at that line (no premise, no open assumption contains the flag).
 - 2: checks the remaining lines (here \( \rulename{\forall E} \) and \( \rulename{\exists I} \), with free-for).
 - 3: shows the premise true and the conclusion false over \( \nN \), with the witness of the falsity (\( y + 1 \)).
-Fatal errors (0 for the step): a second illegal line (for instance a capture in \( \rulename{\exists I} \)); a premise that is false over \( \nN \).
+Slips that lose the step: a second illegal line, for instance a capture in \( \rulename{\exists I} \); a premise that is false over \( \nN \).
 :::
 
 ::: {#exr-existential-introduction-c2}
@@ -722,25 +732,46 @@ Explain why the rules so far (Chapters 1–2 and \( \rulename{\forall E} \), \( 
 ::: {.solution}
 The argument below is informal: it explains why every search stalls, and it does not by itself prove that no derivation exists. Section 7.2 gives a model in which the premise is true and \( P(c) \) is false. With the soundness theorem stated there (and proved in the optional Section 7.3), that model shows no derivation exists.
 
-*Which rules could write \( P(c) \).* The line \( P(c) \) is atomic, so no introduction rule writes it: \( \rulename{\wedge I} \), \( \rulename{{\to}I} \), \( \rulename{\vee I} \), \( \rulename{\neg I} \), \( \rulename{{\leftrightarrow}I} \), \( \rulename{\forall I} \) and \( \rulename{\exists I} \) all write a line whose main symbol is their own connective or quantifier. The remaining rules take \( P(c) \) out of something larger: \( \rulename{\wedge E} \) needs a conjunction with \( P(c) \) as a side; \( \rulename{{\to}E} \) needs an implication \( \psi \to P(c) \) and \( \psi \); \( \rulename{{\leftrightarrow}E} \) a biconditional with \( P(c) \) as a side; \( \rulename{\vee E} \) a disjunction and two boxes each ending in \( P(c) \); \( \rulename{\forall E} \) a universal \( \forall x\, \psi \) with \( \psi[c/x] = P(c) \); \( \rulename{\neg E} \) writes only \( \bot \), never \( P(c) \); \( \rulename{\bot E} \) the line \( \bot \); \( \rulename{RAA} \) a box from \( \neg P(c) \) to \( \bot \); and \( \rulename{R} \) the line \( P(c) \) itself.
+*Which rules could write \( P(c) \).* The line \( P(c) \) is atomic, so no introduction rule writes it: \( \rulename{\wedge I} \), \( \rulename{{\to}I} \), \( \rulename{\vee I} \), \( \rulename{\neg I} \), \( \rulename{{\leftrightarrow}I} \), \( \rulename{\forall I} \) and \( \rulename{\exists I} \) all write a line whose main symbol is their own connective or quantifier. The remaining rules take \( P(c) \) out of something larger:
+
+- \( \rulename{\wedge E} \) needs a conjunction with \( P(c) \) as a side;
+- \( \rulename{{\to}E} \) needs an implication \( \psi \to P(c) \) and \( \psi \);
+- \( \rulename{{\leftrightarrow}E} \) needs a biconditional with \( P(c) \) as a side;
+- \( \rulename{\vee E} \) needs a disjunction and two boxes each ending in \( P(c) \);
+- \( \rulename{\forall E} \) needs a universal \( \forall x\, \psi \) with \( \psi[c/x] = P(c) \);
+- \( \rulename{\neg E} \) writes only \( \bot \), never \( P(c) \);
+- \( \rulename{\bot E} \) needs the line \( \bot \);
+- \( \rulename{RAA} \) needs a box from \( \neg P(c) \) to \( \bot \);
+- \( \rulename{R} \) needs the line \( P(c) \) itself.
 
 The derived rules of Chapter 2 abbreviate derivations in these rules (@def-derived-rule), so they add no new way to write \( P(c) \).
 
-*What the premise can supply.* The only premise is \( \exists x\, P(x) \), whose main symbol is \( \exists \). No rule so far looks inside an existential: each elimination rule needs a cited line that is \( \bot \) (for \( \rulename{\bot E} \)) or whose main symbol is \( \wedge \), \( \to \), \( \vee \), \( \leftrightarrow \), \( \neg \) or \( \forall \), and \( \rulename{\exists I} \) produces existentials rather than using them. So the premise can enter a derivation only as a whole: copied, built into a larger formula, set against a line \( \neg\exists x\, P(x) \) by \( \rulename{\neg E} \), or cited as the side \( \psi \) beside a line \( \psi \to \chi \) or \( \psi \leftrightarrow \chi \) by \( \rulename{{\to}E} \) or \( \rulename{{\leftrightarrow}E} \). None of these reaches the information inside it, and the lines the rules above need (a conjunction containing \( P(c) \), an implication ending in it, a biconditional with it as a side, a disjunction for \( \rulename{\vee E} \), a universal with it as an instance, a contradiction) have nowhere to come from. A search therefore stalls at once.
+*What the premise can supply.* The only premise is \( \exists x\, P(x) \), whose main symbol is \( \exists \). No rule so far looks inside an existential. Each elimination rule needs a cited line that is \( \bot \) (for \( \rulename{\bot E} \)) or whose main symbol is \( \wedge \), \( \to \), \( \vee \), \( \leftrightarrow \), \( \neg \) or \( \forall \). And \( \rulename{\exists I} \) produces existentials rather than using them. So the premise can enter a derivation only as a whole. It can be copied, or built into a larger formula. It can be set against a line \( \neg\exists x\, P(x) \) by \( \rulename{\neg E} \). Or it can be cited as the side \( \psi \) beside a line \( \psi \to \chi \) or \( \psi \leftrightarrow \chi \), by \( \rulename{{\to}E} \) or \( \rulename{{\leftrightarrow}E} \).
 
-*Why it should stall.* The premise says that **something** has \( P \) and does not say what; the conclusion says that the object named \( c \) has \( P \). Over \( \nZ \) with \( P \) as "even" and \( c \) as \( 3 \), the premise is true and the conclusion false. So no rule for using an existential may give \( P(c) \), and the rule of Section 5.6 does not: it names the witness with a **fresh** variable, about which nothing else is known, instead of with \( c \).
+None of these reaches the information inside it. So the lines the rules above need have nowhere to come from:
 
-**Marking scheme.** (10 points)
+- a conjunction containing \( P(c) \);
+- an implication ending in it;
+- a biconditional with it as a side;
+- a disjunction for \( \rulename{\vee E} \);
+- a universal with it as an instance;
+- a contradiction.
+
+A search therefore stalls at once.
+
+*Why it should stall.* The premise says that **something** has \( P \) and does not say what; the conclusion says that the object named \( c \) has \( P \). Over \( \nZ \) with \( P \) as "even" and \( c \) as \( 3 \), the premise is true and the conclusion false. So no rule for using an existential may give \( P(c) \), and the rule of Section 5.6 does not. It names the witness with a **fresh** variable, about which nothing else is known, instead of with \( c \).
+
+**What a complete answer needs.** (10 points)
 - 3: identifies that \( P(c) \) is atomic, so only elimination rules, \( \rulename{\bot E} \), \( \rulename{RAA} \) or \( \rulename{R} \) can write it, and names what each needs.
 - 3: observes that no rule so far uses a line whose main symbol is \( \exists \), so the premise cannot supply what those rules need.
 - 2: says that this explains the stall but is not a proof of non-derivability (that needs a counter-model together with soundness, Sections 7.2–7.3).
 - 2: gives a reading with the premise true and \( P(c) \) false, and the one-sentence reason (the premise does not say which object has \( P \)).
-Fatal errors (0 for the step): claiming that \( \rulename{\exists I} \) read backwards gives \( P(c) \); claiming that a failed search proves the sequent underivable.
+Slips that lose the step: claiming that \( \rulename{\exists I} \) used backwards gives \( P(c) \); claiming that a failed search proves the sequent underivable.
 :::
 
 <!-- dependency ledger
 def-rule-existential-introduction (claim): Why this rule: if phi[t/x] is true and t is free for x in phi, then exists x phi is true | informal reading of F1.4 §01 (def-free-for's role, F1.4 §02)
-def-rule-existential-introduction (claim): the degenerate choice (fold "A witness that is not marked"): phi without free x gives phi[c/x] = phi | F1.4 §02 (claim after def-substitution: x not free gives phi[t/x] = phi)
+def-rule-existential-introduction (claim): the unmarked choice (fold "A witness that is not marked"): phi without free x gives phi[c/x] = phi | F1.4 §02 (claim after def-substitution: x not free gives phi[t/x] = phi)
 def-rule-existential-introduction (example): the capture nonexample: over Z, every integer is <= itself, and there is no least integer | school arithmetic (x - 1 < x); informal truth, F1.4 §01
 def-rule-existential-introduction (example): the table: over N with R as <= and c as 5, the readings are true | school arithmetic; informal truth, F1.4 §01
 def-rule-existential-introduction (example): the Quick check on x_0 + 1 > x_0: both witnesses; y appears nowhere in the line and the formula has no quantifier | def-substitution, def-free-for (F1.4 §02)
@@ -748,7 +779,7 @@ exm-existential-introduction-derivations (solution): b: over Z with R(x, y) as x
 exm-existential-introduction-derivations (solution): d: over Z, the successor of an odd integer is even; 3 is odd; f(3) = 4; 3 is not even | school arithmetic
 exm-existential-introduction-derivations (solution): c: the side condition of forall-I as quoted (no premise, no open assumption, not in the conclusion) | def-rules-universal (cited)
 exm-existential-introduction-derivations (solution): the Quick check before it: the witness 2 + 1 after forall-E at 2 and ->E | def-rule-universal-elimination (F1.4 §03); def-rules-implication
-prp-forall-implies-exists (proof): phi[x/x] = phi, and x is free for x in every formula | F1.4 §02 (facts after def-substitution and the special cases after def-free-for)
+prp-forall-implies-exists (proof): phi[x/x] = phi, and x is free for x in every formula | F1.4 §02 (facts after def-substitution and the special cases after def-free-for); Uses line cites def-rule-universal-elimination, def-free-for, def-rule-existential-introduction
 prp-forall-implies-exists (claim): every domain is non-empty | convention of F1.4 §01
 prp-forall-implies-exists (claim): bounded case (fold "The empty set, again"): forall x in A phi and exists x in A phi unfold to -> and /\ | def-bounded-quantifier (cited)
 def-rule-existential-introduction (example): How this rule looks: 6 = 2 * 3, 7 = 2 * 3 + 1, 100 in N, 1/101 < 1/100, 1/100 is not < 1/100, 2n + 1 is odd and > 2n | arith lines (school arithmetic)

@@ -1,6 +1,6 @@
 # Equality
 
-Sections 5.3 to 5.6 gave the four quantifier rules, and with them every logical symbol of the language of Section 5.2 (the connectives, \( \bot \), the quantifiers, and equality) has rules, except one. So far the equals sign has been treated like a predicate symbol: \( a = b \) was an atomic formula like \( P(a) \), and no rule looked inside it. Yet almost every calculation in mathematics is a chain of equations, and every use of "the" (the limit, the supremum, the inverse) quietly asserts that something is unique. This section adds the two rules for equality, \( \rulename{{=}I} \) and \( \rulename{{=}E} \), which say together that *equals may be replaced by equals*. Section 5.8 applies them to the phrase "there is exactly one", which is an existential statement together with an equation. This section ends by completing the table of rules, phrases, and Lean tactics that Chapter 1 began.
+Sections 5.3 to 5.6 gave the four quantifier rules. Now every logical symbol of the language of Section 5.2 has rules except one, the equals sign. So far the equals sign has been treated like a predicate symbol: \( a = b \) was an atomic formula like \( P(a) \), and no rule looked inside it. Yet almost every calculation in mathematics is a chain of equations, and every use of "the" (the limit, the supremum, the inverse) quietly asserts that something is unique. This section adds the two rules for equality, \( \rulename{{=}I} \) and \( \rulename{{=}E} \), which say together that *equals may be replaced by equals*. Section 5.8 applies them to the phrase "there is exactly one", which is an existential statement together with an equation. This section ends by completing the table, begun in Chapter 1, of the rules and the phrases that perform them.
 
 ## What the rules so far cannot do with an equation
 
@@ -8,14 +8,14 @@ Here is the first line of a calculation any reader has written:
 
 > Since \( a = b \) and \( a + a = 2a \), we have \( b + b = 2b \).
 
-Nothing could be simpler, and nothing in Sections 5.3–5.6 derives it: so far the rules treat \( = \) as they treat any two-place predicate symbol, and from \( R(a, b) \) and \( P(a) \) no rule gives \( P(b) \). Reading \( R(a, b) \) as \( a < b \) and \( P(x) \) as \( x < 1 \) over \( \nZ \), with \( a = 0 \) and \( b = 5 \), both premises are true and \( P(b) \) is false.
+Nothing could be simpler, and nothing in Sections 5.3–5.6 derives it. So far the rules treat \( = \) as they treat any two-place predicate symbol, and from \( R(a, b) \) and \( P(a) \) no rule gives \( P(b) \). Reading \( R(a, b) \) as \( a < b \) and \( P(x) \) as \( x < 1 \) over \( \nZ \), with \( a = 0 \) and \( b = 5 \), both premises are true and \( P(b) \) is false.
 
 What makes the step correct is what \( = \) means: \( a \) and \( b \) are names of **the same object**. Any statement true of the object is true of it whichever name is used. Two things follow, and they are the two rules of this section.
 
 1. Every term names the same object as itself. Nothing needs to be assumed to write \( t = t \).
 2. If \( t_1 \) and \( t_2 \) name the same object, then a statement about \( t_1 \) may be rewritten as the same statement about \( t_2 \).
 
-The first rule is unusual: it cites no earlier line at all. Chapter 1 anticipated this when it defined rules (Section 1.2): the definition of a rule schema (@def-rule-schema) was worded so that a rule of Chapter 5 could have no given lines at all. This is that rule.
+The first rule is unusual: it cites no earlier line at all. A rule schema, as Section 1.2 defined it, may have no given lines at all (@def-rule-schema). This is the first rule of that kind.
 
 ## The rules for equality
 
@@ -58,7 +58,7 @@ Read the definition clause by clause.
    - *Example:* "\( a + b = a + b \) — \( \rulename{{=}I} \)", the first line of every chain below.
 2. **The equation is read from left to right.** The cited equation \( t_1 = t_2 \) licenses replacing \( t_1 \) by \( t_2 \), and not the other way round. From \( a = b \) and \( P(b) \), the rule does **not** give \( P(a) \), because \( P(b) \) is \( \varphi[b/x] \) for \( \varphi = P(x) \), and the equation would have to be \( b = a \). The reverse direction needs one more step, symmetry, which we derive below.
 3. **Some or all occurrences.** The choice of \( \varphi \) decides which occurrences of \( t_1 \) are replaced: exactly those that \( \varphi \) marks with \( x \) (the boxes above). Occurrences of \( t_1 \) that \( \varphi \) writes out are left alone. Choosing \( \varphi \) is the whole art of using the rule.
-4. **Free for \( x \).** Neither term may have a variable captured by a quantifier of \( \varphi \), the condition of @def-free-for that the rules of Sections 5.3 and 5.5 also carry. The nonexample below shows what goes wrong without it.
+4. **Free for \( x \).** Neither term may have a variable captured by a quantifier of \( \varphi \), the condition of @def-free-for that the rules of Sections 5.3 and 5.5 also carry. Without it, a variable of the new term can be captured, as in the nonexample on capture below.
 
 **One line, many readings.** Take the equation \( a = b \) and the line \( a + a = 2 \cdot a \). The term \( a \) occurs three times in the line, and \( \varphi \) may mark any of them. Some of the choices:
 
@@ -71,14 +71,14 @@ Read the definition clause by clause.
 
 Each of the three occurrences is marked or not, so there are \( 2^3 = 8 \) choices in all, and each is a legal step. The fourth row is the step of the opening calculation.
 
-::: {.second-reading title="Degenerate choices"}
+::: {.second-reading title="Choices that change nothing"}
 One more row belongs to the table:
 
 | \( \varphi \) | \( \varphi[a/x] \) (the cited line) | \( \varphi[b/x] \) (the new line) |
 |---|---|---|
 | \( a + a = 2 \cdot a \) | \( a + a = 2 \cdot a \) | \( a + a = 2 \cdot a \) |
 
-This row is the **degenerate** choice: \( \varphi \) contains no \( x \), so \( \varphi[a/x] \) and \( \varphi[b/x] \) are both \( \varphi \), and the rule copies the line unchanged. It is legal and useless, and it shows that "some occurrences" includes "none". Another degenerate case: the equation may be \( t = t \) itself, and then \( \rulename{{=}E} \) again returns the cited line.
+In this row \( \varphi \) contains no \( x \), so \( \varphi[a/x] \) and \( \varphi[b/x] \) are both \( \varphi \), and the rule copies the line unchanged. The step is allowed and useless, and it shows that "some occurrences" includes "none". Another case that changes nothing: the equation may be \( t = t \) itself, and then \( \rulename{{=}E} \) again returns the cited line.
 :::
 
 ::: {.check}
@@ -119,14 +119,14 @@ Line 3 breaks the side condition of @def-rules-equality. What the argument meant
 :::
 
 ::: {.second-reading title="Why no choice of the hole works"}
-To write \( \forall x\, (x = x) \) as \( \varphi[x/z] \), either \( z \) does not occur free in \( \varphi \), and then \( \varphi[0/z] \) is the unchanged line, or \( z \) occurs free in \( \varphi \) (for instance, \( \varphi \) is \( \forall x\, (z = x) \)), and then every free \( z \) lies inside \( \forall x \), so \( x \) is not free for \( z \) in \( \varphi \) and the side condition fails.
+Suppose \( \forall x\, (x = x) \) is written as \( \varphi[x/z] \). There are two cases. If \( z \) does not occur free in \( \varphi \), then \( \varphi[0/z] \) is the unchanged line. If \( z \) occurs free in \( \varphi \), for instance in \( \forall x\, (z = x) \), then every free \( z \) lies inside \( \forall x \). So \( x \) is not free for \( z \) in \( \varphi \), and the side condition fails.
 :::
 
 ## Symmetry, transitivity and congruence
 
 Everything we expect of equality now follows from the two rules. Each derivation below is short, and the only thought in each is the choice of \( \varphi \).
 
-It turns out that the equation in \( \rulename{{=}E} \) may be read in either direction after all, at the cost of two extra lines (an \( \rulename{{=}I} \) and an \( \rulename{{=}E} \); after the abbreviation (sym) below, just one), and that equations chain:
+The equation in \( \rulename{{=}E} \) can in fact be used in either direction. Turning it round costs two extra lines, an \( \rulename{{=}I} \) and an \( \rulename{{=}E} \). After the abbreviation (sym) below, it costs just one. Equations also chain:
 
 ::: {#prp-equality-symmetric-transitive}
 [Equality Is Symmetric and Transitive]
@@ -140,7 +140,7 @@ For all terms \( s \), \( t \), \( u \):
 :::
 
 ::: {.idea}
-For (a), the goal \( t = s \) must be the last line of an \( \rulename{{=}E} \) that uses the premise \( s = t \) (it is the only equation available), so it has the form \( \varphi[t/x] \), and the cited line \( \varphi[s/x] \) must already be on a line. Try \( \varphi = (x = s) \): then \( \varphi[t/x] \) is \( t = s \), the goal, and \( \varphi[s/x] \) is \( s = s \), which \( \rulename{{=}I} \) supplies for free. For (b), rewrite the \( t \) of the first premise using the second: \( \varphi = (s = x) \).
+For (a), the goal \( t = s \) must be the last line of an \( \rulename{{=}E} \) that uses the premise \( s = t \), since that is the only equation available. So the goal has the form \( \varphi[t/x] \), and the cited line \( \varphi[s/x] \) must already be on a line. Try \( \varphi = (x = s) \): then \( \varphi[t/x] \) is \( t = s \), the goal, and \( \varphi[s/x] \) is \( s = s \), which \( \rulename{{=}I} \) supplies for free. For (b), rewrite the \( t \) of the first premise using the second: \( \varphi = (s = x) \).
 :::
 
 ::: {.proof}
@@ -169,6 +169,10 @@ $\begin{nd}
 ```
 
 Line 3 of (b) cites the equation \( t = u \) on line 2 as the rule's line \( i \), and \( s = t \) on line 1 as its line \( j \). This proves (a) and (b).
+
+::: {.uses}
+@def-rules-equality (=I and =E); @def-substitution (computing \( \varphi[t/x] \)).
+:::
 :::
 
 Notice where the "reflexivity" line went in (a): the equation \( s = t \) was not rewritten at all. It was the **tool**, and the line it rewrote, \( s = s \), was manufactured for the purpose. This is the typical use of \( \rulename{{=}I} \): it supplies a line for \( \rulename{{=}E} \) to work on.
@@ -198,11 +202,11 @@ For every one-place predicate symbol \( P \),
 \( \vdash \forall x\, \forall y\, \bigl( x = y \to (P(x) \to P(y)) \bigr) \).
 :::
 
-*In words: whatever is true of \( x \) is true of anything equal to it. The rule \( \rulename{{=}E} \) is this law for every formula at once; the seven-line derivation is in the fold below.*
+*In words: whatever is true of \( x \) is true of anything equal to it. The rule \( \rulename{{=}E} \) is this law for every formula at once. The law has a seven-line derivation, given next.*
 
 ::: {.second-reading title="Leibniz's Law, derived"}
 ::: {.proof}
-*Finding it.* The goal is \( \forall x \), so the search method of Section 3.1, with the step of Section 5.4, opens a flagged box for \( x_0 \); the new goal \( \forall y\, (\dots) \) opens a second flagged box, for \( y_0 \). The goal \( x_0 = y_0 \to (P(x_0) \to P(y_0)) \) is an implication, so a box opens with \( x_0 = y_0 \), and the new goal \( P(x_0) \to P(y_0) \) opens another, with \( P(x_0) \). Now the goal is \( P(y_0) \), the resources are \( x_0 = y_0 \) and \( P(x_0) \), and one \( \rulename{{=}E} \) with \( \varphi = P(x) \) finishes. Every line but one was written by a goal-directed step.
+*Finding it.* The goal is \( \forall x \), so the search method of Section 3.1 opens a flagged box for \( x_0 \), by the step of Section 5.4. The new goal \( \forall y\, (\dots) \) opens a second flagged box, for \( y_0 \). The goal \( x_0 = y_0 \to (P(x_0) \to P(y_0)) \) is an implication, so a box opens with \( x_0 = y_0 \), and the new goal \( P(x_0) \to P(y_0) \) opens another, with \( P(x_0) \). Now the goal is \( P(y_0) \), the resources are \( x_0 = y_0 \) and \( P(x_0) \), and one \( \rulename{{=}E} \) with \( \varphi = P(x) \) finishes. Every line but one was written by a goal-directed step.
 
 ```{=latex}
 \begin{center}
@@ -226,10 +230,14 @@ $\begin{nd}
 \end{center}
 ```
 
-The two \( \rulename{\forall I} \) lines cite the flagged boxes as \( \lines{1}{5} \) and \( \lines{1}{6} \): each flagged box immediately contains another box, so its range starts at that box's first line (the convention of Section 5.4). At line 6 the name \( y_0 \) appears in no premise (there are none), in no open assumption (the boxes on lines 1 and 2 have closed), and not in the conclusion; at line 7 the same holds for \( x_0 \). The derivation has 7 lines.
+The two \( \rulename{\forall I} \) lines cite the flagged boxes as \( \lines{1}{5} \) and \( \lines{1}{6} \): each flagged box immediately contains another box, so its range starts at that box's first line (the convention of Section 5.4). At line 6 the name \( y_0 \) appears in no premise, since there are none. It appears in no open assumption, because the boxes on lines 1 and 2 have closed. It does not appear in the conclusion. At line 7 the same holds for \( x_0 \). The derivation has 7 lines.
+
+::: {.uses}
+@def-rules-universal (∀I and its side condition); @def-rules-equality (=E).
+:::
 :::
 
-The claim is one of the classical "axioms of equality", often taken as a starting point in place of \( \rulename{{=}E} \). Here it is a consequence. Conversely, with the claim as a premise, \( \rulename{\forall E} \) twice and \( \rulename{{\to}E} \) twice would do the work of \( \rulename{{=}E} \) for the formula \( P(x) \); the rule does it for every formula at once.
+So Leibniz's Law is a consequence of \( \rulename{{=}E} \). Conversely, with the claim as a premise, \( \rulename{\forall E} \) twice and \( \rulename{{\to}E} \) twice would do the work of \( \rulename{{=}E} \) for the formula \( P(x) \); the rule does it for every formula at once.
 :::
 
 ::: {.warning}
@@ -241,7 +249,7 @@ The claim is one of the classical "axioms of equality", often taken as a startin
 ::: {#exm-extensionality-logical-half}
 [Equal Sets Have the Same Elements]
 
-Read the domain as consisting of sets, with \( \in \) a two-place predicate symbol written between its terms (shorthand rule 1 of Section 5.2). Show that \( \vdash \forall x\, \forall y\, \bigl( x = y \to \forall z\, (z \in x \leftrightarrow z \in y) \bigr) \).
+Read the domain as consisting of sets, with \( \in \) a two-place predicate symbol written between its terms, as Section 5.2 allows. Show that \( \vdash \forall x\, \forall y\, \bigl( x = y \to \forall z\, (z \in x \leftrightarrow z \in y) \bigr) \).
 :::
 
 ::: {.solution}
@@ -273,7 +281,7 @@ $\begin{nd}
 \end{center}
 ```
 
-The two boxes of line 4 are one-line boxes, as \( P \to P \) is shown, and each flagged box immediately contains another box and is cited from its first line. Line 5 is \( \rulename{{=}E} \) with \( \varphi = (z_0 \in x_0 \leftrightarrow z_0 \in w) \): line 4 is \( \varphi[x_0/w] \), and the equation of line 1 refills the hole with \( y_0 \); as in the proof of symmetry, \( \rulename{{\leftrightarrow}I} \) manufactured a line for \( \rulename{{=}E} \) to rewrite.
+The two boxes of line 4 are one-line boxes, as \( P \to P \) is shown. Each flagged box immediately contains another box and is cited from its first line. Line 5 is \( \rulename{{=}E} \) with \( \varphi = (z_0 \in x_0 \leftrightarrow z_0 \in w) \): line 4 is \( \varphi[x_0/w] \), and the equation of line 1 refills the hole with \( y_0 \). As in the proof of symmetry, \( \rulename{{\leftrightarrow}I} \) manufactured a line for \( \rulename{{=}E} \) to rewrite.
 :::
 
 The converse, \( \forall z\, (z \in x \leftrightarrow z \in y) \to x = y \), breaks. Here is a counter-reading to it: two dots \( a \) and \( b \), with nothing an element of anything. With \( x \) naming \( a \) and \( y \) naming \( b \), both sides of \( z \in x \leftrightarrow z \in y \) are false for every \( z \), so the hypothesis is true; and \( a = b \) is false. For sets, the converse is taken as an axiom, the axiom of extensionality: a set is determined by its elements.
@@ -310,9 +318,9 @@ The choices of \( \varphi \), with \( z \) a variable not occurring in the terms
 - line 5: \( \varphi = (a + b = 2 \cdot z + z) \), rewriting **both** remaining \( b \)'s on the right at once;
 - line 7: \( \varphi = (a + b = z) \), rewriting the whole right-hand side by the equation of line 6.
 
-The pattern is general. A chain \( t_1 = t_2 = \dots = t_n \) starts with \( t_1 = t_1 \) by \( \rulename{{=}I} \), keeps \( t_1 \) fixed on the left, and rewrites the right-hand side once per link, each time by \( \rulename{{=}E} \) with the equation that justifies the link. Each link is either a premise, as on lines 4 and 5, or an arithmetic fact, as on line 7. The last line is \( t_1 = t_n \). Transitivity (@prp-equality-symmetric-transitive (b)) is the same move made once; a chain makes it \( n - 1 \) times.
+The pattern is general. A chain \( t_1 = t_2 = \dots = t_n \) starts with \( t_1 = t_1 \) by \( \rulename{{=}I} \), keeps \( t_1 \) fixed on the left, and rewrites the right-hand side once per link, each time by \( \rulename{{=}E} \) with the equation that justifies the link. Each link is either a premise, as on lines 4 and 5, or an arithmetic fact, as on line 7. The last line is \( t_1 = t_n \). Transitivity (@prp-equality-symmetric-transitive (b)) is the same step made once; a chain makes it \( n - 1 \) times.
 
-A **mixed chain**, such as \( a^2 + 1 = 10 \le 10 + b^2 \) with \( a = 3 \), is not made of \( \rulename{{=}E} \) alone. Its \( = \) links are \( \rulename{{=}E} \) steps as above, and a \( \le \) link needs a fact about \( \le \): here that \( b^2 \ge 0 \), so that adding \( b^2 \) does not decrease a number. The \( = \) link before it then carries over by one more \( \rulename{{=}E} \), with \( \varphi = (z \le 10 + b^2) \) and the equation \( a^2 + 1 = 10 \) turned round by symmetry (@prp-equality-symmetric-transitive (a)); transitivity of \( \le \) is needed only where two \( \le \) links meet, as in \( x \le y \le z \). Those are facts about order, not about equality. They enter derivations as "arith" lines, one per link.
+A **mixed chain**, such as \( a^2 + 1 = 10 \le 10 + b^2 \) with \( a = 3 \), is not made of \( \rulename{{=}E} \) alone. Its \( = \) links are \( \rulename{{=}E} \) steps as above, and a \( \le \) link needs a fact about \( \le \): here that \( b^2 \ge 0 \), so that adding \( b^2 \) does not decrease a number. The \( = \) link before it then carries over by one more \( \rulename{{=}E} \). That step uses \( \varphi = (z \le 10 + b^2) \) and the equation \( a^2 + 1 = 10 \) turned round by symmetry (@prp-equality-symmetric-transitive (a)). Transitivity of \( \le \) is needed only where two \( \le \) links meet, as in \( x \le y \le z \). Those are facts about order, not about equality. They enter derivations as "arith" lines, one per link.
 
 ::: {.check}
 Line 5 of the chain rewrites both \( b \)'s on the right of line 4 at once. Which \( \varphi \) would rewrite only the \( b \) inside \( 2 \cdot b \), and what line would it give? How would the chain then reach line 5?
@@ -327,12 +335,12 @@ Under the premise \( a = 2 \), the chain \( a + 1 = 2 + 1 = 3 \le 4 \) has three
 :::
 
 ::: {.solution}
-The first link is \( \rulename{{=}E} \): from \( a + 1 = a + 1 \) (\( \rulename{{=}I} \)) and \( a = 2 \), with \( \varphi = (a + 1 = z + 1) \), it writes \( a + 1 = 2 + 1 \). The links \( 2 + 1 = 3 \) and \( 3 \le 4 \) are facts of school arithmetic, written as "arith" lines, and each is then carried into the chain by one more \( \rulename{{=}E} \) (with \( \varphi = (a + 1 = z) \), then with \( \varphi = (z \le 4) \) and the equation turned round); the last link is about order, not equality.
+The first link is \( \rulename{{=}E} \): from \( a + 1 = a + 1 \) (\( \rulename{{=}I} \)) and \( a = 2 \), with \( \varphi = (a + 1 = z + 1) \), it writes \( a + 1 = 2 + 1 \). The links \( 2 + 1 = 3 \) and \( 3 \le 4 \) are facts of school arithmetic, written as "arith" lines. Each is then carried into the chain by one more \( \rulename{{=}E} \): first with \( \varphi = (a + 1 = z) \), then with \( \varphi = (z \le 4) \) and the equation turned round. The last link is about order, not equality.
 :::
 
 ## What equality sounds like in a proof
 
-In a written proof, \( \rulename{{=}E} \) is the word "substituting", or no word at all: the chain \( a + b = 2b + b = 9 \) is read as a sequence of substitutions, and the reader supplies the \( \varphi \) of each link. "By symmetry" or "rewriting the equation as \( t = s \)" is @prp-equality-symmetric-transitive (a). "Applying \( f \) to both sides", "squaring both sides", "adding \( c \) to both sides" are the congruence derivation above. And \( \rulename{{=}I} \) is almost never written, because \( t = t \) goes without saying; it is visible only in the first line of a formal chain, and in a proof assistant, where `rfl` proves \( t = t \).
+In a written proof, \( \rulename{{=}E} \) is the word "substituting", or no word at all: the chain \( a + b = 2b + b = 9 \) is read as a sequence of substitutions, and the reader supplies the \( \varphi \) of each link. "By symmetry" or "rewriting the equation as \( t = s \)" is @prp-equality-symmetric-transitive (a). "Applying \( f \) to both sides", "squaring both sides", "adding \( c \) to both sides" are the congruence derivation above. And \( \rulename{{=}I} \) is almost never written, because \( t = t \) goes without saying; it is visible only in the first line of a formal chain.
 
 Here is a proof from school algebra, read link by link.
 
@@ -340,15 +348,15 @@ Here is a proof from school algebra, read link by link.
 >
 > *Proof.* \( b = b + 0 = b + (a + c) = (b + a) + c = (a + b) + c = 0 + c = c \).
 
-The first link is the fact \( y + 0 = y \) for every \( y \), applied at \( y = b \) (an instance by \( \rulename{\forall E} \)) and read from right to left: the chain needs \( b = b + 0 \), which is the instance \( b + 0 = b \) turned round by symmetry. The second link rewrites the \( 0 \) by the premise \( a + c = 0 \), again turned round, since the chain needs \( 0 \) to become \( a + c \). The third and fourth are instances of associativity and commutativity. The fifth rewrites \( a + b \) by the premise \( a + b = 0 \) in the direction written. The last is the instance \( 0 + c = c \). So the claim says that a number has **at most one** additive inverse; the facts it uses are the field axioms, here school algebra.
+The first link uses the fact \( y + 0 = y \) for every \( y \), applied at \( y = b \) by \( \rulename{\forall E} \). The chain needs \( b = b + 0 \), which is the instance \( b + 0 = b \) turned round by symmetry. The second link rewrites the \( 0 \) by the premise \( a + c = 0 \), again turned round, since the chain needs \( 0 \) to become \( a + c \). The third and fourth are instances of associativity and commutativity. The fifth rewrites \( a + b \) by the premise \( a + b = 0 \) in the direction written. The last is the instance \( 0 + c = c \). So the claim says that a number has **at most one** additive inverse; the facts it uses are the field axioms, here school algebra.
 
 ## The search method: one more step
 
 Each of Sections 5.3 to 5.6 added a step to the search method of Section 3.1. Equality adds one.
 
-- **An equation.** When an equation \( t_1 = t_2 \) is available and the goal differs from an available line only in some occurrences of \( t_1 \) and \( t_2 \), look for the \( \varphi \) that makes one \( \rulename{{=}E} \) turn the line into the goal: mark with \( x \) exactly the places where they differ. If the equation points the wrong way, turn it round first (sym). If no available line will do, make one with \( \rulename{{=}I} \), as the proof of @prp-equality-symmetric-transitive did.
+- **An equation.** Suppose an equation \( t_1 = t_2 \) is available, and the goal differs from an available line only in some occurrences of \( t_1 \) and \( t_2 \). Look for the \( \varphi \) that makes one \( \rulename{{=}E} \) turn the line into the goal: mark with \( x \) exactly the places where they differ. If the equation points the wrong way, turn it round first (sym). If no available line will do, make one with \( \rulename{{=}I} \), as the proof of @prp-equality-symmetric-transitive did.
 
-In the Givens/Goal table, \( \rulename{{=}E} \) turns a Given into a new Given with some holes refilled, and \( \rulename{{=}I} \) adds \( t = t \) to the Givens at no cost.
+In a table of what we know and what we want, \( \rulename{{=}E} \) turns a line we know into a new one with some holes refilled. And \( \rulename{{=}I} \) adds \( t = t \) to what we know at no cost.
 
 ::: {#exm-equality-and-uniqueness-instances}
 [Instances of \( \rulename{{=}E} \)]
@@ -363,12 +371,12 @@ In each row the hole is \( z \); the cited line fills it with the left side of t
 
 In the first row the \( f(c) \) inside \( R(f(c), c) \) is written out in \( \varphi \) and stays; in the third the hole sits under \( \forall y \), and both terms are free for \( z \) because neither contains \( y \).
 
-**Not an instance.** From \( 2 = 1 + 1 \) and the line \( 2^5 = 32 \), the line \( (1 + 1)^5 = 3(1 + 1) \), which treats the digit \( 2 \) of \( 32 \) as an occurrence of the term \( 2 \), is not written by \( \rulename{{=}E} \): the numeral \( 32 \) is one constant, with no occurrence of the term \( 2 \) inside it; \( \varphi = (z^5 = 32) \) gives only \( (1 + 1)^5 = 32 \).
+**Not an instance.** Take the equation \( 2 = 1 + 1 \) and the line \( 2^5 = 32 \). The line \( (1 + 1)^5 = 3(1 + 1) \) treats the digit \( 2 \) of \( 32 \) as an occurrence of the term \( 2 \), and \( \rulename{{=}E} \) does not write it. The numeral \( 32 \) is one constant, with no occurrence of the term \( 2 \) inside it. So \( \varphi = (z^5 = 32) \) gives only \( (1 + 1)^5 = 32 \).
 :::
 
-## The rule, phrase and Lean table, completed {#rule-phrase-lean-table}
+## The table of rules and phrases, completed {#rule-phrase-lean-table}
 
-Chapter 1 began a table that pairs each rule with the sentence that performs it in a written proof and, for readers who use a proof assistant, with the Lean code that does the same (Sections 1.2–1.6), and Chapter 2 added the rows for negation, the biconditional, and the classical rules (Sections 2.1–2.5). Sections 5.3–5.6 added a row for each quantifier rule, and this section adds the two rows for equality. Here is the whole table for the calculus of this volume.
+Chapter 1 began a table that pairs each rule with the sentence that performs it in a written proof (Sections 1.2–1.6). Chapter 2 added the rows for negation, the biconditional, and the classical rules (Sections 2.1–2.5). Sections 5.3–5.6 added a row for each quantifier rule, and this section adds the two rows for equality. Here is the whole table for the calculus of this volume.
 
 | Rule | Shape | You write |
 |---|---|---|
@@ -392,23 +400,43 @@ Chapter 1 began a table that pairs each rule with the sentence that performs it 
 | \( \rulename{{=}I} \) | nothing \( \Longrightarrow \) \( t = t \) | (usually unwritten) "\( t = t \)." |
 | \( \rulename{{=}E} \) | \( t_1 = t_2 \), \( \varphi[t_1/x] \) \( \Longrightarrow \) \( \varphi[t_2/x] \) | "Substituting \( t_2 \) for \( t_1 \), …"; a chain \( t_1 = t_2 = \dots = t_n \) |
 
-::: {.remark}
-[For Lean users]
+::: {.second-reading title="For instructors"}
+In the proof assistant Lean, the rules of the table are performed by the following code. Nothing later depends on it.
 
-∧I `constructor`; ∧E `h.1`, `h.2`; →E `exact h hp`; →I `intro hp`; R `exact hp`; ∨I `left`, `right` (or `Or.inl hp`); ∨E `Or.elim h` (or `cases h`); ¬E `exact hn hp` (goal `False`); ⊥E `exfalso`; ¬I `intro hp` (goal `False`); ↔I `constructor`; ↔E `h.mp hp`, `h.mpr hq`; RAA `by_contra h`; ∀E `h t` (or `specialize h t`); ∀I `intro x`; ∃I `use t` (or `Exists.intro t h`); ∃E `obtain` (or `Exists.elim h`); =I `rfl`; =E `rw [h]`, chains `calc`. Nothing later depends on these.
+| Rule | Lean |
+|---|---|
+| ∧I | `constructor` |
+| ∧E | `h.1`, `h.2` |
+| →E | `exact h hp` |
+| →I | `intro hp` |
+| R | `exact hp` |
+| ∨I | `left`, `right` (or `Or.inl hp`) |
+| ∨E | `Or.elim h` (or `cases h`) |
+| ¬E | `exact hn hp` (goal `False`) |
+| ⊥E | `exfalso` |
+| ¬I | `intro hp` (goal `False`) |
+| ↔I | `constructor` |
+| ↔E | `h.mp hp`, `h.mpr hq` |
+| RAA | `by_contra h` |
+| ∀E | `h t` (or `specialize h t`) |
+| ∀I | `intro x` |
+| ∃I | `use t` (or `Exists.intro t h`) |
+| ∃E | `obtain` (or `Exists.elim h`) |
+| =I | `rfl` |
+| =E | `rw [h]`, chains `calc` |
 :::
 
-Of the derived rules of Chapter 2, \( \rulename{MT} \), \( \rulename{CP} \) and \( \rulename{DS} \) have their rows in Section 2.3, and \( \rulename{\neg\neg E} \) and \( \rulename{LEM} \) in Section 2.5; the derived sequents that searches use most are collected in Section 3.1. With the two equality rows, every rule of the calculus has its phrase.
+Five derived rules of Chapter 2 have rows of their own. Modus tollens, the contrapositive and disjunctive syllogism (\( \rulename{MT} \), \( \rulename{CP} \), \( \rulename{DS} \)) have their rows in Section 2.3. Double negation elimination and excluded middle (\( \rulename{\neg\neg E} \), \( \rulename{LEM} \)) have theirs in Section 2.5. The derived sequents that searches use most are collected in Section 3.1. With the two equality rows, every rule of the calculus has its phrase.
 
 ::: {.warning}
 [Not allowed: \( \rulename{{=}E} \)]
 
-Each step breaks the clause of the reading of @def-rules-equality, or the warning, shown.
+Each step below breaks a condition of @def-rules-equality, named after it.
 
-- "From \( c = f(b) \) and \( Q(f(b)) \), write \( Q(c) \)": the equation is read left to right and rewrites \( c \) into \( f(b) \); turn it round first, by (sym) (clause 2).
-- "From \( x = 0 \) and \( \forall x\, (x \ge x) \), write \( \forall x\, (0 \ge 0) \)": only free occurrences are replaced, and both \( x \)'s of \( x \ge x \) are bound (the warning "A bound variable is not a place to substitute").
-- "From \( b = z + 1 \) and \( \forall z\, (z \le b) \), write \( \forall z\, (z \le z + 1) \)": with \( \varphi = \forall z\, (z \le w) \), the \( z \) of \( z + 1 \) is captured (clause 4).
-- "Rewrite a term inside 'it is obvious that …'": that is not a formula (the warning "Words about knowledge are not formulas").
+- "From \( c = f(b) \) and \( Q(f(b)) \), write \( Q(c) \)": the equation is read left to right and rewrites \( c \) into \( f(b) \). Turn it round first, by (sym).
+- "From \( x = 0 \) and \( \forall x\, (x \ge x) \), write \( \forall x\, (0 \ge 0) \)": only free occurrences are replaced, and both \( x \)'s of \( x \ge x \) are bound.
+- "From \( b = z + 1 \) and \( \forall z\, (z \le b) \), write \( \forall z\, (z \le z + 1) \)": with \( \varphi = \forall z\, (z \le w) \), the \( z \) of \( z + 1 \) is captured, so \( z + 1 \) is not free for \( w \).
+- "Rewrite a term inside 'it is obvious that …'": the rule rewrites formulas, and words about what someone knows are not a formula.
 :::
 
 ::: {.remark}
@@ -470,7 +498,7 @@ Each part takes a line or two. The parts run from single steps, through a missin
 3. From \( c = d + 1 \) and the line \( R(c, c \cdot c) \), write the \( \rulename{{=}E} \) line that rewrites only the last \( c \).
 4. From \( x_0 = 2 \) and \( x_0 + x_0 = 4 \), which \( \varphi \) gives \( 2 + x_0 = 4 \)?
 5. Line 6 is \( f(b) + b = 7 \), justified "\( \rulename{{=}E} \) 2, 5", and line 2 is \( a = b \). Give two possible lines 5.
-6. Justify each line: 1 \( a = b \), premise; 2 \( \forall x\, (P(x) \to x = c) \), premise; 3 \( P(a) \), premise; 4 \( P(a) \to a = c \); 5 \( a = c \); 6 \( a = a \); 7 \( b = a \); 8 \( b = c \).
+6. Justify each line. Lines 1 to 3 are the premises \( a = b \), \( \forall x\, (P(x) \to x = c) \) and \( P(a) \). The other lines are: 4 \( P(a) \to a = c \), 5 \( a = c \), 6 \( a = a \), 7 \( b = a \), 8 \( b = c \).
 7. From \( a = b \) and \( P(b) \), does one \( \rulename{{=}E} \) give \( P(a) \)?
 8. From \( a = y \) and \( \exists y\, (y < a) \), is \( \exists y\, (y < y) \) a legal \( \rulename{{=}E} \) line?
 9. From \( x_0 = 0 \) and the line \( \forall y\, (x_0 \le y) \), is \( \forall y\, (0 \le y) \) a legal \( \rulename{{=}E} \) line? From \( y = 0 \) and the same line, is \( \forall y\, (x_0 \le 0) \)?
@@ -489,21 +517,21 @@ Each part takes a line or two. The parts run from single steps, through a missin
 
 (d) \( \varphi = (z + x_0 = 4) \).
 
-(e) Any two of \( f(a) + a = 7 \) (\( \varphi = (f(z) + z = 7) \)), \( f(b) + a = 7 \) (\( \varphi = (f(b) + z = 7) \)), \( f(a) + b = 7 \) (\( \varphi = (f(z) + b = 7) \)); and the degenerate \( f(b) + b = 7 \) itself.
+(e) Any two of \( f(a) + a = 7 \) (\( \varphi = (f(z) + z = 7) \)), \( f(b) + a = 7 \) (\( \varphi = (f(b) + z = 7) \)), \( f(a) + b = 7 \) (\( \varphi = (f(z) + b = 7) \)). Line 6 itself, \( f(b) + b = 7 \), also works, with a \( \varphi \) that has no hole.
 
-(f) 4 \( \rulename{\forall E} \) 2 (at \( a \)); 5 \( \rulename{{\to}E} \) 4, 3; 6 \( \rulename{{=}I} \); 7 \( \rulename{{=}E} \) 1, 6 (\( \varphi = (z = a) \)); 8 \( \rulename{{=}E} \) 5, 7 (\( \varphi = (b = z) \)).
+(f) Line 4: \( \rulename{\forall E} \) 2, at \( a \). Line 5: \( \rulename{{\to}E} \) 4, 3. Line 6: \( \rulename{{=}I} \). Line 7: \( \rulename{{=}E} \) 1, 6, with \( \varphi = (z = a) \). Line 8: \( \rulename{{=}E} \) 5, 7, with \( \varphi = (b = z) \).
 
-(g) No, clause 2: the equation rewrites \( a \) into \( b \). Turn it round first (sym), then \( \rulename{{=}E} \).
+(g) No. The equation is read from left to right, so it rewrites \( a \) into \( b \). Turn it round first (sym), then \( \rulename{{=}E} \).
 
-(h) No, clause 4: the \( y \) put in would be captured by \( \exists y \).
+(h) No. The \( y \) put in would be captured by \( \exists y \), so \( y \) is not free for the hole.
 
-(i) The first is legal: \( \varphi = \forall y\, (z \le y) \), and \( 0 \) is free for \( z \). The second is not: with \( \varphi = \forall y\, (x_0 \le z) \), the term \( y \) of the equation is not free for \( z \) in \( \varphi \) (clause 4); the \( y \) would be captured.
+(i) The first is allowed: \( \varphi = \forall y\, (z \le y) \), and \( 0 \) is free for \( z \). The second is not: with \( \varphi = \forall y\, (x_0 \le z) \), the term \( y \) of the equation is not free for \( z \) in \( \varphi \). The \( y \) would be captured.
 
 (j) 2 \( f(a) = f(a) \), \( \rulename{{=}I} \); 3 \( f(b) = f(a) \), \( \rulename{{=}E} \) 1, 2, with \( \varphi = (f(z) = f(a)) \).
 
 (k) 3 \( a = c \), \( \rulename{{=}E} \) 2, 1, with \( \varphi = (a = z) \).
 
-(l) A flagged box \( x_0 \), inside it a flagged box \( y_0 \): 2 \( x_0 = y_0 \), assumption; 3 \( R(x_0, x_0) \), \( \rulename{\forall E} \) 1; 4 \( R(x_0, y_0) \), \( \rulename{{=}E} \) 2, 3 (\( \varphi = R(x_0, z) \)); 5 \( x_0 = y_0 \to R(x_0, y_0) \), \( \rulename{{\to}I} \) 2–4; 6 \( \forall y\, (x_0 = y \to R(x_0, y)) \), \( \rulename{\forall I} \) 2–5; 7 \( \forall x\, \forall y\, (x = y \to R(x, y)) \), \( \rulename{\forall I} \) 2–6. (A reflexive relation contains equality.)
+(l) Open a flagged box \( x_0 \), and inside it a flagged box \( y_0 \). Line 2: \( x_0 = y_0 \), assumption. Line 3: \( R(x_0, x_0) \), \( \rulename{\forall E} \) 1. Line 4: \( R(x_0, y_0) \), \( \rulename{{=}E} \) 2, 3, with \( \varphi = R(x_0, z) \). Line 5: \( x_0 = y_0 \to R(x_0, y_0) \), \( \rulename{{\to}I} \) 2–4. Line 6: \( \forall y\, (x_0 = y \to R(x_0, y)) \), \( \rulename{\forall I} \) 2–5. Line 7: \( \forall x\, \forall y\, (x = y \to R(x, y)) \), \( \rulename{\forall I} \) 2–6. (A reflexive relation contains equality.)
 :::
 
 ### B. Practice
@@ -545,7 +573,7 @@ This is the "at most one" half: any two identities are equal. It says nothing ab
 ::: {#exr-equality-and-uniqueness-b4}
 [B2: Rewrite, and turn round]
 
-A search for \( a = b, \ b = c, \ P(a) \vdash P(c) \wedge c = a \) has reached the stage below. *Name the move, then complete it, giving for each \( \rulename{{=}E} \) line its holes.*
+A search for \( a = b, \ b = c, \ P(a) \vdash P(c) \wedge c = a \) has reached the stage below. *Name the search step, then complete it, giving for each \( \rulename{{=}E} \) line its holes.*
 
 ```{=latex}
 % schema (partial derivation: the gap is unnumbered, lines carry their final numbers)
@@ -562,7 +590,7 @@ $\begin{nd}
 :::
 
 ::: {.solution}
-The move is the search step "An equation" of this section: mark the holes, and turn the equation round with an \( \rulename{{=}I} \) line if it points the wrong way.
+It is the search step for an equation, from this section: mark the holes, and turn the equation round with an \( \rulename{{=}I} \) line if it points the wrong way.
 
 ```{=latex}
 \begin{center}
@@ -580,7 +608,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Lines 4 and 5: \( \varphi = P(z) \). Line 6: \( \varphi = (a = z) \), so line 1 is \( \varphi[b/z] \) and the equation \( b = c \) refills the hole with \( c \). Line 8: \( \varphi = (z = a) \); line 7 is \( \varphi[a/z] \), and the equation \( a = c \) refills the box with \( c \). Lines 7–8 are (sym) written out; with the abbreviation of the text, line 8 is "\( c = a \) (sym) 6".
+Lines 4 and 5: \( \varphi = P(z) \). Line 6: \( \varphi = (a = z) \), so line 1 is \( \varphi[b/z] \) and the equation \( b = c \) refills the hole with \( c \). Line 8: \( \varphi = (z = a) \); line 7 is \( \varphi[a/z] \), and the equation \( a = c \) refills the box with \( c \). Lines 7–8 are (sym) written out. With the abbreviation (sym), line 8 is "\( c = a \) (sym) 6".
 :::
 
 ::: {#exr-equality-and-uniqueness-b5}
@@ -682,9 +710,13 @@ Line 3 has \( \varphi = (f(f(a)) = f(z)) \), and line 4 has \( \varphi = (f(f(a)
 
 (h) Break. Counter-reading: the domain \( \{0, 1\} \), \( f \) exchanging \( 0 \) and \( 1 \), \( a \) naming \( 0 \). Then \( f(f(0)) = f(1) = 0 \), so the premise is true, and \( f(0) = 1 \), so \( f(a) = a \) is false.
 
-(b) and (d) differ by the premise that \( f \) is one-to-one; (e) and (f) look alike, and \( \ne \) is not transitive, since different letters may name one object; (g) and (h) are converses. Worked example types: @prp-equality-symmetric-transitive; the chain derivation of "Calculations are chains of substitutions"; the congruence derivation.
+(b) and (d) differ by the premise that \( f \) is one-to-one; (e) and (f) look alike, and \( \ne \) is not transitive, since different letters may name one object; (g) and (h) are converses. The derivations follow three worked examples: symmetry and transitivity (@prp-equality-symmetric-transitive), the chain derivation of "Calculations are chains of substitutions", and the congruence derivation.
 
-**Marking scheme.** (10 points) 1 for each of the eight claims (a derivation with every \( \varphi \) named, or a counter-reading with the domain and every symbol's value); 2 for the closing comparison, with the point about (e) and (f) stated. Fatal errors (0 for the claim): an \( \rulename{{=}E} \) with the equation read right to left; a counter-reading in which two letters that must differ (by a premise) name one object.
+**What a complete answer needs.** (10 points)
+- 1 for each of the eight claims: a derivation with every \( \varphi \) named, or a counter-reading with the domain and every symbol's value.
+- 2 for the closing comparison, with the point about (e) and (f) stated.
+
+Slips that lose the step (0 for the claim): an \( \rulename{{=}E} \) with the equation read right to left; a counter-reading in which two letters that must differ by a premise name one object.
 :::
 
 ### C. Going deeper
@@ -740,7 +772,16 @@ Line 7 is \( \rulename{{=}E} \) with \( \varphi = (z = y_0) \): line 6 is \( \va
 
 (b) The premise says "there are two different objects"; the conclusion says "every object has one different from it". The converse derives: 2 \( \exists y\, (x \ne y) \), \( \rulename{\forall E} \) 1 (at \( x \)); 3 \( \exists x\, \exists y\, (x \ne y) \), \( \rulename{\exists I} \) 2 (witness \( x \)). Over a one-element domain both are false; over larger ones both are true.
 
-**Marking scheme.** (10 points) 2: two \( \rulename{\exists E} \) boxes with different names, each aimed at the goal it must reach. 2: a flagged box \( u_0 \) for the \( \forall \) (inside or outside the \( \rulename{\exists E} \) boxes), and the goal postponed. 3: the split on \( u_0 = x_0 \), with the first case reaching \( u_0 \ne y_0 \) by \( \rulename{\neg I} \) and \( \rulename{{=}E} \), and the second giving the witness \( x_0 \) at once. 1: the classical line named, with the reason. 2: (b), the converse derived, with both readings. An \( \rulename{RAA} \) box on \( \neg\exists y\, (u_0 \ne y) \) in place of the \( \rulename{LEM} \) split earns full marks if correct, its \( \rulename{RAA} \) line then named as the classical one. Fatal errors (0 for the step): the flag \( u_0 \) chosen as \( x_0 \); an \( \rulename{\exists E} \) box closed on a line that mentions its witness.
+**What a complete answer needs.** (10 points)
+- 2: two \( \rulename{\exists E} \) boxes with different names, each aimed at the goal it must reach.
+- 2: a flagged box \( u_0 \) for the \( \forall \), inside or outside the \( \rulename{\exists E} \) boxes, and the goal postponed.
+- 3: the split on \( u_0 = x_0 \), with the first case reaching \( u_0 \ne y_0 \) by \( \rulename{\neg I} \) and \( \rulename{{=}E} \), and the second giving the witness \( x_0 \) at once.
+- 1: the classical line named, with the reason.
+- 2: (b), the converse derived, with both readings.
+
+An \( \rulename{RAA} \) box on \( \neg\exists y\, (u_0 \ne y) \) in place of the \( \rulename{LEM} \) split earns full marks if correct, its \( \rulename{RAA} \) line then named as the classical one.
+
+Slips that lose the step (0 for the step): the flag \( u_0 \) chosen as \( x_0 \); an \( \rulename{\exists E} \) box closed on a line that mentions its witness.
 :::
 
 <!-- dependency ledger

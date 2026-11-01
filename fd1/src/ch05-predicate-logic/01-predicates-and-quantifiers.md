@@ -1,6 +1,6 @@
 # Predicates and Quantifiers
 
-Chapters 1–4 treated an atomic statement as a closed box, and the statements of analysis keep their whole content inside the box: "for every \( \varepsilon > 0 \) there is an \( N \) such that …" lives in the words "for every" and "there is" and in the letters they govern. This section opens the box: it introduces predicates, variables, domains and the two quantifiers \( \forall \) and \( \exists \), and teaches how to **read** a quantified sentence, first in a small picture and then over the numbers; the rules come one per section, in Sections 5.3 to 5.6.
+Chapters 1–4 treated an atomic statement as a closed box. The statements of analysis keep their whole content inside that box. In "for every \( \varepsilon > 0 \) there is an \( N \) such that …", the content lives in the words "for every" and "there is" and in the letters they govern. This section opens the box. It introduces predicates, variables, domains and the two quantifiers \( \forall \) and \( \exists \). It shows how to **read** a quantified sentence, first in a small picture and then over the numbers. The rules come one per section, in Sections 5.3 to 5.6.
 
 ## An argument the truth table rejects
 
@@ -24,13 +24,13 @@ No derivation, with any rule of Chapters 1 and 2, leads from \( p \) and \( q \)
 There is no contradiction here, and it is worth seeing exactly why. @cor-refuting-row is about the **form** \( p, q \therefore r \): it says that no derivation leads from two arbitrary statements to a third, unrelated one. That is true. Our argument is correct for a reason that the form cannot see. The first premise speaks about **every** positive real number. The second says that \( 2 \) is **one** of the things the first premise speaks about. The conclusion says of \( 2 \) what the first premise said of all of them. The three statements share parts: a property ("is positive"), another property ("has a square root"), an object (\( 2 \)), and the word "every". Chopped into atoms, the shared parts disappear.
 :::
 
-This is the warning of Section 4.4 come true: a truth table sees only the connectives, and everything inside an atom is invisible to it. Section 4.4 closed with the remark that this chapter looks inside atoms. We now do. The first job is a vocabulary for the parts inside: the properties, the objects, and the words "every" and "some". Section 5.3 then gives the rule that makes the argument above a derivation, four lines long.
+Section 4.4 warned that a truth table sees only the connectives, and that everything inside an atom is invisible to it. Here the warning comes true, and this chapter looks inside atoms. The first job is a vocabulary for the parts inside: the properties, the objects, and the words "every" and "some". Section 5.3 then gives the rule that makes the argument above a derivation, four lines long.
 
 ## Predicates: statements with holes
 
-Chapter 1 met the sentence "\( x > 2 \)" and called it an **open sentence** (item (e) of @exm-statements). It is not a statement, because its truth depends on what \( x \) is: it is true when \( x \) is \( 3 \) and false when \( x \) is \( 0 \). Put a number in for \( x \) and it becomes a statement.
+Chapter 1 called the sentence "\( x > 2 \)" an **open sentence**: it is item (e) of @exm-statements. It is not a statement, because its truth depends on what \( x \) is: it is true when \( x \) is \( 3 \) and false when \( x \) is \( 0 \). Put a number in for \( x \) and it becomes a statement.
 
-The argument of the last subsection is built from two open sentences of this kind: "\( x \) is positive" and "\( x \) has a square root". Each has one hole, marked by \( x \). The premise "\( 2 \) is positive" is the first open sentence with \( 2 \) put into the hole; the conclusion is the second, with \( 2 \) put into its hole. The first premise does something else with the holes, which we come to in the next subsection. Open sentences are the missing parts, and they deserve a name.
+The argument of the last subsection is built from two open sentences of this kind: "\( x \) is positive" and "\( x \) has a square root". Each has one hole, marked by \( x \). The premise "\( 2 \) is positive" is the first open sentence with \( 2 \) put into the hole; the conclusion is the second, with \( 2 \) put into its hole. The first premise does something else with the holes, and we come to it next. Open sentences are the missing parts, and they deserve a name.
 
 *A predicate is a statement with holes in it; filling every hole with a name of an object gives a statement.*
 
@@ -57,7 +57,7 @@ Some letters change their job in this chapter:
 | Letter | In Chapters 1–4 | In this chapter | How to tell |
 |---|---|---|---|
 | \( P, Q, R \) | a whole statement (Chapters 1–2); an atom or any formula (Chapter 4) | a predicate symbol | followed by its holes: \( P(x) \), \( R(x, y) \); a bare \( P \) is a statement letter from earlier chapters |
-| \( p, q, r \) | atoms of a truth table | atoms still, only where a truth table reads a formula (the argument above; review exercises) | never a variable or a symbol of a first-order formula in this chapter |
+| \( p, q, r \) | atoms of a truth table | atoms still, only where a truth table reads a formula (the argument above; review exercises) | never a variable, and never a symbol inside the quantified formulas of this chapter |
 | \( x, y, n, \varepsilon \) | one fixed number in an example ("let \( x \) be a real number") | variables: holes of predicates, closed by quantifiers | a quantifier in front of them, or a hole still open |
 
 A property \( P(n) \) of natural numbers, as in the principle of induction (@ax-induction), was already a one-place predicate in this sense.
@@ -70,9 +70,11 @@ Two questions have to be answered before "whatever is put in" makes sense. What 
 
 The first question is answered by a **domain of discourse**, or **domain**: the collection of objects that the variables range over. For the argument above, the domain is the real numbers, \( \nR \). In number theory it is often \( \nZ \) or \( \nN \) (in this book \( \nN = \{0, 1, 2, \dots\} \), with \( 0 \)). A domain always has at least one element; an empty collection is handled by bounded quantifiers, as below.
 
-The second question is answered by the **quantifier**.
+The second question is answered by the **quantifier**. Take the domain \( \{1, 2, 3\} \). "Every \( x \) is positive" is true, because \( 1 \), \( 2 \) and \( 3 \) each are. "Every \( x \) is even" is false, because \( 1 \) is not. "Some \( x \) is even" is true, because \( 2 \) is.
 
 *"For every" promises something of each object in the domain; "there exists" promises it of at least one.*
+
+So "for every" claims that each object of the domain has the property, and "there exists" claims that at least one object has it.
 
 Let \( \varphi \) be an open sentence in which the variable \( x \) marks a hole (it may have other holes too). There are two quantifiers.
 
@@ -87,7 +89,7 @@ With these, the first premise of our argument, over the domain \( \nR \), is
 \]
 "for every \( x \), if \( x \) is positive, then \( x \) has a square root". The second premise is \( P(2) \) and the conclusion is \( S(2) \). Now the shared parts are visible: \( P \) occurs in both premises, \( S \) in the first premise and the conclusion, and \( 2 \) in the second premise and the conclusion. The rule of Section 5.3 uses the first premise with \( x \) replaced by \( 2 \), giving \( P(2) \to S(2) \), and \( \rulename{{\to}E} \) finishes.
 
-Notice the \( \to \) inside the quantifier. The premise does not say that every real number is positive and has a square root; it says that every real number which is positive has one. The subsection on bounded quantifiers below explains why a "for every" restricted to part of the domain always comes with an implication.
+Notice the \( \to \) inside the quantifier. The premise does not say that every real number is positive and has a square root; it says that every real number which is positive has one. A "for every" restricted to part of the domain always comes with an implication; bounded quantifiers, later in this section, show why.
 
 ::: {.remark}
 "True" here means what it means in ordinary mathematics: look at the domain and ask whether every element, or some element, makes the sentence true. A claim that a sentence can be **derived** is always proved by a derivation, never by this reading.
@@ -95,7 +97,7 @@ Notice the \( \to \) inside the quantifier. The premise does not say that every 
 
 ### Quantifiers in a small world
 
-Before the numbers, a picture. A **world** here is a few dots, the objects of the domain, with some dots labeled \( P \) or \( Q \) (the dots the one-place predicates hold of) and arrows between dots (the pairs a two-place predicate \( R \) holds of: an arrow from \( u \) to \( v \) means \( R(u, v) \)).
+Before the numbers, a picture. A **world** here is a few dots, the objects of the domain. Some dots carry the label \( P \) or \( Q \): these are the dots that the one-place predicates hold of. Arrows join some of the dots. An arrow from \( u \) to \( v \) means \( R(u, v) \), so the arrows are the pairs that the two-place predicate \( R \) holds of.
 
 ```{=latex}
 \begin{center}
@@ -112,7 +114,7 @@ Before the numbers, a picture. A **world** here is a few dots, the objects of th
 \end{center}
 ```
 
-**Figure W.** World W: domain \( \{a, b, c, d\} \); \( P \) holds of \( a, b \); \( Q \) of \( b, c \); \( R \) is the four arrows.
+**Figure W.** World W. The domain is \( \{a, b, c, d\} \). \( P \) holds of \( a \) and \( b \), and \( Q \) holds of \( b \) and \( c \). \( R \) is given by the four arrows.
 
 Six readings, each checked dot by dot:
 
@@ -123,7 +125,7 @@ Six readings, each checked dot by dot:
 - \( \forall x\, \exists y\, R(x, y) \): true; every dot has an arrow leaving it (\( a \to b \), \( b \to c \), \( c \to c \), \( d \to a \)).
 - \( \exists y\, \forall x\, R(x, y) \): false; no dot receives an arrow from all four (\( c \) receives from \( b \) and \( c \) only).
 
-In a finite world every quantifier can be checked dot by dot. Over \( \nN \) or \( \nR \) it cannot, and the reading needs an argument, as the next subsection shows.
+In a finite world every quantifier can be checked dot by dot. Over \( \nN \) or \( \nR \) it cannot, and the reading needs an argument.
 
 ::: {.check}
 In world W, is \( \forall x\, (Q(x) \to R(x, c)) \) true? Is \( \exists x\, \forall y\, \neg R(y, x) \) true?
@@ -188,20 +190,22 @@ Read each sentence aloud, say what it claims, and decide whether it is true over
 :::
 
 ::: {.solution}
-*(a)* "For every \( x \), \( x^2 \) is at least \( 0 \)." The claim is about every real number, and it is true: the square of a real number is never negative (a school fact about signs: \( x \cdot x \) is a product of two numbers of the same sign, or \( 0 \)).
+*(a)* "For every \( x \), \( x^2 \) is at least \( 0 \)." The claim is about every real number, and it is true. The square of a real number is never negative. This is a school fact about signs: \( x \cdot x \) is a product of two numbers of the same sign, or \( 0 \).
 
 *(b)* "There is an \( x \) such that for every \( y \), \( x \le y \)." Unpack from the outside. The outer quantifier \( \exists x \) asks for one natural number \( x \). What must be true of it is the inside, \( \forall y\, (x \le y) \): every natural number \( y \) is at least \( x \). So the sentence says that \( \nN \) has a **least element**. It is true, with the witness \( x = 0 \): every natural number is at least \( 0 \).
 
 *(c)* The outer symbol is \( \neg \), so the sentence denies what follows. What follows is \( \exists m\, (\dots) \): there is an \( m \) that is prime and such that every prime \( n \) is at most \( m \). Such an \( m \) would be a **largest prime**. So the sentence says "there is no largest prime". It is true: this is the ancient theorem that there are infinitely many primes. Nothing in this book depends on that theorem; here it is only something to read.
 
-Notice the shape inside (c): \( \forall n\, (\mathrm{Prime}(n) \to n \le m) \), "every prime is at most \( m \)", has an implication under the \( \forall \). It speaks about primes only, and the implication is how a "for every" is restricted to them. The next subsection makes this a rule of writing.
+Notice the shape inside (c): \( \forall n\, (\mathrm{Prime}(n) \to n \le m) \), "every prime is at most \( m \)", has an implication under the \( \forall \). It speaks about primes only, and the implication is how a "for every" is restricted to them. Bounded quantifiers, below, make this a rule of writing.
 :::
 
-The sentence in (b) has two quantifiers, and they come in a definite order: first \( \exists x \), then \( \forall y \). The order matters, and the subsection "The order of quantifiers" below is about it. First, restricted quantifiers.
+The sentence in (b) has two quantifiers, and they come in a definite order: first \( \exists x \), then \( \forall y \). The order matters, and we return to it after restricted quantifiers.
 
 ## Bounded quantifiers
 
 Mathematics rarely says "for every real number". It says "for every \( \varepsilon > 0 \)", "for every \( x \in A \)", "there is an \( n \ge N \)". The quantifier ranges over a **part** of the domain, described by a condition. There is no new quantifier for this; the condition is written into the sentence with a connective. Which connective turns out to matter.
+
+Here is a small case. Take the domain \( \nR \) and the set \( A = \{1, 2\} \). "Every element of \( A \) is positive" means: for every real \( x \), if \( x \in A \), then \( x > 0 \). At \( x = 1 \) and \( x = 2 \) both parts hold, and at every other \( x \) the hypothesis \( x \in A \) is false, so the implication is true. "Some element of \( A \) is greater than \( 1 \)" means: some real \( x \) is in \( A \) **and** greater than \( 1 \). The number \( 2 \) is such an \( x \).
 
 *A "for every" restricted to a condition is an implication; a "there exists" restricted to a condition is a conjunction.*
 
@@ -215,7 +219,7 @@ Let \( A \) be a set, \( x \) a variable, and \( \varphi \) an open sentence. Th
 \exists x \in A \; \varphi \quad &\text{stands for} \quad \exists x\, (x \in A \wedge \varphi).
 \end{aligned}
 \]
-In the same way, for a term \( a \) in which \( x \) does not occur, \( \forall x > a \; \varphi \) stands for \( \forall x\, (x > a \to \varphi) \) and \( \exists x > a \; \varphi \) for \( \exists x\, (x > a \wedge \varphi) \), and likewise with \( \ge \), \( < \), \( \le \) in place of \( > \).
+In the same way, for a term \( a \) in which \( x \) does not occur, \( \forall x > a \; \varphi \) stands for \( \forall x\, (x > a \to \varphi) \) and \( \exists x > a \; \varphi \) for \( \exists x\, (x > a \wedge \varphi) \). The same holds with \( \ge \), \( < \), \( \le \) in place of \( > \).
 :::
 
 In words: "for every \( x \) in \( A \), \( \varphi \)" means "for every \( x \) whatsoever, **if** \( x \) is in \( A \), **then** \( \varphi \)". "There is an \( x \) in \( A \) with \( \varphi \)" means "there is an \( x \) that is in \( A \) **and** satisfies \( \varphi \)". The condition \( x \in A \), or \( x > a \), is the **bound**. A bounded quantifier is not a new symbol of the language: it is shorthand, and every statement about it is a statement about the formula it stands for.
@@ -235,7 +239,7 @@ So a \( \forall \) with \( \wedge \) inside claims too much: it says the whole d
 An existential quantifier with an implication directly inside, \( \exists x\, (\alpha \to \beta) \), is almost always a mistranslation. Over \( \nR \), "some element of \( \{1, 2\} \) exceeds \( 5 \)" is false, but \( \exists x\, (x \in \{1, 2\} \to x > 5) \) is true, because \( x = 0 \) makes the hypothesis false. When you write \( \exists \) and then \( \to \), check whether you meant \( \wedge \).
 :::
 
-**Mixing kinds of number.** A sentence of analysis often mixes real numbers and natural numbers; the convention is to take the larger kind as the domain and let the smaller kind enter as a bound, as in \( \forall \varepsilon > 0\; \exists N \in \nN \), with a sequence \( (a_n) \) read as a function symbol \( a \), \( a_n = a(n) \).
+**Mixing kinds of number.** A sentence of analysis often mixes real numbers and natural numbers. The convention is to take the larger kind as the domain and let the smaller kind enter as a bound, as in \( \forall \varepsilon > 0\; \exists N \in \nN \). A sequence \( (a_n) \) is read as a function symbol \( a \), with \( a_n = a(n) \).
 
 **The empty set.** Bounded quantifiers make sense even when the bound is never satisfied. Let \( \emptyset \) be the **empty set**, the set with no elements, so that \( x \in \emptyset \) is false for every \( x \).
 
@@ -306,7 +310,7 @@ The swapped sentence is \( \exists m\, \forall n\, \bigl( \mathrm{Prime}(m) \wed
 :::
 
 ::: {.second-reading title="When swapping is harmless"}
-**When swapping is harmless.** Two quantifiers of the **same** kind may be swapped. \( \forall x\, \forall y\, \varphi \) and \( \forall y\, \forall x\, \varphi \) both say that \( \varphi \) holds for every choice of the pair; in the game, the challenger makes both moves, and the order of the challenger's own moves gives nothing away. Likewise \( \exists x\, \exists y\, \varphi \) and \( \exists y\, \exists x\, \varphi \) both say that some pair works. Section 5.4 derives the first swap with the rules. For quantifiers of **different** kinds, one direction is always safe: if one \( y \) works for every \( x \), then for every \( x \) some \( y \) works (the same one). Section 5.6 derives this, \( \exists y\, \forall x\, \varphi \) to \( \forall x\, \exists y\, \varphi \), and @exm-quantifier-order-sum shows that the other direction fails.
+Two quantifiers of the **same** kind may be swapped. \( \forall x\, \forall y\, \varphi \) and \( \forall y\, \forall x\, \varphi \) both say that \( \varphi \) holds for every choice of the pair; in the game, the challenger makes both moves, and the order of the challenger's own moves gives nothing away. Likewise \( \exists x\, \exists y\, \varphi \) and \( \exists y\, \exists x\, \varphi \) both say that some pair works. Section 5.4 derives the first swap with the rules. For quantifiers of **different** kinds, one direction is always safe: if one \( y \) works for every \( x \), then for every \( x \) some \( y \) works (the same one). Section 5.6 derives this, \( \exists y\, \forall x\, \varphi \) to \( \forall x\, \exists y\, \varphi \), and @exm-quantifier-order-sum shows that the other direction fails.
 :::
 
 ## Words that hide quantifiers
@@ -347,7 +351,7 @@ A domain with no numbers in it makes the shapes easy to see: the objects of a bu
 
 **Figure K.** A building where every lock has a key that opens it, and no key opens every lock.
 
-In this building the fifth sentence of the table is true (\( \ell_1 \) has \( k_1 \), \( \ell_2 \) has \( k_2 \)) and the sixth is false (\( k_1 \) fails at \( \ell_2 \), \( k_2 \) at \( \ell_1 \)). The sixth implies the fifth, since a master key opens each lock, so the order "some … every" says more, exactly as in @exm-quantifier-order-sum.
+In this building, "every lock has a key that opens it" is true: \( \ell_1 \) has \( k_1 \), and \( \ell_2 \) has \( k_2 \). "Some key opens every lock" is false: \( k_1 \) fails at \( \ell_2 \), and \( k_2 \) at \( \ell_1 \). The second sentence implies the first, since a master key opens each lock. So the order "some … every" says more, exactly as in @exm-quantifier-order-sum.
 
 ::: {.check}
 Translate "no key opens every lock". Is it true in the building of Figure K?
@@ -358,9 +362,9 @@ Translate "no key opens every lock". Is it true in the building of Figure K?
 :::
 
 ::: {.second-reading title="Two slips with an implication inside \"there is\""}
-"Some key opens lock \( c \)" is **not** \( \exists x\, (\mathrm{Key}(x) \to \mathrm{Opens}(x, c)) \): that formula is true in every building, since the lock \( c \) is not a key, so \( c \) itself makes the hypothesis \( \mathrm{Key}(c) \) false. It is the warning after @def-bounded-quantifier again.
+"Some key opens lock \( c \)" is **not** \( \exists x\, (\mathrm{Key}(x) \to \mathrm{Opens}(x, c)) \): that formula is true in every building, since the lock \( c \) is not a key, so \( c \) itself makes the hypothesis \( \mathrm{Key}(c) \) false. It is an \( \exists \) with an implication inside, the slip shown after @def-bounded-quantifier.
 
-**An implication inside \( \exists \).** This is the warning after @def-bounded-quantifier once more, and it comes up in analysis: "there is an \( N \) such that, if \( n \ge N \), then …" is not the shape of "for every \( \varepsilon > 0 \) there is \( N \in \nN \) such that for every \( n \ge N \), …", where the implication \( n \ge N \to \dots \) sits under \( \forall n \in \nN \). The implication belongs under a \( \forall \).
+**An implication inside \( \exists \).** The slip shown after @def-bounded-quantifier also comes up in analysis. "There is an \( N \) such that, if \( n \ge N \), then …" is not the shape of "for every \( \varepsilon > 0 \) there is \( N \in \nN \) such that for every \( n \ge N \), …". In the second sentence, the implication \( n \ge N \to \dots \) sits under \( \forall n \in \nN \). The implication belongs under a \( \forall \).
 :::
 
 ## What comes next
@@ -381,7 +385,7 @@ Chapter 7 turns "true in a domain" into a definition, and proves that a reading 
 [A1]
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Read each sentence aloud, and say over which of the domains \( \nN \), \( \nZ \), \( \nR \) it is true: (i) \( \forall x\, (x + 1 > x) \); (ii) \( \exists x\, (x + 1 = 0) \); (iii) \( \forall x\, \exists y\, (y < x) \); (iv) \( \exists x\, (2 \cdot x = 1) \); (v) \( \forall x\, (x \cdot x \ge x) \).
+1. Read each sentence aloud, and say over which of the domains \( \nN \), \( \nZ \), \( \nR \) it is true: (i) \( \forall x\, (x + 1 > x) \), (ii) \( \exists x\, (x + 1 = 0) \), (iii) \( \forall x\, \exists y\, (y < x) \), (iv) \( \exists x\, (2 \cdot x = 1) \) and (v) \( \forall x\, (x \cdot x \ge x) \).
 2. With domain \( \nR \), which of the following translates "some element of \( A \) is negative"? (i) \( \exists x\, (x \in A \to x < 0) \); (ii) \( \exists x\, (x \in A \wedge x < 0) \); (iii) \( \forall x\, (x \in A \wedge x < 0) \). For each of the two others, say what it claims instead.
 3. What is the arity of the predicate "\( x + y = z \)", and how many holes does "\( 3 + y = z \)" have left?
 4. True or false, with a reason: \( \forall x \in \emptyset \; (x \ne x) \) is true.
@@ -526,18 +530,18 @@ It is true, by the first disjunct: \( 0 \) is a least element.
 
 *(c)* \( A \) is empty. The first is true: for every \( x \), the hypothesis \( x \in A \) is false. The second is false: no \( x \) is in \( A \).
 
-*(d)* There is none. A domain has at least one element (the convention of "Quantifiers and the domain"), say \( d \); if \( \forall x\, P(x) \) is true, then \( P \) holds of \( d \), so \( d \) is a witness and \( \exists x\, P(x) \) is true. The emptiness in (c) is the emptiness of a bound, not of the domain.
+*(d)* There is none. By convention a domain has at least one element, say \( d \); if \( \forall x\, P(x) \) is true, then \( P \) holds of \( d \), so \( d \) is a witness and \( \exists x\, P(x) \) is true. The emptiness in (c) is the emptiness of a bound, not of the domain.
 
-Worked examples of these types: the long "and" of world W; "The empty set" in "Bounded quantifiers".
+Worked examples of these types: the long "and" in world W, and the empty set under bounded quantifiers.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 3: (a), all nine atoms in the right places and the verdict with its witness.
 - 2: (b), De Morgan applied to a three-term conjunction and the true disjunct named.
 - 2: (c), both verdicts, each with the reason (hypothesis false; no element).
 - 3: (d), "none", with the argument from a non-empty domain; 1 of the 3 for an answer that separates the empty bound of (c) from the domain.
 
-Fatal error (0 for the part): an empty domain offered as the example in (d).
+Slips that lose the step (0 for the part): an empty domain offered as the example in (d).
 :::
 
 ### C. Going deeper
@@ -584,24 +588,28 @@ For the second, let \( A \subseteq \nR \) be any set, and consider the real numb
 
 So neither mistranslation tells us anything about \( A \) at all: the first is false and the second is true, whichever set \( A \) is. A sentence whose truth value does not depend on \( A \) cannot express a property of \( A \). This is the precise sense in which the wrong connective "claims too much" under \( \forall \) and "too little" under \( \exists \).
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
+
 - 2: a set for the first mistranslation, with both truth values checked.
 - 2: a set for the second mistranslation, with both truth values checked, and the implication at the witness justified (its hypothesis is false, or its conclusion is true).
-- 3: for the first, for an arbitrary \( A \), a real number (the same for every \( A \), or chosen by cases covering every \( A \)) that fails \( x \in A \wedge x > 0 \), with the check.
-- 3: for the second, for an arbitrary \( A \), a witness (the same for every \( A \), or chosen by cases covering every \( A \)) at which \( x \in A \to x > 0 \) holds, with a reason that covers every \( A \) (its conclusion is true, or a check in every case).
-Fatal errors (0 for the step): a witness or counterexample that depends on \( A \) in (b) without a case split covering every \( A \); reading \( \exists x\, (x \in A \to x > 0) \) as "some element of \( A \) is positive".
+- 3: for the first, for an arbitrary \( A \), a real number that fails \( x \in A \wedge x > 0 \), with the check. The number is the same for every \( A \), or chosen by cases covering every \( A \).
+- 3: for the second, for an arbitrary \( A \), a witness at which \( x \in A \to x > 0 \) holds. The witness is the same for every \( A \), or chosen by cases covering every \( A \). The reason covers every \( A \): its conclusion is true, or there is a check in every case.
+
+Slips that lose the step (0 for the step): a witness or counterexample that depends on \( A \) in (b) without a case split covering every \( A \); reading \( \exists x\, (x \in A \to x > 0) \) as "some element of \( A \) is positive".
 :::
 
 <!-- dependency ledger
 predicates-and-quantifiers-world-w (example): the six readings of world W, its Quick check, and the long "and"/"or" expansions over the four dots (c a false conjunct of forall x P(x); a a true disjunct; P(a) -> Q(a) the false conjunct of the second Quick check) | informal truth in a finite world, read dot by dot; checked by verify/ch05/exr-predicates-and-quantifiers-a2.py
 predicates-and-quantifiers-world-w (claim): "not every dot has P" is "some dot lacks P" over the four dots | prp-de-morgan (c), (d) (F1.2 §05, cited), applied three times to a four-term conjunction
-predicates-and-quantifiers-keys (example): the verdicts in the building of Figure K (fifth sentence true, sixth false), its Quick check; "some ... every" implies "every ... some" there | informal truth in a finite world; checked by verify/ch05/exr-predicates-and-quantifiers-a2.py; the implication is the reading of exm-quantifier-order-sum's pattern (a master key opens each lock), stated informally; derived in general in F1.4 §06 (prp-exists-forall-swap)
+predicates-and-quantifiers-keys (example): the verdicts in the building of Figure K ("every lock has a key that opens it" true, "some key opens every lock" false), its Quick check; "some ... every" implies "every ... some" there | informal truth in a finite world; checked by verify/ch05/exr-predicates-and-quantifiers-a2.py; the implication is the reading of exm-quantifier-order-sum's pattern (a master key opens each lock), stated informally; derived in general in F1.4 §06 (prp-exists-forall-swap)
 predicates-and-quantifiers-keys (claim): fold "Two slips": exists x (Key(x) -> Opens(x, c)) is true in every building | vacuous truth at x = c (c is a lock, locks are not keys), informal reading as def-bounded-quantifier's demonstration
 exm-reading-quantified-sentences (claim): in the subsection "The same sentence over different domains" before it, sqrt 2 exists in R, so exists x (x^2 = 2) is true over R | school fact here, stated as such; AN1.1 (index, Where this goes)
 exm-reading-quantified-sentences (claim): in the subsection "The same sentence over different domains" before it, every natural number is at least 0, so forall x (x >= 0) holds over N | convention N = {0, 1, 2, ...} (NOTATION); school fact
 exm-reading-quantified-sentences (solution): the check "exists x (x + x = x)" before it: x + x = x iff x = 0; 0 is in Z, R and N, not in Z_{>0}; n + n > n for n in Z_{>0} | school arithmetic
 exm-reading-quantified-sentences (example): x^2 >= 0 for every real x | school fact (signs), stated as such
 exm-reading-quantified-sentences (example): there is no largest prime | school fact (infinitude of primes), stated in the text as not used; nothing depends on it
+def-bounded-quantifier (example): the unlabeled instance before it, A = {1, 2} over R: 1, 2 > 0, other x fail x in A; 2 is in A and 2 > 1 | school arithmetic; vacuous truth read as in the claim below
+predicates-and-quantifiers-domain (example): the unlabeled instance before the quantifier bullets, domain {1, 2, 3}: all positive, 1 not even, 2 even | school arithmetic
 def-bounded-quantifier (claim): an implication with a false hypothesis is true (vacuous truth), used to read the wrong bounded forms and the empty-set cases | informal reading of F1.2 (prp-vacuous-implication cited); the universal empty-set case is derived in F1.4 §04
 def-bounded-quantifier (claim): the existential-import warning: a "for every" over a bound does not say that anything satisfies the bound | informal truth, as the empty-set bullets before it
 exm-quantifier-order-sum (example): x + (-x) = 0 and (1 - y) + y = 1 in R; the move table (5 + (-5) = 0; -2 + 3 = 1) | school arithmetic

@@ -4,7 +4,7 @@ items:
 - key: check:01-predicates-and-quantifiers:1
   kind: check
   file: 01-predicates-and-quantifiers.md
-  line: 128
+  line: 130
   hash: 64827ac77369
   verdicts:
   - stage: S5a
@@ -43,7 +43,7 @@ items:
 - key: check:01-predicates-and-quantifiers:2
   kind: check
   file: 01-predicates-and-quantifiers.md
-  line: 138
+  line: 140
   hash: e7b96e49c54e
   verdicts:
   - stage: S5a
@@ -81,7 +81,7 @@ items:
 - key: check:01-predicates-and-quantifiers:3
   kind: check
   file: 01-predicates-and-quantifiers.md
-  line: 166
+  line: 168
   hash: 6d511c01e283
   verdicts:
   - stage: S5a
@@ -103,8 +103,8 @@ items:
 - key: exm-reading-quantified-sentences
   kind: exm
   file: 01-predicates-and-quantifiers.md
-  line: 178
-  hash: 4d6c956f4fa0
+  line: 180
+  hash: c88a1c6b8cb3
   verdicts:
   - stage: S5a
     verdict: correct
@@ -153,11 +153,18 @@ items:
       correctly as ''no largest prime''. The meta-claim ''Nothing in this book depends on that theorem''
       holds: grep finds the theorem only at ch08 01:383 (proved as a prose example, not cited) and in
       ch06 translations. ''The next subsection'' at 01:197 refers to Bounded quantifiers, which does follow.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-predicates-and-quantifiers
+    hash: c88a1c6b8cb3
+    date: '2026-11-01'
+    evidence: 'wording only: solution (a) split in three, same school fact; pointers to bounded quantifiers
+      keep the same target; statement and readings unchanged'
 - key: def-bounded-quantifier
   kind: def
   file: 01-predicates-and-quantifiers.md
-  line: 208
-  hash: 49e2950198a0
+  line: 212
+  hash: 3f9d19fa28a9
   verdicts:
   - stage: S5a
     verdict: correct
@@ -189,10 +196,24 @@ items:
       x > a. The earlier S5b finding is resolved. Line 39 no longer promises 'only sets described in plain
       words'. It now says a set is informal until Chapter 6, that this section uses nothing about a set
       A beyond membersh
+  - stage: S5e
+    verdict: minor
+    by: s5e-01-predicates-and-quantifiers
+    hash: 3f9d19fa28a9
+    date: '2026-11-01'
+    evidence: 'wording only: statement unchanged; new unlabeled instance over R with A={1,2} true and
+      ledgered; residual 39-word sentence at l.215 (statement wording)'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 3f9d19fa28a9
+    date: '2026-11-01'
+    evidence: 'coordinator: split the trailing ''and likewise'' clause into its own sentence; statement
+      means the same (STYLE 13 B6)'
 - key: exm-quantifier-order-sum
   kind: exm
   file: 01-predicates-and-quantifiers.md
-  line: 255
+  line: 259
   hash: 7ca2f568ed72
   verdicts:
   - stage: S5a
@@ -233,7 +254,7 @@ items:
 - key: check:01-predicates-and-quantifiers:4
   kind: check
   file: 01-predicates-and-quantifiers.md
-  line: 300
+  line: 304
   hash: 3712b40f62e2
   verdicts:
   - stage: S5a
@@ -262,7 +283,7 @@ items:
 - key: check:01-predicates-and-quantifiers:5
   kind: check
   file: 01-predicates-and-quantifiers.md
-  line: 352
+  line: 356
   hash: c4635b5b99e0
   verdicts:
   - stage: S5a
@@ -292,8 +313,8 @@ items:
 - key: exr-predicates-and-quantifiers-a1
   kind: exr
   file: 01-predicates-and-quantifiers.md
-  line: 380
-  hash: d921ac801b34
+  line: 384
+  hash: 50e3da551f23
   verdicts:
   - stage: S5a
     verdict: correct
@@ -323,10 +344,17 @@ items:
     evidence: '01:258-285. I solved it independently and all 15 truth values in (a) match: (v) is true
       over N and Z and false over R at 1/2 (script checked). (b), (c) and (d) are correct; the A={1} example
       in (b) is valid.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-predicates-and-quantifiers
+    hash: 50e3da551f23
+    date: '2026-11-01'
+    evidence: 'wording only: semicolon separators of (i)-(v) became commas; five formulas identical; a1
+      sidecar passes'
 - key: exr-predicates-and-quantifiers-a2
   kind: exr
   file: 01-predicates-and-quantifiers.md
-  line: 409
+  line: 413
   hash: efa4b777a6a0
   verdicts:
   - stage: S5a
@@ -360,7 +388,7 @@ items:
 - key: exr-predicates-and-quantifiers-b1
   kind: exr
   file: 01-predicates-and-quantifiers.md
-  line: 458
+  line: 462
   hash: 3c67c9eb95e8
   verdicts:
   - stage: S5a
@@ -392,7 +420,7 @@ items:
 - key: exr-predicates-and-quantifiers-b2
   kind: exr
   file: 01-predicates-and-quantifiers.md
-  line: 481
+  line: 485
   hash: e9f2d798c334
   verdicts:
   - stage: S5a
@@ -425,8 +453,8 @@ items:
 - key: exr-predicates-and-quantifiers-b3
   kind: exr
   file: 01-predicates-and-quantifiers.md
-  line: 502
-  hash: b80dcea6fb36
+  line: 506
+  hash: b319f22315b1
   verdicts:
   - stage: S5a
     verdict: minor
@@ -474,10 +502,17 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: A is empty on D={0,1,2}, so ∀x∈A(x<0) is true and ∃ is false; verify b3.py passes
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-predicates-and-quantifiers
+    hash: b319f22315b1
+    date: '2026-11-01'
+    evidence: 'wording only: (d) ''By convention'' = the non-empty-domain convention; rubric renamed per
+      STYLE 13 B4; points unchanged; b3 sidecar passes'
 - key: exr-predicates-and-quantifiers-c1
   kind: exr
   file: 01-predicates-and-quantifiers.md
-  line: 545
+  line: 549
   hash: 1543c74ea56e
   verdicts:
   - stage: S5a
@@ -508,8 +543,8 @@ items:
 - key: exr-predicates-and-quantifiers-c2
   kind: exr
   file: 01-predicates-and-quantifiers.md
-  line: 565
-  hash: b201beaf4b04
+  line: 569
+  hash: a7dfd7f58f4f
   verdicts:
   - stage: S5a
     verdict: minor
@@ -559,11 +594,18 @@ items:
       line 382. Lines 380-381 allow witnesses chosen by cases, which agrees with the fatal-error line.
       That line also catches the main misreading. No correct alternative answer is failed, and no wrong
       answer is rewarded.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-predicates-and-quantifiers
+    hash: a7dfd7f58f4f
+    date: '2026-11-01'
+    evidence: 'wording only: rubric headings renamed; parentheticals split; points 2/2/3/3 and zero-score
+      slips unchanged; c2 sidecar passes'
 - key: def-term
   kind: def
   file: 02-terms-formulas-substitution.md
-  line: 33
-  hash: ad9f92851ddd
+  line: 37
+  hash: fc51b7e993aa
   verdicts:
   - stage: S5a
     verdict: minor
@@ -602,11 +644,18 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: Rule 1 aside now notes the sets-as-objects example of 5.7
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-terms-formulas-substitution
+    hash: fc51b7e993aa
+    date: '2026-11-01'
+    evidence: 'wording only: (Tm3) split, ''suitable'' added, same list condition; new instance x,1 ->
+      x+1 -> (x+1)^2 uses listed symbols; codes named in words'
 - key: def-first-order-formula
   kind: def
   file: 02-terms-formulas-substitution.md
-  line: 88
-  hash: dd2b2dfe64c7
+  line: 92
+  hash: de893128f52a
   verdicts:
   - stage: S5a
     verdict: minor
@@ -656,10 +705,17 @@ items:
       and recursion, and the check solution all agree with them. On the earlier S8 finding: shorthand
       rule 1 (line 110) now says that when sets are themselves objects of the domain, as in Chapter 6,
       ∈ is a two-plac'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-terms-formulas-substitution
+    hash: de893128f52a
+    date: '2026-11-01'
+    evidence: 'wording only: (Fm5) same clause list; new instance P(x+1), x=2, conjunction, exists x valid
+      by (Fm1),(Fm3),(Fm4); induction/recursion refs kept'
 - key: check:02-terms-formulas-substitution:1
   kind: check
   file: 02-terms-formulas-substitution.md
-  line: 134
+  line: 138
   hash: 822aac641692
   verdicts:
   - stage: S5a
@@ -680,7 +736,7 @@ items:
 - key: def-free-variable
   kind: def
   file: 02-terms-formulas-substitution.md
-  line: 175
+  line: 179
   hash: 2385efb84db6
   verdicts:
   - stage: S5a
@@ -702,7 +758,7 @@ items:
 - key: def-sentence
   kind: def
   file: 02-terms-formulas-substitution.md
-  line: 188
+  line: 192
   hash: b9577afe2cf3
   verdicts:
   - stage: S5a
@@ -722,8 +778,8 @@ items:
 - key: exm-free-and-bound-limit
   kind: exm
   file: 02-terms-formulas-substitution.md
-  line: 224
-  hash: 68333c6bbff6
+  line: 228
+  hash: b0c957f556a5
   verdicts:
   - stage: S5a
     verdict: minor
@@ -753,10 +809,17 @@ items:
       four open and four close. All occurrences of epsilon, N and n are bound and L is free, so the formula
       is not a sentence. Both earlier findings are resolved. Line 213 now says the formula is neither
       true nor false un'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-terms-formulas-substitution
+    hash: b0c957f556a5
+    date: '2026-11-01'
+    evidence: 'wording only: conventions sentence split; L=0 works and L=1 fails for 1/(n+1), none for
+      (-1)^n kept; ''the book avoids'' -> ''we avoid'''
 - key: check:02-terms-formulas-substitution:2
   kind: check
   file: 02-terms-formulas-substitution.md
-  line: 260
+  line: 264
   hash: 58cd0a52a55e
   verdicts:
   - stage: S5a
@@ -776,8 +839,8 @@ items:
 - key: exm-computing-substitutions
   kind: exm
   file: 02-terms-formulas-substitution.md
-  line: 274
-  hash: 72fbb3d8f985
+  line: 278
+  hash: d65bbfa9143a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -812,11 +875,18 @@ items:
     evidence: '02:274-299: (a) P(2)->S(2); (b) y+1<y ∧ ∀x(x≥0) (bound x untouched); (c) ∀y R(f(z),y),
       z≠y; (d) unchanged. Each matches the clauses of def-substitution at 303-324; verify/ch05/exm-computing-substitutions.py
       passes.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-terms-formulas-substitution
+    hash: d65bbfa9143a
+    date: '2026-11-01'
+    evidence: 'wording only: ''the rule in the slogan above'' replaced by the slogan written out; parts
+      (a)-(d) unchanged'
 - key: def-substitution
   kind: def
   file: 02-terms-formulas-substitution.md
-  line: 303
-  hash: d68a6f1a424a
+  line: 307
+  hash: b1624f9582f8
   verdicts:
   - stage: S5a
     verdict: minor
@@ -847,11 +917,18 @@ items:
       and records "appears in". NOTATION.md:133 has a row for Var/FV; its scope is noted under c1. Line
       262 says the slash in [t/x] separates and does not divide, so [y + 1/x] puts in y+1. That settles
       the clash w
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-terms-formulas-substitution
+    hash: b1624f9582f8
+    date: '2026-11-01'
+    evidence: 'wording only: recursion clauses identical; reading sentence split; fold title and well-definedness
+      sentence reworded, same claim'
 - key: proof:def-substitution
   kind: proof
   file: 02-terms-formulas-substitution.md
-  line: 350
-  hash: 6c732b25c374
+  line: 354
+  hash: c43d44c099fc
   verdicts:
   - stage: S5a
     verdict: correct
@@ -872,10 +949,17 @@ items:
     evidence: '02:350-360: the term version, then atomic, connective and quantifier cases (y=x by the
       stopping clause; y≠x by the recursive description of ''free'' at 215-218 plus the IH). Every fact
       used is in this section or is structural induction carried over (ledger 787, 792).'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-terms-formulas-substitution
+    hash: c43d44c099fc
+    date: '2026-11-01'
+    evidence: 'wording only: term part split into sentences, same steps; Uses line @def-substitution,
+      @def-free-variable (both earlier in the section)'
 - key: check:02-terms-formulas-substitution:3
   kind: check
   file: 02-terms-formulas-substitution.md
-  line: 365
+  line: 373
   hash: 4580d4d3d417
   verdicts:
   - stage: S5a
@@ -912,7 +996,7 @@ items:
 - key: def-free-for
   kind: def
   file: 02-terms-formulas-substitution.md
-  line: 393
+  line: 401
   hash: 54a2a2275e4b
   verdicts:
   - stage: S5a
@@ -942,7 +1026,7 @@ items:
 - key: check:02-terms-formulas-substitution:4
   kind: check
   file: 02-terms-formulas-substitution.md
-  line: 432
+  line: 440
   hash: 8ab786660f52
   verdicts:
   - stage: S5a
@@ -966,7 +1050,7 @@ items:
 - key: check:02-terms-formulas-substitution:5
   kind: check
   file: 02-terms-formulas-substitution.md
-  line: 444
+  line: 452
   hash: 6781a2711c3f
   verdicts:
   - stage: S5a
@@ -989,8 +1073,8 @@ items:
 - key: exr-terms-formulas-substitution-a1
   kind: exr
   file: 02-terms-formulas-substitution.md
-  line: 524
-  hash: 6928184e1159
+  line: 532
+  hash: 5c2709a2010f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1028,10 +1112,17 @@ items:
       agrees with def-free-variable at line 149. (ii) is a sentence. (iii): x and y are each free once
       and bound once, and the formula is not a sentence; this matches B2(b). (iv): epsilon occurs twice
       and delta twice, '
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-terms-formulas-substitution
+    hash: 5c2709a2010f
+    date: '2026-11-01'
+    evidence: 'wording only: separators '';'' -> '',''; clause codes expanded in words; answers unchanged;
+      a1 sidecar passes'
 - key: exr-terms-formulas-substitution-a2
   kind: exr
   file: 02-terms-formulas-substitution.md
-  line: 551
+  line: 559
   hash: 5fa8f1ebf45b
   verdicts:
   - stage: S5a
@@ -1078,8 +1169,8 @@ items:
 - key: exr-terms-formulas-substitution-b1
   kind: exr
   file: 02-terms-formulas-substitution.md
-  line: 600
-  hash: 593b30a6bf74
+  line: 608
+  hash: c1ee8a48ea12
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1144,11 +1235,25 @@ items:
     evidence: '02:600-624. (a)-(e) match mine. (c) and (d): capture correctly named, renamed to a letter
       that is fresh for φ and t. (e): the only free y is outside ∃y, so x+1 is free for y. Worked examples:
       exm-computing-substitutions and the recipe.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: c1ee8a48ea12
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, clause codes named in words,
+      rubric renamed per B4; Uses lines @def-substitution/@def-free-for added; answers and numbers unchanged;
+      sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: c1ee8a48ea12
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-terms-formulas-substitution-b2
   kind: exr
   file: 02-terms-formulas-substitution.md
-  line: 626
-  hash: 5d7cd581378d
+  line: 634
+  hash: a6400c9a9fc6
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1214,11 +1319,25 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: set-notation gloss added
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: a6400c9a9fc6
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, clause codes named in words,
+      rubric renamed per B4; Uses lines @def-substitution/@def-free-for added; answers and numbers unchanged;
+      sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: a6400c9a9fc6
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-terms-formulas-substitution-b3
   kind: exr
   file: 02-terms-formulas-substitution.md
-  line: 662
-  hash: e454b0f53325
+  line: 670
+  hash: 3cb42f26b4c7
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1247,10 +1366,24 @@ items:
     evidence: '02:662-692. The computations match mine. My script checks the reading (N, <, x=2, y=0):
       the swap ∃z(0<z<2) is true and the computed ∃z(2<z<2) is false. Each free-for check holds. (c):
       z is captured. The scheme grades the book''s answer and my alternative the same, 10/10.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 3cb42f26b4c7
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, clause codes named in words,
+      rubric renamed per B4; Uses lines @def-substitution/@def-free-for added; answers and numbers unchanged;
+      sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 3cb42f26b4c7
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-terms-formulas-substitution-c1
   kind: exr
   file: 02-terms-formulas-substitution.md
-  line: 694
+  line: 702
   hash: 00b7c3222c6b
   verdicts:
   - stage: S5a
@@ -1349,7 +1482,7 @@ items:
 - key: exr-terms-formulas-substitution-c2
   kind: exr
   file: 02-terms-formulas-substitution.md
-  line: 762
+  line: 774
   hash: a5ded9bd0f4b
   verdicts:
   - stage: S5a
@@ -1524,7 +1657,7 @@ items:
   kind: exm
   file: 03-universal-elimination.md
   line: 87
-  hash: 88ae0b456d45
+  hash: 5c8ad59d1c7b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1555,6 +1688,20 @@ items:
       is free for its variable: the terms have no variables (02:357 special case) or pass a non-x quantifier
       (@def-substitution). The S5b finding is resolved. The new straw man (line 126) matches the goal
       R(b,a) aga'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 5c8ad59d1c7b
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, ''fire'' -> ''apply ->E'',
+      clause codes in words, rubric renamed, Lean remark into For-instructors fold; derivations, readings
+      and numbers unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 5c8ad59d1c7b
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: check:03-universal-elimination:3
   kind: check
   file: 03-universal-elimination.md
@@ -1590,7 +1737,7 @@ items:
   kind: exm
   file: 03-universal-elimination.md
   line: 293
-  hash: 824ce3969e91
+  hash: cb93bb90e587
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1610,6 +1757,20 @@ items:
     evidence: '03:293-305: row 1 (P(x)→Q(f(x)))[f(f(c))/x]=P(f(f(c)))→Q(f(f(f(c)))). Row 2 replaces both
       free x and has quantifiers on δ, y only. Row 3 is (ε/2)^2≥0. The look-alike ∃y(y+1<y) is a capture,
       and the renamed instance ∃z(y+1<z) is right. The text matches blueprint ch05-deepen §4.3 item 2.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: cb93bb90e587
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, ''fire'' -> ''apply ->E'',
+      clause codes in words, rubric renamed, Lean remark into For-instructors fold; derivations, readings
+      and numbers unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: cb93bb90e587
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: check:03-universal-elimination:4
   kind: check
   file: 03-universal-elimination.md
@@ -1635,8 +1796,8 @@ items:
 - key: exr-universal-elimination-a1
   kind: exr
   file: 03-universal-elimination.md
-  line: 348
-  hash: cdeb14b898fb
+  line: 352
+  hash: 6ab8051eadc2
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1667,11 +1828,25 @@ items:
       replaced, clause 3; (iii) main symbol is ->, clause 1; (iv) legal at f(c); (c) false; (d) every
       term names an element and the domain is non-empty. All match. Readings checked by script: over N,
       P=x>=1, c=0, a=1 makes line 1 true and line 2 false; over R, 3*(-1)<0.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 6ab8051eadc2
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, ''fire'' -> ''apply ->E'',
+      clause codes in words, rubric renamed, Lean remark into For-instructors fold; derivations, readings
+      and numbers unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 6ab8051eadc2
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-universal-elimination-a2
   kind: exr
   file: 03-universal-elimination.md
-  line: 381
-  hash: 443cb55975e6
+  line: 385
+  hash: 5cd04fee42c5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1700,11 +1875,25 @@ items:
     model: claude-opus-5-5
     evidence: 03:381-440. Every instance in (d) yields P(g(c))→Q(c). The clause verdicts (f)-(h) are right.
       (i) gives ∃y(y>x+1). The derivations (j)-(l) are right. check_fitch reports 0 errors on the file.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 5cd04fee42c5
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, ''fire'' -> ''apply ->E'',
+      clause codes in words, rubric renamed, Lean remark into For-instructors fold; derivations, readings
+      and numbers unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 5cd04fee42c5
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-universal-elimination-b1
   kind: exr
   file: 03-universal-elimination.md
-  line: 430
-  hash: d265262ae32d
+  line: 441
+  hash: de64e7d988b0
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1731,10 +1920,24 @@ items:
     evidence: '03:297-312. My derivation is the same 7 lines. Terms are attributed correctly: line 6 from
       the goal R(a), line 4 from the subgoal Q(a). Worked type: exm-universal-elimination-derivations
       (a),(d).'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: de64e7d988b0
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, ''fire'' -> ''apply ->E'',
+      clause codes in words, rubric renamed, Lean remark into For-instructors fold; derivations, readings
+      and numbers unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: de64e7d988b0
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-universal-elimination-b2
   kind: exr
   file: 03-universal-elimination.md
-  line: 458
+  line: 469
   hash: b51ca8149d79
   verdicts:
   - stage: S5a
@@ -1766,7 +1969,7 @@ items:
 - key: exr-universal-elimination-b3
   kind: exr
   file: 03-universal-elimination.md
-  line: 491
+  line: 502
   hash: 638e789bb699
   verdicts:
   - stage: S5a
@@ -1798,8 +2001,8 @@ items:
 - key: exr-universal-elimination-b4
   kind: exr
   file: 03-universal-elimination.md
-  line: 519
-  hash: 17692cac7ddd
+  line: 530
+  hash: 6fb9c005d2dd
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1826,11 +2029,25 @@ items:
     model: claude-opus-5-5
     evidence: '03:519-556. The gap (lines 4-8) has a single completion up to the order of lines. The completion
       passes check_fitch. Worked examples: exm-universal-elimination-derivations (a) and (d).'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 6fb9c005d2dd
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, ''fire'' -> ''apply ->E'',
+      clause codes in words, rubric renamed, Lean remark into For-instructors fold; derivations, readings
+      and numbers unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 6fb9c005d2dd
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-universal-elimination-b5
   kind: exr
   file: 03-universal-elimination.md
-  line: 558
-  hash: 79fd266a1174
+  line: 569
+  hash: fbd675662777
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1886,10 +2103,24 @@ items:
     evidence: S7 leftover resolved by the coordinator per the re-referee's fix (stem narrowed to the paid
       pairings / b0 rename / ledger citation wording / Idea reordered / front-lock constant c); re-read
       after the edit
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: fbd675662777
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, ''fire'' -> ''apply ->E'',
+      clause codes in words, rubric renamed, Lean remark into For-instructors fold; derivations, readings
+      and numbers unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: fbd675662777
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-universal-elimination-c1
   kind: exr
   file: 03-universal-elimination.md
-  line: 660
+  line: 671
   hash: 4e3824acd0d1
   verdicts:
   - stage: S5a
@@ -1924,8 +2155,8 @@ items:
 - key: exr-universal-elimination-c2
   kind: exr
   file: 03-universal-elimination.md
-  line: 719
-  hash: d67d4e514e7e
+  line: 730
+  hash: e7c40d6a643d
   verdicts:
   - stage: S5a
     verdict: gap
@@ -2021,6 +2252,20 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: 'the fatal error matches (b): the reading must make P(x) true with x valued'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: e7c40d6a643d
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, ''fire'' -> ''apply ->E'',
+      clause codes in words, rubric renamed, Lean remark into For-instructors fold; derivations, readings
+      and numbers unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: e7c40d6a643d
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: def-rules-universal
   kind: def
   file: 04-universal-introduction.md
@@ -2122,7 +2367,7 @@ items:
   kind: exm
   file: 04-universal-introduction.md
   line: 269
-  hash: 7ea6b68ea91d
+  hash: e454b3ac6d55
   verdicts:
   - stage: S5a
     verdict: gap
@@ -2175,6 +2420,20 @@ items:
       and the identity (psi[x0/x])[y0/y]=(psi[y0/y])[x0/x] hold under the stated hypotheses, and the ledger
       covers them (04:1313). The pointers to Section 5.3 (b) R(c,c) and to the 5.1 game check out (03:94,
       01:3'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: e454b3ac6d55
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, Givens/Goal -> We know/We
+      want, fold pointers named by title, justification lists as bullets; derivations, side-condition
+      checks and readings unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: e454b3ac6d55
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: check:04-universal-introduction:2
   kind: check
   file: 04-universal-introduction.md
@@ -2201,7 +2460,7 @@ items:
   kind: check
   file: 04-universal-introduction.md
   line: 437
-  hash: bb30f6c66f7c
+  hash: e72bc664af39
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2235,6 +2494,20 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: wording only
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: e72bc664af39
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, Givens/Goal -> We know/We
+      want, fold pointers named by title, justification lists as bullets; derivations, side-condition
+      checks and readings unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: e72bc664af39
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: prp-forall-and
   kind: prp
   file: 04-universal-introduction.md
@@ -2261,7 +2534,7 @@ items:
   kind: proof
   file: 04-universal-introduction.md
   line: 556
-  hash: b00b54257366
+  hash: ca81849821a1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2282,10 +2555,24 @@ items:
     evidence: '256-295: both derivations pass check_fitch (24 derivations, 0 errors). The reuse of the
       name x_0 is justified correctly at 275. The ''4 lines'' that 03''s stall promises are lines 1-4
       here (298).'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: ca81849821a1
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, Givens/Goal -> We know/We
+      want, fold pointers named by title, justification lists as bullets; derivations, side-condition
+      checks and readings unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: ca81849821a1
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: check:04-universal-introduction:4
   kind: check
   file: 04-universal-introduction.md
-  line: 688
+  line: 694
   hash: f5077595dd66
   verdicts:
   - stage: S5a
@@ -2308,8 +2595,8 @@ items:
 - key: exm-universal-introduction-critique
   kind: exm
   file: 04-universal-introduction.md
-  line: 712
-  hash: c49aba05d783
+  line: 718
+  hash: 522b79bcd459
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2329,10 +2616,24 @@ items:
     evidence: 04:712-738 matches blueprint ch05-deepen §4.4 item 1 word for word. Line 2 fails clause
       3, and forall x (x <= x+1) is the legal conclusion. The pointers to 5.1 (order of quantifiers) and
       5.5 (exists-I) are in-chapter. Ledger 04:1328.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 522b79bcd459
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, Givens/Goal -> We know/We
+      want, fold pointers named by title, justification lists as bullets; derivations, side-condition
+      checks and readings unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 522b79bcd459
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exm-universal-introduction-instances
   kind: exm
   file: 04-universal-introduction.md
-  line: 742
+  line: 748
   hash: 0ca43e56f421
   verdicts:
   - stage: S5a
@@ -2356,7 +2657,7 @@ items:
 - key: exr-universal-introduction-a1
   kind: exr
   file: 04-universal-introduction.md
-  line: 794
+  line: 800
   hash: caf08b0e5392
   verdicts:
   - stage: S5a
@@ -2418,8 +2719,8 @@ items:
 - key: exr-universal-introduction-a2
   kind: exr
   file: 04-universal-introduction.md
-  line: 871
-  hash: abcacca2348f
+  line: 877
+  hash: 3a22837c9705
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2446,11 +2747,25 @@ items:
     model: claude-opus-5-5
     evidence: '04:871-916. All 12 parts agree with mine. (c): line 8 is P(u0)∨Q(f(u0)). (l): the range
       convention applies (cited from line 1). The ramp follows §12.8.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 3a22837c9705
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, Givens/Goal -> We know/We
+      want, fold pointers named by title, justification lists as bullets; derivations, side-condition
+      checks and readings unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 3a22837c9705
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-universal-introduction-b1
   kind: exr
   file: 04-universal-introduction.md
-  line: 920
-  hash: fc6f93a05117
+  line: 938
+  hash: 43b2516c01e5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2502,10 +2817,24 @@ items:
     evidence: '04:920-970. The scaffold has one completion up to order (lines 4-7). The side condition
       at line 9 is checked. The range 3-8 follows the immediately-contains convention. Worked examples:
       exm (b) and the RIGHT half of ''Why each clause''.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 43b2516c01e5
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, Givens/Goal -> We know/We
+      want, fold pointers named by title, justification lists as bullets; derivations, side-condition
+      checks and readings unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 43b2516c01e5
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-universal-introduction-b2
   kind: exr
   file: 04-universal-introduction.md
-  line: 972
+  line: 990
   hash: ef1b86d4fcc2
   verdicts:
   - stage: S5a
@@ -2569,7 +2898,7 @@ items:
 - key: exr-universal-introduction-b3
   kind: exr
   file: 04-universal-introduction.md
-  line: 1014
+  line: 1032
   hash: 1a12524a9827
   verdicts:
   - stage: S5a
@@ -2601,8 +2930,8 @@ items:
 - key: exr-universal-introduction-b4
   kind: exr
   file: 04-universal-introduction.md
-  line: 1059
-  hash: c52bc74afce3
+  line: 1077
+  hash: 7d75de37fe6c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2645,11 +2974,25 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: the title points to 5.3 C2, which is the P(x) to ∀xP(x) step
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 7d75de37fe6c
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, Givens/Goal -> We know/We
+      want, fold pointers named by title, justification lists as bullets; derivations, side-condition
+      checks and readings unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 7d75de37fe6c
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-universal-introduction-b5
   kind: exr
   file: 04-universal-introduction.md
-  line: 1095
-  hash: 17eecc7266be
+  line: 1113
+  hash: 8b0c83918177
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2696,10 +3039,24 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: added side-condition checks at lines 8, 14/15 and 13 are consistent with the derivations
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 8b0c83918177
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, Givens/Goal -> We know/We
+      want, fold pointers named by title, justification lists as bullets; derivations, side-condition
+      checks and readings unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 8b0c83918177
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-universal-introduction-c1
   kind: exr
   file: 04-universal-introduction.md
-  line: 1211
+  line: 1229
   hash: bdc08d2671f5
   verdicts:
   - stage: S5a
@@ -2747,7 +3104,7 @@ items:
 - key: exr-universal-introduction-c2
   kind: exr
   file: 04-universal-introduction.md
-  line: 1267
+  line: 1285
   hash: 03b17b38bcd4
   verdicts:
   - stage: S5a
@@ -2878,7 +3235,7 @@ items:
 - key: check:05-existential-introduction:1
   kind: check
   file: 05-existential-introduction.md
-  line: 69
+  line: 73
   hash: 475dfaf9653d
   verdicts:
   - stage: S5a
@@ -2917,7 +3274,7 @@ items:
 - key: check:05-existential-introduction:2
   kind: check
   file: 05-existential-introduction.md
-  line: 95
+  line: 99
   hash: da74672913fd
   verdicts:
   - stage: S5a
@@ -2939,7 +3296,7 @@ items:
 - key: prp-forall-implies-exists
   kind: prp
   file: 05-existential-introduction.md
-  line: 111
+  line: 115
   hash: 8bbc30e44558
   verdicts:
   - stage: S5a
@@ -2975,8 +3332,8 @@ items:
 - key: proof:prp-forall-implies-exists
   kind: proof
   file: 05-existential-introduction.md
-  line: 117
-  hash: 80ccd632749f
+  line: 121
+  hash: f40110f9e3be
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2995,10 +3352,24 @@ items:
     evidence: '05:102-116: forall-E at the variable x and exists-I with witness x. phi[x/x] = phi and
       ''x is free for x in every formula'' are both in §02 (02: the facts after def-substitution and the
       special cases after def-free-for). Ledger line 458 covers them, and check_fitch reports 0 errors.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: f40110f9e3be
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, ''degenerate'' -> unmarked
+      row, ''move'' -> method, rubric renamed; Uses line (forall-E, free-for, exists-I) on prp-forall-implies-exists;
+      tables, witnesses and readings unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: f40110f9e3be
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: check:05-existential-introduction:3
   kind: check
   file: 05-existential-introduction.md
-  line: 151
+  line: 159
   hash: 142bd5e5849b
   verdicts:
   - stage: S5a
@@ -3035,8 +3406,8 @@ items:
 - key: exm-existential-introduction-derivations
   kind: exm
   file: 05-existential-introduction.md
-  line: 161
-  hash: 02e1dec4f557
+  line: 169
+  hash: 80bac66fffbd
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3087,11 +3458,25 @@ items:
       holds (1*1=1, nothing times 0 is 1). (c) the forall-I clauses are checked against def-rules-universal.
       (d) the reading over Z holds. ''first and third rows'' (188) matches the table at 47-51. The paragraph
       at 310 is true of (a)-(d). Pointers 1.2, 5.3, 5.4 are correct. Ledger lines 747-750, 770 present'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 80bac66fffbd
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, ''degenerate'' -> unmarked
+      row, ''move'' -> method, rubric renamed; Uses line (forall-E, free-for, exists-I) on prp-forall-implies-exists;
+      tables, witnesses and readings unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 80bac66fffbd
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exm-existential-introduction-instances
   kind: exm
   file: 05-existential-introduction.md
-  line: 352
-  hash: 399e9f7561ea
+  line: 360
+  hash: 11006cbcfe01
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3111,10 +3496,24 @@ items:
     evidence: '05:352-363: the three rows substitute correctly (P(f(f(c)))∧Q(f(c)); |a-b|<eps/2; (n+1)(n+1)=...);
       compound witnesses as §12.13.2 requires; the look-alike is correct; matches blueprint §4.5 item
       1; ledger 755'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 11006cbcfe01
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, ''degenerate'' -> unmarked
+      row, ''move'' -> method, rubric renamed; Uses line (forall-E, free-for, exists-I) on prp-forall-implies-exists;
+      tables, witnesses and readings unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 11006cbcfe01
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: check:05-existential-introduction:4
   kind: check
   file: 05-existential-introduction.md
-  line: 366
+  line: 374
   hash: 420e15ad5238
   verdicts:
   - stage: S5a
@@ -3134,8 +3533,8 @@ items:
 - key: exr-existential-introduction-a1
   kind: exr
   file: 05-existential-introduction.md
-  line: 404
-  hash: b0547530e9ab
+  line: 412
+  hash: 8c429af225d8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3164,11 +3563,25 @@ items:
     evidence: '05:282-292. Mine: (i) yes, t=c; (ii) yes, t=f(c); (iii) yes, phi=R(x,f(x)); (iv) and (v)
       no; (c) illegal by capture, line 1 true and line 2 false over Z; (d) false; (e) postpone. All match.
       Script: y<=y*y for all integers, x*x+1>x*x, and the N reading of (iv) and (v).'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 8c429af225d8
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, ''degenerate'' -> unmarked
+      row, ''move'' -> method, rubric renamed; Uses line (forall-E, free-for, exists-I) on prp-forall-implies-exists;
+      tables, witnesses and readings unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 8c429af225d8
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-existential-introduction-a2
   kind: exr
   file: 05-existential-introduction.md
-  line: 429
-  hash: 5feb02165eef
+  line: 439
+  hash: 6457689beb7f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3198,11 +3611,25 @@ items:
     evidence: '05:429-474. Solved all 12 parts before reading: (b)(ii) ∃x(x+x=2·c); (c) both witnesses;
       (e) justification column right; (g) capture of y; (k) φ=P(f(x)) with witness x; (l) every φ[t/x]
       checked. Ran the counter-reading in (i) myself: {a,b}, P={a}, Q={b}; premises true, conclusion false.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 6457689beb7f
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, ''degenerate'' -> unmarked
+      row, ''move'' -> method, rubric renamed; Uses line (forall-E, free-for, exists-I) on prp-forall-implies-exists;
+      tables, witnesses and readings unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 6457689beb7f
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-existential-introduction-b1
   kind: exr
   file: 05-existential-introduction.md
-  line: 478
-  hash: 546ef0a1e01f
+  line: 488
+  hash: 194be2939428
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3254,10 +3681,24 @@ items:
     evidence: '05:478-515. My derivation matches the book''s line for line: ∀E at a, →E, ∧I, ∃I with witness
       a. The book names the move (postpone the witness, 05:497), and the section works an example of it
       (''An existential goal: postpone the witness'', 05:143).'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 194be2939428
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, ''degenerate'' -> unmarked
+      row, ''move'' -> method, rubric renamed; Uses line (forall-E, free-for, exists-I) on prp-forall-implies-exists;
+      tables, witnesses and readings unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 194be2939428
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-existential-introduction-b2
   kind: exr
   file: 05-existential-introduction.md
-  line: 517
+  line: 527
   hash: b467dabf9b51
   verdicts:
   - stage: S5a
@@ -3288,7 +3729,7 @@ items:
 - key: exr-existential-introduction-b3
   kind: exr
   file: 05-existential-introduction.md
-  line: 544
+  line: 554
   hash: c5c99f171a86
   verdicts:
   - stage: S5a
@@ -3318,8 +3759,8 @@ items:
 - key: exr-existential-introduction-b4
   kind: exr
   file: 05-existential-introduction.md
-  line: 569
-  hash: dc89f3e9e728
+  line: 579
+  hash: 66e87cd6f588
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3367,11 +3808,25 @@ items:
     evidence: S7 leftover resolved by the coordinator per the re-referee's fix (stem narrowed to the paid
       pairings / b0 rename / ledger citation wording / Idea reordered / front-lock constant c); re-read
       after the edit
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 66e87cd6f588
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, ''degenerate'' -> unmarked
+      row, ''move'' -> method, rubric renamed; Uses line (forall-E, free-for, exists-I) on prp-forall-implies-exists;
+      tables, witnesses and readings unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 66e87cd6f588
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-existential-introduction-c1
   kind: exr
   file: 05-existential-introduction.md
-  line: 667
-  hash: 4f51fd603dd8
+  line: 677
+  hash: 21e08b7a5499
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3442,11 +3897,25 @@ items:
       the flag after the box closes. Over ℕ, ∀x(x≤x) is true and ∃y∀x(x≤y) false (take y+1). The hints
       name ∃I and give the first line without carrying out the generalize-one-side step. The scheme adds
       to 10 and accepts '
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 21e08b7a5499
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, ''degenerate'' -> unmarked
+      row, ''move'' -> method, rubric renamed; Uses line (forall-E, free-for, exists-I) on prp-forall-implies-exists;
+      tables, witnesses and readings unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 21e08b7a5499
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-existential-introduction-c2
   kind: exr
   file: 05-existential-introduction.md
-  line: 716
-  hash: 92b0b8cfd749
+  line: 726
+  hash: 1032eb3455b8
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3532,11 +4001,25 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: ¬E added to the list of rules that cannot write P(c); new ledger line for b4
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 1032eb3455b8
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, ''degenerate'' -> unmarked
+      row, ''move'' -> method, rubric renamed; Uses line (forall-E, free-for, exists-I) on prp-forall-implies-exists;
+      tables, witnesses and readings unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 1032eb3455b8
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: def-rules-existential
   kind: def
   file: 06-existential-elimination.md
   line: 24
-  hash: d4e5e6370bf8
+  hash: af77d1975adf
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3565,6 +4048,20 @@ items:
       (warning), 156-162 (open the box early), 436-467 (renaming), 519, 553-576. All four earlier findings
       are resolved. (1) Ledger l.916 no longer says ''loses nothing''; it states ''keeps every resource
       and th'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: af77d1975adf
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, lists displayed, line justifications
+      as table; new unlabeled B5 instances (2 even and positive over Z; 0 <= every n over N; village of
+      two for the barber) true and ledgered; derivations and side conditions unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: af77d1975adf
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: check:06-existential-elimination:1
   kind: check
   file: 06-existential-elimination.md
@@ -3640,7 +4137,7 @@ items:
   kind: proof
   file: 06-existential-elimination.md
   line: 223
-  hash: c7f60136133f
+  hash: 1a342df1f70c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3660,11 +4157,25 @@ items:
     evidence: 'Lines 181–196: 8 lines, and check_fitch passes it. At line 8, x_0 is not in line 7, not
       in line 1 and not in any open box. The meta-claim at line 199 (used twice, forgotten twice) is true
       of lines 4 and 6.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 1a342df1f70c
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, lists displayed, line justifications
+      as table; new unlabeled B5 instances (2 even and positive over Z; 0 <= every n over N; village of
+      two for the barber) true and ledgered; derivations and side conditions unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 1a342df1f70c
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: check:06-existential-elimination:2
   kind: check
   file: 06-existential-elimination.md
   line: 248
-  hash: bcfa3853c9fa
+  hash: 53013f529257
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3708,6 +4219,20 @@ items:
     model: claude-opus-5-5
     evidence: The Quick-check solution (over ℤ, even/odd) is a valid counter-reading. Its ledger line
       now gives school arithmetic as the source, consistent with c2.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 53013f529257
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, lists displayed, line justifications
+      as table; new unlabeled B5 instances (2 even and positive over Z; 0 <= every n over N; village of
+      two for the barber) true and ledgered; derivations and side conditions unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 53013f529257
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: check:06-existential-elimination:3
   kind: check
   file: 06-existential-elimination.md
@@ -3811,7 +4336,7 @@ items:
   kind: proof
   file: 06-existential-elimination.md
   line: 668
-  hash: 1f5eec7c9977
+  hash: fa41f5b1281a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3833,11 +4358,25 @@ items:
     evidence: 'Lines 336–355: 6 lines. The range of ∀I{2-5} follows the §04 convention, and every side
       condition is checked correctly. The alternative nesting (lines 366–381) and both converse routes
       (lines 390 and 413) fail exactly where the text says, which check_fitch confirms.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: fa41f5b1281a
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, lists displayed, line justifications
+      as table; new unlabeled B5 instances (2 even and positive over Z; 0 <= every n over N; village of
+      two for the barber) true and ledgered; derivations and side conditions unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: fa41f5b1281a
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exm-sum-of-evens
   kind: exm
   file: 06-existential-elimination.md
   line: 816
-  hash: 6174b5cfcb3f
+  hash: 71035930c92a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3874,6 +4413,20 @@ items:
     model: claude-opus-5-5
     evidence: '06:816-881: the arith line is right; the side-condition checks at lines 7 and 8 are right;
       =E is in Section 5.7 (07 frame); the derivation has 8 lines'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 71035930c92a
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, lists displayed, line justifications
+      as table; new unlabeled B5 instances (2 even and positive over Z; 0 <= every n over N; village of
+      two for the barber) true and ledgered; derivations and side conditions unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 71035930c92a
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: check:06-existential-elimination:4
   kind: check
   file: 06-existential-elimination.md
@@ -3899,7 +4452,7 @@ items:
 - key: thm-barber
   kind: thm
   file: 06-existential-elimination.md
-  line: 895
+  line: 897
   hash: f70a1df05e93
   verdicts:
   - stage: S5a
@@ -3955,7 +4508,7 @@ items:
 - key: proof:thm-barber
   kind: proof
   file: 06-existential-elimination.md
-  line: 937
+  line: 939
   hash: ba9754b52c3a
   verdicts:
   - stage: S5a
@@ -3994,8 +4547,8 @@ items:
 - key: check:06-existential-elimination:5
   kind: check
   file: 06-existential-elimination.md
-  line: 969
-  hash: 499f68c880d9
+  line: 971
+  hash: 0aa661b17f6f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4013,11 +4566,25 @@ items:
     model: claude-opus-5-5
     evidence: '06:969-975: ⊥ does not mention y_0; there are no premises; line 1 does not contain y_0.
       The clause numbers match the reading at 06:73-78'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 0aa661b17f6f
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, lists displayed, line justifications
+      as table; new unlabeled B5 instances (2 even and positive over Z; 0 <= every n over N; village of
+      two for the barber) true and ledgered; derivations and side conditions unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 0aa661b17f6f
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exm-existential-elimination-instances
   kind: exm
   file: 06-existential-elimination.md
-  line: 1042
-  hash: 2cd98ba7666b
+  line: 1044
+  hash: 3bd892bc0dbb
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4044,11 +4611,25 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: cross-reference to 'Not an instance'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 3bd892bc0dbb
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, lists displayed, line justifications
+      as table; new unlabeled B5 instances (2 even and positive over Z; 0 <= every n over N; village of
+      two for the barber) true and ledgered; derivations and side conditions unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 3bd892bc0dbb
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-existential-elimination-a1
   kind: exr
   file: 06-existential-elimination.md
-  line: 1103
-  hash: 3ef841c5bdf5
+  line: 1105
+  hash: 801c0ed41fa9
   verdicts:
   - stage: S5a
     verdict: minor
@@ -4127,11 +4708,25 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: grammar only
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 801c0ed41fa9
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, lists displayed, line justifications
+      as table; new unlabeled B5 instances (2 even and positive over Z; 0 <= every n over N; village of
+      two for the barber) true and ledgered; derivations and side conditions unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 801c0ed41fa9
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-existential-elimination-a2
   kind: exr
   file: 06-existential-elimination.md
-  line: 1129
-  hash: 88e166e31761
+  line: 1138
+  hash: e09b114e0f8e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4174,10 +4769,24 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: '''derivable, with the ∃I inside the box'' is right'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: e09b114e0f8e
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, lists displayed, line justifications
+      as table; new unlabeled B5 instances (2 even and positive over Z; 0 <= every n over N; village of
+      two for the barber) true and ledgered; derivations and side conditions unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: e09b114e0f8e
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-existential-elimination-b1
   kind: exr
   file: 06-existential-elimination.md
-  line: 1178
+  line: 1198
   hash: 568574a634c3
   verdicts:
   - stage: S5a
@@ -4208,8 +4817,8 @@ items:
 - key: exr-existential-elimination-b2
   kind: exr
   file: 06-existential-elimination.md
-  line: 1211
-  hash: 279be81bc5c8
+  line: 1231
+  hash: cf6930ca65ce
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4239,11 +4848,25 @@ items:
       and the solution gives it. The side conditions at lines 10 and 11 hold, and the fix/obtain/choose
       labelling fits the definition at 06:353. The % schema marker is the checker's documented marker
       for a partial derivation.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: cf6930ca65ce
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, lists displayed, line justifications
+      as table; new unlabeled B5 instances (2 even and positive over Z; 0 <= every n over N; village of
+      two for the barber) true and ledgered; derivations and side conditions unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: cf6930ca65ce
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-existential-elimination-b3
   kind: exr
   file: 06-existential-elimination.md
-  line: 1275
-  hash: 6ae4f5250de6
+  line: 1295
+  hash: c99efc7874bf
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4271,11 +4894,25 @@ items:
     model: claude-opus-5-5
     evidence: '06:719-754. Script check: (2k+1)(2l+1)=2(2kl+k+l)+1 on a grid. The side conditions at lines
       7 and 8 hold, the prose is three sentences, and the worked type is exm-sum-of-evens.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: c99efc7874bf
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, lists displayed, line justifications
+      as table; new unlabeled B5 instances (2 even and positive over Z; 0 <= every n over N; village of
+      two for the barber) true and ledgered; derivations and side conditions unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: c99efc7874bf
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-existential-elimination-b4
   kind: exr
   file: 06-existential-elimination.md
-  line: 1312
-  hash: ea3e2716c414
+  line: 1332
+  hash: ebb086329e47
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4319,10 +4956,24 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: worked-example pointers and step 2 (¬I box or MT) are fine
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: ebb086329e47
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, lists displayed, line justifications
+      as table; new unlabeled B5 instances (2 even and positive over Z; 0 <= every n over N; village of
+      two for the barber) true and ledgered; derivations and side conditions unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: ebb086329e47
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-existential-elimination-c1
   kind: exr
   file: 06-existential-elimination.md
-  line: 1428
+  line: 1453
   hash: 133fa8f32c7e
   verdicts:
   - stage: S5a
@@ -4366,7 +5017,7 @@ items:
 - key: exr-existential-elimination-c2
   kind: exr
   file: 06-existential-elimination.md
-  line: 1490
+  line: 1519
   hash: 7bc161c507c3
   verdicts:
   - stage: S5a
@@ -4438,7 +5089,7 @@ items:
 - key: exr-existential-elimination-c3
   kind: exr
   file: 06-existential-elimination.md
-  line: 1579
+  line: 1608
   hash: c2fcfbc95769
   verdicts:
   - stage: S5a
@@ -4632,7 +5283,7 @@ items:
   kind: proof
   file: 07-equality-and-uniqueness.md
   line: 146
-  hash: dbe1d820a62a
+  hash: 66369badffef
   verdicts:
   - stage: S5a
     verdict: minor
@@ -4660,10 +5311,24 @@ items:
       ''a variable x that does not occur in s'', so (s=x)[t/x] is s=t and (s=x)[u/x] is s=u. =E 2,1 cites
       line 2 as i and line 1 as j, and the text says so at 07:141. Neither φ has a quantifier, so the
       fr'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 66369badffef
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, clause codes in words, Lean
+      table into For-instructors fold, rubric renamed; Uses lines (=I/=E, substitution; forall-I, =E);
+      derivations and readings unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 66369badffef
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: prp-leibniz-law
   kind: prp
   file: 07-equality-and-uniqueness.md
-  line: 194
+  line: 198
   hash: 03c32db28b94
   verdicts:
   - stage: S5a
@@ -4685,8 +5350,8 @@ items:
 - key: proof:prp-leibniz-law
   kind: proof
   file: 07-equality-and-uniqueness.md
-  line: 204
-  hash: fa9852fc2622
+  line: 208
+  hash: 81415e5f192b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4715,11 +5380,25 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: knowledge-context note now cites the =E side condition
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 81415e5f192b
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, clause codes in words, Lean
+      table into For-instructors fold, rubric renamed; Uses lines (=I/=E, substitution; forall-I, =E);
+      derivations and readings unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 81415e5f192b
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exm-extensionality-logical-half
   kind: exm
   file: 07-equality-and-uniqueness.md
-  line: 241
-  hash: c7e15a1c0557
+  line: 249
+  hash: fb9bef609adb
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4749,10 +5428,24 @@ items:
     evidence: 'The text is unchanged. The converse''s ledger line now cites the verify script and the
       #counter-readings convention made exact in F1.6 §01-§02. Only the deferred STATUS row 85 source-cell
       addition remains.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: fb9bef609adb
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, clause codes in words, Lean
+      table into For-instructors fold, rubric renamed; Uses lines (=I/=E, substitution; forall-I, =E);
+      derivations and readings unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: fb9bef609adb
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: check:07-equality-and-uniqueness:3
   kind: check
   file: 07-equality-and-uniqueness.md
-  line: 317
+  line: 325
   hash: 82f2c9f53b97
   verdicts:
   - stage: S5a
@@ -4773,8 +5466,8 @@ items:
 - key: check:07-equality-and-uniqueness:4
   kind: check
   file: 07-equality-and-uniqueness.md
-  line: 325
-  hash: 6713794ff196
+  line: 333
+  hash: 44f0a5a94553
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4808,11 +5501,25 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: the arith links are carried by =E with φ=(a+1=z), then φ=(z≤4) with the equation turned
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 44f0a5a94553
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, clause codes in words, Lean
+      table into For-instructors fold, rubric renamed; Uses lines (=I/=E, substitution; forall-I, =E);
+      derivations and readings unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 44f0a5a94553
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exm-equality-and-uniqueness-instances
   kind: exm
   file: 07-equality-and-uniqueness.md
-  line: 353
-  hash: e9d7eb920c38
+  line: 361
+  hash: e462f6dff344
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4838,10 +5545,24 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: wording
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: e462f6dff344
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, clause codes in words, Lean
+      table into For-instructors fold, rubric renamed; Uses lines (=I/=E, substitution; forall-I, =E);
+      derivations and readings unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: e462f6dff344
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-equality-and-uniqueness-a1
   kind: exr
   file: 07-equality-and-uniqueness.md
-  line: 424
+  line: 452
   hash: 0c85769c36e1
   verdicts:
   - stage: S5a
@@ -4900,8 +5621,8 @@ items:
 - key: exr-equality-and-uniqueness-a2
   kind: exr
   file: 07-equality-and-uniqueness.md
-  line: 462
-  hash: 3ee6105cad7d
+  line: 490
+  hash: 90a5b6882c4d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4946,10 +5667,24 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: '(i): with φ=∀y(x0≤z), y is not free for z, so the step is illegal (clause 4)'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 90a5b6882c4d
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, clause codes in words, Lean
+      table into For-instructors fold, rubric renamed; Uses lines (=I/=E, substitution; forall-I, =E);
+      derivations and readings unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 90a5b6882c4d
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-equality-and-uniqueness-b1
   kind: exr
   file: 07-equality-and-uniqueness.md
-  line: 511
+  line: 539
   hash: b4646e8354b9
   verdicts:
   - stage: S5a
@@ -5016,8 +5751,8 @@ items:
 - key: exr-equality-and-uniqueness-b4
   kind: exr
   file: 07-equality-and-uniqueness.md
-  line: 545
-  hash: 5487cea4d917
+  line: 573
+  hash: a1ce993dbada
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5061,11 +5796,25 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: names the search step
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: a1ce993dbada
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, clause codes in words, Lean
+      table into For-instructors fold, rubric renamed; Uses lines (=I/=E, substitution; forall-I, =E);
+      derivations and readings unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: a1ce993dbada
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-equality-and-uniqueness-b5
   kind: exr
   file: 07-equality-and-uniqueness.md
-  line: 586
-  hash: aab9e7fb478c
+  line: 614
+  hash: 4b0fde257ccb
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5110,11 +5859,25 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: scope 'Chapters 1–2 and this chapter'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 4b0fde257ccb
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, clause codes in words, Lean
+      table into For-instructors fold, rubric renamed; Uses lines (=I/=E, substitution; forall-I, =E);
+      derivations and readings unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 4b0fde257ccb
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-equality-and-uniqueness-c3
   kind: exr
   file: 07-equality-and-uniqueness.md
-  line: 692
-  hash: 6c04290b127e
+  line: 724
+  hash: c65b43eee9de
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5161,10 +5924,24 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: the marking scheme allows the flagged box inside or outside the ∃E boxes; ledger lines added
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: c65b43eee9de
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, clause codes in words, Lean
+      table into For-instructors fold, rubric renamed; Uses lines (=I/=E, substitution; forall-I, =E);
+      derivations and readings unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: c65b43eee9de
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: def-unique-existence
   kind: def
   file: 08-counting-and-descriptions.md
-  line: 11
+  line: 13
   hash: 7d79f7771137
   verdicts:
   - stage: S5a
@@ -5222,7 +5999,7 @@ items:
 - key: check:08-counting-and-descriptions:1
   kind: check
   file: 08-counting-and-descriptions.md
-  line: 37
+  line: 39
   hash: ed966c079591
   verdicts:
   - stage: S5a
@@ -5243,7 +6020,7 @@ items:
 - key: prp-unique-existence-use
   kind: prp
   file: 08-counting-and-descriptions.md
-  line: 84
+  line: 86
   hash: f87094368c5f
   verdicts:
   - stage: S5a
@@ -5275,8 +6052,8 @@ items:
 - key: proof:prp-unique-existence-use
   kind: proof
   file: 08-counting-and-descriptions.md
-  line: 102
-  hash: 0b725c475147
+  line: 104
+  hash: eab1efd8a24c
   verdicts:
   - stage: S5a
     verdict: minor
@@ -5318,11 +6095,26 @@ items:
       0 errors. A cosmetic nit, not a defect: at line 15, x0 is free for x because it does not appear
       in the whole body, which also holds since x0 is not y. The text gives the reason only as ''does
       not appear in phi''.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: eab1efd8a24c
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, rubrics restructured with
+      same points; new unlabeled B5 instances (x+1=4 over N; x+2=5 over R; numbers below 2 over N; 2x=6
+      over R; squaring 3; Even(4)) true and ledgered; Uses lines added; derivations unchanged; sidecars
+      pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: eab1efd8a24c
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: def-counting-with-equality
   kind: def
   file: 08-counting-and-descriptions.md
-  line: 187
-  hash: a2755da7f21a
+  line: 191
+  hash: 880defa6bbf5
   verdicts:
   - stage: S5a
     verdict: minor
@@ -5356,10 +6148,25 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: different variables not appearing in φ
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 880defa6bbf5
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, rubrics restructured with
+      same points; new unlabeled B5 instances (x+1=4 over N; x+2=5 over R; numbers below 2 over N; 2x=6
+      over R; squaring 3; Even(4)) true and ledgered; Uses lines added; derivations unchanged; sidecars
+      pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 880defa6bbf5
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exm-exactly-two-solutions
   kind: exm
   file: 08-counting-and-descriptions.md
-  line: 202
+  line: 206
   hash: e600a42166c5
   verdicts:
   - stage: S5a
@@ -5381,7 +6188,7 @@ items:
 - key: check:08-counting-and-descriptions:2
   kind: check
   file: 08-counting-and-descriptions.md
-  line: 218
+  line: 222
   hash: 4ff3725e7ffc
   verdicts:
   - stage: S5a
@@ -5408,8 +6215,8 @@ items:
 - key: def-definite-description
   kind: def
   file: 08-counting-and-descriptions.md
-  line: 232
-  hash: 6447ea3f5929
+  line: 236
+  hash: 5033697f1ec1
   verdicts:
   - stage: S5a
     verdict: minor
@@ -5444,11 +6251,26 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: the proof of prp-unique-existence-use states 'Three facts about substitution'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 5033697f1ec1
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, rubrics restructured with
+      same points; new unlabeled B5 instances (x+1=4 over N; x+2=5 over R; numbers below 2 over N; 2x=6
+      over R; squaring 3; Even(4)) true and ledgered; Uses lines added; derivations unchanged; sidecars
+      pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 5033697f1ec1
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: check:08-counting-and-descriptions:3
   kind: check
   file: 08-counting-and-descriptions.md
-  line: 248
-  hash: 239df4315e04
+  line: 252
+  hash: d39af1919b8a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5465,10 +6287,25 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: '08:248-254: √2 existence is the school fact at 01:159; 0≤u<v ⇒ u²<v² ledgered (809).'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: d39af1919b8a
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, rubrics restructured with
+      same points; new unlabeled B5 instances (x+1=4 over N; x+2=5 over R; numbers below 2 over N; 2x=6
+      over R; squaring 3; Even(4)) true and ledgered; Uses lines added; derivations unchanged; sidecars
+      pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: d39af1919b8a
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: check:08-counting-and-descriptions:4
   kind: check
   file: 08-counting-and-descriptions.md
-  line: 264
+  line: 268
   hash: b7891644652a
   verdicts:
   - stage: S5a
@@ -5488,7 +6325,7 @@ items:
 - key: prp-definitional-extension
   kind: prp
   file: 08-counting-and-descriptions.md
-  line: 276
+  line: 280
   hash: d0f02233abba
   verdicts:
   - stage: S5a
@@ -5510,8 +6347,8 @@ items:
 - key: proof:prp-definitional-extension
   kind: proof
   file: 08-counting-and-descriptions.md
-  line: 296
-  hash: 3c0d0f2a639b
+  line: 300
+  hash: bd3fe50d9c92
   verdicts:
   - stage: S5a
     verdict: minor
@@ -5549,11 +6386,26 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: the ∃E citation and the fresh flag for the ∀x(φ↔φ) box are sound
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: bd3fe50d9c92
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, rubrics restructured with
+      same points; new unlabeled B5 instances (x+1=4 over N; x+2=5 over R; numbers below 2 over N; 2x=6
+      over R; squaring 3; Even(4)) true and ledgered; Uses lines added; derivations unchanged; sidecars
+      pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: bd3fe50d9c92
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-counting-and-descriptions-a1
   kind: exr
   file: 08-counting-and-descriptions.md
-  line: 315
-  hash: 9de1c7e6571a
+  line: 319
+  hash: 1c5039c091af
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5580,10 +6432,25 @@ items:
     evidence: '08:315-337. (a) and (b) checked by script (solutions of y·y = 9: {3} in ℕ, {±3} in ℤ).
       (b) has the shape of def-counting-with-equality (08:187-197). (d) matches prp-definitional-extension
       (08:276-285). In (e), φ[u0/x] matches B1''s premises with z as the bound variable.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 1c5039c091af
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, rubrics restructured with
+      same points; new unlabeled B5 instances (x+1=4 over N; x+2=5 over R; numbers below 2 over N; 2x=6
+      over R; squaring 3; Even(4)) true and ledgered; Uses lines added; derivations unchanged; sidecars
+      pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 1c5039c091af
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-counting-and-descriptions-a2
   kind: exr
   file: 08-counting-and-descriptions.md
-  line: 339
+  line: 343
   hash: a528506be878
   verdicts:
   - stage: S5a
@@ -5630,8 +6497,8 @@ items:
 - key: exr-counting-and-descriptions-b1
   kind: exr
   file: 08-counting-and-descriptions.md
-  line: 388
-  hash: 2f5b2ec530a1
+  line: 392
+  hash: 127b1fe90711
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5656,11 +6523,26 @@ items:
     model: claude-opus-5-5
     evidence: '08:388-405. Script: {x < 1000 : x·x < 3} = {0, 1}. The formula is def-counting-with-equality''s
       ''exactly two''. Pigeonhole stated. Worked example exm-exactly-two-solutions. Scheme adds to 10.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 127b1fe90711
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, rubrics restructured with
+      same points; new unlabeled B5 instances (x+1=4 over N; x+2=5 over R; numbers below 2 over N; 2x=6
+      over R; squaring 3; Even(4)) true and ledgered; Uses lines added; derivations unchanged; sidecars
+      pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 127b1fe90711
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-equality-and-uniqueness-b2
   kind: exr
   file: 08-counting-and-descriptions.md
-  line: 407
-  hash: acbeca44d93e
+  line: 411
+  hash: d4a9f5b5c7a2
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5686,10 +6568,25 @@ items:
     model: claude-opus-5-5
     evidence: 07:523-539. Witness 0; uniqueness by RAA on y≠0 using the nonzero-product fact from the
       hint. The rule commentary is correct.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: d4a9f5b5c7a2
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, rubrics restructured with
+      same points; new unlabeled B5 instances (x+1=4 over N; x+2=5 over R; numbers below 2 over N; 2x=6
+      over R; squaring 3; Even(4)) true and ledgered; Uses lines added; derivations unchanged; sidecars
+      pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: d4a9f5b5c7a2
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-equality-and-uniqueness-b3
   kind: exr
   file: 08-counting-and-descriptions.md
-  line: 425
+  line: 436
   hash: 5caff50dc78c
   verdicts:
   - stage: S5a
@@ -5731,8 +6628,8 @@ items:
 - key: exr-counting-and-descriptions-b4
   kind: exr
   file: 08-counting-and-descriptions.md
-  line: 445
-  hash: 1eff88cc1a12
+  line: 456
+  hash: 7fa4fdf48258
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5761,11 +6658,26 @@ items:
     evidence: '08:445-494. The 16-line derivation checks: ⊥E closes each half, ↔I, ∀I with flag z0 free,
       ∀E at a then b, →E. Script confirms the counter-reading in (b): domain {0} with 0∈0; E is true,
       the existence claim false. (c) uses the ⊣ direction of prp-unique-existence-use (08:84-91).'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 7fa4fdf48258
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, rubrics restructured with
+      same points; new unlabeled B5 instances (x+1=4 over N; x+2=5 over R; numbers below 2 over N; 2x=6
+      over R; squaring 3; Even(4)) true and ledgered; Uses lines added; derivations unchanged; sidecars
+      pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 7fa4fdf48258
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-counting-and-descriptions-b5
   kind: exr
   file: 08-counting-and-descriptions.md
-  line: 496
-  hash: 23edf6757005
+  line: 511
+  hash: a4fba0af9752
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5791,10 +6703,25 @@ items:
     model: claude-opus-5-5
     evidence: 08:496-535. ∀E at g(x0) and g(y0) is free-for. The ranges 3-10 and 3-11 follow the convention
       for immediately nested boxes. The prose is two sentences.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: a4fba0af9752
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, rubrics restructured with
+      same points; new unlabeled B5 instances (x+1=4 over N; x+2=5 over R; numbers below 2 over N; 2x=6
+      over R; squaring 3; Even(4)) true and ledgered; Uses lines added; derivations unchanged; sidecars
+      pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: a4fba0af9752
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-equality-and-uniqueness-c1
   kind: exr
   file: 08-counting-and-descriptions.md
-  line: 539
+  line: 554
   hash: 17a084cba7c0
   verdicts:
   - stage: S5a
@@ -5835,7 +6762,7 @@ items:
 - key: exr-equality-and-uniqueness-c2
   kind: exr
   file: 08-counting-and-descriptions.md
-  line: 560
+  line: 575
   hash: 0d181cc4c5d4
   verdicts:
   - stage: S5a
@@ -5878,8 +6805,8 @@ items:
 - key: exr-counting-and-descriptions-c3
   kind: exr
   file: 08-counting-and-descriptions.md
-  line: 653
-  hash: e18d554d272c
+  line: 668
+  hash: 5f8825b1f32e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5932,11 +6859,26 @@ items:
     evidence: S7 leftover resolved by the coordinator per the re-referee's fix (stem narrowed to the paid
       pairings / b0 rename / ledger citation wording / Idea reordered / front-lock constant c); re-read
       after the edit
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 5f8825b1f32e
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, rubrics restructured with
+      same points; new unlabeled B5 instances (x+1=4 over N; x+2=5 over R; numbers below 2 over N; 2x=6
+      over R; squaring 3; Even(4)) true and ledgered; Uses lines added; derivations unchanged; sidecars
+      pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 5f8825b1f32e
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-counting-and-descriptions-r1
   kind: exr
   file: 08-counting-and-descriptions.md
-  line: 678
-  hash: 0bebd589207c
+  line: 693
+  hash: bce132f79bff
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5963,11 +6905,26 @@ items:
     evidence: 08:678-697. Induction is on def-term. The check gives 4 atoms and 3 plus signs (script).
       The source is hidden in the problem and named in the solution (@lem-parenthesis-count, Chapter 4
       = previous chapter). Scheme adds to 10.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: bce132f79bff
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, rubrics restructured with
+      same points; new unlabeled B5 instances (x+1=4 over N; x+2=5 over R; numbers below 2 over N; 2x=6
+      over R; squaring 3; Even(4)) true and ledgered; Uses lines added; derivations unchanged; sidecars
+      pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: bce132f79bff
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-counting-and-descriptions-r2
   kind: exr
   file: 08-counting-and-descriptions.md
-  line: 699
-  hash: 1809be57c083
+  line: 718
+  hash: 746d8382d359
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6010,11 +6967,26 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: alternative routes (¬I + ¬¬E, or prp-contrapositive-converse) get the right credit
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 746d8382d359
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, rubrics restructured with
+      same points; new unlabeled B5 instances (x+1=4 over N; x+2=5 over R; numbers below 2 over N; 2x=6
+      over R; squaring 3; Even(4)) true and ledgered; Uses lines added; derivations unchanged; sidecars
+      pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 746d8382d359
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-counting-and-descriptions-r3
   kind: exr
   file: 08-counting-and-descriptions.md
-  line: 733
-  hash: f9765a179eee
+  line: 752
+  hash: cdddec5c88e3
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6055,11 +7027,26 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: prp-curry is in ch01/05-proving-an-implication = Section 1.4
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: cdddec5c88e3
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, rubrics restructured with
+      same points; new unlabeled B5 instances (x+1=4 over N; x+2=5 over R; numbers below 2 over N; 2x=6
+      over R; squaring 3; Even(4)) true and ledgered; Uses lines added; derivations unchanged; sidecars
+      pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: cdddec5c88e3
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher
 - key: exr-counting-and-descriptions-r4
   kind: exr
   file: 08-counting-and-descriptions.md
-  line: 767
-  hash: afc5696657ec
+  line: 786
+  hash: 3d7b0861ee2e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -6092,3 +7079,18 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: ledger comment updates match the text (a2 facts, three substitution facts)
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 3d7b0861ee2e
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator check vs 9f9dbb8): sentences split, rubrics restructured with
+      same points; new unlabeled B5 instances (x+1=4 over N; x+2=5 over R; numbers below 2 over N; 2x=6
+      over R; squaring 3; Even(4)) true and ledgered; Uses lines added; derivations unchanged; sidecars
+      pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 3d7b0861ee2e
+    date: '2026-11-01'
+    evidence: checked for equivalence against 9f9dbb8 by the chapter finisher

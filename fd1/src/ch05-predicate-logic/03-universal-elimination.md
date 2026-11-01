@@ -1,14 +1,14 @@
 # Using "For Every": Instantiation
 
-Section 5.2 made the language exact and defined the operation \( \varphi[t/x] \), "put the term \( t \) in for the variable \( x \)", with its one hazard, capture. We can now give the first quantifier rule. It is the rule for **using** a universal statement: whatever holds for every object holds for the object named by any term we care to write. The rule is called \( \rulename{\forall E} \). It is the rule behind every "by the theorem, applied to \( x = 2 \)". With it alone, universal statements can be used but not proved, and the section meets exactly that gap ("A stall" below), which Section 5.4 fills.
+Section 5.2 made the language exact and defined the operation \( \varphi[t/x] \), "put the term \( t \) in for the variable \( x \)", with its one hazard, capture. We can now give the first quantifier rule. It is the rule for **using** a universal statement: whatever holds for every object holds for the object named by any term we care to write. The rule is called \( \rulename{\forall E} \). It is the rule behind every "by the theorem, applied to \( x = 2 \)". With it alone, universal statements can be used but not proved, and Section 5.4 fills that gap.
 
 ## Applying a statement about everything
 
 Every application of a general fact to a particular case is one step of logic, and so far that step has been taken on trust. Three earlier places took it.
 
-- Section 1.3 used the theorem "if an integer is divisible by \( 2 \) and by \( 3 \), then it is divisible by \( 6 \)" at \( n = 42 \), taking the step from "every integer" to the one integer \( 42 \) on trust.
+- Section 1.3 used the theorem "if an integer is divisible by \( 2 \) and by \( 3 \), then it is divisible by \( 6 \)" at \( n = 42 \). The step from "every integer" to the one integer \( 42 \) was taken on trust.
 - In @exm-raa-zero (Section 2.5) the hypothesis was "\( x \le \varepsilon \) for every \( \varepsilon > 0 \)", and the proof applied it to the one number \( \varepsilon = x/2 \).
-- Section 5.1 opened with the argument "every positive real has a square root; \( 2 \) is positive; so \( 2 \) has a square root", which a truth table calls invalid because it sees only three unrelated atoms.
+- Section 5.1 opened with the argument "every positive real has a square root; \( 2 \) is positive; so \( 2 \) has a square root". A truth table calls it invalid, because it sees only three unrelated atoms.
 
 The same step happens in each: a statement about **every** object is applied to **one** object, named by a term. In the language of Section 5.2, the first premise of the square-root argument is \( \forall x\, (P(x) \to S(x)) \), and applying it to \( 2 \) gives
 \[
@@ -38,13 +38,13 @@ Here \( \varphi \) is a formula, \( x \) a variable, and \( t \) **any** term, s
 
 In words: if a line says that \( \varphi \) holds for every \( x \), then any later line, where that line is still available, may write what \( \varphi \) says about \( t \). The rule cites one line and no box.
 
-- **Schema:** the block above: one cited line, no box.
+- **Schema:** the two lines displayed above: one cited line, no box.
 - **Reading:** drop the \( \forall x \), put one term in for every free \( x \), and check that no letter of the term gets caught by a quantifier inside.
 - **Example:** from \( \forall x\, (P(x) \to S(x)) \), "\( \rulename{\forall E} \) 1" at the term \( 2 \) writes \( P(2) \to S(2) \).
 
-Read the definition clause by clause; exercises cite the clauses by number.
+In detail, the rule has five clauses.
 
-1. **The cited line's main symbol is \( \forall x \)**, with all of \( \varphi \) as its scope: \( \forall x\, P(x) \to Q(c) \) is an implication; a \( \forall \) buried inside another connective must first be taken out by that connective's rule, when it can be (\( \rulename{\wedge E} \) takes \( \forall x\, P(x) \) out of \( \forall x\, P(x) \wedge Q(c) \)), and a \( \forall \) in the hypothesis of an implication cannot be instantiated at all.
+1. **The cited line's main symbol is \( \forall x \)**, with all of \( \varphi \) as its scope. So \( \forall x\, P(x) \to Q(c) \) is an implication. A \( \forall \) buried inside another connective must first be taken out by that connective's rule, when it can be: \( \rulename{\wedge E} \) takes \( \forall x\, P(x) \) out of \( \forall x\, P(x) \wedge Q(c) \). A \( \forall \) in the hypothesis of an implication cannot be instantiated at all.
 2. **Any term:** a constant, a variable (\( x \) itself included) or a compound term. Nothing about it needs to be established first, since every term names an object of the domain.
 3. **Every free occurrence, by the same term:** the new line is \( \varphi[t/x] \); we do not choose which occurrences change.
 4. **Free for \( x \)** (@def-free-for): no letter of \( t \) is caught by a quantifier of \( \varphi \). This is the rule's only restriction.
@@ -68,7 +68,7 @@ If \( x \) is not free in \( \varphi \), then \( \varphi[t/x] = \varphi \) for e
 
 *Why this rule.* It says no more than the word "every". If every object in the domain satisfies \( \varphi \), then so does the object that \( t \) names, whichever object that is. A term always names something, since the domain is never empty (Section 5.1), so the instance always has something to be about.
 
-*Why "free for".* The instance must say about \( t \) what \( \varphi \) says about \( x \). Section 5.2 showed that when a variable of \( t \) is captured, \( \varphi[t/x] \) can say something quite different. The condition rules capture out, and the subsection on common errors below shows the rule going wrong without it.
+*Why "free for".* The instance must say about \( t \) what \( \varphi \) says about \( x \). Section 5.2 showed that when a variable of \( t \) is captured, \( \varphi[t/x] \) can say something quite different. The condition rules capture out. Without it, the rule could lead from a true line to a false one, as the capture example under "Common errors" shows.
 
 ::: {.check}
 Line 1 of a derivation is \( \forall x\, \exists z\, (z > x + y) \). For which terms \( t \) may \( \rulename{\forall E} \) write \( (\exists z\, (z > x + y))[t/x] \) on line 2? Is \( t = y \) allowed? Is \( t = z + 1 \)?
@@ -82,7 +82,7 @@ The only free occurrence of \( x \) in \( \exists z\, (z > x + y) \) lies in the
 
 ## Four derivations
 
-The worked derivations below use \( \rulename{\forall E} \) and the rules of Chapter 1. Each has an Idea that says why each rule was chosen, continuing the search method of Section 3.1: a goal-directed step looks at the goal's main symbol, a premise-directed step at a resource's. The new question is the one that \( \rulename{\forall E} \) raises every time: **at which term?**
+The derivations below use \( \rulename{\forall E} \) and the rules of Chapter 1. Each solution first says why each rule was chosen, by the search method of Section 3.1: a goal-directed step looks at the goal's main symbol, a premise-directed step at a resource's. The new question is the one that \( \rulename{\forall E} \) raises every time: **at which term?**
 
 ::: {#exm-universal-elimination-derivations}
 [Instantiation at work]
@@ -111,7 +111,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 3 is \( (P(x) \to Q(x))[c/x] \); the constant \( c \) has no variables, so it is free for \( x \). Read \( c \) as \( 2 \), \( P(x) \) as "\( x \) is positive", and \( Q(x) \) as "\( x \) has a square root" (Section 5.1 wrote \( S \) for this predicate), and the derivation is the square-root argument of Section 5.1, in the four lines promised there. The argument that truth tables rejected is derivable once the rules can see inside its sentences.
+Line 3 is \( (P(x) \to Q(x))[c/x] \); the constant \( c \) has no variables, so it is free for \( x \). Read \( c \) as \( 2 \), \( P(x) \) as "\( x \) is positive", and \( Q(x) \) as "\( x \) has a square root"; Section 5.1 wrote \( S \) for this last predicate. Then the derivation is the square-root argument of Section 5.1, in the four lines promised there. The argument that truth tables rejected is derivable once the rules can see inside its sentences.
 
 (b) *Idea.* The premise has two quantifiers, and \( \rulename{\forall E} \) removes one at a time, the outermost first: the main symbol of the premise is \( \forall x \), and only after it is gone is \( \forall y \) the main symbol. The goal \( R(c, c) \) shows the term for both.
 
@@ -141,9 +141,9 @@ $\begin{nd}
 \end{center}
 ```
 
-A reader who matches the goal \( R(b, a) \) against the hypothesis \( R(x, y) \) instead of the conclusion \( R(y, x) \) puts \( b \) for \( x \) and \( a \) for \( y \), and gets \( R(b, a) \to R(a, b) \). That is a legal line, but its hypothesis is the goal itself, so \( \rulename{{\to}E} \) cannot fire. Match the goal against the conclusion of the implication, since that is the part \( \rulename{{\to}E} \) delivers.
+A reader who matches the goal \( R(b, a) \) against the hypothesis \( R(x, y) \) instead of the conclusion \( R(y, x) \) puts \( b \) for \( x \) and \( a \) for \( y \), and gets \( R(b, a) \to R(a, b) \). That is a legal line, but its hypothesis is the goal itself, so \( \rulename{{\to}E} \) cannot use it. Match the goal against the conclusion of the implication, since that is the part \( \rulename{{\to}E} \) delivers.
 
-(d) *Idea, forwards.* The premise \( P(c) \) is the hypothesis of the instance of the first premise at \( c \), so instantiating at \( c \) and firing gives \( P(f(c)) \). Now \( P(f(c)) \) is the hypothesis of the instance at \( f(c) \), so the same premise, instantiated again, fires again and gives \( P(f(f(c))) \), the goal.
+(d) *Idea, forwards.* The premise \( P(c) \) is the hypothesis of the instance of the first premise at \( c \), so instantiating at \( c \) and applying \( \rulename{{\to}E} \) gives \( P(f(c)) \). Now \( P(f(c)) \) is the hypothesis of the instance at \( f(c) \). So the same premise, instantiated again and used again with \( \rulename{{\to}E} \), gives \( P(f(f(c))) \), the goal.
 
 *Idea, backwards.* The goal \( P(f(f(c))) \) has the shape \( P(f(x)) \), the conclusion of the inside of the first premise, with \( x \coloneqq f(c) \). So the last \( \rulename{\forall E} \) must be at the **compound** term \( f(c) \), and its hypothesis \( P(f(c)) \) becomes the new goal. That has the shape \( P(f(x)) \) with \( x \coloneqq c \), and its hypothesis is the premise \( P(c) \).
 
@@ -165,7 +165,7 @@ Line 5 cites line 1 again: a universal line can be instantiated as often as need
 An arithmetic reading: over \( \nN \), let \( f(n) \) be \( n + 2 \), let \( P(n) \) say "\( n \) is even", and let \( c \) be \( 0 \). The first premise says that adding \( 2 \) to an even number gives an even number, the second that \( 0 \) is even, and the derivation concludes that \( f(f(0)) = 4 \) is even. Each further step up the even numbers would cost two more lines. Reaching "every \( n \) of the form \( f(\cdots f(0) \cdots) \)" at once is a job for induction, not for this rule.
 :::
 
-In each derivation, the Idea chose the term of every \( \rulename{\forall E} \) by matching: the goal, or a hypothesis still needed, has a definite shape, and the instance is chosen to have that shape. Instantiating at a term that nothing asks for is legal, and it fills a derivation with lines that lead nowhere.
+In each derivation, the term of every \( \rulename{\forall E} \) was chosen by matching: the goal, or a hypothesis still needed, has a definite shape, and the instance is chosen to have that shape. Instantiating at a term that nothing asks for is legal, and it fills a derivation with lines that lead nowhere.
 
 ## Checking a line of instantiation
 
@@ -176,7 +176,7 @@ Choosing the term can take thought; checking a line never does. For a line justi
 3. Is this line \( \varphi[t/x] \) for some term \( t \)? Find \( t \) by comparing the two lines at a free occurrence of \( x \) in \( \varphi \); then check that **every** free occurrence of \( x \) became that same \( t \), and that nothing else changed.
 4. Is \( t \) free for \( x \) in \( \varphi \)?
 
-Run on line 5 of (d): line 1 is available, since no box contains it; its main symbol is \( \forall x \), with scope \( P(x) \to P(f(x)) \); comparing gives \( t = f(c) \), and both occurrences of \( x \) became \( f(c) \); and \( f(c) \) has no variables, so it is free for \( x \). The line passes.
+Take line 5 of (d). Line 1 is available, since no box contains it. Its main symbol is \( \forall x \), with scope \( P(x) \to P(f(x)) \). Comparing gives \( t = f(c) \), and both occurrences of \( x \) became \( f(c) \). And \( f(c) \) has no variables, so it is free for \( x \). The line passes.
 
 ## How this rule looks in a mathematical proof
 
@@ -205,11 +205,11 @@ $\begin{nd}
 A line justified "arith" records a fact of school arithmetic or algebra, used on the lines it cites; here the fact is that \( (u - 1)^2 \) and \( u^2 - 2u + 1 \) are the same number for every real \( u \). It is **not a new rule**, and the facts of school algebra are used as facts.
 
 ::: {.second-reading title="What an arith line stands for"}
-Written out in full, an arith line is a universally quantified arithmetic statement, here
+Written out in full, an arith line stands for a universally quantified arithmetic statement, here
 \[
-\forall u\, \bigl( (u - 1)^2 \ge 0 \to u^2 - 2 \cdot u + 1 \ge 0 \bigr),
+\forall u\, \bigl( (u - 1)^2 \ge 0 \to u^2 - 2 \cdot u + 1 \ge 0 \bigr).
 \]
-taken as one more premise, instantiated by \( \rulename{\forall E} \) at the term on the line (here \( a \)) and applied by \( \rulename{{\to}E} \) to the cited line. That is exactly the pattern of (a) above. The book writes it as one line because spelling it out every time would bury the logic under algebra; its bound variables are letters that appear nowhere else in the derivation, and that keeps every term free for them.
+This statement is taken as one more premise. It is instantiated by \( \rulename{\forall E} \) at the term on the line, here \( a \), and applied by \( \rulename{{\to}E} \) to the cited line. That is exactly the pattern of (a) above. We write it as one line, because spelling it out every time would bury the logic under algebra. Its bound variables are letters that appear nowhere else in the derivation, and that keeps every term free for them.
 :::
 
 Section 5.4 will turn this three-line derivation into a proof of \( x^2 - 2x + 1 \ge 0 \) for **every** real \( x \). That needs a rule this section does not have.
@@ -266,7 +266,7 @@ Each error has a reading, a small one, in which the premise is true and the faul
 \end{center}
 ```
 
-*Three tiny worlds. In each, the premise is true and the faulty line false. Capture: \( \forall x\, \exists y\, (y \ne x) \) is true, since each dot has the other; line 2, \( \exists y\, (y \ne y) \), is false, since no dot differs from itself. A buried quantifier: \( \forall x\, P(x) \to Q(c) \) is true, since \( \forall x\, P(x) \) fails at \( 0 \); \( P(c) \to Q(c) \) is false, since \( 1 \) has \( P \) and not \( Q \). Some occurrences only: \( \forall x\, (P(x) \vee \neg P(x)) \) is true, since at each dot one side holds; the half-replaced \( P(c) \vee \neg P(x) \), which put \( c \) in for the first \( x \) only, is false, since \( a \) lacks \( P \) and \( x \) names \( b \), which has it. The instance \( P(c) \vee \neg P(c) \) is true, as every instance must be.*
+*Three tiny worlds. In each, the premise is true and the faulty line false. Capture: \( \forall x\, \exists y\, (y \ne x) \) is true, since each dot has the other; line 2, \( \exists y\, (y \ne y) \), is false, since no dot differs from itself. A buried quantifier: \( \forall x\, P(x) \to Q(c) \) is true, since \( \forall x\, P(x) \) fails at \( 0 \); \( P(c) \to Q(c) \) is false, since \( 1 \) has \( P \) and not \( Q \). Some occurrences only: \( \forall x\, (P(x) \vee \neg P(x)) \) is true, since at each dot one side holds. The half-replaced \( P(c) \vee \neg P(x) \) puts \( c \) in for the first \( x \) only. It is false, since \( a \) lacks \( P \) and \( x \) names \( b \), which has it. The instance \( P(c) \vee \neg P(c) \) is true, as every instance must be.*
 
 ::: {.check}
 Which numbered clause of \( \rulename{\forall E} \) does each faulty step of the figure break?
@@ -282,11 +282,11 @@ Try the sequent
 \[
 \forall x\, (P(x) \wedge Q(x)) \vdash \forall x\, P(x) .
 \]
-It is plainly correct: if every \( x \) has both properties, then every \( x \) has the first. Search for a derivation. The goal begins with \( \forall \), and no rule so far is made for proving a \( \forall \). Apart from \( \rulename{\bot E} \) (@def-rules-contradiction) and \( \rulename{RAA} \) (@def-rule-raa), which reach a line only by way of a contradiction, a line beginning with \( \forall \) can only be taken out of a line or box that already contains it. So the goal-directed step has nothing to offer, and we turn to the premise. \( \rulename{\forall E} \) at \( c \) gives \( P(c) \wedge Q(c) \), and \( \rulename{\wedge E} \) gives \( P(c) \). The same works at \( d \), at \( f(c) \), at any term we name. But each line is an instance. No finite list of instances is the statement \( \forall x\, P(x) \), which speaks about every object at once, including all the objects that none of our terms happen to name.
+It is plainly correct: if every \( x \) has both properties, then every \( x \) has the first. Search for a derivation. The goal begins with \( \forall \), and no rule so far is made for proving a \( \forall \). The rule \( \rulename{\bot E} \) (@def-rules-contradiction) reaches a line only by way of a contradiction. So does \( \rulename{RAA} \) (@def-rule-raa). Apart from these two, a line beginning with \( \forall \) can only be taken out of a line or box that already contains it. So the goal-directed step has nothing to offer, and we turn to the premise. \( \rulename{\forall E} \) at \( c \) gives \( P(c) \wedge Q(c) \), and \( \rulename{\wedge E} \) gives \( P(c) \). The same works at \( d \), at \( f(c) \), at any term we name. But each line is an instance. No finite list of instances is the statement \( \forall x\, P(x) \), which speaks about every object at once, including all the objects that none of our terms happen to name.
 
-So with \( \rulename{\forall E} \) alone, a universal statement can be **used** but not **proved**. Leaving aside a detour through a contradiction, a derivation can write \( \forall x\, \psi \) only by taking it out of a line or box that already contains it, as line 2 of (b) took \( \forall y\, R(c, y) \) out of the premise. Section 1.3 was in the same position with implications, and Section 1.4 filled the gap with a box. Section 5.4 does the same for \( \forall \): it proves \( P \) of one name about which nothing is known, and that box finishes this derivation in four lines.
+So with \( \rulename{\forall E} \) alone, a universal statement can be **used** but not **proved**. Leaving aside a detour through a contradiction, a derivation can write \( \forall x\, \psi \) only by taking it out of a line or box that already contains it. Line 2 of (b) did this: it took \( \forall y\, R(c, y) \) out of the premise. Section 1.3 was in the same position with implications, and Section 1.4 filled the gap with a box. Section 5.4 does the same for \( \forall \): it proves \( P \) of one name about which nothing is known, and that box finishes this derivation in four lines.
 
-**Counter-readings.**[]{#counter-readings} Each error above was shown wrong by a reading, a domain with a meaning for every symbol and a value for each free variable, in which the premises are true and the line is false. Call such a reading a **counter-reading**: it makes the whole counterexample set of the claim (Section 1.1), its premises and the negation of its line, true at once. A counter-reading shows that a step is unsafe. It is also how this book shows that a sequent has no derivation at all: a search that stalls proves nothing, since a cleverer derivation might exist. Sections 7.1 and 7.2 make readings exact and state that a counter-reading rules out every derivation. Until then, when this chapter says that something does not follow, it gives a counter-reading, and it never treats a stalled search as a proof.
+**Counter-readings.**[]{#counter-readings} Each error above was shown wrong by a reading in which the premises are true and the line is false. A reading is a domain, with a meaning for every symbol and a value for each free variable. Call such a reading a **counter-reading**: it makes the whole counterexample set of the claim (Section 1.1), its premises and the negation of its line, true at once. A counter-reading shows that a step is unsafe. It is also how we show that a sequent has no derivation at all. A search that stalls proves nothing, since a cleverer derivation might exist. Sections 7.1 and 7.2 make readings exact and state that a counter-reading rules out every derivation. Until then, whenever we say that something does not follow, we give a counter-reading, and we never treat a stalled search as a proof.
 
 ## The rule card
 
@@ -301,7 +301,7 @@ So with \( \rulename{\forall E} \) alone, a universal statement can be **used** 
 
 In each row every free \( x \) gets the same term, and no letter of the term is caught (in the second row the quantifiers are on \( \delta \) and \( y \), and \( a + 1 \) contains neither).
 
-**Not an instance.** From \( \forall x\, \exists y\, (x < y) \) at the term \( y + 1 \), the line \( \exists y\, (y + 1 < y) \) is not written by \( \rulename{\forall E} \): the \( y \) of \( y + 1 \) is caught by \( \exists y \) (clause 4). Rename first; the instance is \( \exists z\, (y + 1 < z) \), which says what was meant.
+**Not an instance.** From \( \forall x\, \exists y\, (x < y) \) at the term \( y + 1 \), the line \( \exists y\, (y + 1 < y) \) is not written by \( \rulename{\forall E} \): the \( y \) of \( y + 1 \) is caught by \( \exists y \), which breaks clause 4, free for \( x \). Rename first; the instance is \( \exists z\, (y + 1 < z) \), which says what was meant.
 :::
 
 ::: {.check}
@@ -318,12 +318,16 @@ Chapters 1 and 2's thirteen rules are on the card at the end of Section 3.1; her
 |---|---|---|---|---|
 | \( \rulename{\forall E} \) | \( \forall x\, \varphi \) \( \Longrightarrow \) \( \varphi[t/x] \) | \( t \) free for \( x \) in \( \varphi \) | "In particular, for \( x = t \), …"; "applying the hypothesis to \( t \), …" | `h t` (or `specialize h t`) |
 
-Written mathematics has many forms of the phrase: "in particular, for \( x = 3 \), …"; "applying the hypothesis to \( x_0 - 1 \), …"; "by the theorem with \( \varepsilon/2 \) in place of \( \varepsilon \), …". In the Lean column, `h` is the universal statement and `t` the term; applying `h` to `t` gives the instance, just as applying an implication to a proof of its hypothesis gave its conclusion in Section 1.3. In Lean a universal statement behaves like a function that takes a term and returns a proof of the instance.
+Written mathematics has many forms of the phrase: "in particular, for \( x = 3 \), …"; "applying the hypothesis to \( x_0 - 1 \), …"; "by the theorem with \( \varepsilon/2 \) in place of \( \varepsilon \), …".
+
+::: {.second-reading title="For instructors"}
+In the Lean column, `h` is the universal statement and `t` the term. Applying `h` to `t` gives the instance, just as applying an implication to a proof of its hypothesis gave its conclusion in Section 1.3. In Lean a universal statement behaves like a function that takes a term and returns a proof of the instance.
+:::
 
 ::: {.warning}
 [Not allowed: \( \rulename{\forall E} \)]
 
-Each step below is wrong; the tag names the numbered clause of @def-rule-universal-elimination that it breaks.
+Each step below is wrong, and after it comes the clause of @def-rule-universal-elimination that it breaks.
 
 - From \( \forall x\, (x > 0) \to Q(c) \), write \( 2 > 0 \to Q(c) \): clause 1 (the main symbol is \( \to \); the \( \forall \) governs only \( x > 0 \)).
 - From \( \forall x\, R(x, f(x)) \), write \( R(c, f(d)) \): clause 3 (one term in every free occurrence).
@@ -337,7 +341,7 @@ The search method of Section 3.1 had a goal-directed step and a premise-directed
 
 - **A resource \( \forall x\, \varphi \).** Do not instantiate blindly. Instantiate at the term that the goal, or another resource, asks for: match the shape of the goal (or of a hypothesis still needed) against \( \varphi \), and read off the term. If the term is not free for \( x \) in \( \varphi \), rename the bound variables of \( \varphi \) first.
 
-In the Givens/Goal table, \( \rulename{\forall E} \) adds an instance \( \varphi[t/x] \) to the Givens, with \( t \) read off the goal.
+In a table of what we know and what we want, \( \rulename{\forall E} \) adds an instance \( \varphi[t/x] \) to what we know, with \( t \) read off what we want.
 
 Instantiating is always **safe**, in the sense of Section 3.1: the new line is added and nothing is lost, since the universal line stays available. What can go wrong is only that the derivation fills with instances nobody needs, as a forward search filled with useless lines in Section 1.3.
 
@@ -369,7 +373,7 @@ Instantiating is always **safe**, in the sense of Section 3.1: the new line is a
 
 (ii) Not legal: only the first \( x \) was replaced, so line 2 is not \( \varphi[t/x] \) for any \( t \) (clause 3). The instance at \( 3 \) is \( 3 \cdot 3 \ge 0 \). Line 2 still has \( x \) free, and over \( \nR \) it is false when \( x \) names \( -1 \).
 
-(iii) Not legal: the main symbol of line 1 is \( \to \), not \( \forall \) (clause 1); the \( \forall x \) governs only \( P(x) \). Over \( \nN \) with \( P(x) \) read as \( x \ge 1 \), \( c \) as \( 0 \), and \( a \) as \( 1 \): line 1 says "if every natural number is at least \( 1 \), then \( 0 \ge 1 \)", true because its hypothesis is false; line 2 says "if \( 1 \ge 1 \), then \( 0 \ge 1 \)", which is false.
+(iii) Not legal: the main symbol of line 1 is \( \to \), not \( \forall \) (clause 1); the \( \forall x \) governs only \( P(x) \). Read over \( \nN \), with \( P(x) \) as \( x \ge 1 \), \( c \) as \( 0 \), and \( a \) as \( 1 \). Line 1 says "if every natural number is at least \( 1 \), then \( 0 \ge 1 \)", true because its hypothesis is false. Line 2 says "if \( 1 \ge 1 \), then \( 0 \ge 1 \)", which is false.
 
 (iv) Legal: it is \( \varphi[f(c)/x] \) with \( \varphi = P(x) \to P(f(x)) \), both occurrences of \( x \) replaced by \( f(c) \), and \( f(c) \) has no variables, so it is free for \( x \) (clause 2: any term, compound ones included).
 
@@ -388,7 +392,14 @@ Each part takes a line or two. The parts run from single steps, through a missin
 2. Line 1 is \( \forall x\, (P(x) \to Q(f(x))) \). What is its instance at \( f(c) \)?
 3. Line 1 is \( \forall x\, \forall y\, (x + y = y + x) \). What does one \( \rulename{\forall E} \) at \( 2 \) give?
 4. Line 4 is \( P(g(c)) \to Q(c) \), justified "\( \rulename{\forall E} \) 1". Give two different formulas that line 1 can be.
-5. Justify each line after the premises: 1 \( \forall x\, (P(x) \to R(x, f(x))) \), premise; 2 \( P(c) \), premise; 3 \( P(c) \to R(c, f(c)) \); 4 \( R(c, f(c)) \); 5 \( R(c, f(c)) \wedge P(c) \).
+5. Justify each line after the premises.
+
+   - 1 \( \forall x\, (P(x) \to R(x, f(x))) \), premise
+   - 2 \( P(c) \), premise
+   - 3 \( P(c) \to R(c, f(c)) \)
+   - 4 \( R(c, f(c)) \)
+   - 5 \( R(c, f(c)) \wedge P(c) \)
+
 6. Line 1 is \( \forall x\, P(x) \wedge Q(c) \). May \( \rulename{\forall E} \) cite it? If not, which clause does it break?
 7. Line 1 is \( \forall x\, R(x, x) \). Is \( R(c, d) \) an instance? If not, which clause does it break?
 8. Line 1 is \( \forall x\, \exists y\, (y > x) \). Is \( \rulename{\forall E} \) at the term \( y \) legal? If not, which clause does it break?
@@ -406,7 +417,7 @@ Each part takes a line or two. The parts run from single steps, through a missin
 
 (c) \( \forall y\, (2 + y = y + 2) \): the outer quantifier only.
 
-(d) Any two of \( \forall x\, (P(g(x)) \to Q(x)) \) (at \( c \)), \( \forall x\, (P(x) \to Q(c)) \) (at \( g(c) \)), \( \forall x\, (P(g(x)) \to Q(c)) \) (at \( c \)), \( \forall x\, (P(g(c)) \to Q(x)) \) (at \( c \)); also the degenerate \( \forall x\, (P(g(c)) \to Q(c)) \), with no free \( x \).
+(d) Any two of \( \forall x\, (P(g(x)) \to Q(x)) \) (at \( c \)), \( \forall x\, (P(x) \to Q(c)) \) (at \( g(c) \)), \( \forall x\, (P(g(x)) \to Q(c)) \) (at \( c \)), \( \forall x\, (P(g(c)) \to Q(x)) \) (at \( c \)); also \( \forall x\, (P(g(c)) \to Q(c)) \), with no free \( x \), whose quantifier binds nothing.
 
 (e) 3 \( \rulename{\forall E} \) 1 (at \( c \)); 4 \( \rulename{{\to}E} \) 3, 2; 5 \( \rulename{\wedge I} \) 4, 2.
 
@@ -416,13 +427,13 @@ Each part takes a line or two. The parts run from single steps, through a missin
 
 (h) No, clause 4: \( y \) would be captured by \( \exists y \). Rename first, and get \( \exists z\, (z > y) \).
 
-(i) Yes: \( \exists y\, (y > x + 1) \). The only quantifier inside is on \( y \), which is not in \( x + 1 \), so clause 4 holds.
+(i) Yes: \( \exists y\, (y > x + 1) \). The only quantifier inside is on \( y \), which is not in \( x + 1 \), so clause 4, free for \( x \), holds.
 
 (j) 2 \( P(a) \wedge Q(a) \), \( \rulename{\forall E} \) 1; 3 \( Q(a) \), \( \rulename{\wedge E} \) 2.
 
 (k) 3 \( P(c) \to Q(c) \), \( \rulename{\forall E} \) 1; 4 \( P(c) \), \( \rulename{\forall E} \) 2; 5 \( Q(c) \), \( \rulename{{\to}E} \) 3, 4.
 
-(l) 2 \( \forall y\, R(a, y) \), \( \rulename{\forall E} \) 1; 3 \( R(a, b) \), \( \rulename{\forall E} \) 2; 4 \( \forall y\, R(b, y) \), \( \rulename{\forall E} \) 1; 5 \( R(b, a) \), \( \rulename{\forall E} \) 4; 6 \( R(a, b) \wedge R(b, a) \), \( \rulename{\wedge I} \) 3, 5.
+(l) Lines 2 and 3 give \( R(a, b) \): 2 \( \forall y\, R(a, y) \), \( \rulename{\forall E} \) 1; 3 \( R(a, b) \), \( \rulename{\forall E} \) 2. Lines 4 and 5 give \( R(b, a) \): 4 \( \forall y\, R(b, y) \), \( \rulename{\forall E} \) 1; 5 \( R(b, a) \), \( \rulename{\forall E} \) 4. Finally, 6 \( R(a, b) \wedge R(b, a) \), \( \rulename{\wedge I} \) 3, 5.
 :::
 
 ### B. Practice
@@ -438,7 +449,7 @@ and say, for each \( \rulename{\forall E} \) line, which line of the search aske
 :::
 
 ::: {.solution}
-The goal \( R(a) \) is the conclusion of the instance of the second premise at \( a \), so it suffices to reach \( Q(a) \); that is the conclusion of the instance of the first premise at \( a \), so it suffices to reach \( P(a) \), a premise. Both terms come from the goal: the second \( \rulename{\forall E} \) (line 6) from \( R(a) \), the first (line 4) from the subgoal \( Q(a) \).
+The goal \( R(a) \) is the conclusion of the instance of the second premise at \( a \), so it suffices to reach \( Q(a) \). That is the conclusion of the instance of the first premise at \( a \), so it suffices to reach \( P(a) \), a premise. Both terms come from the goal: the second \( \rulename{\forall E} \) (line 6) from \( R(a) \), the first (line 4) from the subgoal \( Q(a) \).
 
 ```{=latex}
 \begin{center}
@@ -519,7 +530,7 @@ Lines 1–4 are the first derivation. For the second goal only line 3 is needed:
 ::: {#exr-universal-elimination-b4}
 [B4: Read the terms off the goal]
 
-A search for \( \forall x\, (P(x) \to Q(x)), \ \forall x\, (Q(x) \to R(x)), \ \forall x\, P(x) \vdash R(c) \wedge Q(c) \) has reached the stage below. *Name the move, then complete it.*
+A search for \( \forall x\, (P(x) \to Q(x)), \ \forall x\, (Q(x) \to R(x)), \ \forall x\, P(x) \vdash R(c) \wedge Q(c) \) has reached the stage below. *Name the step to take, then complete the derivation.*
 
 ```{=latex}
 % schema (partial derivation: the gap is unnumbered, lines carry their final numbers)
@@ -536,7 +547,7 @@ $\begin{nd}
 :::
 
 ::: {.solution}
-The move is *instantiate at the term you need*: the goal names \( c \), so every \( \rulename{\forall E} \) is at \( c \). \( \rulename{\wedge I} \) splits the goal into \( R(c) \) and \( Q(c) \), and each is the end of a chain of \( \rulename{{\to}E} \).
+The step is to *instantiate at the term you need*: the goal names \( c \), so every \( \rulename{\forall E} \) is at \( c \). \( \rulename{\wedge I} \) splits the goal into \( R(c) \) and \( Q(c) \), and each is the end of a chain of \( \rulename{{\to}E} \).
 
 ```{=latex}
 \begin{center}
@@ -558,7 +569,7 @@ $\begin{nd}
 ::: {#exr-universal-elimination-b5}
 [B5: Derive or break]
 
-For each claim, either derive it with the rules of Chapters 1–2 and \( \rulename{\forall E} \), or break it with a counter-reading: a domain, a meaning for each symbol, and a value for each constant, that make its counterexample set true. Then pair each of the breaks (e) and (g) with the derivable claim in the list that it imitates, and say what separates them.
+For each claim, either derive it with the rules of Chapters 1–2 and \( \rulename{\forall E} \), or break it with a counter-reading. The counter-reading gives a domain, a meaning for each symbol and a value for each constant, and these make the claim's counterexample set true. Then pair each of the breaks (e) and (g) with the derivable claim in the list that it imitates, and say what separates them.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. \( \forall x\, (P(x) \vee Q(x)), \ \neg P(c) \vdash Q(c) \).
@@ -649,10 +660,10 @@ $\begin{nd}
 
 (e) and (f) are look-alikes: the premise about \( f \) is used at the wrong term in (e), at the right one in (f). (g) is the capture look-alike of (h): instantiating at the bound letter \( y \) would write \( \exists y\, R(y, y) \). (b) is the converse look-alike of the square-root step of @exm-universal-elimination-derivations (a). Each break is a counter-reading of the kind in the figure of "Common errors".
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 - 1 for each of the eight verdicts with its derivation or counter-reading. A counter-reading must give the domain, every symbol's meaning and the value of \( c \), and check each premise and the conclusion.
 - 2: the closing pairing, (e) with (f) and (g) with (h), with the reason.
-Fatal errors (0 for the claim): a "break" by a reading in which a premise is false; a \( \rulename{\forall E} \) at a term that is not free for its variable.
+Slips that lose the claim's point: a "break" by a reading in which a premise is false; a \( \rulename{\forall E} \) at a term that is not free for its variable.
 :::
 
 ### C. Going deeper
@@ -707,13 +718,13 @@ $\begin{nd}
 
 The hypothesis "related to something" is needed. In a symmetric and transitive relation an element related to nothing need not be related to itself: on \( \{0, 1\} \), the relation that holds only between \( 0 \) and \( 0 \) is symmetric and transitive, and \( R(1, 1) \) fails. Without a premise like \( R(a, b) \) the search has no term for \( y \) that makes the hypothesis of line 9 reachable.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 - 2: identifies transitivity as the source of the goal and instantiates it with \( a \) for \( x \) and \( z \).
 - 2: chooses \( b \) for \( y \), with the reason (the premise \( R(a, b) \)).
 - 2: obtains \( R(b, a) \) from symmetry at \( a \), \( b \), with \( \rulename{{\to}E} \).
-- 2: builds the conjunction in the right order and fires the transitivity instance.
+- 2: builds the conjunction in the right order and applies \( \rulename{{\to}E} \) to the transitivity instance.
 - 2: every \( \rulename{\forall E} \) removes the outermost quantifier of a cited line and replaces every occurrence of its variable.
-Fatal errors (0 for the step): removing an inner quantifier before an outer one; instantiating transitivity at a term for \( y \) for which neither conjunct of the hypothesis is available.
+Slips that lose the step: removing an inner quantifier before an outer one; instantiating transitivity at a term for \( y \) for which neither conjunct of the hypothesis is available.
 :::
 
 ::: {#exr-universal-elimination-c2}
@@ -741,10 +752,10 @@ Clause 1: the main symbol of line 1 is \( \forall x \), with scope \( P(x) \). C
 
 (b) Read \( P(x) \) as "\( x \) is even" and let \( x \) name \( 2 \). Then \( P(x) \) is true, and \( \forall x\, P(x) \), "every integer is even", is false, since \( 1 \) is odd. A rule allowing the step from \( P(x) \) to \( \forall x\, P(x) \) in general would lead from a true line to a false one.
 
-**Marking scheme.** (10 points)
-- 6: (a) the derivation, with each of the five numbered clauses checked (main symbol \( \forall x \); any term; every free occurrence by the same term; free for \( x \); availability), including that \( x \) is free for \( x \).
+**What a complete answer needs.** (10 points)
+- 6: (a) the derivation, with each of the five numbered clauses checked, including that \( x \) is free for \( x \). The clauses are: main symbol \( \forall x \), any term, every free occurrence by the same term, free for \( x \), and availability.
 - 4: (b) a reading with \( P(x) \) true and \( \forall x\, P(x) \) false, with the value of \( x \) stated.
-Fatal error (0 for the step): in (b), a reading in which \( P(x) \) is false or \( x \) has no value.
+A slip that loses the step: in (b), a reading in which \( P(x) \) is false or \( x \) has no value.
 :::
 
 <!-- dependency ledger

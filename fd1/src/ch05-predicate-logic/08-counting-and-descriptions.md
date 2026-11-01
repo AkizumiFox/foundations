@@ -6,6 +6,8 @@ Mathematics says "the limit", "the maximum", "the inverse", and it defines new w
 
 Mathematics says "**the** limit of the sequence", "**the** supremum of \( A \)", "**the** additive inverse of \( a \)". Each "the" makes two claims. There is such an object, and there is only one, so that the name picks it out. The second claim is the one that is easy to forget, and the one the claim at the start of Section 5.7 was about.
 
+Take the equation \( x + 1 = 4 \) over \( \nN \). There is a solution, \( 3 \). And every natural number \( y \) with \( y + 1 = 4 \) is that same \( 3 \). Those two facts together are what "the solution of \( x + 1 = 4 \)" claims.
+
 *"There is exactly one \( x \) with \( \varphi \)": there is one, and any other is it.*
 
 ::: {#def-unique-existence}
@@ -20,7 +22,7 @@ We read \( \exists! x\, \varphi \) as "there is **exactly one** \( x \) such tha
 
 In words: there is an \( x \) that satisfies \( \varphi \), and every \( y \) that satisfies \( \varphi \) (that is, satisfies \( \varphi \) with \( y \) in place of \( x \)) is equal to that \( x \). The first conjunct is existence. The second is uniqueness, and it is a statement about the \( x \) already found: any other candidate coincides with it. Like the bounded quantifiers of @def-bounded-quantifier, \( \exists! \) is not a new symbol of the language but shorthand, and every rule applies to the formula it abbreviates.
 
-**Well-definedness.** The abbreviation does not depend on the choice of \( y \), up to renaming a bound variable. The argument, in the fold below, rests on one fact about substitution that the proof of @prp-unique-existence-use uses again: *if \( y \) does not appear in \( \varphi \), then \( (\varphi[y/x])[t/y] \) is \( \varphi[t/x] \).*
+**Well-definedness.** The abbreviation does not depend on the choice of \( y \), up to renaming a bound variable. The argument rests on one fact about substitution, which the proof of @prp-unique-existence-use uses again: *if \( y \) does not appear in \( \varphi \), then \( (\varphi[y/x])[t/y] \) is \( \varphi[t/x] \).*
 
 ::: {.second-reading title="Well-definedness, proved"}
 This is a structural induction on \( \varphi \) of the kind in Section 5.2. In a term, the \( y \)'s of \( s[y/x] \) are exactly the former \( x \)'s, so \( (s[y/x])[t/y] = s[t/x] \); atomic formulas, \( \bot \) and the connectives follow clause by clause. For \( \forall x\, \psi \), both sides are \( \forall x\, \psi \), since substitution for \( x \) stops at \( \forall x \) and \( y \) does not appear in \( \psi \) (the second fact of Section 5.2). For \( \forall z\, \psi \) with \( z \) not \( x \), also \( z \) is not \( y \), because \( y \) does not appear in \( \varphi \); so both substitutions pass under the quantifier and the induction hypothesis applies, and \( \exists \) is the same. Now let \( y \) and \( y' \) be two admissible choices. If they are the same variable there is nothing to show. Otherwise \( y' \) does not appear in \( \varphi[y/x] \to y = x \), since it is neither \( x \) nor \( y \) and does not appear in \( \varphi \); so the bound \( y \) of \( \forall y\, (\varphi[y/x] \to y = x) \) may be renamed \( y' \), which gives \( \forall y'\, \bigl( (\varphi[y/x])[y'/y] \to y' = x \bigr) \). By the fact with \( t = y' \), this is \( \forall y'\, (\varphi[y'/x] \to y' = x) \), the formula written with \( y' \).
@@ -32,7 +34,7 @@ This is a structural induction on \( \varphi \) of the kind in Section 5.2. In a
 2. Over \( \nN \), \( \exists! x\, (x \cdot x = 4) \) is true. *Existence:* \( 2 \cdot 2 = 4 \). *Uniqueness:* for a natural number \( y \), if \( y \le 1 \) then \( y \cdot y \le 1 \), and if \( y \ge 3 \) then \( y \cdot y \ge 9 \); so \( y \cdot y = 4 \) forces \( y = 2 \).
 3. Over \( \nR \), \( \exists! x\, \forall y\, (x + y = y) \) is true: \( 0 \) is the **unique** additive identity. *Existence:* \( 0 + y = y \) for every \( y \). *Uniqueness:* suppose \( z + y = y \) for every \( y \). Apply this to the one instance \( y = 0 \) (by \( \rulename{\forall E} \)): \( z + 0 = 0 \). Since also \( z + 0 = z \), symmetry and transitivity give \( z = 0 \). The whole uniqueness proof is the choice of the instance \( y = 0 \).
 
-**Nonexample by minimal change.** Keep example 2 and change the domain to \( \nZ \). Existence still holds, with the same witness \( 2 \). Uniqueness fails: \( y = -2 \) also satisfies \( y \cdot y = 4 \), and \( -2 \ne 2 \). So over \( \nZ \), \( \exists! x\, (x \cdot x = 4) \) is false, and the failing clause is exactly the second conjunct.
+**When uniqueness fails.** Keep example 2 and change the domain to \( \nZ \). Existence still holds, with the same witness \( 2 \). Uniqueness fails: \( y = -2 \) also satisfies \( y \cdot y = 4 \), and \( -2 \ne 2 \). So over \( \nZ \), \( \exists! x\, (x \cdot x = 4) \) is false, and the failing clause is exactly the second conjunct.
 
 ::: {.check}
 Is \( \exists! x\, (x < 1) \) true over \( \nN \)? Over \( \nZ \)?
@@ -42,14 +44,14 @@ Is \( \exists! x\, (x < 1) \) true over \( \nN \)? Over \( \nZ \)?
 Over \( \nN \), yes: \( 0 < 1 \), and every natural number below \( 1 \) is \( 0 \). Over \( \nZ \), no: existence holds, and uniqueness fails, since \( 0 \) and \( -1 \) are both below \( 1 \).
 :::
 
-::: {.second-reading title="Why y must not appear, and a degenerate case"}
+::: {.second-reading title="Why y must not appear, and the formula x = c"}
 **Why \( y \) must not appear in \( \varphi \).** The condition keeps the new quantifier \( \forall y \) from capturing anything of \( \varphi \)'s own. Take \( \varphi = (x \le y) \), in which \( y \) is free, and read over \( \nN \) with \( y \) naming \( 0 \). "There is exactly one natural number \( x \) with \( x \le 0 \)" is true: \( x = 0 \). The formula written with the forbidden bound variable \( y \) is
 \[
 \exists x\, \bigl( x \le y \wedge \forall y\, (y \le y \to y = x) \bigr),
 \]
 because \( (x \le y)[y/x] \) is \( y \le y \). Its second conjunct says that **every** natural number equals \( x \), which is false. The free \( y \) of \( \varphi \), which was to name \( 0 \), has been captured by \( \forall y \). With an admissible variable, say \( z \), the formula is \( \exists x\, \bigl( x \le y \wedge \forall z\, (z \le y \to z = x) \bigr) \), which is true.
 
-**Degenerate.** For any constant \( c \), \( \exists! x\, (x = c) \) holds in every domain, and it is derivable from no premises (the derivation follows). By contrast, \( \exists! x\, (x = x) \) says that the domain has exactly one element, which is false in \( \nN \), \( \nZ \) and \( \nR \): existence holds and uniqueness fails.
+**The formula \( x = c \).** For any constant \( c \), \( \exists! x\, (x = c) \) holds in every domain, and it is derivable from no premises (the derivation follows). By contrast, \( \exists! x\, (x = x) \) says that the domain has exactly one element, which is false in \( \nN \), \( \nZ \) and \( \nR \): existence holds and uniqueness fails.
 
 The derivation of \( \exists! x\, (x = c) \), with the abbreviation written out, shows that \( \exists! \) needs no rules of its own:
 
@@ -79,7 +81,7 @@ Line 3 closes a box whose only line is its assumption: the box shows \( y_0 = c 
 
 ## How uniqueness is used and proved
 
-A proof of "exactly one" rarely follows the shape of @def-unique-existence, which ties the uniqueness clause to the witness just found. It proves two separate statements: there is at least one, and there is at most one. The second is "any two objects with the property are equal", and it makes no mention of a witness. The next result says that the two shapes say the same thing.
+A proof of "exactly one" rarely follows the shape of @def-unique-existence, which ties the uniqueness clause to the witness just found. It proves two separate statements: there is at least one, and there is at most one. The second is "any two objects with the property are equal", and it makes no mention of a witness. For \( x + 2 = 5 \) over \( \nR \), the two halves read: some \( x \) has \( x + 2 = 5 \), and any \( x \), \( y \) with \( x + 2 = 5 \) and \( y + 2 = 5 \) are equal. The next result says that the two shapes say the same thing.
 
 ::: {#prp-unique-existence-use}
 [Two Halves of Unique Existence]
@@ -93,10 +95,10 @@ Let \( \varphi \) be a formula, \( x \) a variable, and \( y \) a variable other
 The right-hand side is "existence and at most one". Its second conjunct is what a mathematician proves under the heading "uniqueness": take two objects \( x \) and \( y \) with the property, and show \( x = y \).
 
 ::: {.idea}
-Both directions are searches in the style of Section 3.1 with the quantifier steps. For \( \vdash \), the premise is an \( \exists \), so open its \( \rulename{\exists E} \) box first, with a witness \( x_0 \): inside it, \( \varphi[x_0/x] \) gives existence at once by \( \rulename{\exists I} \), and "at most one" is a \( \forall\forall \) goal, which opens two flagged boxes \( u_0 \), \( v_0 \). Two objects \( u_0 \), \( v_0 \) with the property are each equal to the witness \( x_0 \), by the uniqueness clause, and so equal to each other: the witness is the "third point" that links them. For \( \dashv \), open the \( \rulename{\exists E} \) box on \( \exists x\, \varphi \) with a witness \( x_0 \); the goal inside is \( \exists! x\, \varphi \), whose witness will be \( x_0 \) again, and the uniqueness clause for \( x_0 \) comes from "at most one" applied to the pair \( x_0 \), \( y_0 \).
+Both directions are searches as in Section 3.1, now with the quantifier steps. For \( \vdash \), the premise is an \( \exists \), so open its \( \rulename{\exists E} \) box first, with a witness \( x_0 \). Inside it, \( \varphi[x_0/x] \) gives existence at once by \( \rulename{\exists I} \). "At most one" is a \( \forall\forall \) goal, which opens two flagged boxes \( u_0 \), \( v_0 \). Two objects \( u_0 \), \( v_0 \) with the property are each equal to the witness \( x_0 \), by the uniqueness clause, and so equal to each other. The witness \( x_0 \) is what links them. For \( \dashv \), open the \( \rulename{\exists E} \) box on \( \exists x\, \varphi \) with a witness \( x_0 \). The goal inside is \( \exists! x\, \varphi \), and its witness will be \( x_0 \) again. The uniqueness clause for \( x_0 \) comes from "at most one", applied to the pair \( x_0 \), \( y_0 \).
 :::
 
-The two derivations that carry this out are in the fold below.
+The two derivations that carry this out follow.
 
 ::: {.second-reading title="The proof of the two halves"}
 ::: {.proof}
@@ -139,7 +141,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Lines 9 and 11 are \( \rulename{\forall E} \) on line 4 at \( u_0 \) and at \( v_0 \), by the first substitution fact; each term is a variable not bound in \( \varphi[y/x] \to y = x_0 \), so it is free for \( y \) there. Lines 13 and 14 are the symmetry of @prp-equality-symmetric-transitive (a), written out; line 15 is \( \rulename{{=}E} \) with the equation \( x_0 = v_0 \) and \( \psi = (u_0 = z) \), which turns line 10 into \( u_0 = v_0 \). Line 17 is \( \rulename{\forall I} \) with the flag \( v_0 \): line 16 is its instance at \( v_0 \) (by the third and first substitution facts), and \( v_0 \) appears in no premise, in no assumption still open at line 17 (only line 2 is, and \( v_0 \) is not in it), and not in line 17. Line 18 is \( \rulename{\forall I} \) with the flag \( u_0 \) in the same way; its instance at \( u_0 \) is line 17, by the second substitution fact. Finally, line 20 closes the \( \rulename{\exists E} \) box: its last line 19 does not contain \( x_0 \), and \( x_0 \) is in neither line 1 nor any open assumption.
+Lines 9 and 11 are \( \rulename{\forall E} \) on line 4 at \( u_0 \) and at \( v_0 \), by the first substitution fact. Each term is a variable not bound in \( \varphi[y/x] \to y = x_0 \), so it is free for \( y \) there. Lines 13 and 14 are the symmetry of @prp-equality-symmetric-transitive (a), written out. Line 15 is \( \rulename{{=}E} \) with the equation \( x_0 = v_0 \) and \( \psi = (u_0 = z) \), which turns line 10 into \( u_0 = v_0 \). Line 17 is \( \rulename{\forall I} \) with the flag \( v_0 \). Line 16 is its instance at \( v_0 \), by the third and first substitution facts. The flag \( v_0 \) appears in no premise and not in line 17. Nor is it in any assumption still open at line 17: only line 2 is open, and \( v_0 \) is not in it. Line 18 is \( \rulename{\forall I} \) with the flag \( u_0 \) in the same way; its instance at \( u_0 \) is line 17, by the second substitution fact. Finally, line 20 closes the \( \rulename{\exists E} \) box: its last line 19 does not contain \( x_0 \), and \( x_0 \) is in neither line 1 nor any open assumption.
 
 \( (\dashv) \) The following is a derivation with the right-hand side as premise.
 
@@ -172,17 +174,19 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 6 is \( \rulename{\forall E} \) at \( x_0 \) on line 3, by the second substitution fact, and line 7 is \( \rulename{\forall E} \) at \( y_0 \) on line 6, by the third and first. Lines 10 and 11 are symmetry, written out. Line 13 is \( \rulename{\forall I} \) with the flag \( y_0 \): line 12 is its instance at \( y_0 \), by the first substitution fact; at line 13 the open assumptions are line 4, which does not contain \( y_0 \), the premise does not contain it either, and neither does line 13. Line 15 is \( \rulename{\exists I} \) with the witness \( x_0 \), which is free for \( x \) since it does not appear in \( \varphi \); line 14 is its instance at \( x_0 \), by the second substitution fact. Line 16 closes the \( \rulename{\exists E} \) box: line 15 does not contain \( x_0 \), and \( x_0 \) is in neither line 2 nor the premise, which is the only assumption open outside the box. This proves both directions.
+Line 6 is \( \rulename{\forall E} \) at \( x_0 \) on line 3, by the second substitution fact, and line 7 is \( \rulename{\forall E} \) at \( y_0 \) on line 6, by the third and first. Lines 10 and 11 are symmetry, written out. Line 13 is \( \rulename{\forall I} \) with the flag \( y_0 \). Line 12 is its instance at \( y_0 \), by the first substitution fact. At line 13 the open assumptions are line 4, which does not contain \( y_0 \); the premise does not contain it either, and neither does line 13. Line 15 is \( \rulename{\exists I} \) with the witness \( x_0 \), which is free for \( x \) since it does not appear in \( \varphi \). Line 14 is its instance at \( x_0 \), by the second substitution fact. Line 16 closes the \( \rulename{\exists E} \) box. Line 15 does not contain \( x_0 \), and \( x_0 \) is in neither line 2 nor the premise, which is the only assumption open outside the box. This proves both directions.
 :::
 :::
 
 In practice this is how "there is exactly one" is proved: an existence proof, then a separate "suppose \( x \) and \( y \) both satisfy \( \varphi \); then \( x = y \)".
 
-**One more instance: "the maximum".** A **maximum** of a set \( A \) of reals is an element \( m \in A \) with \( a \le m \) for every \( a \in A \). If \( m \) and \( m' \) are both maxima, then \( m' \le m \) (apply the property of \( m \) to the element \( m' \in A \)) and \( m \le m' \) (apply the property of \( m' \) to \( m \in A \)), so \( m = m' \) by the order fact that \( a \le b \) and \( b \le a \) give \( a = b \). That is "at most one"; a set may have no maximum at all, such as \( (0, 1) \), so existence is a separate question. Only when both halves are known may we write "the maximum of \( A \)".
+**One more instance: "the maximum".** A **maximum** of a set \( A \) of reals is an element \( m \in A \) with \( a \le m \) for every \( a \in A \). Suppose \( m \) and \( m' \) are both maxima. The property of \( m \), applied to the element \( m' \in A \), gives \( m' \le m \). The property of \( m' \), applied to \( m \in A \), gives \( m \le m' \). So \( m = m' \), by the order fact that \( a \le b \) and \( b \le a \) give \( a = b \). That is "at most one". A set may have no maximum at all, such as \( (0, 1) \), so existence is a separate question. Only when both halves are known may we write "the maximum of \( A \)".
 
 ## Counting with equality
 
 "At least one" is \( \exists \), and "at most one" is the second half of @prp-unique-existence-use. Beyond one, counting needs the sign \( \ne \).
+
+Over \( \nN \), exactly two numbers are below \( 2 \): \( 0 \) and \( 1 \). The formula \( \exists x\, \exists y\, (x < 2 \wedge y < 2) \) does not say "at least two", since it is true with \( x \) and \( y \) both naming \( 0 \). Adding \( x \ne y \) makes it say so. For "at most two", take any three numbers below \( 2 \): each is \( 0 \) or \( 1 \), so two of them are equal.
 
 ::: {#def-counting-with-equality}
 [Counting with Equality]
@@ -194,7 +198,7 @@ Let \( \varphi \) be a formula, \( x \) a variable, and \( y \), \( z \) two dif
 - "**At most two** \( x \) satisfy \( \varphi \)" abbreviates \( \forall x\, \forall y\, \forall z\, (\varphi \wedge \varphi[y/x] \wedge \varphi[z/x] \to x = y \vee x = z \vee y = z) \).
 - "**Exactly two** \( x \) satisfy \( \varphi \)" abbreviates the conjunction of "at least two" and "at most two".
 
-For a number \( n \ge 2 \), "at least \( n \)" uses \( n \) different variables \( x_1, \dots, x_n \) that do not appear in \( \varphi \), and asks for all \( n(n - 1)/2 \) inequalities \( x_i \ne x_j \) together with \( \varphi \) at each; "at most \( n \)" says that among any \( n + 1 \) objects satisfying \( \varphi \), two are equal; "exactly \( n \)" is both.
+For a number \( n \ge 2 \), "at least \( n \)" uses \( n \) different variables \( x_1, \dots, x_n \) that do not appear in \( \varphi \). It asks for all \( n(n - 1)/2 \) inequalities \( x_i \ne x_j \) together with \( \varphi \) at each. "At most \( n \)" says that among any \( n + 1 \) objects satisfying \( \varphi \), two are equal. "Exactly \( n \)" is both.
 :::
 
 In words: two letters count two objects only when the formula says that they differ, and "at most two" says that three letters satisfying \( \varphi \) cannot name three different objects. As with \( \exists! \), these are abbreviations, not new symbols, and \( \exists! \) stays the only counting shorthand.
@@ -223,41 +227,41 @@ Write "at least two primes are even" with \( \mathrm{Prime} \) and \( \mathrm{Ev
 \( \exists x\, \exists y\, \bigl( x \ne y \wedge (\mathrm{Prime}(x) \wedge \mathrm{Even}(x)) \wedge (\mathrm{Prime}(y) \wedge \mathrm{Even}(y)) \bigr) \). It is false: an even prime is divisible by \( 2 \), so it is \( 2 \), and any two even primes are equal.
 :::
 
-*Only*, *except* and *the smallest* are counting words too; the drill at the end of the section translates them.
+*Only*, *except* and *the smallest* are counting words too; Exercise A2 translates them.
 
 ## The \( x \) such that \( \varphi \)
 
-Once there is exactly one \( x \) with \( \varphi \), mathematics names it: "the maximum of \( A \)", "the additive inverse of \( a \)", "\( \sqrt 2 \)". The name is then used like a constant, because the proof has earned it.
+Once there is exactly one \( x \) with \( \varphi \), mathematics names it: "the maximum of \( A \)", "the additive inverse of \( a \)", "\( \sqrt 2 \)". The name is then used like a constant, because existence and uniqueness have been proved. For example, over \( \nR \) one proves \( \exists! x\, (2 \cdot x = 6) \). A proof may then say "let \( c \) be the real number with \( 2 \cdot c = 6 \)", and use \( 2 \cdot c = 6 \) as one more premise.
 
 ::: {#def-definite-description}
 [Definite Description]
 
-Let \( \Gamma \) be a list of formulas and \( \varphi \) a formula whose only free variable is \( x \), and suppose \( \Gamma \vdash \exists! x\, \varphi \). **Introducing a name for the \( x \) such that \( \varphi \)** means taking a constant \( c \) that appears neither in \( \Gamma \) nor in \( \varphi \), and letting derivations from \( \Gamma \) use the **defining line** \( \varphi[c/x] \) as one more premise. The phrase "the \( x \) such that \( \varphi \)" names \( c \).
+Let \( \Gamma \) be a list of formulas and \( \varphi \) a formula whose only free variable is \( x \), and suppose \( \Gamma \vdash \exists! x\, \varphi \). **Introducing a name for the \( x \) such that \( \varphi \)** means taking a constant \( c \) that appears neither in \( \Gamma \) nor in \( \varphi \). Derivations from \( \Gamma \) may then use the **defining line** \( \varphi[c/x] \) as one more premise. The phrase "the \( x \) such that \( \varphi \)" names \( c \).
 :::
 
-In words, and why both halves are needed: existence is what makes the defining line safe, and the proposition at the end of this section shows that it proves nothing new about the old symbols. Uniqueness is what makes the word "the" honest. If \( c \) and \( c' \) are both introduced for \( \varphi \), then \( \Gamma, \varphi[c/x], \varphi[c'/x] \vdash c = c' \): take the "at most one" half of @prp-unique-existence-use, instantiate it at \( c \) and at \( c' \) (\( \rulename{\forall E} \) twice, with the substitution facts used in the proof of @prp-unique-existence-use), and fire it by \( \rulename{\wedge I} \) and \( \rulename{{\to}E} \). So every proof that names the \( x \) such that \( \varphi \) names the same object.
+Both halves are needed. Existence is what makes the defining line safe: the last proposition of this section shows that the line proves nothing new about the old symbols. Uniqueness is what makes the word "the" honest. Suppose \( c \) and \( c' \) are both introduced for \( \varphi \). Then \( \Gamma, \varphi[c/x], \varphi[c'/x] \vdash c = c' \). Take the "at most one" half of @prp-unique-existence-use. Instantiate it at \( c \) and at \( c' \) by \( \rulename{\forall E} \) twice, with the substitution facts used in the proof of that proposition. Then \( \rulename{\wedge I} \) and \( \rulename{{\to}E} \) give \( c = c' \). So every proof that names the \( x \) such that \( \varphi \) names the same object.
 
-**Russell's unpacking.** A sentence about the \( x \) such that \( \varphi \) can be unpacked into one that names nothing. Write \( \mathrm{Max}(A, m) \) for "\( m \) is a maximum of \( A \)", that is, \( m \in A \wedge \forall a \in A\; (a \le m) \) (the paragraph "One more instance" above). "The maximum of \( A \) is less than \( 2 \)" unpacks to
+**Russell's unpacking.** A sentence about the \( x \) such that \( \varphi \) can be unpacked into one that names nothing. Write \( \mathrm{Max}(A, m) \) for "\( m \) is a maximum of \( A \)", that is, \( m \in A \wedge \forall a \in A\; (a \le m) \), as defined earlier in this section. "The maximum of \( A \) is less than \( 2 \)" unpacks to
 \[
 \exists m\, \bigl( \mathrm{Max}(A, m) \wedge \forall y\, (\mathrm{Max}(A, y) \to y = m) \wedge m < 2 \bigr):
 \]
 there is exactly one maximum, and it is less than \( 2 \).
 
-**Two readings of a negation.** When nothing satisfies \( \varphi \), the unpacked sentence is false, and a negation can be read two ways. The interval \( A = (0, 1) \) has no maximum: an \( m \in A \) is exceeded by \( (m + 1)/2 \), which is also in \( A \). Read "the maximum of \( A \) is not \( 1 \)" with the negation inside, \( \exists m\, (\mathrm{Max}(A, m) \wedge \forall y\, (\mathrm{Max}(A, y) \to y = m) \wedge m \ne 1) \): it is false, since there is no \( m \). Read it with the negation outside, \( \neg\exists m\, (\mathrm{Max}(A, m) \wedge \forall y\, (\mathrm{Max}(A, y) \to y = m) \wedge m = 1) \): it is true. The two readings agree whenever there is exactly one maximum, which is why "the" waits for \( \exists! \). The same trap sits in "\( \lim a_n \ne 0 \)" for a sequence with no limit, and analysis writes instead "the sequence converges, and its limit is not \( 0 \)".
+**Two readings of a negation.** When nothing satisfies \( \varphi \), the unpacked sentence is false, and a negation can be read two ways. The interval \( A = (0, 1) \) has no maximum: an \( m \in A \) is exceeded by \( (m + 1)/2 \), which is also in \( A \). Read "the maximum of \( A \) is not \( 1 \)" with the negation inside, \( \exists m\, (\mathrm{Max}(A, m) \wedge \forall y\, (\mathrm{Max}(A, y) \to y = m) \wedge m \ne 1) \): it is false, since there is no \( m \). Read it with the negation outside, \( \neg\exists m\, (\mathrm{Max}(A, m) \wedge \forall y\, (\mathrm{Max}(A, y) \to y = m) \wedge m = 1) \): it is true. The two readings agree whenever there is exactly one maximum, which is why "the" waits for \( \exists! \). The same problem arises with "\( \lim a_n \ne 0 \)" for a sequence with no limit, and analysis writes instead "the sequence converges, and its limit is not \( 0 \)".
 
 ::: {.check}
 Over \( \nR \), may a proof speak of "the \( x \) with \( x \cdot x = 2 \)"? Of "the \( x \ge 0 \) with \( x \cdot x = 2 \)"?
 :::
 
 ::: {.solution}
-The first, no: \( \sqrt 2 \) and \( -\sqrt 2 \) both have square \( 2 \), so uniqueness fails. The second, yes: existence is the school fact of Section 5.1 (\( \sqrt 2 \) exists), and uniqueness holds, since two non-negative numbers with the same square are equal (if \( 0 \le u < v \), then \( u \cdot u < v \cdot v \)).
+The first, no: \( \sqrt 2 \) and \( -\sqrt 2 \) both have square \( 2 \), so uniqueness fails. The second, yes: existence is the school fact of Section 5.1 that \( \sqrt 2 \) exists. Uniqueness holds, since two non-negative numbers with the same square are equal: if \( 0 \le u < v \), then \( u \cdot u < v \cdot v \).
 :::
 
 ## A function symbol and its graph
 
-A function symbol gives every object exactly one value, since every term names an object (Section 5.2). A two-place predicate \( G(x, y) \) may or may not behave like that. Call \( G \) the **graph of a function** when \( \forall x\, \exists! y\, G(x, y) \): every \( x \) has exactly one partner. Then a new function symbol \( f \) may be introduced with the defining line \( \forall x\, G(x, f(x)) \), and \( f(t) \) is "the \( y \) such that \( G(t, y) \)": the name of the last subsection, with \( x \) as a parameter.
+A function symbol gives every object exactly one value, since every term names an object (Section 5.2). For example, squaring gives \( 3 \) the single value \( 9 \), and the relation \( y = x \cdot x \) pairs \( 3 \) with \( 9 \) and with nothing else. A two-place predicate \( G(x, y) \) may or may not behave like that. Call \( G \) the **graph of a function** when \( \forall x\, \exists! y\, G(x, y) \): every \( x \) has exactly one partner. Then a new function symbol \( f \) may be introduced with the defining line \( \forall x\, G(x, f(x)) \), and \( f(t) \) is "the \( y \) such that \( G(t, y) \)": the name of the last subsection, with \( x \) as a parameter.
 
-Over \( \nR \), \( G(x, y) \): \( y = x \cdot x + 1 \) is the graph of a function (existence: \( y = x \cdot x + 1 \) itself; uniqueness: two numbers equal to \( x \cdot x + 1 \) are equal). \( G(x, y) \): \( y \cdot y = x \) is not: \( x = -1 \) has no partner, and \( x = 4 \) has two, \( 2 \) and \( -2 \). For \( x \ge 0 \), the predicate \( y \ge 0 \wedge y \cdot y = x \) gives exactly one partner, and the function it defines is \( \sqrt{x} \), written only under the hypothesis \( x \ge 0 \) (the fold on partial terms in Section 5.2).
+Over \( \nR \), \( G(x, y) \): \( y = x \cdot x + 1 \) is the graph of a function (existence: \( y = x \cdot x + 1 \) itself; uniqueness: two numbers equal to \( x \cdot x + 1 \) are equal). \( G(x, y) \): \( y \cdot y = x \) is not: \( x = -1 \) has no partner, and \( x = 4 \) has two, \( 2 \) and \( -2 \). For \( x \ge 0 \), the predicate \( y \ge 0 \wedge y \cdot y = x \) gives exactly one partner, and the function it defines is \( \sqrt{x} \), written only under the hypothesis \( x \ge 0 \), as for the partial terms of Section 5.2.
 
 So "a function" and "a relation in which every object has exactly one partner" are two ways of saying the same thing; the function symbol is the shorter.
 
@@ -271,7 +275,7 @@ The first is not: \( x = 1 \) has no partner, since no integer \( y \) has \( 2y
 
 ## Definitions add words, not facts
 
-"An integer \( n \) is **even** if \( n = 2k \) for some integer \( k \)" adds a predicate symbol with its **definition** \( \forall x\, (\mathrm{Even}(x) \leftrightarrow \exists k\, (x = 2 \cdot k)) \). "We define \( \abs{x} \) to be \( x \) if \( x \ge 0 \) and \( -x \) otherwise" adds a function symbol. Its graph \( G(x, y) \): \( (x \ge 0 \wedge y = x) \vee (x < 0 \wedge y = -x) \) gives each \( x \) exactly one partner (one of \( x \ge 0 \), \( x < 0 \) holds and gives its \( y \), and the two cases exclude each other), and \( \abs{\cdot} \) is introduced by \( \forall x\, G(x, \abs{x}) \). A definition is a new premise, and premises prove things. The next result says what a definition can prove: nothing new about the old symbols.
+"An integer \( n \) is **even** if \( n = 2k \) for some integer \( k \)" adds a predicate symbol with its **definition** \( \forall x\, (\mathrm{Even}(x) \leftrightarrow \exists k\, (x = 2 \cdot k)) \). "We define \( \abs{x} \) to be \( x \) if \( x \ge 0 \) and \( -x \) otherwise" adds a function symbol. Its graph \( G(x, y) \): \( (x \ge 0 \wedge y = x) \vee (x < 0 \wedge y = -x) \) gives each \( x \) exactly one partner (one of \( x \ge 0 \), \( x < 0 \) holds and gives its \( y \), and the two cases exclude each other), and \( \abs{\cdot} \) is introduced by \( \forall x\, G(x, \abs{x}) \). A definition is a new premise, and premises prove things. For instance, with the definition of \( \mathrm{Even} \), a proof can derive \( \mathrm{Even}(4) \) from \( 4 = 2 \cdot 2 \). That line mentions \( \mathrm{Even} \). A fact that does not mention it, such as \( \exists k\, (4 = 2 \cdot k) \), follows from \( 4 = 2 \cdot 2 \) by \( \rulename{\exists I} \) alone. The next result says what a definition can prove: nothing new about the old symbols.
 
 ::: {#prp-definitional-extension}
 [Definitions Prove Nothing New]
@@ -286,21 +290,21 @@ Let \( \Gamma \) be a list of formulas and \( \psi \) a formula.
 
 *In words: whatever is proved with a defined symbol, about symbols that were there before it, could have been proved without it. A definition makes proofs shorter, never stronger.*
 
-Part (b) asks only for existence; uniqueness, as the subsection on "the \( x \) such that \( \varphi \)" said, is what makes "the" name one object. The same holds for predicates with several places, and for a function symbol \( f \) introduced by \( \forall x\, G(x, f(x)) \) once \( \forall x\, \exists! y\, G(x, y) \) is proved; we do not prove those cases, and nothing later depends on them.
+Part (b) asks only for existence; uniqueness is what makes "the" name one object. The same holds for predicates with several places, and for a function symbol \( f \) introduced by \( \forall x\, G(x, f(x)) \) once \( \forall x\, \exists! y\, G(x, y) \) is proved; we do not prove those cases, and nothing later depends on them.
 
 ::: {.idea}
-For (b), rename \( c \) everywhere into a variable that appears nowhere, and put the whole derivation inside an \( \rulename{\exists E} \) box on \( \exists x\, \varphi \). For (a), replace every atomic formula \( P(t) \) by \( \varphi[t/x] \); the definition becomes \( \forall x\, (\varphi \leftrightarrow \varphi) \), which needs no premise. The fold below carries both out.
+For (b), rename \( c \) everywhere into a variable that appears nowhere, and put the whole derivation inside an \( \rulename{\exists E} \) box on \( \exists x\, \varphi \). For (a), replace every atomic formula \( P(t) \) by \( \varphi[t/x] \); the definition becomes \( \forall x\, (\varphi \leftrightarrow \varphi) \), which needs no premise. The proof below carries both out.
 :::
 
 ::: {.second-reading title="Why definitions prove nothing new"}
 ::: {.proof}
-(b) Let \( D \) be a derivation of \( \psi \) from \( \Gamma \) and \( \varphi[c/x] \). Choose a variable \( x_0 \) that appears nowhere in \( D \), \( \Gamma \), \( \varphi \) or \( \psi \) (a derivation from \( \Gamma \) need not write every member of \( \Gamma \)), and replace \( c \) by \( x_0 \) everywhere in \( D \). Every line stays a correct line: the rules treat constants and variables alike as terms; \( x_0 \) is not a flag or a witness name of \( D \), since it appears nowhere there; and it is bound nowhere, so every "free for" condition still holds. \( \Gamma \) and \( \psi \) do not contain \( c \) and do not change, and the premise \( \varphi[c/x] \) becomes \( \varphi[x_0/x] \), since \( c \) is not in \( \varphi \). Now take a derivation of \( \exists x\, \varphi \) from \( \Gamma \), open an \( \rulename{\exists E} \) box (@def-rules-existential) with the name \( x_0 \) and the assumption \( \varphi[x_0/x] \), copy the changed \( D \) inside it, and close the box on \( \psi \): by the choice of \( x_0 \), it is not in \( \psi \), not in \( \exists x\, \varphi \), and not in \( \Gamma \), which holds the only premises.
+(b) Let \( D \) be a derivation of \( \psi \) from \( \Gamma \) and \( \varphi[c/x] \). Choose a variable \( x_0 \) that appears nowhere in \( D \), \( \Gamma \), \( \varphi \) or \( \psi \) (a derivation from \( \Gamma \) need not write every member of \( \Gamma \)), and replace \( c \) by \( x_0 \) everywhere in \( D \). Every line stays a correct line, for three reasons. The rules treat constants and variables alike as terms. The variable \( x_0 \) is not a flag or a witness name of \( D \), since it appears nowhere there. And \( x_0 \) is bound nowhere, so every "free for" condition still holds. \( \Gamma \) and \( \psi \) do not contain \( c \) and do not change, and the premise \( \varphi[c/x] \) becomes \( \varphi[x_0/x] \), since \( c \) is not in \( \varphi \). Now take a derivation of \( \exists x\, \varphi \) from \( \Gamma \). Open an \( \rulename{\exists E} \) box (@def-rules-existential) with the name \( x_0 \) and the assumption \( \varphi[x_0/x] \), and copy the changed \( D \) inside it. Close the box on \( \psi \). This is allowed because, by the choice of \( x_0 \), it is not in \( \psi \), not in \( \exists x\, \varphi \), and not in \( \Gamma \), which holds the only premises.
 
-(a) Let \( D \) be a derivation of \( \psi \) from \( \Gamma \) and \( \forall x\, (P(x) \leftrightarrow \varphi) \). Rename the bound variables of \( \varphi \) to letters that appear nowhere in \( D \) (the convention of Section 5.2), and replace every atomic formula \( P(t) \) in \( D \) by \( \varphi[t/x] \). Because \( x \) is the only free variable of \( \varphi \) and its bound letters are new, the replacement commutes with every substitution a rule makes and changes no free variable of any line; so every line stays a correct line, and every side condition still holds. \( \Gamma \) and \( \psi \) do not contain \( P \) and do not change; the definition becomes \( \forall x\, (\varphi \leftrightarrow \varphi) \), which is derived from no premises by a flagged box, with a flag \( x_0 \) that appears nowhere in \( \Gamma \), \( \varphi \) or \( D \), ending in \( \varphi[x_0/x] \leftrightarrow \varphi[x_0/x] \), got by \( \rulename{{\leftrightarrow}I} \) from two one-line boxes. Writing that derivation in front of the changed \( D \) derives \( \psi \) from \( \Gamma \). (After the renaming the defining premise is \( \forall x\, (\varphi' \leftrightarrow \varphi) \), with \( \varphi' \) the renamed \( \varphi \), which the convention of Section 5.2 treats as \( \forall x\, (\varphi \leftrightarrow \varphi) \).)
+(a) Let \( D \) be a derivation of \( \psi \) from \( \Gamma \) and \( \forall x\, (P(x) \leftrightarrow \varphi) \). Rename the bound variables of \( \varphi \) to letters that appear nowhere in \( D \) (the convention of Section 5.2), and replace every atomic formula \( P(t) \) in \( D \) by \( \varphi[t/x] \). The variable \( x \) is the only free variable of \( \varphi \), and the bound letters of \( \varphi \) are new. So the replacement commutes with every substitution a rule makes, and changes no free variable of any line. Hence every line stays a correct line, and every side condition still holds. \( \Gamma \) and \( \psi \) do not contain \( P \) and do not change. The definition becomes \( \forall x\, (\varphi \leftrightarrow \varphi) \). It is derived from no premises by a flagged box, with a flag \( x_0 \) that appears nowhere in \( \Gamma \), \( \varphi \) or \( D \). The box ends in \( \varphi[x_0/x] \leftrightarrow \varphi[x_0/x] \), got by \( \rulename{{\leftrightarrow}I} \) from two one-line boxes. Writing that derivation in front of the changed \( D \) derives \( \psi \) from \( \Gamma \). (After the renaming the defining premise is \( \forall x\, (\varphi' \leftrightarrow \varphi) \), with \( \varphi' \) the renamed \( \varphi \), which the convention of Section 5.2 treats as \( \forall x\, (\varphi \leftrightarrow \varphi) \).)
 :::
 :::
 
-**What a definition sounds like.** "We define …" and "call \( n \) even if …" introduce a symbol with its defining line; the right-hand side must not mention the new symbol, and a function needs exactly one value for each argument. "Let \( L \) be the limit of \( (a_n) \)" introduces a name by a description, and may be written only after it has been proved that there is exactly one such \( L \). Every "the" carries that debt; "a limit" does not.
+**What a definition sounds like.** "We define …" and "call \( n \) even if …" introduce a symbol with its defining line; the right-hand side must not mention the new symbol, and a function needs exactly one value for each argument. "Let \( L \) be the limit of \( (a_n) \)" introduces a name by a description, and may be written only after it has been proved that there is exactly one such \( L \). Every "the" needs that proof first; "a limit" does not.
 
 ::: {.remark}
 [Looking ahead]
@@ -333,7 +337,7 @@ Chapter 8 collects "we define …" and "the …" with the other phrases of writt
 
 *(d)* Part (a): adding a predicate symbol by a definition \( \forall x\, (P(x) \leftrightarrow \varphi) \) proves nothing new that does not mention \( P \). Part (b): naming a witness of a proved existential by a new constant proves nothing new that does not mention the constant.
 
-*(e)* Take \( \varphi = \forall z\, (x \cdot z = z \wedge z \cdot x = z) \), and run lines 3–7 again with variables \( u_0 \), \( v_0 \) in place of \( e \), \( e' \): inside flagged boxes for \( u_0 \) and \( v_0 \) and a \( \rulename{{\to}I} \) box on \( \varphi[u_0/x] \wedge \varphi[v_0/x] \), the two premises (with \( z \) as their bound variable) come from that assumption by \( \rulename{\wedge E} \), and the same steps give \( u_0 = v_0 \). Then \( \rulename{{\to}I} \) and \( \rulename{\forall I} \) twice give \( \forall x\, \forall y\, (\varphi \wedge \varphi[y/x] \to x = y) \), the second conjunct of the proposition. With the existence of one identity as well, @prp-unique-existence-use gives "there is exactly one".
+*(e)* Take \( \varphi = \forall z\, (x \cdot z = z \wedge z \cdot x = z) \). Run lines 3–7 of that derivation again, with variables \( u_0 \), \( v_0 \) in place of \( e \), \( e' \). They now sit inside flagged boxes for \( u_0 \) and \( v_0 \) and a \( \rulename{{\to}I} \) box on \( \varphi[u_0/x] \wedge \varphi[v_0/x] \). The two premises, with \( z \) as their bound variable, come from that assumption by \( \rulename{\wedge E} \), and the same steps give \( u_0 = v_0 \). Then \( \rulename{{\to}I} \) and \( \rulename{\forall I} \) twice give \( \forall x\, \forall y\, (\varphi \wedge \varphi[y/x] \to x = y) \), the second conjunct of the proposition. With the existence of one identity as well, @prp-unique-existence-use gives "there is exactly one".
 :::
 
 ::: {#exr-counting-and-descriptions-a2}
@@ -401,7 +405,7 @@ The statement is
 
 *At most two:* if \( x \cdot x < 3 \) then \( x \le 1 \), since \( x \ge 2 \) gives \( x \cdot x \ge 4 \); so \( x \in \{0, 1\} \). Three natural numbers \( u \), \( v \), \( w \) with squares below \( 3 \) take values in \( \{0, 1\} \), so two of them are equal. Worked example type: @exm-exactly-two-solutions.
 
-**Marking scheme.** (10 points) 3: the formula, with \( x \ne y \) and the three-way disjunction. 3: "at least two", with both witnesses and their difference. 4: "at most two", with \( x \le 1 \) justified and the pigeonhole step stated. Fatal error (0 for the half): "at least two" written without \( x \ne y \).
+**What a complete answer needs.** (10 points) 3: the formula, with \( x \ne y \) and the three-way disjunction. 3: "at least two", with both witnesses and their difference. 4: "at most two", with \( x \le 1 \) justified and the pigeonhole step stated. Slips that lose the step, scoring 0 for the half: "at least two" written without \( x \ne y \).
 :::
 
 ::: {#exr-equality-and-uniqueness-b2}
@@ -419,7 +423,14 @@ Written out, the statement is \( \exists x\, \bigl( x \cdot x = 0 \wedge \forall
 
 *Uniqueness.* Let \( y \) be a real number, and suppose \( y \cdot y = 0 \). If \( y \ne 0 \), then \( y \cdot y \) is a product of two non-zero reals and so is non-zero, which contradicts \( y \cdot y = 0 \). Hence \( y = 0 \), which is the witness. Since \( y \) was arbitrary, every \( y \) with \( y \cdot y = 0 \) equals \( 0 \).
 
-So \( 0 \) witnesses the existential, and \( \exists! x\, (x \cdot x = 0) \) holds. The rules behind the words: "we take the witness \( x = 0 \)" is \( \rulename{\exists I} \), postponed to the end as usual; "let \( y \) be a real number" is a flagged box for \( \rulename{\forall I} \); "suppose \( y \cdot y = 0 \)" is a \( \rulename{{\to}I} \) box; "if \( y \ne 0 \) … contradicts" is an \( \rulename{RAA} \) box on \( y \ne 0 \). (That box gives \( y = 0 \) directly; \( \rulename{\neg I} \) would give only \( \neg(y \ne 0) \). Since for reals \( y = 0 \) or \( y \ne 0 \) is also a school fact, a proof by cases would do as well.)
+So \( 0 \) witnesses the existential, and \( \exists! x\, (x \cdot x = 0) \) holds. The rules behind the words:
+
+- "we take the witness \( x = 0 \)" is \( \rulename{\exists I} \), postponed to the end as usual;
+- "let \( y \) be a real number" is a flagged box for \( \rulename{\forall I} \);
+- "suppose \( y \cdot y = 0 \)" is a \( \rulename{{\to}I} \) box;
+- "if \( y \ne 0 \) … contradicts" is an \( \rulename{RAA} \) box on \( y \ne 0 \).
+
+That box gives \( y = 0 \) directly, while \( \rulename{\neg I} \) would give only \( \neg(y \ne 0) \). Since for reals \( y = 0 \) or \( y \ne 0 \) is also a school fact, a proof by cases would do as well.
 :::
 
 ::: {#exr-equality-and-uniqueness-b3}
@@ -488,9 +499,13 @@ $\begin{nd}
 
 (b) "At most one": any two sets without elements are equal. The other half, "at least one", needs a premise of its own, an axiom saying that a set without elements exists: from \( E \) alone the claim \( \exists x\, \forall z\, \neg(z \in x) \) breaks. Counter-reading: the domain \( \{0\} \), with \( 0 \in 0 \). \( E \) is true, since there is only one object and so \( x = y \) holds for every \( x \), \( y \); and \( \exists x\, \forall z\, \neg(z \in x) \) is false, since the only object, \( 0 \), has the element \( 0 \).
 
-(c) Run (a) with flags \( x_0 \), \( y_0 \) in place of \( a \), \( b \), inside a \( \rulename{{\to}I} \) box on \( \forall z\, \neg(z \in x_0) \wedge \forall z\, \neg(z \in y_0) \) (\( \rulename{\wedge E} \) gives the two premises), and close with \( \rulename{{\to}I} \) and \( \rulename{\forall I} \) twice: that is the second conjunct of @prp-unique-existence-use for \( \varphi = \forall z\, \neg(z \in x) \). With the existence premise, the direction \( \dashv \) of @prp-unique-existence-use gives \( \exists! x\, \forall z\, \neg(z \in x) \), and by @def-definite-description a proof may now say "**the** empty set" and name it \( \emptyset \). Worked example types: @exm-extensionality-logical-half (Section 5.7); the two halves of @prp-unique-existence-use.
+(c) Run (a) with flags \( x_0 \), \( y_0 \) in place of \( a \), \( b \), inside a \( \rulename{{\to}I} \) box on \( \forall z\, \neg(z \in x_0) \wedge \forall z\, \neg(z \in y_0) \); \( \rulename{\wedge E} \) gives the two premises. Close with \( \rulename{{\to}I} \) and \( \rulename{\forall I} \) twice. The result is the second conjunct of @prp-unique-existence-use for \( \varphi = \forall z\, \neg(z \in x) \). With the existence premise, the direction \( \dashv \) of that proposition gives \( \exists! x\, \forall z\, \neg(z \in x) \). Then, by @def-definite-description, a proof may say "**the** empty set" and name it \( \emptyset \). Worked example types: @exm-extensionality-logical-half (Section 5.7), and the two halves of unique existence.
 
-**Marking scheme.** (10 points) 4: (a), the biconditional built by \( \rulename{{\leftrightarrow}I} \) from two boxes, each closed by \( \rulename{\bot E} \), then \( \rulename{\forall I} \), two \( \rulename{\forall E} \) on \( E \) and \( \rulename{{\to}E} \). 3: (b), "at most one" (1), existence as a separate premise (1), and the counter-reading with \( E \) checked true and the existence claim false (1). 3: (c), the flags and the \( \rulename{{\to}I} \) box, the right direction of @prp-unique-existence-use, and the license to write "the". Fatal error (0 for (a)): \( a = b \) "by extensionality" with no instance of \( E \) written.
+::: {.uses}
+@prp-unique-existence-use (the two halves); @def-definite-description (naming the empty set).
+:::
+
+**What a complete answer needs.** (10 points) 4: (a), the biconditional built by \( \rulename{{\leftrightarrow}I} \) from two boxes, each closed by \( \rulename{\bot E} \), then \( \rulename{\forall I} \), two \( \rulename{\forall E} \) on \( E \) and \( \rulename{{\to}E} \). 3: (b), "at most one" (1), existence as a separate premise (1), and the counter-reading with \( E \) checked true and the existence claim false (1). 3: (c), the flags and the \( \rulename{{\to}I} \) box, the right direction of @prp-unique-existence-use, and the license to write "the". Slips that lose the step, scoring 0 for (a): \( a = b \) written "by extensionality" with no instance of \( E \).
 :::
 
 ::: {#exr-counting-and-descriptions-b5}
@@ -529,9 +544,9 @@ $\begin{nd}
 \end{center}
 ```
 
-Lines 4 and 5 instantiate the premise for \( f \) at the compound terms \( g(x_0) \) and \( g(y_0) \): the move *instantiate at the term you need*. In prose: "Let \( x \) and \( y \) satisfy \( f(g(x)) = f(g(y)) \). Since \( f \) is one-to-one, \( g(x) = g(y) \), and since \( g \) is one-to-one, \( x = y \)."
+Lines 4 and 5 instantiate the premise for \( f \) at the compound terms \( g(x_0) \) and \( g(y_0) \): the method *instantiate at the term you need*. In prose: "Let \( x \) and \( y \) satisfy \( f(g(x)) = f(g(y)) \). Since \( f \) is one-to-one, \( g(x) = g(y) \), and since \( g \) is one-to-one, \( x = y \)."
 
-**Marking scheme.** (10 points) 2: the two flags and the \( \rulename{{\to}I} \) box. 4: the \( \rulename{\forall E} \) steps at \( g(x_0) \), \( g(y_0) \), then at \( x_0 \), \( y_0 \), each with \( \rulename{{\to}E} \). 2: the closing \( \rulename{\forall I} \) lines with the flag checks. 2: the prose, one sentence per use of one-to-one. Fatal error (0 for the derivation): the premise for \( f \) instantiated at \( x_0 \), \( y_0 \).
+**What a complete answer needs.** (10 points) 2: the two flags and the \( \rulename{{\to}I} \) box. 4: the \( \rulename{\forall E} \) steps at \( g(x_0) \), \( g(y_0) \), then at \( x_0 \), \( y_0 \), each with \( \rulename{{\to}E} \). 2: the closing \( \rulename{\forall I} \) lines with the flag checks. 2: the prose, one sentence per use of one-to-one. Slips that lose the step, scoring 0 for the derivation: the premise for \( f \) instantiated at \( x_0 \), \( y_0 \).
 :::
 
 ### C. Going deeper
@@ -608,9 +623,9 @@ $\begin{nd}
 \end{center}
 ```
 
-The brackets in the statement are written out because the default groups a longer conjunction to the right (Section 4.5); with the grouping \( (P(x_0) \wedge P(y_0)) \wedge x_0 \ne y_0 \) on line 4, \( \rulename{\wedge E} \) takes out its two halves on lines 5 and 6. At line 11, \( y_0 \) is not in \( \bot \), not in line 3, not in the premise, and not in the assumptions still open (lines 2 and 3). At line 12 the same holds for \( x_0 \), with line 2 the only open assumption.
+The brackets in the statement are written out because, by default, a longer conjunction groups to the right (Section 4.5). With the grouping \( (P(x_0) \wedge P(y_0)) \wedge x_0 \ne y_0 \) on line 4, \( \rulename{\wedge E} \) takes out its two halves on lines 5 and 6. At line 11, \( y_0 \) is not in \( \bot \), not in line 3, not in the premise, and not in the assumptions still open (lines 2 and 3). At line 12 the same holds for \( x_0 \), with line 2 the only open assumption.
 
-\( (\dashv) \) The goal-directed steps open flagged boxes for \( x_0 \) and \( y_0 \) and a \( \rulename{{\to}I} \) box on \( P(x_0) \wedge P(y_0) \), leaving the goal \( x_0 = y_0 \). No resource gives an equation, so the search is stuck, and step 5 of the method applies: an \( \rulename{RAA} \) box on \( x_0 \ne y_0 \). Inside, \( \rulename{\wedge I} \) and two \( \rulename{\exists I} \) steps rebuild the formula that the premise denies.
+\( (\dashv) \) The goal-directed steps open flagged boxes for \( x_0 \) and \( y_0 \) and a \( \rulename{{\to}I} \) box on \( P(x_0) \wedge P(y_0) \), leaving the goal \( x_0 = y_0 \). No resource gives an equation, so the search is stuck, and the step for a stuck search applies (Section 3.1): an \( \rulename{RAA} \) box on \( x_0 \ne y_0 \). Inside, \( \rulename{\wedge I} \) and two \( \rulename{\exists I} \) steps rebuild the formula that the premise denies.
 
 ```{=latex}
 \begin{center}
@@ -640,20 +655,20 @@ $\begin{nd}
 
 **The \( \dashv \) derivation uses \( \rulename{RAA} \), at line 8**: the box opens with \( x_0 \ne y_0 \), that is \( \neg(x_0 = y_0) \), and closes with \( x_0 = y_0 \). Closing it by \( \rulename{\neg I} \) instead would give \( \neg\neg(x_0 = y_0) \), and no rule of Chapter 1 or Sections 2.1–2.4 removes the double negation. (With the derived rule \( \rulename{\neg\neg E} \) of Section 2.5, that \( \rulename{\neg I} \) box followed by \( \rulename{\neg\neg E} \) is an equally good derivation; its classical step is the \( \rulename{\neg\neg E} \) line, which hides an \( \rulename{RAA} \).) The \( \vdash \) derivation uses no classical rule.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 - 2: \( \vdash \): opens a \( \rulename{\neg I} \) box on the existential, with the goal \( \bot \).
 - 2: \( \vdash \): two \( \rulename{\exists E} \) boxes with **fresh** witnesses, each ending in \( \bot \), and the premise instantiated at those witnesses.
 - 2: \( \dashv \): two flagged boxes and a \( \rulename{{\to}I} \) box, in the order read off the goal.
 - 2: \( \dashv \): an \( \rulename{RAA} \) box on \( x_0 \ne y_0 \), with the clash obtained by \( \rulename{\wedge I} \) and two \( \rulename{\exists I} \) steps.
 - 2: names the \( \dashv \) direction as the one using \( \rulename{RAA} \), and the line.
-- A \( \rulename{\neg I} \) box on \( x_0 \ne y_0 \) followed by \( \rulename{\neg\neg E} \), or an \( \rulename{LEM} \) split on \( x_0 = y_0 \) whose second case reaches \( \bot \) the same way (then \( \rulename{\bot E} \)), earns the 2 points of the \( \rulename{RAA} \)-box line; for the naming line, the reader names the \( \rulename{\neg\neg E} \) or \( \rulename{LEM} \) line as the classical step, a derived rule whose derivation uses \( \rulename{RAA} \) (Section 2.5).
-Fatal errors (0 for the step): an \( \rulename{\exists E} \) box closing on a line that contains its witness; a \( \rulename{\forall I} \) over a name in an open assumption; \( \rulename{\neg I} \) claimed to give \( x_0 = y_0 \).
+- A \( \rulename{\neg I} \) box on \( x_0 \ne y_0 \) followed by \( \rulename{\neg\neg E} \) earns the 2 points of the \( \rulename{RAA} \)-box line. So does an \( \rulename{LEM} \) split on \( x_0 = y_0 \) whose second case reaches \( \bot \) the same way, then \( \rulename{\bot E} \). For the naming line, the answer names the \( \rulename{\neg\neg E} \) or \( \rulename{LEM} \) line as the classical step: a derived rule whose derivation uses \( \rulename{RAA} \) (Section 2.5).
+Slips that lose the step, scoring 0 for it: an \( \rulename{\exists E} \) box closing on a line that contains its witness; a \( \rulename{\forall I} \) over a name in an open assumption; \( \rulename{\neg I} \) claimed to give \( x_0 = y_0 \).
 :::
 
 ::: {#exr-counting-and-descriptions-c3}
 [C3: One and one make two]
 
-Let \( P \) and \( Q \) be one-place predicate symbols. Show that from \( \exists! x\, P(x) \), \( \exists! x\, Q(x) \) and \( \neg\exists x\, (P(x) \wedge Q(x)) \) it follows that exactly two \( x \) satisfy \( P(x) \vee Q(x) \), in the form
+Let \( P \) and \( Q \) be one-place predicate symbols. Assume \( \exists! x\, P(x) \), \( \exists! x\, Q(x) \) and \( \neg\exists x\, (P(x) \wedge Q(x)) \). Show that exactly two \( x \) then satisfy \( P(x) \vee Q(x) \), in the form
 \[
 \exists x\, \exists y\, \bigl( x \ne y \wedge (P(x) \vee Q(x)) \wedge (P(y) \vee Q(y)) \wedge \forall z\, (P(z) \vee Q(z) \to z = x \vee z = y) \bigr).
 \]
@@ -670,7 +685,7 @@ Give the proof in numbered steps, naming the rule behind each; a full derivation
 
 The third premise is used only in step 3. Without it the conclusion breaks: the domain \( \{0\} \) with \( P \) and \( Q \) both true of \( 0 \) makes the first two premises true, and only one object satisfies \( P(x) \vee Q(x) \).
 
-**Marking scheme.** (10 points) 2: the two halves of each premise by @prp-unique-existence-use. 1: two \( \rulename{\exists E} \) boxes with different names. 2: \( a_0 \ne b_0 \) by \( \rulename{\neg I} \), \( \rulename{{=}E} \) and the third premise. 3: the last conjunct by the flagged box, the \( \rulename{{\to}I} \) box and \( \rulename{\vee E} \), each case using the right "at most one". 1: the closing \( \rulename{\exists I} \) order and the box conditions. 1: the counter-reading without the third premise. Fatal errors (0 for the step): \( a_0 \ne b_0 \) asserted because the names differ (the warning "Different letters, perhaps the same object"); an \( \rulename{\exists E} \) box closed on a line that mentions \( a_0 \) or \( b_0 \).
+**What a complete answer needs.** (10 points) 2: the two halves of each premise by @prp-unique-existence-use. 1: two \( \rulename{\exists E} \) boxes with different names. 2: \( a_0 \ne b_0 \) by \( \rulename{\neg I} \), \( \rulename{{=}E} \) and the third premise. 3: the last conjunct by the flagged box, the \( \rulename{{\to}I} \) box and \( \rulename{\vee E} \), each case using the right "at most one". 1: the closing \( \rulename{\exists I} \) order and the box conditions. 1: the counter-reading without the third premise. Slips that lose the step, scoring 0 for it: \( a_0 \ne b_0 \) asserted only because the names differ; an \( \rulename{\exists E} \) box closed on a line that mentions \( a_0 \) or \( b_0 \). Different letters may name the same object.
 :::
 
 ### R. Review
@@ -682,7 +697,7 @@ Consider the terms built from variables, the constant \( 0 \) and the two-place 
 :::
 
 ::: {.solution}
-For a term \( t \), let \( a(t) \) count the occurrences of variables and constants in \( t \), and \( p(t) \) those of \( + \). We show \( p(t) = a(t) - 1 \) for every \( t \), by induction on the clauses of @def-term, the method of @thm-structural-induction (Section 4.3).
+For a term \( t \), let \( a(t) \) count the occurrences of variables and constants in \( t \), and \( p(t) \) those of \( + \). We show \( p(t) = a(t) - 1 \) for every \( t \), by induction on the clauses of @def-term, as in Section 4.3.
 
 *Base:* \( t \) is a variable or \( 0 \). Then \( p(t) = 0 \) and \( a(t) = 1 \).
 
@@ -693,7 +708,11 @@ p(t) = p(t_1) + p(t_2) + 1 = (a(t_1) - 1) + (a(t_2) - 1) + 1 = a(t_1) + a(t_2) -
 
 The term \( (x + 0) + (y + x) \) has four occurrences of variables and constants and three of \( + \). This is the counting argument of @lem-parenthesis-count (Section 4.3), on new data. About 10 minutes.
 
-**Marking scheme.** (10 points) 2: \( a \) and \( p \) defined. 3: the base case, both kinds of atomic term. 4: the step, with the hypothesis used for both \( t_1 \) and \( t_2 \) and the \( +1 \) for the new symbol. 1: the check. Fatal error (0 for the step): induction on the length of the term with no case for \( t_1 + t_2 \).
+::: {.uses}
+@thm-structural-induction (induction over the clauses).
+:::
+
+**What a complete answer needs.** (10 points) 2: \( a \) and \( p \) defined. 3: the base case, both kinds of atomic term. 4: the step, with the hypothesis used for both \( t_1 \) and \( t_2 \) and the \( +1 \) for the new symbol. 1: the check. Slips that lose the step, scoring 0 for it: induction on the length of the term with no case for \( t_1 + t_2 \).
 :::
 
 ::: {#exr-counting-and-descriptions-r2}
@@ -727,7 +746,7 @@ $\begin{nd}
 
 Line 9 cites the flagged box from line 2, the convention for a flagged box that immediately contains another; \( x_0 \) is in no premise, in no open assumption, and not in line 9. Lines 2 and 4–8 are the derivation of @prp-contrapositive-converse (Section 2.5) at \( P(x_0) \), \( Q(x_0) \), with line 3 as its premise. The classical line is line 7, \( \rulename{RAA} \) (@def-rule-raa). About 10 minutes.
 
-**Marking scheme.** (10 points) 2: the flagged box opened first and closed by \( \rulename{\forall I} \) with the flag checked. 2: \( \rulename{\forall E} \) at the flag. 4: the \( \rulename{{\to}I} \) box and, inside it, the \( \rulename{RAA} \) box on \( \neg Q(x_0) \). 2: line 7 named as the classical line. A \( \rulename{\neg I} \) box on \( \neg Q(x_0) \) followed by \( \rulename{\neg\neg E} \), or @prp-contrapositive-converse used as a derived rule on line 3, earns the 4 points of the box line; its classical line (the \( \rulename{\neg\neg E} \) line, or the derived-rule line, whose derivation uses \( \rulename{RAA} \)) earns the naming 2. Fatal error (0): \( \rulename{\forall E} \) outside the flagged box at a constant, then \( \rulename{\forall I} \) over that constant.
+**What a complete answer needs.** (10 points) 2: the flagged box opened first and closed by \( \rulename{\forall I} \) with the flag checked. 2: \( \rulename{\forall E} \) at the flag. 4: the \( \rulename{{\to}I} \) box and, inside it, the \( \rulename{RAA} \) box on \( \neg Q(x_0) \). 2: line 7 named as the classical line. A \( \rulename{\neg I} \) box on \( \neg Q(x_0) \) followed by \( \rulename{\neg\neg E} \) earns the 4 points of the box line. So does @prp-contrapositive-converse used as a derived rule on line 3. The classical line of either route earns the naming 2: the \( \rulename{\neg\neg E} \) line, or the derived-rule line, whose derivation uses \( \rulename{RAA} \). Slips that lose the step, scoring 0: \( \rulename{\forall E} \) outside the flagged box at a constant, then \( \rulename{\forall I} \) over that constant.
 :::
 
 ::: {#exr-counting-and-descriptions-r3}
@@ -761,7 +780,7 @@ $\begin{nd}
 
 Lines 3–8 are the first derivation of @prp-curry (Section 1.4) at the statements \( P(x_0) \), \( Q(x_0) \), \( R(x_0) \), with line 2 as its premise. The quantifier adds line 2 (\( \rulename{\forall E} \) at the flag) and line 9 (\( \rulename{\forall I} \)), whose side condition holds because the boxes of lines 3 and 4 have closed. About 10 minutes.
 
-**Marking scheme.** (10 points) 3: the flagged box with \( \rulename{\forall E} \) at the flag. 4: the two \( \rulename{{\to}I} \) boxes in the order of @prp-curry. 3: the propositional lines named and the side condition of line 9 checked. Fatal error (0): \( \rulename{\forall I} \) written while the box of line 3 or 4 is open.
+**What a complete answer needs.** (10 points) 3: the flagged box with \( \rulename{\forall E} \) at the flag. 4: the two \( \rulename{{\to}I} \) boxes in the order of @prp-curry. 3: the propositional lines named and the side condition of line 9 checked. Slips that lose the step, scoring 0: \( \rulename{\forall I} \) written while the box of line 3 or 4 is open.
 :::
 
 ::: {#exr-counting-and-descriptions-r4}
@@ -786,23 +805,33 @@ $\begin{nd}
 \end{center}
 ```
 
-The tools: instantiate at the term you need (@def-rule-universal-elimination, Section 5.3), here the compound term \( f(x_0) \) at line 3, and \( \rulename{{=}I} \) (@def-rules-equality, Section 5.7), which makes the hypothesis of line 3 at no cost. Why the look-alikes fail: \( \rulename{{=}E} \) has no equation to cite, since no line is an equation until \( \rulename{{=}I} \) writes one; \( \rulename{\forall E} \) at a fresh variable \( y_0 \) leaves the hypothesis \( f(x_0) = y_0 \), which nothing proves; and there is no existential, so \( \rulename{\exists E} \) has nothing to open. About 15 minutes.
+Two tools do the work. The first is to instantiate at the term you need, here the compound term \( f(x_0) \) at line 3 (@def-rule-universal-elimination, Section 5.3). The second is \( \rulename{{=}I} \) (@def-rules-equality, Section 5.7), which proves the hypothesis of line 3 from no premises. Other rules look possible but fail:
 
-**Marking scheme.** (10 points) 2: the flagged box. 4: the second \( \rulename{\forall E} \), at \( f(x_0) \). 3: \( \rulename{{=}I} \) and \( \rulename{{\to}E} \). 1: the closing \( \rulename{\forall I} \) with the flag checked. Fatal error (0): \( \rulename{\forall E} \) at a variable \( y_0 \) followed by a step that treats \( f(x_0) = y_0 \) as proved.
+- \( \rulename{{=}E} \) has no equation to cite, since no line is an equation until \( \rulename{{=}I} \) writes one;
+- \( \rulename{\forall E} \) at a fresh variable \( y_0 \) leaves the hypothesis \( f(x_0) = y_0 \), which nothing proves;
+- there is no existential, so \( \rulename{\exists E} \) has nothing to open.
+
+About 15 minutes.
+
+**What a complete answer needs.** (10 points) 2: the flagged box. 4: the second \( \rulename{\forall E} \), at \( f(x_0) \). 3: \( \rulename{{=}I} \) and \( \rulename{{\to}E} \). 1: the closing \( \rulename{\forall I} \) with the flag checked. Slips that lose the step, scoring 0: \( \rulename{\forall E} \) at a variable \( y_0 \) followed by a step that treats \( f(x_0) = y_0 \) as proved.
 :::
 
 <!-- dependency ledger
 def-unique-existence (claim): well-definedness: two admissible choices of y differ by renaming a bound variable | F1.4 §02 (renaming bound variables)
 def-unique-existence (claim): well-definedness: (phi[y/x])[t/y] = phi[t/x] for y not in phi | def-substitution (cited); structural induction proved in the text, using the F1.4 §02 claim that x not free gives phi[t/x] = phi
+def-unique-existence (example): instance before the definition: 3 + 1 = 4, and y + 1 = 4 gives y = 3 in N | school arithmetic
 def-unique-existence (example): 3 + 2 = 5 and y + 2 = 5 gives y = 3; y <= 1 gives y*y <= 1, y >= 3 gives y*y >= 9; 0 + y = y; z + 0 = z | school arithmetic
 def-unique-existence (claim): example 3: the uniqueness step z + 0 = 0 and z + 0 = z give z = 0 | prp-equality-symmetric-transitive (cited in the text by name "symmetry and transitivity")
 def-unique-existence (claim): Quick check: over N every number below 1 is 0; over Z, 0 and -1 are below 1 | school arithmetic
+prp-unique-existence-use (example): lead-in: the two halves for x + 2 = 5 over R | statement read off; school arithmetic
 prp-unique-existence-use (proof): (phi[y/x])[t/y] = phi[t/x] for y not in phi; phi[y/x] has no free x; phi[t/x] has no y for t without y | first fact: def-unique-existence (well-definedness paragraph, cited); def-substitution (cited); second and third read off def-substitution
 prp-unique-existence-use (proof): lines 13-14 and 10-11 are symmetry written out | prp-equality-symmetric-transitive (cited)
 prp-unique-existence-use (example): the maximum: a <= b and b <= a give a = b; (0, 1) has no maximum | school algebra (order); AN1.1 (index, Where this goes)
+def-counting-with-equality (example): instance before the definition: over N the numbers below 2 are 0 and 1 | school arithmetic
 def-counting-with-equality (claim): "at most one" is the second conjunct of prp-unique-existence-use | prp-unique-existence-use (cited)
 exm-exactly-two-solutions (solution): y*y = 1 gives (y - 1)(y + 1) = 0, so y = 1 or y = -1; 1 != -1 | school algebra; checked by verify/ch05/exm-exactly-two-solutions.py
 def-counting-with-equality (claim): Quick check: an even prime is divisible by 2, so it is 2 | school arithmetic
+def-definite-description (example): instance before the definition: over R exactly one x has 2x = 6 | school algebra
 def-definite-description (claim): Gamma, phi[c/x], phi[c'/x] |- c = c' | prp-unique-existence-use (cited), def-rule-universal-elimination; the three substitution facts of the proof of prp-unique-existence-use (cited)
 def-definite-description (claim): the proposition at the end of the section shows the defining line proves nothing new | prp-definitional-extension (same section, later; cited forward within the section)
 def-definite-description (claim): two readings: (0, 1) has no maximum, m < (m + 1)/2 < 1 for m in (0, 1) | school algebra; checked by verify/ch05/def-definite-description.py
@@ -810,6 +839,8 @@ def-definite-description (claim): Quick check: sqrt 2 exists; 0 <= u < v gives u
 def-definite-description (claim): graph: y = x*x + 1 has one partner per x; y*y = x has none at -1 and two at 4; y >= 0 and y*y = x has one for x >= 0 | school algebra; sqrt x exists for x >= 0: school fact, AN1.1 (index, Where this goes)
 def-definite-description (claim): graph Quick check: 2y = 1 has no integer solution | school arithmetic
 def-definite-description (claim): remark: a function symbol is the same as a graph with one partner per object | not proved; nothing depends on it
+def-definite-description (example): graph lead-in: y = x*x pairs 3 with 9 only | school arithmetic
+prp-definitional-extension (example): lead-in: 4 = 2*2 gives Even(4) by the definition and exists k (4 = 2k) by exists-I | def-rule-existential-introduction (in words); school arithmetic
 prp-definitional-extension (claim): text: the graph of |x| gives exactly one partner per x | school algebra (trichotomy of x >= 0, x < 0)
 prp-definitional-extension (proof): fold: (b) constant to fresh variable keeps a derivation, then an exists-E box; (a) replacing P(t) by phi[t/x] commutes with substitution | def-rules-existential (cited); F1.4 §02 (renaming bound variables, the convention); def-rules-universal, iff-I for forall x (phi <-> phi)
 prp-definitional-extension (claim): remark: the several-place and function-symbol cases | not proved; nothing later depends on them
@@ -819,13 +850,13 @@ exr-counting-and-descriptions-b1 (solution): x*x < 3 iff x in {0, 1} over N | sc
 exr-equality-and-uniqueness-b2 (solution): a product of two non-zero reals is non-zero; for reals y = 0 or y != 0 | school algebra (stated in the hint); AN1.1 (index, Where this goes)
 exr-equality-and-uniqueness-b3 (solution): x*x = x iff x in {0, 1}; x + 1 = x has no solution; 2x = x iff x = 0 | school algebra
 exr-equality-and-uniqueness-b3 (solution): not exactly one x has phi iff no x has phi or two different x have phi, read informally | informal truth over a domain, F1.4 §01 (the mirror-image remark on the two quantifiers), argued both ways in the solution; F1.8 §02 pointed at only, nothing depends on it
-exr-counting-and-descriptions-b4 (solution): the 16-line derivation; (b)'s counter-reading on {0} with 0 in 0 | sets used informally, F2.1 (index, Where this goes); finite counter-reading, checked by verify/ch05/exr-counting-and-descriptions-b4.py; prp-unique-existence-use, def-definite-description (cited)
+exr-counting-and-descriptions-b4 (solution): the 16-line derivation; (b)'s counter-reading on {0} with 0 in 0 | sets used informally, F2.1 (index, Where this goes); finite counter-reading, checked by verify/ch05/exr-counting-and-descriptions-b4.py; prp-unique-existence-use, def-definite-description (cited, and in the Uses line)
 exr-equality-and-uniqueness-c1 (solution): no separating relation on 1 or 2 elements (18 relations) | case argument in the solution (rows and columns of a 2-element table)
 exr-equality-and-uniqueness-c2 (solution): no rule of F1.1 or F1.2 §01-F1.2 §04 removes a double negation | F1.2 §05's discussion (thm-raa-independent, F1.3, optional; pointed at only, nothing depends on it)
 exr-equality-and-uniqueness-c2 (solution): a longer conjunction groups to the right by default, so the brackets are written | F1.3 §05 (grouping convention)
 exr-equality-and-uniqueness-c2 (solution): the alternative routes by the derived rules not-not-E and LEM | F1.2 §05 (derived rules)
 exr-counting-and-descriptions-c3 (solution): the two halves of each premise; the counter-reading on {0} without the third premise | prp-unique-existence-use (cited); finite counter-reading
-exr-counting-and-descriptions-r1 (solution): p(t) = a(t) - 1 by structural induction on terms | def-term, thm-structural-induction, lem-parenthesis-count (cited); checked by verify/ch05/exr-counting-and-descriptions-r1.py
+exr-counting-and-descriptions-r1 (solution): p(t) = a(t) - 1 by structural induction on terms | def-term, lem-parenthesis-count (cited); thm-structural-induction (Uses line); checked by verify/ch05/exr-counting-and-descriptions-r1.py
 exr-counting-and-descriptions-r2 (solution): lines 2, 4-8 are the derivation of prp-contrapositive-converse | prp-contrapositive-converse, def-rule-raa (cited)
 exr-counting-and-descriptions-r3 (solution): lines 3-8 are the derivation of prp-curry | prp-curry (cited)
 exr-counting-and-descriptions-r4 (solution): forall-E at the compound term f(x_0) and =I | def-rule-universal-elimination, def-rules-equality (cited)
