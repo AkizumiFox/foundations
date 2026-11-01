@@ -423,20 +423,27 @@ Check: \( 52 = 17 \cdot 3 + 1 = 10 \cdot 5 + 2 = 7 \cdot 7 + 3 \). (Coprimality 
 ::: {#exr-units-and-crt-r1}
 [R1]
 
-Let \( \nZ = (\nN \times \nN)/{\sim} \) be the integers built as classes of pairs, with \( (a, b) \sim (c, d) \iff a + d = b + c \). Show that \( [(a, b)] \mapsto [a + b]_2 \) is a well-defined function \( \nZ \to \nZ/2\nZ \), and identify it.
+Let \( n \in \nN \) with \( n \ge 2 \). Prove that if \( 2^n - 1 \) is prime, then \( n \) is prime. Then show that the converse fails at \( n = 11 \).
 :::
 
 ::: {.solution}
-This is the method of @fd3:thm-well-defined-on-classes (a), from the construction @fd3:def-integers-as-classes. Take \( X = \nN \times \nN \) with \( \sim \), \( Y = \nZ \) with congruence modulo \( 2 \), the equivalence relation \( \sim_{2\nZ} \) whose quotient set is \( \nZ/2\nZ \) (@def-integers-mod-n-ring, @thm-quotient-ring-by-ideal (a)), and \( f(a, b) \coloneqq a + b \). Let \( (a, b) \sim (a', b') \), so \( a + b' = a' + b \). Then, in \( \nZ \),
-\[
-\begin{aligned}
-(a + b) - (a' + b') &= (a + b' - a' - b) + 2b - 2b' \\
-&= 0 + 2(b - b') ,
-\end{aligned}
-\]
-so \( a + b \equiv a' + b' \pmod{2} \). By @fd3:thm-well-defined-on-classes (a) there is exactly one function \( F \colon \nZ \to \nZ/2\nZ \) with \( F([(a, b)]) = [a + b]_2 \).
+The tool is the difference of powers, @lem-difference-of-powers, in the commutative ring \( \nZ \). We prove the contrapositive: if \( n \ge 2 \) is not prime, then \( 2^n - 1 \) is not prime.
 
-*Identification.* By the remark after @fd3:thm-integers-commutative-ring, \( [(a, b)] = a - b \) in \( \nZ \). Since \( (a + b) - (a - b) = 2b \), \( [a + b]_2 = [a - b]_2 \) by the class test. So \( F(z) = [z]_2 \) for every \( z \in \nZ \): \( F \) is the quotient map of \( \nZ/2\nZ \), which sends an integer to its parity class.
+*Two facts about powers of \( 2 \).* For every \( m \in \nN \), \( 2^m \ge 1 \): \( 2^0 = 1 \), and if \( 2^m \ge 1 \), then \( 2^{m+1} = 2^m \cdot 2 = 2^m + 2^m \ge 1 + 1 > 1 \) (@fd3:prp-ordered-ring-rules (b); induction, @fd1:ax-induction read on \( \nN \) by @fd3:cor-omega-identification). Hence, for \( m \ge 1 \), \( 2^m = 2^{m-1} \cdot 2 \ge 2 \) (@fd3:prp-ordered-ring-rules (c), or equality).
+
+*A divisor.* Since \( n \ge 2 \) is not prime, it has a positive divisor \( r \) with \( r \ne 1 \) and \( r \ne n \) (@fd2:def-prime). Then \( r \ge 2 \) by discreteness (@fd3:thm-integers-ordered-ring (c)) and \( r < n \) by @fd3:prp-divisibility-rules-integers (e). Write \( n = rs \) with \( s \in \nZ \); then \( s > 0 \), as \( r, n > 0 \), so \( s \ge 1 \), and \( r, s \in \nN \) (@fd3:prp-naturals-embed-integers). By @prp-power-laws-commutative-ring (b), \( 2^n = (2^r)^s \), and @lem-difference-of-powers with \( z = 2^r \), \( w = 1 \) and \( s \) in place of \( n \) gives
+\[
+2^n - 1 = (2^r - 1) \sum_{k=0}^{s-1} 2^{rk} .
+\]
+So \( d \coloneqq 2^r - 1 \) divides \( 2^n - 1 \).
+
+*Its size.* Since \( r - 2 \in \nN \), \( 2^r = 2^{r-2} \cdot 4 \ge 4 \) (@prp-power-laws-commutative-ring (a)), so \( d \ge 3 > 1 \). Since \( n - r \ge 1 \), \( 2^n = 2^r \, 2^{n-r} \ge 2 \cdot 2^r = 2^r + 2^r > 2^r \), as \( 2^r > 0 \); so \( d < 2^n - 1 \). Thus \( 2^n - 1 \) has the positive divisor \( d \) with \( 1 < d < 2^n - 1 \), and it is not prime.
+
+*The converse fails.* \( 11 \) is prime: by the remark after @lem-least-divisor-prime only \( d = 2, 3 \) need checking, and \( 11 = 5 \cdot 2 + 1 = 3 \cdot 3 + 2 \). But \( 2^{11} - 1 = 2047 = 23 \cdot 89 \), and \( 1 < 23 < 2047 \), so \( 2047 \) is not prime.
+
+::: {.uses}
+@lem-difference-of-powers (factor \( 2^n - 1 \)); @prp-power-laws-commutative-ring (a), (b) (laws of powers); @fd3:prp-divisibility-rules-integers (e) (divisor at most \( n \)); @fd2:def-prime.
+:::
 :::
 
 ::: {#exr-units-and-crt-r2}
@@ -515,7 +522,7 @@ exr-units-and-crt-b3 (solution): fd2 finite-set results read on omega | group (i
 exr-units-and-crt-c2 (solution): [2][1] = [2][4] in Z/6Z | verify/ch02/exr-units-and-crt-c2.py
 exr-units-and-crt-c2 (solution): (statement) the quoted proof's lines (0) and (4) | thm-integers-mod-n-ring (a), (b), (c); fd2:thm-finite-no-proper-copy, group (i) of F3.1's citing rule (fd3:cor-omega-identification), cited
 exr-units-and-crt-c3 (solution): x_1 = 7, x_2 = -53, 52 + 105Z | verify/ch02/exr-units-and-crt-c3.py
-exr-units-and-crt-r1 (solution): (a + b) - (a' + b') = 2(b - b'); [(a, b)] = a - b | fd3:prp-ring-algebra; remark after fd3:thm-integers-commutative-ring (fd3:prp-naturals-embed-integers), cited; def-integers-mod-n-ring, thm-quotient-ring-by-ideal (a) (congruence mod 2 is the equivalence relation of Z/2Z), cited; verify/ch02/exr-units-and-crt-r1.py
+exr-units-and-crt-r1 (solution): 2^m >= 1 and 2^m >= 2 for m >= 1; r with 2 <= r < n; 2^n - 1 = (2^r - 1) sum 2^{rk}; 3 <= d < 2^n - 1; 11 prime; 2047 = 23 * 89 | lem-difference-of-powers, prp-power-laws-commutative-ring (a), (b) (Chapter 1, F4.6), cited; fd3:prp-ordered-ring-rules (b), (c), fd3:thm-integers-ordered-ring (c), fd3:prp-divisibility-rules-integers (e), fd2:def-prime, fd1:ax-induction read on omega (fd3:cor-omega-identification), cited; remark after lem-least-divisor-prime; fd3:prp-naturals-embed-integers (r, s in N); verify/ch02/exr-units-and-crt-r1.py
 exr-units-and-crt-r2 (solution): powers b^n on omega carried into Z; product of the list L_{m,n} by induction | fd3:prp-omega-powers-parity, fd3:prp-naturals-embed-integers, def-prime-factorization (its recursion), fd1:ax-induction read on omega (fd3:cor-omega-identification (b)); inline
 exr-units-and-crt-r2 (solution): 2^m 3^n > 0 | fd3:prp-ordered-ring-rules (c), induction; inline
 exr-units-and-crt-r2 (solution): fd2:thm-product-countable mentioned for comparison | group (ii) of F3.1's citing rule; R item, prose comparison only

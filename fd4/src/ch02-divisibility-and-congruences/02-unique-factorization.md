@@ -365,7 +365,7 @@ So every common divisor of \( 1001 \) and \( 1023 \) divides \( 11 \), and a pos
 *The gcd by the algorithm* (@thm-euclidean-algorithm-integers): \( 1023 = 1 \cdot 1001 + 22 \), \( 1001 = 45 \cdot 22 + 11 \), \( 22 = 2 \cdot 11 + 0 \). The last non-zero remainder is \( 11 \).
 
 ::: {.uses}
-A common divisor of two integers divides their difference and every combination of them (@fd3:prp-divisibility-rules-integers (c)); a positive divisor of a positive integer is at most that integer (@fd3:prp-divisibility-rules-integers (e)); the definition of the gcd is @def-integer-gcd.
+@fd3:prp-divisibility-rules-integers (c) (divides every combination); @fd3:prp-divisibility-rules-integers (e) (positive divisor is smaller); @def-integer-gcd.
 :::
 :::
 
@@ -386,7 +386,7 @@ The proof of uniqueness in @thm-fundamental-arithmetic is a complete answer. Its
 - 2: uses the symmetric step and the non-decreasing order to get equality of the two chosen extreme entries (both largest, or both smallest).
 - 1: justifies the cancellation by the absence of zero divisors.
 - 2: applies the induction hypothesis (or minimality) to the shortened lists and concludes equality of length and entries.
-Slips that lose the step: using the uniqueness of the factorization of a smaller number without an induction or a least counterexample set up; applying Euclid's lemma for two factors to a product of many with no induction. Canceling a prime without noting that it is non-zero costs 1 point and is not fatal. A least-counterexample proof on \( n \) (the least positive integer with two different factorizations) maps to the same points: its set-up and the case \( n = 1 \) take the first 2, and "the cofactor \( m \) in \( n = m p_k \) has only one factorization" takes the last 2. A proof that compares the smallest entries \( p_1 = q_1 \) earns the same points, provided it proves (for example by induction on the length) that a product equals its first entry times the product of the re-indexed list \( (p_2, \dots, p_{k+1}) \), and states the re-indexing of the shortened lists \( (p_2, \dots, p_{k+1}) \) and \( (q_2, \dots, q_l) \) before applying the induction hypothesis; asserting that identity without proof costs the 1 cancellation point.
+Slips that lose the step: using the uniqueness of the factorization of a smaller number without an induction or a least counterexample set up; applying Euclid's lemma for two factors to a product of many with no induction. Canceling a prime without noting that it is non-zero costs 1 point and does not lose the step. A least-counterexample proof on \( n \) (the least positive integer with two different factorizations) maps to the same points: its set-up and the case \( n = 1 \) take the first 2, and "the cofactor \( m \) in \( n = m p_k \) has only one factorization" takes the last 2. A proof that compares the smallest entries \( p_1 = q_1 \) earns the same points, provided it proves (for example by induction on the length) that a product equals its first entry times the product of the re-indexed list \( (p_2, \dots, p_{k+1}) \), and states the re-indexing of the shortened lists \( (p_2, \dots, p_{k+1}) \) and \( (q_2, \dots, q_l) \) before applying the induction hypothesis; asserting that identity without proof costs the 1 cancellation point.
 :::
 
 ::: {#exr-unique-factorization-c2}

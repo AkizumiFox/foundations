@@ -1114,7 +1114,7 @@ items:
   kind: exr
   file: 02-unique-factorization.md
   line: 343
-  hash: 1bda71f7b543
+  hash: ff74d739f5a2
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1226,11 +1226,20 @@ items:
       − 4185 = 1; 91 = 45·2 + 1; gcd = 11. The citations of prp-divisibility-rules-integers (c), (e) and
       def-integer-gcd moved into a .uses block (02:63-65) without loss. Ledger paths now point to verify/ch02,
       and those files exist.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: ff74d739f5a2
+    date: '2026-11-01'
+    evidence: '02-unique-factorization.md:343-370: rechecked 1001=7*11*13, 1023=3*11*31, 91*46-93*45=1,
+      1001*46-1023*45=11, Euclid run 1023=1001+22, 1001=45*22+11, 22=2*11; Uses block rewritten to the
+      ''@label (gist); @label'' form (fd3 divisibility rules (c), (e) are a|bx+cy and positive-divisor
+      bound, both as used); F005 resolved'
 - key: exr-unique-factorization-c1
   kind: exr
   file: 02-unique-factorization.md
   line: 374
-  hash: 8bf1e8410733
+  hash: 65108e1f8631
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1284,6 +1293,14 @@ items:
     evidence: 'Wording only: ''Chapter check'', ''What a complete answer needs'', ''Slips that lose the
       step''. The point allocation and the mathematics are unchanged. The leftover ''is not fatal'' in
       02:85 now refers to a heading that no longer exists. That is §13 wording, deferred under F018.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 65108e1f8631
+    date: '2026-11-01'
+    evidence: '02-unique-factorization.md:374-390: ''is not fatal'' replaced by ''does not lose the step''
+      (F002); rubric 2+3+2+1+2=10, steps match the uniqueness proof of thm-fundamental-arithmetic; remaining
+      heading wording (F018) is §13 wording deferred'
 - key: exr-unique-factorization-c2
   kind: exr
   file: 02-unique-factorization.md
@@ -2377,7 +2394,7 @@ items:
   kind: exr
   file: 04-units-and-crt.md
   line: 423
-  hash: 90ff46b8dd57
+  hash: c33ed3cf53a1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2422,10 +2439,20 @@ items:
     evidence: '04-units-and-crt.md:423-440: after the merge the previous chapter is fd4 Chapter 1 (F4.6),
       but R1 draws on fd3 Chapter 2 (def-integers-as-classes). STYLE §11.5 R1 rule is now broken. R2 (fd3
       Ch1 / fd2 Ch4) also needs re-checking against the new 3-4-chapters-back distance.'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: c33ed3cf53a1
+    date: '2026-11-01'
+    evidence: '04-units-and-crt.md:423-447: R1 replaced so its method comes from the previous chapter
+      (fd4 Ch1, F4.6) per STYLE §11.5: n composite => n=rs, 2<=r<n, lem-difference-of-powers gives (2^r-1)
+      | 2^n-1, 3<=2^r-1<2^n-1 from 2^m>=1 by induction and power laws (a),(b); 11 prime by the least-divisor
+      remark, 2047=23*89; checked by verify/ch02/exr-units-and-crt-r1.py (n<60). Old classes-of-pairs
+      R1 dropped; index.md What-you-need and Roadmap updated'
 - key: exr-units-and-crt-r2
   kind: exr
   file: 04-units-and-crt.md
-  line: 442
+  line: 449
   hash: 086ff2661b73
   verdicts:
   - stage: S5a
@@ -2462,7 +2489,7 @@ items:
 - key: exr-units-and-crt-r3
   kind: exr
   file: 04-units-and-crt.md
-  line: 458
+  line: 465
   hash: 032d1adf4300
   verdicts:
   - stage: S5a
@@ -2526,7 +2553,7 @@ items:
 - key: exr-units-and-crt-r4
   kind: exr
   file: 04-units-and-crt.md
-  line: 474
+  line: 481
   hash: a49f2c594276
   verdicts:
   - stage: S5a
