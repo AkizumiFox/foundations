@@ -1,6 +1,12 @@
 # The Quantifier Rules in Prose
 
-Section 8.1 read the connective rules in the sentences of written proofs. The statements of analysis, though, are made of "for every" and "there exists", and most of the words in an analysis proof carry a quantifier rule: "let", "fix", "choose", "take", "will do". This section completes the dictionary with the rows for the quantifiers, equality and unique existence, for definitions, "the" and double inclusion, and for the patterns that are not single rules but are written as if they were: the lemma ("it suffices to show") and its two "stronger" cases, induction, and symmetry ("without loss of generality"). It also makes exact one habit of analysis prose, the parenthesis "(depending on \( \varepsilon \))".
+Section 8.1 read the connective rules in the sentences of written proofs. The statements of analysis, though, are made of "for every" and "there exists". Most of the words in an analysis proof carry a quantifier rule: "let", "fix", "choose", "take", "will do". This section completes the dictionary of Section 8.1 with the phrases for
+
+- the quantifiers, equality and unique existence;
+- definitions, "the" and double inclusion;
+- the patterns that are not single rules but are written as if they were: the lemma ("it suffices to show") and its two "stronger" cases, induction, and symmetry ("without loss of generality").
+
+It also makes exact one habit of analysis prose, the parenthesis "(depending on \( \varepsilon \))".
 
 ## Three sentences, three rules
 
@@ -55,18 +61,18 @@ Each sentence opens a box, and the boxes are nested in the order of the sentence
 - "Then for every \( n \ge N \)" opens the \( \rulename{\forall I} \) box of \( n_0 \) and the \( \rulename{{\to}I} \) box of \( n_0 \ge N_0 \) (lines 7 and 9), and the computation is lines 8, 10 and 11. The words "for every \( n \ge N \)" also announce the lines that close these two boxes, 12 and 13.
 - The \( \rulename{\exists I} \) of line 14, which writes "some \( N \) works" from "this \( N \) works", and the closing line 15 of the \( \rulename{\exists E} \) box, are silent. They are the end of the paragraph.
 
-The one word in the paragraph that no rule asks for is the parenthesis "(depending on \( \varepsilon \))". It is the subject of a subsection below. First, the rows.
+The one word in the paragraph that no rule asks for is the parenthesis "(depending on \( \varepsilon \))". We return to it after the phrases for each quantifier rule.
 
 ## The quantifier rows
 
 | Rule | Phrases | Silent in plain prose? |
 |---|---|---|
-| \( \rulename{\forall I} \) | "let \( x \in A \)"; "fix \( \varepsilon > 0 \)"; "let \( \varepsilon > 0 \) be given"; "since \( x \) was arbitrary" | never the introduction; "since \( x \) was arbitrary" may be silent |
-| \( \rulename{\forall E} \) | "in particular, for \( x = \dots \)"; "applying … with \( \varepsilon/2 \) in place of \( \varepsilon \)" | the instance must be named when it is not the obvious one |
-| \( \rulename{\exists I} \) | "take \( N = \dots \)"; "let \( \delta \coloneqq \dots \); then …"; "… will do" | never; its dependencies are stated |
-| \( \rulename{\exists E} \) | "choose \( N \) such that"; "by hypothesis there is \( k \) with \( n = 2k \)"; "let \( x_0 \) be such a point" | never; the name must be fresh |
+| \( \rulename{\forall I} \) | "let \( x \in A \)", "fix \( \varepsilon > 0 \)", "let \( \varepsilon > 0 \) be given", "since \( x \) was arbitrary" | never the introduction; "since \( x \) was arbitrary" may be silent |
+| \( \rulename{\forall E} \) | "in particular, for \( x = \dots \)", "applying … with \( \varepsilon/2 \) in place of \( \varepsilon \)" | the instance must be named when it is not the obvious one |
+| \( \rulename{\exists I} \) | "take \( N = \dots \)", "let \( \delta \coloneqq \dots \); then …", "… will do" | never; its dependencies are stated |
+| \( \rulename{\exists E} \) | "choose \( N \) such that", "by hypothesis there is \( k \) with \( n = 2k \)", "let \( x_0 \) be such a point" | never; the name must be fresh |
 
-The phrases in the table are mostly the bounded forms of the rules (@prp-bounded-quantifier-rules): "let \( x \in A \)" opens a \( \rulename{\forall I} \) box whose assumption is \( x \in A \), and "choose \( N \in \nN \) such that …" opens an \( \rulename{\exists E} \) box with the two assumptions \( N \in \nN \) and "…". A bound is part of the phrase: "let \( \varepsilon > 0 \)" is one step, not "let \( \varepsilon \)" followed by "suppose \( \varepsilon > 0 \)".
+Most phrases in the table are the bounded forms of the rules (@prp-bounded-quantifier-rules). For example, "let \( x \in A \)" opens a \( \rulename{\forall I} \) box whose assumption is \( x \in A \). And "choose \( N \in \nN \) such that …" opens an \( \rulename{\exists E} \) box with the two assumptions \( N \in \nN \) and "…". A bound is part of the phrase: "let \( \varepsilon > 0 \)" is one step, not "let \( \varepsilon \)" followed by "suppose \( \varepsilon > 0 \)".
 
 In analysis, \( \rulename{\forall I} \) is the first sentence of every limit proof: "Let \( \varepsilon > 0 \)." \( \rulename{\forall E} \) is "apply the definition of \( a_n \to L \) with \( \varepsilon/2 \)": the instance \( \varepsilon/2 \) is not the obvious one, so it is named. \( \rulename{\exists I} \) is the line that places a constant, "let \( \delta \coloneqq \min\{1, \varepsilon/10\} \)", written before the computation that shows it works. \( \rulename{\exists E} \) is "choose \( N \) (depending on \( \varepsilon \)) such that …", in which the name \( N \) has not been used before in the proof.
 
@@ -85,7 +91,7 @@ where the first equality substitutes \( a_n = c \) [\( \rulename{{=}E} \)] and t
 
 The last sentence stands for three closing lines, all silent: the \( \rulename{{\to}I} \) and \( \rulename{\forall I} \) for \( n \) ("for every \( n \ge N \)"), and the \( \rulename{\forall I} \) for \( \varepsilon \) ("since \( \varepsilon \) was arbitrary"). The witness "take \( N \coloneqq 0 \)" is placed before the work that justifies it.
 
-Two things here are degenerate, and both are worth seeing once. The witness \( N \) depends on nothing: any \( N \in \nN \) works. And the assumption \( n \ge N \) is never used. The box is still opened, because the goal \( \forall n \in \nN\; (n \ge N \to \dots) \) asks for it; without "let \( n \ge N \)", the line "\( \abs{a_n - c} = 0 \)" would not say which \( n \) it is about.
+Two things in this proof are unusually simple, and both are worth seeing once. The witness \( N \) depends on nothing: any \( N \in \nN \) works. And the assumption \( n \ge N \) is never used. The box is still opened, because the goal \( \forall n \in \nN\; (n \ge N \to \dots) \) asks for it; without "let \( n \ge N \)", the line "\( \abs{a_n - c} = 0 \)" would not say which \( n \) it is about.
 :::
 
 ## The dependency parenthesis
@@ -94,7 +100,7 @@ In the paragraph that opened this section, \( N \) was chosen "(depending on \( 
 
 *A constant chosen in a box may depend on the names of the boxes open around that box, and it does depend only on the names in the line it comes from.*
 
-In the derivation of Section 6.1, the witness \( N_0 \) is obtained at line 5 from line 4, which mentions \( \varepsilon_0 \), inside the box of \( \varepsilon_0 \) only. So \( N_0 \) may depend on \( \varepsilon_0 \), and it does. In the derivation of @exm-uniform-implies-continuous, the witness \( \delta_0 \) is obtained inside the boxes of \( x_0 \) and \( \varepsilon_0 \), so it **may** depend on both; but it comes from a line that mentions \( \varepsilon_0 \) alone, so it **does** depend only on \( \varepsilon_0 \), and that is uniformity.
+In the derivation of Section 6.1, the witness \( N_0 \) is obtained at line 5 from line 4, which mentions \( \varepsilon_0 \), inside the box of \( \varepsilon_0 \) only. So \( N_0 \) may depend on \( \varepsilon_0 \), and it does. In the derivation of @exm-uniform-implies-continuous, the witness \( \delta_0 \) is obtained inside the boxes of \( x_0 \) and \( \varepsilon_0 \), so it **may** depend on both. But it comes from a line that mentions \( \varepsilon_0 \) alone, so it **does** depend only on \( \varepsilon_0 \). That is uniformity.
 
 ```{=latex}
 \begin{center}
@@ -156,7 +162,7 @@ since then every \( n \in \nZ_{>0} \) with \( n \ge N \) has \( 0 < 1/n \le 1/N 
 
 By the school fact, applied to \( u = 1/\varepsilon \) [\( \rulename{\forall E} \)], there is an integer greater than \( 1/\varepsilon \); choose such an integer \( N \) [\( \rulename{\exists E} \)], which depends on \( \varepsilon \). Since \( \varepsilon > 0 \), we have \( 1/\varepsilon > 0 \), so \( N > 0 \) and \( N \in \nZ_{>0} \). From \( N > 1/\varepsilon > 0 \), taking reciprocals reverses the inequality: \( 1/N < \varepsilon \), which is (\( \ast \)). So this \( N \) will do [\( \rulename{\exists I} \)], and \( 1/n \to 0 \).
 
-Read the proof as a skeleton. The first sentence opens the box of \( \varepsilon \). The second is an "it suffices to show", in the sense of the row below: it states a simpler claim (\( \ast \)), shows on the spot that (\( \ast \)) is enough, and leaves (\( \ast \)) to be proved. The next paragraph proves (\( \ast \)). It contains two different quantifier steps that both concern \( N \): "choose" is the \( \rulename{\exists E} \) on the school fact, which hands over some integer beyond \( 1/\varepsilon \) and calls it \( N \); "will do" is the \( \rulename{\exists I} \) that offers this \( N \) as the witness the definition asks for. Between them, the clause "so \( N > 0 \) and \( N \in \nZ_{>0} \)" checks the bound \( N \in \nZ_{>0} \) of the witness, which the bounded \( \rulename{\exists I} \) needs as a line.
+Read the proof as a skeleton. The first sentence opens the box of \( \varepsilon \). The second is an "it suffices to show": it states a simpler claim (\( \ast \)), shows on the spot that (\( \ast \)) is enough, and leaves (\( \ast \)) to be proved. The next paragraph proves (\( \ast \)). It contains two different quantifier steps that both concern \( N \). The word "choose" is the \( \rulename{\exists E} \) on the school fact: it gives some integer beyond \( 1/\varepsilon \) and calls it \( N \). The words "will do" are the \( \rulename{\exists I} \) that offers this \( N \) as the witness the definition asks for. Between them, the clause "so \( N > 0 \) and \( N \in \nZ_{>0} \)" checks the bound \( N \in \nZ_{>0} \) of the witness, which the bounded \( \rulename{\exists I} \) needs as a line.
 
 The constant \( N \) depends on \( \varepsilon \) only: it came from the school fact at \( 1/\varepsilon \), inside the box of \( \varepsilon \). For instance, \( \varepsilon = 0.03 \) has \( 1/\varepsilon = 33.3\ldots \), and \( N = 34 \) is a choice that works; so is any larger integer.
 :::
@@ -178,9 +184,9 @@ The constant \( N \) depends on \( \varepsilon \) only: it came from the school 
 
 In analysis, \( \rulename{{=}E} \) is at work in every chain of equalities and inequalities, such as
 \[
-\abs{x^2 - 4} = \abs{x - 2}\, \abs{x + 2} \le 5 \abs{x - 2} \quad \text{for } \abs{x - 2} < 1 ,
+\abs{x^2 - 4} = \abs{x - 2}\, \abs{x + 2} \le 5 \abs{x - 2} \quad \text{for } \abs{x - 2} < 1 .
 \]
-where each \( = \) link substitutes equals for equals and each inequality link applies one fact about order (Section 5.7). (Here \( \abs{x - 2} < 1 \) gives \( 1 < x < 3 \), so \( 3 < x + 2 < 5 \).) The \( \rulename{{=}I} \) lines \( t = t \) that such chains rest on are never written. Unique existence (@def-unique-existence) has two halves, which @prp-unique-existence-use separates: "\( 2x + 3 = 7 \) has exactly one real solution: \( x = 2 \) is one, and if \( 2y + 3 = 7 \), then \( y = 2 \)". The first clause is existence, by \( \rulename{\exists I} \); the second is uniqueness, a \( \rulename{\forall I} \) and \( \rulename{{\to}I} \) box on a second candidate. Neither half implies the other, so neither may be silent.
+Each \( = \) link substitutes equals for equals, and each inequality link applies one fact about order (Section 5.7). (Here \( \abs{x - 2} < 1 \) gives \( 1 < x < 3 \), so \( 3 < x + 2 < 5 \).) The \( \rulename{{=}I} \) lines \( t = t \) that such chains rest on are never written. Unique existence (@def-unique-existence) has two halves. @prp-unique-existence-use separates them: "\( 2x + 3 = 7 \) has exactly one real solution: \( x = 2 \) is one, and if \( 2y + 3 = 7 \), then \( y = 2 \)". The first clause is existence, by \( \rulename{\exists I} \); the second is uniqueness, a \( \rulename{\forall I} \) and \( \rulename{{\to}I} \) box on a second candidate. Neither half implies the other, so neither may be silent.
 
 The uniqueness half often stands alone, when existence is not claimed or is proved elsewhere. Uniqueness of limits is a case of this kind.
 
@@ -200,11 +206,11 @@ Let \( \varepsilon > 0 \) [\( \rulename{\forall I} \), opening]. Then \( \vareps
 \]
 where the inequality is the triangle inequality of @exm-triangle-inequality-cases, with \( \abs{L - a_n} = \abs{a_n - L} \). Since \( \varepsilon > 0 \) was arbitrary, \( \abs{L - M} < \varepsilon \) for every \( \varepsilon > 0 \) [\( \rulename{\forall I} \), closing], and @prp-arbitrarily-close-equal gives \( L = M \) [\( \rulename{{\to}E} \), citing it].
 
-Four things in this proof are never silent, and each is visible. The instance \( \varepsilon/2 \) is named twice, because it is not the obvious instance. The two witnesses get two names, \( N_1 \) and \( N_2 \): the hypotheses promise a threshold for \( L \) and a threshold for \( M \), and nothing says they are the same number, so calling both \( N \) would assert an equality nobody proved (Section 8.6 catalogues the error). The point \( n = \max\{N_1, N_2\} \) is named, since the bounds are applied at it. And the closing result is cited by name.
+Four things in this proof are never silent, and each is visible. The instance \( \varepsilon/2 \) is named twice, because it is not the obvious instance. The two witnesses get two names, \( N_1 \) and \( N_2 \). The hypotheses promise a threshold for \( L \) and a threshold for \( M \), and nothing says they are the same number. Calling both \( N \) would assert an equality nobody proved; Section 8.6 lists this error, reusing one witness name for two choices. The point \( n = \max\{N_1, N_2\} \) is named, since the bounds are applied at it. And the closing result is cited by name.
 :::
 
 ::: {.second-reading title="The bookkeeping of the two choices"}
-What is silent is the bookkeeping of the two \( \rulename{\exists E} \) boxes. The line \( \abs{L - M} < \varepsilon \) mentions neither \( N_1 \), \( N_2 \) nor \( n \), so the side condition of \( \rulename{\exists E} \) lets it leave both boxes, and then the box of \( \varepsilon \) closes on it. The calculation chain hides its \( \rulename{{=}E} \) steps, as the row allows. The proof shows that a sequence has **at most one** limit: the uniqueness half of \( \exists! \). Whether a given sequence has a limit at all is a separate question, which this proof does not touch.
+What is silent is the bookkeeping of the two \( \rulename{\exists E} \) boxes. The line \( \abs{L - M} < \varepsilon \) mentions neither \( N_1 \), \( N_2 \) nor \( n \), so the side condition of \( \rulename{\exists E} \) lets it leave both boxes, and then the box of \( \varepsilon \) closes on it. The calculation chain hides its \( \rulename{{=}E} \) steps, as the equality table above allows. The proof shows that a sequence has **at most one** limit: the uniqueness half of \( \exists! \). Whether a given sequence has a limit at all is a separate question, which this proof does not touch.
 :::
 
 ## Definitions, descriptions and sets
@@ -215,7 +221,7 @@ Three more phrases do logical work in almost every chapter of analysis: "we defi
 |---|---|---|
 | a definition (a definitional extension, @prp-definitional-extension) | "we define \( f(x) \coloneqq \dots \)"; "call \( n \) *perfect* if …"; "write \( d \) for …" | never the definition; its uses (\( \rulename{{\leftrightarrow}E} \) or \( \rulename{{=}E} \) with it) yes |
 | "the" (a definite description, @def-definite-description) | "let \( L \) be the limit of \( (a_n) \)"; "the least element of \( A \)"; "\( \lim a_n \)" | never the existence and uniqueness behind "the": proved or cited before the name is used |
-| double inclusion | "we show \( A \subseteq B \) and \( B \subseteq A \)"; element chasing: "let \( x \in A \); … so \( x \in B \)"; "so \( A = B \)" | never either inclusion, nor the opening "let \( x \in \dots \)" of each, nor the appeal to extensionality that turns "the same elements" into \( A = B \) |
+| double inclusion | "we show \( A \subseteq B \) and \( B \subseteq A \)", "so \( A = B \)", and, for element chasing, "let \( x \in A \); … so \( x \in B \)" | never either inclusion, nor the opening "let \( x \in \dots \)" of each, nor the appeal to extensionality that turns "the same elements" into \( A = B \) |
 
 "The", as in "the limit", names an object. It may be used only once there is exactly one such object (Section 5.8): for a limit, existence is the hypothesis that \( (a_n) \) converges, and uniqueness is @exm-rhetoric-equality. Chapter 5 read \( A \subseteq B \) as \( \forall x\, (x \in A \to x \in B) \). Two inclusions give \( \forall x\, (x \in A \leftrightarrow x \in B) \), by \( \rulename{{\leftrightarrow}I} \) inside \( \rulename{\forall I} \): the two sets have the same elements. Each inclusion is an **element chase**: "let \( x \in A \)" opens a bounded \( \rulename{\forall I} \) box whose last line is \( x \in B \). The last step, from "the same elements" to \( A = B \), is not logic. Logic gives only the converse, that equal sets have the same elements (@exm-extensionality-logical-half). The step itself is the **axiom of extensionality**, an axiom about sets (Section 5.7), and a proof cites it, as a premise or with the words "by extensionality"; it is never silent.
 
@@ -237,7 +243,7 @@ Let \( A \coloneqq \{ x \in \nR : x^2 \le 2x \} \) and \( B \coloneqq \{ x \in \
 - \( (\supseteq) \) Let \( x \in B \) [assumption for \( \rulename{\forall I} \)]; so \( x \ge 0 \) and \( x - 2 \le 0 \) [\( \rulename{\wedge E} \)]. A product of a non-negative and a non-positive number is at most \( 0 \), so \( x(x - 2) \le 0 \), that is, \( x^2 \le 2x \), and \( x \in A \).
 - So \( A \subseteq B \) and \( B \subseteq A \): every real \( x \) has \( x \in A \leftrightarrow x \in B \) [\( \rulename{{\leftrightarrow}I} \) inside \( \rulename{\forall I} \)]. By extensionality, \( A = B \) [\( \rulename{\forall E} \), \( \rulename{{\to}E} \) with the axiom].
 
-The words "that is" unwind the two sets' definitions (\( \rulename{{\leftrightarrow}E} \), silent at level 3).
+The words "that is" use the definitions of the two sets (\( \rulename{{\leftrightarrow}E} \), silent in plain prose).
 :::
 
 ::: {.check}
@@ -262,7 +268,7 @@ The rows of this table are not rules of the calculus. Each is a pattern of rules
 
 ### It suffices to show
 
-"It suffices to show \( \varphi \)" does two things. It shows on the spot that \( \varphi \) gives the goal, and it leaves \( \varphi \) to be proved: the goal is replaced by \( \varphi \). As Section 1.3 observed, to show \( \psi \) it suffices to show \( \varphi \) when \( \varphi \to \psi \) is in hand. A lemma is the same move in the other order: prove \( \varphi \) first, then use it as if it were a premise. (Logicians call both a **cut**; @lem-weakening-cut (b) is the precise statement.) In analysis, "it suffices to show \( \abs{a_n - L} < \varepsilon \) for \( n \ge N \)" reduces a limit to one estimate; @exm-rhetoric-existential made one with the claim (\( \ast \)).
+"It suffices to show \( \varphi \)" does two things. It shows on the spot that \( \varphi \) gives the goal, and it leaves \( \varphi \) to be proved: the goal is replaced by \( \varphi \). As Section 1.3 observed, to show \( \psi \) it suffices to show \( \varphi \) when \( \varphi \to \psi \) is in hand. A lemma is the same step in the other order: prove \( \varphi \) first, then use it as if it were a premise. (Logicians call both a **cut**; @lem-weakening-cut (b) is the precise statement.) In analysis, "it suffices to show \( \abs{a_n - L} < \varepsilon \) for \( n \ge N \)" reduces a limit to one estimate; @exm-rhetoric-existential made one with the claim (\( \ast \)).
 
 ```{=latex}
 \begin{center}
@@ -286,15 +292,15 @@ In @exm-rhetoric-existential, which sentence is the "it suffices" step, and what
 "It suffices to find \( N \in \nZ_{>0} \) with \( 1/N < \varepsilon \), since then …". It leaves (\( \ast \)), which the next paragraph proves.
 :::
 
-Two cases of the move have names of their own. To prove \( \psi \) it suffices to prove a **stronger** \( \varphi \) from which \( \psi \) follows at once: to show \( x^2 < 1 \) for \( 0 < x < 1 \), show \( x^2 < x \), and then \( x^2 < x < 1 \). And a theorem stays true when its hypothesis is narrowed: from "if \( \abs{x} < 1 \), then \( x^2 < 1 \)" and "every \( x \in (0, 1) \) has \( \abs{x} < 1 \)", the chain of @prp-implication-transitive gives "if \( x \in (0, 1) \), then \( x^2 < 1 \)": a stronger hypothesis, a weaker theorem.
+Two cases of this step have names of their own. To prove \( \psi \) it suffices to prove a **stronger** \( \varphi \) from which \( \psi \) follows at once: to show \( x^2 < 1 \) for \( 0 < x < 1 \), show \( x^2 < x \), and then \( x^2 < x < 1 \). And a theorem stays true when its hypothesis is narrowed: from "if \( \abs{x} < 1 \), then \( x^2 < 1 \)" and "every \( x \in (0, 1) \) has \( \abs{x} < 1 \)", the chain of @prp-implication-transitive gives "if \( x \in (0, 1) \), then \( x^2 < 1 \)": a stronger hypothesis, a weaker theorem.
 
 ::: {.second-reading title="Stronger and weaker, in general"}
-Both moves are instances of one fact about where a part sits in a formula. Weakening a part in a positive place, such as the conclusion of an implication, weakens the whole; weakening a part in a negative place, such as the hypothesis, strengthens the whole. The second-pass Section 4.9 states and proves this as @thm-monotonicity; nothing on the main line uses it.
+Both are instances of one fact about where a part sits in a formula. Weakening a part in a positive place, such as the conclusion of an implication, weakens the whole; weakening a part in a negative place, such as the hypothesis, strengthens the whole. Section 4.9 states and proves this as @thm-monotonicity; it may be skipped on a first reading, and the main text does not depend on it.
 :::
 
 ### Induction
 
-An induction is \( \rulename{{\to}E} \) applied to @ax-induction, whose hypothesis is a conjunction: the base case \( P(0) \), and the step "**for every** \( n \in \nN \), if \( P(n) \) then \( P(n + 1) \)". So the step is a \( \rulename{\forall I} \) box with a \( \rulename{{\to}I} \) box inside it, and the phrase "suppose the claim holds for \( n \)" opens the inner box; its assumption is the **induction hypothesis**, and it must be stated, because the step uses it.
+An induction is \( \rulename{{\to}E} \) applied to @ax-induction, whose hypothesis is a conjunction: the base case \( P(0) \), and the step "**for every** \( n \in \nN \), if \( P(n) \) then \( P(n + 1) \)". So the step is a \( \rulename{\forall I} \) box with a \( \rulename{{\to}I} \) box inside it. The phrase "suppose the claim holds for \( n \)" opens the inner box. Its assumption is the **induction hypothesis**, and it must be stated, because the step uses it.
 
 ```{=latex}
 \begin{center}
@@ -314,7 +320,7 @@ An induction is \( \rulename{{\to}E} \) applied to @ax-induction, whose hypothes
 
 ### Without loss of generality
 
-Symmetry is a case split \( \rulename{\vee E} \) whose second box is the first with two letters exchanged. "Without loss of generality \( x \le y \)" writes the first box and leaves the second to the reader, who must be able to get it by swapping the letters; that works when the statement and the hypotheses come back unchanged under the swap, up to identities such as \( \abs{b - a} = \abs{a - b} \).
+Symmetry is a case split \( \rulename{\vee E} \) whose second box is the first with two letters exchanged. "Without loss of generality \( x \le y \)" writes the first box and leaves the second to the reader. The reader must be able to get it by swapping the letters. That works when the statement and the hypotheses come back unchanged under the swap, up to identities such as \( \abs{b - a} = \abs{a - b} \).
 
 ```{=latex}
 \begin{center}
@@ -357,7 +363,7 @@ Yes: swapping \( x \) and \( y \) leaves the statement unchanged, and there are 
 
 By induction, \( P(n) \) holds for every \( n \in \nN \) [\( \rulename{{\to}E} \) on @ax-induction].
 
-The base case is the first hypothesis of @ax-induction, written as its own paragraph. The step is the second: "let \( n \in \nN \)" and "suppose \( P(n) \) holds" open its two boxes, and "hence \( P(n + 1) \)" is the last line of the inner one; the closing lines "so \( P(n) \to P(n + 1) \), for every \( n \)" are silent. The induction hypothesis is stated in full, and each of its halves is taken out by \( \rulename{\wedge E} \) and used: \( a^n > 0 \) twice (for the sign of \( a^{n+1} \), and to multiply \( a \le 1 \) by \( a^n \) without reversing it), and \( a^n \le 1 \) once, at the end. The statement was chosen with care: the tempting "\( a^n \le a \)" fails at \( n = 0 \) whenever \( a < 1 \), since \( a^0 = 1 \), and an induction for it would have to start at \( n = 1 \).
+The base case is the first hypothesis of @ax-induction, written as its own paragraph. The step is the second. In it, "let \( n \in \nN \)" and "suppose \( P(n) \) holds" open the two boxes, and "hence \( P(n + 1) \)" is the last line of the inner one. The closing lines "so \( P(n) \to P(n + 1) \), for every \( n \)" are silent. The induction hypothesis is stated in full, and each of its halves is taken out by \( \rulename{\wedge E} \) and used. The half \( a^n > 0 \) is used twice: for the sign of \( a^{n+1} \), and to multiply \( a \le 1 \) by \( a^n \) without reversing it. The half \( a^n \le 1 \) is used once, at the end. The statement was chosen with care: the tempting "\( a^n \le a \)" fails at \( n = 0 \) whenever \( a < 1 \), since \( a^0 = 1 \), and an induction for it would have to start at \( n = 1 \).
 
 *(b)* Without loss of generality, \( a \le b \). Then \( \max\{a, b\} = b \) and \( \min\{a, b\} = a \), and since \( b - a \ge 0 \),
 \[
@@ -375,31 +381,31 @@ The phrase abbreviates a \( \rulename{\vee E} \) on "\( a \le b \) or \( b \le a
 
 Some quantifiers in mathematical English are not written at all, and some are written where they do not apply. Four habits of mathematical English cover most of them.
 
-**The hidden universal closure.** A theorem stated as "if \( n \) is even, then \( n^2 \) is even" means "for every integer \( n \), if \( n \) is even, then \( n^2 \) is even". Section 5.1 introduced this convention: *a letter that is not introduced anywhere, in the statement of a theorem, is read with a "for every" in front of the whole statement.* It applies to the statement of a theorem, lemma or exercise, not to a line inside a proof: inside a proof every letter has been introduced by a "let" or a "choose", and its box tells the reader which. The proof of such a theorem begins by opening the hidden box: "let \( n \) be an integer".
+**The hidden universal closure.** A theorem stated as "if \( n \) is even, then \( n^2 \) is even" means "for every integer \( n \), if \( n \) is even, then \( n^2 \) is even". Section 5.1 introduced this convention: *a letter that is not introduced anywhere, in the statement of a theorem, is read with a "for every" in front of the whole statement.* It applies to the statement of a theorem, lemma or exercise, not to a line inside a proof. Inside a proof every letter has been introduced by a "let" or a "choose", and its box tells the reader which. The proof of such a theorem begins by opening the hidden box: "let \( n \) be an integer".
 
-**"For all large \( n \)"** hides an \( \exists N \) and a bound, as the Quick check above found. "Eventually" means the same. The negation of "\( P(n) \) for all large \( n \)" is "for every \( N \) there is an \( n \ge N \) for which \( P(n) \) fails", usually said "\( P(n) \) fails for infinitely many \( n \)".
+**"For all large \( n \)"** means "there is an \( N \) such that for every \( n \ge N \)", so it hides an \( \exists N \) and a bound (Section 6.1). "Eventually" means the same. The negation of "\( P(n) \) for all large \( n \)" is "for every \( N \) there is an \( n \ge N \) for which \( P(n) \) fails", usually said "\( P(n) \) fails for infinitely many \( n \)".
 
 **"Any"** can mean "every" or "some", and only the rest of the sentence decides (Section 5.1). "Any \( x \in A \) is positive" means every element of \( A \) is positive. "If any \( x \in A \) is positive, then \( A \) is non-empty" means: if **some** element of \( A \) is positive. When "any" appears, rewrite the sentence once with "every" and once with "some", and keep the one that was meant.
 
-**Quantifiers at the end of a sentence.** English lets a writer put "for some \( x \)" or "for all \( y \)" after the formula they govern, and then the order of two such phrases is unclear. "\( x^2 > y \) for some \( x \) for all \( y \)", over \( \nR \), has two readings:
+**Quantifiers at the end of a sentence.** English lets a writer put "for some \( x \)" or "for all \( y \)" after the formula they govern. Then the order of two such phrases is unclear. For example, over \( \nR \), the sentence "\( x^2 > y \) for some \( x \) for all \( y \)" has two readings:
 \[
 \forall y\, \exists x\; (x^2 > y) \qquad \text{and} \qquad \exists x\, \forall y\; (x^2 > y) .
 \]
 The first is true (for \( y \ge 0 \) take \( x = y + 1 \), since \( (y + 1)^2 = y^2 + 2y + 1 > y \); for \( y < 0 \) take \( x = 0 \)). The second is false (whatever \( x \) is proposed, \( y = x^2 \) refutes it). The remedy is to write the quantifiers of such a statement **in front**, in the order in which they apply. A trailing phrase such as "for every \( n \ge N \)" is safe only when it is the last quantifier of the sentence, as in the definition of \( a_n \to L \).
 
 ::: {.warning}
-Moving "for all \( x \)" to the end of a sentence can change continuity into uniform continuity. "\( \abs{f(x) - f(y)} < \varepsilon \) whenever \( \abs{x - y} < \delta \), for all \( x \)", written after "for every \( \varepsilon > 0 \) there is \( \delta > 0 \) such that", does not say whether \( \forall x \) comes before \( \exists \delta \) (continuity at every point) or after it (uniform continuity). The two formulas of Section 6.4 differ exactly there, and @exm-square-not-uniform shows that the difference is real: \( f(x) = x^2 \) on \( \nR \) satisfies the first and not the second. Write the quantifiers in front.
+Moving "for all \( x \)" to the end of a sentence can change continuity into uniform continuity. Take the sentence "for every \( \varepsilon > 0 \) there is \( \delta > 0 \) such that \( \abs{f(x) - f(y)} < \varepsilon \) whenever \( \abs{x - y} < \delta \), for all \( x \)". It does not say whether \( \forall x \) comes before \( \exists \delta \), which is continuity at every point, or after it, which is uniform continuity. The two formulas of Section 6.4 differ exactly there, and @exm-square-not-uniform shows that the difference is real: \( f(x) = x^2 \) on \( \nR \) satisfies the first and not the second. Write the quantifiers in front.
 :::
 
 ::: {.warning}
 [Not allowed: quantifier steps in prose]
 
-Each sentence below might appear in a proof, and each is wrong. The tag names the entry of the catalogue in Section 8.6, or the item of the convention on silent steps in Section 8.3, that it breaks.
+Each sentence below might appear in a proof, and each is wrong. After each one we name the error it makes, with its number in the list of errors of Section 8.6, or the rule of Section 8.3 on silent steps that it breaks.
 
-- "Let \( \varepsilon > 0 \) and choose \( N \) with \( \abs{a_n - L} < \varepsilon \) for every \( n \ge N \). This \( N \) works for every \( \varepsilon > 0 \)." The \( N \) was chosen inside the box of one \( \varepsilon \): (N2).
-- "Some \( x \in A \) has \( f(x) > 0 \). Let \( x \in A \); then \( f(x) > 0 \)." The witness of an existential is *chosen* ("choose \( x \in A \) with \( f(x) > 0 \)", \( \rulename{\exists E} \) with a fresh name). Written with "let", the second sentence claims \( f(x) > 0 \) for every \( x \in A \): (N3).
+- "Let \( \varepsilon > 0 \) and choose \( N \) with \( \abs{a_n - L} < \varepsilon \) for every \( n \ge N \). This \( N \) works for every \( \varepsilon > 0 \)." The \( N \) was chosen inside the box of one \( \varepsilon \), yet it is claimed to work for all of them: (N2).
+- "Some \( x \in A \) has \( f(x) > 0 \). Let \( x \in A \); then \( f(x) > 0 \)." The witness of an existential is *chosen* ("choose \( x \in A \) with \( f(x) > 0 \)", \( \rulename{\exists E} \) with a fresh name). Written with "let", the second sentence claims \( f(x) > 0 \) for every \( x \in A \). This treats a chosen name as arbitrary, (N3).
 - "Choose \( N \) with \( \abs{a_n - L} < \varepsilon/2 \) for \( n \ge N \), and \( N \) with \( \abs{b_n - M} < \varepsilon/2 \) for \( n \ge N \)." One name for two witnesses: (N4).
-- "Let \( L \) be the limit of \( (a_n) \)", in a proof that has not shown that \( (a_n) \) converges: (N14).
+- "Let \( L \) be the limit of \( (a_n) \)", in a proof that has not shown that \( (a_n) \) converges. This names an object before showing it exists, (N14).
 - "Let \( \varepsilon > 0 \). Then \( \abs{a_n - L} < \varepsilon \) for every \( n \ge N \), as required", where no sentence says what \( N \) is. The witness of \( \rulename{\exists I} \), with what it depends on, is never silent (@def-silent-steps, Section 8.3).
 :::
 
@@ -500,7 +506,11 @@ Each sentence has a quantifier phrase at its end. Write both readings in symbols
 
 *(c)* \( \exists \delta > 0\; \forall x\, \forall y\; (\abs{x - y} < \delta \to \abs{f(x) - f(y)} < 1) \) and \( \forall x\, \forall y\; \exists \delta > 0\; (\abs{x - y} < \delta \to \abs{f(x) - f(y)} < 1) \). For \( f(x) = x^2 \) the first is false: it is the uniform continuity condition at \( \varepsilon = 1 \), and @exm-square-not-uniform refutes it with \( x = 1/\delta \), \( y = 1/\delta + \delta/2 \), for which \( \abs{x - y} < \delta \) and \( \abs{x^2 - y^2} = 1 + \delta^2/4 \ge 1 \). The second is true for every function: given \( x \) and \( y \), if \( x = y \) then \( \abs{f(x) - f(y)} = 0 < 1 \) for any \( \delta \), say \( \delta = 1 \); if \( x \ne y \), take \( \delta = \abs{x - y} \), so that \( \abs{x - y} < \delta \) is false and the implication holds vacuously.
 
-In (a) and (c), the reading with \( \exists \) in front is the one a writer means; the other is true of every function, so it says nothing about \( f \). In (b), the intended reading is \( \forall x\, \exists y \). Written with the quantifiers in front, the sentences say what they mean: "there is \( M \) such that \( f(x) \le M \) for every \( x \)", "for every \( x \) there is \( y \) with \( x + y = 0 \)", "there is \( \delta > 0 \) such that for all \( x, y \), …".
+In (a) and (c), the reading with \( \exists \) in front is the one a writer means; the other is true of every function, so it says nothing about \( f \). In (b), the intended reading is \( \forall x\, \exists y \). Written with the quantifiers in front, the sentences say what they mean:
+
+- "there is \( M \) such that \( f(x) \le M \) for every \( x \)";
+- "for every \( x \) there is \( y \) with \( x + y = 0 \)";
+- "there is \( \delta > 0 \) such that for all \( x, y \), …".
 :::
 
 ::: {#exr-quantifier-rhetoric-b2}
@@ -533,18 +543,18 @@ Let \( A \coloneqq \{ n \in \nZ : 6 \mid n \} \) and \( B \coloneqq \{ n \in \nZ
 
 ::: {.solution}
 - \( (\subseteq) \) Let \( n \in A \) [\( \rulename{\forall I} \)], and choose \( k \) with \( n = 6k \) [\( \rulename{\exists E} \), \( k \) fresh]. Then \( n = 2(3k) \) and \( n = 3(2k) \), so \( 2 \mid n \) and \( 3 \mid n \), with the witnesses \( 3k \) and \( 2k \) [\( \rulename{\exists I} \) twice, \( \rulename{\wedge I} \)]; so \( n \in B \).
-- \( (\supseteq) \) Let \( n \in B \) [\( \rulename{\forall I} \)]. Choose \( a \) with \( n = 2a \) and \( b \) with \( n = 3b \) [\( \rulename{\exists E} \) twice, two fresh names: one name for both would be (N4)]. Then \( b = 3b - 2b = n - 2b = 2a - 2b = 2(a - b) \), so \( n = 3b = 6(a - b) \), and \( 6 \mid n \) with the witness \( a - b \) [\( \rulename{\exists I} \)]; so \( n \in A \).
+- \( (\supseteq) \) Let \( n \in B \) [\( \rulename{\forall I} \)]. Choose \( a \) with \( n = 2a \) and \( b \) with \( n = 3b \) [\( \rulename{\exists E} \) twice, two fresh names: one name for both would reuse a witness name, (N4)]. Then \( b = 3b - 2b = n - 2b = 2a - 2b = 2(a - b) \), so \( n = 3b = 6(a - b) \), and \( 6 \mid n \) with the witness \( a - b \) [\( \rulename{\exists I} \)]; so \( n \in A \).
 - So every integer \( n \) has \( n \in A \leftrightarrow n \in B \) [\( \rulename{{\leftrightarrow}I} \) inside \( \rulename{\forall I} \)], and by extensionality \( A = B \).
 
 The two \( \rulename{\exists E} \) boxes of \( (\supseteq) \) close on "\( n \in A \)", which mentions neither \( a \) nor \( b \).
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 - 2: \( (\subseteq) \), with \( k \) chosen and both witnesses written.
 - 4: \( (\supseteq) \): two choices with distinct names (1); the computation \( b = 2(a - b) \), or another valid route to an integer \( c \) with \( n = 6c \) (2); the witness named (1).
 - 2: the double-inclusion frame: both inclusions, each opened by "let \( n \in \dots \)", and the conclusion \( A = B \) by extensionality, cited.
 - 2: the tags: \( \rulename{\forall I} \), \( \rulename{\exists E} \) with fresh names, \( \rulename{\exists I} \).
 
-Fatal errors (0 for the step): one name for both witnesses; "\( 2 \mid n \) and \( 3 \mid n \), so \( 6 \mid n \)" asserted without an argument (N9).
+Slips that lose the step (0 points for it): one name for both witnesses; "\( 2 \mid n \) and \( 3 \mid n \), so \( 6 \mid n \)" asserted without an argument, a fact used that is not available, (N9).
 :::
 
 ### C. Going deeper
@@ -581,13 +591,14 @@ The phrase abbreviates \( \rulename{\vee E} \) on "\( x \le y \) or \( y \le x \
 
 With the student's case (\( x \le y \): \( x \max\{x, y\} = xy \ge xy \)), this proves the claim in either case. The hypothesis \( x \ge 0 \) is used only in the skipped case. It cannot be dropped: \( x = -1 \), \( y = -2 \) has \( \max\{x, y\} = -1 \), so \( x \max\{x, y\} = 1 \), while \( xy = 2 \), and \( 1 \ge 2 \) is false.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 - 2: (a) a correct computation in the case \( x \le y \).
 - 3: (a) the \( \rulename{\vee E} \) written out, with its disjunction justified, and the exchange checked against the statement.
 - 2: (b) the reason: the exchange changes the hypothesis and the claim.
 - 2: (b) the case \( y \le x \) proved, using \( x \ge 0 \).
 - 1: (b) a counterexample without \( x \ge 0 \), checked.
-Fatal errors (0 for the step): in (b), "the other case is similar" without computing it; a counterexample that satisfies \( x \ge 0 \).
+
+Slips that lose the step (0 points for it): in (b), "the other case is similar" without computing it; a counterexample that satisfies \( x \ge 0 \).
 :::
 
 ::: {#exr-quantifier-rhetoric-c2}
@@ -606,9 +617,10 @@ The first is true: given \( x > 0 \), there is an integer \( n > 1/x \) (the sch
 *What a different answer must have,* so that it can be checked against this one:
 - the sentence contains "for every \( x \)" and at least one existential quantifier ("there is", "for some") whose scope contains a formula mentioning \( x \);
 - moved to the end, "for every \( x \)" can be read as coming after the existential quantifier, so that the witness may no longer depend on \( x \);
-- both readings are written in symbols with all quantifiers in front, and there is a specific interpretation (here \( \nR \) with its usual order) in which one reading is true and the other false, each claim checked;
+- both readings are written in symbols with all quantifiers in front;
+- there is a specific interpretation, here \( \nR \) with its usual order, in which one reading is true and the other false, each claim checked;
 - the false reading is refuted by naming, for each candidate witness, a value of \( x \) that defeats it.
-Another correct answer, for \( f(x) = x^2 \) on \( \nR \), is "for every \( x \), for every \( \varepsilon > 0 \) there is \( \delta > 0 \) such that \( \abs{f(x) - f(y)} < \varepsilon \) whenever \( \abs{x - y} < \delta \)" (continuity, true); with "for every \( x \)" moved to the end, it becomes the sentence of the warning, whose uniform-continuity reading @exm-square-not-uniform refutes.
+Another correct answer, for \( f(x) = x^2 \) on \( \nR \), is "for every \( x \), for every \( \varepsilon > 0 \) there is \( \delta > 0 \) such that \( \abs{f(x) - f(y)} < \varepsilon \) whenever \( \abs{x - y} < \delta \)": continuity, which is true. With "for every \( x \)" moved to the end, it becomes the sentence of the warning on continuity above. Its uniform-continuity reading is refuted by @exm-square-not-uniform.
 :::
 
 <!-- dependency ledger

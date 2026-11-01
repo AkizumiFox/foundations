@@ -1,6 +1,6 @@
 # The Dispute over Excluded Middle
 
-Here is a proof that two numbers with a certain property exist which, when it is finished, still does not tell you what the numbers are. It is correct by the rules of this book. Some mathematicians, called **intuitionists**, reject it, for a century now and for reasons that are mathematical rather than merely fussy. This section shows the proof, says what those mathematicians ask of a proof, finds the one rule that fails to provide it, and asks what can be proved without that rule and what analysis would lose.
+Here is a proof that two numbers with a certain property exist. When it is finished, it still does not tell you what the numbers are. It is correct by the rules of this book. Some mathematicians, called **intuitionists**, reject it, for a century now and for reasons that are mathematical rather than merely fussy. This section shows the proof and says what those mathematicians ask of a proof. It then finds the one rule that fails to provide it, and asks what can be proved without that rule and what analysis would lose.
 
 ## Irrational powers, with and without a witness
 
@@ -32,7 +32,7 @@ which is rational [\( \rulename{\exists I} \)].
 In either case there are irrational \( a \) and \( b \) with \( a^b \) rational. This proves the theorem.
 :::
 
-The classical step is the first line, \( \rulename{LEM} \) on the statement "\( s \) is rational". Every other step uses only rules other than \( \rulename{RAA} \). The proof does **not** tell us which pair works. It hands over two candidate pairs, \( (\sqrt 2, \sqrt 2) \) and \( (\sqrt 2^{\sqrt 2}, \sqrt 2) \), and a guarantee that one of them succeeds. The next subsection says why some mathematicians do not accept such a proof. Section 2.5 described excluded middle as making a decision; here the decision about "\( s \) is rational" is made, and nobody learns its outcome.
+The classical step is the first line, \( \rulename{LEM} \) on the statement "\( s \) is rational". Every other step uses only rules other than \( \rulename{RAA} \). The proof does **not** tell us which pair works. It hands over two candidate pairs, \( (\sqrt 2, \sqrt 2) \) and \( (\sqrt 2^{\sqrt 2}, \sqrt 2) \), and a guarantee that one of them succeeds. Some mathematicians do not accept such a proof, because of what they ask a proof to provide. Section 2.5 described excluded middle as making a decision; here the decision about "\( s \) is rational" is made, and nobody learns its outcome.
 
 ::: {.remark}
 In fact the second case holds: \( \sqrt 2^{\sqrt 2} \) is transcendental, so in particular irrational, by the Gelfond–Schneider theorem, proved independently by Gelfond and by Schneider in 1934. That theorem lies far beyond this book, and nothing here uses it. It also does not repair the proof above, which never needed to know the answer.
@@ -55,7 +55,7 @@ Suppose that \( \log_2 9 = p/q \) for integers \( p \) and \( q \) with \( q \ne
 \[
 2^p = 9^q .
 \]
-The left side is even, since \( 2^p = 2 \cdot 2^{p-1} \) with \( p - 1 \ge 0 \). The right side is odd, being a product of \( q \) odd factors. No integer is both even and odd, by (E2) of Section 2.1, so this is a contradiction. Hence \( \log_2 9 \) is not rational [\( \rulename{\neg I} \)].
+The left side is even, since \( 2^p = 2 \cdot 2^{p-1} \) with \( p - 1 \ge 0 \). The right side is odd, being a product of \( q \) odd factors. No integer is both even and odd, which is (E2) of Section 2.1, so this is a contradiction. Hence \( \log_2 9 \) is not rational [\( \rulename{\neg I} \)].
 
 For the consequence, \( a = \sqrt 2 \) is irrational by @thm-sqrt2-irrational, and \( b = \log_2 9 \) is irrational by what was just shown. Since \( \log_2 9 = \log_2 (3^2) = 2\log_2 3 \),
 \[
@@ -64,7 +64,7 @@ a^b = \bigl( 2^{1/2} \bigr)^{\log_2 9} = 2^{(\log_2 9)/2} = 2^{\log_2 3} = 3 .
 This proves the proposition.
 :::
 
-This proof uses no classical rule. The irrationality of \( \log_2 9 \) is a negative statement, "no fraction equals \( \log_2 9 \)", and its box closes by \( \rulename{\neg I} \), like the proof of @thm-sqrt2-irrational. The witness \( (\sqrt 2, \log_2 9) \) is written down. So @prp-log2-9-irrational gives a second proof of @thm-irrational-power-rational, and this one names its witness. (The exponent laws for real exponents are school facts here.)
+This proof uses no classical rule. The irrationality of \( \log_2 9 \) is a negative statement, "no fraction equals \( \log_2 9 \)", and its box closes by \( \rulename{\neg I} \), like the proof of @thm-sqrt2-irrational. The witness \( (\sqrt 2, \log_2 9) \) is written down. So the proposition gives a second proof of @thm-irrational-power-rational, and this one names its witness. (The exponent laws for real exponents are school facts here.)
 
 ::: {.check}
 Does the proof of @prp-log2-9-irrational use a classical rule? Does it name its witness?
@@ -84,7 +84,7 @@ Chapter 4 gave the connectives a meaning through truth values: every letter is t
 - A proof of \( P \wedge Q \) is a pair: a proof of \( P \) and a proof of \( Q \).
 - A proof of \( P \vee Q \) is a proof of \( P \) or a proof of \( Q \), **with a label saying which**.
 - A proof of \( P \to Q \) is a method that takes **any** proof of \( P \) and returns a proof of \( Q \).
-- A proof of \( \neg P \) is a method that takes any proof of \( P \) and returns a proof of \( \bot \). So \( \neg P \) is read as \( P \to \bot \), exactly the reading that the table in Section 2.2, after @def-rules-negation, found row by row.
+- A proof of \( \neg P \) is a method that takes any proof of \( P \) and returns a proof of \( \bot \). So \( \neg P \) is read as \( P \to \bot \), the reading that Section 2.2 found row by row in a table (@def-rules-negation).
 - A proof of \( \exists x\, \varphi \) is an object \( t \) **together with** a proof of \( \varphi[t/x] \).
 - A proof of \( \forall x\, \varphi \) is a method that produces, for **every** object \( t \), a proof of \( \varphi[t/x] \).
 
@@ -92,7 +92,7 @@ In words: a disjunction must say which side, an existence claim must name the ob
 
 Each rule other than \( \rulename{RAA} \) builds exactly what its clause asks for. \( \rulename{\vee I} \) writes \( P \vee Q \) from a line \( P \), so it knows which side it used. \( \rulename{\exists I} \) writes \( \exists x\, \varphi \) from an instance \( \varphi[t/x] \), so the witness \( t \) is on the page. A \( \rulename{{\to}I} \) box is a method: given the assumption, it produces the conclusion. \( \rulename{RAA} \) is the exception. Its box shows that \( \neg\varphi \) leads to \( \bot \), which is a proof of \( \neg\neg\varphi \), and then it writes \( \varphi \). Under the BHK reading a method for refuting every refutation of \( \varphi \) is not a proof of \( \varphi \).
 
-**Excluded middle under BHK.** A proof of \( P \vee \neg P \) for **every** statement \( P \) would be a single method that decides each statement, says which side holds, and proves that side. Nobody has such a method. Take Goldbach's conjecture, that every even integer greater than \( 2 \) is a sum of two primes: nobody has proved it and nobody has refuted it, so nobody can produce a labeled proof of "Goldbach's conjecture or its negation". The proof of @thm-irrational-power-rational is of this kind: it splits on "\( s \) is rational or not" by \( \rulename{LEM} \), and so never says which pair works.
+**Excluded middle under BHK.** A proof of \( P \vee \neg P \) for **every** statement \( P \) would be a single method that decides each statement, says which side holds, and proves that side. Nobody has such a method. Take Goldbach's conjecture, that every even integer greater than \( 2 \) is a sum of two primes. Nobody has proved it and nobody has refuted it. So nobody can produce a labeled proof of "Goldbach's conjecture or its negation". The proof of @thm-irrational-power-rational is of this kind: it splits on "\( s \) is rational or not" by \( \rulename{LEM} \), and so never says which pair works.
 
 **Not every, and some not.** Chapter 6 derived \( \neg\forall x\, \varphi \vdash \exists x\, \neg\varphi \) (@prp-quantifier-negation (a)) with two \( \rulename{RAA} \) boxes, and noted that the derivation never says which \( x \) fails \( \varphi \). The BHK reading says why that matters. A proof of the premise is a method that refutes every proof of \( \forall x\, \varphi \); a proof of the conclusion must name an object. Nothing in the first produces the second, and the derivation does not try: its conclusion comes from \( \rulename{RAA} \), not from an \( \rulename{\exists I} \) applied to an available instance. Classical mathematics accepts the step. A constructive mathematician accepts that conclusion only with an object in hand.
 
@@ -111,16 +111,23 @@ Chapter 2 found that one rule stands apart. \( \rulename{RAA} \) belongs to no c
 
 Recall what Section 2.5 established. Over the primitive rules other than \( \rulename{RAA} \), the three rules \( \rulename{RAA} \), \( \rulename{\neg\neg E} \), and \( \rulename{LEM} \) each derive the other two, so adding any one of them gives the same derivable sequents. There is one classical principle, and it has three faces. Nothing needs re-proving here; what is new is the decision to leave the principle out and see what remains.
 
-Call a derivation **intuitionistic** if no line is justified by \( \rulename{RAA} \) and no line uses a derived rule or a cited result whose own derivation uses \( \rulename{RAA} \). **Intuitionistic logic** is the system of these derivations. Its rules are the introduction and elimination rules for \( \wedge \), \( \to \), and \( \vee \) (Chapter 1); \( \rulename{\neg I} \), \( \rulename{\neg E} \), \( \rulename{\bot E} \), \( \rulename{{\leftrightarrow}I} \), and \( \rulename{{\leftrightarrow}E} \) (Chapter 2); the rules for \( \forall \), \( \exists \), and \( = \) (Chapter 5); and repetition. **Classical logic**, the logic of Chapters 1–7, is the same list with \( \rulename{RAA} \) added. TAUT (Section 4.8) is not among these rules: it is licensed by @cor-derivable-iff-valid, that is, by the completeness theorem, whose proof splits on atoms by \( \rulename{LEM} \) (@lem-atom-splitting), so a line justified by TAUT, on a formula or on a propositional skeleton (Section 6.3), uses \( \rulename{RAA} \) in the sense just defined.
+Call a derivation **intuitionistic** if no line is justified by \( \rulename{RAA} \) and no line uses a derived rule or a cited result whose own derivation uses \( \rulename{RAA} \). **Intuitionistic logic** is the system of these derivations. Its rules are:
 
-This is why Chapter 2 kept \( \rulename{\bot E} \) as a primitive rule although \( \rulename{RAA} \) and repetition derive it (the remark in the second-reading fold after @thm-classical-rules-interderivable). Had \( \rulename{\bot E} \) been dropped, striking \( \rulename{RAA} \) would have taken it away too, and the remaining system would be weaker than the one intuitionists actually use: it could no longer derive \( \bot \vdash P \). That is a claim about all derivations, and we state it without proof; nothing depends on it. With \( \rulename{\bot E} \) kept, the rules without \( \rulename{RAA} \) are exactly intuitionistic logic.
+- the introduction and elimination rules for \( \wedge \), \( \to \), and \( \vee \) (Chapter 1);
+- \( \rulename{\neg I} \), \( \rulename{\neg E} \), \( \rulename{\bot E} \), \( \rulename{{\leftrightarrow}I} \), and \( \rulename{{\leftrightarrow}E} \) (Chapter 2);
+- the rules for \( \forall \), \( \exists \), and \( = \) (Chapter 5);
+- repetition.
+
+**Classical logic**, the logic of Chapters 1–7, is the same list with \( \rulename{RAA} \) added. TAUT (Section 4.8) is not among these rules. It is licensed by @cor-derivable-iff-valid, that is, by the completeness theorem. The proof of completeness splits on atoms by \( \rulename{LEM} \) (@lem-atom-splitting). So a line justified by TAUT, on a formula or on a propositional skeleton (Section 6.3), uses \( \rulename{RAA} \) in the sense just defined.
+
+This is why Chapter 2 kept \( \rulename{\bot E} \) as a primitive rule, although \( \rulename{RAA} \) and repetition derive it (Section 2.5 shows how, after @thm-classical-rules-interderivable). Had \( \rulename{\bot E} \) been dropped, striking \( \rulename{RAA} \) would have taken it away too, and the remaining system would be weaker than the one intuitionists actually use: it could no longer derive \( \bot \vdash P \). That is a claim about all derivations, and we state it without proof; nothing depends on it. With \( \rulename{\bot E} \) kept, the rules without \( \rulename{RAA} \) are exactly intuitionistic logic.
 
 | System | Rules | \( \vdash P \vee \neg P \)? |
 |---|---|---|
 | intuitionistic | the primitive rules other than \( \rulename{RAA} \) | not derivable (@thm-raa-independent for the propositional rules, and the optional Section 8.8 again, by stages of knowledge; the rules for \( \forall \), \( \exists \) and \( = \) do not change this, stated without proof) |
 | classical | the same rules and \( \rulename{RAA} \) | derivable (@prp-excluded-middle) |
 
-Every intuitionistic derivation is a derivation, so everything intuitionistic logic derives, classical logic derives too, and soundness applies to it: @thm-soundness, and, for derivations whose lines contain quantifiers or equations, the soundness statement for predicate logic in Section 7.2. The difference is a list of sequents that only the classical system reaches. Chapters 2–7 flag the derivations that use \( \rulename{RAA} \) as they go, so the results on that list can be read off the text; Exercise B4 asks for them.
+Every intuitionistic derivation is a derivation. So everything intuitionistic logic derives, classical logic derives too, and soundness applies to it. That is @thm-soundness, and, for derivations whose lines contain quantifiers or equations, the soundness statement for predicate logic in Section 7.2. The difference is a list of sequents that only the classical system reaches. Chapters 2–7 flag the derivations that use \( \rulename{RAA} \) as they go, so the results on that list can be read off the text; Exercise B4 asks for them.
 
 ::: {.check}
 Is the derivation of @prp-double-negation (a), \( P \vdash \neg\neg P \), intuitionistic? Is that of (b)?
@@ -143,9 +150,9 @@ For every statement \( P \), \( \vdash \neg\neg(P \vee \neg P) \), by a derivati
 *Try it first (ten minutes): the goal is a negation. Open the box that the goal asks for, hunt for a clash, and note which rule closes each box you open.*
 
 ::: {.idea}
-An attempt that starts from \( P \vee \neg P \) stalls at once: \( \rulename{\vee I} \) needs one side, and neither side is in hand. But the goal is not \( P \vee \neg P \). It is \( \neg(\neg(P \vee \neg P)) \), a negation, so the goal-directed move of Section 2.2 opens a \( \rulename{\neg I} \) box on \( \neg(P \vee \neg P) \) with the goal \( \bot \). That assumption can clash only with \( P \vee \neg P \), which \( \rulename{\vee I} \) builds from either side, so we manufacture a side as in @exm-manufactured-clash. A box on \( P \) gives \( P \vee \neg P \), a clash, and \( \rulename{\neg I} \) closes it with \( \neg P \). Then \( \rulename{\vee I} \) builds \( P \vee \neg P \) from \( \neg P \), and that is the second clash. Every box ends in \( \bot \) and closes by \( \rulename{\neg I} \).
+An attempt that starts from \( P \vee \neg P \) stalls at once: \( \rulename{\vee I} \) needs one side, and neither side is in hand. But the goal is not \( P \vee \neg P \). It is \( \neg(\neg(P \vee \neg P)) \), a negation. So, working from the goal as in Section 2.2, we open a \( \rulename{\neg I} \) box on \( \neg(P \vee \neg P) \) with the goal \( \bot \). That assumption can clash only with \( P \vee \neg P \), which \( \rulename{\vee I} \) builds from either side, so we manufacture a side as in @exm-manufactured-clash. A box on \( P \) gives \( P \vee \neg P \), a clash, and \( \rulename{\neg I} \) closes it with \( \neg P \). Then \( \rulename{\vee I} \) builds \( P \vee \neg P \) from \( \neg P \), and that is the second clash. Every box ends in \( \bot \) and closes by \( \rulename{\neg I} \).
 
-*Before reading on: self-explain lines 5 and 6.*
+*Before reading on: explain to yourself why lines 5 and 6 follow.*
 :::
 
 ::: {.proof}
@@ -175,16 +182,16 @@ The two boxes close by \( \rulename{\neg I} \), at lines 5 and 8. The other rule
 
 Set it beside the derivation of @prp-excluded-middle. Lines 1–7 are the same, line for line. Only line 8 differs: there \( \rulename{RAA} \) closed the outer box and wrote \( P \vee \neg P \); here \( \rulename{\neg I} \) closes it and writes the negation of its assumption. So the whole classical content of @prp-excluded-middle sits in its last line.
 
-::: {.second-reading title="Non-example by minimal change"}
+::: {.second-reading title="What goes wrong if line 8 writes P or not P"}
 Keep lines 1–7, and write \( P \vee \neg P \) at line 8 with the justification \( \rulename{\neg I}\ \lines{1}{7} \). The box still checks. What fails is the conclusion of \( \rulename{\neg I} \), which must be the negation of the box's assumption, \( \neg\neg(P \vee \neg P) \). Writing \( P \vee \neg P \) there needs \( \rulename{RAA} \).
 :::
 
-What the proposition says is this: **nobody can refute excluded middle**. A refutation of \( P \vee \neg P \), put beside this derivation, would prove \( \bot \) from no premises, and no derivation does that. (That last fact is soundness: @thm-soundness, or the soundness statement for predicate logic in Section 7.2 when \( P \) or the derivation involves quantifiers or equality, since no valuation, and no structure and assignment, makes \( \bot \) true.) The intuitionist does not claim that excluded middle fails. The intuitionist declines to **assert** it, because asserting it would mean having a proof of one side, and for many statements \( P \), an open conjecture for instance, nobody has one.
+What the proposition says is this: **nobody can refute excluded middle**. A refutation of \( P \vee \neg P \), put beside this derivation, would prove \( \bot \) from no premises, and no derivation does that. That last fact is soundness, since no valuation makes \( \bot \) true (@thm-soundness). When \( P \) or the derivation involves quantifiers or equality, it is the soundness statement for predicate logic in Section 7.2, since no structure and assignment makes \( \bot \) true. The intuitionist does not claim that excluded middle fails. The intuitionist declines to **assert** it, because asserting it would mean having a proof of one side, and for many statements \( P \), an open conjecture for instance, nobody has one.
 
 **The proposition under BHK.** The derivation of @prp-not-not-excluded-middle is such a method, and it decides nothing. Its conclusion asks for a method that takes any \( f \), a method sending proofs of \( P \vee \neg P \) to proofs of \( \bot \), and returns a proof of \( \bot \). Here is one. Given a proof \( p \) of \( P \), label it "left" and apply \( f \): that turns proofs of \( P \) into proofs of \( \bot \), which is a proof \( g \) of \( \neg P \) (lines 2–5). Now label \( g \) "right" and apply \( f \) once more (lines 6–7). At no point did the method need to know whether \( P \) holds.
 
 ::: {.remark}
-The proposition is one instance of a general fact, due to Glivenko (1929) and stated here without proof: if a statement built from letters by the connectives is derivable with all the rules, then its double negation is derivable without \( \rulename{RAA} \). Classical propositional logic survives inside intuitionistic logic, behind two negations. The fact fails once quantifiers are allowed; \( \neg\neg\forall x\, (\varphi \vee \neg\varphi) \) is in general not derivable without \( \rulename{RAA} \) (also stated without proof).
+The proposition is one instance of a general fact, due to Glivenko (1929), which we state without proof. If a statement built from letters by the connectives is derivable with all the rules, then its double negation is derivable without \( \rulename{RAA} \). Classical propositional logic survives inside intuitionistic logic, behind two negations. The fact fails once quantifiers are allowed: \( \neg\neg\forall x\, (\varphi \vee \neg\varphi) \) is in general not derivable without \( \rulename{RAA} \) (also stated without proof).
 :::
 
 ::: {.warning}
@@ -196,7 +203,7 @@ Does @prp-not-not-excluded-middle show that \( P \vee \neg P \) is derivable wit
 :::
 
 ::: {.solution}
-No. It derives \( \neg\neg(P \vee \neg P) \); writing \( P \vee \neg P \) after the same box needs \( \rulename{RAA} \), and Chapter 4's optional theorem in Section 4.7 shows that for a letter \( p \) no derivation without \( \rulename{RAA} \) reaches \( p \vee \neg p \), as does the optional Section 8.8.
+No. It derives \( \neg\neg(P \vee \neg P) \). Writing \( P \vee \neg P \) after the same box needs \( \rulename{RAA} \). Chapter 4's optional theorem in Section 4.7 shows that for a letter \( p \) no derivation without \( \rulename{RAA} \) reaches \( p \vee \neg p \), and so does the optional Section 8.8.
 :::
 
 ## Which laws survive without RAA {#laws-without-raa}
@@ -212,18 +219,20 @@ Chapters 2 and 6 flagged every law they derived with \( \rulename{RAA} \). Here 
 | excluded middle (@prp-excluded-middle) | \( \vdash \neg\neg(P \vee \neg P) \) (@prp-not-not-excluded-middle) | \( \vdash P \vee \neg P \) |
 | Peirce's law (@prp-peirce) | — | \( \vdash ((P \to Q) \to P) \to P \) |
 | negated implication (@prp-negated-implication) | \( \varphi \wedge \neg\psi \vdash \neg(\varphi \to \psi) \) | \( \neg(\varphi \to \psi) \vdash \varphi \wedge \neg\psi \) |
-| modus tollens, disjunctive syllogism, constructive dilemma (@prp-modus-tollens, @prp-disjunctive-syllogism, @exm-constructive-dilemma) | all | — |
+| modus tollens (@prp-modus-tollens) | all | — |
+| disjunctive syllogism (@prp-disjunctive-syllogism) | all | — |
+| constructive dilemma (@exm-constructive-dilemma) | all | — |
 | quantifier negation (@prp-quantifier-negation) | (b); (c) both ways | (a) \( \neg\forall x\, \varphi \vdash \exists x\, \neg\varphi \) |
 | passage laws (@prp-quantifier-passage) | eight of the ten directions | \( \dashv \) in (d) and in (e) |
 
-For each propositional entry of the right column, the double negation of its conclusion is derivable without \( \rulename{RAA} \) from the same premises, by Glivenko's theorem in the remark above (stated without proof) applied to the implication from the premises' conjunction; Exercise B5 (a) and (b) derive two cases.
+For each propositional entry of the right column, the double negation of its conclusion is derivable without \( \rulename{RAA} \) from the same premises. This follows from Glivenko's theorem, stated without proof above, applied to the implication from the premises' conjunction. Exercise B5 (a) and (b) derive two cases.
 
 ::: {.check}
 An intuitionist has proved \( \neg Q \to \neg P \). May she conclude \( P \to Q \)?
 :::
 
 ::: {.solution}
-Not in general: that step is @prp-contrapositive-converse, in the right column of the table. She may when \( Q \) is itself a negation, by Section 2.5's fold "RAA is never needed to finish a negation", which Section 8.1 applies to the contrapositive.
+Not in general: that step is @prp-contrapositive-converse, in the right column of the table. She may when \( Q \) is itself a negation. Section 2.5 showed that \( \rulename{RAA} \) is never needed to finish a negation, and Section 8.1 applied this to the contrapositive.
 :::
 
 ## A short history
@@ -232,7 +241,7 @@ The dispute has dates.
 
 In 1908 L. E. J. Brouwer published "De onbetrouwbaarheid der logische principes" ("The unreliability of the logical principles") in the *Tijdschrift voor Wijsbegeerte*. His point was that excluded middle had been abstracted from reasoning about finite collections, where every case can in principle be checked, and then applied without justification to infinite ones, where it cannot. Over the next two decades he rebuilt parts of analysis on this view, and the movement took the name **intuitionism**.
 
-In 1925 A. N. Kolmogorov showed that classical reasoning can be imitated inside a logic without excluded middle by putting a double negation in front of every subformula: the first **double-negation translation** (Exercise C2 below checks one step of it).
+In 1925 A. N. Kolmogorov showed that classical reasoning can be imitated inside a logic without excluded middle. His method puts a double negation in front of every subformula, and it is the first **double-negation translation**. Exercise C2 below checks one step of it.
 
 In July 1927 David Hilbert lectured in Hamburg on "Die Grundlagen der Mathematik", printed in 1928. He defended excluded middle in a much-repeated comparison: to take it from the mathematician would be like forbidding the astronomer the telescope or the boxer the use of his fists. The quarrel between his program and Brouwer's became known as the **Grundlagenstreit**, the dispute over foundations. It turned personal in 1928, when Hilbert had Brouwer removed from the editorial board of the *Mathematische Annalen*; the board was then dissolved and re-formed without him.
 
@@ -250,16 +259,24 @@ Excluded middle is not the only rule that has been questioned. Chapter 1 read \(
 
 What does analysis look like without the rule? Here are four previews, stated informally and without proof. Classical analysis takes the first as an axiom and proves the other three; each is a place where classical reasoning, by the rule or by an axiom, does work that a constructive proof cannot.
 
-- **The supremum.** Classical analysis takes as an axiom that every non-empty set of real numbers that is bounded above has a supremum. Constructively, a non-empty set \( A \) bounded above has a supremum **if and only if** it is **order-located**: for all real numbers \( x < y \), either \( y \) is an upper bound of \( A \) or some element of \( A \) exceeds \( x \) (Bishop's form of the least upper bound principle). The classical axiom asserts the supremum without requiring anyone to make these decisions.
+- **The supremum.** Classical analysis takes as an axiom that every non-empty set of real numbers that is bounded above has a supremum. Constructively, a non-empty set \( A \) bounded above has a supremum **if and only if** it is **order-located**. That means: for all real numbers \( x < y \), either \( y \) is an upper bound of \( A \) or some element of \( A \) exceeds \( x \). This is Bishop's form of the least upper bound principle. The classical axiom asserts the supremum without requiring anyone to make these decisions.
 - **Monotone sequences.** E. Specker (1949) gave an increasing, bounded sequence of rational numbers that a computer program can list term by term, but whose limit is not a computable real number: no program can print its decimal digits. So the convergence of bounded monotone sequences, which classical analysis proves from that axiom, cannot come with a method for computing the limit.
-- **The intermediate value theorem.** Let \( f \) be continuous on \( [a, b] \) with \( f(a) < 0 < f(b) \). Classically, one proves that \( f(x) = 0 \) for some \( x \in [a, b] \). Constructively, what holds in general is the **approximate** version: for every \( \varepsilon > 0 \) some \( x \in [a, b] \) has \( \abs{f(x)} < \varepsilon \). The exact version holds under extra hypotheses, for example when \( f \) is strictly increasing. A bisection needs the sign of \( f \) at a midpoint \( m \), and finitely many digits of \( f(m) \) cannot always tell whether \( f(m) \) is negative, zero, or positive: the digits of a value equal to \( 0 \) begin like those of a tiny positive or negative one.
+- **The intermediate value theorem.** Let \( f \) be continuous on \( [a, b] \) with \( f(a) < 0 < f(b) \). Classically, one proves that \( f(x) = 0 \) for some \( x \in [a, b] \). Constructively, what holds in general is the **approximate** version: for every \( \varepsilon > 0 \) some \( x \in [a, b] \) has \( \abs{f(x)} < \varepsilon \). The exact version holds under extra hypotheses, for example when \( f \) is strictly increasing. A bisection needs the sign of \( f \) at a midpoint \( m \). Finitely many digits of \( f(m) \) cannot always tell whether \( f(m) \) is negative, zero, or positive. The digits of a value equal to \( 0 \) begin like those of a tiny positive or negative one.
 - **Bolzano–Weierstrass.** A bisection proof of the theorem says: one of the two halves of an interval contains infinitely many terms of the sequence; continue with that half. That step is \( \rulename{LEM} \) on "the left half contains infinitely many terms", a statement that nobody can decide in general, and the proof does not say which half.
 
 ## Proofs as programs
 
-The BHK clauses read like the description of a programming language. A proof of \( P \wedge Q \) is a pair; a proof of \( P \vee Q \) is a value tagged "left" or "right"; a proof of \( P \to Q \) is a function; a proof of \( \exists x\, \varphi \) is a pair of an object and a proof; a proof of \( \forall x\, \varphi \) is a function that accepts any object. This match between propositions and types, and between proofs and programs, is the **Curry–Howard correspondence**. It is what a proof assistant such as Lean is built on: checking a proof is checking that a program has the right type.
+The BHK clauses read like the description of a programming language:
 
-::: {.second-reading title="Proofs as programs, in Lean"}
+- a proof of \( P \wedge Q \) is a pair;
+- a proof of \( P \vee Q \) is a value tagged "left" or "right";
+- a proof of \( P \to Q \) is a function;
+- a proof of \( \exists x\, \varphi \) is a pair of an object and a proof;
+- a proof of \( \forall x\, \varphi \) is a function that accepts any object.
+
+This match between propositions and types, and between proofs and programs, is the **Curry–Howard correspondence**. It is what a proof assistant such as Lean is built on: checking a proof is checking that a program has the right type.
+
+::: {.second-reading title="For instructors: proofs as programs, in Lean"}
 Intuitionistic logic fits this picture exactly. \( \rulename{LEM} \) does not, since no program decides every proposition. Lean adds classical logic by an axiom, `Classical.choice`, a form of the axiom of choice. Excluded middle, `Classical.em`, is then a **theorem**, derived from choice together with two extensionality principles by Diaconescu's theorem. Lean draws one line with care. A definition that uses classical logic to produce **data**, for instance a number chosen by deciding an arbitrary proposition, must be marked `noncomputable`, since no program computes it. A proof that uses `Classical.em` needs no mark, because proofs carry no data.
 
 ```lean
@@ -295,7 +312,7 @@ What the book does flag is a genuinely non-constructive step of the kind discuss
 ::: {#exr-excluded-middle-a1}
 [A1]
 
-Parts (a)–(d) are about @prp-not-not-excluded-middle and its derivation; part (e) is about the proof of @thm-irrational-power-rational.
+Parts (a)–(d) are about @prp-not-not-excluded-middle and its derivation. Part (e) is about the proof of @thm-irrational-power-rational.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Which rule closes each of the two boxes, and at which line?
@@ -313,7 +330,7 @@ Parts (a)–(d) are about @prp-not-not-excluded-middle and its derivation; part 
 
 (c) A method that takes any method \( f \), sending proofs of \( P \vee \neg P \) to proofs of \( \bot \), and returns a proof of \( \bot \). The derivation provides one: label a proof of \( P \) "left" and apply \( f \), which gives a proof of \( \neg P \); label that proof "right" and apply \( f \) again.
 
-(d) False. Such a derivation would also be a derivation with all the rules. Together with the derivation of \( P \vee \neg P \) from no premises (@prp-excluded-middle), \( \rulename{\neg E} \) would derive \( \bot \) from no premises. No derivation does that: by @thm-soundness, or by the soundness statement for predicate logic in Section 7.2 when \( P \) or the derivation involves quantifiers or equality, \( \bot \) would be true under every valuation (in every structure under every assignment), and no valuation, and no structure and assignment, makes \( \bot \) true.
+(d) False. Such a derivation would also be a derivation with all the rules. Together with the derivation of \( P \vee \neg P \) from no premises (@prp-excluded-middle), \( \rulename{\neg E} \) would derive \( \bot \) from no premises. No derivation does that. By soundness, \( \bot \) would be true under every valuation, and no valuation makes \( \bot \) true (@thm-soundness). When \( P \) or the derivation involves quantifiers or equality, the soundness statement for predicate logic in Section 7.2 gives the same, with every structure under every assignment in place of every valuation.
 
 (e) The first line, which splits on "\( \sqrt 2^{\sqrt 2} \) is rational" by \( \rulename{LEM} \). The proof does not say which pair works: it shows that \( (\sqrt 2, \sqrt 2) \) works in the first case and \( (\sqrt 2^{\sqrt 2}, \sqrt 2) \) in the second, and does not decide which case holds.
 :::
@@ -346,7 +363,7 @@ Answer each in a line. (a)–(d) ask whether a derivation avoids \( \rulename{RA
 
 (c) Yes: @exm-triple-negation derives it, and its derivation uses no \( \rulename{RAA} \).
 
-(d) Every line and every cited result. That direction of De Morgan's law is in the right column of the table in "Which laws survive without RAA", so some line is \( \rulename{RAA} \), \( \rulename{\neg\neg E} \) or \( \rulename{LEM} \), or cites a result derived with one of them.
+(d) Every line and every cited result. That direction of De Morgan's law is in the right column of the table in "Which laws survive without RAA". So some line is \( \rulename{RAA} \), \( \rulename{\neg\neg E} \) or \( \rulename{LEM} \), or cites a result derived with one of them.
 
 (e) It takes any pair, a proof of \( P \) and a proof of \( Q \), and returns the first component.
 
@@ -360,7 +377,7 @@ Answer each in a line. (a)–(d) ask whether a derivation avoids \( \rulename{RA
 
 (j) True. It uses some of the rules of Chapters 1–7 and no others, so it is a derivation, and soundness applies to it.
 
-(k) Not in general: that step is @prp-bounded-quantifier-negation (a), the bounded form of @prp-quantifier-negation (a), derived with \( \rulename{RAA} \) and in the right column of the table. She asks for the element.
+(k) Not in general: that step is @prp-bounded-quantifier-negation (a). It is the bounded form of @prp-quantifier-negation (a), derived with \( \rulename{RAA} \) and in the right column of the table. She asks for the element.
 
 (l) The first line, the \( \rulename{LEM} \) split on "\( s \) is rational". Not the conclusion: the second proof in "Irrational powers, with and without a witness" proves it with a named witness, \( (\sqrt 2, \log_2 9) \), and no classical rule.
 :::
@@ -423,7 +440,7 @@ Lines 1, 2, 3, and 8 are assumptions. Line 4 repeats line 2 into the box of line
 ::: {.solution}
 (a) A method that takes any proof \( p \) of \( P \) and returns a proof of \( \neg\neg P \), that is, a method that takes any proof \( f \) of \( \neg P \) and returns a proof of \( \bot \). The method: given \( p \), and then given \( f \), apply \( f \) to \( p \). This is the BHK reading of @prp-double-negation (a).
 
-(b) A method that takes any method \( h \) (from proofs of \( P \) to proofs of \( Q \)) and returns a proof of \( \neg Q \to \neg P \): a method that takes any \( g \) (from proofs of \( Q \) to proofs of \( \bot \)) and returns a proof of \( \neg P \), that is, a method from proofs of \( P \) to proofs of \( \bot \). The method: given \( h \), \( g \), and a proof \( p \) of \( P \), compute \( g(h(p)) \). This is the BHK reading of @prp-contrapositive, whose derivation uses no \( \rulename{RAA} \).
+(b) A method that takes any method \( h \) (from proofs of \( P \) to proofs of \( Q \)) and returns a proof of \( \neg Q \to \neg P \). That proof is a method that takes any \( g \) (from proofs of \( Q \) to proofs of \( \bot \)) and returns a proof of \( \neg P \), that is, a method from proofs of \( P \) to proofs of \( \bot \). The method: given \( h \), \( g \), and a proof \( p \) of \( P \), compute \( g(h(p)) \). This is the BHK reading of @prp-contrapositive, whose derivation uses no \( \rulename{RAA} \).
 
 (c) Unfolding the bounded quantifiers (@def-bounded-quantifier): a method that takes any object \( n \) and a proof that \( n \in \nN \), and returns an object \( m \) together with a proof of \( m \in \nN \wedge m > n \). The method: given \( n \) and the proof of \( n \in \nN \), output \( m = n + 1 \), with the proofs that \( n + 1 \in \nN \) and \( n + 1 > n \).
 
@@ -449,11 +466,40 @@ No witness appears because no \( \rulename{\exists I} \) produces the conclusion
 :::
 
 ::: {.solution}
-(a) Seven: @prp-double-negation (b); @prp-contrapositive-converse; @prp-excluded-middle; @prp-de-morgan (d); @prp-implication-as-disjunction (b), through \( \rulename{LEM} \); @thm-classical-rules-interderivable, whose proof uses all three: \( \rulename{RAA} \) in ①, \( \rulename{\neg\neg E} \) in ②, \( \rulename{LEM} \) in ③; and @prp-peirce. Every other proposition and theorem of Chapter 2 uses no classical rule, including @thm-sqrt2-irrational, whose box closes by \( \rulename{\neg I} \).
+(a) Seven:
 
-(b) Chapter 3: the direction \( (\Leftarrow) \) of @prp-derivable-iff-negation-inconsistent (b), whose box closes by \( \rulename{RAA} \). Chapter 4: @lem-atom-splitting, through \( \rulename{LEM} \), and with it @thm-completeness and the direction \( (\Leftarrow) \) of @cor-derivable-iff-valid; the step TAUT of @def-rule-taut, licensed through @cor-derivable-iff-valid; and, in the optional Section 4.10, @lem-lindenbaum, whose key step uses \( \rulename{RAA} \) through @prp-derivable-iff-negation-inconsistent, with @thm-completeness-infinite and @thm-compactness, as the fold after the proof of @thm-completeness-infinite says. Chapter 5: none. In Chapter 6: @prp-quantifier-negation (a); the direction \( \vdash \) of @prp-negated-implication; the direction \( \vdash \) of @prp-bounded-quantifier-negation (a); the two directions \( \dashv \) of @prp-quantifier-passage, in (d) and in (e), both through \( \rulename{LEM} \); @prp-arbitrarily-close-equal, as proved, since its box assumes \( a \ne b \) and concludes \( a = b \); and @prp-taut-skeleton, through @cor-derivable-iff-valid. Chapter 7: none derived; the classical theorems of Section 7.6, first-order completeness and what rests on it, are stated without proof, so the question does not reach them.
+- @prp-double-negation (b);
+- @prp-contrapositive-converse;
+- @prp-excluded-middle;
+- @prp-de-morgan (d);
+- @prp-implication-as-disjunction (b), through \( \rulename{LEM} \);
+- @thm-classical-rules-interderivable, whose proof uses all three: \( \rulename{RAA} \) in ①, \( \rulename{\neg\neg E} \) in ②, \( \rulename{LEM} \) in ③;
+- @prp-peirce.
 
-The results of Sections 4.4, 4.5 and 4.9, such as the standard equivalences and monotonicity, are not on the list: they are statements about valuations and derive nothing, and their remarks mention \( \rulename{RAA} \) only as history.
+Every other proposition and theorem of Chapter 2 uses no classical rule, including @thm-sqrt2-irrational, whose box closes by \( \rulename{\neg I} \).
+
+(b) By chapter:
+
+- Chapter 3: the direction \( (\Leftarrow) \) of @prp-derivable-iff-negation-inconsistent (b), whose box closes by \( \rulename{RAA} \).
+- Chapter 4:
+  - @lem-atom-splitting, through \( \rulename{LEM} \);
+  - @thm-completeness, which rests on it;
+  - the direction \( (\Leftarrow) \) of @cor-derivable-iff-valid, which rests on it too;
+  - the step TAUT of @def-rule-taut, licensed through that corollary;
+  - in the optional Section 4.10, @lem-lindenbaum, whose key step uses \( \rulename{RAA} \) through the Chapter 3 result above;
+  - @thm-completeness-infinite, which rests on that lemma, as the note after its proof says;
+  - @thm-compactness, which rests on it too.
+- Chapter 5: none.
+- Chapter 6:
+  - @prp-quantifier-negation (a);
+  - the direction \( \vdash \) of @prp-negated-implication;
+  - the direction \( \vdash \) of @prp-bounded-quantifier-negation (a);
+  - the two directions \( \dashv \) of @prp-quantifier-passage, in (d) and in (e), both through \( \rulename{LEM} \);
+  - @prp-arbitrarily-close-equal, as proved, since its box assumes \( a \ne b \) and concludes \( a = b \);
+  - @prp-taut-skeleton, through the same corollary as TAUT.
+- Chapter 7: none derived. The classical theorems of Section 7.6, first-order completeness and what rests on it, are stated without proof, so the question does not reach them.
+
+The results of Sections 4.4, 4.5 and 4.9, such as the standard equivalences and monotonicity, are not on the list. They are statements about valuations and derive nothing, and their remarks mention \( \rulename{RAA} \) only as history.
 :::
 
 ::: {#exr-excluded-middle-b5}
@@ -550,16 +596,22 @@ $\begin{nd}
 
 Every box closes by \( \rulename{\neg I} \), \( \rulename{{\to}I} \) or \( \rulename{\vee E} \). No line uses \( \rulename{RAA} \), \( \rulename{\neg\neg E} \) or \( \rulename{LEM} \), and no line cites a result. In (c), line 6 is \( \rulename{\neg E} \) on \( \neg P \) (line 5) and \( \neg\neg P \) (line 2).
 
-(d) (a) concerns De Morgan (d): it is Glivenko's double negation of that row's conclusion. (b) concerns implication as a disjunction (b), in the same way. (c) concerns double negation (b): one instance of excluded middle, taken as a hypothesis, gives double-negation elimination at that instance with no further classical step. (The optional Section 8.8's Exercise C1 shows that such a step need not run back: one instance of excluded middle gives Peirce's law for that letter, and that instance of Peirce's law does not give the instance of excluded middle.)
+(d) (a) concerns De Morgan (d): it is Glivenko's double negation of that row's conclusion. (b) concerns implication as a disjunction (b), in the same way. (c) concerns double negation (b): one instance of excluded middle, taken as a hypothesis, gives double-negation elimination at that instance with no further classical step. Such a step need not run back. One instance of excluded middle gives Peirce's law for that letter, but that instance of Peirce's law does not give the instance of excluded middle. Exercise C1 of the optional Section 8.8 shows this.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 - 3: (a).
 - 3: (b).
 - 3: (c).
 - 1: (d).
 - For each derivation: 1 for the skeleton (the outer \( \rulename{\neg I} \) or \( \rulename{{\to}I} \) box and its last line); 2 for the inside, each clash named.
 
-Fatal errors (0 for that derivation): a line justified by \( \rulename{RAA} \), \( \rulename{\neg\neg E} \) or \( \rulename{LEM} \); a line justified by TAUT (each sequent is a tautology, so one TAUT line would "derive" it, but TAUT rests on completeness, which splits on atoms by \( \rulename{LEM} \)); citing @prp-de-morgan (d), @prp-implication-as-disjunction (b) or @prp-double-negation (b), each derived with \( \rulename{RAA} \).
+Slips that lose the step (0 for that derivation):
+
+- a line justified by \( \rulename{RAA} \), \( \rulename{\neg\neg E} \) or \( \rulename{LEM} \);
+- a line justified by TAUT: each sequent is a tautology, so one TAUT line would "derive" it, but TAUT rests on completeness, which splits on atoms by \( \rulename{LEM} \);
+- citing @prp-de-morgan (d), which is derived with \( \rulename{RAA} \);
+- citing @prp-implication-as-disjunction (b), also derived with \( \rulename{RAA} \);
+- citing @prp-double-negation (b), also derived with \( \rulename{RAA} \).
 :::
 
 ### C. Going deeper
@@ -606,13 +658,13 @@ If \( r \ge 3 \), suppose that \( b = p/q \) with integers \( p \) and \( q \ge 
 \]
 Since \( r^{2q} \ge 3 > 1 \), the right side exceeds \( 2^{2kq} \), so \( p > 2kq \). Dividing by \( 2^{2kq} \) gives \( r^{2q} = 2^{p - 2kq} \) with \( p - 2kq \ge 1 \). The left side is odd, a product of odd factors, and the right side is even. No integer is both, so \( b \) is irrational: these \( m \) work. The smallest are \( m = 3, 5, 6, 7 \). The cases \( m = 3 \) and \( m = 5 \) are the example of this section and part (a).
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 - 2: (a) \( a^b = 5 \), with the exponent laws used.
 - 2: (a) \( \log_2 25 \) irrational, with \( p \ge 1 \) justified by \( \log_2 25 > 0 \) and the parity clash \( 2^p = 25^q \).
 - 2: (b) \( a^b = m \) for every \( m \), so only the rationality of \( b \) matters.
 - 1: (b) powers of \( 2 \) excluded, with \( b = 2k \) rational.
 - 3: (b) for \( m = 2^k r \), \( r \ge 3 \) odd, the clash \( r^{2q} = 2^{p - 2kq} \) with \( p - 2kq \ge 1 \) (or an equivalent comparison of the odd parts of \( 2^p \) and \( m^{2q} \)).
-Fatal errors (0 for the step): concluding irrationality of \( b \) from "\( m \) is irrational" or "\( \log_2 m \) is not an integer"; a parity clash with \( p \) possibly \( 0 \) or negative left unaddressed.
+Slips that lose the step (0 for it): concluding irrationality of \( b \) from "\( m \) is irrational" or "\( \log_2 m \) is not an integer"; a parity clash with \( p \) possibly \( 0 \) or negative left unaddressed.
 :::
 
 ::: {#exr-excluded-middle-c2}
@@ -647,7 +699,7 @@ The conclusion you get has two negations too many. Look for a result of Section 
 
 (b) Three steps, each without \( \rulename{RAA} \).
 
-① The derivation of @exr-reductio-and-classical-rules-b1 (a) uses no \( \rulename{RAA} \), so its sequent may be used as a derived rule (@def-derived-rule) with the statements \( K\varphi \) and \( K\psi \) in place of \( P \) and \( Q \):
+① The derivation of @exr-reductio-and-classical-rules-b1 (a) uses no \( \rulename{RAA} \). So its sequent may be used as a derived rule, with the statements \( K\varphi \) and \( K\psi \) in place of \( P \) and \( Q \):
 \[
 \neg\neg K\varphi, \ \neg\neg(K\varphi \to K\psi) \vdash \neg\neg K\psi .
 \]
@@ -659,12 +711,16 @@ Its second premise is \( K(\varphi \to \psi) \) itself, by the clause for \( \to
 
 Chaining ②, ①, and ③ gives \( K(\varphi \to \psi), \ K\varphi \vdash K\psi \), and no step is \( \rulename{RAA} \): the derived rules used were all derived without it. In words, modus ponens survives the translation intuitionistically. (This is the translation that puts \( \neg\neg \) in front of every subformula. In the Gödel–Gentzen translation of the history above, \( \varphi \to \psi \) translates without an outer \( \neg\neg \), and modus ponens survives trivially.)
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 - 2: (a) every clause of \( K \) begins with \( \neg\neg \), read off the outermost clause.
 - 3: (b) the Chapter 2 sequent instantiated with \( K\varphi \), \( K\psi \), and its second premise recognized as \( K(\varphi \to \psi) \).
 - 2: (b) \( \neg\neg K\varphi \) from \( K\varphi \) by \( \rulename{\neg\neg I} \), named as RAA-free.
 - 3: (b) \( \neg\neg K\psi \vdash K\psi \) by the triple-negation result applied to \( \neg X \), using (a).
-Fatal errors (0 for the step): removing the extra negations by \( \rulename{\neg\neg E} \) (a classical step); assuming \( K\psi \) is a letter.
+Slips that lose the step (0 for it): removing the extra negations by \( \rulename{\neg\neg E} \) (a classical step); assuming \( K\psi \) is a letter.
+
+::: {.uses}
+@def-derived-rule (substituting into a derived rule).
+:::
 :::
 
 ### R. Review
@@ -676,15 +732,15 @@ A set \( A \) of real numbers **has a maximum** if some element \( m \) of \( A 
 :::
 
 ::: {.solution}
-This uses the method of Chapter 6, Section 6.2: negate quantifier by quantifier, keeping the bounds (@prp-bounded-quantifier-negation; compare @exm-negating-definitions). In symbols, "\( A \) has a maximum" is \( \exists m \in A \; \forall a \in A \; (a \le m) \). Its negation becomes, step by step,
+This uses the method of Chapter 6, Section 6.2: negate quantifier by quantifier, keeping the bounds (@prp-bounded-quantifier-negation). In symbols, "\( A \) has a maximum" is \( \exists m \in A \; \forall a \in A \; (a \le m) \). Its negation becomes, step by step,
 \[
 \begin{aligned}
 \neg\exists m \in A \; \forall a \in A \; (a \le m)
 &\dashv\vdash \forall m \in A \; \neg\forall a \in A \; (a \le m) \\
-&\dashv\vdash \forall m \in A \; \exists a \in A \; \neg(a \le m),
+&\dashv\vdash \forall m \in A \; \exists a \in A \; \neg(a \le m).
 \end{aligned}
 \]
-by part (b) of @prp-bounded-quantifier-negation, and then part (a) used under the \( \forall \), as @prp-replacement of Section 6.2 allows. For real numbers \( \neg(a \le m) \) says \( a > m \). So the positive form is
+The first step is part (b) of @prp-bounded-quantifier-negation. The second is part (a), used under the \( \forall \), as @prp-replacement of Section 6.2 allows. For real numbers \( \neg(a \le m) \) says \( a > m \). So the positive form is
 \[
 \forall m \in A \; \exists a \in A \; (a > m):
 \]
@@ -695,6 +751,10 @@ Now let \( A = (0, 1) \) and let \( m \in (0, 1) \). Take \( a \coloneqq (m + 1)
 a - m = \frac{1 - m}{2} > 0 \quad \text{and} \quad 1 - a = \frac{1 - m}{2} > 0,
 \]
 since \( m < 1 \), so \( m < a < 1 \); with \( m > 0 \) this gives \( 0 < a < 1 \). So \( a \in (0, 1) \) and \( a > m \). Since \( m \in (0, 1) \) was arbitrary, the positive form holds for \( (0, 1) \), and by the interderivability above, \( (0, 1) \) has no maximum. Going back from the positive form needs no classical step, but not by the route through @prp-replacement, which uses both directions of (a). Go directly instead. Fix \( m \) with \( m \in A \), as the flagged name of a \( \rulename{\forall I} \) box. The positive form gives \( \exists a \in A \; (a > m) \) by \( \rulename{\forall E} \) and \( \rulename{{\to}E} \); inside an \( \rulename{\exists E} \) box, \( a > m \) gives \( \neg(a \le m) \) by trichotomy, and \( \rulename{\exists I} \) gives \( \exists a \in A \; \neg(a \le m) \). The direction \( \dashv \) of (a) gives \( \neg\forall a \in A \; (a \le m) \), and \( \rulename{{\to}I} \) and \( \rulename{\forall I} \) give \( \forall m \in A \; \neg\forall a \in A \; (a \le m) \). The direction \( \dashv \) of (b) then gives \( \neg\exists m \in A \; \forall a \in A \; (a \le m) \). Both directions \( \dashv \) are derived without \( \rulename{RAA} \), so this half of the argument uses no classical step beyond the order axioms.
+
+::: {.uses}
+@exm-negating-definitions (the same method, worked).
+:::
 :::
 
 ::: {#exr-excluded-middle-r2}
@@ -704,7 +764,7 @@ Give a Fitch derivation of \( P \to (Q \vee R), \ Q \to S, \ R \to S \vdash P \t
 :::
 
 ::: {.solution}
-This uses Chapter 1's rules: \( \rulename{{\to}I} \) (@def-rules-implication), \( \rulename{{\to}E} \) (@def-rule-implication-elimination), and \( \rulename{\vee E} \) (@def-rules-disjunction). The goal is an implication, so a box on \( P \) with the goal \( S \). Inside it, the first premise gives \( Q \vee R \), which we use by cases; each case reaches \( S \) through one of the other premises.
+This uses Chapter 1's rules \( \rulename{{\to}I} \), \( \rulename{{\to}E} \) and \( \rulename{\vee E} \). The goal is an implication, so a box on \( P \) with the goal \( S \). Inside it, the first premise gives \( Q \vee R \), which we use by cases; each case reaches \( S \) through one of the other premises.
 
 ```{=latex}
 \begin{center}
@@ -731,6 +791,10 @@ $\begin{nd}
 ```
 
 Line 10 may cite line 5, since both lie in the box of line 4, which is still open; the case boxes end with \( S \) as lines of their own. In prose: "Suppose \( P \); then \( Q \) or \( R \) holds by the first premise, and \( S \) follows in the case \( Q \) by the second premise and in the case \( R \) by the third, so \( P \) implies \( S \)." Each premise is cited where it is used, as @def-silent-steps requires for every \( \rulename{{\to}E} \) on a hypothesis; the first premise is also the reason the two cases exhaust. The closing "so \( P \) implies \( S \)" is the closing line of \( \rulename{{\to}I} \), which @def-silent-steps allows to go unsaid.
+
+::: {.uses}
+@def-rules-implication (the rule →I); @def-rule-implication-elimination (the rule →E); @def-rules-disjunction (the rule ∨E).
+:::
 :::
 
 ::: {#exr-excluded-middle-r3}
@@ -740,9 +804,9 @@ Decide with a truth table whether \( (P \to Q) \to Q \models P \vee Q \), readin
 :::
 
 ::: {.solution}
-This item reaches back within this volume, since there is no earlier one: it uses the tables of Chapter 4 and the derivations of Chapter 2.
+This uses the truth tables of Chapter 4 and the derivations of Chapter 2.
 
-*The table.* Work backwards from F, as in @exm-backwards-from-f and the entailments of @def-valid-argument. A refuting row needs \( P \vee Q \) false, so \( P \) and \( Q \) are both false. In that row \( P \to Q \) is true, so the premise \( (P \to Q) \to Q \) is "T \( \to \) F", which is false. So no row makes the premise true and the conclusion false, and the entailment holds. The full table agrees:
+*The table.* Work backwards from F, as in @exm-backwards-from-f. A refuting row needs \( P \vee Q \) false, so \( P \) and \( Q \) are both false. In that row \( P \to Q \) is true, so the premise \( (P \to Q) \to Q \) is "T \( \to \) F", which is false. So no row makes the premise true and the conclusion false, and the entailment holds. The full table agrees:
 \[
 \begin{array}{cc|ccc}
 P & Q & P \to Q & (P \to Q) \to Q & P \vee Q \\
@@ -778,9 +842,13 @@ $\begin{nd}
 \end{center}
 ```
 
-The one classical line is line 11. Closing the same box by \( \rulename{\neg I} \) instead gives \( \neg\neg(P \vee Q) \), and then the derivation is intuitionistic: the premise yields the double negation of its classical conclusion, the pattern of Glivenko's theorem in the remark of this section.
+The one classical line is line 11. Closing the same box by \( \rulename{\neg I} \) instead gives \( \neg\neg(P \vee Q) \). Then the derivation is intuitionistic: the premise yields the double negation of its classical conclusion. This is the pattern of Glivenko's theorem, stated earlier in this section.
 
 No derivation of this sequent avoids \( \rulename{RAA} \) or one of its equivalents; the optional Section 8.8 proves it with a two-stage model. (With \( \bot \) in place of \( Q \), the sequent would turn \( \neg\neg P \) into \( P \) without any further classical step, and Chapter 4's optional theorem in Section 4.7 shows that \( \neg\neg P \vdash P \) needs \( \rulename{RAA} \).)
+
+::: {.uses}
+@def-valid-argument (entailment).
+:::
 :::
 
 ::: {#exr-excluded-middle-r4}
@@ -790,7 +858,7 @@ Prove that for every integer \( n \), \( n^3 - n \) is divisible by \( 3 \).
 :::
 
 ::: {.solution}
-*The tool* is proof by cases on the remainder of \( n \) on division by \( 3 \): every integer \( n \) is \( 3k \), \( 3k + 1 \), or \( 3k + 2 \) for some integer \( k \). This is a school fact, of the same kind as "every integer is even or odd" in Chapter 2. It is \( \rulename{\vee E} \) with three cases (@def-rules-disjunction, used twice), and in each case \( \rulename{\exists I} \) (@def-rule-existential-introduction) with an explicit witness. First factor:
+*The tool* is proof by cases on the remainder of \( n \) on division by \( 3 \): every integer \( n \) is \( 3k \), \( 3k + 1 \), or \( 3k + 2 \) for some integer \( k \). This is a school fact, of the same kind as "every integer is even or odd" in Chapter 2. It is \( \rulename{\vee E} \) used twice, for three cases (@def-rules-disjunction). In each case it is \( \rulename{\exists I} \) with an explicit witness (@def-rule-existential-introduction). First factor:
 \[
 n^3 - n = (n - 1)\, n\, (n + 1) .
 \]
@@ -804,7 +872,7 @@ Let \( n \) be an integer, and let \( k \) be an integer with \( n = 3k \), \( n
 
 In each case \( n^3 - n = 3j \) for the integer \( j \) in brackets, so \( 3 \mid n^3 - n \). Since \( n \) was arbitrary, this holds for every integer \( n \).
 
-*Why the look-alikes are worse.* A proof by contradiction ("suppose \( 3 \nmid n^3 - n \) …") would have to reach exactly this case analysis and then clash with its assumption at the last line: a direct proof in costume (@exm-costume-direct). Induction is closer, but it fits the statement badly: with base case \( P(0) \) and the step from \( n \) to \( n + 1 \) (@ax-induction) it proves the claim only for \( n \in \nN \), and the negative integers \( n = -m \), \( m \in \nZ_{>0} \), need a second argument, for instance \( (-m)^3 - (-m) = -(m^3 - m) \). The case split covers all integers at once.
+*Why the look-alikes are worse.* A proof by contradiction ("suppose \( 3 \nmid n^3 - n \) …") would have to reach exactly this case analysis and then clash with its assumption at the last line: a direct proof in costume (@exm-costume-direct). Induction is closer, but it fits the statement badly. With base case \( P(0) \) and the step from \( n \) to \( n + 1 \) (@ax-induction), it proves the claim only for \( n \in \nN \). The negative integers \( n = -m \), \( m \in \nZ_{>0} \), need a second argument, for instance \( (-m)^3 - (-m) = -(m^3 - m) \). The case split covers all integers at once.
 :::
 
 <!-- dependency ledger
@@ -825,7 +893,7 @@ excluded-middle-bhk (claim): the proof of thm-irrational-power-rational splits b
 excluded-middle-history (claim): dates, titles and events of the history subsection (Brouwer 1908, Kolmogorov 1925, Hilbert 1927/1928, Annalen 1928, Glivenko 1929, Heyting 1930, Goedel and Gentzen 1933, Bishop 1967) | external historical record, no quotation; nothing depends on it
 excluded-middle-history (claim): relevance logics reject P -> (Q -> P), which Chapter 1 derives | stated without proof in a second-reading fold; the derivation is F1.1 §05 (prose pointer); nothing depends on it
 excluded-middle-analysis (claim): constructive sup iff order-located; Specker's sequence (1949); approximate IVT, exact IVT for strictly increasing f; BW bisection step is LEM | stated informally without proof and marked so; no volume named; nothing depends on them
-excluded-middle-lean (claim): in Lean, Classical.em is derived from Classical.choice via Diaconescu's theorem; data defined by classical decision must be noncomputable | external facts about Lean, stated without proof, in a second-reading fold; nothing depends on them
+excluded-middle-lean (claim): in Lean, Classical.em is derived from Classical.choice via Diaconescu's theorem; data defined by classical decision must be noncomputable | external facts about Lean, stated without proof, in the "For instructors" fold; nothing depends on them
 excluded-middle-position (claim): the axioms for the real numbers include trichotomy; constructive analysis rejects trichotomy for reals | the Looking-ahead box names AN1.1 (no reason rests on it); the constructive fact stated without proof
 excluded-middle-check-2 (solution): BHK proof of not (P and not P) | inline
 excluded-middle-one-rule (claim): TAUT is licensed by completeness, whose proof splits on atoms by LEM, so a TAUT line uses RAA | def-rule-taut, cor-derivable-iff-valid, lem-atom-splitting (cited); the propositional skeleton, def-propositional-skeleton, F1.8 §03 (prose pointer)
@@ -847,7 +915,7 @@ exr-excluded-middle-b5 (solution): the three derivations use no RAA, not-not-E, 
 exr-excluded-middle-b5 (solution): one instance of Peirce's law does not give back the instance of excluded middle | F1.5 §08 Exercise C1 (b) (later optional section, prose pointer, outside the argument)
 exr-excluded-middle-c1 (solution): log2 25 = 2 log2 5; (2^(1/2))^(log2 x) = 2^(log2 sqrt x); log2 25 > 0; 2^(p/q) = x gives 2^p = x^q | school facts about real exponents, AN1.10 (promised)
 exr-excluded-middle-c1 (solution): every integer m >= 2 is 2^k r with k in N and r odd; products of odd integers are odd; 2^p > 2^(2kq) implies p > 2kq; 2^p = 2^(2kq) 2^(p-2kq) for 2kq <= p | school arithmetic of Z, F2.2 (promised; STATUS row 95)
-exr-excluded-middle-c2 (solution): a derived sequent may be used with statements substituted for its letters | def-derived-rule (cited)
+exr-excluded-middle-c2 (solution): a derived sequent may be used with statements substituted for its letters | def-derived-rule (cited in the solution's Uses line)
 exr-excluded-middle-r1 (solution): (m+1)/2 - m = (1-m)/2 > 0 and 1 - (m+1)/2 = (1-m)/2 > 0 for m < 1; not (a <= m) iff a > m | school algebra (order and trichotomy), AN1.1 (promised)
 exr-excluded-middle-r1 (solution): part (a) of prp-bounded-quantifier-negation used under a forall | prp-replacement (cited)
 exr-excluded-middle-r3 (solution): no derivation of (P -> Q) -> Q |- P or Q avoids RAA | F1.5 §08 (later optional section of this chapter, prose pointer: a two-stage model); F1.3 optional thm-raa-independent pointed at in prose, outside the argument; nothing depends on it

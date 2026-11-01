@@ -1,6 +1,6 @@
 # Four Levels of One Proof
 
-Sections 8.1 and 8.2 matched each rule with the phrases that carry it. A proof, though, is read and written whole. This section writes proofs several times, from a full derivation to the plain prose of a textbook, names the four levels this gives, fixes exactly which steps the last level may leave unsaid, and ends with the use that matters most to a reader working alone: when a sentence looks doubtful, rewrite it, and only it, as a skeleton, and look.
+Sections 8.1 and 8.2 matched each rule with the phrases that carry it. A proof, though, is read and written whole. This section writes proofs several times, from a full derivation to the plain prose of a textbook. It names the four levels this gives, and it fixes exactly which steps the last level may leave unsaid. It ends with the use that matters most when you work alone: when a sentence looks doubtful, rewrite it, and only it, as a skeleton, and look.
 
 ## One short proof, four texts
 
@@ -71,7 +71,7 @@ In the plain prose, which words stand for line 2 of the skeleton, and which skel
 "Say \( n = 2k + 1 \)" is line 2, the opening of the \( \rulename{\exists E} \) box with the fresh name \( k \). Lines 5, 6 and 7, the closings of the three boxes, have no words. "So \( n^2 \) is odd" is line 4, the \( \rulename{\exists I} \).
 :::
 
-Sections 2.2 and 6.4 already printed proofs twice, once as a derivation and once as a paragraph. The four texts you have just read are the four levels of the next definition.
+Sections 2.2 and 6.4 already printed proofs twice, once as a derivation and once as a paragraph. The four texts you have just read are the four levels of proof.
 
 ::: {#def-levels-of-proof}
 [Levels of Proof]
@@ -87,15 +87,15 @@ A proof can be written at four **levels**.
 In words: level 0 hides no logic. Every line other than an arith line can be checked mechanically against the schema of its rule, and each arith line records one fact about numbers that can be checked by hand. Level 1 keeps the logical architecture and lets the arithmetic run in blocks. Level 2 is level 1 turned into sentences, with the architecture still labeled. Level 3 removes the labels and some of the lines, following a fixed convention.
 
 ::: {.second-reading title="Levels already on the page, and a skeleton missing a box"}
-The levels are already on the page in earlier chapters. The derivation in Section 6.4 is level 0. The paragraph after @thm-sqrt2-irrational, with its tags \( [\rulename{{\to}E}] \), \( [\rulename{\wedge I}] \), \( [\rulename{\neg E}] \), \( [\rulename{\neg I}] \), is level 2 for the rules Chapter 2 had; its quantifier steps carry no tags. The derivation printed below that paragraph is not quite level 0, and the reason is instructive: it fixes \( r \), \( p \) and \( q \) in advance and leaves out the two quantifier steps, choosing \( p \), \( q \) (and later \( m \)) and passing from one \( r \) to every \( r \), because Chapter 2 had no rules for them yet. Section 2.2 says so in the paragraph after the derivation. With Chapter 5's rules those steps can be written. The example of the square root of two below writes the choices of \( p \) and \( q \) and the step to every \( r \); the choice of \( m \) stays inside the arithmetic fact of line 15 of its level-0 derivation (in the fold "Level 0 of the square root of two"), since evenness is treated there as a single predicate \( E \).
+The levels already appear in earlier chapters. The derivation in Section 6.4 is level 0. The paragraph after @thm-sqrt2-irrational carries the tags \( [\rulename{{\to}E}] \), \( [\rulename{\wedge I}] \), \( [\rulename{\neg E}] \), \( [\rulename{\neg I}] \). It is level 2 for the rules Chapter 2 had, and its quantifier steps carry no tags. The derivation printed below that paragraph is not quite level 0. It fixes \( r \), \( p \) and \( q \) in advance. It leaves out the two quantifier steps, choosing \( p \), \( q \) (and later \( m \)) and passing from one \( r \) to every \( r \), because Chapter 2 had no rules for them yet. Section 2.2 says so in the paragraph after the derivation. With Chapter 5's rules those steps can be written. The example of the square root of two below writes the choices of \( p \) and \( q \) and the step to every \( r \). The choice of \( m \) stays inside the arithmetic fact of line 15 of its level-0 derivation, since evenness is treated there as a single predicate \( E \).
 
-A **non-example**, by one change: take a level-1 skeleton and delete one of its boxes, say the box in which a name \( N_0 \) is chosen, keeping the lines inside. The result is not a shorter skeleton. It is a list in which \( N_0 \) appears from nowhere, and no reader can tell whether it was chosen, given, or assumed. A skeleton may compress the work inside a box; it may not compress the boxes.
+**A skeleton without one of its boxes.** Take a level-1 skeleton and delete one of its boxes, say the box in which a name \( N_0 \) is chosen, keeping the lines inside. The result is not a shorter skeleton. It is a list in which \( N_0 \) appears from nowhere, and no reader can tell whether it was chosen, given, or assumed. A skeleton may compress the work inside a box; it may not compress the boxes.
 :::
 
-Why four levels and not two? Because each serves a task. Level 0 is for settling a doubt completely: nothing in it is taken on trust. Level 1 is for planning a proof and for reading one: it is what you write on scratch paper before the first sentence (Section 8.5 turns this into a procedure), and what you reconstruct from a textbook when a proof will not come clear (Section 8.4). Level 2 is for learning, which is why this volume uses it. Level 3 is what mathematicians read and write.
+Why four levels and not two? Because each serves a task. Level 0 is for settling a doubt completely: nothing in it is taken on trust. Level 1 is for planning a proof and for reading one. It is what you write on scratch paper before the first sentence, and Section 8.5 turns this into a procedure. It is also what you reconstruct from a textbook when a proof will not come clear (Section 8.4). Level 2 is for learning, and this volume uses it. Level 3 is what mathematicians read and write.
 
 ::: {.warning}
-**A skeleton is not a finished proof.** A level-1 text with lines such as "\( \abs{x_0 - y} < \delta_0 \to \abs{f(x_0) - f(y)} < \varepsilon_0 \), arith" is a plan: it says that a computation goes there, and it can hide a computation that does not work. For \( f(x) = x^2 \) on \( \nR \), a skeleton of "\( f \) is uniformly continuous" with one line "arith" at that point looks exactly like a correct skeleton for \( f(x) = 3x + 1 \), where \( \delta = \varepsilon/3 \) works because \( \abs{(3x+1)-(3y+1)} = 3\abs{x-y} \); the claim is false for the first function (@exm-square-not-uniform), and only writing out the arithmetic shows where it fails. Expand every "arith" line before calling the proof done.
+**A skeleton is not a finished proof.** A level-1 text with lines such as "\( \abs{x_0 - y} < \delta_0 \to \abs{f(x_0) - f(y)} < \varepsilon_0 \), arith" is a plan: it says that a computation goes there, and it can hide a computation that does not work. For \( f(x) = x^2 \) on \( \nR \), take a skeleton of "\( f \) is uniformly continuous" with one line "arith" at that point. It looks exactly like a correct skeleton for \( f(x) = 3x + 1 \), where \( \delta = \varepsilon/3 \) works because \( \abs{(3x+1)-(3y+1)} = 3\abs{x-y} \). The claim is false for the first function (@exm-square-not-uniform), and only writing out the arithmetic shows where it fails. Expand every "arith" line before calling the proof done.
 :::
 
 ## Which steps may be silent
@@ -111,7 +111,7 @@ Section 8.1 stated the principle: a step may go unsaid when its result is forced
 | a witness, with what it depends on; a case split, with why the cases cover everything | never | it is a choice |
 | a citation of a hypothesis or a result; the clash of \( \rulename{\neg E} \); the conclusion of \( \rulename{\neg I} \) or \( \rulename{RAA} \) | never | the reader cannot guess what licensed it |
 
-The official list, which the rest of the book checks written proofs against, is the next definition. The table gives its most common entries; the definition gives all of them.
+The table gives only the most common cases. Here is the complete list.
 
 ::: {#def-silent-steps}
 [Silent Steps]
@@ -149,18 +149,32 @@ The following are **never silent**:
 - a "without loss of generality", together with the symmetry that licenses it.
 :::
 
-The eighth and ninth items of the first list, for instance, say this: after "choose \( N \) such that \( \abs{a_n - L} < \varepsilon \) for every \( n \ge N \)", applying that line to a particular \( n \ge N \) needs no comment.
+Two items of the first list often work together: \( \rulename{\forall E} \) at the obvious term, and \( \rulename{{\to}E} \) on a line of the proof. After "choose \( N \) such that \( \abs{a_n - L} < \varepsilon \) for every \( n \ge N \)", applying that line to a particular \( n \ge N \) needs no comment.
 
-**Silent steps and truth tables.** Section 4.8 named the step that a truth table licenses, TAUT (@def-rule-taut). Section 6.3 let it act on the propositional skeleton of a first-order line, where every atomic and every quantified part counts as a letter (@def-propositional-skeleton, @prp-taut-skeleton). Most items of the first list are TAUT steps: \( \rulename{\wedge I} \) with both conjuncts displayed, \( \rulename{\wedge E} \), \( \rulename{R} \), \( \rulename{\vee I} \), \( \rulename{\bot E} \) once the contradiction is stated, \( \rulename{DS} \), the exchange of the members of a disjunction or conjunction, \( \rulename{{\leftrightarrow}E} \) with a definition, and \( \rulename{{\to}E} \) on a line of the proof. A reader can check each of them by a truth table on the skeleton. The quantifier and equality items, \( \rulename{\forall E} \) at the obvious term and \( \rulename{{=}I} \) and \( \rulename{{=}E} \) inside chains, are not TAUT steps: they are silent because the sentence that uses them forces them. TAUT never licenses a first-order law. On the skeleton, \( \forall x\, \forall y\, R(x, y) \) and \( \forall y\, \forall x\, R(x, y) \) are two different letters, so passing from one to the other is a derivation with the quantifier rules, not a TAUT step. From Section 6.3 on, a level-1 line that compresses propositional steps inside one box may cite TAUT with its lines, in place of the names of its rules.
+**Silent steps and truth tables.** Section 4.8 named the step that a truth table licenses, TAUT (@def-rule-taut). Section 6.3 let it act on the propositional skeleton of a first-order line (@def-propositional-skeleton). On the skeleton every atomic and every quantified part counts as a letter, and what a truth table on the skeleton licenses is derivable (@prp-taut-skeleton). Most of the steps that may be silent are TAUT steps:
+
+- \( \rulename{\wedge I} \) with both conjuncts displayed, \( \rulename{\wedge E} \), \( \rulename{R} \) and \( \rulename{\vee I} \);
+- \( \rulename{\bot E} \) once the contradiction is stated, and \( \rulename{DS} \);
+- the exchange of the members of a disjunction or conjunction;
+- \( \rulename{{\leftrightarrow}E} \) with a definition, and \( \rulename{{\to}E} \) on a line of the proof.
+
+A reader can check each of them by a truth table on the skeleton. The quantifier and equality items, \( \rulename{\forall E} \) at the obvious term and \( \rulename{{=}I} \) and \( \rulename{{=}E} \) inside chains, are not TAUT steps: they are silent because the sentence that uses them forces them. TAUT never licenses a first-order law. On the skeleton, \( \forall x\, \forall y\, R(x, y) \) and \( \forall y\, \forall x\, R(x, y) \) are two different letters, so passing from one to the other is a derivation with the quantifier rules, not a TAUT step. From Section 6.3 on, a level-1 line that compresses propositional steps inside one box may cite TAUT with its lines, in place of the names of its rules.
 
 ::: {.warning}
-**Level 3 is not level 0 with steps missing at random.** A proof that skips the reason a case split is exhaustive, or chooses \( \delta \) without saying what it depends on, or uses a lemma without naming it, is not "written at level 3": it has a gap, because those steps are in the never-silent list. Conversely, a proof that omits "since \( \varepsilon \) was arbitrary" has no gap. When you judge whether a written proof is complete, judge it against @def-silent-steps, not against your sense of what is obvious.
+**Level 3 is not level 0 with steps missing at random.** A proof may skip the reason a case split is exhaustive, choose \( \delta \) without saying what it depends on, or use a lemma without naming it. Such a proof is not "written at level 3": it has a gap, because those steps are never silent. Conversely, a proof that omits "since \( \varepsilon \) was arbitrary" has no gap. When you judge whether a written proof is complete, judge it against @def-silent-steps, not against your sense of what is obvious.
 :::
 
 ::: {.second-reading title="The two lists against the principle, with an example"}
-Read the two lists against the principle. Everything in the first list is forced. \( \rulename{\wedge E} \) has one premise and two possible conclusions, and the next sentence shows which was used. The closing line of a box is determined by the box. \( \rulename{\forall E} \) at the obvious term \( x \), when \( x \) is the name in sight, is forced by the sentence that uses it. Everything in the second list carries information that the surrounding lines do not determine. Which name is chosen, and that it is fresh; which witness, and what it depends on; which cases, and why they are all the cases; which result is cited. A reader who meets "Then \( p \) is even" with no citation has to guess what licensed it, and a guess is not a check.
+Read the two lists against the principle. Everything in the first list is forced. \( \rulename{\wedge E} \) has one premise and two possible conclusions, and the next sentence shows which was used. The closing line of a box is determined by the box. \( \rulename{\forall E} \) at the obvious term \( x \), when \( x \) is the name in sight, is forced by the sentence that uses it. Everything in the second list carries information that the surrounding lines do not determine:
 
-A small example. In "since \( x \in (0, 1) \), in particular \( x > 0 \)", the step from the conjunction "\( 0 < x \) and \( x < 1 \)" to its first conjunct is \( \rulename{\wedge E} \), and the unwinding of \( x \in (0, 1) \) into that conjunction is \( \rulename{{\leftrightarrow}E} \) with the definition of an interval. Both may be silent, and here the writer kept the phrase "in particular" anyway, which is allowed: the convention says what **may** be omitted, never what must be. On the other side, "suppose \( r^2 = 2 \)" can never be omitted from the proof of @thm-sqrt2-irrational: without it, the reader does not know that a box has opened, and the final "\( r^2 \ne 2 \)" has no visible source.
+- which name is chosen, and that it is fresh;
+- which witness, and what it depends on;
+- which cases, and why they are all the cases;
+- which result is cited.
+
+A reader who meets "Then \( p \) is even" with no citation has to guess what licensed it, and a guess is not a check.
+
+A small example is "since \( x \in (0, 1) \), in particular \( x > 0 \)". The step from the conjunction "\( 0 < x \) and \( x < 1 \)" to its first conjunct is \( \rulename{\wedge E} \). The unwinding of \( x \in (0, 1) \) into that conjunction is \( \rulename{{\leftrightarrow}E} \) with the definition of an interval. Both may be silent, and here the writer kept the phrase "in particular" anyway, which is allowed: the convention says what **may** be omitted, never what must be. On the other side, "suppose \( r^2 = 2 \)" can never be omitted from the proof of @thm-sqrt2-irrational: without it, the reader does not know that a box has opened, and the final "\( r^2 \ne 2 \)" has no visible source.
 :::
 
 ::: {.check}
@@ -178,11 +192,11 @@ The first example is the proof of @thm-sqrt2-irrational, now with every quantifi
 ::: {#exm-sqrt2-four-levels}
 [The irrationality of the square root of two at four levels]
 
-Write the proof of @thm-sqrt2-irrational, that no rational number has square \( 2 \), at levels 0, 1, 2 and 3 of @def-levels-of-proof, and match the levels line by line.
+Take the proof of @thm-sqrt2-irrational, that no rational number has square \( 2 \). Write it at levels 0, 1, 2 and 3 of @def-levels-of-proof, and match the levels line by line.
 :::
 
 ::: {.idea}
-The move this example shows in full is **skeleton first**: before any arithmetic, write the first and the last line of every box. The goal \( \forall r \in \nQ \; \neg(r \cdot r = 2) \) dictates the outer box (\( \rulename{\forall I} \), "let \( r \in \nQ \)") and the next one (\( \rulename{\neg I} \), "suppose \( r^2 = 2 \)", ending in \( \bot \)). Inside, (L) instantiated at \( r_0 \) is an existential, so its \( \rulename{\exists E} \) boxes open at once, with fresh names \( p_0 \), \( q_0 \), and they too end in \( \bot \). Only then is there something to compute: the arithmetic fills the innermost box, and it has a target, the clash with "not both even". Sections 8.5 and 8.6 come back to this move twice, with parts of the proof left blank.
+This example shows in full the method **skeleton first**: before any arithmetic, write the first and the last line of every box. The goal \( \forall r \in \nQ \; \neg(r \cdot r = 2) \) dictates the outer box (\( \rulename{\forall I} \), "let \( r \in \nQ \)") and the next one (\( \rulename{\neg I} \), "suppose \( r^2 = 2 \)", ending in \( \bot \)). Inside, (L) instantiated at \( r_0 \) is an existential, so its \( \rulename{\exists E} \) boxes open at once, with fresh names \( p_0 \), \( q_0 \), and they too end in \( \bot \). Only then is there something to compute: the arithmetic fills the innermost box, and it has a target, the clash with "not both even". Sections 8.5 and 8.6 come back to this method twice, with parts of the proof left blank.
 
 *Before reading on: the level-3 proof below has four sentences. Which lines of the level-1 skeleton does its second sentence, "By (L), write \( r = p/q \) …", stand for?*
 :::
@@ -230,7 +244,7 @@ $\begin{nd}
 
 Line 9 takes the first conjunct out of \( L(r_0, p_0, q_0) \), and line 11 the second.
 
-The answer to the prompt: "By (L), write \( r = p/q \) with integers \( p \), \( q \), not both even" stands for line 4 (\( \rulename{\forall E} \) of premise 1 at \( r_0 \)) and for the openings of the two \( \rulename{\exists E} \) boxes, lines 5–8. It also displays the conjunct \( r = p/q \) on its own, so the \( \rulename{\wedge E} \) inside line 9 that takes it out has nothing left to say.
+The sentence "By (L), write \( r = p/q \) with integers \( p \), \( q \), not both even" stands for lines 4–8. Line 4 is \( \rulename{\forall E} \) of premise 1 at \( r_0 \), and lines 5–8 open the two \( \rulename{\exists E} \) boxes. It also displays the conjunct \( r = p/q \) on its own, so the \( \rulename{\wedge E} \) inside line 9 that takes it out has nothing left to say.
 :::
 
 ::: {.second-reading title="Level 0 of the square root of two"}
@@ -275,31 +289,44 @@ $\begin{nd}
 \end{center}
 ```
 
-The three "arith" lines are facts about integers, each checkable by hand. Line 11: \( p_0 \cdot p_0 = (r_0 q_0)(r_0 q_0) = (r_0 \cdot r_0)(q_0 \cdot q_0) = 2 \cdot (q_0 \cdot q_0) \), by lines 10 and 4. Line 12: \( p_0 \cdot p_0 \) is \( 2 \) times the integer \( q_0 \cdot q_0 \), so it is even. Line 15: by line 14, \( p_0 = 2m \) for an integer \( m \); then line 11 reads \( 4m^2 = 2 q_0^2 \), so \( q_0^2 = 2m^2 \) is even. The side conditions at the flagged lines hold: at line 21 the flag \( q_0 \) is not in \( \bot \), in line 7, in a premise, or in the assumptions still open (lines 3, 4, 6, 7); at line 22 the flag \( p_0 \) is not in \( \bot \), in line 5, in a premise, or in lines 3 and 4; at line 24 the flag \( r_0 \) is in no premise and not in line 24.
+The three "arith" lines are facts about integers, each checkable by hand. Line 11: \( p_0 \cdot p_0 = (r_0 q_0)(r_0 q_0) = (r_0 \cdot r_0)(q_0 \cdot q_0) = 2 \cdot (q_0 \cdot q_0) \), by lines 10 and 4. Line 12: \( p_0 \cdot p_0 \) is \( 2 \) times the integer \( q_0 \cdot q_0 \), so it is even. Line 15: by line 14, \( p_0 = 2m \) for an integer \( m \); then line 11 reads \( 4m^2 = 2 q_0^2 \), so \( q_0^2 = 2m^2 \) is even. The side conditions at the flagged lines hold. At line 21 the flag \( q_0 \) is not in \( \bot \), in line 7, in a premise, or in the assumptions still open, lines 3, 4, 6 and 7. At line 22 the flag \( p_0 \) is not in \( \bot \), in line 5, in a premise, or in lines 3 and 4. At line 24 the flag \( r_0 \) is in no premise and not in line 24.
 
-Level-1 line 9 is level-0 lines 10–14; line 10 is lines 15–17; line 11 is lines 18–20. Premise 2 is not a line of level 1; it is cited as "lemma". Every other line of level 1 is a line of level 0, renumbered.
+The level-1 lines for \( E(p_0) \), for \( E(q_0) \) and for the clash are level-0 lines 10–14, 15–17 and 18–20. Premise 2 is not a line of level 1: level 1 cites it as "lemma". Every other line of level 1 is a line of level 0, renumbered.
 
-At level 0, "By (L), write \( r = p/q \) with integers \( p \), \( q \), not both even" stands for line 5 (\( \rulename{\forall E} \) of premise 1 at \( r_0 \)) and for the openings of the two \( \rulename{\exists E} \) boxes, lines 6–9. It also displays the conjunct, in the form \( r = p/q \), on its own, so the \( \rulename{\wedge E} \) of line 10 that extracts it has nothing left to say and can be silent.
+At level 0, "By (L), write \( r = p/q \) with integers \( p \), \( q \), not both even" stands for lines 5–9. Line 5 is \( \rulename{\forall E} \) of premise 1 at \( r_0 \), and lines 6–9 open the two \( \rulename{\exists E} \) boxes. It also displays the conjunct, in the form \( r = p/q \), on its own, so the \( \rulename{\wedge E} \) of line 10 that extracts it has nothing left to say and can be silent.
 
 **A check at level 0.**
 
 ::: {.check}
-Which lines of the level-0 derivation in @exm-sqrt2-four-levels have no counterpart in the level-3 text, and which item of @def-silent-steps lets each go?
+Which lines of the level-0 derivation in @exm-sqrt2-four-levels have no counterpart in the level-3 text? Which item of @def-silent-steps lets each go?
 :::
 
 ::: {.solution}
-Eight lines. Line 5 is \( \rulename{\forall E} \) of premise 1 at the obvious term \( r_0 \), the name in sight; "By (L)" cites premise 1, and the instance is not written. Lines 10 and 19 are \( \rulename{\wedge E} \). Lines 13 and 16 are \( \rulename{\forall E} \) of the lemma at the obvious terms \( p_0 \) and \( q_0 \); the citations "by @thm-square-even-implies-even" and "by the same theorem" remain, and they are the \( \rulename{{\to}E} \) lines 14 and 17. Lines 21 and 22 are the closing lines of the two \( \rulename{\exists E} \) boxes. Line 24 is the closing line of \( \rulename{\forall I} \): level 3 never says "since \( r \) was arbitrary". Every other line has a phrase: lines 1 and 2, the premises, are the citations "By (L)" and "by @thm-square-even-implies-even"; lines 3, 4, 6–9 the openings; lines 11, 12, 15 the arithmetic; lines 14, 17 the citations; lines 18 and 20 the clash, "both even, a contradiction", which names the pair through "not both even" two sentences earlier; and line 23, "hence \( r^2 \ne 2 \)", the conclusion of \( \rulename{\neg I} \), which is never silent.
+Eight lines. Line 5 is \( \rulename{\forall E} \) of premise 1 at the obvious term \( r_0 \), the name in sight; "By (L)" cites premise 1, and the instance is not written. Lines 10 and 19 are \( \rulename{\wedge E} \). Lines 13 and 16 are \( \rulename{\forall E} \) of the lemma at the obvious terms \( p_0 \) and \( q_0 \); the citations "by @thm-square-even-implies-even" and "by the same theorem" remain, and they are the \( \rulename{{\to}E} \) lines 14 and 17. Lines 21 and 22 are the closing lines of the two \( \rulename{\exists E} \) boxes. Line 24 is the closing line of \( \rulename{\forall I} \): level 3 never says "since \( r \) was arbitrary". Every other line has a phrase:
+
+- lines 1 and 2, the premises, are the citations "By (L)" and "by @thm-square-even-implies-even";
+- lines 3, 4 and 6–9 are the openings;
+- lines 11, 12 and 15 are the arithmetic;
+- lines 14 and 17 are the citations;
+- lines 18 and 20 are the clash, "both even, a contradiction", which names the pair through "not both even" two sentences earlier;
+- line 23, "hence \( r^2 \ne 2 \)", is the conclusion of \( \rulename{\neg I} \), which is never silent.
 :::
 :::
 
 Look at what the four texts share. Every level has the box of \( r \), the box of the assumption \( r^2 = 2 \), the choice of \( p \) and \( q \), two uses of the lemma, and a contradiction followed by "hence \( r^2 \ne 2 \)". That common part is the proof; the rest is how much of the routine work each reader is trusted to do. The skeleton is the place where you can see it most clearly: fifteen lines, of which only lines 9 and 10 carry the mathematics; every other line is a decision about logic.
 
 ::: {.check}
-Which lines of the level-1 skeleton in @exm-sqrt2-four-levels have no counterpart in the level-3 text, and which item of @def-silent-steps lets each go?
+Which lines of the level-1 skeleton in @exm-sqrt2-four-levels have no counterpart in the level-3 text? Which item of @def-silent-steps lets each go?
 :::
 
 ::: {.solution}
-Four lines. Line 4 is \( \rulename{\forall E} \) of premise 1 at the obvious term \( r_0 \), the name in sight; "By (L)" cites premise 1, and the instance is not written. Lines 12 and 13 are the closing lines of the two \( \rulename{\exists E} \) boxes. Line 15 is the closing line of \( \rulename{\forall I} \): level 3 never says "since \( r \) was arbitrary". Every other line has a phrase: line 1 is "By (L)"; lines 2, 3 and 5–8 the openings; lines 9 and 10 the computations with their citations of @thm-square-even-implies-even; line 11 the clash, "both even, a contradiction"; and line 14, "hence \( r^2 \ne 2 \)", the conclusion of \( \rulename{\neg I} \), which is never silent.
+Four lines. Line 4 is \( \rulename{\forall E} \) of premise 1 at the obvious term \( r_0 \), the name in sight; "By (L)" cites premise 1, and the instance is not written. Lines 12 and 13 are the closing lines of the two \( \rulename{\exists E} \) boxes. Line 15 is the closing line of \( \rulename{\forall I} \): level 3 never says "since \( r \) was arbitrary". Every other line has a phrase:
+
+- line 1 is "By (L)";
+- lines 2, 3 and 5–8 are the openings;
+- lines 9 and 10 are the computations with their citations of @thm-square-even-implies-even;
+- line 11 is the clash, "both even, a contradiction";
+- line 14, "hence \( r^2 \ne 2 \)", is the conclusion of \( \rulename{\neg I} \), which is never silent.
 :::
 
 ## Uniform continuity, twice
@@ -313,7 +340,7 @@ Write the proof of @exm-uniform-implies-continuous, that a function uniformly co
 :::
 
 ::: {.solution}
-**Level 1.** Every line of the full derivation of @exm-uniform-implies-continuous other than the premise opens or closes a box, or is cited by a closing line, except one stretch inside the box of \( \delta_0 \), which becomes line 7.
+**Level 1.** Take the full derivation of @exm-uniform-implies-continuous. Every line other than the premise opens or closes a box, or is cited by a closing line, except one stretch inside the box of \( \delta_0 \), which becomes line 7.
 
 ```{=latex}
 \begin{center}
@@ -342,7 +369,7 @@ $\begin{nd}
 
 > Let \( x \in A \) and \( \varepsilon > 0 \). By uniform continuity, choose \( \delta > 0 \) (depending on \( \varepsilon \) only) such that \( \abs{f(u) - f(v)} < \varepsilon \) for all \( u, v \in A \) with \( \abs{u - v} < \delta \). In particular \( \abs{f(x) - f(y)} < \varepsilon \) for every \( y \in A \) with \( \abs{x - y} < \delta \), so this \( \delta \) works for \( x \) and \( \varepsilon \).
 
-**Where the dependence of \( \delta \) is recorded.** At level 1, in two places: the box of \( \delta_0 \) lies inside the boxes of \( x_0 \) and \( \varepsilon_0 \), so \( \delta_0 \) **may** depend on both; and the line it comes from, line 4, mentions \( \varepsilon_0 \) and not \( x_0 \), so it **does** depend only on \( \varepsilon_0 \) (Section 6.4). At level 3 it is the parenthesis "(depending on \( \varepsilon \) only)", and nothing else: the parenthesis is the whole of the box structure that survives. Section 8.2's picture draws the same record.
+**Where the dependence of \( \delta \) is recorded.** At level 1, in two places. The box of \( \delta_0 \) lies inside the boxes of \( x_0 \) and \( \varepsilon_0 \), so \( \delta_0 \) **may** depend on both. The line it comes from, line 4, mentions \( \varepsilon_0 \) and not \( x_0 \), so it **does** depend only on \( \varepsilon_0 \) (Section 6.4). At level 3 it is the parenthesis "(depending on \( \varepsilon \) only)", and nothing else: the parenthesis is the whole of the box structure that survives. Section 8.2's picture draws the same record.
 :::
 
 ::: {.second-reading title="Levels 0 and 2 of the same proof"}
@@ -372,7 +399,7 @@ $\begin{nd}
 \end{center}
 ```
 
-**Level 1.** Every line of level 0 other than the premise opens or closes a box, or is cited by a closing line, except line 7: lines 7 and 8, which specialize the chosen \( \delta_0 \) to the point \( x_0 \) and repackage the result, are the one stretch of work inside a box.
+**Level 1.** Every line of level 0 other than the premise opens or closes a box, or is cited by a closing line, except line 7. Lines 7 and 8 specialize the chosen \( \delta_0 \) to the point \( x_0 \) and repackage the result. They are the one stretch of work inside a box.
 
 **Level 2.**
 
@@ -380,12 +407,17 @@ $\begin{nd}
 
 As in Section 6.4, the prose renames the bound variables of UC to \( u \), \( v \), so that \( x \) can name the fixed point.
 
-**Where the dependence of \( \delta \) is recorded.** At level 0, in two places: the box of \( \delta_0 \) lies inside the boxes of \( x_0 \) and \( \varepsilon_0 \), so \( \delta_0 \) **may** depend on both; and the line it comes from, line 4, mentions \( \varepsilon_0 \) and not \( x_0 \), so it **does** depend only on \( \varepsilon_0 \) (Section 6.4). At level 1 the record is the same, lines 3 to 5 being unchanged. At level 2 it is the clause "which depends on \( \varepsilon \) only", placed at the \( \rulename{\exists E} \) tag, after the \( \rulename{\forall E} \) at \( \varepsilon \) that produced it. At level 3 it is the parenthesis "(depending on \( \varepsilon \) only)", and nothing else: the parenthesis is the whole of the box structure that survives.
+**Where the dependence of \( \delta \) is recorded.** At level 0, in two places. The box of \( \delta_0 \) lies inside the boxes of \( x_0 \) and \( \varepsilon_0 \), so \( \delta_0 \) **may** depend on both. The line it comes from, line 4, mentions \( \varepsilon_0 \) and not \( x_0 \), so it **does** depend only on \( \varepsilon_0 \) (Section 6.4). At level 1 the record is the same, lines 3 to 5 being unchanged. At level 2 it is the clause "which depends on \( \varepsilon \) only", placed at the \( \rulename{\exists E} \) tag, after the \( \rulename{\forall E} \) at \( \varepsilon \) that produced it. At level 3 it is the parenthesis "(depending on \( \varepsilon \) only)", and nothing else: the parenthesis is the whole of the box structure that survives.
 
 Here the gap between level 0 and level 1 is one line, because there is no arithmetic to compress.
 :::
 
-From level 1 to level 3, ten lines become three sentences. What the level-3 text keeps is exactly the never-silent part of @def-silent-steps: the openings of the two \( \rulename{\forall I} \) boxes ("let \( x \in A \) and \( \varepsilon > 0 \)"), the citation and the choice with its fresh name ("by uniform continuity, choose \( \delta \)"), the dependence of the witness, and the witness itself ("this \( \delta \) works"). The \( \rulename{\forall E} \) at \( u = x \), inside line 7, is the obvious instance and becomes "in particular". The \( \rulename{\exists E} \) closing line 8 and the two \( \rulename{\forall I} \) closing lines 9 and 10 are silent.
+From level 1 to level 3, ten lines become three sentences. The level-3 text keeps exactly the never-silent part of @def-silent-steps:
+
+- the openings of the two \( \rulename{\forall I} \) boxes, "let \( x \in A \) and \( \varepsilon > 0 \)";
+- the citation and the choice with its fresh name, "by uniform continuity, choose \( \delta \)";
+- the dependence of the witness;
+- the witness itself, "this \( \delta \) works". The \( \rulename{\forall E} \) at \( u = x \), inside line 7, is the obvious instance and becomes "in particular". The \( \rulename{\exists E} \) closing line 8 and the two \( \rulename{\forall I} \) closing lines 9 and 10 are silent.
 
 ::: {.check}
 In the level-3 text, which words record that \( \delta \) was chosen inside the box of \( \varepsilon \) from a line that mentions \( \varepsilon \) only?
@@ -464,7 +496,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 6 is what "since \( x \) was arbitrary" needs, and no rule gives it. It cannot cite the box 2–5, which is still open (and is the \( \rulename{\exists E} \) box of \( x_0 \)); and a new \( \rulename{\forall I} \) box flagged \( x_0 \), opened inside it, breaks the side condition of \( \rulename{\forall I} \) (@def-rules-universal), because \( x_0 \) appears in the open assumption on line 2. That assumption says that \( x_0 \) is positive, so \( x_0 \) is one particular element, not an arbitrary one. Section 8.6 catalogues the error as (N3). For \( A = \{-1, 1\} \) the premise is true and the conclusion false.
+Line 6 is what "since \( x \) was arbitrary" needs, and no rule gives it. It cannot cite the box 2–5, which is still open: it is the \( \rulename{\exists E} \) box of \( x_0 \). A new \( \rulename{\forall I} \) box flagged \( x_0 \), opened inside it, breaks the side condition of \( \rulename{\forall I} \) (@def-rules-universal). The reason is that \( x_0 \) appears in the open assumption on line 2. That assumption says that \( x_0 \) is positive, so \( x_0 \) is one particular element, not an arbitrary one. Section 8.6 lists this error, treating a chosen name as arbitrary, as (N3). For \( A = \{-1, 1\} \) the premise is true and the conclusion false.
 
 Here is a harder one, which sounds like the level-3 proof of @exm-uniform-four-levels run backwards.
 
@@ -493,14 +525,14 @@ $\begin{nd}
 \end{center}
 ```
 
-Line 7 is what the phrase "choosing \( \delta \) as above for every \( x \)" needs: one \( \delta_0 \) that works for all \( x \) and \( y \), so that \( \rulename{\exists I} \) can then produce UC's \( \exists \delta \) inside the box of \( \varepsilon_0 \). But line 7 would be a \( \rulename{\forall I} \) over \( x_0 \), and no such step is legal here. The box of \( x_0 \) opened at line 3 is still open, so \( \rulename{\forall I} \) cannot cite it; and a new box with the flag \( x_0 \), opened inside the box of \( \delta_0 \), breaks the side condition of \( \rulename{\forall I} \) (@def-rules-universal), because \( x_0 \) appears in the open assumptions on lines 3 and 6. The phrase "for every \( x \)" has generalized over a name on which the chosen \( \delta_0 \) depends. This is the first blocked line of @exm-converse-fails, met there in the search; here it was found by expanding one English sentence. Section 8.6 catalogues the error, and @exm-square-not-uniform shows that no repair is possible: for \( x^2 \) on \( \nR \) the conclusion is false.
+Line 7 is what the phrase "choosing \( \delta \) as above for every \( x \)" needs. It asks for one \( \delta_0 \) that works for all \( x \) and \( y \), so that \( \rulename{\exists I} \) can then produce the \( \exists \delta \) of uniform continuity inside the box of \( \varepsilon_0 \). But line 7 would be a \( \rulename{\forall I} \) over \( x_0 \), and no such step is legal here. The box of \( x_0 \) opened at line 3 is still open, so \( \rulename{\forall I} \) cannot cite it. A new box with the flag \( x_0 \), opened inside the box of \( \delta_0 \), breaks the side condition of \( \rulename{\forall I} \) (@def-rules-universal), because \( x_0 \) appears in the open assumptions on lines 3 and 6. The phrase "for every \( x \)" has generalized over a name on which the chosen \( \delta_0 \) depends. This is the first blocked line of @exm-converse-fails, met there in the search; here it was found by expanding one English sentence. Section 8.6 catalogues the error, and @exm-square-not-uniform shows that no repair is possible: for \( x^2 \) on \( \nR \) the conclusion is false.
 
 The expansion took six lines, and it was enough to expand the one doubtful stretch. That is the general pattern: you never need to rewrite a whole proof at level 0 to check it. Find the sentence you do not trust, find the boxes open at that sentence, and write the few lines it stands for.
 
 ::: {.remark}
 [Looking ahead]
 
-From *Analysis on the Real Line*, Chapter 1 on, proofs are written at level 3, and a rule tag appears only where the rule is itself the point; *Sets and Functions*, Chapters 1–6 may still tag some proofs at level 2.
+From *Analysis on the Real Line*, Chapter 1 on, proofs are written at level 3. A rule tag appears there only where the rule is itself the point. *Sets and Functions*, Chapters 1–6 may still tag some proofs at level 2.
 :::
 
 ## Exercises
@@ -510,7 +542,7 @@ From *Analysis on the Real Line*, Chapter 1 on, proofs are written at level 3, a
 ::: {#exr-levels-of-abbreviation-a1}
 [A1]
 
-Parts (a)–(c) are about @exm-uniform-four-levels, parts (d) and (e) about @exm-sqrt2-four-levels.
+Parts (a)–(c) are about @exm-uniform-four-levels. Parts (d) and (e) are about @exm-sqrt2-four-levels.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Which lines of the level-1 skeleton does the level-3 sentence "Let \( x \in A \) and \( \varepsilon > 0 \)" stand for? Which open a box, which close one, and which are written at level 3?
@@ -530,13 +562,13 @@ Parts (a)–(c) are about @exm-uniform-four-levels, parts (d) and (e) about @exm
 
 *(d)* Level 1: it is the second conjunct of \( L(r_0, p_0, q_0) \) on line 8, used at line 11. Level 2: "while they were chosen not both even: a contradiction". Level 3: "Thus \( p \) and \( q \) are both even, a contradiction", where the clash refers back to "not both even" in the sentence that chose \( p \) and \( q \).
 
-*(e)* False. "Hence \( r^2 \ne 2 \)" is the conclusion of \( \rulename{\neg I} \), which @def-silent-steps puts among the steps that are never silent. A contradiction alone does not say which assumption it refutes; in this proof the boxes of \( p \), \( q \) and of \( r^2 = 2 \) are all open when it is reached, and the sentence says which box closes and what it gives.
+*(e)* False. "Hence \( r^2 \ne 2 \)" is the conclusion of \( \rulename{\neg I} \), which @def-silent-steps puts among the steps that are never silent. A contradiction alone does not say which assumption it refutes. In this proof the boxes of \( p \), \( q \) and of \( r^2 = 2 \) are all open when it is reached, and the sentence says which box closes and what it gives.
 :::
 
 ::: {#exr-levels-of-abbreviation-a2}
 [A2: Drill]
 
-Each part takes a line or two. (a) names a level; (b)–(f) decide whether a step may be silent at level 3; (g) and (h) judge a text; (i) and (j) decide whether a line may be justified TAUT; (k) and (l) work with an "it suffices to show" column.
+Each part takes a line or two. Part (a) names a level. Parts (b)–(f) decide whether a step may be silent at level 3. Parts (g) and (h) judge a text. Parts (i) and (j) decide whether a line may be justified TAUT. Parts (k) and (l) work with an "it suffices to show" column.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. "Let \( \varepsilon > 0 \) [\( \rulename{\forall I} \)]. Take \( \delta \coloneqq \varepsilon/2 \) [\( \rulename{\exists I} \)]. …" At which level is this text written?
@@ -567,9 +599,9 @@ Each part takes a line or two. (a) names a level; (b)–(f) decide whether a ste
 
 (f) No: it is the split of \( \rulename{\vee E} \), with the reason it exhausts.
 
-(g) No: a skeleton is a plan, and every arith line must be expanded (the warning "A skeleton is not a finished proof").
+(g) No: a skeleton is a plan, and every arith line must be expanded before the proof is finished.
 
-(h) The choice of \( p \) (\( \rulename{\exists E} \) with a fresh name, citing (L)): \( p \) appears from nowhere. Also missing: the assumption \( r^2 = 2 \), the opening of \( \rulename{\neg I} \), and the citation of @thm-square-even-implies-even that licenses "\( p \) is even".
+(h) The choice of \( p \), an \( \rulename{\exists E} \) with a fresh name citing (L): \( p \) appears from nowhere. Also missing: the assumption \( r^2 = 2 \), the opening of \( \rulename{\neg I} \), and the citation of @thm-square-even-implies-even that licenses "\( p \) is even".
 
 (i) Yes. On the skeleton (@prp-taut-skeleton) it is \( P \wedge Q \models P \), true in every row: it is \( \rulename{\wedge E} \).
 
@@ -628,7 +660,7 @@ Here is a level-3 proof.
 >
 > Let \( n \) be odd, say \( n = 2k + 1 \) with \( k \) an integer. Then \( n^2 - 1 = 4k(k + 1) \), so it suffices to show that \( k(k + 1) \) is even. If \( k = 2j \) for an integer \( j \), then \( k(k + 1) = 2 \cdot j(2j + 1) \); if \( k = 2j + 1 \), then \( k(k + 1) = 2 \cdot (2j + 1)(j + 1) \). Either way \( k(k + 1) = 2i \) for an integer \( i \), and then \( n^2 - 1 = 8i \).
 
-Work over the domain \( \nZ \), with "\( n \) is odd" as \( \exists k\, (n = 2k + 1) \) and \( 8 \mid m \) as \( \exists t\, (m = 8t) \). Here is its level-1 skeleton with nine blanks, labeled (i)–(ix). *Name the move, then complete it*, and say where the proof uses the fact (E1) of Section 2.1, that every integer is even or odd.
+Work over the domain \( \nZ \), with "\( n \) is odd" as \( \exists k\, (n = 2k + 1) \) and \( 8 \mid m \) as \( \exists t\, (m = 8t) \). Here is its level-1 skeleton with nine blanks, labeled (i)–(ix). *Name the method, then complete it*, and say where the proof uses the fact (E1) of Section 2.1, that every integer is even or odd.
 
 ```{=latex}
 % schema
@@ -678,9 +710,19 @@ $\begin{nd}
 :::
 
 ::: {.solution}
-*The move* is skeleton first: every box closes by the rule its opening asks for: a "choose" by \( \rulename{\exists E} \) on a line that does not mention the chosen name, the split by \( \rulename{\vee E} \), "suppose \( n \) is odd" by \( \rulename{{\to}I} \), "let \( n \)" by \( \rulename{\forall I} \).
+*The method* is skeleton first. Every box closes by the rule its opening asks for. A "choose" closes by \( \rulename{\exists E} \) on a line that does not mention the chosen name, the split by \( \rulename{\vee E} \), "suppose \( n \) is odd" by \( \rulename{{\to}I} \), "let \( n \)" by \( \rulename{\forall I} \).
 
-*Completion:* (i) \( \exists j\, (k_0 = 2 \cdot j) \vee \exists j\, (k_0 = 2 \cdot j + 1) \), by (E1) at \( k_0 \); (ii) \( \rulename{\exists E} \) 5, 6–8; (iii) \( \rulename{\exists E} \) 10, 11–13; (iv) \( \rulename{\vee E} \) 4, 5–9, 10–14; (v) \( k_0 \cdot (k_0 + 1) = 2 \cdot i_0 \), with \( i_0 \) fresh; (vi) \( \rulename{\exists E} \) 15, 16–18; (vii) \( \rulename{\exists E} \) 1, 2–19; (viii) \( \rulename{{\to}I} \) 1–20; (ix) \( \rulename{\forall I} \) 1–21.
+*Completion:*
+
+- (i) \( \exists j\, (k_0 = 2 \cdot j) \vee \exists j\, (k_0 = 2 \cdot j + 1) \), by "every integer is even or odd", (E1), at \( k_0 \);
+- (ii) \( \rulename{\exists E} \) 5, 6–8;
+- (iii) \( \rulename{\exists E} \) 10, 11–13;
+- (iv) \( \rulename{\vee E} \) 4, 5–9, 10–14;
+- (v) \( k_0 \cdot (k_0 + 1) = 2 \cdot i_0 \), with \( i_0 \) fresh;
+- (vi) \( \rulename{\exists E} \) 15, 16–18;
+- (vii) \( \rulename{\exists E} \) 1, 2–19;
+- (viii) \( \rulename{{\to}I} \) 1–20;
+- (ix) \( \rulename{\forall I} \) 1–21.
 
 (E1) enters at line 4; in the prose it is "if \( k = 2j \) … if \( k = 2j + 1 \)", whose reason for covering every case is not written, so the given proof is slightly short of level 3 there.
 :::
@@ -711,13 +753,13 @@ $\begin{nd}
 
 *(d)* The reason is correct: if both hold, the sum is at least \( 2 \), so the row implies the goal. But the student cannot finish. The new row is false at \( x = \tfrac12 \), where \( \abs{x - 1} = \tfrac12 \), although the goal holds there (\( \tfrac12 + \tfrac32 = 2 \)). A reduction is legal whenever its arrow points up; it is useful only when the new row is true.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 - 3: (a) a column whose every row has an upward-pointing reason, ending in a cited result or a fact (the triangle inequality, or a case split on the sign of \( x - 1 \) and \( x + 1 \)).
 - 3: (b) a forward level-3 text with the citation written.
 - 2: (c) the two \( \rulename{{=}E} \) links named as silent, the citation as spoken.
 - 2: (d) the reason judged correct, and the row shown false at a named \( x \): it fails exactly when \( 0 < \abs{x} < 2 \), for instance at \( x = \tfrac12 \).
 
-A three-case proof (\( x \le -1 \); \( -1 < x < 1 \); \( x \ge 1 \)) written as a column earns (a) and (b) in full. Fatal errors (0 for the step): a row whose reason points down ("the goal implies the row"); a case split that does not exhaust (N8).
+A three-case proof (\( x \le -1 \); \( -1 < x < 1 \); \( x \ge 1 \)) written as a column earns (a) and (b) in full. Slips that lose the step: a row whose reason points down ("the goal implies the row"); a case split that does not cover every case, a false dichotomy, (N8).
 :::
 
 ### C. Going deeper
@@ -764,18 +806,18 @@ Line 4 is the bounded \( \rulename{\forall E} \) at the term \( \abs{a - b} \), 
 
 *(c)* Only line 8, the closing line of \( \rulename{{\to}I} \), is silent: "hence if … then \( a = b \)" is not written. Line 5 is not silent: it is one member of the clashing pair of the \( \rulename{\neg E} \) on line 6, and level 3 names it ("no real number is less than itself"). The instance of line 4 must be named, \( \varepsilon = \abs{a - b} \), because it is not the obvious term: no name in sight is the obvious candidate for \( \varepsilon \), and the whole proof turns on choosing this one. Saying only "by the hypothesis" would leave the reader to find the instance, and that instance is the idea of the proof. The \( \rulename{RAA} \) opening, "suppose, for a contradiction, that \( a \ne b \)", and its conclusion, "hence \( a = b \)", are also never silent.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 - 2: (a) the \( \rulename{{\to}I} \) box on the hypothesis, and inside it a box opened on \( a \ne b \).
 - 2: (a) the box closed by \( \rulename{RAA} \) (\( \rulename{\neg I} \) alone would give only \( \neg\neg(a = b) \)), with \( \bot \) as its last line.
 - 2: (a) the \( \rulename{\forall E} \) at \( \abs{a - b} \), citing a line \( \abs{a - b} > 0 \).
 - 2: (b) a level-3 text with the opening of the contradiction, the instance, the clash and "hence \( a = b \)", and no tags.
 - 2: (c) the silent line identified, and the instance \( \varepsilon = \abs{a - b} \) said to be named because it is not the obvious term.
-- Other routes: a \( \rulename{\neg I} \) box on \( a \ne b \) followed by \( \rulename{\neg\neg E} \), or a split on \( \abs{a - b} > 0 \) or \( \abs{a - b} = 0 \) (arith) whose first case reaches \( \bot \) by the same \( \rulename{\forall E} \) and clash and then \( a = b \) by \( \rulename{\bot E} \), while the second gives \( a = b \) by arith, earns the 4 points of the first two lines, provided the \( \rulename{\neg\neg E} \) line is written explicitly, or the disjunction of the split is justified (from \( \abs{a - b} \ge 0 \), or by trichotomy). In the split, the case assumption \( \abs{a - b} > 0 \) is the line the \( \rulename{\forall E} \) cites for the third line, and for (b) and (c) the opening of the \( \rulename{\neg I} \) box or of the split stands in for the opening of the contradiction.
-Fatal errors (0 for the step): the box closed by \( \neg I \) with the conclusion \( a = b \); the hypothesis applied at an \( \varepsilon \) not known to be positive.
+- Other routes earn the 4 points of the first two lines. One is a \( \rulename{\neg I} \) box on \( a \ne b \) followed by \( \rulename{\neg\neg E} \), provided the \( \rulename{\neg\neg E} \) line is written explicitly. Another is a split on \( \abs{a - b} > 0 \) or \( \abs{a - b} = 0 \) (arith), provided the disjunction of the split is justified, from \( \abs{a - b} \ge 0 \) or by trichotomy. Its first case reaches \( \bot \) by the same \( \rulename{\forall E} \) and clash and then \( a = b \) by \( \rulename{\bot E} \). Its second case gives \( a = b \) by arith. In the split, the case assumption \( \abs{a - b} > 0 \) is the line the \( \rulename{\forall E} \) cites for the third line. For (b) and (c), the opening of the \( \rulename{\neg I} \) box or of the split stands in for the opening of the contradiction.
+Slips that lose the step: the box closed by \( \neg I \) with the conclusion \( a = b \); the hypothesis applied at an \( \varepsilon \) not known to be positive.
 :::
 
 ::: {#exr-levels-of-abbreviation-c2}
-[C2: Exit check: levels]
+[C2: Chapter check: levels]
 
 Let \( (a_n) \) be a sequence of real numbers with \( a_n \to L \), and let \( c \ne 0 \) be a real number. Here is a level-0 derivation that \( c \, a_n \to cL \), with the definition of a limit as in @exm-translate-limit (a), the hypothesis \( c \ne 0 \) as premise 2, and two lines of school arithmetic justified "arith".
 
@@ -833,15 +875,15 @@ Write the proof at level 2 and at level 3. Then say in one sentence how the case
 
 **The case \( c = 0 \).** Then \( c\, a_n = 0 = cL \) for every \( n \), so \( \abs{c\, a_n - cL} = 0 < \varepsilon \) for every \( \varepsilon > 0 \) and every \( n \), and any \( N \) works, for instance \( N = 0 \); the hypothesis \( a_n \to L \) is not needed.
 
-At level 3, the silent steps are those @def-silent-steps allows: the \( \rulename{\forall E} \) and \( \rulename{{\to}E} \) of lines 9 and 11 at the obvious \( n \) (the implication of line 11 is line 9, an instance of the property of the chosen \( N_0 \), not of a hypothesis or a result), carried by "for every \( n \ge N \)", and the closing lines 13, 14, 16 and 17. The \( \rulename{\forall E} \) of line 5 is **not** silent, because its instance \( \varepsilon / \abs{c} \) is not the obvious one; it is named ("applied with \( \varepsilon / \abs{c} \)"). The witness of line 15 is named ("this \( N \)"), and its dependence is stated.
+At level 3, the silent steps are those @def-silent-steps allows. They are the \( \rulename{\forall E} \) and \( \rulename{{\to}E} \) of lines 9 and 11 at the obvious \( n \), carried by "for every \( n \ge N \)", and the closing lines 13, 14, 16 and 17. The implication used at line 11 is line 9, an instance of the property of the chosen \( N_0 \), not of a hypothesis or a result. The \( \rulename{\forall E} \) of line 5 is **not** silent, because its instance \( \varepsilon / \abs{c} \) is not the obvious one; it is named ("applied with \( \varepsilon / \abs{c} \)"). The witness of line 15 is named ("this \( N \)"), and its dependence is stated.
 
-**Marking scheme.** (10 points)
-- 4: every never-silent step is present at level 3, one point each: \( \varepsilon > 0 \) fixed first (\( \rulename{\forall I} \)); the hypothesis applied at \( \varepsilon / \abs{c} \), with its positivity justified, and \( N \) chosen from it (\( \rulename{\exists E} \)); the witness \( N \) produced with its dependence on \( \varepsilon \) stated (\( \rulename{\exists I} \)); \( n \ge N \) taken arbitrary (\( \rulename{\forall I} \)).
+**What a complete answer needs.** (10 points)
+- 4: every never-silent step is present at level 3, one point each. One point for \( \varepsilon > 0 \) fixed first (\( \rulename{\forall I} \)). One for the hypothesis applied at \( \varepsilon / \abs{c} \), with its positivity justified, and \( N \) chosen from it (\( \rulename{\exists E} \)). One for the witness \( N \) produced with its dependence on \( \varepsilon \) stated (\( \rulename{\exists I} \)). One for \( n \ge N \) taken arbitrary (\( \rulename{\forall I} \)).
 - 3: the level-2 tags are correct: \( \rulename{\forall I} \) for \( \varepsilon \) and for \( n \), \( \rulename{\forall E} \) at \( \varepsilon / \abs{c} \), \( \rulename{\exists E} \) for \( N \), \( \rulename{{\to}I} \) for \( n \ge N \), \( \rulename{\exists I} \) for the witness. Deduct one point per wrong or missing tag, down to 0.
 - 2: no step silent at level 3 beyond those @def-silent-steps allows, steps already scored in the first line not counted again; in particular the estimate \( \abs{c\, a_n - cL} = \abs{c} \, \abs{a_n - L} < \abs{c} \cdot \varepsilon / \abs{c} = \varepsilon \) is written out for an arbitrary \( n \ge N \).
 - 1: the case \( c = 0 \) handled, or excluded explicitly with a reason.
 A level 3 that writes "for every \( n \ge N \)" as the single phrase for \( \rulename{\forall I} \) together with \( \rulename{{\to}I} \) earns the \( \rulename{\forall I} \) point, as in the solution.
-Fatal errors (0 for the step): \( N \) chosen before \( \varepsilon \) is fixed; dividing by \( \abs{c} \) in the case \( c = 0 \).
+Slips that lose the step: \( N \) chosen before \( \varepsilon \) is fixed; dividing by \( \abs{c} \) in the case \( c = 0 \).
 :::
 
 ::: {#exr-levels-of-abbreviation-c3}
@@ -895,7 +937,13 @@ $\begin{nd}
 
 Line 1 is (E1) at \( n_0 \), cited as in B2's line 4. The boxes close by \( \rulename{\exists E} \) (lines 7 and 13: \( D(n_0) \) does not mention \( k_0 \) or \( k_1 \)), \( \rulename{\vee E} \) (line 14) and \( \rulename{\forall I} \) (line 15). The second case box could reuse the name \( k_0 \), since the two boxes are siblings; \( k_1 \) keeps the lines apart. The arithmetic: \( (2k_0)^2 = 4k_0^2 \) (line 4) and \( (2k_1 + 1)^2 - 1 = 4k_1^2 + 4k_1 = 4(k_1^2 + k_1) \) (line 10).
 
-The prose leaves unsaid the disjunction (E1) and its reason for covering every case (as in B2, the proof is slightly short of level 3 there), the two \( \rulename{\vee I} \) steps (silent: each case's last words, "so \( 4 \mid n^2 \)" or "so \( 4 \mid n^2 - 1 \)", show which disjunct was reached), the \( \rulename{\exists E} \) closings, the \( \rulename{\vee E} \) closing and the \( \rulename{\forall I} \) closing (silent closings). It writes every opening ("let", "if", "say"), both witnesses (\( k^2 \) and \( k^2 + k \)) and both computations.
+The prose leaves unsaid:
+
+- the disjunction (E1) and its reason for covering every case; as in B2, the proof is slightly short of level 3 there;
+- the two \( \rulename{\vee I} \) steps, which may be silent, since each case's last words, "so \( 4 \mid n^2 \)" or "so \( 4 \mid n^2 - 1 \)", show which disjunct was reached;
+- the \( \rulename{\exists E} \) closings, the \( \rulename{\vee E} \) closing and the \( \rulename{\forall I} \) closing, which may all be silent.
+
+It writes every opening ("let", "if", "say"), both witnesses (\( k^2 \) and \( k^2 + k \)) and both computations.
 :::
 
 <!-- dependency ledger
@@ -907,8 +955,8 @@ def-levels-of-proof (claim): Looking ahead: from AN1.1 on proofs are written at 
 def-levels-of-proof (claim): F1.5 §05 turns level 1 into a procedure; F1.5 §04 reconstructs it when reading | this chapter (sections 04, 05; prose pointers, nothing rests on them)
 def-silent-steps (claim): [before the table] Section 8.1 stated the principle | F1.5 §01 (drafted in parallel from the same frozen blueprint; prose pointer within the chapter)
 def-silent-steps (claim): the six-row table gives common entries of def-silent-steps and says no more than it | def-silent-steps (on the page)
-def-silent-steps (claim): the eighth and ninth items (forall-E at the obvious term; to-E on a line of the proof) license applying the property of a chosen N at a particular n >= N | def-silent-steps (on the page)
-def-silent-steps (claim): [TAUT paragraph] and-I, and-E, R, or-I, bot-E, DS, the exchange, iff-E with a definition, to-E on a line of the proof are valid on the propositional skeleton; forall-E, =I, =E are not TAUT steps; forall x forall y R and forall y forall x R are two letters on the skeleton; a level-1 line may cite TAUT from Section 6.3 on | def-rule-taut (F1.3 §08), def-propositional-skeleton and prp-taut-skeleton (F1.8 §03), cited; NOTATION.md's TAUT entry (never a licence for a first-order validity)
+def-silent-steps (claim): the items forall-E at the obvious term and to-E on a line of the proof (named in words, S3e) license applying the property of a chosen N at a particular n >= N | def-silent-steps (on the page)
+def-silent-steps (claim): [TAUT paragraph] and-I, and-E, R, or-I, bot-E, DS, the exchange, iff-E with a definition, to-E on a line of the proof are valid on the propositional skeleton; forall-E, =I, =E are not TAUT steps; forall x forall y R and forall y forall x R are two letters on the skeleton; a level-1 line may cite TAUT from Section 6.3 on | def-rule-taut (F1.3 §08), def-propositional-skeleton and prp-taut-skeleton (F1.8 §03), cited one per sentence (S3e: prp-taut-skeleton now also carries "what a truth table on the skeleton licenses is derivable", its statement read in words); NOTATION.md's TAUT entry (never a licence for a first-order validity)
 def-silent-steps (example): [fold "The two lists against the principle"] x in (0, 1) unwinds to 0 < x and x < 1 | definition of an open interval (school fact)
 exm-sqrt2-four-levels (example): premise 1 follows from (L): r = p/q with q != 0 gives p = r q; q = 0 forces p = 0, both even; L(r, p, q) abbreviates its matrix | (L) of F1.2 §02 (stated there and taken as known; its proof is promised there to F2.2); school algebra
 exm-sqrt2-four-levels (example): premise 2 is thm-square-even-implies-even written as a formula | thm-square-even-implies-even (cited)
@@ -921,7 +969,7 @@ exm-uniform-four-levels (claim): Section 8.2's picture draws the same record of 
 exm-suffices-column (claim): Section 8.2 reads "it suffices to show" as a cut seen from the goal | F1.5 §02 dictionary (prose pointer within the chapter)
 exm-suffices-column (solution): x^2 - 6x + 10 = (x - 3)^2 + 1; squares >= 0; a_n - 2 = -1/(n + 1); reciprocals of positives reverse <; n >= N gives n + 1 > N; N > 1/eps gives |a_n - 2| < eps | school algebra and order facts; an N in N above 1/eps from the school fact of exm-rhetoric-existential (cited); checked by verify/ch08/exm-suffices-column.py
 exm-suffices-column (claim): step 5 of Section 8.5 asks for the constant in the first sentence | F1.5 §05 (prose pointer within the chapter, nothing rests on it)
-exm-suffices-column (claim): [subsection "Expand to check", easy expansion] line 6 is no legal forall-I: box 2-5 still open; a new forall-I box flagged x_0 breaks the side condition (x_0 in line 2); A = {-1, 1} makes the premise true and the conclusion false | def-rules-universal (cited); F1.5 §06 catalogue (N3) (prose pointer within the chapter, nothing rests on it); checked by verify/ch08/exm-suffices-column.py
+exm-suffices-column (claim): [subsection "Expand to check", easy expansion] line 6 is no legal forall-I: box 2-5 still open; a new forall-I box flagged x_0 breaks the side condition (x_0 in line 2); A = {-1, 1} makes the premise true and the conclusion false | def-rules-universal (cited); F1.5 §06 catalogue (N3), given in words as treating a chosen name as arbitrary (prose pointer within the chapter, nothing rests on it); checked by verify/ch08/exm-suffices-column.py
 exm-suffices-column (claim): [subsection "Expand to check", harder expansion] the line forall-I over x_0 inside the box of delta_0 breaks the side condition; it is the first blocked line of exm-converse-fails; x^2 on R refutes the conclusion | def-rules-universal, exm-converse-fails, exm-square-not-uniform (cited); F1.5 §06 catalogue (prose pointer, nothing rests on it)
 exr-levels-of-abbreviation-a1 (solution): (e) a contradiction alone does not say which open assumption it refutes | def-rules-negation (F1.2); def-silent-steps
 exr-levels-of-abbreviation-a2 (solution): (i) P and Q |= P; (j) P |= Q fails at P true, Q false; (k) 2^(n+1) = 2^n + 2^n, and 2^n >= 1 with 2^n > n gives 2^n + 2^n > n + 1 | def-rule-taut, prp-taut-skeleton (cited); school algebra, including the power law 2^(n+1) = 2 * 2^n (def-power, F2.2); checked by verify/ch08/exr-levels-of-abbreviation-a2.py

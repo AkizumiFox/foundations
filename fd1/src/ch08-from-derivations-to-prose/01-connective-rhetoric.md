@@ -1,10 +1,10 @@
 # The Connective Rules in Prose
 
-Chapters 1–7 built a calculus in which every step of a proof is one rule applied to lines that are available. Mathematicians do not write Fitch boxes; yet every proof they write is a derivation underneath, written in sentences. This section and the next compile the dictionary between the two: for each rule, the phrases that carry it, a sentence in which it does its work, and whether a writer may leave it unsaid. This section covers the connectives and the classical rules; Section 8.2 the quantifiers, equality and induction.
+Chapters 1–7 built a system of rules in which every step of a proof is one rule applied to lines that are available. Mathematicians do not write Fitch boxes. Yet every proof they write is a derivation underneath, written in sentences. This section and the next build a dictionary between the two. For each rule it gives the phrases that carry it, a sentence in which the rule does its work, and whether a writer may leave it unsaid. This section covers the connectives and the classical rules, and Section 8.2 covers the quantifiers, equality and induction.
 
 ## The rule card
 
-Here is every primitive rule of the book, with the classical and derived rules most used in prose, on one card: its shape, the words that carry it in a written proof, and whether plain prose may leave it out. The last column is explained in the next subsection; Section 8.2 gives the quantifier rows their examples.
+Here is every primitive rule of the book on one card, with the classical and derived rules most used in prose. For each rule the card gives its shape, the words that carry it in a written proof, and whether plain prose may leave it out. The principle behind the last column comes next, and Section 8.2 gives the quantifier rows their examples.
 
 | Rule | Shape | You write | Silent in plain prose? |
 |---|---|---|---|
@@ -40,11 +40,11 @@ Which rule does each phrase carry: (i) "say \( n = 2k \)", after "\( n \) is eve
 (i) \( \rulename{\exists E} \), opening the box of \( k \) ("\( n \) is even" unwound to \( \exists k\, (n = 2k) \)). (ii) \( \rulename{\vee E} \), closing. (iii) \( \rulename{\neg E} \), with both lines of the clash named.
 :::
 
-**The purpose of a box, spoken.** Since Section 1.4 every derivation in this book has printed, beside an assumption, the rule that will close its box: "asm, for \( \rulename{{\to}I} \)", "asm, for \( \rulename{\neg I} \)", and so on. Prose says the same thing with the sentence that opens the box. "Suppose \( P \)" is asm, for \( \rulename{{\to}I} \). "Suppose \( P \); … this is impossible", or "if \( P \) were true", is asm, for \( \rulename{\neg I} \). "Suppose, for a contradiction, that not \( P \)" is asm, for \( \rulename{RAA} \). "Case 1: \( P \)" is asm, for \( \rulename{\vee E} \). "Choose \( a \) such that \( P(a) \)" is asm, for \( \rulename{\exists E} \). "\( (\Rightarrow) \) Suppose \( P \)" is asm, for \( \rulename{{\leftrightarrow}I} \). "Let \( x \in A \)" is asm, for \( \rulename{\forall I} \), its bounded form. A box whose purpose the reader cannot hear is a box the writer did not open in words.
+**The purpose of a box, spoken.** Since Section 1.4 every derivation in this book has printed, beside an assumption, the rule that will close its box: "asm, for \( \rulename{{\to}I} \)", "asm, for \( \rulename{\neg I} \)", and so on. Prose says the same thing with the sentence that opens the box. "Suppose \( P \)" is asm, for \( \rulename{{\to}I} \). "Suppose \( P \); … this is impossible", or "if \( P \) were true", is asm, for \( \rulename{\neg I} \). "Suppose, for a contradiction, that not \( P \)" is asm, for \( \rulename{RAA} \). "Case 1: \( P \)" is asm, for \( \rulename{\vee E} \). "Choose \( a \) such that \( P(a) \)" is asm, for \( \rulename{\exists E} \). "\( (\Rightarrow) \) Suppose \( P \)" is asm, for \( \rulename{{\leftrightarrow}I} \). "Let \( x \in A \)" is asm, for \( \rulename{\forall I} \), its bounded form. If the words do not tell the reader which rule a box serves, the writer has not opened that box in words.
 
 ## Which steps may go unsaid
 
-Plain prose leaves steps out. If it left out whatever a writer found obvious, a reader could never tell an omission from a gap, so the book fixes the omissions by one principle: *a step may go unsaid when a reader who knows the rules can restore it uniquely from what is written.* A step that **creates** something (a name, a witness, a case split), **assumes** something, or **cites** something cannot be restored that way, so it is always written.
+Plain prose leaves steps out. Suppose it left out whatever a writer found obvious. Then a reader could never tell an omission from a gap. So the book fixes the omissions by one principle: *a step may go unsaid when a reader who knows the rules can restore it uniquely from what is written.* A step that **creates** something (a name, a witness, a case split), **assumes** something, or **cites** something cannot be restored that way, so it is always written.
 
 *Silent steps are the ones whose result is forced by the lines around them; every choice, assumption and citation is spoken.*
 
@@ -60,9 +60,9 @@ The first, yes: \( \rulename{\wedge E} \) has two possible results, and the next
 
 ## The same proof, twice
 
-Section 2.3 proved @thm-square-even-implies-even ("if \( n^2 \) is even, then \( n \) is even") a second way, in @exm-square-even-via-contrapositive, with the derived rules \( \rulename{CP} \) and \( \rulename{DS} \). Here are four sentences for it, with the box of the second sentence spelled out:
+The theorem "if \( n^2 \) is even, then \( n \) is even" (@thm-square-even-implies-even) has a second proof in Section 2.3. That proof, @exm-square-even-via-contrapositive, uses the derived rules \( \rulename{CP} \) and \( \rulename{DS} \). Its premises are three facts about integers from Section 2.1: every integer is even or odd, (E1); no integer is both, (E2); and the square of an odd integer is odd, (E3). Here are four sentences for the proof, with the box of the second sentence spelled out:
 
-> Suppose \( n^2 \) is even. If \( n^2 \) were odd, it would be both even and odd, which (E2) forbids; so \( n^2 \) is not odd. By (E3), read contrapositively, \( n \) is not odd. Since \( n \) is even or odd, by (E1), \( n \) is even.
+> Suppose \( n^2 \) is even. If \( n^2 \) were odd, it would be both even and odd, which (E2) forbids; so \( n^2 \) is not odd. By (E3), read contrapositively, \( n \) is not odd. Since \( n \) is even or odd, which is (E1), \( n \) is even.
 
 *Before reading on: where in the paragraph does a box open, and where does one close?*
 
@@ -77,10 +77,10 @@ The paragraph accounts for every line of the derivation, though some lines have 
 | 8 | "so \( n^2 \) is not odd" | \( \rulename{\neg I} \), the box closes |
 | 9 | "By (E3), read contrapositively" | \( \rulename{CP} \), citing premise 3 |
 | 10 | "\( n \) is not odd" | \( \rulename{{\to}E} \) |
-| 11–12 | "Since \( n \) is even or odd, by (E1), \( n \) is even." | \( \rulename{DS} \), citing premise 1 |
+| 11–12 | "Since \( n \) is even or odd, which is (E1), \( n \) is even." | \( \rulename{DS} \), citing premise 1 |
 | 13 | nothing | \( \rulename{{\to}I} \), the box closes |
 
-The derivation the table refers to is the one of Section 2.3, with the facts (E1)–(E3) of Section 2.1 (every integer is even or odd; no integer is both; the square of an odd integer is odd) as its premises, written here with its atoms in words:
+Here is the derivation of Section 2.3 that the table refers to, with (E1)–(E3) as its premises and its atoms in words:
 
 ```{=latex}
 \begin{center}
@@ -106,14 +106,14 @@ $\begin{nd}
 \end{center}
 ```
 
-Three features of the table recur through the whole dictionary. The **openings** of boxes always have words, which name what is assumed: "suppose", "if … were". Some lines have **no words**: line 13 closes the box of line 4, and the paragraph simply stops; line 11 only reorders the disjuncts of (E1) for the schema of @prp-disjunctive-syllogism, and prose does not see the order of a disjunction (the principle above lets the exchange be silent: the order a schema wants is forced). And a **premise** is never a sentence of its own: it enters through its name, "(E2)" or "by (E1)", at the step that uses it.
+Three features of the table recur through the whole dictionary. The **openings** of boxes always have words, which name what is assumed: "suppose", "if … were". Some lines have **no words**. Line 13 closes the box of line 4, and the paragraph simply stops. Line 11 only reorders the disjuncts of (E1) for the schema of @prp-disjunctive-syllogism, and prose does not see the order of a disjunction. The principle above lets the exchange be silent, since the order a schema wants is forced. And a **premise** is never a sentence of its own: it enters through its name, such as "(E2)" or "(E1)", at the step that uses it.
 
 ::: {.check}
 Which word of the paragraph tells the reader that line 5 is an assumption and not a claim, and what would the sentence assert if that word were replaced by "is"?
 :::
 
 ::: {.solution}
-The word "were" (with "if"): "if \( n^2 \) were odd" supposes something in order to refute it, which is the opening of a \( \rulename{\neg I} \) box. With "is", the sentence "\( n^2 \) is odd, so it is both even and odd" would assert "\( n^2 \) is odd" as a claim rather than an assumption: it would sit, unjustified, directly in the box of line 4, where it is in fact false (\( n^2 \) is even there), and the proof would be wrong.
+The word "were" (with "if"): "if \( n^2 \) were odd" supposes something in order to refute it, which is the opening of a \( \rulename{\neg I} \) box. With "is", the sentence "\( n^2 \) is odd, so it is both even and odd" would assert "\( n^2 \) is odd" as a claim rather than an assumption. It would sit, unjustified, directly in the box of line 4. There it is in fact false, since \( n^2 \) is even there, and the proof would be wrong.
 :::
 
 ## How to read the dictionary
@@ -145,12 +145,12 @@ Both \( \rulename{\wedge E} \) steps could be silent ("multiplying \( x < 1 \) b
 
 | Rule | Phrases | Silent in plain prose? |
 |---|---|---|
-| \( \rulename{{\to}I} \) | "assume …; then …; hence if … then …"; "suppose …"; "if …, then …" as the frame of a whole proof | never the assumption; the closing "hence" may be silent |
+| \( \rulename{{\to}I} \) | "assume …; then …; hence if … then …", "suppose …", or "if …, then …" as the frame of a whole proof | never the assumption; the closing "hence" may be silent |
 | \( \rulename{{\to}E} \) | "since …, …"; "by (hypothesis, lemma), …"; "hence" | the citation, never |
 | \( \rulename{R} \) | "recall that"; "as noted above" | yes |
-| \( \rulename{MT} \), \( \rulename{CP} \) | "…; so \( P \) cannot hold"; "we prove the contrapositive"; "equivalently, if not \( Q \) then not \( P \)" | the announcement "we prove the contrapositive", never |
+| \( \rulename{MT} \), \( \rulename{CP} \) | "…; so \( P \) cannot hold", "we prove the contrapositive", or "equivalently, if not \( Q \) then not \( P \)" | the announcement "we prove the contrapositive", never |
 
-In analysis, \( \rulename{{\to}I} \) is a proof that begins "Suppose \( \abs{x - 1} < 1 \)" and ends "so \( x > 0 \)"; the example below writes it out. \( \rulename{{\to}E} \) is every citation of a theorem: "since \( 42 \) is divisible by \( 2 \) and by \( 3 \), it is divisible by \( 6 \)" applies the theorem used in Section 1.3 to two facts in hand, and the word "since" introduces those facts. For \( \rulename{CP} \), Section 2.3's @exm-square-even-via-contrapositive is the model, as the opening of this section showed. (@thm-square-even-implies-even itself is proved by cases, with no contraposition.)
+In analysis, \( \rulename{{\to}I} \) is a proof that begins "Suppose \( \abs{x - 1} < 1 \)" and ends "so \( x > 0 \)"; the example below writes it out. \( \rulename{{\to}E} \) is every citation of a theorem. The sentence "since \( 42 \) is divisible by \( 2 \) and by \( 3 \), it is divisible by \( 6 \)" applies the theorem used in Section 1.3 to two facts in hand. The word "since" introduces those facts. For \( \rulename{CP} \), the model is the proof of Section 2.3 worked through above (@exm-square-even-via-contrapositive). (@thm-square-even-implies-even itself is proved by cases, with no contraposition.)
 
 ::: {#exm-rhetoric-implication}
 [A hypothesis assumed, a lemma cited, a contrapositive announced]
@@ -175,10 +175,12 @@ In (b), "recall" is \( \rulename{R} \), and it could be dropped. "Cannot hold" i
 | Rule | Phrases | Silent in plain prose? |
 |---|---|---|
 | \( \rulename{\vee I} \) | "…, so certainly \( P \) or \( Q \)"; "in particular \( x \ne 0 \) or …" | yes |
-| \( \rulename{\vee E} \) | "we consider two cases"; "Case 1 … Case 2 …"; "in either case"; "otherwise" | never the split; the "in either case" may be silent |
+| \( \rulename{\vee E} \) | "we consider two cases", "Case 1 … Case 2 …", "in either case", or "otherwise" | never the split; the "in either case" may be silent |
 | \( \rulename{DS} \) | "since \( x \ne 0 \), the first case is impossible, so …" | the rule's name, yes; the fact \( x \ne 0 \) it uses, never |
-| constructive dilemma (@exm-constructive-dilemma; the derived rule \( \rulename{CD} \) of Section 2.3, @exr-derived-rules-b4) | "if \( P \) then \( R \), and if \( Q \) then \( S \); since \( P \) or \( Q \), we get \( R \) or \( S \)"; "in the first case …, in the second …, so \( R \) or \( S \)" | never the split or the two implications; the closing "so \( R \) or \( S \)" yes |
-| "or" and "and" commute (@exm-disjunction-first-derivations, @prp-and-commutes) | "\( P \) or \( Q \)" read as "\( Q \) or \( P \)", with no words of its own | yes |
+| constructive dilemma (@exm-constructive-dilemma), the derived rule \( \rulename{CD} \) of Section 2.3 | "if \( P \) then \( R \), and if \( Q \) then \( S \); since \( P \) or \( Q \), we get \( R \) or \( S \)"; "in the first case …, in the second …, so \( R \) or \( S \)" | never the split or the two implications; the closing "so \( R \) or \( S \)" yes |
+| "or" and "and" commute (@exm-disjunction-first-derivations) | "\( P \) or \( Q \)" read as "\( Q \) or \( P \)", with no words of its own | yes |
+
+The same holds for "and", which commutes by @prp-and-commutes.
 
 In analysis, \( \rulename{\vee I} \) hides inside every weakening of a strict inequality: "\( x > 0 \), so \( x \ge 0 \)". \( \rulename{\vee E} \) is the proof of the triangle inequality in Section 1.6 (@exm-triangle-inequality-cases), which splits on the sign of \( x + y \) and reaches \( \abs{x + y} \le \abs{x} + \abs{y} \) in both cases. \( \rulename{DS} \) is the step "\( x^2 = x \), so \( x = 0 \) or \( x = 1 \); since \( x \ne 0 \), \( x = 1 \)".
 
@@ -210,17 +212,17 @@ In (a), the split was announced with the disjunction that makes it exhaust; \( \
 
 | Rule | Phrases | Silent in plain prose? |
 |---|---|---|
-| \( \rulename{\neg I} \) | "suppose \( P \); … a contradiction; hence \( \neg P \)"; "\( P \) is impossible, since …" | never |
+| \( \rulename{\neg I} \) | "suppose \( P \); … a contradiction; hence \( \neg P \)", or "\( P \) is impossible, since …" | never |
 | \( \rulename{\neg E} \) | "this contradicts …"; "which is impossible"; "but …" | never: the clashing pair is named |
 | \( \rulename{\bot E} \) | "this case cannot occur"; "vacuously"; "there is nothing to prove" | yes, once the contradiction or the empty case is stated |
 | \( \rulename{DM} \), quantifier negation | "not all … so some … fails"; "it is not the case that …, so …" | the negated form must be written |
 
-In analysis, \( \rulename{\neg I} \) is the proof of @thm-sqrt2-irrational: "suppose some rational \( r \) has \( r^2 = 2 \); …; this is a contradiction; hence no rational number has square \( 2 \)". \( \rulename{\neg E} \) is a sentence such as "then \( n \le 1/\varepsilon < n \), a contradiction": the chain gives \( n < n \), which clashes with the fact that no number is less than itself. One strict link is essential, since \( n \le 1/\varepsilon \le n \) gives only \( n \le n \), which clashes with nothing. \( \rulename{\bot E} \) is "if \( A = \emptyset \), there is nothing to prove", said of a claim about every element of \( A \): with no element to check, the claim is vacuously true (Section 5.4).
+In analysis, \( \rulename{\neg I} \) is the proof of @thm-sqrt2-irrational: "suppose some rational \( r \) has \( r^2 = 2 \) … this is a contradiction, hence no rational number has square \( 2 \)". \( \rulename{\neg E} \) is a sentence such as "then \( n \le 1/\varepsilon < n \), a contradiction": the chain gives \( n < n \), which clashes with the fact that no number is less than itself. One strict link is essential, since \( n \le 1/\varepsilon \le n \) gives only \( n \le n \), which clashes with nothing. \( \rulename{\bot E} \) is "if \( A = \emptyset \), there is nothing to prove", said of a claim about every element of \( A \): with no element to check, the claim is vacuously true (Section 5.4).
 
-The last row needs more room. To negate "\( s \) is an upper bound of \( A \)", that is, \( \forall a \in A\; (a \le s) \), a proof writes the negated form: **some** \( a \in A \) has \( a > s \). Write the negated form out; do not leave the reader to push a "not" through a quantifier in their head.
+The row on negating a quantifier needs more room. To negate "\( s \) is an upper bound of \( A \)", that is, \( \forall a \in A\; (a \le s) \), a proof writes the negated form: **some** \( a \in A \) has \( a > s \). Write the negated form out; do not leave the reader to push a "not" through a quantifier in their head.
 
 ::: {.second-reading title="For the record: where the classical step sits"}
-The passage uses @prp-bounded-quantifier-negation (a), derived with \( \rulename{RAA} \), and the order fact that \( \neg(a \le s) \) says \( a > s \). A proof that \( \nN \) is not bounded above is the instructive case. It opens "suppose, for contradiction, that \( \nN \) is bounded above" and closes with "therefore \( \nN \) is not bounded above"; that is \( \rulename{\neg I} \), despite the phrase. Its one classical step comes after the box: from "not every \( n \in \nN \) has \( n \le x \)" it passes to "some \( n \in \nN \) has \( n > x \)", by @prp-bounded-quantifier-negation (a), which Section 6.2 derives with \( \rulename{RAA} \) through @prp-quantifier-negation (a) and @prp-negated-implication, and then by trichotomy for \( \neg(n \le x) \), giving \( n > x \). That step produces an \( n \) without naming it, and the proof needs no name.
+Negating "\( s \) is an upper bound" uses @prp-bounded-quantifier-negation (a), derived with \( \rulename{RAA} \), and the order fact that \( \neg(a \le s) \) says \( a > s \). A proof that \( \nN \) is not bounded above is the instructive case. It opens "suppose, for contradiction, that \( \nN \) is bounded above" and closes with "therefore \( \nN \) is not bounded above"; that is \( \rulename{\neg I} \), despite the phrase. Its one classical step comes after the box. From "not every \( n \in \nN \) has \( n \le x \)" it passes to "some \( n \in \nN \) has \( n > x \)". It first applies @prp-bounded-quantifier-negation (a). Section 6.2 derives that result with \( \rulename{RAA} \), through the negation of "for all", @prp-quantifier-negation (a). That derivation also uses the negation of an implication, @prp-negated-implication. It then uses trichotomy for \( \neg(n \le x) \), giving \( n > x \). That step produces an \( n \) without naming it, and the proof needs no name.
 :::
 
 ::: {#exm-rhetoric-negation}
@@ -248,7 +250,7 @@ Why tell \( \rulename{RAA} \) from \( \rulename{\neg I} \) at all? Some mathemat
 | \( \rulename{RAA} \) | "suppose, for contradiction, that \( \neg P \)"; "suppose not"; "assume the contrary" | never |
 | \( \rulename{\neg\neg E} \), \( \rulename{LEM} \) | "either \( P \) or not"; "\( P \) must hold, since …"; "otherwise" | never: written as an explicit case split or an explicit removal of a double negation ("\( P \) must hold, since …") |
 
-In analysis, \( \rulename{RAA} \) is the proof of @prp-arbitrarily-close-equal: "suppose, for a contradiction, that \( a \ne b \); then \( \abs{a - b} > 0 \), so the hypothesis gives \( \abs{a - b} < \abs{a - b} \), a contradiction; hence \( a = b \)". The box assumes \( \neg(a = b) \) and concludes \( a = b \), so it is genuine \( \rulename{RAA} \); \( \rulename{\neg I} \) would give only \( \neg\neg(a = b) \). \( \rulename{LEM} \) is a split such as "either the sequence has infinitely many terms in the left half of the interval, or it does not", a step of the bisection proof of the Bolzano–Weierstrass theorem. That split is genuinely non-constructive: nobody can decide in general which case holds. Section 8.7 explains why that matters, and a proof that makes such a step says so in one clause. A split such as "\( x \ge 0 \) or \( x < 0 \)" is also excluded middle in logical form, but it is an instance of the trichotomy of the order of \( \nR \), one of the axioms for the real numbers, and it is never flagged.
+In analysis, \( \rulename{RAA} \) is the proof of @prp-arbitrarily-close-equal: "suppose, for a contradiction, that \( a \ne b \); then \( \abs{a - b} > 0 \), so the hypothesis gives \( \abs{a - b} < \abs{a - b} \), a contradiction; hence \( a = b \)". The box assumes \( \neg(a = b) \) and concludes \( a = b \), so it is genuine \( \rulename{RAA} \); \( \rulename{\neg I} \) would give only \( \neg\neg(a = b) \). \( \rulename{LEM} \) is a split such as "either the sequence has infinitely many terms in the left half of the interval, or it does not", a step of the bisection proof of the Bolzano–Weierstrass theorem. That split is genuinely non-constructive: nobody can decide in general which case holds. Section 8.7 explains why that matters, and a proof that makes such a step says so in one clause. A split such as "\( x \ge 0 \) or \( x < 0 \)" is also excluded middle in logical form. But it is an instance of the trichotomy of the order of \( \nR \), one of the axioms for the real numbers, and it is never flagged.
 
 ::: {#exm-rhetoric-contradiction}
 [One proof by contradiction, read two ways]
@@ -263,13 +265,13 @@ The box assumes \( a > b \), which is \( \neg(a \le b) \) by the order fact of S
 
 *By cases.* By trichotomy, \( a \le b \) or \( a > b \) [\( \rulename{\vee E} \)]. In the first case we are done. In the second, the lines of the box above reach \( a \le b \) against \( a > b \), so this case cannot occur, and in it \( a \le b \) [\( \rulename{\neg E} \), \( \rulename{\bot E} \)]. In either case \( a \le b \).
 
-The two proofs share their mathematics, the instance \( \varepsilon = (a - b)/2 \), and differ only in how the classical step is written: as \( \rulename{RAA} \), or as a split on trichotomy, which over \( \nR \) is an axiom. Neither is flagged: \( a > b \) is \( \neg(a \le b) \) by trichotomy, so \( \rulename{RAA} \) adds nothing beyond that axiom. The fold below writes the same box closed by \( \rulename{\neg I} \) and followed by \( \rulename{\neg\neg E} \).
+The two proofs share their mathematics, the instance \( \varepsilon = (a - b)/2 \), and differ only in how the classical step is written: as \( \rulename{RAA} \), or as a split on trichotomy, which over \( \nR \) is an axiom. Neither is flagged: \( a > b \) is \( \neg(a \le b) \) by trichotomy, so \( \rulename{RAA} \) adds nothing beyond that axiom. The same box can also be closed by \( \rulename{\neg I} \) and then followed by \( \rulename{\neg\neg E} \).
 :::
 
 ::: {.second-reading title="The same proof by ¬I and ¬¬E"}
 *By \( \rulename{\neg I} \) and \( \rulename{\neg\neg E} \).* Close the same box with "hence \( a > b \) is impossible" [\( \rulename{\neg I} \)], the line \( \neg(a > b) \), which is \( \neg\neg(a \le b) \) under the same reading of \( a > b \) as \( \neg(a \le b) \); then "so \( a \le b \) must hold" [\( \rulename{\neg\neg E} \)]. The two steps do what \( \rulename{RAA} \) did in one, and show that the box itself uses no classical rule.
 
-With this third version the proofs differ only in how the classical step is written: as \( \rulename{RAA} \), as \( \rulename{\neg\neg E} \), or as a case split. All three also read \( a > b \) as \( \neg(a \le b) \) by the order fact of Section 2.1, itself an instance of trichotomy; read the other way, that fact gives \( a \le b \) from \( \neg(a > b) \) directly, so the first two put an excluded-middle step on top of it. Over \( \nR \) trichotomy is an axiom, so no step here is flagged.
+With this third version the proofs differ only in how the classical step is written: as \( \rulename{RAA} \), as \( \rulename{\neg\neg E} \), or as a case split. All three also read \( a > b \) as \( \neg(a \le b) \) by the order fact of Section 2.1, itself an instance of trichotomy. Used in the other direction, that fact gives \( a \le b \) from \( \neg(a > b) \) directly. So the first two put an excluded-middle step on top of it. Over \( \nR \) trichotomy is an axiom, so no step here is flagged.
 :::
 
 ## The biconditional
@@ -277,7 +279,7 @@ With this third version the proofs differ only in how the classical step is writ
 | Rule | Phrases | Silent in plain prose? |
 |---|---|---|
 | \( \rulename{{\leftrightarrow}I} \) | "\( (\Rightarrow) \) … \( (\Leftarrow) \) …"; "conversely"; "we prove both directions" | never either direction |
-| \( \rulename{{\leftrightarrow}E} \) | "by definition"; "that is"; "i.e."; "equivalently" | yes, for a definitional "if and only if" |
+| \( \rulename{{\leftrightarrow}E} \) | "by definition", "that is", "i.e.", or "equivalently" | yes, for a definitional "if and only if" |
 
 In analysis, @thm-squares-order of Section 2.4 (for \( x, y \ge 0 \), \( x \le y \iff x^2 \le y^2 \)) is the model of \( \rulename{{\leftrightarrow}I} \): two labeled directions, each a \( \rulename{{\to}I} \) box. \( \rulename{{\leftrightarrow}E} \) is every unwinding of a definition: "\( f \) is strictly increasing, that is, \( x < y \) implies \( f(x) < f(y) \)" (@exm-strictly-increasing-both-ways). A definition is an "if and only if" (Section 2.4), and the words "that is" use it in one direction or the other.
 
@@ -355,7 +357,7 @@ No. (ii), (iii) and (iv) are shown equivalent, but nothing leads back to (i): (i
 **(ii) The contrapositive.** The claim is \( P \to Q \), and the proof derives \( \neg P \) from \( \neg Q \), with \( P \) playing no part until the end. The passage back to \( P \to Q \) is @prp-contrapositive-converse, which Section 2.5 derives with \( \rulename{RAA} \). Written as "suppose \( P \); suppose, for contradiction, \( \neg Q \); … \( \neg P \), a contradiction", it is that derivation done inline.
 
 ::: {.second-reading title="When the contrapositive needs no classical step"}
-Face (ii) ends with @prp-contrapositive-converse, which Section 2.5 derives with \( \rulename{RAA} \); that \( \rulename{RAA} \) is avoidable when \( Q \) is itself a negation, by the fold "RAA is never needed to finish a negation" of Section 2.5. So face (ii) uses \( \rulename{RAA} \) unless \( Q \) is itself a negation.
+Face (ii) ends with @prp-contrapositive-converse, which Section 2.5 derives with \( \rulename{RAA} \). That \( \rulename{RAA} \) can be avoided when \( Q \) is itself a negation, since Section 2.5 shows that \( \rulename{RAA} \) is never needed to finish a negation. So face (ii) uses \( \rulename{RAA} \) unless \( Q \) is itself a negation.
 :::
 
 **(iii) Genuine reductio.** The claim \( P \) is positive, and \( \neg P \) is used throughout the box, typically because it hands over an object: \( a \ne b \) makes \( \abs{a - b} \) a positive number to feed to a hypothesis about every \( \varepsilon > 0 \).
@@ -369,7 +371,7 @@ Which face? (i) "Suppose \( \sqrt 3 = p/q \) with integers \( p \), \( q \). …
 :::
 
 ::: {.solution}
-(i) Face (i): the box assumes the positive statement "\( \sqrt 3 \) is rational" and concludes its negation, by \( \rulename{\neg I} \). (ii) Face (ii): the box assumes \( \neg Q \), "\( n \) is not odd", and derives "\( n^2 \) is not odd" from it alone; the hypothesis "\( n^2 \) is odd" enters only at the clash. That is a contrapositive in costume.
+(i) Face (i): the box assumes the positive statement "\( \sqrt 3 \) is rational" and concludes its negation, by \( \rulename{\neg I} \). (ii) Face (ii): the box assumes \( \neg Q \), "\( n \) is not odd", and derives "\( n^2 \) is not odd" from it alone; the hypothesis "\( n^2 \) is odd" enters only at the clash. That is a contrapositive proof dressed as a proof by contradiction.
 :::
 
 ## Costumes
@@ -389,7 +391,7 @@ The assumption "\( x^2 - 2x \le 3 \)" is cited exactly once, in "This contradict
 
 > Let \( x > 3 \). Then \( x - 3 > 0 \) and \( x + 1 > 0 \), so \( x^2 - 2x - 3 = (x - 3)(x + 1) > 0 \), that is, \( x^2 - 2x > 3 \).
 
-Nothing is lost, the \( \rulename{RAA} \) is gone, and the reader no longer holds a false assumption in mind for three sentences.
+Nothing is lost, the \( \rulename{RAA} \) is gone, and the reader no longer has to keep a false assumption in mind for three sentences.
 :::
 
 *The test:* if the assumption of the box is cited only in the line that produces \( \bot \), the box proved the goal without it. Delete the box.
@@ -417,7 +419,7 @@ The two tests share one smell: *the clash at the end is with a statement the pro
 :::
 
 ::: {.warning}
-"Assume \( P \)" means different things at the top of different proofs. At the top of a proof of \( P \to Q \), it is the opening of the \( \rulename{{\to}I} \) box, and it is exactly right. At the top of a proof of \( P \) itself, it assumes the goal, and everything after it is circular: the last line "hence \( P \)" cites a line that is not available outside the box. For instance, "assume \( \sqrt 2 \) is irrational; then … ; hence \( \sqrt 2 \) is irrational" proves nothing, however correct the middle: it is entry (N9) of the catalogue in Section 8.6.
+"Assume \( P \)" means different things at the top of different proofs. At the top of a proof of \( P \to Q \), it is the opening of the \( \rulename{{\to}I} \) box, and it is exactly right. At the top of a proof of \( P \) itself, it assumes the goal, and everything after it is circular: the last line "hence \( P \)" cites a line that is not available outside the box. For instance, "assume \( \sqrt 2 \) is irrational; then … ; hence \( \sqrt 2 \) is irrational" proves nothing, however correct the middle. It cites the goal itself, the circular reasoning of entry (N9) of the catalogue in Section 8.6.
 :::
 
 ::: {.warning}
@@ -425,10 +427,10 @@ The two tests share one smell: *the clash at the end is with a statement the pro
 
 Each sentence below might appear in a proof, and each is wrong. The tag names the entry of the catalogue in Section 8.6, or the item of the convention on silent steps in Section 8.3, that it breaks.
 
-- "Suppose \( x \ge 1 \); then \( x^3 \ge x \). Hence \( x^3 \ge x \) for every real \( x \)." The line \( x^3 \ge x \) belongs to a box that has closed; outside it only "if \( x \ge 1 \), then \( x^3 \ge x \)" is available: (N10). The conclusion is false at \( x = \tfrac12 \).
-- "To prove \( \abs{x} < 1 \), suppose, for a contradiction, that \( \abs{x} > 1 \)." The negation of \( \abs{x} < 1 \) is \( \abs{x} \ge 1 \): (N11)(a).
+- "Suppose \( x \ge 1 \); then \( x^3 \ge x \). Hence \( x^3 \ge x \) for every real \( x \)." The line \( x^3 \ge x \) belongs to a box that has closed; outside it only "if \( x \ge 1 \), then \( x^3 \ge x \)" is available. This uses an assumption after its box has closed, (N10). The conclusion is false at \( x = \tfrac12 \).
+- "To prove \( \abs{x} < 1 \), suppose, for a contradiction, that \( \abs{x} > 1 \)." The negation of \( \abs{x} < 1 \) is \( \abs{x} \ge 1 \), so this is a wrong negation, (N11)(a).
 - "Suppose \( n \) is odd. Then \( n^2 \) is odd.", as the whole proof of "if \( n^2 \) is even, then \( n \) is even". Without the announcement the reader sees a box that opens with neither the hypothesis nor the conclusion of the goal: the never-silent item "the announcement of a contrapositive".
-- "Case 1: \( x \ge 0 \), so \( \abs{x} = x \ge 0 \). In either case \( \abs{x} \ge 0 \)." There is one case and no disjunction: (N7).
+- "Case 1: \( x \ge 0 \), so \( \abs{x} = x \ge 0 \). In either case \( \abs{x} \ge 0 \)." There is one case and no disjunction, so a case is missing, (N7).
 :::
 
 ## Exercises
@@ -438,9 +440,24 @@ Each sentence below might appear in a proof, and each is wrong. The tag names th
 ::: {#exr-connective-rhetoric-a1}
 [A1]
 
+Here are ten phrases.
+
+::: {.enumerate options="label=(\roman*)"}
+1. "in particular"
+2. "conversely"
+3. "in either case"
+4. "this case cannot occur"
+5. "suppose, for contradiction, that \( x \) is not positive"
+6. "we prove the contrapositive"
+7. "that is"
+8. "since \( x \ne 0 \), the first case is impossible"
+9. "so \( x \ge 0 \)", after "\( x > 0 \)"
+10. "which contradicts \( x^2 \ge 0 \)"
+:::
+
 ::: {.enumerate options="label=(\alph*)"}
-1. Name the rule that each phrase most often carries: (i) "in particular"; (ii) "conversely"; (iii) "in either case"; (iv) "this case cannot occur"; (v) "suppose, for contradiction, that \( x \) is not positive"; (vi) "we prove the contrapositive"; (vii) "that is"; (viii) "since \( x \ne 0 \), the first case is impossible"; (ix) "so \( x \ge 0 \)", after "\( x > 0 \)"; (x) "which contradicts \( x^2 \ge 0 \)".
-2. Which of the phrases in (a) carry steps that may be silent in plain prose?
+1. Name the rule that each phrase most often carries.
+2. Which of the phrases (i)–(x) carry steps that may be silent in plain prose?
 3. A proof ends "Suppose \( 7 = 2k \) for an integer \( k \). Then \( k = 7/2 \), which is not an integer. Hence \( 7 \) is not even." Which face of "by contradiction" is this?
 4. True or false, with a reason: a proof that begins "suppose, for contradiction" always uses \( \rulename{RAA} \).
 :::
@@ -492,13 +509,13 @@ Name the rule each phrase carries, and say whether plain prose may leave it out.
 
 (g) \( \rulename{RAA} \), opening; never silent.
 
-(h) "asm, for \( \rulename{\neg I} \)". The goal, "\( \sqrt 5 \) is irrational", is the negation "\( \sqrt 5 \) is not rational". The box assumes the positive statement and is closed by \( \rulename{\neg I} \), whatever the words "for a contradiction" suggest: Section 2.5's distinction, face (i) of "The three faces". (No fact about \( \sqrt 5 \) is needed.)
+(h) "asm, for \( \rulename{\neg I} \)". The goal, "\( \sqrt 5 \) is irrational", is the negation "\( \sqrt 5 \) is not rational". The box assumes the positive statement and is closed by \( \rulename{\neg I} \), whatever the words "for a contradiction" suggest. This is the distinction of Section 2.5, face (i) of "by contradiction", refuting. (No fact about \( \sqrt 5 \) is needed.)
 
 (i) Face (i), refuting: \( \rulename{\neg I} \).
 
 (j) The announcement "We prove the contrapositive" (\( \rulename{CP} \); never silent).
 
-(k) Yes, a direct proof in costume: the assumption is cited only at the clash; delete the box. (The box opens with the negation of the goal, so the item is not an instance of (N11)(a).)
+(k) Yes, a direct proof in costume: the assumption is cited only at the clash; delete the box. The box opens with the negation of the goal, so the item is not a wrong negation in the sense of (N11)(a).
 
 (l) Four for a cycle. Twelve for every ordered pair (\( 4 \cdot 3 \)), that is, six biconditionals.
 :::
@@ -539,7 +556,7 @@ Here is a proof that if \( x \) is a real number with \( \abs{x} \le \abs{y} \) 
 :::
 
 ::: {.solution}
-*(a)* \( \rulename{RAA} \): the box assumes \( \neg(x = 0) \), written \( x \ne 0 \), and the proof concludes the positive statement \( x = 0 \). It is not in costume. The assumption does work inside the box (it makes \( x/2 \) non-zero, so that the hypothesis applies to it), and the hypothesis is used in the middle of the box, not only at the clash; neither test of this section is met.
+*(a)* \( \rulename{RAA} \): the box assumes \( \neg(x = 0) \), written \( x \ne 0 \), and the proof concludes the positive statement \( x = 0 \). It is not in costume. The assumption does work inside the box: it makes \( x/2 \) non-zero, so that the hypothesis applies to it. The hypothesis is used in the middle of the box, not only at the clash. So neither test for a costume is met.
 
 *(b)* Suppose \( \abs{x} \le \abs{y} \) for every real \( y \ne 0 \). If \( x \ne 0 \), then \( x/2 \ne 0 \), so the hypothesis gives \( \abs{x} \le \abs{x}/2 \), that is, \( \abs{x} \le 0 \), against \( \abs{x} > 0 \). Hence \( x \ne 0 \) is impossible [\( \rulename{\neg I} \)], so \( x = 0 \) must hold [\( \rulename{\neg\neg E} \)].
 
@@ -557,7 +574,7 @@ Let \( A \coloneqq \{ x \in \nR : 0 < x < 2 \} \). Prove that \( 2 \) is an uppe
 ::: {.solution}
 *(a)* Let \( a \in A \) [\( \rulename{\forall I} \)]. Then \( 0 < a < 2 \), by the definition of \( A \); in particular \( a < 2 \) [\( \rulename{\wedge E} \)], so \( a \le 2 \) [\( \rulename{\vee I} \)]. So \( 2 \) is an upper bound of \( A \).
 
-*(b)* Let \( t \) be a real number with \( t < 2 \) [\( \rulename{\forall I} \), \( \rulename{{\to}I} \)], and suppose \( t \) is an upper bound of \( A \) [assumption for \( \rulename{\neg I} \)]. Let \( m \coloneqq \max\{t, 0\} \) and \( a \coloneqq (m + 2)/2 \). We have \( t \ge 0 \) or \( t < 0 \), and by the definition of the maximum we consider the two cases [\( \rulename{\vee E} \)]: if \( t \ge 0 \), then \( m = t \), so \( m \ge t \), \( m \ge 0 \) and \( m < 2 \); if \( t < 0 \), then \( m = 0 \), so \( m > t \), \( m \ge 0 \) and \( m < 2 \). So in either case \( m \ge t \) and \( 0 \le m < 2 \). Hence \( 1 \le a < 2 \); thus \( 0 < a \) and \( a < 2 \), that is, \( a \in A \) [\( \rulename{\wedge I} \)]. As \( t \) is an upper bound of \( A \), \( a \le t \) [\( \rulename{\forall E} \) at \( a \)]. But \( a - m = (2 - m)/2 > 0 \), so \( a > m \ge t \), and \( a > t \). This contradicts \( a \le t \) [\( \rulename{\neg E} \)]. Hence \( t \) is not an upper bound of \( A \) [\( \rulename{\neg I} \)].
+*(b)* Let \( t \) be a real number with \( t < 2 \) [\( \rulename{\forall I} \), \( \rulename{{\to}I} \)], and suppose \( t \) is an upper bound of \( A \) [assumption for \( \rulename{\neg I} \)]. Let \( m \coloneqq \max\{t, 0\} \) and \( a \coloneqq (m + 2)/2 \). We have \( t \ge 0 \) or \( t < 0 \), and by the definition of the maximum we consider the two cases [\( \rulename{\vee E} \)]. If \( t \ge 0 \), then \( m = t \), so \( m \ge t \), \( m \ge 0 \) and \( m < 2 \). If \( t < 0 \), then \( m = 0 \), so \( m > t \), \( m \ge 0 \) and \( m < 2 \). So in either case \( m \ge t \) and \( 0 \le m < 2 \). Hence \( 1 \le a < 2 \); thus \( 0 < a \) and \( a < 2 \), that is, \( a \in A \) [\( \rulename{\wedge I} \)]. As \( t \) is an upper bound of \( A \), \( a \le t \) [\( \rulename{\forall E} \) at \( a \)]. But \( a - m = (2 - m)/2 > 0 \), so \( a > m \ge t \), and \( a > t \). This contradicts \( a \le t \) [\( \rulename{\neg E} \)]. Hence \( t \) is not an upper bound of \( A \) [\( \rulename{\neg I} \)].
 
 So \( 2 \) is an upper bound of \( A \), and no smaller number is [\( \rulename{\wedge I} \)].
 
@@ -582,17 +599,21 @@ By @prp-equivalence-cycle, three implications suffice.
   - Both odd: choose \( s \) and \( t \) with \( a = 2s + 1 \) and \( b = 2t + 1 \) [\( \rulename{\exists E} \) twice]. Then \( a + b = 2(s + t + 1) \) [\( \rulename{\exists I} \), witness \( s + t + 1 \)].
   - In either case \( a + b \) is even [\( \rulename{\vee E} \), closing; may be silent in plain prose].
 
-The closing arrow is (iii) \( \Rightarrow \) (i). Its logic is a two-case \( \rulename{\vee E} \), each case with two \( \rulename{\exists E} \) boxes under distinct names and one \( \rulename{\exists I} \); no \( \rulename{RAA} \) is used. (The names \( s \), \( t \) may be reused in the second case: sibling boxes may share a name, as (N4) of Section 8.6 notes.)
+The closing arrow is (iii) \( \Rightarrow \) (i). Its logic is a two-case \( \rulename{\vee E} \), each case with two \( \rulename{\exists E} \) boxes under distinct names and one \( \rulename{\exists I} \); no \( \rulename{RAA} \) is used. The names \( s \), \( t \) may be reused in the second case: sibling boxes may share a name, as Section 8.6 notes in its entry on reusing a witness name, (N4).
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 Points are given per role, and a correct proof by another cycle earns the same points for the corresponding arrows.
-- 2: an arrow proved by one \( \rulename{\exists E} \) and one \( \rulename{\exists I} \) (here (i) \( \Rightarrow \) (ii), with \( k \) chosen and the witness \( k - b \)).
-- 3: an arrow from a parity hypothesis, by a split with (E1) named (1) and a witness in each case (2) (here (ii) \( \Rightarrow \) (iii), witness \( j + m \)).
+- 2: an arrow proved by one \( \rulename{\exists E} \) and one \( \rulename{\exists I} \); here that is (i) \( \Rightarrow \) (ii), with \( k \) chosen and the witness \( k - b \).
+- 3: an arrow from a parity hypothesis, by a split with "even or odd", (E1), named (1) and a witness in each case (2); here that is (ii) \( \Rightarrow \) (iii), witness \( j + m \).
 - 3: an arrow from (iii): the two cases (1); two distinct names in each case (1); the witnesses (1).
 - 1: the cycle named, with @prp-equivalence-cycle or the sentence that three implications suffice, and the closing arrow identified.
 - 1: the last sentence says what was shown.
 
-Fatal errors (0 for the step): only two arrows proved; one name for both witnesses, "\( a = 2s \) and \( b = 2s \)" (N4); "\( a - b \) is even, so \( a \) and \( b \) have the same parity" given as its own reason, with neither proof nor citation (N9).
+Slips that lose the step:
+
+- only two arrows proved;
+- one name for both witnesses, "\( a = 2s \) and \( b = 2s \)", which reuses a witness name, (N4);
+- "\( a - b \) is even, so \( a \) and \( b \) have the same parity" given as its own reason, with neither proof nor citation, which cites what is not available, (N9).
 :::
 
 ### C. Going deeper
@@ -600,7 +621,7 @@ Fatal errors (0 for the step): only two arrows proved; one name for both witness
 ::: {#exr-connective-rhetoric-c1}
 [C1: Euclid without the contradiction]
 
-Here is a common proof that there are infinitely many primes. It uses two facts about integers that we take as known here: every integer \( m \ge 2 \) has a prime divisor (*Sets and Functions*, Chapter 3 proves it); and if an integer \( d \) divides two integers, it divides their difference (if \( u = dk \) and \( v = dl \), then \( u - v = d(k - l) \)).
+Here is a common proof that there are infinitely many primes. It uses two facts about integers that we take as known here. First, every integer \( m \ge 2 \) has a prime divisor; *Sets and Functions* proves this in Chapter 3. Second, if an integer \( d \) divides two integers, it divides their difference: if \( u = dk \) and \( v = dl \), then \( u - v = d(k - l) \).
 
 > Suppose, for a contradiction, that there are only finitely many primes, say \( p_1, \dots, p_k \). Let \( N \coloneqq p_1 p_2 \cdots p_k + 1 \). Then \( N \ge 2 \), so \( N \) has a prime divisor \( p \). Since \( p_1, \dots, p_k \) are all the primes, \( p = p_i \) for some \( i \). Then \( p_i \) divides both \( N \) and \( p_1 p_2 \cdots p_k \), so it divides their difference \( 1 \), which is impossible for a prime. This is a contradiction. Hence there are infinitely many primes.
 
@@ -619,14 +640,14 @@ Here is a common proof that there are infinitely many primes. It uses two facts 
 
 *(c)* Let \( p_1, \dots, p_k \) be a finite list of primes, \( k \ge 1 \), and let \( N \coloneqq p_1 p_2 \cdots p_k + 1 \). Each \( p_i \ge 2 \), so \( N \ge 3 \), and \( N \) has a prime divisor \( p \). Let \( i \) be an index with \( 1 \le i \le k \) [\( \rulename{\forall I} \), opening], and suppose \( p = p_i \) [assumption for \( \rulename{\neg I} \)]. Then \( p \) divides \( N \) and \( p_1 p_2 \cdots p_k \), so it divides their difference \( 1 \), say \( 1 = pm \) with \( m \) an integer. Since \( p > 0 \), \( m > 0 \), so \( m \ge 1 \) and \( 1 = pm \ge p \ge 2 \), a contradiction [\( \rulename{\neg E} \)]. Hence \( p \ne p_i \) [\( \rulename{\neg I} \)]. Since \( i \) was arbitrary, \( p \ne p_i \) for every \( i \) [\( \rulename{\forall I} \), closing], and \( p \) is a prime not in the list.
 
-*(d)* The rewrite proves a stronger statement: given any finite list of primes, it **produces** a prime outside it, any prime divisor of \( N \); the original shows only that a list of all the primes is impossible. Its one \( \rulename{\neg I} \) box, for the negative claim \( p \ne p_i \), is honest, since its assumption is what the clash uses. The original theorem follows at once: a finite list of all the primes is non-empty, since \( 2 \) is prime, so by (c) it would miss a prime.
+*(d)* The rewrite proves a stronger statement: given any finite list of primes, it **produces** a prime outside it, any prime divisor of \( N \). The original shows only that a list of all the primes is impossible. Its one \( \rulename{\neg I} \) box, for the negative claim \( p \ne p_i \), is honest, since its assumption is what the clash uses. The original theorem follows at once: a finite list of all the primes is non-empty, since \( 2 \) is prime, so by (c) it would miss a prime.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 - 2: (a) \( \rulename{\neg I} \), with the reason (the box assumes the positive statement and the proof concludes its negation).
 - 2: (b) locates the single use of the assumption and names the costume smell.
 - 4: (c) a proof for an arbitrary finite list: \( N \) defined, \( N \ge 2 \) justified, a prime divisor \( p \) taken, \( p \ne p_i \) for every \( i \) shown.
 - 2: (d) names the gain: a prime outside any given list is produced.
-Fatal errors (0 for the step): in (c), a proof that still assumes the list contains all the primes; in (a), calling the step \( \rulename{RAA} \) because of the words "for a contradiction".
+Slips that lose the step: in (c), a proof that still assumes the list contains all the primes; in (a), calling the step \( \rulename{RAA} \) because of the words "for a contradiction".
 :::
 
 ::: {#exr-connective-rhetoric-c2}
@@ -665,15 +686,15 @@ Start: "Since \( x^2 \ge 0 \), either \( x^2 > 0 \) or \( x^2 = 0 \)."
 
 In either case \( x = 0 \) [\( \rulename{\vee E} \)].
 
-The logical steps are \( \rulename{{\to}I} \), \( \rulename{\vee E} \), \( \rulename{\forall E} \), \( \rulename{\neg E} \), \( \rulename{{\to}E} \) (citing the second school fact, that a product is \( 0 \) only if a factor is) and \( \rulename{\bot E} \); no classical rule is used. The classical content has moved into the school fact "\( x^2 > 0 \) or \( x^2 = 0 \)", which rests on the trichotomy of the order, one of the axioms for the real numbers; Section 8.7 explains why that axiom is where the book makes its classical commitment.
+The logical steps are \( \rulename{{\to}I} \), \( \rulename{\vee E} \), \( \rulename{\forall E} \), \( \rulename{\neg E} \), \( \rulename{{\to}E} \) (citing the second school fact, that a product is \( 0 \) only if a factor is) and \( \rulename{\bot E} \); no classical rule is used. The classical content has moved into the school fact "\( x^2 > 0 \) or \( x^2 = 0 \)", which rests on the trichotomy of the order, one of the axioms for the real numbers. Section 8.7 explains why that axiom is where the book makes its classical commitment.
 
-**Marking scheme.** (10 points)
-- 3: (a) identifies \( \rulename{RAA} \) (face (iii)), with the reason: the assumption is a negation and the conclusion is positive.
+**What a complete answer needs.** (10 points)
+- 3: (a) identifies \( \rulename{RAA} \), that is, face (iii), with the reason: the assumption is a negation and the conclusion is positive.
 - 2: (b) splits on a disjunction that is justified (from \( x^2 \ge 0 \), or from trichotomy).
 - 3: (b) closes the case \( x^2 > 0 \) by the instance \( \varepsilon = x^2 \), a named clash, and \( \rulename{\bot E} \).
 - 2: (b) settles the case \( x^2 = 0 \) with its reason and concludes "in either case".
 A rewrite with \( \rulename{\neg I} \) and \( \rulename{\neg\neg E} \) in place of the case split earns the points of (b) except the 2 for the split, provided it names \( \rulename{\neg\neg E} \) as its one classical step.
-Fatal errors (0 for the step): calling (a) face (i) because the word "contradiction" appears; splitting on "\( x^2 > 0 \) or \( x^2 < 0 \)", which does not exhaust.
+Slips that lose the step: calling (a) face (i) because the word "contradiction" appears; splitting on "\( x^2 > 0 \) or \( x^2 < 0 \)", which does not exhaust.
 :::
 
 <!-- dependency ledger
@@ -681,11 +702,11 @@ connective-rhetoric-card (claim): every "Silent?" entry of the card abbreviates 
 connective-rhetoric-purposes (claim): "Since Section 1.4 every derivation in this book has printed ... 'asm, for ->I'"; each prose opening pairs with the purpose the engine prints (->I, not-I, RAA, or-E, exists-E, iff-I, bounded forall-I) | F1.1 §05's introduction of the annotation (prose pointer); latex/fitch-book.sty's printed form; STYLE 12.13.1
 connective-rhetoric-principle (claim): the principle "a step may go unsaid when a reader who knows the rules can restore it uniquely"; the slogan | moved from F1.5 §03 (its first statement now here); def-silent-steps (F1.5 §03) is the official list
 exm-square-even-via-contrapositive (example): the derivation reprinted with its atoms in words; (E1)-(E3) | exm-square-even-via-contrapositive (cited); school facts of F1.2 §01
-exm-square-even-via-contrapositive (claim): line 11 (or commutes) has no words; the Disjunction table's row: exchanging the members of a disjunction or conjunction may be silent | exm-disjunction-first-derivations, prp-and-commutes (cited); the principle above; def-silent-steps (F1.5 §03, prose pointer)
+exm-square-even-via-contrapositive (claim): line 11 (or commutes) has no words; the Disjunction table's row: exchanging the members of a disjunction or conjunction may be silent | exm-disjunction-first-derivations (cited in the row), prp-and-commutes (cited in the sentence after the table); the principle above; def-silent-steps (F1.5 §03, prose pointer)
 exm-rhetoric-conjunction (solution): 0 < x < 1 gives x^2 < x (multiply x < 1 by x > 0) and x^2 = x x > 0 | school algebra; verify/ch08/exm-rhetoric-conjunction.py
 connective-rhetoric-implication (claim): "if an integer is divisible by 2 and by 3, then it is divisible by 6", the theorem used in Section 1.3, at 42 | F1.1 §04 (Section 1.3's "Why this rule" paragraph; prose pointer)
 exm-rhetoric-implication (solution): |u| < r iff -r < u < r; a >= b iff not(a < b) | school fact stated in the solution; order fact of F1.2 §01
-connective-rhetoric-dilemma (claim): the constructive-dilemma row; CD is used as a derived rule in 2.3's B4 (a) | exm-constructive-dilemma (F1.1 §07, cited); exr-derived-rules-b4 (F1.2 §03, a pointer; nothing rests on the exercise)
+connective-rhetoric-dilemma (claim): the constructive-dilemma row; CD is used as a derived rule in 2.3's B4 (a) | exm-constructive-dilemma (F1.1 §07, cited); exr-derived-rules-b4 (F1.2 §03, a pointer; nothing rests on the exercise; since the STYLE §13 rewrite named only here, the row says "the derived rule CD of Section 2.3")
 exm-rhetoric-cases (solution): x >= 0 or x < 0; |x| by cases; ab = 0 implies a = 0 or b = 0; max{a, b} >= (a + b)/2 | school facts; verify/ch08/exm-rhetoric-cases.py
 exm-rhetoric-negation (solution): s + 1 <= s gives 1 <= 0; 0 < 1; claims about every element of the empty set; (c) is the prose form of F1.4 §04's upper-bound derivation | school algebra; F1.4 §04 (prose)
 exm-rhetoric-negation (claim): fold F5.1-a, a proof that N is not bounded above is neg-I, then one classical step | sample sentence (AN1.1 thm-naturals-unbounded and its remark; no volume named); prp-bounded-quantifier-negation, prp-quantifier-negation, prp-negated-implication (cited)

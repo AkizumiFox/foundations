@@ -1,6 +1,6 @@
 # Reading a Proof: Self-Explanation
 
-Section 8.3 showed that a level-3 proof leaves steps unsaid by a fixed convention, and that any doubtful stretch can be expanded and checked. That presupposes a reader who notices the doubtful stretch. This section is about becoming that reader. It teaches one habit, **self-explanation**: for each line of a proof, say what makes it true. The habit is taught here once, on one short proof, and the rest of the book relies on it. When a later proof ends its Idea with "*Before reading on: …*" or "*Self-explain lines 3–5*", this is the passage it means.
+Section 8.3 showed that a level-3 proof leaves steps unsaid by a fixed convention, and that any doubtful stretch can be expanded and checked. That presupposes a reader who notices the doubtful stretch. This section is about becoming that reader. It teaches one habit, **self-explanation**: for each line of a proof, say what makes it true. We learn it on one short proof, and every later proof assumes it. When a later proof asks "*Before reading on: explain to yourself why lines 3–5 follow*", it asks for this habit.
 
 ## Two readers of one proof
 
@@ -8,7 +8,9 @@ Two people read the same proof, line by line, to the end. Both say they understo
 
 The first asked, at each line, *what makes this true?* and answered by pointing: to earlier lines, to a definition, to a named result, and to the rule that combines them. The second asked *what does this say?* and answered by restating it. Only the first answer can come out wrong, and that is exactly why it is useful. A restatement always succeeds, so it tests nothing.
 
-*To self-explain a line is to name its warrant: the earlier lines, definitions and results it comes from, and the rule that gets it from them.*
+*To explain a line to yourself is to name its warrant: the earlier lines, definitions and results it comes from, and the rule that gets it from them.*
+
+In plain words, the **warrant** of a line is the full reason it holds: what it uses, and the step that uses it.
 
 The answer has the shape of a justification column in a derivation. In the derivations of Chapters 1–7 that column was printed beside every line. In level-3 prose it is gone, and self-explanation is the reader writing it back in, at level 1 or 2 of @def-levels-of-proof, one line at a time.
 
@@ -28,7 +30,7 @@ Here is a short proof. Read it once, then read the two explanations that follow.
 3. Dividing by \( x \), \( x - 2 + 1/x \ge 0 \).
 4. Hence \( x + 1/x \ge 2 \).
 
-Self-explain each line of the proof.
+Explain each line of the proof to yourself: say what makes it true.
 :::
 
 ::: {.solution}
@@ -48,7 +50,7 @@ Self-explain each line of the proof.
 - *Line 4:* rearranging gives the answer.
 :::
 
-Both explanations follow the order of the proof, and the second is not even wrong everywhere; it is shorter, and every sentence after the first describes what happened (the first we return to below). But compare what each one did with line 3. The first says *why* the inequality survives the division, and in saying it, finds the one place where the hypothesis \( x > 0 \) earns its keep. The second says "it still works", which is a description of the outcome, not a reason.
+Both explanations follow the order of the proof, and the second is not even wrong everywhere; it is shorter, and every sentence after the first describes what happened. (The first sentence has a slip of its own.) But compare what each one did with line 3. The first says *why* the inequality survives the division, and in saying it, finds the one place where the proof uses the hypothesis \( x > 0 \). The second says "it still works", which is a description of the outcome, not a reason.
 
 The difference shows as soon as the proof is wrong. Change the claim to "for every real \( x \ne 0 \), \( x + 1/x \ge 2 \)", and keep all four lines. The bad explanation reads the new proof exactly as happily as the old one: we start with a square, multiply out, divide by \( x \) and it still works, rearrange. The good explanation stops at line 3. It needs "the inequality keeps its direction because \( x > 0 \)", and the hypothesis now says only \( x \ne 0 \); for negative \( x \), division by \( x \) reverses the inequality, and line 3 does not follow. The claim is in fact false: at \( x = -1 \), \( x + 1/x = -2 < 2 \). A reader who explains warrants finds the gap; a reader who paraphrases cannot, because a paraphrase of a wrong step reads exactly like a paraphrase of a right one.
 
@@ -76,7 +78,7 @@ The fourth, whether the step is legitimate here: does dividing by \( x \) keep t
 :::
 
 ::: {.warning}
-**Self-explanation is not re-reading, and not summarizing.** Reading a proof twice more makes it familiar, not checked: familiarity is what makes the bad explanation of @exm-self-explanation feel adequate. A summary ("the proof expands a square and divides by \( x \)") is useful afterwards, but it skips exactly the warrants that matter, such as why the division by \( x \) is allowed and keeps the inequality's direction. Self-explanation is local and backward-looking: each line, against what came before it.
+**Self-explanation is not re-reading, and not summarizing.** Reading a proof twice more makes it familiar, not checked: familiarity is what makes the bad explanation of @exm-self-explanation feel adequate. A summary ("the proof expands a square and divides by \( x \)") is useful afterwards. But it skips exactly the warrants that matter, such as why the division by \( x \) is allowed and keeps the inequality's direction. Self-explanation is local and backward-looking: each line, against what came before it.
 :::
 
 ::: {.check}
@@ -89,7 +91,7 @@ Here is a six-line proof that for real numbers \( x \) and \( y \), if \( x + y 
 5. So \( x + y > 2 \) fails.
 6. This proves the contrapositive, and hence the claim.
 
-Self-explain lines 2–4.
+Explain lines 2–4: for each, say what makes it true.
 :::
 
 ::: {.solution}
@@ -173,13 +175,20 @@ Classify each explanation as one that **justifies** its line or one that **parap
 
 (e) Justifies: it names both hypotheses and the fact that combines them.
 
-(f) Paraphrases: it gives no warrant. A justification would say: by line 2 a product is zero, so one of its factors is zero; line 3 says the factor \( a + b \) is not zero, being positive; so \( a - b = 0 \) (@prp-disjunctive-syllogism, applied to "\( a + b = 0 \) or \( a - b = 0 \)" and \( a + b \ne 0 \)).
+(f) Paraphrases: it gives no warrant. A justification would run as follows. By line 2 a product is zero, so one of its factors is zero. Line 3 says the factor \( a + b \) is positive, so not zero. So \( a - b = 0 \), by disjunctive syllogism (@prp-disjunctive-syllogism) applied to "\( a + b = 0 \) or \( a - b = 0 \)" and \( a + b \ne 0 \).
 :::
 
 ::: {#exr-reading-proofs-a2}
 [A2: Drill]
 
-Answer each part in a phrase. (a) and (b) ask whether an explanation justifies or paraphrases; (c) and (d) which of the four questions is at work; (e) and (f) what kind of line it is; (g)–(i) name the unstated fact; (k) locates a hypothesis; (j) and (l) are about the habits of good readers.
+Answer each part in a phrase. The parts ask:
+
+- in (a) and (b), whether an explanation justifies or paraphrases;
+- in (c) and (d), which of the four questions is at work;
+- in (e) and (f), what kind of line it is;
+- in (g)–(i), for the unstated fact;
+- in (k), where a hypothesis is used;
+- in (j) and (l), about the habits of good readers.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. A line: "Since \( n \) is even, \( n^2 \) is even." An explanation: "With \( n = 2k \), \( n^2 = 2(2k^2) \), and \( 2k^2 \) is an integer." Does it justify or paraphrase?
@@ -216,7 +225,7 @@ Answer each part in a phrase. (a) and (b) ask whether an explanation justifies o
 
 (i) \( x^2 - 9 = (x - 3)(x + 3) \), and a product of real numbers is \( 0 \) only if a factor is, so \( x = 3 \) or \( x = -3 \); then \( x > 0 \) rules out \( -3 \) (\( \rulename{DS} \)).
 
-(j) Not necessarily: familiarity is not a warrant checked line by line (the warning "Self-explanation is not re-reading").
+(j) Not necessarily: familiarity is not a warrant checked line by line. Re-reading makes a proof familiar, not checked.
 
 (k) \( x < 0 \). It gives \( x \ne 0 \), so \( 1/x \) exists; and \( x \cdot (1/x) = 1 > 0 \), so \( 1/x \) has the sign of \( x \).
 
@@ -226,7 +235,7 @@ Answer each part in a phrase. (a) and (b) ask whether an explanation justifies o
 ### B. Practice
 
 ::: {#exr-reading-proofs-b1}
-[B1: Self-explain a counterexample]
+[B1: Explaining a counterexample line by line]
 
 Here, with its lines numbered, is the half of @exm-square-not-uniform that shows \( f(x) = x^2 \) is **not** uniformly continuous on \( \nR \).
 
@@ -240,7 +249,7 @@ Here, with its lines numbered, is the half of @exm-square-not-uniform that shows
 \]
 (6) Since \( \delta \) was arbitrary, uniform continuity fails.
 
-Self-explain each line, citing labels where a line uses an earlier result. Say at which lines \( \delta > 0 \) is used.
+Explain each line: say what makes it true, citing labels where a line uses an earlier result. Say at which lines \( \delta > 0 \) is used.
 :::
 
 ::: {.solution}
@@ -248,7 +257,7 @@ Self-explain each line, citing labels where a line uses an earlier result. Say a
 :::
 
 ::: {.second-reading title="The same lines, rule by rule"}
-*(1)* A cut: the goal "\( f \) is not uniformly continuous" is replaced by the displayed formula, and the proof then proves the formula. The formula is the positive form of the negation of uniform continuity, @exm-negating-definitions (c), read with \( A = \nR \); there the two are shown interderivable, by @prp-bounded-quantifier-negation, @prp-negated-implication and the order fact \( \neg(u < \varepsilon) \) iff \( u \ge \varepsilon \). The direction used here is from the displayed formula to the negation. The bounds can be dropped because a bounded quantifier \( \exists x \in \nR \) abbreviates \( \exists x\, (x \in \nR \wedge \dots) \) (@def-bounded-quantifier), and over the domain \( \nR \) the conjunct \( x \in \nR \) always holds.
+*(1)* A cut: the goal "\( f \) is not uniformly continuous" is replaced by the displayed formula, and the proof then proves the formula. The formula is the positive form of the negation of uniform continuity, @exm-negating-definitions (c), read with \( A = \nR \). That example shows the two interderivable, using the negation laws for bounded quantifiers and for implication and the order fact \( \neg(u < \varepsilon) \) iff \( u \ge \varepsilon \). The direction used here is from the displayed formula to the negation. The bounds can be dropped because a bounded quantifier \( \exists x \in \nR \) abbreviates \( \exists x\, (x \in \nR \wedge \dots) \) (@def-bounded-quantifier), and over the domain \( \nR \) the conjunct \( x \in \nR \) always holds.
 
 *(2)* The witness for \( \exists \varepsilon > 0 \): a bounded \( \rulename{\exists I} \) at the term \( 1 \), with its bound \( 1 > 0 \). It is written first, but as a rule it is applied last: the instance it needs, the formula after \( \exists \varepsilon > 0 \) with \( 1 \) for \( \varepsilon \), is what lines (3)–(6) prove.
 
@@ -258,9 +267,13 @@ Self-explain each line, citing labels where a line uses an earlier result. Say a
 
 *(5)* Arithmetic. Since \( \delta > 0 \), \( x = 1/\delta > 0 \) and \( y = x + \delta/2 > x \). Then \( x^2 < y^2 \), so \( \abs{x^2 - y^2} = y^2 - x^2 = (y - x)(y + x) \), with \( y - x = \delta/2 \) and \( y + x = 2/\delta + \delta/2 \); multiplying out gives \( 1 + \delta^2/4 \), which is at least \( 1 \) because \( \delta^2/4 \ge 0 \). This is the second conjunct; with (4) it gives the conjunction (\( \rulename{\wedge I} \)), and the two \( \rulename{\exists I} \) of (3) then give \( \exists x\, \exists y\, (\dots) \).
 
-*(6)* The closing line of the bounded \( \rulename{\forall I} \) box flagged \( \delta_0 \) (@prp-bounded-quantifier-rules). The side condition holds: the proof has no premises; the only assumption mentioning \( \delta_0 \) is \( \delta_0 > 0 \), the assumption of the box this line closes, and no outer box is open; and \( \delta_0 \) does not appear in the conclusion \( \forall \delta > 0\, \exists x\, \exists y\, (\dots) \), whose \( \delta \) is a bound variable different from the flag. With (2) this proves the displayed formula, and by the cut (1) uniform continuity fails.
+*(6)* The closing line of the bounded \( \rulename{\forall I} \) box flagged \( \delta_0 \) (@prp-bounded-quantifier-rules). Its side condition holds. The proof has no premises. The only assumption mentioning \( \delta_0 \) is \( \delta_0 > 0 \), the assumption of the box this line closes, and no outer box is open. And \( \delta_0 \) does not appear in the conclusion \( \forall \delta > 0\, \exists x\, \exists y\, (\dots) \), whose \( \delta \) is a bound variable different from the flag. With (2) this proves the displayed formula, and by the cut (1) uniform continuity fails.
 
 \( \delta > 0 \) is used in (3) (so that \( 1/\delta \) exists), in (4) (twice) and in (5) (for \( y > x > 0 \)).
+
+::: {.uses}
+@prp-bounded-quantifier-negation (negating a bounded quantifier); @prp-negated-implication (negating an implication).
+:::
 :::
 
 ::: {#exr-reading-proofs-b2}
@@ -270,7 +283,7 @@ Here is a proof that for real numbers \( x < y \), \( x^3 < y^3 \).
 
 (1) Let \( x < y \). (2) Then \( y^3 - x^3 = (y - x)(y^2 + xy + x^2) \). (3) Since \( x < y \), \( y - x > 0 \). (4) Also \( y^2 + xy + x^2 > 0 \). (5) So \( y^3 - x^3 > 0 \), as a product of two positive numbers. (6) Hence \( x^3 < y^3 \).
 
-Every line is true. Line 1 opens the box; of the rest, all but one are instances of a routine algebra or order fact, cited or not; one line is not an instance of any fact stated so far, and it needs an argument of its own. Self-explain the proof line by line to find it, and supply that argument as its warrant.
+Every line is true. Line 1 opens the box. Of the other lines, all but one are instances of a routine algebra or order fact, cited or not. One line is not an instance of any fact stated so far, and it needs an argument of its own. Explain the proof line by line to find it, and supply that argument as its warrant.
 :::
 
 ::: {.solution}
@@ -312,13 +325,13 @@ Here is a proof.
 
 *(c)* \( c = -2 \). For \( x \ge -2 \), line (3) becomes "\( x + 2 \ge 0 \)", and line (4) uses "a product of two non-negative numbers is non-negative"; every other line stands. Below \( -2 \) the claim is false. At \( x = -3 \): \( (-3)^3 + 2 = -25 \), while \( 3x = -9 \), and \( -25 \ge -9 \) fails. (For every \( x < -2 \), \( (x - 1)^2 > 0 \) and \( x + 2 < 0 \), so the product is negative.)
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 - 5: (a), one per line, each naming the fact (not restating the line).
 - 2: (b) line (3), with how \( x \ge 0 \) enters.
 - 2: (c) \( c = -2 \), with the reworded lines (3) and (4).
 - 1: the failure at \( x = -3 \) computed.
 
-Fatal errors (0 for the step): explanations that restate the lines; in (c), "the hypothesis can be dropped".
+Slips that lose the step: explanations that restate the lines; in (c), "the hypothesis can be dropped".
 :::
 
 ### C. Going deeper
@@ -332,7 +345,7 @@ Here is a proof that a sequence has at most one limit, with its lines numbered.
 >
 > (1) Suppose \( a_n \to L \) and \( a_n \to M \), and suppose, for a contradiction, that \( L \ne M \). (2) Let \( \varepsilon \coloneqq \abs{L - M}/2 \). Then \( \varepsilon > 0 \). (3) Choose \( N_1 \in \nN \) such that \( \abs{a_n - L} < \varepsilon \) for every \( n \ge N_1 \), and \( N_2 \in \nN \) such that \( \abs{a_n - M} < \varepsilon \) for every \( n \ge N_2 \). (4) Let \( n \coloneqq \max\{N_1, N_2\} \). (5) Then \( \abs{L - M} \le \abs{L - a_n} + \abs{a_n - M} < \varepsilon + \varepsilon = \abs{L - M} \). (6) So \( \abs{L - M} < \abs{L - M} \), which is impossible. (7) Hence \( L = M \).
 
-Self-explain each line, citing labels where a line uses an earlier result. Say where the assumption \( L \ne M \) is used, and which rule closes the box it opens.
+Explain each line: say what makes it true, citing labels where a line uses an earlier result. Say where the assumption \( L \ne M \) is used, and which rule closes the box it opens.
 :::
 
 ::: {.solution}
@@ -348,28 +361,28 @@ Line (5) uses one named result and two lines of (3). Which?
 :::
 
 ::: {.solution}
-*(1)* Two openings: the \( \rulename{{\to}I} \) box with the two hypotheses, and inside it a box on \( L \ne M \), that is, \( \neg(L = M) \); the goal \( L = M \) is positive, so this is an \( \rulename{RAA} \) box. *(2)* A constant, defined from \( L \) and \( M \). It is positive because \( L \ne M \) gives \( \abs{L - M} > 0 \): the one use of the assumption. *(3)* The definition of \( a_n \to L \) (as in @exm-negating-definitions (a)) applied at \( \varepsilon \) (\( \rulename{\forall E} \) at a term that is not the obvious one, with its bound \( \varepsilon > 0 \) from (2)), then \( \rulename{\exists E} \) with the fresh name \( N_1 \); the same for \( M \), with a second fresh name \( N_2 \) (one name for both would be (N4) of Section 8.6). *(4)* A constant: the larger of two natural numbers, so \( n \ge N_1 \) and \( n \ge N_2 \). *(5)* The triangle inequality (@exm-triangle-inequality-cases), with \( \abs{L - a_n} = \abs{a_n - L} \); then the two bounds of (3) at this \( n \) (\( \rulename{\forall E} \) at \( n \), \( \rulename{{\to}E} \) with \( n \ge N_1 \) and with \( n \ge N_2 \)); then \( \varepsilon + \varepsilon = \abs{L - M} \) by (2). *(6)* The clash: \( \abs{L - M} < \abs{L - M} \) against the fact that no number is less than itself (\( \rulename{\neg E} \)). The line does not mention \( N_1 \) or \( N_2 \), so the two \( \rulename{\exists E} \) boxes close on it. *(7)* \( \rulename{RAA} \): the box assumed \( \neg(L = M) \) and the line written after it is \( L = M \). The closing of the \( \rulename{{\to}I} \) box is silent. The assumption is used once, at (2), and it does work there, so the proof is not in costume; Section 8.2 proved the same claim without opening this box (@exm-rhetoric-equality).
+*(1)* Two openings: the \( \rulename{{\to}I} \) box with the two hypotheses, and inside it a box on \( L \ne M \), that is, \( \neg(L = M) \); the goal \( L = M \) is positive, so this is an \( \rulename{RAA} \) box. *(2)* A constant, defined from \( L \) and \( M \). It is positive because \( L \ne M \) gives \( \abs{L - M} > 0 \): the one use of the assumption. *(3)* The definition of \( a_n \to L \), as in @exm-negating-definitions (a), applied at \( \varepsilon \). This is a \( \rulename{\forall E} \) at a term that is not the obvious one, and its bound \( \varepsilon > 0 \) comes from (2). Then comes \( \rulename{\exists E} \) with the fresh name \( N_1 \). The same is done for \( M \), with a second fresh name \( N_2 \). One name for both would be the error of one name for two things, (N4) of Section 8.6. *(4)* A constant: the larger of two natural numbers, so \( n \ge N_1 \) and \( n \ge N_2 \). *(5)* The triangle inequality (@exm-triangle-inequality-cases), with \( \abs{L - a_n} = \abs{a_n - L} \); then the two bounds of (3) at this \( n \) (\( \rulename{\forall E} \) at \( n \), \( \rulename{{\to}E} \) with \( n \ge N_1 \) and with \( n \ge N_2 \)); then \( \varepsilon + \varepsilon = \abs{L - M} \) by (2). *(6)* The clash: \( \abs{L - M} < \abs{L - M} \) against the fact that no number is less than itself (\( \rulename{\neg E} \)). The line does not mention \( N_1 \) or \( N_2 \), so the two \( \rulename{\exists E} \) boxes close on it. *(7)* \( \rulename{RAA} \): the box assumed \( \neg(L = M) \) and the line written after it is \( L = M \). The closing of the \( \rulename{{\to}I} \) box is silent. The assumption is used once, at (2), and it does work there, so the proof is not in costume; Section 8.2 proved the same claim without opening this box (@exm-rhetoric-equality).
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 - 2: (1) and (7), the two boxes and \( \rulename{RAA} \) as the closing rule (not \( \rulename{\neg I} \)).
 - 2: (2), \( \varepsilon > 0 \) from \( L \ne M \), named as the use of the assumption.
 - 2: (3), the instance named, two fresh names.
 - 2: (5), the triangle inequality cited and both bounds applied at \( n \ge N_1, N_2 \).
 - 2: (6), the clash named, and the \( \rulename{\exists E} \) boxes closing because \( \bot \) does not mention \( N_1 \), \( N_2 \).
 
-Fatal errors (0 for the step): calling (7) \( \rulename{\neg I} \); applying the definition at \( \varepsilon \) without its positivity.
+Slips that lose the step: calling (7) \( \rulename{\neg I} \); applying the definition at \( \varepsilon \) without its positivity.
 :::
 
 ::: {#exr-reading-proofs-c2}
 [C2: Challenge: A proof about derivations]
 
-Self-explain the proof of @lem-atom-splitting in Section 4.8: for each of its five numbered steps, and for each claim in the paragraph that follows them, say what it uses and why that is legitimate. Then state the idea of the proof in two sentences.
+Explain the proof of @lem-atom-splitting in Section 4.8 line by line. Take each of its five numbered steps, and each claim in the paragraph that follows them: say what it uses and why that is legitimate. Then state the idea of the proof in two sentences.
 :::
 
 ::: {.solution}
 [Hint 1]
 
-Keep @def-derivation open beside you: the paragraph after the five steps checks, in turn, the premises, the scope rule for the transplanted citations, the rule schemas, the last line of each box, and the availability of what the last line cites.
+Keep @def-derivation open beside you. The paragraph after the five steps checks five things in turn. They are the premises, the scope rule for the transplanted citations, the rule schemas, the last line of each box, and the availability of what the last line cites.
 :::
 
 ::: {.solution}
@@ -381,26 +394,30 @@ Start with step 2. Which result supplies \( p \vee \neg p \), what is substitute
 ::: {.solution}
 *Step 1.* The premises of the new list are the members of \( \Delta \) that \( D \) or \( E \) uses. Clause (D1) of @def-derivation places premises first, above every box, and puts no restriction on which statements they are. The conclusion will be \( \Delta \vdash \psi \), so only members of \( \Delta \) are taken. The premises \( p \), \( \neg p \) of \( D \) and \( E \) are therefore left out, unless they also belong to \( \Delta \), which does no harm.
 
-*Step 2.* The line \( p \vee \neg p \) is @prp-excluded-middle with the atom \( p \) for the letter \( P \), used as a derived rule (@def-derived-rule) with no premises, so it cites nothing. This is the one classical step, through \( \rulename{LEM} \).
+*Step 2.* The line \( p \vee \neg p \) is @prp-excluded-middle with the atom \( p \) for the letter \( P \). It is used as a derived rule with no premises, so it cites nothing. This is the one classical step, through \( \rulename{LEM} \).
 
-*Step 3.* The box opened by \( p \) contains the non-premise lines of \( D \) with their own boxes; every citation of the premise \( p \) is redirected to the assumption, and every citation of a premise in \( \Delta \) to the premise line of step 1. The two degenerate cases (the last line of \( D \) is a premise) are handled separately so that the box still ends in \( \psi \), by repetition (\( \rulename{R} \), clause (D3)) where needed.
+*Step 3.* The box opened by \( p \) contains the non-premise lines of \( D \) with their own boxes. Every citation of the premise \( p \) is redirected to the assumption, and every citation of a premise in \( \Delta \) to the premise line of step 1. The two special cases, in which the last line of \( D \) is a premise, are handled separately so that the box still ends in \( \psi \). Where needed, that last line comes by repetition \( \rulename{R} \), clause (D3), which copies an available line into the current box.
 
 *Step 4.* The same, for \( E \) with the assumption \( \neg p \).
 
 *Step 5.* The last line \( \psi \) is \( \rulename{\vee E} \) (@def-rules-disjunction), citing the disjunction of step 2 and the two boxes, each opened by one disjunct and ending in \( \psi \).
 
-*The verification paragraph.* It checks that the list is a derivation. (i) Premises are first and in no box, so they are available everywhere. (ii) Inside each new box, a line of \( D \) cites the same lines and boxes as before, renumbered, or a premise line, or the assumption, and each of those is available by the scope rule of @def-derivation: the old boxes have simply been placed inside one new box, which contains both the citing line and the cited one. (iii) Each line is still an instance of its rule's schema, since its statement and the statements it cites are unchanged, as in the proof of @lem-weakening-cut. (iv) The last line of each new box is \( \psi \), as a line of that box itself, which \( \rulename{\vee E} \) requires. (v) The disjunction and the two boxes are available at the last line, which lies in no box. So the last line is a correct \( \rulename{\vee E} \), and \( \Delta \vdash \psi \).
+*The verification paragraph.* It checks that the list is a derivation. (i) Premises are first and in no box, so they are available everywhere. (ii) Inside each new box, a line of \( D \) cites the same lines and boxes as before, renumbered, or a premise line, or the assumption. Each of those is available by the scope rule of @def-derivation. The old boxes have simply been placed inside one new box, which contains both the citing line and the cited one. (iii) Each line is still an instance of its rule's schema, since its statement and the statements it cites are unchanged, as in the proof of @lem-weakening-cut. (iv) The last line of each new box is \( \psi \), as a line of that box itself, which \( \rulename{\vee E} \) requires. (v) The disjunction and the two boxes are available at the last line, which lies in no box. So the last line is a correct \( \rulename{\vee E} \), and \( \Delta \vdash \psi \).
 
-*The idea in two sentences.* The lemma is proof by cases on \( p \vee \neg p \): excluded middle supplies the disjunction, and the two given derivations, with their premise \( p \) or \( \neg p \) turned into the assumption of a box, are the two cases of \( \rulename{\vee E} \). All the work is in checking that the transplanted lines still cite only available lines.
+*The idea in two sentences.* The lemma is proof by cases on \( p \vee \neg p \), which excluded middle supplies, with the two given derivations as the two cases of \( \rulename{\vee E} \). Their premises \( p \) and \( \neg p \) become the assumptions of the two boxes, and all the work is in checking that the transplanted lines still cite only available lines.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 - 2: step 2 explained: @prp-excluded-middle as a derived rule at the atom \( p \), citing nothing, and identified as the classical step.
-- 2: steps 3 and 4 explained: the redirection of citations of \( p \) (or \( \neg p \)) to the assumption and of members of \( \Delta \) to the premise lines, and the degenerate cases.
+- 2: steps 3 and 4 explained: the redirection of citations of \( p \) (or \( \neg p \)) to the assumption and of members of \( \Delta \) to the premise lines, and the two special cases.
 - 1: step 5 named as \( \rulename{\vee E} \) with its three citations.
 - 3: the verification paragraph explained against @def-derivation: availability by the scope rule, schemas unchanged, each box ending in \( \psi \) as its own line.
 - 2: an idea in two sentences that names both the case split on \( p \vee \neg p \) and the transplanting of \( D \) and \( E \) into the two boxes.
 
-Fatal errors (0 for the step): explanations that restate the steps without naming what they use; calling the case split \( \rulename{\neg I} \) or \( \rulename{RAA} \).
+Slips that lose the step: explanations that restate the steps without naming what they use; calling the case split \( \rulename{\neg I} \) or \( \rulename{RAA} \).
+
+::: {.uses}
+@def-derived-rule (using a derived rule).
+:::
 :::
 
 <!-- dependency ledger
@@ -421,7 +438,7 @@ exr-reading-proofs-b1 (solution): the displayed formula yields the negation of u
 exr-reading-proofs-b1 (solution): the flag delta_0 meets the side condition of the bounded forall-I; the prose uses one letter for flag and bound variable | prp-bounded-quantifier-rules (cited); F1.4 §04 (prose pointer)
 exr-reading-proofs-b2 (solution): y^3 - x^3 = (y - x)(y^2 + xy + x^2); y^2 + xy + x^2 = (y + x/2)^2 + 3x^2/4; zero only at x = y = 0 | school algebra; checked by verify/ch08/exr-reading-proofs-b2.py
 exr-reading-proofs-a2 (solution): n = 2k gives n^2 = 2(2k^2); u^2 - v^2 = (u - v)(u + v); 0 < a < b gives a^2 < ab < b^2; |u| < r iff -r < u < r; x^2 - 9 = (x - 3)(x + 3), a product is 0 only if a factor is, x > 0 rules out -3 (DS); x < 0 gives x != 0 and x (1/x) = 1 > 0, so 1/x < 0 | school algebra and order facts; prp-disjunctive-syllogism (named); checked by verify/ch08/exr-reading-proofs-a2.py
-exr-reading-proofs-a2 (solution): (j), (l) refer to the warning "Self-explanation is not re-reading" and strategy 1 "Try it first" | on the page
+exr-reading-proofs-a2 (solution): (j) repeats the point of the warning "Self-explanation is not re-reading"; (l) names strategy 1 "Try it first" | on the page
 exr-reading-proofs-b1 (solution): [plain-words main solution] the same warrants as the folded rule-by-rule solution; Section 6.2's recipe | exm-negating-definitions (c) (cited); school order facts
 exr-reading-proofs-b3 (solution): (x - 1)^2 (x + 2) = x^3 - 3x + 2; squares >= 0; x >= 0 gives x + 2 >= 2 > 0; non-negative times positive (or times non-negative) is non-negative; c = -2; at x = -3, x^3 + 2 = -25 < -9 = 3x; for x < -2 the product (x - 1)^2 (x + 2) is negative | school algebra and order facts; checked by verify/ch08/exr-reading-proofs-b3.py
 exr-reading-proofs-c1 (solution): max of two naturals is >= each; no number is less than itself; eps + eps = |L - M| for eps = |L - M|/2; L != M gives |L - M| > 0 | school facts; exm-triangle-inequality-cases, exm-rhetoric-equality, the definition of a_n -> L = exm-negating-definitions (a) (cited); F1.5 §06's (N4) (prose pointer within the chapter, nothing rests on it)

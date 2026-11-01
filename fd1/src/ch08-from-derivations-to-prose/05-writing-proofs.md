@@ -1,15 +1,15 @@
 # Writing a Proof
 
-Section 8.4 trained a reader to say what licenses each line of a proof, as @exm-self-explanation did line by line. This section turns to the writer. A proof is written for a reader who will check it in exactly that way, so the writer's job is to make each line's warrant visible. The section gives a procedure that leads from a statement to plain prose, the conventions of written mathematics, each a rule of Chapters 1–7 made audible, and four worked examples.
+Section 8.4 trained a reader to say what licenses each line of a proof, as @exm-self-explanation did line by line. This section turns to the writer. A proof is written for a reader who will check it in exactly that way, so the writer's job is to show what licenses each line. The section gives a procedure that leads from a statement to plain prose, the conventions of written mathematics and four worked examples. Each convention is a rule of Chapters 1–7 put into words.
 
 ## A procedure
 
-A reader checks a proof forwards, one line at a time. A writer finds a proof mostly backwards, from the goal. The two directions are not in conflict: Section 3.1 showed that the search for a derivation is goal-directed, and @def-derivation says that the derivation found is a list in which each line cites only lines above it. The procedure below keeps both, the search in scratch work and the derivation on the page. Its steps 3 and 6 use the levels of @def-levels-of-proof and the convention of @def-silent-steps from Section 8.3.
+A reader checks a proof forwards, one line at a time. A writer finds a proof mostly backwards, from the goal. The two directions are not in conflict. Section 3.1 showed that the search for a derivation is goal-directed. The derivation it finds is still a list in which each line cites only lines above it (@def-derivation). The procedure below keeps both: the search in scratch work, the derivation on the page. Steps 3 and 6 use the levels of proof from Section 8.3 (@def-levels-of-proof). Step 6 also uses the rule of Section 8.3 on which steps may stay silent (@def-silent-steps).
 
 ::: {.algorithm}
 **Writing a proof of a statement.**
 
-1. **Write the goal in symbols.** Translate the statement, its hypotheses and its conclusion into a formula, as in Section 6.1, with every quantifier and its bound. Read a letter that is not introduced as universally quantified (Section 5.1). Set up the Givens/Goal table: the hypotheses on the left, the goal on the right.
+1. **Write the goal in symbols.** Translate the statement, its hypotheses and its conclusion into a formula, as in Section 6.1, with every quantifier and its bound. Read a letter that is not introduced as universally quantified (Section 5.1). Set up a two-column table, "We know | We want": the hypotheses on the left, the goal on the right.
 2. **Unwind the definitions.** Replace each defined word ("bounded", "converges", "irrational", "\( \subseteq \)") by its definition, in the hypotheses and in the goal. This is \( \rulename{{\leftrightarrow}E} \) on a definition.
 3. **Read the skeleton off the goal** (Section 3.1, extended in Section 6.3), and write it at level 1: the boxes, their first lines and their last lines. Open the \( \rulename{\exists E} \) boxes of existential hypotheses early.
 4. **Fill the boxes:** backwards in scratch, forwards on the page. The search runs from the goal; the written proof runs from the hypotheses, each line citing lines above it. What the search found goes into the Idea, not into the Proof.
@@ -18,7 +18,7 @@ A reader checks a proof forwards, one line at a time. A writer finds a proof mos
 7. **Reread as a checker:** for each line, is it true, and by which rule does it follow from which available lines? (Section 8.6 makes this a two-column check.)
 :::
 
-Steps 1–3 involve no mathematics, only logical form, and they fix the first and last sentence of every box before anything is invented ("skeleton first"). A picture after the next example shows steps 4 and 5.
+Steps 1–3 involve no mathematics, only logical form. They fix the first and last sentence of every box before anything is invented ("skeleton first").
 
 ::: {.check}
 Which step of the procedure produces the sentence "Let \( \varepsilon > 0 \)" at the start of a proof that \( a_n \to L \), and which step keeps it at level 3?
@@ -41,7 +41,7 @@ Let \( A \) and \( B \) be sets of real numbers with \( A \subseteq B \). Prove 
 ::: {.solution}
 *Steps 1 and 2: the goal in symbols, unwound.* Over the domain \( \nR \), "\( B \) is bounded above" is \( \exists M \; \forall b \in B \; (b \le M) \) (Section 6.1), and \( A \subseteq B \) is \( \forall x \in A \; (x \in B) \). The statement is an implication, so the derivation below is the inside of a \( \rulename{{\to}I} \) box: its assumption is the first formula (line 2), the hypothesis is the second, and its goal is \( \exists M \; \forall a \in A \; (a \le M) \).
 
-| Givens | Goal |
+| We know | We want |
 |---|---|
 | \( A \subseteq B \); \( B \) bounded above | \( A \) bounded above |
 | \( \forall x \in A \; (x \in B) \); \( \exists M \; \forall b \in B \; (b \le M) \) | \( \exists M \; \forall a \in A \; (a \le M) \) |
@@ -50,11 +50,11 @@ Let \( A \) and \( B \) be sets of real numbers with \( A \subseteq B \). Prove 
 | the same, and \( a_0 \in A \) (\( \rulename{\forall I} \), \( a_0 \) fresh) | \( a_0 \le M_0 \) |
 | the same, and \( a_0 \in B \) (\( \rulename{\forall E} \) at \( a_0 \)) | \( a_0 \le M_0 \) ✓ (\( \rulename{\forall E} \) at \( a_0 \)) |
 
-The second row is step 2; each later row is one move of steps 3 and 4; the table's last row is where the search ends.
+In the table above, the second row is step 2. Each later row is one step of the search in steps 3 and 4, and the last row is where the search ends.
 
 *Step 3: the skeleton.* The goal is an existential, so it is postponed: no witness is in sight yet. The assumption "\( B \) is bounded above" (line 2) is an existential, so its \( \rulename{\exists E} \) box opens at once, with a fresh name \( M_0 \) and the assumption \( \forall b \in B \; (b \le M_0) \); the box's last line is the goal.
 
-*Step 4: filling the box.* Backwards: the goal needs a witness \( M \) and a proof of \( \forall a \in A \; (a \le M) \). The only bound in sight is \( M_0 \), so try it. Then the new goal is a bounded universal: a box "let \( a_0 \in A \)" whose last line is \( a_0 \le M_0 \). That line comes from the bound on \( B \), instantiated at \( a_0 \), which needs \( a_0 \in B \); and \( a_0 \in B \) comes from \( A \subseteq B \) instantiated at \( a_0 \). Forwards, the same lines in the order of the list are the derivation below (with the bounded rules of @prp-bounded-quantifier-rules; each bounded \( \rulename{\forall E} \) abbreviates a \( \rulename{\forall E} \) and a \( \rulename{{\to}E} \), and the bounded \( \rulename{\forall I} \) box a \( \rulename{\forall I} \) box with a \( \rulename{{\to}I} \) box inside).
+*Step 4: filling the box.* Backwards: the goal needs a witness \( M \) and a proof of \( \forall a \in A \; (a \le M) \). The only bound in sight is \( M_0 \), so try it. Then the new goal is a bounded universal: a box "let \( a_0 \in A \)" whose last line is \( a_0 \le M_0 \). That line comes from the bound on \( B \), instantiated at \( a_0 \), which needs \( a_0 \in B \); and \( a_0 \in B \) comes from \( A \subseteq B \) instantiated at \( a_0 \). Forwards, the same lines in the order of the list are the derivation below. It uses the rules for bounded quantifiers (@prp-bounded-quantifier-rules). Each bounded \( \rulename{\forall E} \) abbreviates a \( \rulename{\forall E} \) and a \( \rulename{{\to}E} \). The bounded \( \rulename{\forall I} \) box abbreviates a \( \rulename{\forall I} \) box with a \( \rulename{{\to}I} \) box inside.
 
 ```{=latex}
 \begin{center}
@@ -76,7 +76,7 @@ $\begin{nd}
 \end{center}
 ```
 
-The side conditions hold: \( a_0 \) appears in neither line 1 nor line 2, not in line 7 and not in the open assumption on line 3; \( M_0 \) appears in none of lines 1, 2 and 9.
+The side conditions hold. The name \( a_0 \) appears in neither line 1 nor line 2, not in line 7 and not in the open assumption on line 3. The name \( M_0 \) appears in none of lines 1, 2 and 9.
 
 *Step 5: the constant.* The witness for the goal is the bound \( M_0 \). The search could choose it only once the \( \rulename{\exists E} \) box supplied \( M_0 \), and confirm it only at line 6; the page writes it first, in the sentence that chooses it. It depends on \( B \) only: its box is opened before the box of \( a_0 \), so it cannot depend on \( a_0 \), and it must not, because a single bound has to serve every element of \( A \).
 
@@ -84,13 +84,13 @@ The side conditions hold: \( a_0 \) appears in neither line 1 nor line 2, not in
 
 > Suppose \( B \) is bounded above, and choose an upper bound \( M \) of \( B \) (depending on \( B \) only). Let \( a \in A \). Since \( A \subseteq B \), we have \( a \in B \), and so \( a \le M \). Hence \( M \) is an upper bound of \( A \), and \( A \) is bounded above.
 
-The two instances of \( \rulename{\forall E} \) (lines 5 and 6) are at the obvious term \( a \), and each appears only as the citation that licenses it ("since \( A \subseteq B \)", "so", which cites the choice of \( M \)). The closing of the \( \rulename{\forall I} \) box, "since \( a \) was arbitrary", is silent. Two steps that are never silent are on the page: the \( \rulename{\exists E} \) with its fresh name ("choose an upper bound \( M \)"), and the \( \rulename{\exists I} \) with its witness and dependence ("\( M \) is an upper bound of \( A \)"; "depending on \( B \) only"). "Suppose \( B \) is bounded above" opens the \( \rulename{{\to}I} \) box; its closing is silent.
+The two instances of \( \rulename{\forall E} \) (lines 5 and 6) are at the obvious term \( a \), and each appears only as the citation that licenses it ("since \( A \subseteq B \)", "so", which cites the choice of \( M \)). The closing of the \( \rulename{\forall I} \) box, "since \( a \) was arbitrary", is silent. Two steps that are never silent are on the page. The first is the \( \rulename{\exists E} \) with its fresh name ("choose an upper bound \( M \)"). The second is the \( \rulename{\exists I} \) with its witness and dependence ("\( M \) is an upper bound of \( A \)"; "depending on \( B \) only"). "Suppose \( B \) is bounded above" opens the \( \rulename{{\to}I} \) box; its closing is silent.
 
 *Step 7: reread.* The order of the first two sentences matters. With "let \( a \in A \)" first and \( M \) chosen inside, the \( \rulename{\exists I} \) would fall inside the box of \( a_0 \), giving only \( \forall a \in A \; \exists M \; (a \le M) \), which says nothing.
 :::
 
 ::: {.second-reading title="What the example used"}
-The example used \( A \subseteq B \) once, at line 5, and "\( B \) is bounded above" once, at line 9, by \( \rulename{\exists E} \), whose box assumption is used at line 6. The two warnings below concern steps 4 and 5.
+The example used \( A \subseteq B \) once, at line 5, and "\( B \) is bounded above" once, at line 9, by \( \rulename{\exists E} \), whose box assumption is used at line 6.
 :::
 
 ### Scratch paper and the page
@@ -105,10 +105,10 @@ Steps 4 and 5 say that the search runs backwards and the page runs forwards. Her
 | 4. That needs \( a \in B \). | 4. So \( a \le M \). |
 | 5. \( a \in B \) comes from \( A \subseteq B \). ✓ | 5. Hence \( M \) is an upper bound of \( A \). |
 
-Read the scratch column from the bottom up and it is the page, except for the constant: \( M \) is found at scratch line 2, after the goal has been read, but on the page it is chosen in the first sentence, before anything uses it.
+Read the scratch column from the bottom up and it is the page, except for the constant. On scratch paper \( M \) is found at line 2, after the goal has been read. On the page it is chosen in the first sentence, before anything uses it.
 
 ::: {.second-reading title="Why the page runs forwards"}
-**Step 4 as a logical fact.** The search of Section 3.1 opens a box for the goal before it knows how the box will be filled, and it postpones an existential goal until a witness appears; that is why it works backwards. But a derivation is a list in which line \( k \) cites only lines available at \( k \) (@def-derivation), and a written proof is that list in sentences. So the order of the page is forced by the rules, not by taste: "\( \abs{f(x) - f(a)} < \varepsilon \) holds if \( \abs{x - a} < \varepsilon/2 \)" points from a later line to an earlier one. The backward reasoning lives in the Idea block.
+**Step 4 as a logical fact.** The search of Section 3.1 opens a box for the goal before it knows how the box will be filled. It also postpones an existential goal until a witness appears. That is why it works backwards. But a derivation is a list in which line \( k \) cites only lines available at \( k \) (@def-derivation), and a written proof is that list in sentences. So the order of the page is forced by the rules, not by taste: "\( \abs{f(x) - f(a)} < \varepsilon \) holds if \( \abs{x - a} < \varepsilon/2 \)" points from a later line to an earlier one. The backward reasoning belongs in the Idea.
 
 **Step 5 as a logical fact.** A chosen constant, such as "let \( \delta \coloneqq \varepsilon/2 \)", is the witness of an \( \rulename{\exists I} \) line. The search finds it last, because only the end of the search shows what it must do. On the page it comes first, right after the names it is built from, because later lines use it. Those names are its dependencies; they must be among the names of the boxes open where it is chosen (Section 6.4).
 :::
@@ -139,15 +139,15 @@ A writer's scratch paper reads: "want \( \abs{3x - 6} < \varepsilon \) when \( \
 
 ## Conventions of written mathematics
 
-A handful of conventions make a proof checkable. Each is a rule of Chapters 1–7 heard in a sentence.
+A handful of conventions make a proof checkable. Each one puts a rule of Chapters 1–7 into words.
 
 - **Announce the skeleton.** "We prove the contrapositive", "by induction on \( n \)", "we consider two cases", "suppose, for a contradiction, that …". An announcement tells the reader which box is opening, and so what its last line must be.
-- **Name every object when it is introduced,** by "let" (an arbitrary object, \( \rulename{\forall I} \)), "choose" (a witness, \( \rulename{\exists E} \), with a fresh name), or "let … \( \coloneqq \) …" (a constant, the witness of \( \rulename{\exists I} \)), and say what a chosen object depends on.
+- **Name every object when it is introduced.** Use "let" for an arbitrary object (\( \rulename{\forall I} \)), "choose" for a witness with a fresh name (\( \rulename{\exists E} \)), and "let … \( \coloneqq \) …" for a constant, the witness of \( \rulename{\exists I} \). Say what a chosen object depends on.
 - **One claim per sentence.** A sentence carries one line, or a short chain of lines joined by "so", each step of which the reader can name. Two unrelated claims joined by "and" hide which one is used later.
 - **End with what was shown.** The last sentence of a proof states the goal, or the last line before only closings that @def-silent-steps lets be silent. If it is not the statement to be proved, the reader should be told how the two are related.
 - **Label displayed claims that will be cited,** \( (\ast) \) or (1), and cite them by the label. A citation is a line number in prose.
 
-None of these is a matter of style. An object used without being introduced is a line citing nothing, and an announcement that does not match its box (assuming the conclusion of an implication) proves the converse; these are entries (N9) and (N5) of the catalogue in Section 8.6.
+None of these is a matter of style. An object used without being introduced is a line citing nothing. In the catalogue of Section 8.6 this is citing a line that is not available, (N9). An announcement that does not match its box, such as assuming the conclusion of an implication, proves the converse. The catalogue calls this proving the converse, (N5).
 
 ## Matching sentences and rules
 
@@ -177,7 +177,7 @@ Here is a short proof. Label each sentence with the rule it uses.
 
 Sentence (7) uses the assumption made in (1), and it may: that box is still open.
 
-Measured against @def-silent-steps, nothing that must be written is missing: the split is on the page with a disjunction that covers every real \( x \), each case opens with its assumption, and what is left out may be silent. Labeling also shows where the work is: the case split exists only because \( \abs{\cdot} \) is defined by cases, and the school fact \( -\abs{u} \le u \), used with \( u = x - 1 \), gives \( -1 < x - 1 \) in one step, with no \( \rulename{\vee E} \) at all.
+Measured against @def-silent-steps, nothing that must be written is missing. The split is on the page, with a disjunction that covers every real \( x \). Each case opens with its assumption, and what is left out may be silent. Labeling also shows where the work is. The case split exists only because \( \abs{\cdot} \) is defined by cases. The school fact \( -\abs{u} \le u \), used with \( u = x - 1 \), gives \( -1 < x - 1 \) in one step, with no \( \rulename{\vee E} \) at all.
 :::
 
 ::: {.second-reading title="Every sentence labeled, school facts included"}
@@ -194,7 +194,15 @@ Measured against @def-silent-steps, nothing that must be written is missing: the
 
 The facts of school algebra enter as implications, each used by \( \rulename{{\to}E} \). Sentence (8) closes two boxes, which is normal.
 
-Measured against @def-silent-steps, the proof leaves out nothing that must be written: the split in (2) is on the page, and the disjunction it splits is a school fact (every real number is at least \( 1 \) or below it), so it covers every case; each case box opens with its assumption; and every step it leaves unwritten is of a kind that may be silent, for instance the \( \rulename{\forall E} \) instances of the school facts at the obvious terms, the conclusion \( x > 0 \) of case 1, which is left to the chain \( x \ge 1 > 0 \) of (4), the \( \rulename{\wedge I} \) behind (4), whose conjuncts are displayed, the \( \rulename{{=}E} \) of (7), and the closing of the \( \rulename{{\to}I} \) box, for which "which proves the claim" stands. Labeling also shows where the work is. The case split exists only because \( \abs{\cdot} \) is defined by cases (Chapter 1); the school fact \( -\abs{u} \le u \), used with \( u = x - 1 \), gives \( -1 < x - 1 \) in one step, and a proof written that way would have no \( \rulename{\vee E} \) at all.
+Measured against @def-silent-steps, the proof leaves out nothing that must be written. The split in (2) is on the page. The disjunction it splits is a school fact (every real number is at least \( 1 \) or below it), so it covers every case. Each case box opens with its assumption. Every step the proof leaves unwritten is of a kind that may be silent, for instance:
+
+- the \( \rulename{\forall E} \) instances of the school facts at the obvious terms;
+- the conclusion \( x > 0 \) of case 1, which is left to the chain \( x \ge 1 > 0 \) of (4);
+- the \( \rulename{\wedge I} \) behind (4), whose conjuncts are displayed;
+- the \( \rulename{{=}E} \) of (7);
+- the closing of the \( \rulename{{\to}I} \) box, for which "which proves the claim" stands.
+
+Labeling also shows where the work is. The case split exists only because \( \abs{\cdot} \) is defined by cases (Chapter 1). The school fact \( -\abs{u} \le u \), used with \( u = x - 1 \), gives \( -1 < x - 1 \) in one step. A proof written that way would have no \( \rulename{\vee E} \) at all.
 :::
 
 The second direction starts from a derivation whose premises are facts about integers.
@@ -229,14 +237,14 @@ $\begin{nd}
 ::: {.solution}
 > Every integer is even or odd, so we consider two cases. If \( n \) is even, then \( n(n + 1) \) has an even factor, and so it is even. If \( n \) is odd, then \( n + 1 \) is even, since an odd number plus one is even; so again \( n(n + 1) \) has an even factor and is even. In either case \( n(n + 1) \) is even.
 
-Compare the two. The paragraph keeps one sentence for each box and each rule that matters: line 1 becomes "we consider two cases", with its reason; the two boxes become the two "if" sentences; line 10 becomes "in either case". It drops the line numbers and the rule names, and it merges the two \( \rulename{{\to}E} \) steps of lines 8 and 9 into one sentence joined by "so". It never skips a box: the reader still sees both cases and sees them combined.
+Compare the two. The paragraph keeps one sentence for each box and each rule that matters. Line 1 becomes "we consider two cases", with its reason. The two boxes become the two "if" sentences, and line 10 becomes "in either case". It drops the line numbers and the rule names, and it merges the two \( \rulename{{\to}E} \) steps of lines 8 and 9 into one sentence joined by "so". It never skips a box: the reader still sees both cases and sees them combined.
 
-By @def-silent-steps, the closing "in either case …" could be dropped at level 3; the split of line 1, with the reason it covers every integer, could not. The paragraph leaves the premises unproved. Premises 2–4 are one line of algebra each (for instance, \( n = 2k \) gives \( n(n + 1) = 2\bigl(k(n + 1)\bigr) \)), and a careful write-up includes them; premise 1, that every integer is even or odd, is the fact (E1) that this volume takes as known.
+By @def-silent-steps, the closing "in either case …" could be dropped at level 3; the split of line 1, with the reason it covers every integer, could not. The paragraph leaves the premises unproved. Premises 2–4 are one line of algebra each; for instance, \( n = 2k \) gives \( n(n + 1) = 2\bigl(k(n + 1)\bigr) \). A careful write-up includes them. Premise 1, that every integer is even or odd, is the fact (E1) that this volume takes as known.
 :::
 
 ## Generalizing a proof
 
-A proof written about one object sometimes proves much more. To **generalize** it, replace the object by a fresh name, the move of \( \rulename{\forall I} \) (Section 5.4), and read every line again. A line that uses only what the new name's box assumes stays. A line that uses a property of the particular object must be proved again, or the generalization fails.
+A proof written about one object sometimes proves much more. To **generalize** it, replace the object by a fresh name, as \( \rulename{\forall I} \) does (Section 5.4), and read every line again. A line that uses only what the new name's box assumes stays. A line that uses a property of the particular object must be proved again, or the generalization fails.
 
 ::: {#exm-generalise-proof}
 [One of three, generalized]
@@ -306,7 +314,7 @@ Here is a proof.
 ::: {#exr-writing-proofs-a2}
 [A2: Drill]
 
-Answer each part in a line. The parts follow the procedure: (a)–(b) symbols and unwinding, (c)–(d) the skeleton, (e) the order on the page, (f), (g), (i) the conventions, (h) the search and the page, (j)–(k) generalizing, (l) the Givens/Goal table.
+Answer each part in a line. The parts follow the procedure. Parts (a)–(b) are about symbols and unwinding, (c)–(d) the skeleton, and (e) the order on the page. Parts (f), (g) and (i) are about the conventions, (h) the search and the page, (j)–(k) generalizing, and (l) the table of step 1.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Write in symbols, with every quantifier and bound: "the square of every odd integer is odd" (domain \( \nZ \)).
@@ -320,7 +328,7 @@ Answer each part in a line. The parts follow the procedure: (a)–(b) symbols an
 9. Claim: \( x^2 - 4x + 3 < 0 \) for \( 1 < x < 3 \). A proof ends "… so \( x^2 - 4x + 3 = (x - 1)(x - 3) \)." What is missing?
 10. A proof about the number \( 12 \) uses only "\( 12 \) is a multiple of \( 4 \)". For which integers does the same proof prove the same claim?
 11. A proof about "an arbitrary odd \( n \)" uses \( n > 0 \) in one line. What does it prove?
-12. Givens \( \forall x \in A \; (x \in B) \) and \( \forall x \in B \; (x \in C) \); Goal \( \forall x \in A \; (x \in C) \). Write the next row of the Givens/Goal table.
+12. We know \( \forall x \in A \; (x \in B) \) and \( \forall x \in B \; (x \in C) \); we want \( \forall x \in A \; (x \in C) \). Write the next row of the "We know | We want" table.
 :::
 :::
 
@@ -347,7 +355,7 @@ Answer each part in a line. The parts follow the procedure: (a)–(b) symbols an
 
 (k) Only the claim for positive odd \( n \). For all odd \( n \), the box would have to assume no more than oddness, so that line must be proved again without \( n > 0 \).
 
-(l) Givens: the same, and \( a_0 \in A \) (\( \rulename{\forall I} \), \( a_0 \) fresh). Goal: \( a_0 \in C \).
+(l) We know: the same, and \( a_0 \in A \) (\( \rulename{\forall I} \), \( a_0 \) fresh). We want: \( a_0 \in C \).
 :::
 
 ### B. Practice
@@ -488,9 +496,17 @@ Let \( (a_n) \) and \( (b_n) \) be sequences of real numbers with \( a_n \to L \
 ::: {.solution}
 An admissible order: (v), (x), (ii), (viii), (i), (iv), (ix), (vi).
 
-The only other admissible order swaps (x) and (ii), which use only \( \varepsilon \) and one hypothesis each. Nothing else moves: (viii) uses \( N_1 \) and \( N_2 \); (i) uses \( N \); (iv) uses \( n \ge N \) and the definition of \( N \); (ix) uses (iv), (x) and (ii) at this \( n \), and the triangle inequality (@exm-triangle-inequality-cases); (vi) closes the boxes of \( n \) and \( \varepsilon \), with the \( \rulename{\exists I} \) of the witness \( N \) inside "\( a_n + b_n \to L + M \)". The maximum exists because there are finitely many numbers.
+The only other admissible order swaps (x) and (ii), which use only \( \varepsilon \) and one hypothesis each. Nothing else moves:
 
-Distractor (iii) claims that \( N_1 \) and \( N_2 \) serve every \( \varepsilon \) at once. They were chosen from \( \forall \varepsilon \, \exists N \), inside the box of \( \varepsilon \), so they depend on \( \varepsilon \) and serve only the \( \varepsilon \) they were chosen for; a uniform \( N \) would need \( \exists N \, \forall \varepsilon \), which the hypothesis does not give. This is the error that Section 8.6 catalogues as (N2). For \( a_n = 1/(n + 1) \), \( L = 0 \), no single \( N_1 \) serves every \( \varepsilon > 0 \): at \( \varepsilon = 1/(N_1 + 2) \) the term \( a_{N_1} = 1/(N_1 + 1) \) is too far from \( 0 \).
+- (viii) uses \( N_1 \) and \( N_2 \);
+- (i) uses \( N \);
+- (iv) uses \( n \ge N \) and the definition of \( N \);
+- (ix) uses (iv), (x) and (ii) at this \( n \), and the triangle inequality (@exm-triangle-inequality-cases);
+- (vi) closes the boxes of \( n \) and \( \varepsilon \), with the \( \rulename{\exists I} \) of the witness \( N \) inside "\( a_n + b_n \to L + M \)".
+
+The maximum exists because there are finitely many numbers.
+
+Distractor (iii) claims that \( N_1 \) and \( N_2 \) serve every \( \varepsilon \) at once. They were chosen from \( \forall \varepsilon \, \exists N \), inside the box of \( \varepsilon \). So they depend on \( \varepsilon \) and serve only the \( \varepsilon \) they were chosen for. A uniform \( N \) would need \( \exists N \, \forall \varepsilon \), which the hypothesis does not give. Section 8.6 catalogues this error as a witness that depends on a variable introduced later, while uniformity is claimed, (N2). For \( a_n = 1/(n + 1) \), \( L = 0 \), no single \( N_1 \) serves every \( \varepsilon > 0 \): at \( \varepsilon = 1/(N_1 + 2) \) the term \( a_{N_1} = 1/(N_1 + 1) \) is too far from \( 0 \).
 
 Distractor (vii) applies the hypothesis at \( \varepsilon \) instead of \( \varepsilon/2 \). It is a legal step, but with it in place of (x), the bound in (ix) becomes \( \abs{(a_n + b_n) - (L + M)} < \varepsilon + \varepsilon/2 \), not \( < \varepsilon \), so (ix) would no longer follow. It is an \( \varepsilon \) of the wrong kind for the goal.
 :::
@@ -524,11 +540,11 @@ and its level-3 prose, with the closing sentence of the \( \rulename{\neg I} \) 
 
 > Let \( x \) be rational and \( y \) irrational. Suppose \( x + y \) is rational. Then \( y = (x + y) - x \) is a difference of two rational numbers, so \( y \) is rational. This contradicts the irrationality of \( y \). \( \underline{\qquad\qquad} \)
 
-*Name the move, then complete it.*
+*Name the proof method, then complete it.*
 :::
 
 ::: {.solution}
-*The move* is skeleton first: the blank is line 8, the line written after the \( \rulename{\neg I} \) box of lines 4–7 closes, a line the skeleton fixes before any arithmetic. That box assumed "\( x + y \) is rational" and reached \( \bot \) at line 7, so line 8 concludes its negation. It is the first face of "by contradiction" (Section 8.1), proof of a negative statement, and uses no classical rule: "irrational" means "not rational", so the goal of the outer box, line 8, is a negation, and the inner box is opened on \( x + y \in \nQ \) with goal \( \bot \).
+*The method* is skeleton first: the blank is line 8, the line written after the \( \rulename{\neg I} \) box of lines 4–7 closes, a line the skeleton fixes before any arithmetic. That box assumed "\( x + y \) is rational" and reached \( \bot \) at line 7, so line 8 concludes its negation. It is the first face of "by contradiction" (Section 8.1), proof of a negative statement, and it uses no classical rule. Here "irrational" means "not rational", so the goal of the outer box, line 8, is a negation. The inner box is opened on \( x + y \in \nQ \), with goal \( \bot \).
 
 *Completion.* "Hence \( x + y \) is not rational, that is, \( x + y \) is irrational."
 
@@ -558,14 +574,14 @@ Two proofs that \( 6 \) divides \( 7^3 - 7 = 336 \):
 
 *(c)* "If \( 2 \mid m \) and \( 3 \mid m \), then \( 6 \mid m \)", the fact of @exr-quantifier-rhetoric-b3.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 - 2: (a) (P2), with the reason (P1) fails.
 - 2: (b) the factorization and the fresh name.
 - 2: (b) a multiple of \( 3 \) among the factors, cited or proved.
-- 2: (b) an even factor, from (E1).
+- 2: (b) an even factor, from the fact that every integer is even or odd, (E1).
 - 1: (b) the step from \( 2 \) and \( 3 \) to \( 6 \), proved or cited.
 - 1: (c) the fact named.
-Fatal errors (0 for the step): a proof that checks finitely many \( n \) (N1); "\( 2 \mid m \) and \( 3 \mid m \), so \( 6 \mid m \)" with neither proof nor citation (N9).
+Slips that lose the step: a proof that checks finitely many \( n \), which verifies instances and concludes "for all" (N1). Another is "\( 2 \mid m \) and \( 3 \mid m \), so \( 6 \mid m \)" with neither proof nor citation, which cites a fact that is not available (N9).
 :::
 
 ### C. Going deeper
@@ -599,13 +615,13 @@ Since \( x \) was arbitrary, \( \delta \) works for \( \varepsilon \); since \( 
 
 The Idea reads the computation from the goal back to \( \abs{x - a} \); the Proof places \( \delta \) right after \( \varepsilon \), before any \( x \) appears, and justifies it by the final display. Because \( \delta \) does not depend on \( a \) either, the same proof shows that one \( \delta \) serves every point: \( f \) is uniformly continuous on \( \nR \), in the sense of Section 6.4.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 - 2: an Idea that computes \( \abs{f(x) - f(a)} = 2\abs{x - a} \) and reads off \( \delta \) from the goal.
 - 2: the Proof opens with \( \varepsilon > 0 \) arbitrary and introduces \( \delta \) before any \( x \), with \( \delta > 0 \) checked.
 - 2: says what \( \delta \) depends on (\( \varepsilon \) only, or \( \varepsilon \) and \( a \) if the choice involves \( a \)).
 - 3: for arbitrary \( x \) with \( \abs{x - a} < \delta \), the forward chain to \( \abs{f(x) - f(a)} < \varepsilon \), each step justified.
 - 1: a closing sentence with the quantifiers in the order \( \varepsilon \), \( \delta \), \( x \).
-Any \( \delta \) with \( 0 < \delta \le \varepsilon/2 \) earns full marks. Fatal errors (0 for the step): \( \delta \) depending on \( x \); a Proof that runs backwards ("this holds if …").
+Any \( \delta \) with \( 0 < \delta \le \varepsilon/2 \) earns full marks. Slips that lose the step: \( \delta \) depending on \( x \); a Proof that runs backwards ("this holds if …").
 :::
 
 ::: {#exr-writing-proofs-c2}
@@ -646,21 +662,21 @@ the largest of finitely many numbers, so it exists; it depends on \( N \) (when 
 \]
 In either case \( \abs{a_n} \le M \). Hence \( (a_n) \) is bounded.
 
-The \( \rulename{\forall E} \) instance \( \varepsilon = 1 \) is named, because it is not the obvious one; the witness \( M \) of the final \( \rulename{\exists I} \) is defined before it is used, with its dependence; the split on \( n < N \) or \( n \ge N \) carries its reason (every natural number is one or the other).
+The \( \rulename{\forall E} \) instance \( \varepsilon = 1 \) is named, because it is not the obvious one. The witness \( M \) of the final \( \rulename{\exists I} \) is defined before it is used, with its dependence. The split on \( n < N \) or \( n \ge N \) carries its reason: every natural number is one or the other.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 - 3: (a) three genuine faults, each tied to a convention or an unwritten step (1 each).
 - 2: (b) applies the hypothesis at a named positive \( \varepsilon \) and chooses \( N \) from it.
 - 2: defines \( M \) before using it, with its dependence on \( N \), bounding the early terms and \( \abs{L} + \varepsilon \) (a maximum or a sum).
 - 2: the two cases \( n < N \) and \( n \ge N \), the second by the triangle inequality (cited) or an equivalent estimate from \( \abs{a_n - L} < \varepsilon \), such as \( L - \varepsilon < a_n < L + \varepsilon \) and a split on the sign of \( a_n \).
 - 1: ends with what was shown.
-Fatal errors (0 for the step): \( M \) chosen before \( N \) or as a maximum or sum of infinitely many numbers; the early terms omitted.
+Slips that lose the step: \( M \) chosen before \( N \) or as a maximum or sum of infinitely many numbers; the early terms omitted.
 :::
 
 ::: {#exr-writing-proofs-c3}
 [C3: From \( \sqrt 2 \) to \( \sqrt 3 \), and not to \( \sqrt 4 \)]
 
-The level-3 proof of @thm-sqrt2-irrational in @exm-sqrt2-four-levels uses (L) and @thm-square-even-implies-even.
+@exm-sqrt2-four-levels gives a level-3 proof that \( \sqrt 2 \) is irrational. It uses (L), that every rational number is \( p/q \) with integers \( p \), \( q \), \( q \ne 0 \), not both even. It also uses @thm-square-even-implies-even: if \( n^2 \) is even, then \( n \) is even.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Rewrite it as a proof that no rational number has square \( 3 \). You may use \( (\mathrm{L}_3) \): every rational number is \( p/q \) with integers \( p \), \( q \), \( q \ne 0 \), not both multiples of \( 3 \). Prove the lemma your proof needs in place of @thm-square-even-implies-even.
@@ -686,17 +702,17 @@ Let \( r \) be rational, and suppose \( r^2 = 3 \). By \( (\mathrm{L}_3) \), wri
 
 *The proof.* "Let \( r \) be rational, and suppose \( r^2 = 3 \). By \( (\mathrm{L}_3) \), write \( r = p/q \) with integers \( p \), \( q \), not both multiples of \( 3 \). Then \( p^2 = 3q^2 \), so \( 3 \mid p^2 \), and by the lemma \( 3 \mid p \). Writing \( p = 3m \) gives \( 9m^2 = 3q^2 \), so \( q^2 = 3m^2 \), and by the lemma \( 3 \mid q \). So \( p \) and \( q \) are both multiples of \( 3 \), a contradiction; hence \( r^2 \ne 3 \)."
 
-*(b)* The line "\( p^2 = 4q^2 \), so \( 4 \mid p^2 \), and by the lemma \( 4 \mid p \)" fails: "if \( 4 \mid n^2 \), then \( 4 \mid n \)" is false at \( n = 2 \). Some line must fail, because the claim is false: \( 4 = (2/1)^2 \), and \( p = 2 \), \( q = 1 \) satisfy \( (\mathrm{L}_4) \). Lines that are all licensed, from true premises, cannot reach a false conclusion (soundness: @thm-soundness, and the statement of Section 7.2 under "From counter-models to non-derivability" for the quantifier steps).
+*(b)* The line "\( p^2 = 4q^2 \), so \( 4 \mid p^2 \), and by the lemma \( 4 \mid p \)" fails: "if \( 4 \mid n^2 \), then \( 4 \mid n \)" is false at \( n = 2 \). Some line must fail, because the claim is false: \( 4 = (2/1)^2 \), and \( p = 2 \), \( q = 1 \) satisfy \( (\mathrm{L}_4) \). Lines that are all licensed, from true premises, cannot reach a false conclusion. This is soundness (@thm-soundness), with the quantifier steps covered by the statement in Section 7.2.
 
-*(c)* A generalization keeps the skeleton (the boxes, the choices, the clash) and every line that used only properties shared by the new object; it must prove again each line that used a property of the old one, here the lemma.
+*(c)* A generalization keeps the skeleton (the boxes, the choices, the clash) and every line that used only properties shared by the new object. It must prove again each line that used a property of the old one, here the lemma.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 - 3: (a) the lemma proved by the residues mod 3, with the clash \( 3j + 1 \ne 3t \) justified.
 - 2: (a) the rest of the proof, with \( (\mathrm{L}_3) \) and the lemma used twice.
 - 2: (b) the failing line named, with the counterexample \( n = 2 \).
 - 1: (b) why a line must fail (\( \sqrt 4 = 2 \) is rational).
 - 2: (c) skeleton kept, particular lines re-proved.
-Fatal errors (0 for the step): the lemma asserted without proof (N9); in (b), blaming \( (\mathrm{L}_4) \).
+Slips that lose the step: the lemma asserted without proof, citing a fact that is not available (N9); in (b), blaming \( (\mathrm{L}_4) \).
 :::
 
 <!-- dependency ledger
@@ -736,5 +752,5 @@ exr-writing-proofs-b4 (solution): every integer is even or odd | (E1) of F1.2 §
 exr-writing-proofs-c3 (solution): (L_3) and (L_4), every rational number is p/q with q != 0 and p, q not both multiples of 3 (resp. 4) | school facts stated in the item, as (L) is in F1.2 §02; F5.1 (promised): prp-rationals-lowest-terms (a), gcd(p, q) = 1
 exr-writing-proofs-c3 (solution): n = 3k, 3k + 1 or 3k + 2; (3k + 1)^2 = 3(3k^2 + 2k) + 1; (3k + 2)^2 = 3(3k^2 + 4k + 1) + 1; no integer is 1/3; 4 | 2^2 and not 4 | 2; 4 = (2/1)^2 | school algebra; F2.2 (promised): thm-division-algorithm, lem-naturals-arithmetic (e) ("nothing between 0 and 1"); checked by verify/ch08/exr-writing-proofs-c3.py
 exr-writing-proofs-c3 (solution): licensed lines from true premises reach no false conclusion | thm-soundness (cited); F1.6 §02's statement under "From counter-models to non-derivability" (prose; its proof in F1.6 §03, optional, not cited)
-exr-writing-proofs-c3 (example): the level-3 proof of sqrt 2's irrationality and (L) | exm-sqrt2-four-levels, thm-sqrt2-irrational, thm-square-even-implies-even (cited)
+exr-writing-proofs-c3 (example): the level-3 proof of sqrt 2's irrationality and (L) | exm-sqrt2-four-levels, thm-square-even-implies-even (cited); thm-sqrt2-irrational (named in words in the item; moved from the sentence to the ledger, STYLE §13 B1)
 -->

@@ -78,7 +78,7 @@ items:
   kind: check
   file: 01-connective-rhetoric.md
   line: 111
-  hash: e1dfb03f2ac2
+  hash: 60753fbb2e7d
   verdicts:
   - stage: S5a
     verdict: minor
@@ -113,6 +113,13 @@ items:
     model: claude-opus-5-5
     evidence: The solution now quotes the asserted sentence '"n^2 is odd"' where it had the stray T. The
       reasoning about the box of line 4 is unchanged and correct.
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-connective-rhetoric
+    hash: 60753fbb2e7d
+    date: '2026-11-01'
+    evidence: 'wording only: solution sentence split (''It would sit, unjustified, directly in the box
+      of line 4. There it is in fact false''); same content'
 - key: exm-rhetoric-conjunction
   kind: exm
   file: 01-connective-rhetoric.md
@@ -160,7 +167,7 @@ items:
 - key: exm-rhetoric-cases
   kind: exm
   file: 01-connective-rhetoric.md
-  line: 185
+  line: 187
   hash: e4e44abdbb5d
   verdicts:
   - stage: S5a
@@ -184,7 +191,7 @@ items:
 - key: exm-rhetoric-negation
   kind: exm
   file: 01-connective-rhetoric.md
-  line: 226
+  line: 228
   hash: f047cd2e3a41
   verdicts:
   - stage: S5a
@@ -226,8 +233,8 @@ items:
 - key: exm-rhetoric-contradiction
   kind: exm
   file: 01-connective-rhetoric.md
-  line: 253
-  hash: 7f8302e77829
+  line: 255
+  hash: 22589c2d9931
   verdicts:
   - stage: S5a
     verdict: minor
@@ -304,10 +311,17 @@ items:
     model: claude-opus-5-5
     evidence: '01:266 split into two sentences after S7r: ''Neither is flagged: a > b is not(a <= b) by
       trichotomy''; mathematics unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-connective-rhetoric
+    hash: 22589c2d9931
+    date: '2026-11-01'
+    evidence: 'wording only: LEM sentence split; ''The same box can also be closed by not-I and then followed
+      by not-not-E'' (fold still below); fold sentence split, same order fact; sidecar passes'
 - key: exm-rhetoric-biconditional
   kind: exm
   file: 01-connective-rhetoric.md
-  line: 284
+  line: 286
   hash: 7081f9a431ff
   verdicts:
   - stage: S5a
@@ -356,7 +370,7 @@ items:
 - key: exm-rhetoric-cycle
   kind: exm
   file: 01-connective-rhetoric.md
-  line: 313
+  line: 315
   hash: eeb49f6a2fb9
   verdicts:
   - stage: S5a
@@ -380,7 +394,7 @@ items:
 - key: check:01-connective-rhetoric:4
   kind: check
   file: 01-connective-rhetoric.md
-  line: 335
+  line: 337
   hash: 4f37bf268323
   verdicts:
   - stage: S5a
@@ -402,8 +416,8 @@ items:
 - key: check:01-connective-rhetoric:5
   kind: check
   file: 01-connective-rhetoric.md
-  line: 367
-  hash: b451e545eb64
+  line: 369
+  hash: 8bb96ca275cc
   verdicts:
   - stage: S5a
     verdict: correct
@@ -423,11 +437,18 @@ items:
     evidence: '01:368-373: the √3 case is face (i) by ¬I. In the second case the box on ''n not odd''
       derives ''n^2 not odd'' with no use of the hypothesis, and the hypothesis enters only at the clash:
       face (ii), matching table 01:350 and the test at 01:413.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-connective-rhetoric
+    hash: 8bb96ca275cc
+    date: '2026-11-01'
+    evidence: 'wording only: ''contrapositive in costume'' -> ''contrapositive proof dressed as a proof
+      by contradiction'''
 - key: exm-costume-direct
   kind: exm
   file: 01-connective-rhetoric.md
-  line: 379
-  hash: e702ee96aed5
+  line: 381
+  hash: b6eb2472f611
   verdicts:
   - stage: S5a
     verdict: correct
@@ -445,10 +466,17 @@ items:
     model: claude-opus-5-5
     evidence: '01:270-280: (x-3)(x+1) = x^2-2x-3 > 0 for x>3. The assumption is cited only in ''This contradicts
       our assumption'', and it is held for three sentences, as claimed.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-connective-rhetoric
+    hash: b6eb2472f611
+    date: '2026-11-01'
+    evidence: 'wording only: ''holds a false assumption in mind'' -> ''has to keep a false assumption
+      in mind''; sidecar passes'
 - key: exm-costume-contrapositive
   kind: exm
   file: 01-connective-rhetoric.md
-  line: 397
+  line: 399
   hash: 05ffdbfcbd72
   verdicts:
   - stage: S5a
@@ -481,8 +509,8 @@ items:
 - key: exr-connective-rhetoric-a1
   kind: exr
   file: 01-connective-rhetoric.md
-  line: 438
-  hash: 971567eff44b
+  line: 440
+  hash: 7dda1cafa30d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -538,11 +566,24 @@ items:
     evidence: 01:438-475. I answered all ten phrases independently and got the same rules as the rule
       card (01:9-31). (b) matches the Silent column. (c) is face (i) by ¬I, and 3<7/2<4 checked by script.
       (d) is false, with the ℕ-unbounded ¬I example, which matches 01:228 and 01:367.
+  - stage: S5e
+    verdict: minor
+    by: s5e-01-connective-rhetoric
+    hash: 7dda1cafa30d
+    date: '2026-11-01'
+    evidence: phrases (i)-(x) moved to their own list above (a), verbatim; L460 (b) still said 'the phrases
+      in (a)'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 7dda1cafa30d
+    date: '2026-11-01'
+    evidence: 'fixed: (b) now reads ''Which of the phrases (i)-(x)''; mathematics unchanged'
 - key: exr-connective-rhetoric-a2
   kind: exr
   file: 01-connective-rhetoric.md
-  line: 459
-  hash: 85428a87766b
+  line: 476
+  hash: 0bb768af5716
   verdicts:
   - stage: S5a
     verdict: correct
@@ -572,10 +613,24 @@ items:
     evidence: '01:459-502. All 12 parts agree with my answers and with the card and tables. (d) ∨I: x≥2
       is x>2∨x=2. (h) asm for ¬I, face (i). (j) the CP announcement, and x≤-1 gives x^2≥1 holds. (k) is
       a direct proof in costume. (l) 4 implications for the cycle, 12 ordered pairs, 6 biconditionals.'
+  - stage: S5e
+    verdict: minor
+    by: s5e-01-connective-rhetoric
+    hash: 0bb768af5716
+    date: '2026-11-01'
+    evidence: (k) gloss 'wrong negation' added; (h) L512 had a capital after a colon and a double colon
+      after 'suggest:'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 0bb768af5716
+    date: '2026-11-01'
+    evidence: 'fixed: (h) now ''... suggest. This is the distinction of Section 2.5, face (i) of "by contradiction",
+      refuting.''; content unchanged'
 - key: exr-connective-rhetoric-b1
   kind: exr
   file: 01-connective-rhetoric.md
-  line: 508
+  line: 525
   hash: d022d8d30a88
   verdicts:
   - stage: S5a
@@ -615,8 +670,8 @@ items:
 - key: exr-connective-rhetoric-b2
   kind: exr
   file: 01-connective-rhetoric.md
-  line: 527
-  hash: cf6ad6b3a5bb
+  line: 544
+  hash: a6ef3593042d
   verdicts:
   - stage: S5a
     verdict: minor
@@ -653,11 +708,18 @@ items:
       classical rule enters''. That is accurate and no longer claims a split. Part (a) is correct: the
       hypothesis is used in the middle of the box, so neither costume test applies. Part (b) is correct:
       ¬I gives ¬(x≠0), then ¬¬E.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-connective-rhetoric
+    hash: a6ef3593042d
+    date: '2026-11-01'
+    evidence: 'wording only: solution (a) parenthesis and semicolon became sentences; same claim; sidecar
+      passes'
 - key: exr-connective-rhetoric-b3
   kind: exr
   file: 01-connective-rhetoric.md
-  line: 549
-  hash: 053a5390e3b3
+  line: 566
+  hash: 37d1e0ea8a81
   verdicts:
   - stage: S5a
     verdict: correct
@@ -715,11 +777,18 @@ items:
       the warning at 01:207 requires, and the ¬E clash names both lines. Worked examples in the section:
       exm-rhetoric-negation and exm-rhetoric-cases. The italic hint names an object (the witness), which
       STYLE §11 ''Hi'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-connective-rhetoric
+    hash: 37d1e0ea8a81
+    date: '2026-11-01'
+    evidence: 'wording only: solution (b) case list became ''If t>=0 ... If t<0 ...''; same inequalities
+      and tags; sidecar passes'
 - key: exr-connective-rhetoric-b4
   kind: exr
   file: 01-connective-rhetoric.md
-  line: 567
-  hash: 39faedc16cd8
+  line: 584
+  hash: 37d881fe9099
   verdicts:
   - stage: S5a
     verdict: minor
@@ -764,11 +833,18 @@ items:
     evidence: The marking scheme is now per role, so other cycles earn the same points. The point totals
       still sum to 10 (2+3+3+1+1). The closing ∨E is tagged 'may be silent in plain prose', which is consistent
       with def-silent-steps.
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-connective-rhetoric
+    hash: 37d881fe9099
+    date: '2026-11-01'
+    evidence: 'wording only: (N4) glossed as reused witness name; Marking scheme -> What a complete answer
+      needs; points 2/3/3/1/1 unchanged; sidecar passes'
 - key: exr-connective-rhetoric-c1
   kind: exr
   file: 01-connective-rhetoric.md
-  line: 599
-  hash: e241d2aff0be
+  line: 621
+  hash: 6e34bbd06562
   verdicts:
   - stage: S5a
     verdict: minor
@@ -806,10 +882,17 @@ items:
       N>=3; from 1=pm with p>0 we get m>0, so m>=1 and 1>=p>=2, a contradiction. Line 402(d) now argues
       that a list of all the primes is non-empty because 2 is prime, and the ledger has this at :481.
       The ledger at :480 n'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-connective-rhetoric
+    hash: 6e34bbd06562
+    date: '2026-11-01'
+    evidence: 'wording only: two known facts split into First/Second, same facts and source; rubric 2/2/4/2
+      and both slips unchanged'
 - key: exr-connective-rhetoric-c2
   kind: exr
   file: 01-connective-rhetoric.md
-  line: 631
+  line: 653
   hash: 7e57fd05f37c
   verdicts:
   - stage: S5a
@@ -850,8 +933,8 @@ items:
 - key: exm-rhetoric-universal
   kind: exm
   file: 02-quantifier-rhetoric.md
-  line: 73
-  hash: f3b21b4340f2
+  line: 79
+  hash: dba64dfa64fb
   verdicts:
   - stage: S5a
     verdict: correct
@@ -872,10 +955,17 @@ items:
     evidence: 02:33-49. Checked the annotations against the 4.8 box structure, |c-c|=0<eps, the claim
       that 'take N:=0' comes before the work that justifies it, the three silent closings at l.46, and
       that 'any N works' (l.48). All true.
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-quantifier-rhetoric
+    hash: dba64dfa64fb
+    date: '2026-11-01'
+    evidence: 'wording only: ''Two things here are degenerate'' -> ''Two things in this proof are unusually
+      simple''; proof and witness N := 0 unchanged'
 - key: check:02-quantifier-rhetoric:1
   kind: check
   file: 02-quantifier-rhetoric.md
-  line: 134
+  line: 140
   hash: 2fbad5ac2c11
   verdicts:
   - stage: S5a
@@ -916,8 +1006,8 @@ items:
 - key: exm-rhetoric-existential
   kind: exm
   file: 02-quantifier-rhetoric.md
-  line: 142
-  hash: f3d59252157d
+  line: 148
+  hash: 36cafffae385
   verdicts:
   - stage: S5a
     verdict: minor
@@ -968,10 +1058,17 @@ items:
       as STATUS row 91/157 settles (AN1.1 paid). N>0 and N in Z>0 are checked before the bounded ∃I. 1/N<eps
       by taking reciprocals; 0<1/n<=1/N. eps=0.03 gives N=34. The skeleton paragraph matches the solution,
       and 'the row below' exists (line 257).
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-quantifier-rhetoric
+    hash: 36cafffae385
+    date: '2026-11-01'
+    evidence: 'wording only: skeleton paragraph split into three sentences, same claims; eps=0.03, N=34
+      unchanged; sidecar passes'
 - key: check:02-quantifier-rhetoric:2
   kind: check
   file: 02-quantifier-rhetoric.md
-  line: 164
+  line: 170
   hash: f42c0d6246a4
   verdicts:
   - stage: S5a
@@ -993,8 +1090,8 @@ items:
 - key: exm-rhetoric-equality
   kind: exm
   file: 02-quantifier-rhetoric.md
-  line: 187
-  hash: 63ca8e6ef4a7
+  line: 193
+  hash: 6092fdd1f217
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1051,11 +1148,17 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: Adds n = max{N1, N2} ∈ ℕ, which ∀E at n needs. The ledger line is updated to match.
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-quantifier-rhetoric
+    hash: 6092fdd1f217
+    date: '2026-11-01'
+    evidence: 'wording only: (N4) named in words, ''as the equality table above allows''; refs kept'
 - key: exm-rhetoric-double-inclusion
   kind: exm
   file: 02-quantifier-rhetoric.md
-  line: 226
-  hash: ac3f08d4a22d
+  line: 232
+  hash: efb99263bb65
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1076,10 +1179,17 @@ items:
     evidence: '02:226-241. The proof is right: x<0 or x>2 gives x(x-2)>0; 0<=x<=2 gives x(x-2)<=0. Trichotomy
       is cited, extensionality is cited with its tag, and ''that is'' as silent ↔E at level 3 matches
       def-silent-steps (ch08/03:116).'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-quantifier-rhetoric
+    hash: efb99263bb65
+    date: '2026-11-01'
+    evidence: 'wording only: ''unwind ... silent at level 3'' -> ''use the definitions ... silent in plain
+      prose'''
 - key: check:02-quantifier-rhetoric:3
   kind: check
   file: 02-quantifier-rhetoric.md
-  line: 243
+  line: 249
   hash: 0e678de5358f
   verdicts:
   - stage: S5a
@@ -1101,7 +1211,7 @@ items:
 - key: check:02-quantifier-rhetoric:4
   kind: check
   file: 02-quantifier-rhetoric.md
-  line: 281
+  line: 287
   hash: 98adf0bb4460
   verdicts:
   - stage: S5a
@@ -1122,7 +1232,7 @@ items:
 - key: check:02-quantifier-rhetoric:5
   kind: check
   file: 02-quantifier-rhetoric.md
-  line: 335
+  line: 341
   hash: 93d397ae3a85
   verdicts:
   - stage: S5a
@@ -1143,8 +1253,8 @@ items:
 - key: exm-rhetoric-induction
   kind: exm
   file: 02-quantifier-rhetoric.md
-  line: 343
-  hash: a676615e206e
+  line: 349
+  hash: 1dbdf9d6bb30
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1177,10 +1287,17 @@ items:
       ''a^n <= a fails at n=0 for a<1'' is correct. Powers are recorded in the ledger (line 337) and in
       STATUS row 95. (b) checks out: the second box, on b <= a, is computed explicitly at line 163, and
       the disjunction com'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-quantifier-rhetoric
+    hash: 1dbdf9d6bb30
+    date: '2026-11-01'
+    evidence: 'wording only: commentary split into sentences, same uses of a^n>0 and a^n<=1; @ax-induction
+      kept'
 - key: exr-quantifier-rhetoric-a1
   kind: exr
   file: 02-quantifier-rhetoric.md
-  line: 410
+  line: 416
   hash: 28036b7e6fa0
   verdicts:
   - stage: S5a
@@ -1223,8 +1340,8 @@ items:
 - key: exr-quantifier-rhetoric-a2
   kind: exr
   file: 02-quantifier-rhetoric.md
-  line: 435
-  hash: 650c2226ff2e
+  line: 441
+  hash: ccb091577f19
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1271,8 +1388,8 @@ items:
 - key: exr-quantifier-rhetoric-b1
   kind: exr
   file: 02-quantifier-rhetoric.md
-  line: 484
-  hash: a87c89836417
+  line: 490
+  hash: 496f49e8461f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1303,10 +1420,17 @@ items:
     evidence: '02:221-241. Both readings in (a)-(c) and their truth values match mine. Script: (1/d +
       d/2)^2 - (1/d)^2 = 1 + d^2/4, the same as exm-square-not-uniform (ch04/10:181-183). The ∀x∀y∃δ reading
       is vacuously true via δ = |x - y|. Worked example: the ''quantifiers at the end'' passage at 02:180-184.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-quantifier-rhetoric
+    hash: 496f49e8461f
+    date: '2026-11-01'
+    evidence: 'wording only: three readings turned into a displayed list, verbatim; values unchanged;
+      sidecar passes'
 - key: exr-quantifier-rhetoric-b2
   kind: exr
   file: 02-quantifier-rhetoric.md
-  line: 506
+  line: 516
   hash: d98f4d9177cc
   verdicts:
   - stage: S5a
@@ -1349,8 +1473,8 @@ items:
 - key: exr-quantifier-rhetoric-b3
   kind: exr
   file: 02-quantifier-rhetoric.md
-  line: 528
-  hash: c351edac73a9
+  line: 538
+  hash: 28097db82836
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1397,10 +1521,16 @@ items:
     model: claude-opus-5-5
     evidence: 'The conclusion is now reached through ↔I inside ∀I and extensionality, with the rubric
       matching. Ledger: F2.2 prp-integers-closed is added. b = 2(a − b) and n = 6(a − b) are correct.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-quantifier-rhetoric
+    hash: 28097db82836
+    date: '2026-11-01'
+    evidence: 'wording only: (N4),(N9) glossed; rubric renamed; points 2+4+2+2 unchanged'
 - key: exr-quantifier-rhetoric-c1
   kind: exr
   file: 02-quantifier-rhetoric.md
-  line: 552
+  line: 562
   hash: 6cbe370ee8ca
   verdicts:
   - stage: S5a
@@ -1433,11 +1563,17 @@ items:
       from x >= y and x >= 0. Script: the counterexample x=-1, y=-2 gives 1 >= 2, false; a random test
       confirms the claim for x >= 0. Hint 1 names the swap test and Hint 2 the case''s form, and neither
       executes the'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-quantifier-rhetoric
+    hash: 6cbe370ee8ca
+    date: '2026-11-01'
+    evidence: 'wording only: rubric headings renamed; points and counterexample x=-1,y=-2 unchanged'
 - key: exr-quantifier-rhetoric-c2
   kind: exr
   file: 02-quantifier-rhetoric.md
-  line: 593
-  hash: 5faa70462d41
+  line: 604
+  hash: 309ea3f515d8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1475,6 +1611,13 @@ items:
       n. The earlier finding is resolved. The alternative at line 326 now begins ''for every x, for every
       eps > 0 there is delta > 0 ...''. Moving ''for every x'' to the end gives exactly the sentence of
       the warning (line 187'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-quantifier-rhetoric
+    hash: 309ea3f515d8
+    date: '2026-11-01'
+    evidence: 'wording only: one criterion bullet split in two; last paragraph split; @exm-square-not-uniform
+      kept'
 - key: check:03-levels-of-abbreviation:1
   kind: check
   file: 03-levels-of-abbreviation.md
@@ -1642,7 +1785,7 @@ items:
 - key: check:03-levels-of-abbreviation:2
   kind: check
   file: 03-levels-of-abbreviation.md
-  line: 166
+  line: 180
   hash: 5c6477e2fa89
   verdicts:
   - stage: S5a
@@ -1664,8 +1807,8 @@ items:
 - key: exm-sqrt2-four-levels
   kind: exm
   file: 03-levels-of-abbreviation.md
-  line: 178
-  hash: 8932f3ccfb32
+  line: 192
+  hash: 657b2ee52189
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1715,11 +1858,19 @@ items:
       5, 6-9, silent AND-E at 10) is correct. The check at 03:200 lists eight lines (5, 10, 19, 13, 16,
       21, 22, 24), which I confirmed. 03:193 says 15 lines with lines 9-10 carrying the mathematics, which
       is correct.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 657b2ee52189
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): sentences split, line lists displayed, line
+      mapping 9/10/11 -> 10-14/15-17/18-20 named by content (checked against L230-232), (N3)/(N8) glossed
+      as in the catalogue, rubric headings renamed; every line number, point value and route unchanged'
 - key: check:03-levels-of-abbreviation:3
   kind: check
   file: 03-levels-of-abbreviation.md
-  line: 286
-  hash: 3c09abfa24b1
+  line: 300
+  hash: b6611272a681
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1740,11 +1891,19 @@ items:
       silent lines are 5, 10, 19, 13, 16, 21, 22, 24, each matched to the right item (∀E at the obvious
       term, ∧E, ∃E/∀I closings). The other lines all have phrases, and 'two sentences earlier' counts
       right (S2 to S4).
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: b6611272a681
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): sentences split, line lists displayed, line
+      mapping 9/10/11 -> 10-14/15-17/18-20 named by content (checked against L230-232), (N3)/(N8) glossed
+      as in the catalogue, rubric headings renamed; every line number, point value and route unchanged'
 - key: check:03-levels-of-abbreviation:4
   kind: check
   file: 03-levels-of-abbreviation.md
-  line: 297
-  hash: c7d99aaa71b8
+  line: 318
+  hash: 327bb2a2a2b8
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1762,11 +1921,19 @@ items:
     model: claude-opus-5-5
     evidence: 03:297-303. The level-1 lines 4, 12, 13, 15 have no words at 03:193; the rest map as stated.
       Consistent with 03:280 and ledger 03:917.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 327bb2a2a2b8
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): sentences split, line lists displayed, line
+      mapping 9/10/11 -> 10-14/15-17/18-20 named by content (checked against L230-232), (N3)/(N8) glossed
+      as in the catalogue, rubric headings renamed; every line number, point value and route unchanged'
 - key: exm-uniform-four-levels
   kind: exm
   file: 03-levels-of-abbreviation.md
-  line: 309
-  hash: ee7dd893ce66
+  line: 336
+  hash: 21fd8899b3b8
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1827,10 +1994,18 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: Level 1 now excludes the premise ('other than the premise'), which is accurate.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 21fd8899b3b8
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): sentences split, line lists displayed, line
+      mapping 9/10/11 -> 10-14/15-17/18-20 named by content (checked against L230-232), (N3)/(N8) glossed
+      as in the catalogue, rubric headings renamed; every line number, point value and route unchanged'
 - key: check:03-levels-of-abbreviation:5
   kind: check
   file: 03-levels-of-abbreviation.md
-  line: 390
+  line: 422
   hash: 58ae9f01bd32
   verdicts:
   - stage: S5a
@@ -1852,8 +2027,8 @@ items:
 - key: exm-suffices-column
   kind: exm
   file: 03-levels-of-abbreviation.md
-  line: 402
-  hash: fc9a019494d9
+  line: 434
+  hash: 9a5e1c345294
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1894,8 +2069,8 @@ items:
 - key: check:03-levels-of-abbreviation:6
   kind: check
   file: 03-levels-of-abbreviation.md
-  line: 431
-  hash: 219cbaef1994
+  line: 463
+  hash: c092c2b02a7c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1931,8 +2106,8 @@ items:
 - key: exr-levels-of-abbreviation-a1
   kind: exr
   file: 03-levels-of-abbreviation.md
-  line: 510
-  hash: d0117418c8f2
+  line: 542
+  hash: 87abfdd053ad
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1994,11 +2169,19 @@ items:
     evidence: 03:510-534. (a) lines 2,3 (openings) and 9,10 (silent closings) match the level-1 skeleton
       at 03:315-336. (b) and (c) are fine. (d) the second conjunct of line 8 is used at line 11, which
       matches 03:224. (e) the conclusion of ¬I is never silent per def-silent-steps.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 87abfdd053ad
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): sentences split, line lists displayed, line
+      mapping 9/10/11 -> 10-14/15-17/18-20 named by content (checked against L230-232), (N3)/(N8) glossed
+      as in the catalogue, rubric headings renamed; every line number, point value and route unchanged'
 - key: exr-levels-of-abbreviation-a2
   kind: exr
   file: 03-levels-of-abbreviation.md
-  line: 536
-  hash: ac589cf240ea
+  line: 568
+  hash: b8ad136414e7
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2045,10 +2228,18 @@ items:
       (L), the ¬I opening on r^2 = 2, and the citation of thm-square-even-implies-even. (i)/(j) use ⊨
       on the skeleton with @prp-taut-skeleton, and (j) gives the row P true, Q false. 'From Section 6.3
       on' is correct.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: b8ad136414e7
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): sentences split, line lists displayed, line
+      mapping 9/10/11 -> 10-14/15-17/18-20 named by content (checked against L230-232), (N3)/(N8) glossed
+      as in the catalogue, rubric headings renamed; every line number, point value and route unchanged'
 - key: exr-levels-of-abbreviation-b1
   kind: exr
   file: 03-levels-of-abbreviation.md
-  line: 585
+  line: 617
   hash: ed6fb44f4f9f
   verdicts:
   - stage: S5a
@@ -2090,8 +2281,8 @@ items:
 - key: exr-levels-of-abbreviation-b2
   kind: exr
   file: 03-levels-of-abbreviation.md
-  line: 622
-  hash: e7f204a61c1e
+  line: 654
+  hash: e9d465708d36
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2150,11 +2341,19 @@ items:
       (v) by line 17 (4·2i0=8i0). Every citation range respects the box structure. The arithmetic of lines
       3, 7 and 12 was verified symbolically. The remark that (E1)''s exhaustiveness is unstated agrees
       with def-silent-steps.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: e9d465708d36
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): sentences split, line lists displayed, line
+      mapping 9/10/11 -> 10-14/15-17/18-20 named by content (checked against L230-232), (N3)/(N8) glossed
+      as in the catalogue, rubric headings renamed; every line number, point value and route unchanged'
 - key: exr-levels-of-abbreviation-b3
   kind: exr
   file: 03-levels-of-abbreviation.md
-  line: 688
-  hash: c1bb411fbc57
+  line: 730
+  hash: 9569f91aeda9
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2184,11 +2383,19 @@ items:
       ∧ |x+1|≥1 exactly when x=0 or |x|≥2, so the row fails exactly when 0<|x|<2, as the solution says;
       at x=1/2 the values are 1/2 and 3/2. min|x-1|+|x+1|=2. The scheme accepts my alternative three-case
       proof. Worked example: exm-suffices-column.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 9569f91aeda9
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): sentences split, line lists displayed, line
+      mapping 9/10/11 -> 10-14/15-17/18-20 named by content (checked against L230-232), (N3)/(N8) glossed
+      as in the catalogue, rubric headings renamed; every line number, point value and route unchanged'
 - key: exr-levels-of-abbreviation-c1
   kind: exr
   file: 03-levels-of-abbreviation.md
-  line: 725
-  hash: 95ca3d7fb294
+  line: 767
+  hash: 4061b0d242b5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2238,11 +2445,19 @@ items:
       NOT-NOT-E line (matching def-silent-steps 03:64), or a justified split disjunction (matching 01:452
       and the no-flag rule at 01:199 and 07:229). The fatal errors are correct. The ledger line at 03:592
       is accurate.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 4061b0d242b5
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): sentences split, line lists displayed, line
+      mapping 9/10/11 -> 10-14/15-17/18-20 named by content (checked against L230-232), (N3)/(N8) glossed
+      as in the catalogue, rubric headings renamed; every line number, point value and route unchanged'
 - key: exr-levels-of-abbreviation-c2
   kind: exr
   file: 03-levels-of-abbreviation.md
-  line: 777
-  hash: c5a993edea1f
+  line: 819
+  hash: 94d35a493986
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2281,11 +2496,19 @@ items:
       3, 6, 7), EXISTS-I at 15 (bound line 6), EXISTS-E at 16 (N0 not in 16, 5, 3), forall I at 17. The
       silent ->E of line 11 is now allowed by def-silent-steps 03:55: its implication is line 9, an instance
       of the chosen'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 94d35a493986
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): sentences split, line lists displayed, line
+      mapping 9/10/11 -> 10-14/15-17/18-20 named by content (checked against L230-232), (N3)/(N8) glossed
+      as in the catalogue, rubric headings renamed; every line number, point value and route unchanged'
 - key: exr-levels-of-abbreviation-c3
   kind: exr
   file: 03-levels-of-abbreviation.md
-  line: 847
-  hash: 5806957fba8e
+  line: 889
+  hash: 912e5dab5787
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2315,11 +2538,19 @@ items:
     evidence: 03:847-900. My skeleton matches the book's 15-line derivation. Each ∃E closes on D(n0),
       which mentions neither k0 nor k1. ∨E is on (E1). The list of unsaid steps is complete. Arithmetic
       and the claim for |n|≤50 were checked by script. The hint names the tool and does not execute it.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 912e5dab5787
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): sentences split, line lists displayed, line
+      mapping 9/10/11 -> 10-14/15-17/18-20 named by content (checked against L230-232), (N3)/(N8) glossed
+      as in the catalogue, rubric headings renamed; every line number, point value and route unchanged'
 - key: exm-self-explanation
   kind: exm
   file: 04-reading-proofs.md
-  line: 19
-  hash: fba472fc7ee8
+  line: 21
+  hash: d54bf635e0cf
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2355,10 +2586,19 @@ items:
     model: claude-opus-5-5
     evidence: '04:39 typesetting only: \rulename{=I}/{=E} braced as \rulename{{=}I}/{{=}E} per NOTATION.md:142;
       text otherwise identical to the S7r-correct version'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: d54bf635e0cf
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): ''self-explain'' -> ''explain to yourself'';
+      warrant glossed; B1 negation-law refs moved to a Uses line, C1 def-derived-rule to a Uses line;
+      ''degenerate cases'' -> ''two special cases'' (matches lem-atom-splitting step 3); (D3) glossed
+      as repetition; (N4) glossed; rubric renamed, points unchanged'
 - key: check:04-reading-proofs:1
   kind: check
   file: 04-reading-proofs.md
-  line: 70
+  line: 72
   hash: a0cb2400520b
   verdicts:
   - stage: S5a
@@ -2399,8 +2639,8 @@ items:
 - key: check:04-reading-proofs:2
   kind: check
   file: 04-reading-proofs.md
-  line: 82
-  hash: 134b2c0e59c9
+  line: 84
+  hash: 6e5612e7bcaf
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2420,10 +2660,19 @@ items:
     evidence: '04:82-103: the contrapositive in line 1 is correct. prp-de-morgan (a) is ¬(P∨Q) ⊢ ¬P∧¬Q
       (ch02/05:412). prp-contrapositive-converse is ¬Q→¬P ⊢ P→Q (ch02/05:217), which is classical, and
       its Idea uses RAA. The chain x+y ≤ 1+y ≤ 2 is right. Ledgered at 04:409.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 6e5612e7bcaf
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): ''self-explain'' -> ''explain to yourself'';
+      warrant glossed; B1 negation-law refs moved to a Uses line, C1 def-derived-rule to a Uses line;
+      ''degenerate cases'' -> ''two special cases'' (matches lem-atom-splitting step 3); (D3) glossed
+      as repetition; (N4) glossed; rubric renamed, points unchanged'
 - key: check:04-reading-proofs:3
   kind: check
   file: 04-reading-proofs.md
-  line: 114
+  line: 116
   hash: 3ff8cab21e5f
   verdicts:
   - stage: S5a
@@ -2444,8 +2693,8 @@ items:
 - key: exr-reading-proofs-a1
   kind: exr
   file: 04-reading-proofs.md
-  line: 146
-  hash: c58dc871a128
+  line: 148
+  hash: 5e38ff056323
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2473,11 +2722,20 @@ items:
     model: claude-opus-5-5
     evidence: 04:121-152. My classification is (a) J, (b) P, (c) J, (d) P, (e) J, (f) P, the same as the
       solution's. The warrant written out for (f) is correct.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 5e38ff056323
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): ''self-explain'' -> ''explain to yourself'';
+      warrant glossed; B1 negation-law refs moved to a Uses line, C1 def-derived-rule to a Uses line;
+      ''degenerate cases'' -> ''two special cases'' (matches lem-atom-splitting step 3); (D3) glossed
+      as repetition; (N4) glossed; rubric renamed, points unchanged'
 - key: exr-reading-proofs-a2
   kind: exr
   file: 04-reading-proofs.md
-  line: 179
-  hash: b399ef08725b
+  line: 181
+  hash: e87ec350e271
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2521,11 +2779,20 @@ items:
     model: claude-opus-5-5
     evidence: The parts guide was corrected so that (k) locates a hypothesis and (j), (l) are about habits.
       No other change.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: e87ec350e271
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): ''self-explain'' -> ''explain to yourself'';
+      warrant glossed; B1 negation-law refs moved to a Uses line, C1 def-derived-rule to a Uses line;
+      ''degenerate cases'' -> ''two special cases'' (matches lem-atom-splitting step 3); (D3) glossed
+      as repetition; (N4) glossed; rubric renamed, points unchanged'
 - key: exr-reading-proofs-b1
   kind: exr
   file: 04-reading-proofs.md
-  line: 228
-  hash: 3a9d24af18fc
+  line: 237
+  hash: ddd3b10bd4bc
   verdicts:
   - stage: S5a
     verdict: gap
@@ -2592,11 +2859,20 @@ items:
     model: claude-opus-5-5
     evidence: '04:228-264. (y-x)(y+x)=1+δ^2/4 was verified symbolically. The uses of δ>0 at (3), (4) twice
       and (5) match my reading. exm-negating-definitions exists at ch06/02:362. Worked example: exm-self-explanation.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: ddd3b10bd4bc
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): ''self-explain'' -> ''explain to yourself'';
+      warrant glossed; B1 negation-law refs moved to a Uses line, C1 def-derived-rule to a Uses line;
+      ''degenerate cases'' -> ''two special cases'' (matches lem-atom-splitting step 3); (D3) glossed
+      as repetition; (N4) glossed; rubric renamed, points unchanged'
 - key: exr-reading-proofs-b2
   kind: exr
   file: 04-reading-proofs.md
-  line: 266
-  hash: f87375dc15c9
+  line: 279
+  hash: 95d59d5d600f
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2635,11 +2911,20 @@ items:
       Line 4 is not an instance of any fact stated so far. The earlier finding (lines 2 and 6 also cite
       nothing) is resolved by the words ''cited or not''. I solved it myself: (y+x/2)^2+3x^2/4 = y^2+xy+x^2,
       which is zero o'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 95d59d5d600f
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): ''self-explain'' -> ''explain to yourself'';
+      warrant glossed; B1 negation-law refs moved to a Uses line, C1 def-derived-rule to a Uses line;
+      ''degenerate cases'' -> ''two special cases'' (matches lem-atom-splitting step 3); (D3) glossed
+      as repetition; (N4) glossed; rubric renamed, points unchanged'
 - key: exr-reading-proofs-b3
   kind: exr
   file: 04-reading-proofs.md
-  line: 286
-  hash: c1de953d1983
+  line: 299
+  hash: d2fedc8b6a3a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2685,11 +2970,20 @@ items:
     model: claude-opus-5-5
     evidence: '(b) now gives the reason: x ≥ 0 gives x + 2 ≥ 2 > 0, the positive factor that line (4)
       needs. Correct.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: d2fedc8b6a3a
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): ''self-explain'' -> ''explain to yourself'';
+      warrant glossed; B1 negation-law refs moved to a Uses line, C1 def-derived-rule to a Uses line;
+      ''degenerate cases'' -> ''two special cases'' (matches lem-atom-splitting step 3); (D3) glossed
+      as repetition; (N4) glossed; rubric renamed, points unchanged'
 - key: exr-reading-proofs-c1
   kind: exr
   file: 04-reading-proofs.md
-  line: 326
-  hash: 8c58fd968cce
+  line: 339
+  hash: 74d171cf05fb
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2731,11 +3025,20 @@ items:
       (ch06/02:368) states a_n → L as ∀ε>0 ∃N∈ℕ ∀n∈ℕ (n≥N → |a_n−L|<ε), which is the form behind the ∀E/∃E/→E
       reading in (3) and (5). The ledger line at 04:427 now records it as cited. The other citations (exm-triangle-inequality-cases,
       exm-rhetoric-equality) are unchanged.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 74d171cf05fb
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): ''self-explain'' -> ''explain to yourself'';
+      warrant glossed; B1 negation-law refs moved to a Uses line, C1 def-derived-rule to a Uses line;
+      ''degenerate cases'' -> ''two special cases'' (matches lem-atom-splitting step 3); (D3) glossed
+      as repetition; (N4) glossed; rubric renamed, points unchanged'
 - key: exr-reading-proofs-c2
   kind: exr
   file: 04-reading-proofs.md
-  line: 363
-  hash: 960ace086c57
+  line: 376
+  hash: 19c7052918f4
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2810,6 +3113,15 @@ items:
     evidence: The only change is a blank line before 'Fatal errors' at 04:402, so that sentence is now
       its own paragraph and does not continue the last bullet. B3 and C1 already have this layout. Nothing
       in the content changed.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 19c7052918f4
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): ''self-explain'' -> ''explain to yourself'';
+      warrant glossed; B1 negation-law refs moved to a Uses line, C1 def-derived-rule to a Uses line;
+      ''degenerate cases'' -> ''two special cases'' (matches lem-atom-splitting step 3); (D3) glossed
+      as repetition; (N4) glossed; rubric renamed, points unchanged'
 - key: check:05-writing-proofs:1
   kind: check
   file: 05-writing-proofs.md
@@ -2837,7 +3149,7 @@ items:
   kind: exm
   file: 05-writing-proofs.md
   line: 35
-  hash: 4bdecc1040fc
+  hash: 580901dd306d
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2911,6 +3223,15 @@ items:
     model: claude-opus-5-5
     evidence: '05:108 now qualifies the bottom-up reading: M found at scratch line 2 but chosen in the
       first sentence'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 580901dd306d
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): Givens/Goal -> We know/We want; two sentences
+      about the page''s devices removed; (N1),(N2),(N5),(N9),(E1) glossed as in the catalogue; C3 states
+      (L) and the lemma in words, thm-sqrt2-irrational moved to the ledger; derivations, orders and points
+      unchanged'
 - key: check:05-writing-proofs:2
   kind: check
   file: 05-writing-proofs.md
@@ -2957,7 +3278,7 @@ items:
   kind: exm
   file: 05-writing-proofs.md
   line: 156
-  hash: 7fb7b414bf11
+  hash: 1296be88e1c3
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3021,11 +3342,20 @@ items:
     model: claude-opus-5-5
     evidence: Sentence (2) now states the split's reason ('every real number is at least 1 or below it').
       The case analysis is correct.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 1296be88e1c3
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): Givens/Goal -> We know/We want; two sentences
+      about the page''s devices removed; (N1),(N2),(N5),(N9),(E1) glossed as in the catalogue; C3 states
+      (L) and the lemma in words, thm-sqrt2-irrational moved to the ledger; derivations, orders and points
+      unchanged'
 - key: exm-write-from-derivation
   kind: exm
   file: 05-writing-proofs.md
-  line: 202
-  hash: 39ec354adb08
+  line: 210
+  hash: 572473362cf5
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3072,11 +3402,20 @@ items:
     evidence: '05:202-235: the derivation is valid (→E at 6, 8, 9; ∨E at 10). The paragraph matches the
       boxes, the ''so''-merge of lines 8-9 is described correctly, the premise algebra n(n+1)=2(k(n+1))
       is right, and (E1) is attributed to F1.2 §01.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 572473362cf5
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): Givens/Goal -> We know/We want; two sentences
+      about the page''s devices removed; (N1),(N2),(N5),(N9),(E1) glossed as in the catalogue; C3 states
+      (L) and the lemma in words, thm-sqrt2-irrational moved to the ledger; derivations, orders and points
+      unchanged'
 - key: exm-generalise-proof
   kind: exm
   file: 05-writing-proofs.md
-  line: 241
-  hash: aa87494a023b
+  line: 249
+  hash: 99365af31575
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3116,7 +3455,7 @@ items:
 - key: check:05-writing-proofs:4
   kind: check
   file: 05-writing-proofs.md
-  line: 257
+  line: 265
   hash: f5becd649d20
   verdicts:
   - stage: S5a
@@ -3138,7 +3477,7 @@ items:
 - key: exr-writing-proofs-a1
   kind: exr
   file: 05-writing-proofs.md
-  line: 269
+  line: 277
   hash: 40193c3804bf
   verdicts:
   - stage: S5a
@@ -3179,8 +3518,8 @@ items:
 - key: exr-writing-proofs-a2
   kind: exr
   file: 05-writing-proofs.md
-  line: 306
-  hash: 3da6402dab30
+  line: 314
+  hash: 0800ee965815
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3225,10 +3564,19 @@ items:
     model: claude-opus-5-5
     evidence: The parts guide was corrected ((h) is the search and the page). The ledger now points to
       F1.4 §06's fold as the source of (b).
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 0800ee965815
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): Givens/Goal -> We know/We want; two sentences
+      about the page''s devices removed; (N1),(N2),(N5),(N9),(E1) glossed as in the catalogue; C3 states
+      (L) and the lemma in words, thm-sqrt2-irrational moved to the ledger; derivations, orders and points
+      unchanged'
 - key: exr-writing-proofs-b1
   kind: exr
   file: 05-writing-proofs.md
-  line: 355
+  line: 363
   hash: ca898ae0c4fa
   verdicts:
   - stage: S5a
@@ -3262,8 +3610,8 @@ items:
 - key: exr-writing-proofs-b2
   kind: exr
   file: 05-writing-proofs.md
-  line: 469
-  hash: 41d09d715e86
+  line: 477
+  hash: cb4f09a2cadd
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3303,11 +3651,20 @@ items:
       estimate is |a_n-L|+|b_n-M| < eps + eps/2, as stated, so (ix) fails. The order (v),(x),(ii),(viii),(i),(iv),(ix),(vi)
       and the single swap of (x) and (ii) were checked. The counterexample to (iii) also holds: a_{N_1}=1/(N_1+1)
       > 1/(N_1+2). The S6 finding is resolved.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: cb4f09a2cadd
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): Givens/Goal -> We know/We want; two sentences
+      about the page''s devices removed; (N1),(N2),(N5),(N9),(E1) glossed as in the catalogue; C3 states
+      (L) and the lemma in words, thm-sqrt2-irrational moved to the ledger; derivations, orders and points
+      unchanged'
 - key: exr-writing-proofs-b3
   kind: exr
   file: 05-writing-proofs.md
-  line: 498
-  hash: 96cc56423cd3
+  line: 514
+  hash: f5ade40480d3
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3345,11 +3702,20 @@ items:
       opens on x+y in Q with goal bottom. Both are accurate. 'Skeleton first' is how the book names the
       move elsewhere (03:99, 06:297). The ¬I conclusion is never silent and the ->I closing may be silent,
       both per def-silent-steps. The S5b finding is resolved.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: f5ade40480d3
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): Givens/Goal -> We know/We want; two sentences
+      about the page''s devices removed; (N1),(N2),(N5),(N9),(E1) glossed as in the catalogue; C3 states
+      (L) and the lemma in words, thm-sqrt2-irrational moved to the ledger; derivations, orders and points
+      unchanged'
 - key: exr-writing-proofs-b4
   kind: exr
   file: 05-writing-proofs.md
-  line: 538
-  hash: 091326346235
+  line: 554
+  hash: 3ca8070521f2
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3396,10 +3762,19 @@ items:
     model: claude-opus-5-5
     evidence: Adds d | a ⇒ d | ab and the even case for n, so the parity argument is complete. The 6 |
       m step (b = 2(a − b)) is correct. The ledger is updated with prp-integers-closed.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 3ca8070521f2
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): Givens/Goal -> We know/We want; two sentences
+      about the page''s devices removed; (N1),(N2),(N5),(N9),(E1) glossed as in the catalogue; C3 states
+      (L) and the lemma in words, thm-sqrt2-irrational moved to the ledger; derivations, orders and points
+      unchanged'
 - key: exr-writing-proofs-c1
   kind: exr
   file: 05-writing-proofs.md
-  line: 573
+  line: 589
   hash: 7dcbfae518ae
   verdicts:
   - stage: S5a
@@ -3431,7 +3806,7 @@ items:
 - key: exr-writing-proofs-c2
   kind: exr
   file: 05-writing-proofs.md
-  line: 611
+  line: 627
   hash: e037d43abf71
   verdicts:
   - stage: S5a
@@ -3482,8 +3857,8 @@ items:
 - key: exr-writing-proofs-c3
   kind: exr
   file: 05-writing-proofs.md
-  line: 660
-  hash: 4d76a8889ca5
+  line: 676
+  hash: fdceadf09117
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3539,10 +3914,19 @@ items:
     model: claude-opus-5-5
     evidence: '05:694 scheme: lemma by residues mod 3 with 3j+1 != 3t justified; Euclid route (not proved
       in fd1) dropped, as the stem asks for a proof'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: fdceadf09117
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): Givens/Goal -> We know/We want; two sentences
+      about the page''s devices removed; (N1),(N2),(N5),(N9),(E1) glossed as in the catalogue; C3 states
+      (L) and the lemma in words, thm-sqrt2-irrational moved to the ledger; derivations, orders and points
+      unchanged'
 - key: check:06-checking-proofs:1
   kind: check
   file: 06-checking-proofs.md
-  line: 49
+  line: 50
   hash: aee1eea20ac0
   verdicts:
   - stage: S5a
@@ -3576,8 +3960,8 @@ items:
 - key: exm-not-allowed-catalogue
   kind: exm
   file: 06-checking-proofs.md
-  line: 71
-  hash: e085c648c906
+  line: 72
+  hash: 7a8548cf20ac
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3636,10 +4020,19 @@ items:
     model: claude-opus-5-5
     evidence: The only touched text is the fold title, now 'Two notes on the two columns', which correctly
       covers its soundness note (second column) and its truth note (first column). The ledger line matches.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 7a8548cf20ac
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): every (N) code given with its entry title;
+      entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
+      off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
+      unchanged'
 - key: check:06-checking-proofs:2
   kind: check
   file: 06-checking-proofs.md
-  line: 120
+  line: 121
   hash: c75a747f0665
   verdicts:
   - stage: S5a
@@ -3677,8 +4070,8 @@ items:
 - key: check:06-checking-proofs:3
   kind: check
   file: 06-checking-proofs.md
-  line: 128
-  hash: bb9cbbec537a
+  line: 129
+  hash: 69fab42af3ac
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3699,11 +4092,20 @@ items:
       right: a finite (non-empty, k >= 1) set of naturals has a maximum, which is the F2.2 promise in
       STATUS row 156 (''every non-empty finite set has a maximum ... §06 the Quick check on (N2)''), and
       the ledger cites it at 06:604.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 69fab42af3ac
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): every (N) code given with its entry title;
+      entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
+      off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
+      unchanged'
 - key: exm-verify-cases
   kind: exm
   file: 06-checking-proofs.md
-  line: 144
-  hash: e687cdf6ea2c
+  line: 145
+  hash: f54971703d2b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3733,11 +4135,20 @@ items:
       (03-levels-of-abbreviation.md:50) allows ⊥E to be silent once the contradiction or the empty case
       is stated, and line (5) states the empty case. The verdict 'correct' and the remark that (N8) does
       not a
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: f54971703d2b
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): every (N) code given with its entry title;
+      entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
+      off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
+      unchanged'
 - key: exm-verify-converse
   kind: exm
   file: 06-checking-proofs.md
-  line: 165
-  hash: e8cb96dacadc
+  line: 166
+  hash: 1c9bb70722f6
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3757,11 +4168,20 @@ items:
     evidence: 06:96-104. The refuting row (P false, Q true) is right; x = -2 is right; Argument B is at
       ch01 §01:15 and is diagnosed at §05:146. thm-square-even-implies-even (ch02 §01:283) does open its
       →I box with 'n^2 is even'.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 1c9bb70722f6
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): every (N) code given with its entry title;
+      entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
+      off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
+      unchanged'
 - key: exm-verify-negation
   kind: exm
   file: 06-checking-proofs.md
-  line: 185
-  hash: ff88877032fb
+  line: 186
+  hash: 6ec2fa586f32
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3790,11 +4210,20 @@ items:
       k and m are fresh and differ, as (N4) requires. The proof is face (i) of Sec 5.1 (01-connective-rhetoric.md:250-254),
       with no RAA. The ∀E at 1 on ''no integer is both even and odd'' is at an obvious term, so it may
       be '
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 6ec2fa586f32
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): every (N) code given with its entry title;
+      entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
+      off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
+      unchanged'
 - key: exm-verify-scope
   kind: exm
   file: 06-checking-proofs.md
-  line: 207
-  hash: 272abd1db1c3
+  line: 208
+  hash: 5e1dd4154cd4
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3812,11 +4241,20 @@ items:
     model: claude-opus-5-5
     evidence: 06:138-151. Line (4) cites (2), which sits inside the box closed at (3). x = 1/2 gives 1/4
       < 1/2. (x-1/2)^2 + 3/4 = x^2 - x + 1 checks. The (N10) cross-reference at 06:43 is consistent.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 5e1dd4154cd4
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): every (N) code given with its entry title;
+      entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
+      off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
+      unchanged'
 - key: exr-checking-proofs-a1
   kind: exr
   file: 06-checking-proofs.md
-  line: 244
-  hash: 5d098aaa59c7
+  line: 245
+  hash: a8605a128247
   verdicts:
   - stage: S5a
     verdict: minor
@@ -3917,11 +4355,20 @@ items:
     model: claude-opus-5-5
     evidence: Item 4 is now 'prove x > 0, suppose x < 0'. The solution states correctly that ¬(x > 0)
       is x ≤ 0, that the case x = 0 is never examined, and that ¬I gives only x ≥ 0. The ledger is updated.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: a8605a128247
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): every (N) code given with its entry title;
+      entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
+      off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
+      unchanged'
 - key: exr-checking-proofs-a2
   kind: exr
   file: 06-checking-proofs.md
-  line: 273
-  hash: d62d3f6a06a9
+  line: 274
+  hash: 31a50711a6f5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -3966,11 +4413,20 @@ items:
     model: claude-opus-5-5
     evidence: (i) also flags the citation of the unavailable line x ≠ y. (l) dates TAUT on the skeleton
       from Section 6.3 with @prp-taut-skeleton. The ledger line is updated.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 31a50711a6f5
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): every (N) code given with its entry title;
+      entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
+      off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
+      unchanged'
 - key: exr-checking-proofs-b1
   kind: exr
   file: 06-checking-proofs.md
-  line: 322
-  hash: 49f3fbcfa1ac
+  line: 323
+  hash: 46740dee9710
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4031,11 +4487,20 @@ items:
       repair is valid: x ≥ 1 gives x^2 ≥ x ≥ 1, contradicting x^2 < 1. The ledger lists trichotomy and
       the new order fact. The b1 sidecar passes. check_structure, check_fitch and check_numbers report
       0 fatal and 0 errors.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 46740dee9710
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): every (N) code given with its entry title;
+      entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
+      off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
+      unchanged'
 - key: exr-checking-proofs-b2
   kind: exr
   file: 06-checking-proofs.md
-  line: 358
-  hash: 9e1eebd8981b
+  line: 359
+  hash: 79bf7625c741
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4072,11 +4537,20 @@ items:
       applies. The pair x=1, y=-1 gives 2 vs 0 and meets neither case. Lines (3) and (4) are correct,
       and exm-triangle-inequality-cases exists (ch01/07). The earlier finding is resolved: the solution
       now cites ''(N8) of @exm-not-allowed-catalogue'', as STYLE §11.3 requires.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 79bf7625c741
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): every (N) code given with its entry title;
+      entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
+      off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
+      unchanged'
 - key: exr-checking-proofs-b3
   kind: exr
   file: 06-checking-proofs.md
-  line: 374
-  hash: 82a8487214be
+  line: 375
+  hash: 5c687a1a51af
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4106,11 +4580,20 @@ items:
     evidence: '06:388-404. My verdicts agree: (i) and (ii) correct; (iii) N12, false at (0,0); (iv) N13,
       true, repaired by strong induction; (v) N14, false since x^2+x+1>0 and 1+1+1=3. Each wrong proof
       is flawed only at the named step. The scheme accepts an alternative repair of (iv).'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 5c687a1a51af
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): every (N) code given with its entry title;
+      entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
+      off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
+      unchanged'
 - key: exr-checking-proofs-c1
   kind: exr
   file: 06-checking-proofs.md
-  line: 409
-  hash: 18f3df7ee111
+  line: 417
+  hash: 4d327013bbdd
   verdicts:
   - stage: S5a
     verdict: minor
@@ -4149,10 +4632,19 @@ items:
       via -|u| <= u, and states the witness''s dependence (''depends only on a''), as def-silent-steps
       (03:67) requires. The mapping of sentences to lines 7, 8-9, 10, 11-12 (silent closings) and 13-14
       is accurate. Earlier fin'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 4d327013bbdd
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): every (N) code given with its entry title;
+      entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
+      off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
+      unchanged'
 - key: exr-checking-proofs-c2
   kind: exr
   file: 06-checking-proofs.md
-  line: 479
+  line: 488
   hash: 7b0c11ff6c38
   verdicts:
   - stage: S5a
@@ -4197,8 +4689,8 @@ items:
 - key: exr-checking-proofs-c3
   kind: exr
   file: 06-checking-proofs.md
-  line: 516
-  hash: c3037e16ef14
+  line: 526
+  hash: 3601e16f256d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4230,11 +4722,20 @@ items:
       case 0<x<1 holds (script); (4) fails at line (2), (N9), x=0. Each proof is flawed only where stated.
       The points sum to 10. However, hint 2 (373) points at the failing line of (3) and at the delicate
       step of (1). [fi'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 3601e16f256d
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): every (N) code given with its entry title;
+      entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
+      off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
+      unchanged'
 - key: exr-checking-proofs-r1
   kind: exr
   file: 06-checking-proofs.md
-  line: 558
-  hash: a29d7c6fee04
+  line: 570
+  hash: 394c5d0eb8a0
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4286,6 +4787,15 @@ items:
     evidence: The problem text no longer names its sources. The solution cites @exm-not-allowed-catalogue,
       @def-rules-universal (Section 5.4) and (E1) of Section 2.1 before @thm-square-even-implies-even.
       The R placement is recorded in STATUS (a).
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 394c5d0eb8a0
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): every (N) code given with its entry title;
+      entry texts, instances, counterexamples and verdicts unchanged; (N13) strong-induction clause split
+      off with the same content; traditional-names fold titled ''For instructors''; rubric renamed, points
+      unchanged'
 - key: thm-irrational-power-rational
   kind: thm
   file: 07-excluded-middle.md
@@ -4359,7 +4869,7 @@ items:
   kind: proof
   file: 07-excluded-middle.md
   line: 53
-  hash: f92c069f3d88
+  hash: fb11b13c8425
   verdicts:
   - stage: S5a
     verdict: minor
@@ -4388,6 +4898,15 @@ items:
       with p-1 ≥ 0 is even; 9^q is odd as a product of q ≥ 1 odd factors; (E2) supplies the clash; the
       conclusion is ¬I. The consequence 2^{(log2 9)/2} = 2^{log2 3} = 3 holds. Both earlier findings are
       resolved. The q ≥
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: fb11b13c8425
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): (E2) and soundness sentences split with the
+      same sources; intuitionistic rule list displayed, same rules; survival-table row split into three
+      rows with the same all/- entries; B4 lists displayed with the same results; refs moved to Uses lines
+      (def-derived-rule, exm-negating-definitions, def-rules-*, def-valid-argument); rubric renamed'
 - key: check:07-excluded-middle:1
   kind: check
   file: 07-excluded-middle.md
@@ -4435,7 +4954,7 @@ items:
 - key: check:07-excluded-middle:3
   kind: check
   file: 07-excluded-middle.md
-  line: 125
+  line: 132
   hash: 641479eeb6a2
   verdicts:
   - stage: S5a
@@ -4457,7 +4976,7 @@ items:
 - key: prp-not-not-excluded-middle
   kind: prp
   file: 07-excluded-middle.md
-  line: 137
+  line: 144
   hash: c8b5914b6e94
   verdicts:
   - stage: S5a
@@ -4507,8 +5026,8 @@ items:
 - key: proof:prp-not-not-excluded-middle
   kind: proof
   file: 07-excluded-middle.md
-  line: 151
-  hash: 60bce2b3105c
+  line: 158
+  hash: a90714ae8f3d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4539,8 +5058,8 @@ items:
 - key: check:07-excluded-middle:4
   kind: check
   file: 07-excluded-middle.md
-  line: 194
-  hash: 8b578a68fab3
+  line: 201
+  hash: 431c8b135cb4
   verdicts:
   - stage: S5a
     verdict: minor
@@ -4574,11 +5093,20 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: Now restricted to a letter p, which matches the scope of thm-raa-independent.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 431c8b135cb4
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): (E2) and soundness sentences split with the
+      same sources; intuitionistic rule list displayed, same rules; survival-table row split into three
+      rows with the same all/- entries; B4 lists displayed with the same results; refs moved to Uses lines
+      (def-derived-rule, exm-negating-definitions, def-rules-*, def-valid-argument); rubric renamed'
 - key: check:07-excluded-middle:5
   kind: check
   file: 07-excluded-middle.md
-  line: 221
-  hash: f9f04733e902
+  line: 230
+  hash: 2d47dc6fdff1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4598,11 +5126,20 @@ items:
     evidence: '07:221-227: prp-contrapositive-converse is in the right column (07:209); the fold title
       ''RAA is never needed to finish a negation'' is at ch02 05:1014; 01-connective-rhetoric.md:358 applies
       it to the contrapositive.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 2d47dc6fdff1
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): (E2) and soundness sentences split with the
+      same sources; intuitionistic rule list displayed, same rules; survival-table row split into three
+      rows with the same all/- entries; B4 lists displayed with the same results; refs moved to Uses lines
+      (def-derived-rule, exm-negating-definitions, def-rules-*, def-valid-argument); rubric renamed'
 - key: exr-excluded-middle-a1
   kind: exr
   file: 07-excluded-middle.md
-  line: 295
-  hash: 36c4a912f2c8
+  line: 312
+  hash: db038dbb0ec2
   verdicts:
   - stage: S5a
     verdict: minor
@@ -4640,11 +5177,20 @@ items:
       the hypothetical derivation, together with prp-excluded-middle (main line, not optional), gives
       ⊥ by ¬E{P∨¬P, ¬(P∨¬P)}; that contradicts @thm-soundness, or the soundness statement of Section 7.2
       in the predicate'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: db038dbb0ec2
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): (E2) and soundness sentences split with the
+      same sources; intuitionistic rule list displayed, same rules; survival-table row split into three
+      rows with the same all/- entries; B4 lists displayed with the same results; refs moved to Uses lines
+      (def-derived-rule, exm-negating-definitions, def-rules-*, def-valid-argument); rubric renamed'
 - key: exr-excluded-middle-a2
   kind: exr
   file: 07-excluded-middle.md
-  line: 321
-  hash: e0793102c798
+  line: 338
+  hash: 51243dfb6a73
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4689,11 +5235,20 @@ items:
     model: claude-opus-5-5
     evidence: (k) now cites @prp-bounded-quantifier-negation (a), whose ⊢ direction is derived with RAA
       (ch06 02:205), as the bounded form of the table's @prp-quantifier-negation (a).
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 51243dfb6a73
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): (E2) and soundness sentences split with the
+      same sources; intuitionistic rule list displayed, same rules; survival-table row split into three
+      rows with the same all/- entries; B4 lists displayed with the same results; refs moved to Uses lines
+      (def-derived-rule, exm-negating-definitions, def-rules-*, def-valid-argument); rubric renamed'
 - key: exr-excluded-middle-b1
   kind: exr
   file: 07-excluded-middle.md
-  line: 370
-  hash: 39c2b2a383d5
+  line: 387
+  hash: cc4d8a489074
   verdicts:
   - stage: S5a
     verdict: minor
@@ -4784,8 +5339,8 @@ items:
 - key: exr-excluded-middle-b2
   kind: exr
   file: 07-excluded-middle.md
-  line: 412
-  hash: 8b5df3fdaf89
+  line: 429
+  hash: f0c14ec3b51c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4822,10 +5377,19 @@ items:
       a proof of the conjunction n+1∈ℕ ∧ n+1>n; that is the correct curried BHK reading. Both earlier
       findings are resolved. STATUS row 95 now lists 'n+1 ∈ ℕ and n+1 > n for n ∈ ℕ (§07 B2(c))', and
       the ledger at l.607 ma
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: f0c14ec3b51c
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): (E2) and soundness sentences split with the
+      same sources; intuitionistic rule list displayed, same rules; survival-table row split into three
+      rows with the same all/- entries; B4 lists displayed with the same results; refs moved to Uses lines
+      (def-derived-rule, exm-negating-definitions, def-rules-*, def-valid-argument); rubric renamed'
 - key: exr-excluded-middle-b3
   kind: exr
   file: 07-excluded-middle.md
-  line: 433
+  line: 450
   hash: e466dfcd763e
   verdicts:
   - stage: S5a
@@ -4856,8 +5420,8 @@ items:
 - key: exr-excluded-middle-b4
   kind: exr
   file: 07-excluded-middle.md
-  line: 445
-  hash: 70e5e2aa2ebb
+  line: 462
+  hash: d2091ff83167
   verdicts:
   - stage: S5a
     verdict: minor
@@ -4936,11 +5500,20 @@ items:
     model: claude-opus-5-5
     evidence: (b) now asks to count lemmas, corollaries and TAUT. This matches the solution, which lists
       lem-atom-splitting and the like.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: d2091ff83167
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): (E2) and soundness sentences split with the
+      same sources; intuitionistic rule list displayed, same rules; survival-table row split into three
+      rows with the same all/- entries; B4 lists displayed with the same results; refs moved to Uses lines
+      (def-derived-rule, exm-negating-definitions, def-rules-*, def-valid-argument); rubric renamed'
 - key: exr-excluded-middle-b5
   kind: exr
   file: 07-excluded-middle.md
-  line: 459
-  hash: ea4b82438614
+  line: 505
+  hash: 156bb5479d25
   verdicts:
   - stage: S5a
     verdict: correct
@@ -4982,10 +5555,19 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: The in-section pointer now reads 'in this section'. The content is unchanged.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 156bb5479d25
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): (E2) and soundness sentences split with the
+      same sources; intuitionistic rule list displayed, same rules; survival-table row split into three
+      rows with the same all/- entries; B4 lists displayed with the same results; refs moved to Uses lines
+      (def-derived-rule, exm-negating-definitions, def-rules-*, def-valid-argument); rubric renamed'
 - key: exr-excluded-middle-c1
   kind: exr
   file: 07-excluded-middle.md
-  line: 567
+  line: 619
   hash: d1321b89d639
   verdicts:
   - stage: S5a
@@ -5018,7 +5600,7 @@ items:
 - key: exr-excluded-middle-c2
   kind: exr
   file: 07-excluded-middle.md
-  line: 618
+  line: 670
   hash: d406f4d8e8e9
   verdicts:
   - stage: S5a
@@ -5054,8 +5636,8 @@ items:
 - key: exr-excluded-middle-r1
   kind: exr
   file: 07-excluded-middle.md
-  line: 672
-  hash: 29ed8f2e2ac2
+  line: 728
+  hash: 97776f2bb8be
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5138,11 +5720,20 @@ items:
     evidence: The direct return route is valid. ∀I box on m ∈ A, ∀E and →E give ∃a∈A (a > m). Inside ∃E,
       trichotomy gives ¬(a ≤ m), then ∃I. The ⊣ direction of (a), then →I and ∀I, then the ⊣ direction
       of (b) follow, and both ⊣ directions are RAA-free per prp-bounded-quantifier-negation.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 97776f2bb8be
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): (E2) and soundness sentences split with the
+      same sources; intuitionistic rule list displayed, same rules; survival-table row split into three
+      rows with the same all/- entries; B4 lists displayed with the same results; refs moved to Uses lines
+      (def-derived-rule, exm-negating-definitions, def-rules-*, def-valid-argument); rubric renamed'
 - key: exr-excluded-middle-r2
   kind: exr
   file: 07-excluded-middle.md
-  line: 700
-  hash: 829f0b5b8ae9
+  line: 760
+  hash: 7c326443dbf3
   verdicts:
   - stage: S5a
     verdict: minor
@@ -5180,11 +5771,20 @@ items:
       model sentence at l.508 now cites the first, second and third premise at each of the three →E steps,
       as def-silent-steps requires (ch05/03:69). It states the →I opening 'Suppose P' and spells out the
       case split, w
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 7c326443dbf3
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): (E2) and soundness sentences split with the
+      same sources; intuitionistic rule list displayed, same rules; survival-table row split into three
+      rows with the same all/- entries; B4 lists displayed with the same results; refs moved to Uses lines
+      (def-derived-rule, exm-negating-definitions, def-rules-*, def-valid-argument); rubric renamed'
 - key: exr-excluded-middle-r3
   kind: exr
   file: 07-excluded-middle.md
-  line: 736
-  hash: b17f2ab4fdc9
+  line: 800
+  hash: 566b31c7fa07
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5253,11 +5853,20 @@ items:
     evidence: '07:742-783. The truth table checks: only row F,F refutes P∨Q, and there the premise is
       false. The derivation is valid with RAA only at line 11. The pointer to 8.8 is borne out: my checker
       shows w0 of M1 refutes the sequent. The stem hides its source and the solution cites with @ref.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 566b31c7fa07
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): (E2) and soundness sentences split with the
+      same sources; intuitionistic rule list displayed, same rules; survival-table row split into three
+      rows with the same all/- entries; B4 lists displayed with the same results; refs moved to Uses lines
+      (def-derived-rule, exm-negating-definitions, def-rules-*, def-valid-argument); rubric renamed'
 - key: exr-excluded-middle-r4
   kind: exr
   file: 07-excluded-middle.md
-  line: 786
-  hash: f8b836feeb3e
+  line: 854
+  hash: 8b761142e89c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5286,10 +5895,19 @@ items:
       in [-100,100], and (-m)^3-(-m)=-(m^3-m). The solution names the tool (∨E on residues mod 3) and
       explains why the look-alikes (RAA as a costume, induction only on ℕ) are worse, as STYLE §11.5 asks
       for R4.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 8b761142e89c
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): (E2) and soundness sentences split with the
+      same sources; intuitionistic rule list displayed, same rules; survival-table row split into three
+      rows with the same all/- entries; B4 lists displayed with the same results; refs moved to Uses lines
+      (def-derived-rule, exm-negating-definitions, def-rules-*, def-valid-argument); rubric renamed'
 - key: def-kripke-model
   kind: def
   file: 08-kripke-models.md
-  line: 9
+  line: 11
   hash: daaaf4d8024a
   verdicts:
   - stage: S5a
@@ -5311,8 +5929,8 @@ items:
 - key: def-forcing
   kind: def
   file: 08-kripke-models.md
-  line: 37
-  hash: aae11550ea96
+  line: 41
+  hash: b9f51d64a3b0
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5345,11 +5963,21 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: NOTATION.md:173 now says (K1)-(K7), matching the seven clauses (S7)
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: b9f51d64a3b0
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): each (K1)-(K7) given as ''the clause for X'';
+      theorem statement split into Suppose/Suppose also/Then with the same hypotheses and conclusion;
+      def-derivable moved to a Uses line; unlabelled instance M1 added before def-kripke-model (true:
+      w0 reaches w0,w1; w0 forces neither p nor not-p), checked by def-kripke-model.py; rubric renamed,
+      points unchanged'
 - key: check:08-kripke-models:1
   kind: check
   file: 08-kripke-models.md
-  line: 61
-  hash: 2c01a592c14d
+  line: 65
+  hash: ab8517cefe50
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5365,11 +5993,21 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: '08:61-67: with one stage, (K6) gives not-p and (K4) gives the disjunction'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: ab8517cefe50
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): each (K1)-(K7) given as ''the clause for X'';
+      theorem statement split into Suppose/Suppose also/Then with the same hypotheses and conclusion;
+      def-derivable moved to a Uses line; unlabelled instance M1 added before def-kripke-model (true:
+      w0 reaches w0,w1; w0 forces neither p nor not-p), checked by def-kripke-model.py; rubric renamed,
+      points unchanged'
 - key: exm-two-stage-model
   kind: exm
   file: 08-kripke-models.md
-  line: 71
-  hash: 32a5c13abfd5
+  line: 75
+  hash: aa797e18fdb1
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5387,10 +6025,20 @@ items:
     model: claude-opus-5-5
     evidence: '08:71-85: every verdict rechecked with a scratch forcing checker (w0 forces not-not-p only;
       it does not force p, not-p, p or not-p, or not-not-p -> p)'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: aa797e18fdb1
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): each (K1)-(K7) given as ''the clause for X'';
+      theorem statement split into Suppose/Suppose also/Then with the same hypotheses and conclusion;
+      def-derivable moved to a Uses line; unlabelled instance M1 added before def-kripke-model (true:
+      w0 reaches w0,w1; w0 forces neither p nor not-p), checked by def-kripke-model.py; rubric renamed,
+      points unchanged'
 - key: lem-heredity
   kind: lem
   file: 08-kripke-models.md
-  line: 91
+  line: 95
   hash: b42b7afda0b4
   verdicts:
   - stage: S5a
@@ -5410,8 +6058,8 @@ items:
 - key: proof:lem-heredity
   kind: proof
   file: 08-kripke-models.md
-  line: 100
-  hash: 3311b7a769c8
+  line: 104
+  hash: 3dc7b283ed97
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5429,10 +6077,20 @@ items:
     model: claude-opus-5-5
     evidence: '08:100-116: every clause of def-formula (F1)-(F3) is covered; transitivity is used for
       -> and not; IH for and/or; the <-> case is reduced to ->'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 3dc7b283ed97
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): each (K1)-(K7) given as ''the clause for X'';
+      theorem statement split into Suppose/Suppose also/Then with the same hypotheses and conclusion;
+      def-derivable moved to a Uses line; unlabelled instance M1 added before def-kripke-model (true:
+      w0 reaches w0,w1; w0 forces neither p nor not-p), checked by def-kripke-model.py; rubric renamed,
+      points unchanged'
 - key: check:08-kripke-models:2
   kind: check
   file: 08-kripke-models.md
-  line: 119
+  line: 123
   hash: a18583d3f810
   verdicts:
   - stage: S5a
@@ -5452,8 +6110,8 @@ items:
 - key: thm-kripke-soundness
   kind: thm
   file: 08-kripke-models.md
-  line: 129
-  hash: 7613d54e180e
+  line: 133
+  hash: 1bbf818bc7bd
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5490,11 +6148,21 @@ items:
     evidence: The hypothesis now restricts the lines to formulas of @def-formula and excludes cited results
       that use non-formula lines. This closes the earlier gap about first-order lines. R now has its own
       table row (the cited line itself).
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 1bbf818bc7bd
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): each (K1)-(K7) given as ''the clause for X'';
+      theorem statement split into Suppose/Suppose also/Then with the same hypotheses and conclusion;
+      def-derivable moved to a Uses line; unlabelled instance M1 added before def-kripke-model (true:
+      w0 reaches w0,w1; w0 forces neither p nor not-p), checked by def-kripke-model.py; rubric renamed,
+      points unchanged'
 - key: proof:thm-kripke-soundness
   kind: proof
   file: 08-kripke-models.md
-  line: 151
-  hash: e08854d4f943
+  line: 156
+  hash: 886f6a91216b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5531,11 +6199,21 @@ items:
     evidence: Step 1 now reduces to the propositional primitive rules of Chapters 1–2 minus RAA, which
       matches the hypothesis. In Step 3, R is the hypothesis for the cited line. The other cases are unchanged
       and correct.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 886f6a91216b
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): each (K1)-(K7) given as ''the clause for X'';
+      theorem statement split into Suppose/Suppose also/Then with the same hypotheses and conclusion;
+      def-derivable moved to a Uses line; unlabelled instance M1 added before def-kripke-model (true:
+      w0 reaches w0,w1; w0 forces neither p nor not-p), checked by def-kripke-model.py; rubric renamed,
+      points unchanged'
 - key: cor-kripke-countermodel
   kind: cor
   file: 08-kripke-models.md
-  line: 166
-  hash: c78c81400aac
+  line: 175
+  hash: 15195110c8ed
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5578,7 +6256,7 @@ items:
 - key: proof:cor-kripke-countermodel
   kind: proof
   file: 08-kripke-models.md
-  line: 172
+  line: 181
   hash: 7182c8bab273
   verdicts:
   - stage: S5a
@@ -5598,7 +6276,7 @@ items:
 - key: check:08-kripke-models:3
   kind: check
   file: 08-kripke-models.md
-  line: 176
+  line: 185
   hash: a9d334e51e08
   verdicts:
   - stage: S5a
@@ -5618,8 +6296,8 @@ items:
 - key: exm-three-stage-model
   kind: exm
   file: 08-kripke-models.md
-  line: 186
-  hash: adc8b791c8cd
+  line: 195
+  hash: 28103f835f82
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5648,11 +6326,21 @@ items:
     evidence: 'The text that follows it (table caveat l.230, Remark l.253, Warning l.266) is now accurate,
       apart from the l.230 scope inherited from the corollary (F050). The Warning''s third misreading
       is now false as intended: in M2, w0 forces neither p nor q.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 28103f835f82
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): each (K1)-(K7) given as ''the clause for X'';
+      theorem statement split into Suppose/Suppose also/Then with the same hypotheses and conclusion;
+      def-derivable moved to a Uses line; unlabelled instance M1 added before def-kripke-model (true:
+      w0 reaches w0,w1; w0 forces neither p nor not-p), checked by def-kripke-model.py; rubric renamed,
+      points unchanged'
 - key: exr-kripke-models-a1
   kind: exr
   file: 08-kripke-models.md
-  line: 273
-  hash: 2e51584e62f9
+  line: 282
+  hash: 53b95c47829b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5678,10 +6366,20 @@ items:
     model: claude-opus-5-5
     evidence: '08:284-291. My forcing checker: w1 of M1 forces ¬¬p→p; w0 of M1 forces neither p nor ¬p.
       (b) and (d) are right.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 53b95c47829b
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): each (K1)-(K7) given as ''the clause for X'';
+      theorem statement split into Suppose/Suppose also/Then with the same hypotheses and conclusion;
+      def-derivable moved to a Uses line; unlabelled instance M1 added before def-kripke-model (true:
+      w0 reaches w0,w1; w0 forces neither p nor not-p), checked by def-kripke-model.py; rubric renamed,
+      points unchanged'
 - key: exr-kripke-models-a2
   kind: exr
   file: 08-kripke-models.md
-  line: 294
+  line: 303
   hash: 73d29c45b021
   verdicts:
   - stage: S5a
@@ -5711,8 +6409,8 @@ items:
 - key: exr-kripke-models-b1
   kind: exr
   file: 08-kripke-models.md
-  line: 343
-  hash: 4360347f5140
+  line: 352
+  hash: ed2422b3273a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5739,11 +6437,21 @@ items:
     evidence: '08:355-373. My checker on M6 gives ¬¬p T, p∨¬p F, q→p F, (q→p)∨(p→q) T, ¬p→¬q T. The refuted
       set in (b) matches. The chain claim in (c) holds: no counterexample among all chains of up to 4
       stages, and the proof is complete.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: ed2422b3273a
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): each (K1)-(K7) given as ''the clause for X'';
+      theorem statement split into Suppose/Suppose also/Then with the same hypotheses and conclusion;
+      def-derivable moved to a Uses line; unlabelled instance M1 added before def-kripke-model (true:
+      w0 reaches w0,w1; w0 forces neither p nor not-p), checked by def-kripke-model.py; rubric renamed,
+      points unchanged'
 - key: exr-kripke-models-b2
   kind: exr
   file: 08-kripke-models.md
-  line: 376
-  hash: e2430820e33d
+  line: 385
+  hash: f5b573ad0588
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5785,11 +6493,21 @@ items:
     date: '2026-10-25'
     model: claude-opus-5-5
     evidence: The look-alike sentence now says (c) is (a)'s look-alike with ∨ for ∧. The rest is unchanged.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: f5b573ad0588
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): each (K1)-(K7) given as ''the clause for X'';
+      theorem statement split into Suppose/Suppose also/Then with the same hypotheses and conclusion;
+      def-derivable moved to a Uses line; unlabelled instance M1 added before def-kripke-model (true:
+      w0 reaches w0,w1; w0 forces neither p nor not-p), checked by def-kripke-model.py; rubric renamed,
+      points unchanged'
 - key: exr-kripke-models-c1
   kind: exr
   file: 08-kripke-models.md
-  line: 518
-  hash: 112c3ab0f328
+  line: 531
+  hash: 406d254c76e9
   verdicts:
   - stage: S5a
     verdict: minor
@@ -5835,11 +6553,21 @@ items:
     model: claude-opus-5-5
     evidence: 'The refutation now applies (K5) explicitly: w0 is reachable from itself, forces Peirce
       and does not force p ∨ ¬p, so it does not force the implication. The rubric allows the ¬¬p route.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 406d254c76e9
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): each (K1)-(K7) given as ''the clause for X'';
+      theorem statement split into Suppose/Suppose also/Then with the same hypotheses and conclusion;
+      def-derivable moved to a Uses line; unlabelled instance M1 added before def-kripke-model (true:
+      w0 reaches w0,w1; w0 forces neither p nor not-p), checked by def-kripke-model.py; rubric renamed,
+      points unchanged'
 - key: exr-kripke-models-c2
   kind: exr
   file: 08-kripke-models.md
-  line: 574
-  hash: 3ae69fca0b4e
+  line: 587
+  hash: 6b62dc65b216
   verdicts:
   - stage: S5a
     verdict: correct
@@ -5891,3 +6619,13 @@ items:
     model: claude-opus-5-5
     evidence: '08:592 second route: exm-triple-negation with phi for P and prp-double-negation (a) with
       not-phi for P, matching the solution at 08:585'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 6b62dc65b216
+    date: '2026-11-01'
+    evidence: 'wording only (coordinator, diff vs 9f9dbb8): each (K1)-(K7) given as ''the clause for X'';
+      theorem statement split into Suppose/Suppose also/Then with the same hypotheses and conclusion;
+      def-derivable moved to a Uses line; unlabelled instance M1 added before def-kripke-model (true:
+      w0 reaches w0,w1; w0 forces neither p nor not-p), checked by def-kripke-model.py; rubric renamed,
+      points unchanged'
