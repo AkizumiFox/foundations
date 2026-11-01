@@ -179,7 +179,7 @@ So, for a list \( \Gamma \) and a formula \( \psi \): a search tree for \( \Gamm
 - \( \neg(\varphi \wedge \psi) \) true: \( \varphi \wedge \psi \) false, so \( \neg\varphi \) true or \( \neg\psi \) true, since a false conjunction has a false part and negation flips.
 - \( \varphi \to \psi \) true: \( \varphi \) false or \( \psi \) true, so \( \neg\varphi \) true or \( \psi \) true, since a true implication has a false hypothesis or a true conclusion, and negation flips.
 - \( \varphi \leftrightarrow \psi \) true: the parts agree, so both are true, or \( \neg\varphi \) and \( \neg\psi \) are both true, since a biconditional says the parts agree, (V6), and negation flips.
-- \( \neg(\varphi \leftrightarrow \psi) \) true: the parts differ, so \( \varphi \) and \( \neg\psi \) are true, or \( \neg\varphi \) and \( \psi \) are, since the parts differ and negation flips.
+- \( \neg(\varphi \leftrightarrow \psi) \) true: the parts differ, so \( \varphi \) and \( \neg\psi \) are true, or \( \neg\varphi \) and \( \psi \) are, since negation flips the value of a part.
 
 So the new branch through that node has all its formulas true under \( v \), and the claim holds after the stage. By @ax-induction on the number of stages, it holds for the tree at hand. A closed branch holds \( \varphi \) and \( \neg\varphi \), or \( \bot \). Since negation flips and \( \bot \) is always false, (V1), \( v \) cannot make all of these true. So if every branch is closed, no valuation makes every formula of \( \Delta \) true: \( \Delta \) is unsatisfiable.
 

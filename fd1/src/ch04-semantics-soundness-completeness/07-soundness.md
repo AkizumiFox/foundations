@@ -1,6 +1,6 @@
 # Soundness
 
-Chapter 3 ended on a question it could not answer. Section 3.1 searched for a derivation of \( P \to Q \vdash Q \to P \), and every route came back to the same gap. But a search that fails proves nothing, since a cleverer derivation might exist. Section 4.5 found the row that refutes affirming the consequent, \( p = \mathrm{F} \) and \( q = \mathrm{T} \). It finds what the search could not: it makes \( p \to q \) true and \( q \to p \) false, and the search of Section 4.6 finds such rows whenever they exist. This section proves the theorem that turns such a row into a proof that **no** derivation exists. It is called soundness: whatever the rules derive is true in every row where the premises are true. The proof is the book's first long proof about proofs, and it is an induction on the lines of a derivation.
+Chapter 3 ended on a question it could not answer. Section 3.1 searched for a derivation of \( P \to Q \vdash Q \to P \), and every route came back to the same gap. But a search that fails proves nothing, since a cleverer derivation might exist. Section 4.5 found the row that refutes affirming the consequent, \( p = \mathrm{F} \) and \( q = \mathrm{T} \). That row finds what the search could not: it makes \( p \to q \) true and \( q \to p \) false, and the search of Section 4.6 finds such rows whenever they exist. This section proves the theorem that turns such a row into a proof that **no** derivation exists. It is called soundness: whatever the rules derive is true in every row where the premises are true. The proof is the book's first long proof about proofs, and it is an induction on the lines of a derivation.
 
 ## What must be proved, and why it is not obvious
 
@@ -211,7 +211,7 @@ An attempt at the \( \rulename{{\to}I} \) case runs into two things. First, know
 :::
 
 ::: {.proof}
-**Step 1 (reduction to primitive rules).** Suppose \( \Gamma \vdash \psi \). Every derived rule abbreviates a stretch in primitive rules (@def-derived-rule), so there is a derivation of \( \psi \) whose premises all belong to \( \Gamma \) and which uses primitive rules only. Fix one, with lines \( 1, \dots, n \); let \( \varphi_k \) be the formula on line \( k \) and \( \Gamma_k \) its context.
+**Step 1 (reduction to primitive rules).** Suppose \( \Gamma \vdash \psi \). As shown in the subsection on derivations of formulas, every chain of derived rules ends in primitive rules. So there is a derivation of \( \psi \) whose premises all belong to \( \Gamma \) and which uses primitive rules only. Fix one, with lines \( 1, \dots, n \); let \( \varphi_k \) be the formula on line \( k \) and \( \Gamma_k \) its context.
 
 **Step 2 (the induction).** For \( k \in \nN \), let \( S(k) \) be the statement: *if \( 1 \le k \le n \), then \( \Gamma_k \models \varphi_k \).* We prove \( S(k) \) for every \( k \) by @thm-strong-induction. So let \( k \in \nN \), and assume \( S(j) \) for every \( j < k \). If \( k = 0 \) or \( k > n \), there is nothing to prove, so let \( 1 \le k \le n \). Every line and every box that line \( k \) cites is available at line \( k \), and so lies before line \( k \) (@def-derivation). Hence the induction hypothesis \( \Gamma_j \models \varphi_j \) holds for every line \( j \) that line \( k \) cites, and for the last line of every box it cites.
 

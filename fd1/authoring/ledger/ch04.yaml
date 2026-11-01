@@ -102,6 +102,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: Two languages paragraph split into sentences; solution (e) cites the same
       clauses (F1), (F2)'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 4be26306890e
+    date: '2026-11-01'
+    evidence: 'Wording only. The ''Two languages'' paragraph was split into sentences (same list: names
+      for formulas such as phi and psi, names for lists such as Gamma, claims Gamma |- psi and, from 4.5
+      on, Gamma |= psi). Solution (e) now says the definition below gives bot as a formula by (F1...'
 - key: def-formula
   kind: def
   file: 01-formulas-and-parse-trees.md
@@ -167,6 +175,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: statement (F1)-(F4) byte-identical; In words and Why paragraphs split, same
       steps and numbers'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: fadb99e2bcd1
+    date: '2026-11-01'
+    evidence: The statement (F1)-(F4) is byte-identical. In the 'In words' (F4) bullet, the old 'finitely
+      many uses of (F2) and (F3)' now names them as negation (F2) and the binary clause (F3), and the
+      'blocks' analogy is split into two sentences. The two facts about formation sequences kee...
 - key: check:01-formulas-and-parse-trees:3
   kind: check
   file: 01-formulas-and-parse-trees.md
@@ -237,6 +253,13 @@ items:
     hash: e548add94313
     date: '2026-11-01'
     evidence: 'wording only: degenerate -> smallest; atom or bot has no building step, same meaning'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e548add94313
+    date: '2026-11-01'
+    evidence: Wording only. 'degenerate' became 'smallest', and 'a formula need not have been built at
+      all' became 'an atom or bot is a formula with no building step'. Both are true and mean the same.
 - key: exm-not-formulas
   kind: exm
   file: 01-formulas-and-parse-trees.md
@@ -366,6 +389,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: statement (T1)-(T4) byte-identical; new lead-in instance (p and not q) checked
       against exm-parse-trees (b)'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e3accb71e037
+    date: '2026-11-01'
+    evidence: 'The statement (T1)-(T4) is byte-identical. The new lead-in instance is checked: (p and
+      not q) is built from p and not q by and, and not q from q by not. Its tree is and at the root, p
+      on the left, not on the right with q below it, so it matches the part below the root in exm-p...'
 - key: exm-parse-trees
   kind: exm
   file: 01-formulas-and-parse-trees.md
@@ -423,6 +454,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: degenerate -> smallest; steps (T1),(T2),(T3),(T2) in the same order; sidecar
       passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 2c5c2ea3645d
+    date: '2026-11-01'
+    evidence: 'Wording only. ''degenerate'' became ''smallest'' in (a), which is true of a one-node tree.
+      The steps of (b) keep their order: (T1) atoms, (T2) not over q, (T3) and, (T2) not on top. The recipe
+      paragraph after it only had a semicolon split. The sidecar exm-parse-trees passes.'
 - key: def-subformula
   kind: def
   file: 01-formulas-and-parse-trees.md
@@ -486,6 +525,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: statement byte-identical; ''as far as we know'' hedge removed, 4.3 uniqueness
       pointer kept'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 9a8d496bb0d6
+    date: '2026-11-01'
+    evidence: The statement is byte-identical. The old 'Until Section 4.3 this depends, as far as we know,
+      on the parse tree chosen' became 'The definition uses a parse tree for phi', followed by the unchanged
+      'Section 4.3 shows there is only one, so ... determined by phi'. The dependence-o...
 - key: check:01-formulas-and-parse-trees:5
   kind: check
   file: 01-formulas-and-parse-trees.md
@@ -567,6 +614,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: template -> pattern; fold steps in order, def-derivation and scope rule still
       cited; check_fitch 0 errors'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 84e32b0746a1
+    date: '2026-11-01'
+    evidence: The italic line now says 'pattern' instead of 'template', and adds 'It stays a derivation
+      whatever formulas we put in for its atoms, as long as we put them in the same way everywhere'. That
+      restates the Substitution fact stated right after it, so it is true. The dropped signpo...
 - key: exr-formulas-and-parse-trees-a1
   kind: exr
   file: 01-formulas-and-parse-trees.md
@@ -674,6 +729,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: semicolons between strings (i)-(v) became commas; strings unchanged; sidecar
       passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 5dbd166fcf5d
+    date: '2026-11-01'
+    evidence: Only the semicolons between the strings (i)-(v) became commas. The strings are unchanged,
+      and the sidecar passes.
 - key: exr-formulas-and-parse-trees-a2
   kind: exr
   file: 01-formulas-and-parse-trees.md
@@ -710,6 +772,13 @@ items:
     hash: 75553054fd92
     date: '2026-11-01'
     evidence: 'wording only: semicolons in part 6 list became commas; strings unchanged; sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 75553054fd92
+    date: '2026-11-01'
+    evidence: Only the semicolons in the list of part 6 became commas. The four candidate strings are
+      unchanged, and the sidecar passes.
 - key: exr-formulas-and-parse-trees-b1
   kind: exr
   file: 01-formulas-and-parse-trees.md
@@ -783,6 +852,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: citation split, (a),(b) in prp-curry and (c) in prp-distributivity, checked
       against Ch1; sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: f94bb515bf38
+    date: '2026-11-01'
+    evidence: 'The citation was split. It now says (a) and (b) appear in @prp-curry and (c) in @prp-distributivity.
+      Checked against Ch1: prp-curry is (P and Q) -> R and P -> (Q -> R), and prp-distributivity contains
+      (P and Q) or (P and R). The new assignment is true, and both @refs are still...'
 - key: exr-formulas-and-parse-trees-b2
   kind: exr
   file: 01-formulas-and-parse-trees.md
@@ -927,6 +1004,14 @@ items:
     hash: e649d6f7c68f
     date: '2026-11-01'
     evidence: 'wording only: tree-shape sentence split; counts c1-c4 = 5 unchanged; sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e649d6f7c68f
+    date: '2026-11-01'
+    evidence: 'Solution (a): the tree-shape sentence was split and verbs were added. Checked against the
+      five formulas listed. The first two have leaf p on the left and a two-arrow chain on the right,
+      leaning right then left. The third has two one-arrow trees. The last two have a two-arrow c...'
 - key: ax-induction
   kind: ax
   file: 02-induction.md
@@ -1067,6 +1152,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: ''(see above)'' pointer dropped; values 2, 8, 20, base and step unchanged;
       sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 07587a2cf3f0
+    date: '2026-11-01'
+    evidence: 'wording only: solution drops the backward pointer ''(see above)'' after ''induction started
+      at 1''; statement, small-case values 2, 8, 20, base case and step unchanged; sidecar exm-sum-consecutive-products.py
+      passes. The lead-in sentence above the block (''a first proof ... written...'
 - key: exm-power-inequality
   kind: exm
   file: 02-induction.md
@@ -1304,6 +1397,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: proof steps word for word; Uses line @prp-vacuous-implication added for the
       vacuous base case'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b252d248cf2e
+    date: '2026-11-01'
+    evidence: 'wording only: proof steps (Q(n), base case by vacuous truth, step, conclusion) are word
+      for word. Only a Uses line was added: ''@prp-vacuous-implication (false hypothesis, true implication).''
+      That cites the fact the base case uses (''P(k) for every k<0, vacuously''), from Ch2 §01...'
 - key: check:02-induction:2
   kind: check
   file: 02-induction.md
@@ -1330,6 +1431,14 @@ items:
     hash: b753efdebf54
     date: '2026-11-01'
     evidence: 'wording only: question split into two sentences, both refs kept, solution unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b753efdebf54
+    date: '2026-11-01'
+    evidence: 'wording only: ''In the proof of @thm-strong-induction, to which property is @ax-induction
+      applied...'' is now split into ''The proof of @thm-strong-induction uses ordinary induction. To
+      which property is @ax-induction applied there...''. Same question, both refs kept, and the solu...'
 - key: exm-threes-and-fives
   kind: exm
   file: 02-induction.md
@@ -1382,6 +1491,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: closing paragraph split; n-3 = 5, 6, 7, bound 8, 7-5 = 2 unchanged; sidecar
       passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 16c4a0f4af2a
+    date: '2026-11-01'
+    evidence: 'wording only: the closing paragraph is split into sentences. The values n-3 = 5, 6, 7 for
+      n = 8, 9, 10, the bound 8, and ''7 - 5 = 2'' are unchanged. Sidecar exm-threes-and-fives.py passes.'
 - key: exm-strengthen-the-claim
   kind: exm
   file: 02-induction.md
@@ -1424,6 +1540,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: prose pointer dropped after ax-induction started at 1; ref, algebra, numbers
       unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d4a1b2882c91
+    date: '2026-11-01'
+    evidence: 'wording only: the Conclusion drops the prose pointer ''("Starting from another number")''
+      after ''@ax-induction started at 1''. The @ref is kept, and the algebra and numbers are unchanged.'
 - key: check:02-induction:3
   kind: check
   file: 02-induction.md
@@ -1452,6 +1575,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: ''Run the checklist'' -> ''Answer the five checklist questions''; ref and
       solution unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: fb7248853c51
+    date: '2026-11-01'
+    evidence: 'wording only: ''Run the checklist on @exm-threes-and-fives'' becomes ''Answer the five
+      checklist questions for @exm-threes-and-fives''. The ref is kept and the solution is unchanged.'
 - key: exr-induction-a1
   kind: exr
   file: 02-induction.md
@@ -1548,6 +1678,15 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: part (a) split; statements (i),(ii) unchanged; Q(m): P(m+5) and ax-induction
       kept; sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6b35ba7ccdfa
+    date: '2026-11-01'
+    evidence: 'wording only: part (a) is split into three sentences, ''(ordinary or strong)'' becomes
+      '', ordinary or strong.'', and statements (i) and (ii) are unchanged. In solution (c), ''("Starting
+      from another number")'' becomes '', that is,''. Q(m): P(m+5) and @ax-induction are kept. Sidecar
+      e...'
 - key: exr-induction-a2
   kind: exr
   file: 02-induction.md
@@ -1595,6 +1734,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: lead sentence deleted; item 10 names checklist items 1-3; item 12 renamed;
       sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 7fa739c1b9ee
+    date: '2026-11-01'
+    evidence: 'wording only: the descriptive lead sentence (''The parts run from locating the hypothesis...'')
+      is deleted. Item 10 becomes ''answer the first three checklist questions: objects, property, base
+      cases'', which matches checklist items 1-3 (Objects, Property, Base cases). In item 12 ...'
 - key: exr-induction-b1
   kind: exr
   file: 02-induction.md
@@ -1711,6 +1858,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: Marking scheme -> What a complete answer needs; 6 points and split unchanged;
       sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d16cf5f9926e
+    date: '2026-11-01'
+    evidence: 'wording only: the heading ''Marking scheme.'' is renamed ''What a complete answer needs.''
+      The 6 points and their split are unchanged. Sidecar exr-induction-b4.py passes.'
 - key: exr-induction-b5
   kind: exr
   file: 02-induction.md
@@ -1747,6 +1901,14 @@ items:
     hash: 81c3fb5f18be
     date: '2026-11-01'
     evidence: 'wording only: heading renamed; 6 points, a_n = 2^n + 1, base cases unchanged; sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 81c3fb5f18be
+    date: '2026-11-01'
+    evidence: 'wording only: the heading ''Marking scheme.'' is renamed ''What a complete answer needs.''
+      The 6 points, the split, a_n = 2^n + 1 and the two base cases are unchanged. Sidecar exr-induction-b5.py
+      passes.'
 - key: exr-induction-c4
   kind: exr
   file: 02-induction.md
@@ -1796,6 +1958,15 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: checklist question wording; 10 = 3+4+3, 1 vs 2, c = 0 unchanged; Fatal error
       -> Slips that lose the points; sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 4034ac4eb5be
+    date: '2026-11-01'
+    evidence: 'wording only: ''(b) Which item of the checklist fails'' becomes ''Which checklist question
+      fails''. Solution (b) adds ''the base cases'' after ''Item 3'', which matches checklist item 3.
+      ''Marking scheme'' becomes ''What a complete answer needs'' (10 = 3+4+3, unchanged). ''Fatal error
+      (0 f...'
 - key: exr-induction-c5
   kind: exr
   file: 02-induction.md
@@ -1846,6 +2017,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only: plain-claim sentence split; x = 1/2 + 1/(4(n+1)^2), R_2..R_4 = 3/4, 2/3,
       5/8 unchanged; sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 4d93a771b168
+    date: '2026-11-01'
+    evidence: 'wording only: the first sentence of the solution''s ''plain claim'' is split, and x = 1/2
+      + 1/(4(n+1)^2) is unchanged. ''Marking scheme'' becomes ''What a complete answer needs'' (10 points,
+      same split). ''Fatal error (0 for the step)'' becomes ''Slips that lose the step (0 points for i...'
 - key: thm-structural-induction
   kind: thm
   file: 03-structural-induction.md
@@ -1968,6 +2147,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
       wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
       hgt=3) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 4302711255dc
+    date: '2026-11-01'
+    evidence: 'wording only: ''By @def-formula (F4)'' → ''By @def-formula, clause (F4), every formula
+      ends some formation sequence, so …'' (true: (F4) says a formula is the last entry of a formation
+      sequence); the strong-induction steps keep their order; @def-formula and @thm-strong-induction ar...'
 - key: check:03-structural-induction:1
   kind: check
   file: 03-structural-induction.md
@@ -2036,6 +2223,22 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
       wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
       hgt=3) checked'
+  - stage: S5e
+    verdict: minor
+    by: s5e-referee
+    hash: d8753ecd1c87
+    date: '2026-11-01'
+    evidence: 'The mathematics is unchanged: ''formulas made by (F2)'' → ''the negations ¬φ'', and the
+      property and counterexample ¬p are the same. But the question now says ''step (ii) of structural
+      induction'' in words (new line 101). The old @thm-structural-induction is now in neither the item
+      ...'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: d8753ecd1c87
+    date: '2026-11-01'
+    evidence: '@thm-structural-induction restored in the question (split into two sentences to keep check_beginner
+      refs at 0); solution unchanged'
 - key: lem-parenthesis-count
   kind: lem
   file: 03-structural-induction.md
@@ -2159,6 +2362,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
       wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
       hgt=3) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 2a1e899dc593
+    date: '2026-11-01'
+    evidence: 'wording only: in the negation case, ''and the initial segment … before it, whose excess
+      is at least 1 by (c)'' is split into two sentences (''That has excess at least 1, by (c) for φ'').
+      Every case and number is unchanged.'
 - key: check:03-structural-induction:2
   kind: check
   file: 03-structural-induction.md
@@ -2298,6 +2509,13 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
       wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
       hgt=3) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ed8f91f8fd6e
+    date: '2026-11-01'
+    evidence: 'wording only: ''…and also the one just after ( and φ′, so φ and φ′ have the same length;
+      both are…'' is split into sentences. The argument and its citations are unchanged.'
 - key: def-height
   kind: def
   file: 03-structural-induction.md
@@ -2473,6 +2691,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
       wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
       hgt=3) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b5f58b132181
+    date: '2026-11-01'
+    evidence: 'wording only: sentences are split (''This makes sense, since…'', ''Then χ is neither…'',
+      ''So, by @thm-unique-readability, …'', ''The function h is (n+1)-good. At…''). The base case, existence,
+      uniqueness, @ax-induction started at 1 and @thm-unique-readability are all kept.'
 - key: check:03-structural-induction:3
   kind: check
   file: 03-structural-induction.md
@@ -2547,6 +2773,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
       wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
       hgt=3) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 748c283fcb19
+    date: '2026-11-01'
+    evidence: 'wording only: the atoms and subformulas clauses are split into sentences. ''each formula
+      kept only at its first appearance'' → ''In that list, each formula is kept only at its first appearance''
+      (same meaning). The ''Two checks'' paragraph gets First/Second and ''In the step for ¬φ''....'
 - key: exr-structural-induction-a1
   kind: exr
   file: 03-structural-induction.md
@@ -2584,6 +2818,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
       wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
       hgt=3) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 08c2369e536a
+    date: '2026-11-01'
+    evidence: 'wording only: statement 4 cites ''Unique Readability'' in words, and the @thm-unique-readability
+      citation moves into solution (d) (''…not used in the proof of @thm-unique-readability''). The answers
+      are unchanged.'
 - key: exr-structural-induction-a2
   kind: exr
   file: 03-structural-induction.md
@@ -2623,6 +2865,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
       wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
       hgt=3) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 24ddbefbf185
+    date: '2026-11-01'
+    evidence: 'wording only: (f) is rephrased as ''Take a longest branch …, and add in front the path
+      … This gives a branch …'', which is the same construction. The parenthesis in (l) becomes a sentence.
+      All numbers are unchanged, and verify/ch04/exr-structural-induction-a2.py passes.'
 - key: exr-induction-b2
   kind: exr
   file: 03-structural-induction.md
@@ -2705,6 +2955,13 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
       wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
       hgt=3) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: a1abeb329726
+    date: '2026-11-01'
+    evidence: 'wording only: the parenthesised remark after the conclusion is now plain sentences, with
+      the same claims (equality for chains of negations, strict inequality when there is a binary connective).'
 - key: exr-induction-b3
   kind: exr
   file: 03-structural-induction.md
@@ -2772,6 +3029,13 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
       wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
       hgt=3) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: c11ab29aaa68
+    date: '2026-11-01'
+    evidence: 'wording only: ''by @thm-structural-induction, using the recursive height of @exm-recursive-definitions''
+      is split into two sentences, with both refs kept. verify/ch04/exr-induction-b3.py passes.'
 - key: exr-structural-induction-b3
   kind: exr
   file: 03-structural-induction.md
@@ -2820,6 +3084,13 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
       wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
       hgt=3) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 473f90f195f4
+    date: '2026-11-01'
+    evidence: 'wording only: the opening sentence of (c) is split, with both refs kept. ''Marking scheme''
+      → ''What a complete answer needs'' (STYLE B4), and the points are unchanged. The sidecar passes.'
 - key: exr-induction-c1
   kind: exr
   file: 03-structural-induction.md
@@ -2892,6 +3163,14 @@ items:
       line 565 now accepts strong induction on the length, so the S6 finding is resolved. The solution
       is correct: in the ¬ case u'' is proper, and a formula, hence non-empty. The binary case uses lem
       (b) against (a). Poin'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 31d39a28a03d
+    date: '2026-11-01'
+    evidence: 'wording only: in the negation case, ''(φ″∘ψ″); by looking at the last step … φ″, and removing''
+      is split into sentences. The marking-scheme heading and ''Fatal errors (0 for the step)'' → ''Slips
+      that lose the step'' follow the B4 replacements, with the same points and the same slip...'
 - key: exr-induction-c2
   kind: exr
   file: 03-structural-induction.md
@@ -2978,6 +3257,13 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
       wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
       hgt=3) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b5d3a719b8d5
+    date: '2026-11-01'
+    evidence: 'wording only: in (b), ''it'' becomes ''that string'' (the string p∧q), and (b) and (d)
+      are split into sentences. The headings follow B4, and the points and the slip line are unchanged.'
 - key: exr-induction-c3
   kind: exr
   file: 03-structural-induction.md
@@ -3057,6 +3343,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
       wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
       hgt=3) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: f1776b91347e
+    date: '2026-11-01'
+    evidence: 'wording only: the title ''Exit check'' → ''Chapter check'' (the B4 replacement). The clause
+      for ⊥ and the other connectives becomes ''Also let …, and let … be as for ∧. These choices play
+      no part…'', with the same content. The headings follow B4, and verify/ch04/exr-induction-c3.py ...'
 - key: exr-structural-induction-c4
   kind: exr
   file: 03-structural-induction.md
@@ -3096,6 +3390,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
       wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
       hgt=3) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 32900401bec9
+    date: '2026-11-01'
+    evidence: 'wording only: the title says ''longer proofs'' instead of ''folded proofs'' (B3/B4). Statement
+      (b) names ''structural recursion'' in words, and @thm-structural-recursion is now cited in solution
+      (b). Solution (b) is split, and the uniqueness argument and its refs are unchanged.'
 - key: exr-structural-induction-c5
   kind: exr
   file: 03-structural-induction.md
@@ -3151,6 +3453,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, codes named in words, fold/prompt/marking-scheme
       wording renamed; statements, proof steps, numbers and refs unchanged; worked instances (paren counts,
       hgt=3) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 1c8702d0c9f8
+    date: '2026-11-01'
+    evidence: 'wording only: the Polish clauses and the four kinds of initial segment become displayed
+      lists with the same weights (0, ≤−1, 0, ≤0). ''the fold "Sets built from a base"'' becomes ''…earlier
+      in this section''. The slip line keeps its meaning, and verify/ch04/exr-structural-inductio...'
 - key: def-valuation
   kind: def
   file: 04-valuations-and-truth-tables.md
@@ -3198,6 +3508,13 @@ items:
       04:7-45 cites prp-excluded-middle, prp-vacuous-implication (both exist, ch02 05:284, 01:195), exr-proving-an-implication-b2
       is in 05-proving-an-implication.md = Section 1.4 (ch01 has no 03 file); 'Section 2.1 said' matches
       ch02 01:540,608; tonk fold matches blueprint item 1
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 346cff357bfe
+    date: '2026-11-01'
+    evidence: 'Only addition before the definition: ''One choice makes p true and q false; another makes
+      both true.'' This is true. The definition is unchanged.'
 - key: def-truth-value
   kind: def
   file: 04-valuations-and-truth-tables.md
@@ -3301,6 +3618,13 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: '04:120-141 recomputed: not q=F, p or not q=F, q and r=F, implication T; sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 2b6ba3f7de57
+    date: '2026-11-01'
+    evidence: The warning after it is split into four sentences with the same values (neg(p and q) = T,
+      neg p and neg q = F when v(p)=T, v(q)=F). The example itself is unchanged.
 - key: check:04-valuations-and-truth-tables:1
   kind: check
   file: 04-valuations-and-truth-tables.md
@@ -3350,6 +3674,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (coordinator diff vs 9f9dbb8): (Vi) codes named in words, sentences split,
       tonk aside cut; steps and values unchanged; new instances checked by verify/ch04/def-truth-table.py'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 8d1f04d541bb
+    date: '2026-11-01'
+    evidence: Solution F is unchanged. The steps (V4) for p or q = T, (V2) for neg r = F and (V5) are
+      each now named in words as 'the clause for ...'. Same steps, same order.
 - key: check:04-valuations-and-truth-tables:2
   kind: check
   file: 04-valuations-and-truth-tables.md
@@ -3399,6 +3730,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (coordinator diff vs 9f9dbb8): (Vi) codes named in words, sentences split,
       tonk aside cut; steps and values unchanged; new instances checked by verify/ch04/def-truth-table.py'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: aac71664addb
+    date: '2026-11-01'
+    evidence: Solution T is unchanged. The (V1) value of bot is now stated in its own sentence before
+      (V6), where the old text gave it in parentheses. The (V2), (V6) and (V4) steps are the same.
 - key: lem-coincidence
   kind: lem
   file: 04-valuations-and-truth-tables.md
@@ -3454,6 +3792,14 @@ items:
       induction hypothesis applies, and the proof''s conjunction case (04:196) uses the same reason. ''at
       most 2^n'' now reads ''exactly 2^n'' (04:219), which matches ''one for each way''. Checked the proof
       case by case against '
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: a396e082c256
+    date: '2026-11-01'
+    evidence: The statement is word for word the same. The atoms recursion is now a bulleted list with
+      the same four clauses. The new worked instance (v, w with p=T, q=F, differing on r, both give p
+      and neg q the value T) is true, and verify/ch04/def-truth-table.py checks it. It does not us...
 - key: proof:lem-coincidence
   kind: proof
   file: 04-valuations-and-truth-tables.md
@@ -3507,6 +3853,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (coordinator diff vs 9f9dbb8): (Vi) codes named in words, sentences split,
       tonk aside cut; steps and values unchanged; new instances checked by verify/ch04/def-truth-table.py'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 2a67ca980804
+    date: '2026-11-01'
+    evidence: 'The idea paragraph is split into three sentences with the same content. ''Every clause
+      of @def-formula'' is now ''Every way of building a formula'', and @def-formula sits in a new :::
+      {.uses} block inside the proof. The table rows and the three cases in the fold are unchanged. Onl...'
 - key: check:04-valuations-and-truth-tables:3
   kind: check
   file: 04-valuations-and-truth-tables.md
@@ -3593,6 +3947,14 @@ items:
     model: claude-opus-5-5
     evidence: 04:235-245 existence and independence argued via lem-coincidence; empty list case 04:243
       consistent; row order matches NOTATION row 150
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 0147a8369e3b
+    date: '2026-11-01'
+    evidence: 'New instance before the definition: the rows of p and q on p, q are TT, TF, FT, FF, true
+      only in TT. This matches the opening conjunction table, and the sidecar asserts both the row order
+      and the column. The definition is unchanged.'
 - key: exm-truth-table-modus-ponens
   kind: exm
   file: 04-valuations-and-truth-tables.md
@@ -3655,6 +4017,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (coordinator diff vs 9f9dbb8): (Vi) codes named in words, sentences split,
       tonk aside cut; steps and values unchanged; new instances checked by verify/ch04/def-truth-table.py'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 5d428d63fdcb
+    date: '2026-11-01'
+    evidence: 'The column explanations are split, with (V5) and (V3) named in words. The rows are the
+      same: F only in TF, T only in row 1, rows 2-4 vacuous. The reading of the ->E rule is split into
+      sentences with the same claim.'
 - key: exm-table-contrapositive
   kind: exm
   file: 04-valuations-and-truth-tables.md
@@ -3720,6 +4090,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (coordinator diff vs 9f9dbb8): (Vi) codes named in words, sentences split,
       tonk aside cut; steps and values unchanged; new instances checked by verify/ch04/def-truth-table.py'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 9aca5b11bfa0
+    date: '2026-11-01'
+    evidence: The comparison is split into two sentences. @prp-contrapositive and @prp-contrapositive-converse
+      both stay inline. 'needed a derivation that uses RAA' says the same as 'derived the way back with
+      a derivation that uses RAA'.
 - key: exm-backwards-from-f
   kind: exm
   file: 04-valuations-and-truth-tables.md
@@ -3782,6 +4160,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (coordinator diff vs 9f9dbb8): (Vi) codes named in words, sentences split,
       tonk aside cut; steps and values unchanged; new instances checked by verify/ch04/def-truth-table.py'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 3b5dda7b29da
+    date: '2026-11-01'
+    evidence: (V5) is moved to the front of the sentence and named in words. The steps 1-4 and the row
+      TTF are unchanged. In the method paragraph after it, 'has a name in this book' is now 'is called',
+      and one sentence is split. The method description is the same.
 - key: def-truth-function
   kind: def
   file: 04-valuations-and-truth-tables.md
@@ -3837,6 +4223,15 @@ items:
       is C1''s subscripted f_v, which is a different notation defined in its own item. The revised warning
       (04:380) uses p and q, which are atoms of the language. Its claim is correct: for a fixed real x,
       ''if x>2 then x^'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: cff7a698d50f
+    date: '2026-11-01'
+    evidence: 'New instance: (V3) maps (T,T) to T and every other pair to F, and p1 and p2 computes it
+      under every valuation. This is true, and the sidecar loop checks it. In the paragraph after the
+      definition, ''tables of (V4), (V5) and (V6)'' is now ''tables of their clauses, (V4)-(V6)'', and
+      ...'
 - key: check:04-valuations-and-truth-tables:4
   kind: check
   file: 04-valuations-and-truth-tables.md
@@ -3884,6 +4279,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (coordinator diff vs 9f9dbb8): (Vi) codes named in words, sentences split,
       tonk aside cut; steps and values unchanged; new instances checked by verify/ch04/def-truth-table.py'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 57ba3512f62d
+    date: '2026-11-01'
+    evidence: The question is split into 'Look back at @def-truth-table. Why does it need @lem-coincidence?'
+      and keeps both refs inline. The solution is unchanged. In the warning just before it, the epsilon-N
+      example became its own sentence ('So is ...'), with the same claim.
 - key: exr-valuations-and-truth-tables-a1
   kind: exr
   file: 04-valuations-and-truth-tables.md
@@ -3957,6 +4360,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (coordinator diff vs 9f9dbb8): (Vi) codes named in words, sentences split,
       tonk aside cut; steps and values unchanged; new instances checked by verify/ch04/def-truth-table.py'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 938ff7f92249
+    date: '2026-11-01'
+    evidence: Solutions (b) and (c) name (V6), (V5) and (V4) in words and split one sentence. The values
+      are the same. The a1 sidecar passes.
 - key: exr-valuations-and-truth-tables-a2
   kind: exr
   file: 04-valuations-and-truth-tables.md
@@ -4116,6 +4526,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (coordinator diff vs 9f9dbb8): (Vi) codes named in words, sentences split,
       tonk aside cut; steps and values unchanged; new instances checked by verify/ch04/def-truth-table.py'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: f52128cb6132
+    date: '2026-11-01'
+    evidence: '''Name the move'' is now ''Name the proof method'', and ''The move is'' is now ''The method
+      is''. The answer is still structural induction. The final sentence is split into two, and @def-formula
+      and @thm-structural-induction both stay inline. The computation is unchanged.'
 - key: exr-valuations-and-truth-tables-b3
   kind: exr
   file: 04-valuations-and-truth-tables.md
@@ -4219,6 +4637,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (coordinator diff vs 9f9dbb8): (Vi) codes named in words, sentences split,
       tonk aside cut; steps and values unchanged; new instances checked by verify/ch04/def-truth-table.py'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 0a4adc3f2a34
+    date: '2026-11-01'
+    evidence: The statement 'With the atom p for ... write ...' is now 'Let the atom p stand for ... .
+      Write ...'. The tasks and the 3/3/... point split are the same. Only the heading 'Marking scheme'
+      became 'What a complete answer needs'.
 - key: exr-valuations-and-truth-tables-b5
   kind: exr
   file: 04-valuations-and-truth-tables.md
@@ -4266,6 +4692,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (coordinator diff vs 9f9dbb8): (Vi) codes named in words, sentences split,
       tonk aside cut; steps and values unchanged; new instances checked by verify/ch04/def-truth-table.py'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 2c27441ce5ef
+    date: '2026-11-01'
+    evidence: Only the heading 'Marking scheme' changed, to 'What a complete answer needs'. The integers
+      30, 6, 10, 2, 15, 3, 5, 1 and the points are unchanged, and the sidecar passes.
 - key: exr-valuations-and-truth-tables-c1
   kind: exr
   file: 04-valuations-and-truth-tables.md
@@ -4324,6 +4757,14 @@ items:
     model: claude-opus-5-5
     evidence: 04:671-679 parity claim checked by script on all ↔-built formulas of depth ≤2 over p,q,r;
       (b) matches q. Scheme sums to 10.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 1afb32bb9a85
+    date: '2026-11-01'
+    evidence: The step names (V6) in words. 'Every clause ... is covered, so' is split into two sentences,
+      and both refs stay. 'Fatal errors (0 for the step)' is now 'Slips that lose the step' and lists
+      the same two errors. The c1 sidecar passes.
 - key: exr-valuations-and-truth-tables-c2
   kind: exr
   file: 04-valuations-and-truth-tables.md
@@ -4423,6 +4864,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (coordinator diff vs 9f9dbb8): (Vi) codes named in words, sentences split,
       tonk aside cut; steps and values unchanged; new instances checked by verify/ch04/def-truth-table.py'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 05c07033fa3b
+    date: '2026-11-01'
+    evidence: In the flawed proof, lines (2)-(4) name (V3), (V4) and (V5) in words. Line (4) still gives
+      the false reason 'because v_T(phi) = F', so the error the exercise asks for is still there, and
+      the rubric still points at line (4). The repaired (d) is split into two sentences with the...
 - key: exr-valuations-and-truth-tables-c3
   kind: exr
   file: 04-valuations-and-truth-tables.md
@@ -4494,6 +4943,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (coordinator diff vs 9f9dbb8): (Vi) codes named in words, sentences split,
       tonk aside cut; steps and values unchanged; new instances checked by verify/ch04/def-truth-table.py'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 2325517af5f5
+    date: '2026-11-01'
+    evidence: 'The long parenthetical in the statement is moved into sentences with the same content:
+      @thm-structural-recursion on the pair of truth values, and bot, -> and <-> given any values. The
+      clause table is unchanged. (c) ''Section 4.2''s move, proving more in order to prove less'' is n...'
 - key: def-tautology
   kind: def
   file: 05-entailment-and-equivalence.md
@@ -4540,6 +4997,14 @@ items:
     evidence: '05:11-27: definition, lem-coincidence reduction (04:177), examples, the ''contingent''
       sentence (blueprint 4.5 item 1, verbatim) and the no-atoms fold all check; the 4.4 A1 pointer (04:406,
       p<->not p) is right'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d0e0c2e70703
+    date: '2026-11-01'
+    evidence: 'wording only: the lead-in now has two sentences (@exm-truth-table-modus-ponens and @exm-table-contrapositive
+      both kept). The new plain-words sentence ''true in every row'' is true. The nonexample reason was
+      rephrased (''In p->p ... same atom, so no row gives them different values...'
 - key: def-satisfiable
   kind: def
   file: 05-entailment-and-equivalence.md
@@ -4598,6 +5063,14 @@ items:
       the direction is resolved. 09:258 uses it to go from unsatisfiable to tautology. 06:3 opens from
       4.5''s reduction of every question to unsatisfiability (the table at 05:480-488, which includes
       this case; 05:95 also '
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 249c97d1d7b9
+    date: '2026-11-01'
+    evidence: 'wording only: new instance before the definition (row p=T makes p true, row p=F makes not-p
+      true, no single row makes both true), which is true. The 44-word sentence was split. ''by (V2) of
+      @def-truth-value'' became ''negation flips the value, (V2) of @def-truth-value'', with the ...'
 - key: def-valid-argument
   kind: def
   file: 05-entailment-and-equivalence.md
@@ -4645,6 +5118,14 @@ items:
       fold (lem-weakening-cut 2.3 (a) asks only membership, so it does cover order and repetition; one-line
       derivation allowed by def-derivable ''all belong to''), counterexample-set sentence, figure as blueprint
       item 4'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 811bb00850ca
+    date: '2026-11-01'
+    evidence: 'wording only: new instance before the definition (in the table of @exm-truth-table-modus-ponens
+      only row TT makes p->q and p true, and q is T there), checked by brute force and recorded in a new
+      ledger row. ''We want to prove, in Sections 4.7 and 4.8'' became ''Sections 4.7 and 4...'
 - key: check:05-entailment-and-equivalence:1
   kind: check
   file: 05-entailment-and-equivalence.md
@@ -4783,6 +5264,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, inline sources moved to Uses
       lines, classical-direction remark moved to For instructors fold; instances (contrary pair, replacement,
       substitution, modus ponens rows) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: c8550564cb03
+    date: '2026-11-01'
+    evidence: 'wording only: the solution now glosses (V4) as ''a disjunction with a true part is true''
+      and (V5) as ''a true hypothesis with a false conclusion gives F''. Both are true and justify the
+      same forced steps. Semicolons became full stops in the vee-E paragraph. The steps, their order...'
 - key: exm-grouping-of-implications
   kind: exm
   file: 05-entailment-and-equivalence.md
@@ -4913,6 +5402,14 @@ items:
     model: claude-opus-5-5
     evidence: '05:190-202: paraphrase and ⊨φ↔ψ via V6 are right; the claim that →E treats p∧q and q∧p
       as different matches 1.3 at 04:60'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 81e3a7854ccc
+    date: '2026-11-01'
+    evidence: 'wording only: the definition is unchanged. ''By (V6) of @def-truth-value'' is now glossed
+      as ''a biconditional is true exactly when its two sides have the same value'', with the ref kept.
+      The reflexive, symmetric and transitive properties and the three examples became bulleted lis...'
 - key: prp-standard-equivalences
   kind: prp
   file: 05-entailment-and-equivalence.md
@@ -4986,6 +5483,14 @@ items:
       02:157) states the course-of-values form on ℕ, and the base case is covered by the vacuous hypothesis.
       With (V3)/(V4), this proves that a grouping is true exactly when every term is (some term, for ∨).
       05:302 now
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 32257867292e
+    date: '2026-11-01'
+    evidence: 'wording only: the statement is unchanged. The .idea was split into four sentences with
+      the same content. The RAA/LEM sentence moved into a ''For instructors'' second-reading fold, and
+      all three refs are kept: @prp-de-morgan (d), @prp-double-negation and @prp-implication-as-disju...'
 - key: proof:prp-standard-equivalences
   kind: proof
   file: 05-entailment-and-equivalence.md
@@ -5053,6 +5558,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, inline sources moved to Uses
       lines, classical-direction remark moved to For instructors fold; instances (contrary pair, replacement,
       substitution, modus ponens rows) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: fec3136caaff
+    date: '2026-11-01'
+    evidence: 'wording only: the proof has the same steps in the same order. ''(V2)-(V6) of @def-truth-value''
+      moved to the end of its sentence. ''by the paraphrase of @def-semantic-equivalence'' became ''because
+      equivalent formulas are those with the same value under every valuation (@def-semant...'
 - key: check:05-entailment-and-equivalence:3
   kind: check
   file: 05-entailment-and-equivalence.md
@@ -5126,6 +5639,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, inline sources moved to Uses
       lines, classical-direction remark moved to For instructors fold; instances (contrary pair, replacement,
       substitution, modus ponens rows) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 8c33bfe1e1c4
+    date: '2026-11-01'
+    evidence: 'wording only: the definition sentence became a three-item list, word for word apart from
+      the bullets, with the same three conditions. The new instance before it (p and q against not-p:
+      no row makes both true, and row p=T, q=F makes both false, so the pair is contrary) checks b...'
 - key: check:05-entailment-and-equivalence:5
   kind: check
   file: 05-entailment-and-equivalence.md
@@ -5190,6 +5711,14 @@ items:
     model: claude-opus-5-5
     evidence: '05:364-368: the statement matches the blueprint; ''occurrence'' is defined at 05:362 before
       use (09:341 points back to it)'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ac43eaa6c067
+    date: '2026-11-01'
+    evidence: 'wording only: the statement is unchanged. The lead-in ''This is what makes chains ... legitimate''
+      became ''So we may compute by a chain of equivalences ...'', with the same meaning. The new instance
+      (replacing not-not-r by r in p -> (q or not-not-r)) checks by brute force and has...'
 - key: proof:lem-replacement
   kind: proof
   file: 05-entailment-and-equivalence.md
@@ -5243,6 +5772,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, inline sources moved to Uses
       lines, classical-direction remark moved to For instructors fold; instances (contrary pair, replacement,
       substitution, modus ponens rows) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 34d7f9173de2
+    date: '2026-11-01'
+    evidence: 'wording only: the cases and steps are the same, in the same order. @def-parse-tree moved
+      from inline to a Uses line, ''@def-parse-tree (subtrees of the immediate parts)'', and the ledger
+      row is kept. The paraphrase ref to @def-semantic-equivalence is kept. (V2) is glossed as ''ne...'
 - key: exm-substitution-in-one-row
   kind: exm
   file: 05-entailment-and-equivalence.md
@@ -5308,6 +5845,14 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: '05:437-446: σ is defined by thm-structural-recursion (cited, 05:410)'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d0c1b61b7a90
+    date: '2026-11-01'
+    evidence: 'wording only: the statement is unchanged. The new instance (q and r for p in p or not-p,
+      a tautology in every row) is true and has a ledger row. In ''the function on formulas defined by
+      recursion'', ''the'' became ''a'' and the sentence was split (@thm-structural-recursion kept). Th...'
 - key: proof:lem-substitution
   kind: proof
   file: 05-entailment-and-equivalence.md
@@ -5367,6 +5912,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, inline sources moved to Uses
       lines, classical-direction remark moved to For instructors fold; instances (contrary pair, replacement,
       substitution, modus ponens rows) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 8eb3d4c58e7f
+    date: '2026-11-01'
+    evidence: 'wording only: the claim proof keeps the same cases. (V1) is glossed as ''bot is false under
+      every valuation'' and (V2) as ''negation flips the value'', and semicolons became full stops. Parts
+      (a) and (b) are unchanged.'
 - key: exr-entailment-and-equivalence-a1
   kind: exr
   file: 05-entailment-and-equivalence.md
@@ -5440,6 +5993,13 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, inline sources moved to Uses
       lines, classical-direction remark moved to For instructors fold; instances (contrary pair, replacement,
       substitution, modus ponens rows) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 19bdd07d5b41
+    date: '2026-11-01'
+    evidence: 'wording only: the five formulas of part 1 moved from a semicolon list into a displayed
+      line. They are the same five formulas in the same order, and the a1 sidecar passes.'
 - key: exr-entailment-and-equivalence-a2
   kind: exr
   file: 05-entailment-and-equivalence.md
@@ -5681,6 +6241,13 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, inline sources moved to Uses
       lines, classical-direction remark moved to For instructors fold; instances (contrary pair, replacement,
       substitution, modus ponens rows) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 68b79f988e77
+    date: '2026-11-01'
+    evidence: 'wording only: the solution''s ''(V5)'' now has the gloss ''an implication with a false
+      hypothesis is true''. The steps are unchanged.'
 - key: exr-entailment-and-equivalence-b4
   kind: exr
   file: 05-entailment-and-equivalence.md
@@ -5729,6 +6296,21 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, inline sources moved to Uses
       lines, classical-direction remark moved to For instructors fold; instances (contrary pair, replacement,
       substitution, modus ponens rows) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 8fe5cb46e8e3
+    date: '2026-11-01'
+    evidence: 'wording only: ''Marking scheme'' became ''What a complete answer needs'' and ''Fatal error''
+      became ''Slips that lose the step''. The witness bullet was split into two sentences. The 6 points
+      are unchanged and the b4 sidecar passes. A small wording mismatch remains: ''Slips that lose t...'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 8fe5cb46e8e3
+    date: '2026-11-01'
+    evidence: Marking leftover 'Slips that lose the step (0 for the part)' now 'Slips that lose the part
+      (0 for it)'; nothing else changed
 - key: exr-entailment-and-equivalence-c1
   kind: exr
   file: 05-entailment-and-equivalence.md
@@ -5821,6 +6403,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, inline sources moved to Uses
       lines, classical-direction remark moved to For instructors fold; instances (contrary pair, replacement,
       substitution, modus ponens rows) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 38ecaee8f804
+    date: '2026-11-01'
+    evidence: 'wording only: ''move'' became ''proof method'', and the clause added to @def-truth-value
+      is now its own sentence (both refs kept). (V1) and (V2) are glossed. The eight cases and the 10-point
+      scheme are unchanged, and ''Fatal errors'' became ''Slips that lose the step''.'
 - key: exr-entailment-and-equivalence-c2
   kind: exr
   file: 05-entailment-and-equivalence.md
@@ -5915,6 +6505,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, inline sources moved to Uses
       lines, classical-direction remark moved to For instructors fold; instances (contrary pair, replacement,
       substitution, modus ponens rows) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 7e4aab9dcc4d
+    date: '2026-11-01'
+    evidence: 'wording only: ''By the paraphrase of @def-semantic-equivalence'' became ''as shown after
+      @def-semantic-equivalence'', with the ref kept. The steps and the 10 points are unchanged, and ''Fatal
+      errors'' was renamed.'
 - key: exr-entailment-and-equivalence-c3
   kind: exr
   file: 05-entailment-and-equivalence.md
@@ -5945,6 +6543,15 @@ items:
     model: claude-opus-5-5
     evidence: 05:813-819 each instance is checked and is non-circular (no → in Γ, φ, ψ). My alternative
       (⊥ ⊨ q gives t(F,·)=T) scores fully under 'or any other correct instance'.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b583409797ea
+    date: '2026-11-01'
+    evidence: 'wording only: only the heading changed (''Marking scheme'' became ''What a complete answer
+      needs'', ''Fatal errors'' became ''Slips that lose the step''). The 10 points and the slip list
+      are unchanged, and the c3 sidecar passes. Note: the ledger does not mark this item STALE although
+      ...'
 - key: exr-entailment-and-equivalence-c4
   kind: exr
   file: 05-entailment-and-equivalence.md
@@ -5975,6 +6582,14 @@ items:
     model: claude-opus-5-5
     evidence: 05:851-857 all four biconditionals correctly unpacked into row statements; scheme sums to
       10.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 96b7b03cce6a
+    date: '2026-11-01'
+    evidence: 'wording only: in (a) and (d), ''display after'' and ''paraphrase of @def-semantic-equivalence''
+      became ''as shown after'' and ''equivalence means the same value under every valuation (@def-semantic-equivalence)'',
+      with the ref kept. In (b), (V1) is now glossed in a separate sentence. ...'
 - key: check:06-refuting-row-search:1
   kind: check
   file: 06-refuting-row-search.md
@@ -6016,6 +6631,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
       move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
       q, not p checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 760b28f664b2
+    date: '2026-11-01'
+    evidence: Wording only. The region has three changes. In the ¬¬ row of the table, '(V2) twice' became
+      'negation flips, (V2), twice'. The 'cover' sentence was split at the parenthesis, with the same
+      claim. A new unlabeled worked instance (p∨q, ¬p) was added before def-search-tree. I chec...
 - key: def-search-tree
   kind: def
   file: 06-refuting-row-search.md
@@ -6057,6 +6680,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
       move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
       q, not p checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: c6715199f7ba
+    date: '2026-11-01'
+    evidence: Wording only. The long first sentence became six sentences with the same conditions. χ is
+      not yet used on B and is not an atom, a negated atom, ⊥ or ¬⊥. A one-way rule adds one node and
+      a two-way rule adds two side by side. χ and every formula equal to it become used. 'Used' s...
 - key: exm-refuting-row-search-closed
   kind: exm
   file: 06-refuting-row-search.md
@@ -6122,6 +6753,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
       move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
       q, not p checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 8b6a05c5be76
+    date: '2026-11-01'
+    evidence: 'Wording only. "Section 3.2''s exit check" became "the chapter check at the end of Section
+      3.2". The @exr-four-kinds-of-task-c1 ref is kept inline, and its title is ''C1: Chapter check''.
+      A parenthesis was unwrapped. The stages, the closed branches and the verdict are unchanged, a...'
 - key: exm-refuting-row-search-open
   kind: exm
   file: 06-refuting-row-search.md
@@ -6152,6 +6791,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
       move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
       q, not p checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ed7298b48823
+    date: '2026-11-01'
+    evidence: Wording only. The labels '(used)' became 'carries the used formulas p→(q∨r), q→s, ¬(p→s)
+      and q∨r, and also p, ¬s, r and ¬q'. That is the same set with the same used formulas. A parenthesis
+      was unwrapped. The sidecar passes.
 - key: check:06-refuting-row-search:2
   kind: check
   file: 06-refuting-row-search.md
@@ -6180,6 +6827,13 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
       move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
       q, not p checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 244ed9e12001
+    date: '2026-11-01'
+    evidence: Wording only. Semicolons became sentences and 'by r' became 'since r is'. The same four
+      justifications remain, and each is true in the row p, r true and q, s false.
 - key: prp-search-decides
   kind: prp
   file: 06-refuting-row-search.md
@@ -6218,6 +6872,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
       move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
       q, not p checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e645b2c37788
+    date: '2026-11-01'
+    evidence: Statement (c) was recast as 'Let … have … and let v_B be the valuation … Then v_B makes
+      every formula on B true, in particular every formula of Δ.' It means exactly the old 'If … then
+      the valuation v_B … makes …'. (a), (b) and the closing 'So …' are word for word. The new plai...
 - key: proof:prp-search-decides
   kind: proof
   file: 06-refuting-row-search.md
@@ -6262,6 +6924,21 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
       move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
       q, not p checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 9e713d57fb57
+    date: '2026-11-01'
+    evidence: 'Every step is kept in order. In (a), only sentences were split. In the bullets of (b),
+      the codes became words: ''negation flips'' for V2, ''a false implication has a true hypothesis and
+      a false conclusion, (V5)'', and similar. Each reason is correct for its rule. The closed-branch...'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 9e713d57fb57
+    date: '2026-11-01'
+    evidence: 'Not-iff bullet: circular reason ''since the parts differ and negation flips'' now ''since
+      negation flips the value of a part''; true, same case split'
 - key: check:06-refuting-row-search:3
   kind: check
   file: 06-refuting-row-search.md
@@ -6315,6 +6992,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
       move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
       q, not p checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e4786832dc79
+    date: '2026-11-01'
+    evidence: Wording only. The parenthesis was unwrapped into 'No integer has it, since a multiple of
+      4 is even.' 'The warning at the end of Section 4.4' became 'as Section 4.4 warned'. The numbers
+      4 and 3 and both rows are unchanged, and the sidecar passes.
 - key: check:06-refuting-row-search:4
   kind: check
   file: 06-refuting-row-search.md
@@ -6382,6 +7067,13 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
       move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
       q, not p checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: c23f37232ddb
+    date: '2026-11-01'
+    evidence: Wording only. In (a), semicolons became commas in the list. In (b), '(used)' became 'carries
+      the used formula p→q, and ¬q, ¬p, r'. That is the same branch and gives the same row.
 - key: exr-refuting-row-search-a2
   kind: exr
   file: 06-refuting-row-search.md
@@ -6420,6 +7112,13 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
       move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
       q, not p checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 8fb601d5e4ce
+    date: '2026-11-01'
+    evidence: Wording only. In (g), '(used)' became 'the used formula ¬(p∧q), and p, ¬q'. In solution
+      (i), semicolons became sentences. The verdicts are unchanged, and the sidecar passes.
 - key: exr-refuting-row-search-b1
   kind: exr
   file: 06-refuting-row-search.md
@@ -6532,6 +7231,13 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
       move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
       q, not p checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ddd1195524b2
+    date: '2026-11-01'
+    evidence: 'Only the heading changed: ''Marking scheme'' became ''What a complete answer needs''. The
+      points are unchanged, and the sidecar passes.'
 - key: exr-refuting-row-search-b3
   kind: exr
   file: 06-refuting-row-search.md
@@ -6578,6 +7284,13 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
       move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
       q, not p checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e6902061ef01
+    date: '2026-11-01'
+    evidence: '''move'' became ''next step'' in the title, the prompt, the solution and the scheme, and
+      the heading was renamed. The tree, the verdict and the points are unchanged, and the sidecar passes.'
 - key: exr-refuting-row-search-c1
   kind: exr
   file: 06-refuting-row-search.md
@@ -6616,6 +7329,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
       move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
       q, not p checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 77121edfdc07
+    date: '2026-11-01'
+    evidence: '''the clause (V7) of @exr-…'' became ''the clause for "not both", (V7), of @exr-…'', and
+      the ref is kept. The heading was renamed. The solution and the points are unchanged, and the sidecar
+      passes.'
 - key: exr-refuting-row-search-c2
   kind: exr
   file: 06-refuting-row-search.md
@@ -6653,6 +7374,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
       move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
       q, not p checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 2759ad2543d5
+    date: '2026-11-01'
+    evidence: In the title, 'Exit check' became 'Chapter check'. 'Order of moves' became 'order of stages'.
+      The heading was renamed, and 'Fatal errors' became 'Slips that lose the step', with the same two
+      slips and the same 0 for the part. The trees and rows are unchanged, and the sidecar p...
 - key: exr-refuting-row-search-c3
   kind: exr
   file: 06-refuting-row-search.md
@@ -6691,6 +7420,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rule table reasons in words, sentences split,
       move -> step/proof method; prp-search-decides proof steps in order with Uses line; instance p or
       q, not p checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 65b78ed177ae
+    date: '2026-11-01'
+    evidence: In (b), the V7 citation moved after the clause and is now in words. In (c), a sentence was
+      split and 'by its clause, (V7)' was added. The steps are the same. The heading and the fatal-error
+      line were renamed.
 - key: check:07-soundness:1
   kind: check
   file: 07-soundness.md
@@ -6856,6 +7593,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
       inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 06c6548c1b90
+    date: '2026-11-01'
+    evidence: 'wording only: the ''impossible: then'' sentence is split in two, and the five box-rule
+      @refs (def-rules-implication, -negation, def-rule-raa, -disjunction, -biconditional) plus def-derivation
+      move from the sentence into a Uses line at the end of the proof. The steps keep their o...'
 - key: check:07-soundness:2
   kind: check
   file: 07-soundness.md
@@ -6907,6 +7652,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
       inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 2ceaddc992af
+    date: '2026-11-01'
+    evidence: 'wording only: ''which clause (V2) of @def-truth-value forbids'' becomes ''That is impossible,
+      since negation flips the truth value, clause (V2) of @def-truth-value.'' Same fact, same reference.'
 - key: thm-soundness
   kind: thm
   file: 07-soundness.md
@@ -6950,6 +7702,14 @@ items:
     model: claude-opus-5-5
     evidence: 07:177-181. The statement is complete. Gamma is a finite list, matching def-derivable and
       def-valid-argument.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 8baab2d38ecf
+    date: '2026-11-01'
+    evidence: 'wording only: the statement is unchanged. In the Idea, (V5) is now said in words (''an
+      implication with a false hypothesis is true''), ''moves'' becomes ''observations'', ''Step roadmap:''
+      becomes ''The proof has four steps.'', and the inline @def-truth-value in step 3 becomes ''the defi...'
 - key: proof:thm-soundness
   kind: proof
   file: 07-soundness.md
@@ -7026,6 +7786,21 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
       inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
+  - stage: S5e
+    verdict: minor
+    by: s5e-referee
+    hash: 2cbc955023c5
+    date: '2026-11-01'
+    evidence: 'The cases are wording only: each (V1)-(V6) is said in words and checked against def-truth-value
+      (fd1/src/ch04.../04-valuations-and-truth-tables.md:83-89), the cases keep their order, and the Uses
+      line has def-truth-value and lem-context-inclusion. One imprecision is in Step 1 ...'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 2cbc955023c5
+    date: '2026-11-01'
+    evidence: Step 1 no longer cites def-derived-rule for the reduction; restored old pointer to the subsection
+      on derivations of formulas (chain of derived rules ends in primitive rules), as at 9f9dbb8
 - key: exm-soundness-run
   kind: exm
   file: 07-soundness.md
@@ -7224,6 +7999,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
       inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: cb4f244d5e59
+    date: '2026-11-01'
+    evidence: 'wording only: ''are made true by no row at all'' becomes ''No row at all makes ... true,
+      since p and p->q force q''. The sentences are split, with the same content.'
 - key: exr-soundness-a1
   kind: exr
   file: 07-soundness.md
@@ -7297,6 +8079,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
       inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: c44aa76a9128
+    date: '2026-11-01'
+    evidence: 'wording only: the solution''s part (d) is split at the semicolon. The row and the derivation
+      are unchanged.'
 - key: exr-soundness-a2
   kind: exr
   file: 07-soundness.md
@@ -7335,6 +8124,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
       inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 29907643c2a9
+    date: '2026-11-01'
+    evidence: 'wording only: item 11 is split into two sentences and asks the same question. Answer (k)
+      adds ''The disjunction clause, (V4): a true disjunction has a true part'', which is true.'
 - key: exr-soundness-b1
   kind: exr
   file: 07-soundness.md
@@ -7499,6 +8295,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
       inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: f084156c47a4
+    date: '2026-11-01'
+    evidence: 'wording only: the parenthetical description of what line k cites (line i holding phi v
+      psi; box a-b from phi to chi; box c-d from psi to chi) becomes separate sentences, with the same
+      data.'
 - key: exr-soundness-b3
   kind: exr
   file: 07-soundness.md
@@ -7536,6 +8340,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
       inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b3e4e6620c2f
+    date: '2026-11-01'
+    evidence: 'wording only: the commentary on parts (c), (e) and (f) is split into sentences starting
+      with ''Part''. The derivations are unchanged, and the sidecar exr-soundness-b3.py passes.'
 - key: exr-soundness-b4
   kind: exr
   file: 07-soundness.md
@@ -7573,6 +8384,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
       inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: f1b43e77c592
+    date: '2026-11-01'
+    evidence: 'wording only: ''(b) Name the move that works'' becomes ''Say what works instead''. In the
+      solution, the parenthetical about q as a case-box assumption is unbracketed. The row p=T, q=F, r=T
+      is unchanged, and exr-soundness-b4.py passes.'
 - key: exr-soundness-c1
   kind: exr
   file: 07-soundness.md
@@ -7632,6 +8451,14 @@ items:
     model: claude-opus-5-5
     evidence: 07:818-844; X case right; the Y derivation p⊢q and row T,F are right; an alternative p∨q⊢p∧q
       earns full marks under the scheme
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: eeac6261786b
+    date: '2026-11-01'
+    evidence: 'wording only: the (V3) and (V4) steps in (a) are said in words, and (b) names ''the disjunction
+      clause (V4)'' and ''the conjunction clause (V3)''. The rubric says the same, and ''Fatal errors''
+      becomes ''Slips that lose the step'' (STYLE 653). exr-soundness-c1.py passes.'
 - key: exr-soundness-c2
   kind: exr
   file: 07-soundness.md
@@ -7732,6 +8559,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
       inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d93cf9bc9599
+    date: '2026-11-01'
+    evidence: 'wording only: the title ''Exit check'' becomes ''Chapter check'' (STYLE 224/654). The task
+      sentence is split. The solution describes each box as ''from the assumption phi on line a to the
+      formula psi on line b'', the same a and b as before. The rubric''s parenthetical becomes sub-bul...'
 - key: exr-soundness-c3
   kind: exr
   file: 07-soundness.md
@@ -7779,6 +8614,13 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
       inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 7dc9d4f924f5
+    date: '2026-11-01'
+    evidence: 'wording only: ''Replace the disjunction clause (V4) by'', and the rubric heading is renamed.
+      exr-soundness-c3.py passes.'
 - key: exr-soundness-c4
   kind: exr
   file: 07-soundness.md
@@ -7829,6 +8671,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
       inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 2fea502fd237
+    date: '2026-11-01'
+    evidence: 'wording only: ''by the usual clauses (V3)-(V6)''. The solution''s (a) and (b) are split,
+      and the parentheticals on prp-double-negation (b) using RAA and prp-ex-falso using bot-E become
+      sentences (''For instance ... uses ...''), with the same facts and references. The rubric is rewo...'
 - key: exr-soundness-c5
   kind: exr
   file: 07-soundness.md
@@ -7924,6 +8774,14 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
       inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b71f9f67094e
+    date: '2026-11-01'
+    evidence: 'wording only: ''the three-valued valuation of the optional excursion below'' becomes ''at
+      the end of this section''. That is true: the Optional excursion at line 1024 is the last part of
+      the section, so this is not a new reference. The rubric heading is renamed. exr-soundness-c5.p...'
 - key: thm-raa-independent
   kind: thm
   file: 07-soundness.md
@@ -8063,6 +8921,15 @@ items:
     date: '2026-11-01'
     evidence: 'wording only (coordinator diff vs 9f9dbb8): truth clauses named in words, sentences split,
       inline sources moved to Uses lines; soundness cases, lemma steps, rows and counts unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: f9bb4c42a37e
+    date: '2026-11-01'
+    evidence: 'wording only: ''the cases k=0 and k>n being vacuous'' becomes ''are vacuous'', and ''Two
+      facts do the bookkeeping'' becomes ''Two facts about contexts are used throughout''. A Uses line
+      is added with thm-soundness and lem-context-inclusion, both already cited inline. All values and
+      in...'
 - key: check:08-completeness:1
   kind: check
   file: 08-completeness.md
@@ -8208,6 +9075,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
       Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
       (p,not q |- not(p->q); q |- p or q) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 0f5a4ca86046
+    date: '2026-11-01'
+    evidence: 'wording only: sentences split; @prp-vacuous-implication and @exm-double-negation-introduction
+      moved to the proof''s Uses line (and ledger); (bot 1) described as ''a one-line box, as in Section
+      2.2''; @exr-proving-an-implication-b2 (a) still named only as ''the same derivation'' (th...'
 - key: check:08-completeness:2
   kind: check
   file: 08-completeness.md
@@ -8306,6 +9181,14 @@ items:
       (08:52-56). The atom case, ⊥ via (⊥1) plus weakening, and ¬ via (¬1) or the hypothesis itself are
       right. ∧ covers TT, F-anything and TF; → covers F-anything, TT and TF; ∨ and ↔ at 08:289 match the
       tag table at 08:'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d5e34e0e1ceb
+    date: '2026-11-01'
+    evidence: 'wording only: statement unchanged; ''In words'' paragraph reordered with the same meaning;
+      idea''s inline @thm-structural-induction and @lem-weakening-cut (c) moved to a Uses line. New instance
+      before the label (row p T, q F: signed atoms p, not-q; p->q false; lemma gives p, not-...'
 - key: proof:lem-truth-table-line
   kind: proof
   file: 08-completeness.md
@@ -8361,6 +9244,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
       Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
       (p,not q |- not(p->q); q |- p or q) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 2df4008d098b
+    date: '2026-11-01'
+    evidence: 'wording only: same cases and steps in order; ''Let alpha or beta be an immediate part...''
+      split of the old sentence; weakening now ''part (a) of @lem-weakening-cut'' inline, chaining in
+      Uses line; vee/<-> case list made a bullet list with the same sequents (vee1-3, <->1-4) and va...'
 - key: exm-truth-table-line-run
   kind: exm
   file: 08-completeness.md
@@ -8435,6 +9326,21 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
       Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
       (p,not q |- not(p->q); q |- p or q) checked'
+  - stage: S5e
+    verdict: minor
+    by: s5e-referee
+    hash: fa6be60e212a
+    date: '2026-11-01'
+    evidence: 'Mathematics unchanged (question split in two; solution unchanged), but the old ''@lem-connective-rows''
+      reference was dropped: the question now says ''Which tagged sequent does its proof use at the root?''
+      The ref is not inline, not in a Uses line, and not in the ledger (check 2 o...'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: fa6be60e212a
+    date: '2026-11-01'
+    evidence: '@lem-connective-rows restored: ''Which tagged sequent of @lem-connective-rows does its
+      proof use at the root?'', as in 9f9dbb8'
 - key: lem-atom-splitting
   kind: lem
   file: 08-completeness.md
@@ -8480,6 +9386,14 @@ items:
     model: claude-opus-5-5
     evidence: '08:336-340: true; 08:383 ''Nothing in the proof uses that p is an atom'' checked against
       steps 1-5'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d38f18e97ad1
+    date: '2026-11-01'
+    evidence: 'wording only: statement unchanged; idea split, @def-rules-disjunction moved to Uses; ''Before
+      reading on'' prompt reworded with the same content. New instance before the label (q,p |- p v q
+      and q,not-p |- p v q by vee-I from q; lemma with Delta = q gives q |- p v q) checked true'
 - key: proof:lem-atom-splitting
   kind: proof
   file: 08-completeness.md
@@ -8534,6 +9448,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
       Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
       (p,not q |- not(p->q); q |- p or q) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 07ca8501161e
+    date: '2026-11-01'
+    evidence: 'wording only: steps 1-5 unchanged in order; step 3 and the availability paragraph split
+      into shorter sentences with the same content; ''The answer to the prompt: the'' dropped from the
+      paragraph after the schema'
 - key: thm-completeness
   kind: thm
   file: 08-completeness.md
@@ -8577,6 +9499,14 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: '08:389-395: the statement and the finiteness remark agree with def-derivable (lists)'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 4aa9519d8500
+    date: '2026-11-01'
+    evidence: 'wording only: statement unchanged; roadmap items 1-3 made a bullet list, text identical;
+      ''Here is the method run on the tautology from the start of the section'' replaces ''Let us run
+      ... of the opening'''
 - key: exm-completeness-run
   kind: exm
   file: 08-completeness.md
@@ -8641,6 +9571,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
       Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
       (p,not q |- not(p->q); q |- p or q) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 0121305c463b
+    date: '2026-11-01'
+    evidence: 'wording only: statement sentence split; solution parentheses removed (same case analysis,
+      same four rows, same (->1)/(->2) remark); 20 and 13 lines unchanged; nd derivation identical; sidecar
+      exm-completeness-run passes'
 - key: check:08-completeness:4
   kind: check
   file: 08-completeness.md
@@ -8694,6 +9632,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
       Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
       (p,not q |- not(p->q); q |- p or q) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ea611af3aa5d
+    date: '2026-11-01'
+    evidence: '(this key is the proof of thm-completeness) wording only: Claim of Step 2 cases 1 and 2
+      identical in steps; inline @lem-weakening-cut (a)/(c) moved to the Claim''s Uses line and ledger;
+      v+/v- sentence split; ''written out in full below'' still points to the descent fold that follows'
 - key: cor-derivable-iff-valid
   kind: cor
   file: 08-completeness.md
@@ -8796,6 +9742,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
       Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
       (p,not q |- not(p->q); q |- p or q) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: c24a3645e4d1
+    date: '2026-11-01'
+    evidence: 'wording only: proof sentences split; statement of the corollary unchanged (40-word statement
+      kept word for word). Following prose (consistent = satisfiable, Kreisel fold, ''main text'' for
+      ''core'', two-columns table lead, Peirce paragraph, ''What the proof used'') reworded with the...'
 - key: def-rule-taut
   kind: def
   file: 08-completeness.md
@@ -8818,6 +9772,14 @@ items:
     model: claude-opus-5-5
     evidence: '08:620-628: propositional only (C2); the licence goes through cor-derivable-iff-valid,
       def-derived-rule and lem-weakening-cut; no ''skeleton'' wording'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ca1f8cef4970
+    date: '2026-11-01'
+    evidence: 'wording only: definition text unchanged; following paragraph ''(@def-derived-rule; @lem-weakening-cut
+      for a line in no box)'' becomes ''For a TAUT line in no box, the pasting is @lem-weakening-cut'';
+      Convention split into sentences'
 - key: exm-taut-step
   kind: exm
   file: 08-completeness.md
@@ -8860,6 +9822,13 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
       Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
       (p,not q |- not(p->q); q |- p or q) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 9c0167970eea
+    date: '2026-11-01'
+    evidence: 'wording only: ''(fold below)'' dropped; the fold ''The step written out'' follows immediately;
+      twelve lines unchanged; sidecar exm-taut-step passes'
 - key: check:08-completeness:5
   kind: check
   file: 08-completeness.md
@@ -8880,6 +9849,14 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: '08:678-684: p∨q, p→r ⊨ r∨q holds'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ff71917eb903
+    date: '2026-11-01'
+    evidence: 'wording only: check and solution unchanged; the ''Not allowed: TAUT'' warning in its range
+      now says ''each break a clause ... named after the step'' (the clause names are printed after each
+      step, as before)'
 - key: exr-completeness-a1
   kind: exr
   file: 08-completeness.md
@@ -8954,6 +9931,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
       Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
       (p,not q |- not(p->q); q |- p or q) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 98bb0a0e99a8
+    date: '2026-11-01'
+    evidence: 'wording only: lead sentence ''the two main proofs of this section''; @lem-truth-table-line
+      and @thm-completeness still cited in parts (a)-(c). Solution (b) made a bullet list with the same
+      three facts; (c) ''by @lem-truth-table-line or, if a premise is false, by a clash'' has the ...'
 - key: exr-completeness-a2
   kind: exr
   file: 08-completeness.md
@@ -9108,6 +10093,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
       Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
       (p,not q |- not(p->q); q |- p or q) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6277a5decf4a
+    date: '2026-11-01'
+    evidence: 'wording only: statement split; the remark about the usual answer length dropped; solution
+      ''pays for that with a split'' becomes ''so it splits on every atom''; 21 and 3 lines unchanged;
+      sidecar passes'
 - key: exr-completeness-b3
   kind: exr
   file: 08-completeness.md
@@ -9224,6 +10217,12 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
       Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
       (p,not q |- not(p->q); q |- p or q) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e24671775fe1
+    date: '2026-11-01'
+    evidence: 'wording only: ''Marking scheme'' renamed ''What a complete answer needs''; points unchanged'
 - key: exr-completeness-b5
   kind: exr
   file: 08-completeness.md
@@ -9272,6 +10271,13 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
       Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
       (p,not q |- not(p->q); q |- p or q) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b307875451ab
+    date: '2026-11-01'
+    evidence: 'wording only: (b),(c) sentences split, citations @prp-search-decides and @thm-completeness
+      kept; marking-scheme heading renamed, points unchanged'
 - key: exr-completeness-c1
   kind: exr
   file: 08-completeness.md
@@ -9351,6 +10357,13 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
       Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
       (p,not q |- not(p->q); q |- p or q) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 0a4f300c2407
+    date: '2026-11-01'
+    evidence: 'wording only: marking heading renamed; ''Fatal errors (0 for the step)'' becomes ''Slips
+      that lose the step (0 for it)'', same rule; points unchanged'
 - key: exr-completeness-c2
   kind: exr
   file: 08-completeness.md
@@ -9442,6 +10455,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
       Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
       (p,not q |- not(p->q); q |- p or q) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: f550e04debd8
+    date: '2026-11-01'
+    evidence: 'wording only: title ''Exit check'' becomes ''Chapter check''; solution (a) steps numbered
+      1-5 in the same order; marking item 3 reworded with the same requirements; points and the two 0-for-it
+      conditions unchanged'
 - key: exr-normal-forms-c3
   kind: exr
   file: 08-completeness.md
@@ -9515,6 +10536,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
       Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
       (p,not q |- not(p->q); q |- p or q) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d931f9f7b564
+    date: '2026-11-01'
+    evidence: 'wording only: title ''Chapter check''; statement and (a) solution sentences split; marking:
+      ''(or @thm-soundness)'' becomes ''Citing @thm-soundness instead is also fine''; 2.5/1/1.5 points
+      unchanged; sidecar passes'
 - key: exr-completeness-c4
   kind: exr
   file: 08-completeness.md
@@ -9565,6 +10594,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
       Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
       (p,not q |- not(p->q); q |- p or q) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 563ff8c72c0e
+    date: '2026-11-01'
+    evidence: 'wording only: (a) asks about ''the table of its proof'' instead of naming the fold; solution
+      (a),(c) reordered into shorter sentences with the same argument (Step 1 of soundness expands derived
+      rules; by (b) neither sequent derivable); points unchanged; sidecar passes'
 - key: exr-completeness-c5
   kind: exr
   file: 08-completeness.md
@@ -9637,6 +10674,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
       Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
       (p,not q |- not(p->q); q |- p or q) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 78872a3e2f32
+    date: '2026-11-01'
+    evidence: 'wording only: (c) statement split; solution biconditional cases rewritten from parentheses
+      into sentences with the same boxes, clashes and cuts; ''the remark after its proof'' replaced by
+      the reason (its proof never uses that p is an atom), true per the remark after lem-atom-spl...'
 - key: exr-normal-forms-r1
   kind: exr
   file: 08-completeness.md
@@ -9832,6 +10877,13 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): weakening/chaining named, sources moved to
       Uses lines, prompt reworded; lemma and theorem steps, line counts 20/21/13 unchanged; instances
       (p,not q |- not(p->q); q |- p or q) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 004e23108f46
+    date: '2026-11-01'
+    evidence: 'wording only: ''not how, and its proof uses LEM'' becomes ''not how. Its proof uses LEM,
+      in @lem-atom-splitting''; sidecar passes'
 - key: def-literal
   kind: def
   file: 09-normal-forms.md
@@ -10062,6 +11114,13 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
       read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
       monotonicity) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 45bfa4f827e3
+    date: '2026-11-01'
+    evidence: 'wording only: solution sentences split (''Their minterms are ... So the answer is''; table
+      check split into two sentences); same rows, minterms, answer (p∧¬q)∨(¬p∧q).'
 - key: thm-dnf
   kind: thm
   file: 09-normal-forms.md
@@ -10156,6 +11215,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
       read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
       monotonicity) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: c6f7b5683127
+    date: '2026-11-01'
+    evidence: 'wording only: idea ''degenerate cases''→''edge cases''; Case 1 ''By @eq-many-term-values
+      and @eq-row-conjunct''→''By @eq-row-conjunct'' with @eq-many-term-values moved to a new Uses line;
+      all steps, cases k≥1, k=0, no-atom case unchanged.'
 - key: thm-cnf
   kind: thm
   file: 09-normal-forms.md
@@ -10291,6 +11358,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
       read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
       monotonicity) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 2d677f89b0e0
+    date: '2026-11-01'
+    evidence: 'wording only: proof text unchanged; Uses line added (@thm-dnf, @eq-many-term-values, @def-truth-value),
+      all already cited inline or in the ledger. The new unlabeled instance before the theorem ((¬p∨¬q)∧(p∨q)
+      for ''exactly one of p,q''): F-rows TT and FF, each clause false only i...'
 - key: check:09-normal-forms:2
   kind: check
   file: 09-normal-forms.md
@@ -10409,6 +11484,13 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
       read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
       monotonicity) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 27f928e97001
+    date: '2026-11-01'
+    evidence: 'wording only: colons replaced by full stops (''The table confirms this.'', ''seven T-rows.'');
+      table, F-row p=q=r=F and DNF/CNF unchanged; sidecar passes.'
 - key: prp-cnf-validity
   kind: prp
   file: 09-normal-forms.md
@@ -10510,6 +11592,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
       read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
       monotonicity) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: adc06670e3e8
+    date: '2026-11-01'
+    evidence: 'wording only: ''(by @def-truth-value)''→''by the clause for ¬'' and ''(again by @eq-many-term-values)''→''since
+      a long conjunction with a false part is false'', both refs in the new Uses line, and a ledger line
+      added; idea ''The attempt above is the other direction''→''The other directio...'
 - key: exm-cnf-validity-glance
   kind: exm
   file: 09-normal-forms.md
@@ -10582,6 +11672,13 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
       read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
       monotonicity) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 016fbda3d1c0
+    date: '2026-11-01'
+    evidence: 'wording only: the (a) pair list is split into sentences, with the same four pairs ¬p/p,
+      ¬q/q, ¬s/s, ¬r/r; ''16 rows'' and the (b) refuting row are unchanged.'
 - key: prp-more-equivalences
   kind: prp
   file: 09-normal-forms.md
@@ -10630,6 +11727,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
       read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
       monotonicity) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 261f8e11eb6d
+    date: '2026-11-01'
+    evidence: 'wording only: ''By (V1) and (V2) of @def-truth-value''→''By the clauses for ⊥ and ¬ in
+      @def-truth-value'' (4.4: V1 is the atom/⊥ clause and V2 is negation); tables unchanged. The new
+      instance before the statement, p∧(p∨q) true exactly when p is: true (absorption (e)).'
 - key: exm-simplify-by-calculation
   kind: exm
   file: 09-normal-forms.md
@@ -10660,6 +11765,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
       read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
       monotonicity) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 39937efcd453
+    date: '2026-11-01'
+    evidence: 'wording only: law names added and checked against 4.5 ((c) is implication as a disjunction,
+      (g) is distributivity); ''read from right to left''→''with its two sides exchanged''; ''Step 4 is
+      (a)''→''its (a)'' (the same law, prp-more-equivalences (a)).'
 - key: check:09-normal-forms:3
   kind: check
   file: 09-normal-forms.md
@@ -10698,6 +11811,13 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
       read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
       monotonicity) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 87591dce7849
+    date: '2026-11-01'
+    evidence: 'wording only: the same three-step chain and the same laws; ''applied inside by @lem-replacement''→''applied
+      inside the formula'', with @lem-replacement in the new Uses line.'
 - key: def-occurrence-polarity
   kind: def
   file: 09-normal-forms.md
@@ -10728,6 +11848,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
       read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
       monotonicity) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d06c9958852b
+    date: '2026-11-01'
+    evidence: 'wording only: the 88-word sentence becomes a 4-bullet list whose words are identical to
+      the old clauses. The new instance before it (p∧q⊨p; r→(p∧q)⊨r→p; p→r⊨(p∧q)→r) is true, and it repeats
+      the example after thm-monotonicity.'
 - key: thm-monotonicity
   kind: thm
   file: 09-normal-forms.md
@@ -10781,6 +11909,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
       read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
       monotonicity) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d49ee541052b
+    date: '2026-11-01'
+    evidence: 'wording only: M(χ) becomes a 2-item list with the same two conditions; ''(V2)''→''the clause
+      for ¬, (V2)''; ''Clauses (V3) and (V4)''→''The clauses for ∧ and ∨''; ''(V5)''→''the clause for
+      →, (V5)'' / ''the same clause''; one sentence split; idea ''turns round''→''reverses''; Uses @def-truth-va...'
 - key: check:09-normal-forms:4
   kind: check
   file: 09-normal-forms.md
@@ -10965,6 +12101,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
       read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
       monotonicity) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 34d384fe330c
+    date: '2026-11-01'
+    evidence: 'wording only: in (a), ''By @eq-many-term-values and @eq-row-conjunct''→''By @eq-row-conjunct'',
+      with @eq-many-term-values in the Uses line at the end of the proof; a Uses line was added to the
+      Claim (both refs already inline); the t1/t2/t3 clauses, the Claim and (b) are unchanged....'
 - key: exr-normal-forms-a1
   kind: exr
   file: 09-normal-forms.md
@@ -11065,6 +12209,13 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
       read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
       monotonicity) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d035f054eb9c
+    date: '2026-11-01'
+    evidence: 'wording only: solution (d) ''(g) read from right to left''→''distributivity, (g), with
+      its two sides exchanged''; same law and result p.'
 - key: exr-normal-forms-b1
   kind: exr
   file: 09-normal-forms.md
@@ -11137,6 +12288,13 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
       read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
       monotonicity) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 5e4c2d1a03c5
+    date: '2026-11-01'
+    evidence: 'wording only: (c) check split into sentences; rows F,T,F (true; q→r and p false) and F,T,T
+      (false; q→r true) re-checked; sidecar passes.'
 - key: exr-normal-forms-b2
   kind: exr
   file: 09-normal-forms.md
@@ -11273,6 +12431,13 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
       read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
       monotonicity) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: c196d15bde36
+    date: '2026-11-01'
+    evidence: 'wording only: properties (i)-(iv) moved into a bullet list with the same rows (TTT, TFF,
+      FTF, FFT / TTF, TFT, FTT, FFF); sidecar passes.'
 - key: exr-normal-forms-c1
   kind: exr
   file: 09-normal-forms.md
@@ -11372,6 +12537,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
       read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
       monotonicity) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d876bc26a3f0
+    date: '2026-11-01'
+    evidence: 'wording only: the statement''s opening sentence is split into three, with the same NAND/NOR
+      truth conditions; the solution splits sentences; the parenthetical citing @thm-structural-recursion/@thm-structural-induction
+      becomes ''the same proofs as before'', with both refs in a new...'
 - key: exr-normal-forms-c2
   kind: exr
   file: 09-normal-forms.md
@@ -11455,6 +12628,14 @@ items:
       because at least two T after the flip means at most one T before. p1∧p2 is F at (T,F) and at (F,T),
       which gives the contradiction. The revised scheme line ''takes the same value on some row and on
       its flipped row'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 23ea3bfa9772
+    date: '2026-11-01'
+    evidence: 'wording only: in (b), the parity chain is split into sentences (''...at most one was T.
+      That happens exactly when M was F.''); marking-scheme headings renamed per STYLE; points 3/1/4/2
+      unchanged. The ledger shows this item not STALE, although its text changed.'
 - key: exr-normal-forms-c4
   kind: exr
   file: 09-normal-forms.md
@@ -11534,6 +12715,13 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
       read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
       monotonicity) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d454a2eef71d
+    date: '2026-11-01'
+    evidence: 'wording only: title ''C3: Exit check''→''C3: Chapter check'' (STYLE l.224, 654); marking-scheme
+      headings renamed; points 2/3/3/2 unchanged; sidecar passes.'
 - key: exr-normal-forms-c5
   kind: exr
   file: 09-normal-forms.md
@@ -11583,6 +12771,12 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
       read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
       monotonicity) checked'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 9c128682e836
+    date: '2026-11-01'
+    evidence: 'wording only: marking-scheme headings renamed; points 3/2/3 unchanged.'
 - key: exr-normal-forms-c6
   kind: exr
   file: 09-normal-forms.md
@@ -11656,6 +12850,21 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): rewriting steps listed, clauses named in words,
       read right-to-left -> sides exchanged; proofs unchanged; instances (CNF of xor, tautologous CNF,
       monotonicity) checked'
+  - stage: S5e
+    verdict: minor
+    by: s5e-referee
+    hash: 2b9a67b0d4e6
+    date: '2026-11-01'
+    evidence: 'The mathematics is unchanged: (c)''s parenthetical becomes sentences (''The full DNF is
+      not always the DNF...''; ''Suppose ... then the proof gives #φ/2^j minterms''), with the same claims,
+      and headings were renamed. But §13 B7 is still broken at line 878: ''(b) By (V4), ... By (V3)...'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 2b9a67b0d4e6
+    date: '2026-11-01'
+    evidence: 'C6(b) now names the clauses: ''the clause for vee, (V4)'', ''the clause for wedge, (V3)''
+      (STYLE 13 B7); mathematics unchanged'
 - key: exr-normal-forms-c7
   kind: exr
   file: 09-normal-forms.md
@@ -11686,6 +12895,14 @@ items:
     model: claude-opus-5-5
     evidence: 09:833-853; the gluing argument and both uses of lem-coincidence are right; (c) proved first
       and used in (b)
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b07268551655
+    date: '2026-11-01'
+    evidence: 'wording only: ''(c) (Proved first, since (b) uses it.)''→''We prove this part first...'';
+      the (c) gluing sentence is split; in (b) ''(k≥1 by (c))''→''; k≥1 by (c)''; headings renamed; points
+      unchanged. The ledger shows this item not STALE, although its text changed.'
 - key: def-infinite-entailment
   kind: def
   file: 10-compactness.md
@@ -11720,6 +12937,14 @@ items:
       what'' @def-valid-argument (05:61) and @def-satisfiable (05:31) said, which I checked against both.
       That resolves the ''word for word'' finding. The F2.1 ''sets'' promise is gone: the ledger now uses
       the everyday sense'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6f6e759bece0
+    date: '2026-11-01'
+    evidence: 'wording only: the statement is word for word the same. The opening paragraph, the ''In
+      words'' paragraph and the p_n example are split into shorter sentences. Every old @ref is still
+      there: thm-completeness, lem-weakening-cut (a) (twice), def-derivable, def-inconsistent-set, def...'
 - key: check:10-compactness:1
   kind: check
   file: 10-compactness.md
@@ -11803,6 +13028,13 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, sequents of lem-connective-rows
       written out, classical remark in For instructors fold; Lindenbaum, truth lemma, completeness and
       compactness proofs unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: fece976b2c64
+    date: '2026-11-01'
+    evidence: 'wording only: the one change is a blank line after the display, so the sentence that follows
+      starts a new paragraph. The bound (n+8)^n and every step are unchanged.'
 - key: lem-lindenbaum
   kind: lem
   file: 10-compactness.md
@@ -11866,6 +13098,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, sequents of lem-connective-rows
       written out, classical remark in For instructors fold; Lindenbaum, truth lemma, completeness and
       compactness proofs unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d4a204f22620
+    date: '2026-11-01'
+    evidence: 'wording only: the key step''s parenthesis about weakening becomes the sentence ''A derivation
+      of ⊥ that does not use φ, or ¬φ, still gives this''. The steps (¬I, RAA, prp-derivable-iff-negation-inconsistent,
+      ¬E by chaining lem-weakening-cut (c)) and @exr-four-kinds-of-task-c2 are...'
 - key: check:10-compactness:2
   kind: check
   file: 10-compactness.md
@@ -11906,6 +13146,21 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: 10:108-118. Statement matches blueprint item 5.
+  - stage: S5e
+    verdict: minor
+    by: s5e-referee
+    hash: a875096bb208
+    date: '2026-11-01'
+    evidence: 'The statement is unchanged and the prose before it is split, still citing @def-truth-value.
+      Still breaking §13 B6: statement (c), line 118, has 3 semicolons (check_beginner''s only remaining
+      finding). Changing it would mean touching a statement. A displayed list using the same ...'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: a875096bb208
+    date: '2026-11-01'
+    evidence: 'Statement (c): one semicolon replaced by a sentence break (''. And''), same words and same
+      four clauses; check_beginner no longer flags it'
 - key: proof:lem-maximal-consistent
   kind: proof
   file: 10-compactness.md
@@ -11936,6 +13191,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, sequents of lem-connective-rows
       written out, classical remark in For instructors fold; Lindenbaum, truth lemma, completeness and
       compactness proofs unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 18f305922126
+    date: '2026-11-01'
+    evidence: 'wording only: the steps of each clause keep their order. The new spelled-out sequents match
+      lem-connective-rows (08-completeness.md:62-64) exactly: (∨3) ¬φ,¬ψ⊢¬(φ∨ψ), (→1) ¬φ⊢φ→ψ, (→2) ψ⊢φ→ψ,
+      (↔1) φ,ψ⊢φ↔ψ, (↔2) ¬φ,¬ψ⊢φ↔ψ, (↔3) φ,¬ψ⊢¬(φ↔ψ), (↔4) ¬φ,ψ⊢¬(φ↔ψ). The ↔E remark loses...'
 - key: lem-truth-lemma
   kind: lem
   file: 10-compactness.md
@@ -11986,6 +13249,15 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, sequents of lem-connective-rows
       written out, classical remark in For instructors fold; Lindenbaum, truth lemma, completeness and
       compactness proofs unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 64048003d290
+    date: '2026-11-01'
+    evidence: 'wording only: the cases (atoms, ⊥, ¬, ∧, then ''same for ∨, →, ↔'') come in the same order
+      with the same reasons. The added glosses ''false under every valuation (V1)'', ''negation flips
+      (V2)'' and ''a conjunction needs both parts (V3)'' match def-truth-value (04-valuations.md:114).
+      I...'
 - key: thm-completeness-infinite
   kind: thm
   file: 10-compactness.md
@@ -12036,6 +13308,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, sequents of lem-connective-rows
       written out, classical remark in For instructors fold; Lindenbaum, truth lemma, completeness and
       compactness proofs unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: be1655525df4
+    date: '2026-11-01'
+    evidence: 'wording only: the contrapositive argument has the same steps (weakening, then an RAA box),
+      and the equivalence paragraph is the same argument. @def-infinite-entailment moved into the Uses
+      line. @lem-weakening-cut (a) is now cited in the Uses line, where before the step said on...'
 - key: thm-compactness
   kind: thm
   file: 10-compactness.md
@@ -12086,6 +13366,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, sequents of lem-connective-rows
       written out, classical remark in For instructors fold; Lindenbaum, truth lemma, completeness and
       compactness proofs unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 8f166dac9976
+    date: '2026-11-01'
+    evidence: 'wording only: the second sentence keeps its chain of iffs in the same order. Γ⊨ψ holds
+      iff Γ with ¬ψ is unsatisfiable, iff some finite list of its members is unsatisfiable, iff some Γ0
+      has Γ0,¬ψ unsatisfiable, iff Γ0⊨ψ. The parentheses have become sentences (''Indeed…'', ''Here a...'
 - key: exm-compactness-chain
   kind: exm
   file: 10-compactness.md
@@ -12127,6 +13415,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, sequents of lem-connective-rows
       written out, classical remark in For instructors fold; Lindenbaum, truth lemma, completeness and
       compactness proofs unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 66d18a139e34
+    date: '2026-11-01'
+    evidence: 'wording only: the last paragraph is split (''The reason: the argument of (b)…'', ''The
+      list must also contain p_1''). The numbers 50, 51, 99, 100 and k<100 are unchanged, and the sidecar
+      exm-compactness-chain passes (''all quoted values check'').'
 - key: exr-compactness-a1
   kind: exr
   file: 10-compactness.md
@@ -12202,6 +13498,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, sequents of lem-connective-rows
       written out, classical remark in For instructors fold; Lindenbaum, truth lemma, completeness and
       compactness proofs unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: f6812c1c70a9
+    date: '2026-11-01'
+    evidence: 'wording only: the one change drops the roadmap sentence ''The parts run from judging collections…'',
+      which describes the item''s layout and makes no mathematical claim. Every part and every answer
+      is unchanged, and the sidecar exr-compactness-a2 passes.'
 - key: exr-compactness-b1
   kind: exr
   file: 10-compactness.md
@@ -12239,6 +13543,13 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, sequents of lem-connective-rows
       written out, classical remark in For instructors fold; Lindenbaum, truth lemma, completeness and
       compactness proofs unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: af43b18678ef
+    date: '2026-11-01'
+    evidence: 'wording only: the heading ''Marking scheme'' becomes ''What a complete answer needs'',
+      the name STYLE §11.6 prescribes. The points are unchanged (4+2=6).'
 - key: exr-compactness-b2
   kind: exr
   file: 10-compactness.md
@@ -12274,6 +13585,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, sequents of lem-connective-rows
       written out, classical remark in For instructors fold; Lindenbaum, truth lemma, completeness and
       compactness proofs unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: fe38f9c52a0e
+    date: '2026-11-01'
+    evidence: 'wording only: the prompt ''in full, from parts (a) and (b) and the sequents of @lem-connective-rows''
+      is split into ''in full. Use parts (a) and (b) and the sequents…'', which asks for the same thing.
+      The marking heading is renamed and the points are unchanged (3+3).'
 - key: exr-compactness-c1
   kind: exr
   file: 10-compactness.md
@@ -12323,6 +13642,14 @@ items:
     evidence: 'wording only (coordinator diff vs 9f9dbb8): sentences split, sequents of lem-connective-rows
       written out, classical remark in For instructors fold; Lindenbaum, truth lemma, completeness and
       compactness proofs unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 3eba3b76c173
+    date: '2026-11-01'
+    evidence: 'wording only: the reduction to a 3-coloring and the check of each of the three kinds are
+      now separate sentences, with the same reasons. The marking points are unchanged (3+2+4+1=10). ''Fatal
+      errors (0 for the step)'' becomes ''Slips that lose the step'', which matches ch06 usage a...'
 - key: exr-compactness-c2
   kind: exr
   file: 10-compactness.md
@@ -12366,3 +13693,11 @@ items:
       T if T works, and F otherwise'), so the recursion defines v. (b) now opens 'By (a) and @ax-induction,
       P_n holds for every n' (P_0 is the hypothesis, plain induction from 0), then uses P_N and @lem-coincidence
       (04:177). N = 0 works when γ has no atoms. (c) now lists @ax-induction, and the marking scheme for
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 602fe7e13b0c
+    date: '2026-11-01'
+    evidence: 'wording only: in (a), ''no valuation agreeing… and making a_{n+1} true satisfies'' is rephrased
+      as ''no valuation satisfies if it agrees… and makes a_{n+1} true'', which means the same. (c) lists
+      the same three sources, with @lem-coincidence and @ax-induction kept, under the quest...'

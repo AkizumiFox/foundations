@@ -756,7 +756,7 @@ The pair (d) is the surprise: an implication and its converse can never both fai
 
 - 1 per part: the class, with a witness for each of the two questions "both true?" and "both false?". A witness is a row where it happens, or the reason it cannot.
 
-Slips that lose the step (0 for the part): a class claimed with one of the two questions unanswered.
+Slips that lose the part (0 for it): a class claimed with one of the two questions unanswered.
 :::
 
 ### C. Going deeper

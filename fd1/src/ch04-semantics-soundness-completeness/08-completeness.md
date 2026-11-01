@@ -347,7 +347,7 @@ The premise \( q \) is never cited. It was used only in computing which case app
 :::
 
 ::: {.check}
-Let \( \varphi = p \to \neg q \) and \( v(p) = v(q) = \mathrm{T} \). What sequent does @lem-truth-table-line provide? Which tagged sequent does its proof use at the root?
+Let \( \varphi = p \to \neg q \) and \( v(p) = v(q) = \mathrm{T} \). What sequent does @lem-truth-table-line provide? Which tagged sequent of @lem-connective-rows does its proof use at the root?
 :::
 
 ::: {.solution}

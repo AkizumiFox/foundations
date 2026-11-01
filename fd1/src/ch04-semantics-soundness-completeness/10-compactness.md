@@ -115,7 +115,7 @@ Let \( \Delta \) be maximal consistent, and let \( \varphi \), \( \psi \) be for
 ::: {.enumerate options="label=(\alph*)"}
 1. If \( \Delta \vdash \varphi \), then \( \varphi \in \Delta \).
 2. Exactly one of \( \varphi \), \( \neg\varphi \) is in \( \Delta \); and \( \bot \notin \Delta \).
-3. \( \varphi \wedge \psi \in \Delta \) iff \( \varphi \in \Delta \) and \( \psi \in \Delta \); \( \varphi \vee \psi \in \Delta \) iff \( \varphi \in \Delta \) or \( \psi \in \Delta \); \( \varphi \to \psi \in \Delta \) iff \( \varphi \notin \Delta \) or \( \psi \in \Delta \); \( \varphi \leftrightarrow \psi \in \Delta \) iff \( \varphi \) and \( \psi \) are both in \( \Delta \) or both not in \( \Delta \).
+3. \( \varphi \wedge \psi \in \Delta \) iff \( \varphi \in \Delta \) and \( \psi \in \Delta \); \( \varphi \vee \psi \in \Delta \) iff \( \varphi \in \Delta \) or \( \psi \in \Delta \). And \( \varphi \to \psi \in \Delta \) iff \( \varphi \notin \Delta \) or \( \psi \in \Delta \); \( \varphi \leftrightarrow \psi \in \Delta \) iff \( \varphi \) and \( \psi \) are both in \( \Delta \) or both not in \( \Delta \).
 :::
 :::
 

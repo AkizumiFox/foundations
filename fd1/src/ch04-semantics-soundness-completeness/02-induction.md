@@ -505,7 +505,7 @@ ax-induction (example): (the warning after exm-power-inequality) 2n^2 >= (n+1)^2
 thm-strong-induction (proof): no natural number is less than 0; k < n + 1 iff k <= n for natural k (nothing strictly between n and n + 1); k <= n + 1 iff k <= n or k = n + 1 | school facts about N (blueprint, Allowed prerequisites); F2.2 (promised; STATUS row F1.3 §02, paid by lem-naturals-arithmetic (e))
 thm-strong-induction (proof): "for every k < 0, P(k)" holds vacuously | prp-vacuous-implication (cited in the prose before the proof, and in the proof's Uses line); the rule for "every" is F1.4 (prose pointer)
 thm-strong-induction (claim): (the instance before the theorem) 11 = 3*2 + 5 and 14 = 3*3 + 5 | inline arithmetic; checked by verify/ch04/thm-strong-induction.py
-ax-induction (claim): (the instance before the principle) 2^0 = 1 > 0; P(0) and the step give P(1), P(2), ... one at a time | school arithmetic; informal, motivation only; checked by verify/ch04/ax-induction.py
+ax-induction (claim): (the instance before the principle) 2^0 = 1 > 0; the step holds since 2^{n+1} = 2*2^n > 2n >= n+1 for n >= 1, and 2 > 1 at n = 0; P(0) and the step give P(1), P(2), ... one at a time | school arithmetic; informal, motivation only; checked by verify/ch04/ax-induction.py
 exm-threes-and-fives (example): 8 = 3 + 5, 9 = 3*3, 10 = 5*2; 7 is not a sum of threes and fives | inline arithmetic; checked by verify/ch04/exm-threes-and-fives.py
 exr-induction-a1 (solution): 4^(n+1) - 1 = 4(4^n - 1) + 3; 12..15 as 4a + 5b | school algebra; checked by verify/ch04/exr-induction-a1.py
 ax-induction (claim): (the Quick check after exm-power-inequality) 5^0 - 1 = 0; 5^(n+1) - 1 = 5(5^n - 1) + 4 | school algebra; checked by verify/ch04/ax-induction.py

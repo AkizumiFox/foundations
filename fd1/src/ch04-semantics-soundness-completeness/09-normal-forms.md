@@ -298,7 +298,7 @@ Decide whether each formula is a tautology, without a table.
 
 ## Calculating with equivalences
 
-Section 4.5 replaced a part of a formula by an equivalent part (@lem-replacement) and chained such steps, since \( \equiv \) is transitive. Normal forms can be reached in this way, as the rewriting route did, and so can shorter formulas. Each step cites a law, as each line of a derivation cites a rule. A few more laws make the calculations run; in them, \( \neg\bot \) serves as a formula that is true in every row. For instance, \( p \wedge (p \vee q) \) is true exactly when \( p \) is, since \( p \vee q \) is true whenever \( p \) is.
+Section 4.5 replaced a part of a formula by an equivalent part (@lem-replacement) and chained such steps, since \( \equiv \) is transitive. Normal forms can be reached in this way, as the rewriting route did, and so can shorter formulas. Each step cites a law, as each line of a derivation cites a rule. A few more laws make the calculations run; in them, \( \neg\bot \) serves as a formula that is true in every row. For instance, \( p \vee (p \wedge q) \) is true exactly when \( p \) is, since \( p \wedge q \) is true only when \( p \) is.
 
 ::: {#prp-more-equivalences}
 [Laws of the Constants, Idempotence and Absorption]
@@ -875,7 +875,7 @@ For a formula \( \varphi \) whose atoms are among \( p_1, \dots, p_n \), let \( 
 ::: {.solution}
 *(a)* If \( \varphi \models \psi \), every row in which \( \varphi \) is true is one in which \( \psi \) is true, so there are at least as many of the second. The converse fails: on the atoms \( p \), \( q \), the formulas \( p \) and \( q \) are each true in two rows, so \( \#p \le \#q \), but \( p \not\models q \) (the row \( p = \mathrm{T} \), \( q = \mathrm{F} \)).
 
-*(b)* By (V4), the rows of \( \varphi \vee \psi \) are those of \( \varphi \) together with those of \( \psi \). By (V3), the rows in both are the rows of \( \varphi \wedge \psi \). The sum \( \#\varphi + \#\psi \) counts those twice and every other row of \( \varphi \vee \psi \) once.
+*(b)* By the clause for \( \vee \), (V4), the rows of \( \varphi \vee \psi \) are those of \( \varphi \) together with those of \( \psi \). By the clause for \( \wedge \), (V3), the rows in both are the rows of \( \varphi \wedge \psi \). The sum \( \#\varphi + \#\psi \) counts those twice and every other row of \( \varphi \vee \psi \) once.
 
 *(c)* Two different rows differ at some \( p_i \); one minterm contains \( p_i \) and the other \( \neg p_i \), and no valuation makes both literals true. Each row makes its own minterm true (@eq-row-conjunct). So the disjunction of all \( 2^n \) is true in every row (@eq-many-term-values). The full DNF over \( p_1, \dots, p_n \) has one minterm for each row on them in which \( \varphi \) is true, and different rows give different minterms, so it has \( \#\varphi \) of them. The full DNF is not always the DNF that the proof of @thm-dnf builds. That proof uses only the atoms of \( \varphi \). Suppose \( \varphi \) is satisfiable and has at least one atom, and \( j \) of the \( p_i \) do not occur in \( \varphi \); then the proof gives \( \#\varphi / 2^j \) minterms on the remaining atoms. When \( \varphi \) has no atoms it gives \( p \vee \neg p \) or \( p \wedge \neg p \). When \( \#\varphi = 0 \) it gives a contradiction \( q \wedge \neg q \) for some atom \( q \), which is a conjunctive clause but no minterm. Hence the restriction to satisfiable \( \varphi \).
 

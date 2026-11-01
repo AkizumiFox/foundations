@@ -98,7 +98,7 @@ A structural induction must cover **every** clause, the base case \( \bot \) and
 :::
 
 ::: {.check}
-Which clause of @def-formula makes step (ii) of structural induction necessary? Give a property of formulas that holds for every atom and for \( \bot \), passes from \( \varphi \) and \( \psi \) to \( (\varphi \circ \psi) \) for every binary connective, and yet fails for some formula.
+Look at step (ii) of @thm-structural-induction. Which clause of @def-formula makes it necessary? Give a property of formulas that holds for every atom and for \( \bot \), passes from \( \varphi \) and \( \psi \) to \( (\varphi \circ \psi) \) for every binary connective, and yet fails for some formula.
 :::
 
 ::: {.solution}
@@ -280,7 +280,7 @@ The height counts the nodes on the longest **branch**, not the symbols of the fo
 
 ## Definition by recursion
 
-Height, the set of atoms, the number of connectives: each is naturally defined **one clause per way of building a formula**. The height of \( \neg\varphi \) is one more than that of \( \varphi \); the atoms of \( (\varphi \circ \psi) \) are those of \( \varphi \) together with those of \( \psi \). Such a definition is called **recursive**: it defines the value at a formula through the values at its immediate parts. The question is whether it really defines something. For a string that could be split in two ways, the clauses might assign two different values, and then they would define nothing. Unique readability says this never happens.
+Height, the set of atoms, the number of connectives: each is naturally defined **one clause per way of building a formula**. The height of \( \neg\varphi \) is one more than that of \( \varphi \). The height of \( (\varphi \circ \psi) \) is one more than the larger of the heights of \( \varphi \) and \( \psi \). The atoms of \( (\varphi \circ \psi) \) are those of \( \varphi \) together with those of \( \psi \). Such a definition is called **recursive**: it defines the value at a formula through the values at its immediate parts. The question is whether it really defines something. For a string that could be split in two ways, the clauses might assign two different values, and then they would define nothing. Unique readability says this never happens.
 
 For example, compute the height of \( \neg(p \wedge q) \) by these clauses. The atoms \( p \) and \( q \) have height \( 1 \). So \( (p \wedge q) \) has height \( 1 + \max\{1, 1\} = 2 \), and \( \neg(p \wedge q) \) has height \( 2 + 1 = 3 \). Each value came from the values at the immediate parts, and there was only one way to split each formula.
 

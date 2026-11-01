@@ -817,7 +817,7 @@ def-truth-value (claim): the new Quick check, v(not p or (q <-> bot)) = T | inli
 def-truth-value (idea): the game reading (verifier and falsifier) matches the clauses | proved in Exercise C3; nothing later rests on the game (said in the text)
 lem-coincidence (proof): atoms(phi) defined by recursion (atom, bot, not, binary clauses) | F1.3 §03 (thm-structural-recursion examples), recalled in prose before the lemma
 lem-coincidence (claim): worked instance before the lemma, v and w with p = T, q = F, differing on r, both give p and not q the value T | inline (V1)-(V3); checked by verify/ch04/def-truth-table.py
-lem-coincidence (proof): every clause of def-formula covered | @def-formula, moved to the proof's Uses line (S3e)
+lem-coincidence (proof): every clause of def-formula covered | @def-formula, moved to the proof's Uses line (S5e)
 def-truth-table (claim): worked instance before the definition, rows of p and q on p, q are TT, TF, FT, FF, true only in TT | the conjunction table of the opening subsection; checked by verify/ch04/def-truth-table.py
 def-truth-function (claim): worked instance before the definition, (V3) as a rule on pairs, expressed by p1 and p2 | inline (V3); checked by verify/ch04/def-truth-table.py
 lem-coincidence (claim): a formula with n atoms has 2^n rows (number of T/F assignments to n atoms) | inline, by ax-induction on n (said in the text)
