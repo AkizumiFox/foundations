@@ -862,7 +862,7 @@ Chapter 5 uses the lemma \( \neg(P \leftrightarrow \neg P) \) to show that no ba
 ::: {.enumerate options="label=(\alph*)"}
 1. State the rules \( \rulename{{\leftrightarrow}I} \) and \( \rulename{{\leftrightarrow}E} \), and the definition of \( P \dashv\vdash Q \).
 2. For a real number \( x \ge 0 \), consider "\( x^2 = x \) if and only if \( x = 0 \) or \( x = 1 \)". Write the directions \( (\Rightarrow) \) and \( (\Leftarrow) \) as implications. Which one would a proof begin with "Suppose \( x^2 = x \)"?
-3. True or false, with a reason? The definition reads "an integer \( n \) is **even** if there is an integer \( k \) with \( n = 2k \)", and \( 10 \) is even. From these we may conclude that \( 10 = 2k \) for some integer \( k \).
+3. Recall the definition: an integer \( n \) is **even** if there is an integer \( k \) with \( n = 2k \). True or false, with a reason: from this definition and the fact that \( 10 \) is even, we may conclude that \( 10 = 2k \) for some integer \( k \).
 4. True or false, with a reason: from the theorem "if \( x > 1 \), then \( x^2 > 1 \)" and the fact that \( x^2 > 1 \), we may conclude that \( x > 1 \).
 :::
 :::
@@ -1042,7 +1042,7 @@ $\begin{nd}
 :::
 
 ::: {.solution}
-The method is *two boxes for an iff*: the goal's main connective is \( \leftrightarrow \), so line 12 will be \( \rulename{{\leftrightarrow}I} \), with a box from \( P \wedge R \) to \( Q \wedge R \) and a box back. Inside each, take the conjunction apart, cross with \( \rulename{{\leftrightarrow}E} \), and rebuild.
+The method is *two boxes for an iff*: the goal's main connective is \( \leftrightarrow \), so line 12 will be \( \rulename{{\leftrightarrow}I} \), with a box from \( P \wedge R \) to \( Q \wedge R \) and a box back. Inside each, take the conjunction apart, pass from one side to the other with \( \rulename{{\leftrightarrow}E} \), and rebuild.
 
 ```{=latex}
 \begin{center}

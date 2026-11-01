@@ -215,7 +215,7 @@ In a table of what we know and what we want, a derived rule adds its conclusion 
 
 So far a derived-rule line has been expanded inside a derivation. Outside every box there is a cleaner statement, about whole derivations: two derivations can be joined end to end, and premises that are never used do no harm.
 
-Here is each fact in a small case. The derivation of @prp-contrapositive has the single premise \( P \to Q \). That premise belongs to the list \( P \to Q, \ S \), so the same seven lines show \( P \to Q, \ S \vdash \neg Q \to \neg P \): the unused premise \( S \) does no harm. Next, one \( \rulename{{\to}E} \) line derives \( \neg P \) from \( \neg Q \to \neg P \) and \( \neg Q \). Write the seven lines that derive \( \neg Q \to \neg P \) from \( P \to Q \) first, and let the \( \rulename{{\to}E} \) line cite their last line. The result derives \( \neg P \) from \( P \to Q \) and \( \neg Q \) alone.
+Here is each fact in a small case. The derivation of @prp-contrapositive has the single premise \( P \to Q \). That premise belongs to the list \( P \to Q, \ S \), so the same seven lines show \( P \to Q, \ S \vdash \neg Q \to \neg P \): the unused premise \( S \) does no harm. Next, one \( \rulename{{\to}E} \) line derives \( \neg P \) from \( \neg Q \to \neg P \) and \( \neg Q \). Put \( \neg Q \) among the premises at the top, beside \( P \to Q \). Below them write the seven lines that derive \( \neg Q \to \neg P \) from \( P \to Q \), and let the \( \rulename{{\to}E} \) line cite their last line and the premise \( \neg Q \). The result derives \( \neg P \) from \( P \to Q \) and \( \neg Q \) alone.
 
 ::: {#lem-weakening-cut}
 [Weakening and Cut]
@@ -517,7 +517,7 @@ $\begin{nd}
 Line 11 is @exm-disjunction-first-derivations used as a derived rule, so that line 12 refutes the left disjunct, as \( \rulename{DS} \) requires.
 :::
 
-::: {.second-reading title="The two derivations of Even Square, line for line"}
+::: {.second-reading title="The two derivations of Even Square compared"}
 Compare this with the twelve-line derivation after @thm-square-even-implies-even in Section 2.1. There, the derivation split at once on (E1), that every integer is even or odd. Its odd case got \( T \) from the fact that the square of an odd integer is odd, (E3). It then built \( S \wedge T \), clashed with (E2), that no integer is both, and closed by \( \rulename{\bot E} \). Here the same work is spread over named steps. The \( \rulename{\neg I} \) box on lines 5–7 does the clash with (E2). Lines 9 and 10, \( \rulename{CP} \) and \( \rulename{{\to}E} \), abbreviate a box that assumes \( O \), gets \( T \) because the square of an odd integer is odd, and clashes with line 8. Line 12, \( \rulename{DS} \), abbreviates the case split on the disjunction, with the case \( O \) closed by \( \rulename{\bot E} \). The short version reads the way people talk.
 :::
 
@@ -1157,7 +1157,7 @@ def-derived-rule (claim): letters of a derived sequent may be replaced uniformly
 def-derived-rule (claim): the figure: line 3 on the left stands for lines 3-6 on the right | read off the two derivations (prp-modus-tollens, cited)
 lem-weakening-cut (proof): renumbering lines and moving boxes as blocks preserves nesting, availability and rule instances | inline (checked clause by clause against def-derivation)
 lem-weakening-cut (proof): a one-line derivation whose only line is a premise is a derivation | def-derivation, def-derivable (a premise line; the last line lies in no box)
-lem-weakening-cut (claim): the worked instance before the lemma: P -> Q, S |- not Q -> not P by the seven lines of prp-contrapositive (premises belong to the list); one ->E line on not Q -> not P and not Q, pasted after those seven lines, derives not P from P -> Q, not Q | read off prp-contrapositive (cited), def-derivable, def-rule-implication-elimination; the general facts are lem-weakening-cut (a), (b), proved below
+lem-weakening-cut (claim): the worked instance before the lemma: P -> Q, S |- not Q -> not P by the seven lines of prp-contrapositive (premises belong to the list); one ->E line on not Q -> not P and the premise not Q (written at the top), pasted after those seven lines, derives not P from P -> Q, not Q | read off prp-contrapositive (cited), def-derivable, def-rule-implication-elimination; the general facts are lem-weakening-cut (a), (b), proved below
 lem-weakening-cut (claim): chaining and cut are why a derived-rule line outside every box is legitimate | lem-weakening-cut (b), (c), def-derived-rule (cited)
 exm-derived-rules-instances (example): each row is an instance of its rule's sequent under the stated replacement; the look-alike is not | read off prp-modus-tollens, prp-contrapositive, prp-disjunctive-syllogism (cited)
 exm-modus-tollens-instance (example): x > 2 implies x^2 > 4; x^2 <= 4 is the negation of x^2 > 4; x <= 2 is the negation of x > 2 | school algebra, shown inline

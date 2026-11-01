@@ -360,7 +360,7 @@ Its use is **proof by cases on a statement**. To derive \( \chi \), derive it on
 For all statements \( P \) and \( Q \), \( \vdash ((P \to Q) \to P) \to P \).
 :::
 
-In words: this law has no \( \neg \) in it, yet the derivation below still uses \( \rulename{RAA} \).
+*In words: this law has no \( \neg \) in it, yet the derivation below still uses \( \rulename{RAA} \).*
 
 ::: {.second-reading title="Peirce's law, derived"}
 *Try it first (ten minutes): use the goal-directed and premise-directed steps of the earlier sections on this goal until they stall. At which gap do they stall, and which line, if it were available there, would let you finish?*
@@ -1041,7 +1041,7 @@ When \( Q \) is itself a negation, the inner goal in @prp-contrapositive-convers
 :::
 
 ::: {.warning}
-An \( \rulename{RAA} \) box on \( \neg\varphi \) may use its assumption **only at its last step**, against a \( \varphi \) derived without it. Such a box is legal, but it is a direct proof in disguise. The lines before the clash already derive \( \varphi \), so the box can be deleted. The smallest case opens a box on \( \neg P \) only to clash with a premise \( P \) that is already the goal. (A box that reaches \( \bot \) without using its assumption at all is a different matter: the same lines, written before the box, derive \( \bot \) without it, and \( \rulename{\bot E} \) then gives the goal at once.)
+Suppose an \( \rulename{RAA} \) box on \( \neg\varphi \) uses its assumption **only at its last step**, against a \( \varphi \) derived without it. Such a box is legal, but it is a direct proof in disguise. The lines before the clash already derive \( \varphi \), so the box can be deleted. The smallest case opens a box on \( \neg P \) only to clash with a premise \( P \) that is already the goal. (A box that reaches \( \bot \) without using its assumption at all is a different matter: the same lines, written before the box, derive \( \bot \) without it, and \( \rulename{\bot E} \) then gives the goal at once.)
 :::
 
 ::: {.warning}

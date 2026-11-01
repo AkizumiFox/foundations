@@ -88,6 +88,15 @@ items:
     model: claude-opus-5-5
     evidence: 'wording only: schemas and readings unchanged; Givens/Goal -> We know | We want; fold split
       into sentences with the same rule lists'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 5d16c9d045e5
+    date: '2026-11-01'
+    evidence: 'wording only: the schemas and the four- and three-point readings are unchanged. ''the subsection
+      Vacuous truth below returns to this'' became ''Vacuous truth, at the end of this section, makes
+      this precise''. The ⊥-provenance fold is split into sentences with the same rule lists (R, ∧E, →E,
+      ∨E; ∨I on...'
 - key: check:01-contradiction-and-vacuous-truth:1
   kind: check
   file: 01-contradiction-and-vacuous-truth.md
@@ -139,6 +148,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: order convention now a list; the four equivalences unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 7063f1905a9a
+    date: '2026-11-01'
+    evidence: 'wording only: the order convention (new l.77-87) is now a list. a>b ≡ ¬(a≤b), a≤b ≡ ¬(a>b),
+      a<b ≡ ¬(a≥b), and a≠b defined as ¬(a=b) are all unchanged and true. ''Together with the box of Section
+      1.5, which writes…'' is split into two sentences with the same content.'
 - key: check:01-contradiction-and-vacuous-truth:2
   kind: check
   file: 01-contradiction-and-vacuous-truth.md
@@ -190,6 +207,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: ''(drill A2(l))'' -> ''as in Exercise A2, part (l)'''
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ec36ebd7d18c
+    date: '2026-11-01'
+    evidence: 'wording only: ''(drill A2(l))'' became ''as in Exercise A2, part (l)'', the same pointer,
+      already there in the old text. The ''Before each solution we say why…'' paragraph keeps both questions,
+      now split.'
 - key: exm-first-contradictions
   kind: exm
   file: 01-contradiction-and-vacuous-truth.md
@@ -241,6 +266,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: Idea reworded; derivations byte-identical'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e685b02cc968
+    date: '2026-11-01'
+    evidence: 'wording only: in the Idea, ''degenerate case'' became ''simplest case'' and ''premise-directed
+      move'' became ''working from the premises''. The meta sentence ''We state it as a proposition, because
+      later sections cite it'' was cut. It carries no mathematics. The derivations are byte-identical.'
 - key: prp-ex-falso
   kind: prp
   file: 01-contradiction-and-vacuous-truth.md
@@ -375,6 +408,15 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: Idea reworded; statement and snapshots unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 93aeb134eb69
+    date: '2026-11-01'
+    evidence: 'wording only: in the Idea, ''(→I, @def-rules-implication)'' moved to the end of the sentence
+      and ''the section''s goal-directed move'' became ''the new question to ask from the goal''. The
+      statement and the snapshots are unchanged. The ledger comment notes that the ''some logics drop
+      ⊥E'' claim moved into...'
 - key: proof:prp-vacuous-implication
   kind: proof
   file: 01-contradiction-and-vacuous-truth.md
@@ -469,6 +511,13 @@ items:
     model: claude-opus-5-5
     evidence: 'wording only: ''premise-directed question'' -> ''question for an available negation'';
       steps unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ca8265834fb9
+    date: '2026-11-01'
+    evidence: 'wording only: ''the premise-directed question'' became ''the question for an available
+      negation''. The steps are unchanged.'
 - key: check:01-contradiction-and-vacuous-truth:3
   kind: check
   file: 01-contradiction-and-vacuous-truth.md
@@ -553,6 +602,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: ''move'' -> ''strategy''; one true restating sentence added'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 9cfcb577c5f8
+    date: '2026-11-01'
+    evidence: 'wording only: ''move'' became ''strategy''. One new sentence: ''A case that reaches ⊥ ends
+      by ⊥E on the current goal.'' It is true and restates the old summary bullet. The one-line-box paragraph
+      and the two-strategy summary are split into sentences or a list with the same content. @exm-disjunction-firs...'
 - key: thm-square-even-implies-even
   kind: thm
   file: 01-contradiction-and-vacuous-truth.md
@@ -603,6 +660,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: (E1)-(E3) glossed in words; statement unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 37b96aa0d5bf
+    date: '2026-11-01'
+    evidence: 'wording only: the Idea now glosses (E1) ''every integer is even or odd'', (E2) ''no integer
+      is both'' and (E3) ''the fact about odd squares''. These match the facts as stated in 2.1 and in
+      2.3:476. The statement is unchanged.'
 - key: proof:thm-square-even-implies-even
   kind: proof
   file: 01-contradiction-and-vacuous-truth.md
@@ -656,6 +721,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: premises glossed; steps and derivation byte-identical; sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 0c2a6d22deb4
+    date: '2026-11-01'
+    evidence: 'wording only: the premises E∨O, ¬(S∧T) and O→T are unchanged, each now glossed in words.
+      The note on the two steps that are not in the derivation is split into ''The first… The second…''.
+      The proof steps and the derivation are byte-identical, and the sidecar passes.'
 - key: check:01-contradiction-and-vacuous-truth:4
   kind: check
   file: 01-contradiction-and-vacuous-truth.md
@@ -683,6 +756,13 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: answer still line 10, bot-E writing E'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 24dc580c2565
+    date: '2026-11-01'
+    evidence: 'wording only: ''(line 9)'' became '', line 9,''. The answer is still line 10, ⊥E, writing
+      E.'
 - key: exm-vacuous-square
   kind: exm
   file: 01-contradiction-and-vacuous-truth.md
@@ -734,6 +814,15 @@ items:
     model: claude-opus-5-5
     evidence: 'wording only: prose split; ''some logics drop bot-E'' moved to For instructors fold; sidecar
       passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d71daf7945a5
+    date: '2026-11-01'
+    evidence: 'wording only: the prose reading is split at its semicolons. In ''Two sequents that sound
+      wrong'' the reference to B2 of 1.4 moved earlier, and ''Instances… are'' became ''An instance… is''.
+      The ''some logics drop ⊥E'' sentence moved, word for word apart from the split, into a ''For instructors''
+      fold (B9) ...'
 - key: check:01-contradiction-and-vacuous-truth:5
   kind: check
   file: 01-contradiction-and-vacuous-truth.md
@@ -763,6 +852,12 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: ''the convention box'' -> ''by the convention on order'''
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ce1742be0d0f
+    date: '2026-11-01'
+    evidence: 'wording only: ''the convention box'' became ''by the convention on order''. The same justification.'
 - key: exm-contradiction-and-vacuous-truth-instances
   kind: exm
   file: 01-contradiction-and-vacuous-truth.md
@@ -800,6 +895,22 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'fixed: Lean column and paragraph moved into a For instructors fold, as in 2.2-2.4'
+  - stage: S5e
+    verdict: minor
+    by: s5e-referee
+    hash: 9ea0f233ae8e
+    date: '2026-11-01'
+    evidence: 'wording only: the table is unchanged and the ''Not allowed'' box gives the same three errors,
+      without the pointers to the bullet names. The minor is the Lean paragraph after the rule card (''In
+      Lean the two steps are often taken together… absurd… contradiction''). It stays on the main line,
+      but STYLE...'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 9ea0f233ae8e
+    date: '2026-11-01'
+    evidence: 'confirmed fixed: the Lean rows and the absurd/contradiction paragraph now sit in the For
+      instructors fold after the rule card (01:608-617), as in 04 and 05'
 - key: exr-contradiction-and-vacuous-truth-a1
   kind: exr
   file: 01-contradiction-and-vacuous-truth.md
@@ -881,6 +992,13 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: part (b) split into two sentences, same task'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: a1c6234f5b7e
+    date: '2026-11-01'
+    evidence: 'wording only: part (b) is split into two sentences (''The two sentences below… Match each
+      with its rule''). The same task.'
 - key: exr-contradiction-and-vacuous-truth-a2
   kind: exr
   file: 01-contradiction-and-vacuous-truth.md
@@ -920,6 +1038,13 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: (E2) glossed; derivation answers unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 0f59e152c174
+    date: '2026-11-01'
+    evidence: 'wording only: solution (b) adds the gloss ''no integer is both'' after (E2). Every derivation
+      answer is unchanged.'
 - key: exr-contradiction-and-vacuous-truth-b1
   kind: exr
   file: 01-contradiction-and-vacuous-truth.md
@@ -1118,6 +1243,13 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: closing clause restates the vacuous-truth warning; sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: dcce4ec8485a
+    date: '2026-11-01'
+    evidence: 'wording only: the solution''s closing clause ''as the warning on vacuous truth says'' became
+      '': true is not the same as useful'', which is the content of that warning. The sidecar passes.'
 - key: exr-contradiction-and-vacuous-truth-b4
   kind: exr
   file: 01-contradiction-and-vacuous-truth.md
@@ -1154,6 +1286,13 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: ''Name the move'' -> ''Name the strategy''; derivation unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 5e4a3d550864
+    date: '2026-11-01'
+    evidence: 'wording only: ''Name the move'' became ''Name the strategy'', in the statement and in the
+      solution. The derivation is unchanged.'
 - key: exr-contradiction-and-vacuous-truth-b5
   kind: exr
   file: 01-contradiction-and-vacuous-truth.md
@@ -1216,6 +1355,15 @@ items:
     model: claude-opus-5-5
     evidence: 'fixed: ''Slips that lose the step (0 for the claim)'' -> ''Slips that lose the claim (0
       points for it)'''
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 756e11d41485
+    date: '2026-11-01'
+    evidence: 'wording only: the task is split into ''To derive it, use… To break it, give…'' with the
+      same allowed rules. The four ''derive'' cases are now a list with the same @refs. In the marking
+      scheme, 16 points = 8×2 is unchanged and ''Fatal errors'' became ''Slips that lose the step (0 for
+      the claim)''. The not...'
 - key: exr-contradiction-and-vacuous-truth-b6
   kind: exr
   file: 01-contradiction-and-vacuous-truth.md
@@ -1266,6 +1414,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: part 4 split, n=3,6,8 unchanged; 10 points unchanged; sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 1ee9b7c67ccd
+    date: '2026-11-01'
+    evidence: 'wording only: part 4 is split into two sentences, n=3,6,8 unchanged. In the marking scheme,
+      10 points and the per-part split are unchanged, and ''Fatal error (0 for (b))'' became ''Slips that
+      lose the step, scoring 0 for (b)''. The sidecar passes.'
 - key: exr-contradiction-and-vacuous-truth-c1
   kind: exr
   file: 01-contradiction-and-vacuous-truth.md
@@ -1397,6 +1553,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: ''move'' -> ''step''; counterexample x=-1 unchanged; sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d2ccda809cea
+    date: '2026-11-01'
+    evidence: 'wording only: ''move'' became ''step'' in task 3 and solution (c). The counterexample x=-1,
+      P: x>0, Q: x=7 is unchanged. ''Marking scheme'' and ''Fatal errors'' were renamed and the points
+      are unchanged. The sidecar passes.'
 - key: def-rules-negation
   kind: def
   file: 02-negation-and-contradiction.md
@@ -1450,6 +1614,15 @@ items:
     model: claude-opus-5-5
     evidence: 'wording only: definition block unchanged; true worked instance x^2+1=0 added before the
       rule; phi->bot remark to For instructors'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 991ec9ab1484
+    date: '2026-11-01'
+    evidence: 'wording only. The definition block (both schemas and the paragraph under them) is unchanged.
+      The changes are in the surrounding prose. The section opening splits sentences and adds one worked
+      instance before the rule: ''Suppose x^2+1=0. Then x^2=-1<0, which contradicts x^2>=0.'' The instance
+      is tru...'
 - key: exm-square-plus-one
   kind: exm
   file: 02-negation-and-contradiction.md
@@ -1500,6 +1673,13 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: one semicolon -> full stop'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 02ec329fccf2
+    date: '2026-11-01'
+    evidence: wording only. One semicolon in the idea became a full stop. The statement, solution and
+      derivation are unchanged.
 - key: check:02-negation-and-contradiction:1
   kind: check
   file: 02-negation-and-contradiction.md
@@ -1593,6 +1773,15 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: captions and Idea reworded; derivations and line numbers unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: fd0f235de216
+    date: '2026-11-01'
+    evidence: wording only. In (a) and (b), the captions for the two partial derivations ('On the left...
+      On the right...') say the same as before. 'premise-directed move' became 'working forward from the
+      premise'. The run-on after the example was split. The statement, the derivations and every line
+      number are...
 - key: check:02-negation-and-contradiction:2
   kind: check
   file: 02-negation-and-contradiction.md
@@ -1643,6 +1832,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: ''aim at bot; vI turns'' split; derivation unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 20e0cabda7bf
+    date: '2026-11-01'
+    evidence: wording only. In the solution, 'aim at ⊥; ∨I turns' became 'aim at ⊥. Then ∨I turns'. The
+      derivation and @exm-manufactured-clash are kept. The changed sentence after the check ('So a negation
+      goal opens a box a second time') says the same as before.
 - key: exm-triple-negation
   kind: exm
   file: 02-negation-and-contradiction.md
@@ -1694,6 +1891,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: ''premise-directed question'' reworded; derivation and lines 2-6 unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 5ee2b942e726
+    date: '2026-11-01'
+    evidence: wording only. 'the premise-directed question asks for' became 'To clash with it, we need',
+      and 'the goal-directed move' became 'it'. The left/right captions and one semicolon were split.
+      The statement, the derivation, @def-derivation and the line numbers 2-6 are unchanged.
 - key: thm-sqrt2-irrational
   kind: thm
   file: 02-negation-and-contradiction.md
@@ -1756,6 +1961,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: statement word for word; Idea semicolon split; both refs kept
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 9486a38cf874
+    date: '2026-11-01'
+    evidence: The statement is word for word the same. In the idea, one semicolon became a full stop and
+      both @thm-square-even-implies-even refs are kept. In the (L) paragraph before the theorem, 'prove;
+      here' became 'prove. Here'.
 - key: proof:thm-sqrt2-irrational
   kind: proof
   file: 02-negation-and-contradiction.md
@@ -1819,6 +2032,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: one semicolon split; steps, rule tags and numbers unchanged; sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 09e922fdce8b
+    date: '2026-11-01'
+    evidence: wording only. The single change is 'not both even; this is a contradiction', which became
+      'not both even. This is a contradiction'. Every step, rule tag and number is unchanged, and the
+      thm-sqrt2-irrational.py sidecar passes.
 - key: check:02-negation-and-contradiction:3
   kind: check
   file: 02-negation-and-contradiction.md
@@ -1847,6 +2068,15 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: block unchanged; prose after it split into a list, true
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 980b9f22dcfc
+    date: '2026-11-01'
+    evidence: 'The check block and its solution are unchanged. The edits are in the prose after it. Two
+      semicolons were split. The three outside-the-derivation steps became a bulleted list, and its closing
+      clause now says ''as it said at its start''. That is true: the ch02 index.md says steps about ''every''
+      and ''s...'
 - key: exm-negation-and-contradiction-instances
   kind: exm
   file: 02-negation-and-contradiction.md
@@ -1879,6 +2109,15 @@ items:
     model: claude-opus-5-5
     evidence: block unchanged; rule card cells match, Lean column to For instructors; Not-allowed bullets
       name conditions in words
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 04e5ed5f1441
+    date: '2026-11-01'
+    evidence: The example block is unchanged. The edits are in the rule card and the warning after it.
+      The card now has columns Rule/Shape/You write, and its cells match the old ones. The Lean column
+      and the Lean paragraph moved into a For-instructors box, which is a true statement. In the Not-allowed
+      list, 'c...
 - key: exr-negation-and-contradiction-a1
   kind: exr
   file: 02-negation-and-contradiction.md
@@ -1945,6 +2184,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: solutions (b),(c),(e) split; refs kept; sidecar passes'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 1f76693b41b9
+    date: '2026-11-01'
+    evidence: wording only. The statement is unchanged. In solutions (b), (c) and (e), semicolons and
+      parentheses were split ('This is line 8 of the derivation, citing lines 3 and 7'). @def-rules-negation
+      and @thm-square-even-implies-even are kept, and the a1 sidecar passes.
 - key: exr-negation-and-contradiction-a2
   kind: exr
   file: 02-negation-and-contradiction.md
@@ -1985,6 +2232,15 @@ items:
     model: claude-opus-5-5
     evidence: 'wording only (checked against 9f9dbb8): solutions (g),(m),(n),(o) become lists with the
       same lines and rule tags; (k) ''clause 3'' said in words'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 57a6f9a83bd7
+    date: '2026-11-01'
+    evidence: wording only. Solutions (g), (m), (n) and (o) became displayed lists with the same lines,
+      rules and citations. For example, (m) is still 2 P∧Q asm; 3 P ∧E 2; 4 ⊥ ¬E 3,1; 5 ¬(P∧Q) ¬I 2-4.
+      The added 'After the premise on line 1' is true for each part's single premise. In (k), '(clause
+      3)' became th...
 - key: exr-negation-and-contradiction-b1
   kind: exr
   file: 02-negation-and-contradiction.md
@@ -2049,6 +2305,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: ''Name the move'' -> ''Name the reasoning''; solution boxes and lines unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 4be572d854e6
+    date: '2026-11-01'
+    evidence: 'wording only. In the statement, ''Name the move'' became ''Name the reasoning''. In the
+      solution, the closing sentence says the same thing in other words: the implication goal gives the
+      outer box and the negation goal gives the inner one. The derivation is unchanged.'
 - key: exr-negation-and-contradiction-b2
   kind: exr
   file: 02-negation-and-contradiction.md
@@ -2112,6 +2376,13 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: one semicolon -> full stop; steps and rule tags unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 070ece27149a
+    date: '2026-11-01'
+    evidence: wording only. One semicolon before 'This is a contradiction' was split. The identity, the
+      numbers -3/4, 1/4, 3/4 and the b2 sidecar are unchanged, and the sidecar passes.
 - key: exr-negation-and-contradiction-b3
   kind: exr
   file: 02-negation-and-contradiction.md
@@ -2178,6 +2449,14 @@ items:
     model: claude-opus-5-5
     evidence: 'wording only: two given facts split into sentences; (a),(b) semicolons split; argument
       unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 35b8bc2bcbd8
+    date: '2026-11-01'
+    evidence: The statement changed only in wording, from 'You may use that every integer... and that
+      every rational...' to 'You may use two facts. Every integer... Every rational...'. The two facts
+      are the same. In the solution, (a) and (b) only had semicolons split, and the b3 sidecar passes.
 - key: exr-negation-and-contradiction-b4
   kind: exr
   file: 02-negation-and-contradiction.md
@@ -2291,6 +2570,15 @@ items:
     model: claude-opus-5-5
     evidence: 'wording only: semicolons split; (b) names thm-square-even-implies-even by content and Uses
       line; marking renamed, 10 points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: eead1a7fc937
+    date: '2026-11-01'
+    evidence: wording only. Semicolons in (a) and (c) were split. In (b), the inline @thm-square-even-implies-even
+      became the quoted statement 'if n^2 is even, then n is even', and a Uses line at the end carries
+      the ref. That is an allowed inline-to-Uses move. 'Marking scheme' became 'What a complete answer
+      ne...
 - key: exr-negation-and-contradiction-b6
   kind: exr
   file: 02-negation-and-contradiction.md
@@ -2341,6 +2629,15 @@ items:
     model: claude-opus-5-5
     evidence: 'wording only: break task split; (d),(h) split; x=1 witness unchanged; marking list, 16
       points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 060d204bd5e5
+    date: '2026-11-01'
+    evidence: The statement split 'or break it by statements...' into 'or break it. To break it, give
+      statements...', which means the same. Solutions (d) and (h) only had sentences split, and the witnesses
+      at x=1 are unchanged. The scoring (16 points, 1+1 per claim) became a list. 'Fatal errors (0 for
+      the clai...
 - key: exr-negation-and-contradiction-c1
   kind: exr
   file: 02-negation-and-contradiction.md
@@ -2443,6 +2740,15 @@ items:
     model: claude-opus-5-5
     evidence: 'fixed: ''the facts about even and odd integers, (E1)-(E3)'' -> ''the facts (E1)-(E3) about
       even and odd integers''; same allowed facts'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 7bde407582a4
+    date: '2026-11-01'
+    evidence: In the statement, 'the facts (E1)–(E3)' became 'the facts about even and odd integers, (E1)–(E3)'.
+      This describes the same facts and changes no meaning. In the solution, (E1), (E2) and (E3) are now
+      quoted beside their codes, and the quotes match their meaning in §2.1 (lines 444-452). The steps,
+      r...
 - key: exr-negation-and-contradiction-c2
   kind: exr
   file: 02-negation-and-contradiction.md
@@ -2510,6 +2816,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: (c) states the lemma in words with a Uses line; same content'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d270c4dc70ce
+    date: '2026-11-01'
+    evidence: wording only. In (c), 'In @thm-sqrt2-irrational the corresponding lemma is @thm-square-even-implies-even,
+      which we proved' became 'In the proof of @thm-sqrt2-irrational, the lemma in the same place is "if
+      n^2 is even, then n is even", and that lemma was proved'. A Uses line carries @thm-square-ev...
 - key: prp-modus-tollens
   kind: prp
   file: 03-derived-rules.md
@@ -2552,6 +2866,13 @@ items:
     model: claude-opus-5-5
     evidence: 03:21-25 statement; the motivating facts at 03:9-13 (x^2>=x>=1, the exact negations) are
       in the ledger (03:1134) under STATUS row 94 (F1.2 §03 -> AN1.1)
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 187e181dc947
+    date: '2026-11-01'
+    evidence: 'wording only: the idea now says ''method'' where it said ''move'' (twice). Statement and
+      figures unchanged.'
 - key: proof:prp-modus-tollens
   kind: proof
   file: 03-derived-rules.md
@@ -2637,6 +2958,13 @@ items:
     model: claude-opus-5-5
     evidence: 03:84-88; 03:118's rule list (->I, ->E, ¬I, ¬E) matches the derivation; 03:120's claim that
       lines 3-6 coincide citation for citation with MT's lines 3-6 is checked
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: be9fcca878be
+    date: '2026-11-01'
+    evidence: 'wording only: the idea now says ''method'' where it said ''move''. Statement and proof
+      unchanged.'
 - key: proof:prp-contrapositive
   kind: proof
   file: 03-derived-rules.md
@@ -2679,6 +3007,14 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: '03:97-115: the scope claim cites @def-derivation; the nesting is correct'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b48c706f3b0e
+    date: '2026-11-01'
+    evidence: 'wording only: the pointer ''(Common errors, below)'' is now ''it needs a new rule, given
+      in Section 2.5''. This is true and already sourced by the Common errors warning (l.531) and prp-contrapositive-converse,
+      which uses RAA in 2.5. Section 2.5 was already named in the file. The comparison of lines 3...'
 - key: def-derived-rule
   kind: def
   file: 03-derived-rules.md
@@ -2736,6 +3072,15 @@ items:
       the letters P, Q of prp-modus-tollens (03:24, P->Q, ¬Q |- ¬P), written phi, psi in the schema, replaced
       by A∧B and C, which is right. 03:152 ''the four lines 2-5 of @exm-vacuous-square'' checked against
       01:524-530: l'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 0cc611959383
+    date: '2026-11-01'
+    evidence: 'wording only: the statement is word for word the same. ''Read clause by clause'' became
+      ''Each part has a reason''. The tags sentence is split; ''modus tollens'', ''the contrapositive''
+      and ''disjunctive syllogism'' were added as names, and all three @refs are kept. In the fold ''Why
+      a derived rule adds no ...'
 - key: check:03-derived-rules:1
   kind: check
   file: 03-derived-rules.md
@@ -2784,6 +3129,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: ''In the figure'' -> ''In the two derivations above'''
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b503b98b4bd9
+    date: '2026-11-01'
+    evidence: 'wording only: ''In the figure'' became ''In the two derivations above''. The answer is
+      unchanged. The fold that follows changed in wording only (see def-derived-rule), and ''Givens/Goal
+      table'' became ''a table of what we know and what we want''.'
 - key: lem-weakening-cut
   kind: lem
   file: 03-derived-rules.md
@@ -2821,6 +3174,21 @@ items:
       is derivable (def-derivable), so (c) gives Gamma |- the instance. Turning the derived-rule line
       into a premise gives a derivation from Gamma plus the instance, and (b) removes that premise. This
       is no longer the '
+  - stage: S5e
+    verdict: minor
+    by: s5e-referee
+    hash: e00358ac6626
+    date: '2026-11-01'
+    evidence: Statement unchanged. 'In words' now says 'writing the derived-rule line out in full' instead
+      of naming the fold, and the chaining paragraph is split with its meaning kept. New worked case (l.218),
+      which I checked as an example. First, P→Q, S ⊢ ¬Q→¬P from the 7 lines of CP is true by def-derivable...
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: e00358ac6626
+    date: '2026-11-01'
+    evidence: 'fixed 03:218: the cut instance now puts not Q among the premises at the top and the ->E
+      line cites line 7 and that premise; ledger claim line updated; lemma unchanged'
 - key: proof:lem-weakening-cut
   kind: proof
   file: 03-derived-rules.md
@@ -2853,6 +3221,15 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: case split and availability argument split into sentences; every step unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: aaf0a9cb04c9
+    date: '2026-11-01'
+    evidence: 'wording only: sentence splits (''Suppose first that ... Then either ... Or ...''; ''That
+      line is not a premise ... So it was copied in step 2''; ''moved as blocks. So ... and each still
+      begins with its assumption. Each line lies ...''). Proof steps are kept in the same order with the
+      same content.'
 - key: check:03-derived-rules:2
   kind: check
   file: 03-derived-rules.md
@@ -2882,6 +3259,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: question split into sentences; answers (a) and (c) with m=1 unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 1b64df4da23a
+    date: '2026-11-01'
+    evidence: 'wording only: ''Given X, which part'' became ''Suppose X has been derived. Which part then''.
+      In the solution, the parenthesis was removed and ''and then part (b) do the same'' became ''followed
+      by part (b) does the same''. The parts (a), (c), (b) and the replacement m=1, α1=¬P, β=P→R are unchanged.'
 - key: prp-disjunctive-syllogism
   kind: prp
   file: 03-derived-rules.md
@@ -3039,6 +3424,15 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: ''move'' -> ''new step''; fold pointer stated by content'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 5cf7f4cf12b4
+    date: '2026-11-01'
+    evidence: 'wording only: in the solution, ''move'' became ''new step''. ''The literal expansion of
+      the fold ... adds a repetition of each cited line and is longer'' became ''The general recipe for
+      writing out a derived rule first repeats each cited line, so it gives a longer derivation''. Same
+      claim. The nd blocks ...'
 - key: check:03-derived-rules:3
   kind: check
   file: 03-derived-rules.md
@@ -3114,6 +3508,13 @@ items:
       This is now true (neither sequent is valid) and no longer denies that ∧I can combine the two lines.
       The other rows and the check at 03:461-466 (R->E, the 7 shows ¬E, MT gives ¬R) check. The earlier
       finding is re'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 87a95a723107
+    date: '2026-11-01'
+    evidence: 'wording only: the Wason contrapositive sentence was split at ''number". This carries ...''
+      and at ''green card. Section 2.5 ...''. The sidecar passes.'
 - key: check:03-derived-rules:4
   kind: check
   file: 03-derived-rules.md
@@ -3191,6 +3592,15 @@ items:
     model: claude-opus-5-5
     evidence: 03:491-513 derivation checked; the fold at 03:519 matches the 12-line derivation at 01:452-470
       (odd case 6-10, S∧T and ⊥ at 8-9, T at 7, ∨E 5-11)
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 3f0b5e214bc0
+    date: '2026-11-01'
+    evidence: 'wording only: ''The example below writes'' became ''Next comes''. In the fold (B12), the
+      line-number pointers into Section 2.1 (line 11, 6–10, 8–9, 7, 5–11) were removed, and (E1), (E2)
+      and (E3) are glossed in words that match their statements in 2.1. The steps described (split on
+      E1, T from E3, S∧T,...'
 - key: exm-derived-rules-instances
   kind: exm
   file: 03-derived-rules.md
@@ -3212,6 +3622,15 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: '03:541-545 rows checked: the CP row gives ¬(Q->R)->¬¬P; the look-alike is correctly rejected'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: afe0d9121544
+    date: '2026-11-01'
+    evidence: 'wording only: the Lean column moved into a ''For instructors'' fold, with every Lean cell
+      unchanged (DS keeps h.resolve_left hnp). In the ''Not allowed'' warning, ''clause 1/3/4'' is replaced
+      by quoting the matching condition names. I checked each against the numbered list at l.149–152 and
+      all match. T...'
 - key: exr-derived-rules-a1
   kind: exr
   file: 03-derived-rules.md
@@ -3275,6 +3694,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: the derived-rule statement split into sentences, same conditions'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 6be2c8dc70d4
+    date: '2026-11-01'
+    evidence: 'wording only: in solution (a), the parenthesis and the 62-word sentence were split into
+      three sentences. The conditions are the same: derived earlier and not inside, uniform replacement,
+      available lines, one line citing the sequent and the lines.'
 - key: exr-derived-rules-a2
   kind: exr
   file: 03-derived-rules.md
@@ -3313,6 +3740,15 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: (e) figure pointer named; (j) parenthesis removed; (m) lines unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b8c4772be8b5
+    date: '2026-11-01'
+    evidence: 'wording only: in (e), ''(the figure)'' became ''as in the written-out derivation after
+      @def-derived-rule''. That is a backward reference to the right-hand derivation, whose lines 3–6
+      are asm, →E, ¬E, ¬I. In (j), the parentheses are now commas. In (m), the semicolon list became ''Line
+      3: ... Line 7:'' w...'
 - key: exr-derived-rules-b1
   kind: exr
   file: 03-derived-rules.md
@@ -3490,6 +3926,13 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: ''move'' -> ''method'', ''manufactured'' -> ''built'''
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 95be0c28cd40
+    date: '2026-11-01'
+    evidence: 'wording only: ''Name the move'' became ''Name the method'', and ''manufactured'' became
+      ''built''. The derivation is unchanged.'
 - key: exr-derived-rules-b4
   kind: exr
   file: 03-derived-rules.md
@@ -3550,6 +3993,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: marking renamed, 10 points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 730812557bb3
+    date: '2026-11-01'
+    evidence: 'wording only: ''Marking scheme'' became ''What a complete answer needs'', and ''Fatal error
+      (0 for (b))'' became ''Slips that lose all the points of (b)''. The points (10) and the item list
+      are unchanged, and the sidecar passes.'
   note: 'used later (D8): F1.7 §03''s library of standard sequents cites this item for the CD and MPT
     forms (ch02-deepen §6.3); ch03 S4 confirms the seam or removes the marker'
 - key: exr-derived-rules-b5
@@ -3603,6 +4054,15 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: task split; (b) ''manufacture'' -> ''build''; marking 16 points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 62876960f998
+    date: '2026-11-01'
+    evidence: 'wording only: the task sentence is split into ''either derive it or break it. To derive
+      ... To break ...''. In (b), ''manufacture'' became ''build''. The rubric is the same: 16 points,
+      1 point per verdict plus a second point for a checked derivation or witness, and the same zero-point
+      slips. The witnes...'
 - key: exr-derived-rules-c1
   kind: exr
   file: 03-derived-rules.md
@@ -3797,6 +4257,15 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: (E1),(E2) glossed in words; marking renamed, points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: ad8cba4ebbbd
+    date: '2026-11-01'
+    evidence: 'wording only: the title ''Exit check'' became ''Chapter check'', the same label used across
+      fd1. The premises (E1) and (E2) are now glossed in words that match 2.1. ''Marking scheme'' and
+      ''Fatal errors'' are renamed, and the two zero-point slips are now bullets with the same content.
+      Points are unchange...'
 - key: def-rules-biconditional
   kind: def
   file: 04-biconditional-and-definitions.md
@@ -3848,6 +4317,15 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: paragraph after schemas split; schemas unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: cffbeef1bdbe
+    date: '2026-11-01'
+    evidence: 'The schema and clauses 1-4 are unchanged. Only the text after the def changed: it is split
+      into sentences and one parenthetical is unnested. The new unlabelled instance at L11 is true for
+      real x and only restates iff-I/iff-E in words: ''x>0 iff 2x>0'' takes two directions and can be
+      used either way...'
 - key: exm-iff-symmetric
   kind: exm
   file: 04-biconditional-and-definitions.md
@@ -3900,6 +4378,15 @@ items:
     model: claude-opus-5-5
     evidence: 'wording only: ''right to left'' -> ''from the right side of line 1 to its left side'';
       derivation unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e682d2a9d717
+    date: '2026-11-01'
+    evidence: 'The Fitch blocks are identical. The new gloss for line 3 says ''second form, from the right
+      side of line 1 to its left side'', and the derivation agrees: line 3 writes P from Q (line 2) using
+      P<->Q. Line 5 uses the first form. The lead-in ''goal-directed move'' became ''When a derivation
+      has an iff as...'
 - key: prp-iff-two-implications
   kind: prp
   file: 04-biconditional-and-definitions.md
@@ -3941,6 +4428,13 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: '04:144-217: the statement and both snapshot pairs agree with R3 §4.4 item 3.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 33f7c312cf25
+    date: '2026-11-01'
+    evidence: The statement and proof are unchanged. In the Idea box, 'crossing the premise' became 'one
+      iff-E on the premise' and 'premise-directed' became 'guided by the premise'. The steps are the same.
 - key: proof:prp-iff-two-implications
   kind: proof
   file: 04-biconditional-and-definitions.md
@@ -4047,6 +4541,14 @@ items:
     model: claude-opus-5-5
     evidence: 'wording only: Idea reworded (''goal-directed move'' -> ''building from the goal''); derivation
       unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 326632d3682b
+    date: '2026-11-01'
+    evidence: The derivations are unchanged. The Idea now says 'building from the goal twice, one box
+      inside the other', and 'crosses' became 'passes'. The paragraph that follows, on the converse needing
+      Section 2.5's rule, is split into two sentences with no change in content.
 - key: check:04-biconditional-and-definitions:1
   kind: check
   file: 04-biconditional-and-definitions.md
@@ -4110,6 +4612,13 @@ items:
     model: claude-opus-5-5
     evidence: '04:367-406: the statement, Idea and snapshots match deepen §4.4 item 2. The instance at
       435 uses the 2.1 convention (01:78: a ≤ b is ¬(a > b)). Ledger 1340 and a sidecar cover it.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: aef77a59e2c9
+    date: '2026-11-01'
+    evidence: The statement and proof are unchanged. The instance paragraph is only split at 'By the convention
+      of Section 2.1'.
 - key: proof:lem-not-iff-own-negation
   kind: proof
   file: 04-biconditional-and-definitions.md
@@ -4195,6 +4704,14 @@ items:
     evidence: '04:451-465: the cited labels exist and say what is claimed. @prp-and-commutes is 02:432.
       @exm-disjunction-first-derivations (07:95) has P∨Q ⊢ Q∨P. @exm-derivations (a) is the one-line derivation.
       @exm-double-negation-introduction is 2.2. The warning''s break (2>1, 1>2) is correct.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 7f492f9f05be
+    date: '2026-11-01'
+    evidence: The definition is unchanged. The lead-in sentence 'curry and distributivity are pairs' is
+      split in two, and both refs are kept. In the edge-cases fold, 'degenerate' became 'smallest' and
+      'one-way street' became 'a sequent that holds in one direction only'. The facts are the same.
 - key: prp-provable-equivalence-basics
   kind: prp
   file: 04-biconditional-and-definitions.md
@@ -4236,6 +4753,15 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: '04:469-480: the statement, meaning sentence and fold placement follow STYLE §12.12.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 258ef389fe78
+    date: '2026-11-01'
+    evidence: 'The statement is unchanged. The new lead-in example says that P and Q -||- Q and P, and
+      that the two boxes of iff-I derive (P and Q)<->(Q and P) from no premises. It is true: each box
+      is the and-E, and-E, and-I derivation of prp-and-commutes. It uses only def-rules-biconditional
+      and prp-and-commu...'
 - key: proof:prp-provable-equivalence-basics
   kind: proof
   file: 04-biconditional-and-definitions.md
@@ -4288,6 +4814,15 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: observation and copies split into sentences; (D3) named in words; steps unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 5cc6a87fed2f
+    date: '2026-11-01'
+    evidence: The steps correspond one to one. The only changes are sentence splits, 'turning ... into'
+      becoming 'becomes', and '(D3) of @def-derivation' expanded to 'the clause of @def-derivation that
+      copies an available line, (D3)'. Chapter 1 Section 5 confirms that (D3) is repetition of an available
+      line.
 - key: thm-odd-iff-square-odd
   kind: thm
   file: 04-biconditional-and-definitions.md
@@ -4329,6 +4864,14 @@ items:
     date: '2026-10-19'
     model: claude-opus-5-5
     evidence: '04:520-525: (E1)-(E3) are stated at 01:410-418, as the text says.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 02dfb9b03792
+    date: '2026-11-01'
+    evidence: 'The statement and proof are unchanged. (E1)-(E3) are now a displayed list with the same
+      three facts as before. The Idea glosses (E3) and (E1) in words that match the list. The one-sentence
+      remark lists the same steps: not-I with (E2), then MT, then DS on (E1).'
 - key: proof:thm-odd-iff-square-odd
   kind: proof
   file: 04-biconditional-and-definitions.md
@@ -4416,6 +4959,14 @@ items:
     evidence: '04:544-569: the remark''s pairs check. (-2,1) breaks ⇒ with y≥0. (1,-2) breaks ⇐ with x≥0.
       Square-root existence is ledgered (1343) to AN1.1, STATUS row 94, and an1 06:70 thm-nth-root pays
       it.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 8dcde642927a
+    date: '2026-11-01'
+    evidence: The statement, proof and remark are unchanged. The lead-in drops the pointer 'as the remark
+      after the proof shows', and the remark still follows. 'A payoff' became 'One consequence', and the
+      square-root claim is the same. The sidecar thm-squares-order.py passes.
 - key: proof:thm-squares-order
   kind: proof
   file: 04-biconditional-and-definitions.md
@@ -4541,6 +5092,15 @@ items:
     model: claude-opus-5-5
     evidence: 'wording only: ''read from right/left'' -> ''used from the condition to the term'' and back;
       same directions'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b15baf4c066a
+    date: '2026-11-01'
+    evidence: '''read from right to left'' became ''used from the condition to the term'' in (a), and
+      ''left to right'' became ''term to the condition'' in (b) and (c). Both directions match the old
+      text, since the term is on the left. The lead-in replaces ''Some books write iff; this book, like
+      most, writes if'' with ''T...'
 - key: check:04-biconditional-and-definitions:4
   kind: check
   file: 04-biconditional-and-definitions.md
@@ -4611,6 +5171,12 @@ items:
     model: claude-opus-5-5
     evidence: 04:646-650. The statement matches the proof. The derived conclusions are Q↔R and R↔P from
       the same three premises.
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: dc2a87f9ee1f
+    date: '2026-11-01'
+    evidence: The statement is unchanged. The lead-in sentence was reworded without changing its content.
 - key: proof:prp-equivalence-cycle
   kind: proof
   file: 04-biconditional-and-definitions.md
@@ -4673,6 +5239,14 @@ items:
     model: claude-opus-5-5
     evidence: 'wording only: ''clause 2 after def-derived-rule'' stated as uniform substitution; same
       argument'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 31f6c51e0b56
+    date: '2026-11-01'
+    evidence: The Fitch block is unchanged. '(as in clause 2 after @def-derived-rule)' became 'may be
+      replaced by any statements, the same for each occurrence (@def-derived-rule)'. This is exactly clause
+      2 of def-derived-rule in Section 2.3, the @ref is kept, and the ledger note was updated to match.
 - key: exm-unit-interval-tfae
   kind: exm
   file: 04-biconditional-and-definitions.md
@@ -4723,6 +5297,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: parenthesis about rules made sentences; DS named; argument unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 236fdf7233c8
+    date: '2026-11-01'
+    evidence: 'The ''(In rules: ...)'' parenthetical became a plain sentence, with ''disjunctive syllogism''
+      named in words and @prp-disjunctive-syllogism moved to the end. The steps and numbers are unchanged,
+      and the sidecar passes.'
 - key: exm-biconditional-and-definitions-instances
   kind: exm
   file: 04-biconditional-and-definitions.md
@@ -4745,6 +5327,15 @@ items:
     model: claude-opus-5-5
     evidence: '04:747-757 and 774-823: the table rows are correct instances. The WRONG half fails only
       at line 7. ''Never cites premises 2 and 3'' (822) is true. The x=4 break is correct, with a sidecar.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: de7a68d530a5
+    date: '2026-11-01'
+    evidence: The example body is unchanged. On the rule card after it, the Lean column moved into a 'For
+      instructors' second-reading fold. Every code cell is the same as before, including h.mp hp / h.mpr
+      hq. The mp/mpr sentence is now limited to iff-E, which is accurate. The Shape and 'You write' columns
+      are ...
 - key: exr-biconditional-and-definitions-a1
   kind: exr
   file: 04-biconditional-and-definitions.md
@@ -4808,6 +5399,30 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: item 3 split into sentences, same claim'
+  - stage: S5e
+    verdict: minor
+    by: s5e-referee
+    hash: d0640697987a
+    date: '2026-11-01'
+    evidence: 'L866: part (c) is restructured as ''True or false, with a reason? The definition reads
+      ..., and 10 is even. From these we may conclude ...''. The claim and the solution are unchanged,
+      so the mathematics is the same. The lead question ''True or false, with a reason?'' no longer reads
+      like parts (b) an...'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: d0640697987a
+    date: '2026-11-01'
+    evidence: 'fixed 04:865: part (c) restored to the 9f9dbb8 parallel form "True or false, with a reason:
+      from the definition ... we may conclude ..."; claim and solution unchanged'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 218b3401825c
+    date: '2026-11-01'
+    evidence: 'fixed 04:865: part (c) now ''Recall the definition: ... True or false, with a reason: from
+      this definition and the fact that 10 is even, we may conclude that 10 = 2k ...'', parallel to (b),(d)
+      and under the long-sentence limit; claim and solution unchanged'
 - key: exr-biconditional-and-definitions-a2
   kind: exr
   file: 04-biconditional-and-definitions.md
@@ -4858,6 +5473,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: (g),(o) split; lines and rule tags unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 125d7dd976ce
+    date: '2026-11-01'
+    evidence: 'Solutions (g) and (o) changed semicolons to full stops and added ''Line n is''. The line
+      numbers, rules and citations are the same: not-I 3-5, iff-E 1,3, not-E 4,2 and so on. The sidecar
+      passes.'
 - key: exr-biconditional-and-definitions-b1
   kind: exr
   file: 04-biconditional-and-definitions.md
@@ -5036,6 +5659,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: two refs into separate sentences; def-derived-rule to Uses line'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d45107c6d178
+    date: '2026-11-01'
+    evidence: The statement keeps both refs (@thm-squares-order and @exm-iff-negations), now in separate
+      sentences. Solution (b) moved @def-derived-rule out of the text into a Uses block at the end of
+      the solution, so the ref count is unchanged.
 - key: exr-biconditional-and-definitions-b4
   kind: exr
   file: 04-biconditional-and-definitions.md
@@ -5071,6 +5702,22 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: ''move'' -> ''proof method'''
+  - stage: S5e
+    verdict: minor
+    by: s5e-referee
+    hash: 8c7a6e1dcfe0
+    date: '2026-11-01'
+    evidence: '''Name the move'' became ''Name the proof method for this goal'', and ''complete it'' became
+      ''complete the derivation'', with the same task. The Fitch blocks are unchanged. However, L1045
+      in the solution still says ''cross with iff-E'', a figurative word (B11) that the reviser removed
+      everywhere else in t...'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 8c7a6e1dcfe0
+    date: '2026-11-01'
+    evidence: 'fixed 04:1045: "cross with iff-E" -> "pass from one side to the other with iff-E"; derivation
+      unchanged'
 - key: exr-biconditional-and-definitions-b5
   kind: exr
   file: 04-biconditional-and-definitions.md
@@ -5111,6 +5758,15 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: parentheses split; triples unchanged; marking renamed, 10 points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 8f96ce71f641
+    date: '2026-11-01'
+    evidence: '''Marking scheme'' became ''What a complete answer needs'' and ''Fatal error'' became ''Slips
+      that lose part (b), with 0 points for it'', with the same point values. The old ''(the triple of
+      (c))'' became ''Part (c) uses this triple again''. Part (c) does use a=5, b=2, x=3, since it takes
+      the ends 5,2, so th...'
 - key: exr-biconditional-and-definitions-b6
   kind: exr
   file: 04-biconditional-and-definitions.md
@@ -5165,6 +5821,14 @@ items:
     model: claude-opus-5-5
     evidence: 'wording only: ''(iv)=>(i) read right to left'' -> ''direction (<=) of thm-odd-iff-square-odd''
       (checked: n^2 odd => n odd)'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b61dcf924c56
+    date: '2026-11-01'
+    evidence: '''read from right to left'' became ''the direction (<=) of @thm-odd-iff-square-odd''. Here
+      (iv) is ''n^2 odd'' and (i) is ''n odd'', so (iv)=>(i) is indeed (<=). The marking-scheme rename
+      keeps the same points. The sidecar passes.'
 - key: exr-biconditional-and-definitions-b7
   kind: exr
   file: 04-biconditional-and-definitions.md
@@ -5215,6 +5879,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: marking as a list, 16 points unchanged; RAA glossed'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 64c5b34e1090
+    date: '2026-11-01'
+    evidence: The marking scheme is now a list with the same 1+1 points per claim. 'RAA' was glossed as
+      'RAA, the rule of Section 2.5'. Section 2.5 (05-reductio-and-classical-rules.md L58) introduces
+      RAA, so this gloss is true and is already announced earlier in this section. The sidecar passes.
 - key: exr-biconditional-and-definitions-c1
   kind: exr
   file: 04-biconditional-and-definitions.md
@@ -5297,6 +5969,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: two allowed results in two sentences'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 3b4244961a8b
+    date: '2026-11-01'
+    evidence: The statement is split into two sentences and keeps both refs. The marking scheme's points
+      are unchanged (1, 2, 3, 4). The 'Any other cycle' line was moved before the slips line, as the report
+      says. The slips are word for word apart from the heading. The sidecar passes.
 - key: exr-biconditional-and-definitions-c2
   kind: exr
   file: 04-biconditional-and-definitions.md
@@ -5634,6 +6314,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: def-rules-negation moved to Uses line; derivations unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 2c961d354c7c
+    date: '2026-11-01'
+    evidence: 'wording only: ''which uses the rules of @def-rules-negation alone; we repeat it'' -> ''repeated
+      here ... It uses only the rules for ¬'' + Uses block @def-rules-negation (inline-to-Uses move, B1).
+      Fitch blocks byte-identical; steps and order unchanged.'
 - key: prp-contrapositive-converse
   kind: prp
   file: 05-reductio-and-classical-rules.md
@@ -6155,6 +6843,15 @@ items:
     model: claude-opus-5-5
     evidence: '05:826-872: the definition of ''derives'', the statement, the cycle diagram (solid r->l->d->r,
       dashed r->d) and the caption are consistent with the proof'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: a588e5bda400
+    date: '2026-11-01'
+    evidence: 'statement block unchanged (hash-masked edits are outside it). Surrounding prose: ''¬¬E/LEM
+      taken as a rule'' became a displayed list; new worked instance before ''derives'' (¬¬E line x≤1
+      from ¬¬(x≤1) replaced by box on ¬(x≤1), ⊥ by ¬E, x≤1 by RAA = 3 lines, as in prp-double-negation
+      (b), which is ear...'
 - key: proof:thm-classical-rules-interderivable
   kind: proof
   file: 05-reductio-and-classical-rules.md
@@ -6208,6 +6905,15 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: two sentences split; replacements and line numbers unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e28f05c75d1b
+    date: '2026-11-01'
+    evidence: 'wording only: colons/semicolons split into sentences (''line m). These are a box…''; ''may
+      cite line m. Line m was available…''); Idea ①/② reworded into separate sentences with the same citations
+      (@prp-excluded-middle, @prp-double-negation (b)); schema fragments byte-identical; renumbering paragraph
+      ...'
 - key: exm-raa-zero
   kind: exm
   file: 05-reductio-and-classical-rules.md
@@ -6315,6 +7021,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: fold pointer stated by title; table unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: c92db7c6efdb
+    date: '2026-11-01'
+    evidence: 'wording only: ''legal; a ¬I box opened by Q would also do (the fold …)'' -> ''legal. A
+      ¬I box … would also do, as "RAA is never needed to finish a negation" explains.'' Table and Not-an-instance
+      unchanged; sidecar passes.'
 - key: check:05-reductio-and-classical-rules:5
   kind: check
   file: 05-reductio-and-classical-rules.md
@@ -6410,6 +7124,13 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: (e),(g) split; valuations unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: e5c8a6ff5da1
+    date: '2026-11-01'
+    evidence: 'wording only in solutions (d)-(g): semicolon/colon splits (''broken. With P true and Q
+      false, …''), ''(Section 1.1''s test)'' kept; same breaks (P T,Q F; P F,Q T). sidecar a1 passes.'
 - key: exr-reductio-and-classical-rules-a2
   kind: exr
   file: 05-reductio-and-classical-rules.md
@@ -6449,6 +7170,13 @@ items:
     model: claude-opus-5-5
     evidence: 'wording only: (g),(m),(n),(o) split; lines and tags unchanged; (l) ''clause 3'' said in
       words'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: b3282551a6c5
+    date: '2026-11-01'
+    evidence: 'wording only: (g)/(m)/(n)/(o) semicolon lists -> ''Line 3: … Line 4: …'' with identical
+      lines and justifications; (l) drops ''(clause 3)'' and adds ''itself'' (same claim).'
 - key: exr-reductio-and-classical-rules-b1
   kind: exr
   file: 05-reductio-and-classical-rules.md
@@ -6653,6 +7381,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: ''Name the move'' -> ''Say which step comes next'''
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 0c99f5167a46
+    date: '2026-11-01'
+    evidence: stem 'Name the move, then complete it' -> 'Say which step comes next, then complete the
+      derivation' (same task); solution 'The move is' -> 'The step is'. Derivation unchanged; sidecar
+      passes.
 - key: exr-reductio-and-classical-rules-b5
   kind: exr
   file: 05-reductio-and-classical-rules.md
@@ -6723,6 +7459,14 @@ items:
     model: claude-opus-5-5
     evidence: 'fixed: ''Slips that lose the step (0 for the claim)'' -> ''Slips that lose the claim (0
       points for it)'''
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: d61c938c74e6
+    date: '2026-11-01'
+    evidence: '(h) colon/semicolon splits, same statements and x=1 breaks; closing paragraph''s four refs
+      became a displayed list (all four kept: prp-excluded-middle, prp-de-morgan (d), prp-implication-as-disjunction
+      (b), prp-contrapositive-converse); ''Marking scheme'' -> ''What a complete answer needs'' (16 points...'
   note: 'used later (D8): F1.7 §02''s def-inconsistent-set reads this item''s stem (an RAA derivation
     derives ⊥ from the counterexample set) (ch02-deepen §6.3); ch03 S4 confirms the seam or removes the
     marker'
@@ -6765,6 +7509,14 @@ items:
     model: claude-opus-5-5
     evidence: 'wording only: ''move'' -> ''step''; heading pointer renamed to ''Where to expect RAA'',
       which exists at 05:126; points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 2bd7eb1eec8c
+    date: '2026-11-01'
+    evidence: 'stem (d) and solution: ''move'' -> ''step'', ''"When RAA earns its place"'' -> ''described
+      under "Where to expect RAA"'' (the renamed paragraph exists earlier); scheme renamed, points 3/2/3/2
+      and zero rule for (c) unchanged. sidecar passes.'
 - key: exr-reductio-and-classical-rules-c1
   kind: exr
   file: 05-reductio-and-classical-rules.md
@@ -6913,6 +7665,13 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: ''move'' -> ''step''; (c) split; counter-valuation unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: f20b7c1bf14f
+    date: '2026-11-01'
+    evidence: stem (c) 'same move' -> 'same step'; solution (c) split into sentences, 'The same illegal
+      step', boxes P / Q 'repeats' P; break (P F, Q T) unchanged. sidecar passes.
 - key: exr-reductio-and-classical-rules-c3
   kind: exr
   file: 05-reductio-and-classical-rules.md
@@ -7003,6 +7762,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: Exit check -> Chapter check; search split; marking as lists, points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: c149d57f336a
+    date: '2026-11-01'
+    evidence: title 'Exit check' -> 'Chapter check' (STYLE §13 B4, matches other fd1 sections); search
+      paragraph split, same breaks; second-route scoring 2/3/2/2/1 now a list, same; 'Fatal errors' ->
+      'Slips that lose the step', same three items ('item' -> 'exercise'). sidecar passes.
 - key: exr-reductio-and-classical-rules-c4
   kind: exr
   file: 05-reductio-and-classical-rules.md
@@ -7044,6 +7811,13 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: item 1 split; fold pointer by title; marking as list, points unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 5e8ead9ca66d
+    date: '2026-11-01'
+    evidence: stem (a) colon split only; solution (b) pointer reworded 'Section 2.2, under "Edge cases
+      of not-introduction"' (backward); scheme 5 = 2+1+1+1, 2, 2, 1 unchanged, zero rule for (a) unchanged.
 - key: exr-reductio-and-classical-rules-r1
   kind: exr
   file: 05-reductio-and-classical-rules.md
@@ -7111,6 +7885,14 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: (E1) glossed; sentence split; same refs'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: c3f548236a87
+    date: '2026-11-01'
+    evidence: '''By (E1), n is even or odd'' -> ''Every integer is even or odd, (E1), so …'' (code given
+      its meaning, B7); ''@exm-abs-product-cases'' kept in its own sentence; case arithmetic 4k^2+6k=2(2k^2+3k)
+      unchanged. sidecar passes.'
 - key: exr-reductio-and-classical-rules-r2
   kind: exr
   file: 05-reductio-and-classical-rules.md
@@ -7170,6 +7952,14 @@ items:
     model: claude-opus-5-5
     evidence: 'wording only: def-rules-biconditional to Uses line; heading pointer renamed; values at
       4,6,7,9 unchanged'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: 59ba0986861f
+    date: '2026-11-01'
+    evidence: (a) parenthesis '(Section 2.4, as in @exm-strictly-increasing-both-ways; the rules are @def-rules-biconditional)'
+      -> 'as in @exm-strictly-increasing-both-ways of Section 2.4' + Uses block @def-rules-biconditional
+      (inline-to-Uses). Values at 4,6,7,9 and n=7/n=6 unchanged. sidecar passes.
 - key: exr-reductio-and-classical-rules-r3
   kind: exr
   file: 05-reductio-and-classical-rules.md
@@ -7219,3 +8009,11 @@ items:
     date: '2026-11-01'
     model: claude-opus-5-5
     evidence: 'wording only: six statements as a list; parenthesis on 6k=2(3k) made a sentence'
+  - stage: S5e
+    verdict: correct
+    by: s5e-referee
+    hash: de36cbae787b
+    date: '2026-11-01'
+    evidence: 'statement: inline (i)-(vi) became a bulleted list, same six statements word for word; ''or
+      break'' -> ''If it does not, break'' (same). Solution closing paragraph reordered (premise true
+      because 6k=2(3k)), same content. sidecar passes.'
