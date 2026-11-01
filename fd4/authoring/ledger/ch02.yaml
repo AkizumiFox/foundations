@@ -686,6 +686,34 @@ items:
     model: claude-opus-5-5
     evidence: '03:66-71: 360=(2,2,2,3,3,5), products 1,2,4,8,24,72,360; 2, 3 and 5 are covered by the
       small-primes remark (01:188)'
+  - stage: S5a
+    verdict: correct
+    by: A:02/02
+    hash: 64e97c6c1eec
+    date: '2026-11-01'
+    evidence: '02-unique-factorization.md:82-88: 360 = 2^3*3^2*5. The partial products 1,2,4,8,24,72,360
+      are right. 2, 3 and 5 are prime by the small-primes remark (line 44). The list is non-decreasing.
+      ''No other'' is justified by thm-fundamental-arithmetic, which is proved later in the same section;
+      the check''s solution may point forward to it.'
+  - stage: S5b
+    verdict: minor
+    by: B:02/02
+    hash: 64e97c6c1eec
+    date: '2026-11-01'
+    evidence: '02-unique-factorization.md:82-88. The maths is correct: 360 = 2·2·2·3·3·5, the products
+      1, 2, 4, 8, 24, 72, 360 are right, the entries are prime by the small-primes remark, the list is
+      non-decreasing, and ''By the theorem below there is no other'' is true (thm-fundamental-arithmetic,
+      line 169). One bookkeeping problem: the ledger line 452 points to verify/ch03/def-prime-factorization.py,
+      but after the merge the sidecar is fd4/verify/ch02/def-prime-factorization.py (verify/ch03 now holds
+      the complex-numbers chapter).'
+  - stage: S8
+    verdict: correct
+    by: S8:02
+    hash: 64e97c6c1eec
+    date: '2026-11-01'
+    evidence: '02-unique-factorization.md:82-88: 360 = 2·2·2·3·3·5, partial products 1,2,4,8,24,72,360
+      correct; primes 2,3,5 by the small-primes remark; uniqueness forward-pointed to thm-fundamental-arithmetic
+      in the same section. STALE flag is a wording/re-aim change only.'
 - key: cor-prime-divides-product
   kind: cor
   file: 02-unique-factorization.md
@@ -1086,6 +1114,61 @@ items:
       forbids the unproved shared-primes rule, so the earlier ''no tool'' finding is resolved. I checked
       the arithmetic. 91*46 = 4186 and 93*45 = 4185. 1001*46 = 46046 and 1023*45 = 46035, a difference
       of 11. In the Eucl'
+  - stage: S5a
+    verdict: correct
+    by: A:02/02
+    hash: 75dbef0970bf
+    date: '2026-11-01'
+    evidence: Lines 343-366. 1001=7*11*13 and 1023=3*11*31. The trial divisions for 11, 13 and 31 are
+      right, and the d-ranges match the d*d<=p test of the remark at line 159 (16>13, 36>31). 3 and 7
+      are covered by the small-primes remark. gcd(91,93)=1 follows from 93-91=2 and 91=45*2+1. 91*46-93*45=4186-4185=1,
+      and times 11 gives 1001*46-1023*45=11. The 'common divisor divides 11, so it is <=11, and 11 is
+      a common divisor' step matches def-integer-gcd. The Euclidean algorithm run from (1023,1001) gives
+      x_K=11, as thm-euclidean-algorithm-integers (c) says. The sidecar verify/ch02/exr-unique-factorization-b3.py
+      asserts all of this.
+  - stage: S5b
+    verdict: minor
+    by: B:02/02
+    hash: 75dbef0970bf
+    date: '2026-11-01'
+    evidence: '02-unique-factorization.md:343-366. All arithmetic checks out: 7·11·13 = 1001 and 3·11·31
+      = 1023. The divisions 11 = 5·2+1 = 3·3+2, 13 = 6·2+1 = 4·3+1 and 31 = 15·2+1 = 10·3+1 = 7·4+3 =
+      6·5+1 are right. 91·46 = 4186, 93·45 = 4185, 1001·46 − 1023·45 = 46046 − 46035 = 11, and the Euclidean
+      run 1023 = 1001+22, 1001 = 45·22+11, 22 = 2·11 is right. The d-ranges match the remark after lem-least-divisor-prime
+      (line 159). The gcd argument agrees with def-integer-gcd (01-gcd-and-bezout.md:46). The meta-claim
+      ''this chapter does not prove it'' is true: grep finds no ''shared primes'' result in fd4/src. The
+      problems are bookkeeping and wording only: stale ledger paths on lines 471-472 (verify/ch03 should
+      be verify/ch02), and STYLE §13 B1 and B3 violations on line 359 (see findings).'
+  - stage: S6
+    verdict: correct
+    by: S6:02a
+    hash: 75dbef0970bf
+    date: '2026-11-01'
+    evidence: '02-unique-factorization.md:343-366. I solved it before reading the book''s solution and
+      got the same results: 1001=(7,11,13), 1023=(3,11,31), Bezout 1=46*91-45*93 so 11=46*1001-45*1023,
+      Euclid 1023=1*1001+22, 1001=45*22+11, 22=2*11. The book''s solution agrees in every step. My own
+      script checked all of it (scratchpad/s5/work/S6:02a/chk.py): the products, primality, the trial-divisor
+      ranges {2,3} for 11 and 13 and {2,..,5} for 31 (d*d<=p), every quotient and remainder, 4186-4185=1,
+      46046-46035=11 and gcd=11. Citations are correct. The primality test follows the remark after lem-least-divisor-prime
+      (line 158). Primes 3 and 7 come from the small-primes remark (line 43). Remainder non-zero implies
+      non-divisibility is cited to fd3:thm-integers-division-remainder (a). gcd(91,93)=1 rests on 93-91=2
+      and 91=45*2+1. The gcd conclusion follows def-integer-gcd (greatest common divisor, 01-gcd-and-bezout.md:43).
+      The Euclid reading matches the ''last non-zero remainder'' paragraph (01:197) of thm-euclidean-algorithm-integers.
+      The solution is complete, not a sketch, and is non-decreasing-checked. Worked-example types: prime
+      factorizations of 60 and 360 (lines 70-88); the d*d<=p test illustrated for 11 (line 159); the ''multiply
+      the Bezout identity'' move (line 29) and the 252/198 gcd example (line 249, via exm-euclidean-algorithm-run).
+      The hint names a tool (the remark) and gives a prohibition, without executing the key idea. The
+      item has no marking scheme. My alternative (Euclid alone, back-substituted to give the same identity)
+      agrees. No STYLE §13 wording issues found.'
+  - stage: S8
+    verdict: correct
+    by: S8:02
+    hash: 75dbef0970bf
+    date: '2026-11-01'
+    evidence: '02-unique-factorization.md:343-366: 1001=7·11·13, 1023=3·11·31, 91·46−93·45=4186−4185=1,
+      ×11 gives 11; Euclid run 1023=1·1001+22, 1001=45·22+11, 22=2·11. Trial divisors d∈{2,3} for 11,13
+      and {2..5} for 31 are complete by the remark after lem-least-divisor-prime. Only the pointer re-aim
+      changed.'
 - key: exr-unique-factorization-c1
   kind: exr
   file: 02-unique-factorization.md
@@ -1290,6 +1373,15 @@ items:
       use (I3) only through closure under negatives, i.e. r = -1 via -x = (-1)x (:39). Eq1 uses (I1),
       Eq3 uses (I2), and the class description and the sum need no membership step. Part (d) uses (I3)
       as well, b
+  - stage: S8
+    verdict: minor
+    by: S8:02
+    hash: 0233d4fd07ea
+    date: '2026-11-01'
+    evidence: 03-quotient-rings.md:63 names the quotient map π. fd4 Chapters 3, 5, 9 use π as the number,
+      and NOTATION.md:274 says 'In fd4, π is only the number ... not used in fd4 under that letter', which
+      is false after the merge. NOTATION.md:261 says the clash is to be settled once Ch1/Ch8 are drafted,
+      and it is still not settled.
 - key: proof:thm-quotient-ring-by-ideal
   kind: proof
   file: 03-quotient-rings.md
@@ -2228,6 +2320,14 @@ items:
       (a), which states that ~_I is an equivalence relation, and def-integers-mod-n-ring, which defines
       Z/2Z as the quotient by 2Z, with R/I := R/~_I. The notation ~_I is listed in NOTATION.md. The algebra
       (a+b')-(a'+b)+2b-2b' = (a+b)-(a'+b') checks. The identification through the remark after thm
+  - stage: S8
+    verdict: minor
+    by: S8:02
+    hash: 90ff46b8dd57
+    date: '2026-11-01'
+    evidence: '04-units-and-crt.md:423-440: after the merge the previous chapter is fd4 Chapter 1 (F4.6),
+      but R1 draws on fd3 Chapter 2 (def-integers-as-classes). STYLE §11.5 R1 rule is now broken. R2 (fd3
+      Ch1 / fd2 Ch4) also needs re-checking against the new 3-4-chapters-back distance.'
 - key: exr-units-and-crt-r2
   kind: exr
   file: 04-units-and-crt.md
@@ -2315,6 +2415,13 @@ items:
       says a common divisor divides d, and (d) says d = gcd(a,b), which together give 2 | gcd(a,b) = 1.
       prp-divisibility-rules-integers (g) (a|1 implies a=+-1) closes the argument. The rest of the parity
       argument and the prime case check out.
+  - stage: S8
+    verdict: minor
+    by: S8:02
+    hash: bcd9f34e1ba9
+    date: '2026-11-01'
+    evidence: '04-units-and-crt.md:471 ''Chapter 2''s proof, @fd3:thm-no-rational-square-two'': in fd4
+      a bare ''Chapter 2'' is this chapter; the result is in Number Systems, Chapter 3 (fd3/src/ch03-rationals/03-gaps-in-the-rationals.md).'
 - key: exr-units-and-crt-r4
   kind: exr
   file: 04-units-and-crt.md
