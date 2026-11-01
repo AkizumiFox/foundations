@@ -111,7 +111,7 @@ The distance between two points should be the length of the displacement from on
 For \( x, y \in \nR^n \), the **distance** from \( x \) to \( y \) is \( d(x, y) \coloneqq \norm{x - y} \).
 :::
 
-For example, \( d\bigl((1, 2), (4, 6)\bigr) = \norm{(-3, -4)} = 5 \). For \( n = 1 \), \( d(x, y) = \abs{x - y} \) by @prp-norm-basic-rn (d), the distance \( \abs{x - y} \) on the line of *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 4 (@fd3:def-absolute-value-ordered-field).
+For example, \( d\bigl((1, 2), (4, 6)\bigr) = \norm{(-3, -4)} = 5 \). For \( n = 1 \), \( d(x, y) = \abs{x - y} \) by @prp-norm-basic-rn (d). That is the distance on the line of *Number Systems: From \(\nN\) to \(\nR\)*, Chapter 4 (@fd3:def-absolute-value-ordered-field).
 
 ::: {#prp-distance-basic-rn}
 [Basic Properties of the Distance]

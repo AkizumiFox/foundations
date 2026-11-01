@@ -4,7 +4,7 @@ Section 9.5 bounded the dot product by lengths, \( \abs{\inner{x}{y}} \le \norm{
 
 ## The nearest point on a line through the origin
 
-Fix \( y \in \nR^n \) with \( y \ne 0 \). The multiples \( ty \), for \( t \in \nR \), form the **line through the origin in the direction of \( y \)**. Take a point \( x \in \nR^n \). Among all \( ty \), which one is nearest to \( x \)? In the plane a picture answers: drop a perpendicular from \( x \) to the line, and its foot is the nearest point. In \( \nR^5 \) there is no picture, but the picture suggests what to look for, and Sections 9.3 and 9.4 can test it.
+Fix \( y \in \nR^n \) with \( y \ne 0 \). The multiples \( ty \), for \( t \in \nR \), form the **line through the origin in the direction of \( y \)**. Take a point \( x \in \nR^n \). Among all \( ty \), which one is nearest to \( x \)? In the plane a picture answers: drop a perpendicular from \( x \) to the line, and its foot is the nearest point. In \( \nR^5 \) there is no picture, but the picture suggests a guess to test.
 
 Try a concrete case first. Let \( x = (3, 1) \) and \( y = (1, 1) \). The squared distance from \( x \) to \( ty \) is
 \[
@@ -17,7 +17,7 @@ Completing the square worked but hid the reason. In any \( \nR^n \) we guess tha
 ::: {.idea}
 [Scratch work]
 
-We plan the search with a table. Each row is one step.
+We plan the search with a table.
 
 | We know | We want |
 |---|---|
@@ -29,7 +29,7 @@ We plan the search with a table. Each row is one step.
 The last row closes the gap: the extra term \( (t_0 - s)^2\norm{y}^2 \) is never negative, so no \( s \) beats \( t_0 \). The picture supplied only the guess; Pythagoras supplies the proof.
 :::
 
-The number \( t_0 = \inner{x}{y}/\norm{y}^2 \) and the point \( t_0 y \) will come back again and again, in this section and in Chapter 10. They deserve a name.
+The number \( t_0 = \inner{x}{y}/\norm{y}^2 \) and the point \( t_0 y \) come back in this section and in Chapter 10, so they get a name.
 
 ::: {#def-projection-rn}
 [Projection onto a Line]
@@ -42,18 +42,18 @@ Let \( x, y \in \nR^n \) with \( y \ne 0 \). The **projection of \( x \) onto \(
 
 *The projection is the multiple of \( y \) that leaves an error orthogonal to \( y \).*
 
-In words: \( \operatorname{proj}_y x \) is a **vector**, a scalar multiple of \( y \). The scalar is the number \( \inner{x}{y} \) divided by the **square** of the length of \( y \). The definition is made only for \( y \ne 0 \). Recall that \( \norm{y}^2 = \inner{y}{y} \) (@prp-norm-basic-rn (c)). This number is positive exactly when \( y \ne 0 \) (@prp-dot-product-laws-rn (c)). Nothing else needs checking: the formula is one number times one vector.
+In words: \( \operatorname{proj}_y x \) is a **vector**, a scalar multiple of \( y \). The scalar is the number \( \inner{x}{y} \) divided by the **square** of the length of \( y \). Recall that \( \norm{y}^2 = \inner{y}{y} \) (@prp-norm-basic-rn (c)). This number is positive exactly when \( y \ne 0 \) (@prp-dot-product-laws-rn (c)).
 
 **Examples.**
 
-- **A unit vector.** If \( \norm{u} = 1 \), the denominator is \( 1 \), and \( \operatorname{proj}_u x = \inner{x}{u}\,u \). So for unit vectors the coefficient is the dot product itself.
-- **A standard vector.** For \( u = e_k \), a unit vector (@prp-norm-basic-rn (e)), this gives \( \operatorname{proj}_{e_k} x = \inner{x}{e_k} e_k = x_k e_k \), by @prp-dot-product-laws-rn (d). Projecting onto the \( k \)-th axis keeps the \( k \)-th coordinate and sets the others to \( 0 \). For \( x = (3, -1, 2) \) and \( k = 3 \), it gives \( (0, 0, 2) \).
-- **The opening example.** For \( x = (3, 1) \) and \( y = (1, 1) \), \( \inner{x}{y} = 4 \) and \( \norm{y}^2 = 2 \), so \( \operatorname{proj}_y x = 2y = (2, 2) \), the point found by completing the square.
+- **A unit vector.** If \( \norm{u} = 1 \), the denominator is \( 1 \), and \( \operatorname{proj}_u x = \inner{x}{u}\,u \).
+- **A standard vector.** The vector \( e_k \) is a unit vector (@prp-norm-basic-rn (e)). For \( u = e_k \) this gives \( \operatorname{proj}_{e_k} x = \inner{x}{e_k} e_k = x_k e_k \), by @prp-dot-product-laws-rn (d). Projecting onto the \( k \)-th axis keeps the \( k \)-th coordinate and sets the others to \( 0 \). For \( x = (3, -1, 2) \) and \( k = 3 \), it gives \( (0, 0, 2) \).
+- **The opening example.** For \( x = (3, 1) \) and \( y = (1, 1) \), \( \inner{x}{y} = 4 \) and \( \norm{y}^2 = 2 \), so \( \operatorname{proj}_y x = 2y = (2, 2) \), the point found above.
 - **Two extreme cases.** If \( x \perp y \), the coefficient is \( 0 \), and \( \operatorname{proj}_y x = 0 \): the nearest point of the line to a point orthogonal to it is the origin. At the other extreme, if \( x = cy \) then \( \operatorname{proj}_y x = (c\norm{y}^2/\norm{y}^2) y = x \): a point already on the line is its own projection.
 
 **When \( y = 0 \).** Keep \( x = (3, 1) \) and change \( y = (1, 1) \) to \( y = (0, 0) \). The formula now divides by \( \norm{y}^2 = 0 \), so it defines nothing. The question does not survive either: every \( ty \) is \( 0 \), so all of them are at the same distance \( \norm{x} \) from \( x \), and "the" nearest point is no longer a single \( t \). This is why the definition requires \( y \ne 0 \).
 
-**Why this definition.** Dividing by \( \norm{y} \) instead of \( \norm{y}^2 \) would give \( 2\sqrt 2 \,(1, 1) \ne (2, 2) \) for \( y = (1, 1) \) and \( x = (3, 1) \), and its error is not orthogonal to \( y \). The square makes the answer independent of the length of \( y \) (Exercise B2 (c)): the projection depends on the line, not on the vector chosen to name it.
+**Why this definition.** Dividing by \( \norm{y} \) instead of \( \norm{y}^2 \) would give \( 2\sqrt 2 \,(1, 1) \ne (2, 2) \) for \( y = (1, 1) \) and \( x = (3, 1) \), and its error is not orthogonal to \( y \). The square makes the answer independent of the length of \( y \), as Exercise B2 (c) shows: the projection depends on the line, not on the vector chosen to name it.
 
 ::: {.check}
 Compute \( \operatorname{proj}_{(1, 0)} (2, 3) \) and \( \operatorname{proj}_{(2, 0)} (2, 3) \). Are they equal?
@@ -63,7 +63,7 @@ Compute \( \operatorname{proj}_{(1, 0)} (2, 3) \) and \( \operatorname{proj}_{(2
 For \( y = (1, 0) \): \( \inner{(2, 3)}{(1, 0)} = 2 \) and \( \norm{y}^2 = 1 \), so the projection is \( 2(1, 0) = (2, 0) \). For \( y = (2, 0) \): \( \inner{(2, 3)}{(2, 0)} = 4 \) and \( \norm{y}^2 = 4 \), so it is \( 1 \cdot (2, 0) = (2, 0) \). They are equal, because \( (1, 0) \) and \( (2, 0) \) name the same line.
 :::
 
-The scratch work above is a proof method, the last one of this chapter.
+The scratch work above is a proof method.
 
 ::: {#exm-method-subtract-the-projection}
 [Method: subtract the projection]
@@ -124,7 +124,7 @@ By (a) and linearity, \( \inner{x - p}{(t_0 - t)y} = (t_0 - t)\inner{x - p}{y} =
 \[
 \norm{x - ty}^2 = \norm{x - p}^2 + \abs{t_0 - t}^2 \norm{y}^2 = \norm{x - p}^2 + (t - t_0)^2 \norm{y}^2 ,
 \]
-where \( \abs{t_0 - t}^2 = (t_0 - t)^2 = (t - t_0)^2 \). The last term is a product of two non-negative reals, so it is \( \ge 0 \). Hence \( \norm{x - ty}^2 \ge \norm{x - p}^2 \). The last term is \( 0 \) if and only if \( (t - t_0)^2 = 0 \), because \( \norm{y}^2 \ne 0 \) and a field has no zero divisors. That is, it is \( 0 \) if and only if \( t = t_0 \), since a non-zero real has a positive square. Both \( \norm{x - ty} \) and \( \norm{x - p} \) are non-negative. For non-negative numbers, comparing squares compares the numbers themselves. So \( \norm{x - ty} \ge \norm{x - p} \), with equality exactly when the squares are equal, that is, when \( t = t_0 \).
+where \( \abs{t_0 - t}^2 = (t_0 - t)^2 = (t - t_0)^2 \). The last term is a product of two non-negative reals, so it is \( \ge 0 \). Hence \( \norm{x - ty}^2 \ge \norm{x - p}^2 \). The last term is \( 0 \) if and only if \( (t - t_0)^2 = 0 \), because \( \norm{y}^2 \ne 0 \) and a field has no zero divisors. That is, it is \( 0 \) if and only if \( t = t_0 \), since a non-zero real has a positive square. Both lengths are non-negative, and for non-negative numbers comparing squares compares the numbers. So \( \norm{x - ty} \ge \norm{x - p} \), with equality exactly when the squares are equal, that is, when \( t = t_0 \).
 
 (c) Take \( t = 0 \) in (b): \( \norm{x}^2 = \norm{x - p}^2 + t_0^2 \norm{y}^2 \). Since \( p = t_0 y \), \( \norm{p} = \abs{t_0}\,\norm{y} \), so \( \norm{p}^2 = t_0^2\norm{y}^2 \), which gives the first claim. For the second, \( \abs{t_0} = \abs{\inner{x}{y}}/\norm{y}^2 \), since \( \norm{y}^2 > 0 \). Hence \( \norm{p} = \abs{\inner{x}{y}}\,\norm{y}/\norm{y}^2 = \abs{\inner{x}{y}}/\norm{y} \). This proves the theorem.
 
@@ -141,7 +141,7 @@ Part (b) says more than "\( p \) is nearest": it measures exactly what a wrong \
 \[
 \norm{x}^2\norm{y}^2 - \inner{x}{y}^2 = \norm{y}^2 \, \norm{x - p}^2 ,
 \]
-so the gap between the two sides of Cauchy–Schwarz is a squared distance, scaled by \( \norm{y}^2 \). Equality holds exactly when \( x = p \), that is, when \( x \) lies on the line through \( y \). Exercise @exr-cauchy-schwarz-and-the-triangle-inequality-c1 turns this route into a complete second proof of Cauchy–Schwarz with its equality case.
+so the gap between the two sides of Cauchy–Schwarz is a squared distance, scaled by \( \norm{y}^2 \). Equality holds exactly when \( x = p \), that is, when \( x \) lies on the line through \( y \). Exercise C1 of Section 9.5 (@exr-cauchy-schwarz-and-the-triangle-inequality-c1) turns this route into a complete second proof of Cauchy–Schwarz with its equality case.
 
 ::: {#exm-distance-to-a-line-through-the-origin}
 [Distance to a line through the origin]
@@ -289,7 +289,7 @@ What is \( \cos\angle((1, 1), (-1, -1)) \)? Answer first with @prp-angle-cosine-
 ::: {.remark}
 [Looking ahead: the angle itself]
 
-An angle \( \theta \) with \( \cos\theta = \cos\angle(x, y) \) needs the function \( \cos \), which this book does not construct. It only borrows the five facts about \( \cos \) and \( \sin \) listed in Section 3.5 (@ax-cosine-sine). No proof in this chapter uses \( \theta \). Choosing \( \theta \) in \( [0, \pi] \) for general \( n \) needs more facts about \( \cos \), proved in *Analysis on the Real Line*, Chapter 10. For \( n = 2 \) the plane is \( \nC \), and Chapter 3 already supplies such a \( \theta \). Let \( z, w \) be non-zero. The number \( \conj{z}w/(\abs{z}\abs{w}) \) has modulus \( 1 \), so its polar form (@prp-polar-form) is \( \cos\theta + i\sin\theta \) for some \( \theta \), determined up to a multiple of \( 2\pi \). Its real part \( \cos\theta \) is \( \cos\angle(z, w) \), by @prp-plane-is-complex-plane. The sign of \( \sin\theta \) records which way one turns from \( z \) to \( w \), and \( \cos\angle \) cannot see it. Next, Chapter 10 uses the projection to find nearest points on lines and on hyperplanes.
+An angle \( \theta \) with \( \cos\theta = \cos\angle(x, y) \) needs the function \( \cos \), which this book only borrows through five facts (@ax-cosine-sine). Those facts give such a \( \theta \) for any \( n \). Let \( c = \cos\angle(x, y) \). Then \( c^2 \le 1 \), so the point \( \bigl(c, \sqrt{1 - c^2}\bigr) \) has squared coordinates adding up to \( 1 \). Every such point is \( (\cos\theta, \sin\theta) \) for some \( \theta \), (T4). No proof in this chapter uses \( \theta \). For \( n = 2 \) and non-zero \( z, w \in \nC \), the number \( \conj{z}w/(\abs{z}\abs{w}) \) has modulus \( 1 \), so its polar form is \( \cos\theta + i\sin\theta \) (@prp-polar-form). Here \( \cos\theta = \cos\angle(z, w) \), by @prp-plane-is-complex-plane. The sign of \( \sin\theta \) records which way one turns from \( z \) to \( w \), and \( \cos\angle \) cannot see it. Next, Chapter 10 uses the projection to find nearest points on lines and on hyperplanes.
 :::
 
 ## Exercises
@@ -493,9 +493,13 @@ For (a), start from \( \norm{x - p}^2 = \norm{x}^2 - \norm{p}^2 \) and multiply 
 \]
 By Lagrange's identity (@exr-cauchy-schwarz-and-the-triangle-inequality-c2), the right side is \( \tfrac12 \sum_j \sum_k (x_j y_k - x_k y_j)^2 \), since \( \norm{x}^2 = \sum_k x_k^2 \), \( \norm{y}^2 = \sum_k y_k^2 \) and \( \inner{x}{y} = \sum_k x_k y_k \).
 
-(b) For \( n = 2 \), the terms with \( j = k \) are \( (x_j y_j - x_j y_j)^2 = 0 \). The terms with \( (j, k) = (1, 2) \) and \( (2, 1) \) are \( (x_1y_2 - x_2y_1)^2 \) and \( (x_2y_1 - x_1y_2)^2 \), which are equal. So the right side of (a) is \( \tfrac12 \cdot 2(x_1y_2 - x_2y_1)^2 = (x_1y_2 - x_2y_1)^2 \). By @thm-projection-closest-point (b), the distance from \( x \) to the line is \( \norm{x - p} \). Taking non-negative square roots (\( \sqrt{a^2} = \abs{a} \), @prp-modulus-of-real; and the root of a product, @lem-root-rules (a)), \( \norm{y}\,\norm{x - p} = \abs{x_1y_2 - x_2y_1} \), and dividing by \( \norm{y} > 0 \) gives the claim. For \( x = (3, 1) \) and \( y = (1, 1) \) it gives \( \abs{3 - 1}/\sqrt 2 = \sqrt 2 \), as in @exm-distance-to-a-line-through-the-origin.
+(b) For \( n = 2 \), the terms with \( j = k \) are \( (x_j y_j - x_j y_j)^2 = 0 \). The terms with \( (j, k) = (1, 2) \) and \( (2, 1) \) are \( (x_1y_2 - x_2y_1)^2 \) and \( (x_2y_1 - x_1y_2)^2 \), which are equal. So the right side of (a) is \( \tfrac12 \cdot 2(x_1y_2 - x_2y_1)^2 = (x_1y_2 - x_2y_1)^2 \). By @thm-projection-closest-point (b), the distance from \( x \) to the line is \( \norm{x - p} \). Taking non-negative square roots gives \( \norm{y}\,\norm{x - p} = \abs{x_1y_2 - x_2y_1} \), since \( \sqrt{a^2} = \abs{a} \) and the root of a product is the product of the roots. Dividing by \( \norm{y} > 0 \) gives the claim. For \( x = (3, 1) \) and \( y = (1, 1) \) it gives \( \abs{3 - 1}/\sqrt 2 = \sqrt 2 \), as in @exm-distance-to-a-line-through-the-origin.
 
 The number \( \abs{x_1y_2 - x_2y_1} \) is the base \( \norm{y} \) times the height \( \norm{x - p} \): in the picture, the area of the parallelogram spanned by \( x \) and \( y \). Area is not defined in this book; later volumes meet this number again as a determinant.
+
+::: {.uses}
+@thm-projection-closest-point (b); @prp-modulus-of-real (\( \sqrt{a^2} = \abs{a} \)); @lem-root-rules (a) (root of a product).
+:::
 :::
 
 ### R. Review
@@ -594,6 +598,7 @@ prp-angle-cosine-properties (proof): part (c') of thm-cauchy-schwarz-rn | Sectio
 exm-angles-computed (solution): sqrt 3 sqrt 2 = sqrt 6, 2/sqrt 6 = sqrt 6/3 | lem-root-rules (a) (cited, Uses line); verify/ch09/exm-angles-computed.py
 def-angle-cosine-rn (claim): (Looking ahead box) conj(z) w/(|z||w|) has modulus 1; its real part is <z, w>/(|z||w|) | thm-conjugate-properties (d), prp-plane-is-complex-plane (b) with Re of a conjugate; Re(u/r) = Re(u)/r for real r > 0 by def-complex-numbers; prose only, nothing depends on it
 def-angle-cosine-rn (claim): (Looking ahead box) polar angle determined up to 2 pi Z | prp-polar-form (b) (cited)
+def-angle-cosine-rn (claim): (Looking ahead box) theta with cos theta = c exists for any n: c^2 = |c|^2 <= 1 from |c| <= 1 (well-definedness), sqrt(1 - c^2) exists as 1 - c^2 >= 0, and c^2 + (1 - c^2) = 1, so (T4) applies | def-angle-cosine-rn (|c| <= 1, claim above), fd3:prp-cof-square-roots, fd3:prp-ordered-ring-rules (c), ax-cosine-sine (T4); prose only, nothing depends on it
 exr-projection-and-angle-b3 (solution): ||v + ty|| = 1 implies ||v + ty||^2 = 1 | squaring an equation
 exr-projection-and-angle-b3 (solution): coefficient form of f gives deg f = 2 | def-degree (cited); def-polynomial-ring
 thm-projection-closest-point (proof): norm-basic (a)-(c), dot-product-laws (b), (c), def-orthogonal-rn, fd3:prp-absolute-value-ordered-field (b) | moved from prose to the Uses line (cited)

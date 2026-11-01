@@ -106,7 +106,7 @@ Parts (a)–(i) are equations, so @exm-method-coordinatewise applies directly: e
 Let \( k \in \{1, \dots, n\} \). In (a)–(i) we compute the \( k \)-th coordinate of each side with @def-vector-operations-rn. The two coordinates agree by the law of \( \nR \) named in brackets. Since \( k \) is arbitrary, the two sides agree in every place, so they are equal.
 
 - (a) \( (x_k + y_k) + z_k = x_k + (y_k + z_k) \) [addition is associative, (F2)]. (b) \( x_k + y_k = y_k + x_k \) [addition is commutative, (F1)]. (c) \( x_k + 0 = x_k \) [\( 0 \) is neutral for addition, (F3)].
-- (d) \( (-x)_k = (-1)x_k = -x_k \) [\( (-1)a = -(1 \cdot a) = -a \), by @fd3:prp-ring-algebra (c) with (F6) and (F7)], so \( (x + (-x))_k = x_k + (-x_k) = 0 \) [negatives, (F4)].
+- (d) \( (-x)_k = (-1)x_k = -x_k \) [\( (-1)a = -(1 \cdot a) = -a \), by @fd3:prp-ring-algebra (c) with commutativity of multiplication, (F6), and \( 1 \) neutral for multiplication, (F7)], so \( (x + (-x))_k = x_k + (-x_k) = 0 \) [negatives, (F4)].
 - (e) \( c(d x_k) = (cd) x_k \) [multiplication is associative, (F5)]. (f) \( 1 \cdot x_k = x_k \) [multiplication is commutative, (F6), and \( 1 \) is neutral, (F7)].
 - (g) \( c(x_k + y_k) = c x_k + c y_k \) [(F9)], as in the table above.
 - (h) \( (c + d)x_k = c x_k + d x_k \) [(F6), (F9)].
@@ -212,7 +212,7 @@ Let \( c_1, \dots, c_n \in \nR \) and \( j \in \{1, \dots, n\} \). By @lem-vecto
 \[
 \Bigl( \sum_{k=1}^{n} c_k e_k \Bigr)_j = \sum_{k=1}^{n} c_k (e_k)_j .
 \]
-For \( k \ne j \) the term is \( c_k \cdot 0 = 0 \), and for \( k = j \) it is \( c_j \cdot 1 = c_j \), since \( 1 \) is neutral for multiplication (F7). A sum with one possibly non-zero term equals that term, by @lem-ring-finite-sums (d), shifted to sums indexed from \( 1 \) as after @lem-vector-sums-coordinatewise (here \( n \ge 1 \)). So the \( j \)-th coordinate is \( c_j \). Since \( j \) is arbitrary,
+For \( k \ne j \) the term is \( c_k \cdot 0 = 0 \), and for \( k = j \) it is \( c_j \cdot 1 = c_j \), since \( 1 \) is neutral for multiplication (F7). A sum with one possibly non-zero term equals that term, by @lem-ring-finite-sums (d). Since \( n \ge 1 \), this rule holds for sums indexed from \( 1 \), by the shift of index after @lem-vector-sums-coordinatewise. So the \( j \)-th coordinate is \( c_j \). Since \( j \) is arbitrary,
 \[
 \sum_{k=1}^{n} c_k e_k = (c_1, \dots, c_n) .
 \]{#eq-standard-expansion}
@@ -304,7 +304,7 @@ In (b)–(e), \( x, y \in \nR^n \) with \( n \ge 2 \). Decide whether the condit
 
 (d) Yes: \( x_k + y_k = 0 \) for every \( k \).
 
-(e) No, as written: since \( e_1 \ne 0 \), the one-scalar test says that \( x \) is parallel to \( e_1 \) if and only if \( x = te_1 \) for **one** \( t \) shared by all coordinates. Because \( e_1 \) has only one non-zero coordinate, this one condition is equivalent to "\( x_k = 0 \) for every \( k \ge 2 \)", which puts no condition on \( x_1 \): if \( x = te_1 \), then \( x_k = t \cdot 0 = 0 \) for \( k \ge 2 \); conversely, if those coordinates vanish, then \( x = x_1 e_1 \) by @eq-standard-expansion.
+(e) No, as written: since \( e_1 \ne 0 \), the one-scalar test says that \( x \) is parallel to \( e_1 \) if and only if \( x = te_1 \) for **one** \( t \) shared by all coordinates. Because \( e_1 \) has only one non-zero coordinate, this one condition is equivalent to "\( x_k = 0 \) for every \( k \ge 2 \)". It puts no condition on \( x_1 \). If \( x = te_1 \), then \( x_k = t \cdot 0 = 0 \) for \( k \ge 2 \); conversely, if those coordinates vanish, then \( x = x_1 e_1 \) by @eq-standard-expansion.
 :::
 
 ### B. Practice
@@ -392,7 +392,7 @@ by (f), (e) and (i) of @prp-vector-space-laws-rn. Then \( x = cy \) with \( c = 
 - 2: \( (\Leftarrow) \) by contrapositive (or contradiction), producing \( (s, t) \ne (0, 0) \) in **both** clauses of the definition.
 - 1: concludes the equivalence.
 
-A contrapositive route for \( (\Rightarrow) \) earns the same 5 points: 3 for the case \( s \ne 0 \), writing \( x \) as a multiple of \( y \); 2 for the case \( s = 0 \), \( t \ne 0 \), deducing \( y = 0 \) from \( ty = 0 \) by (j) and noting that \( 0 \) is parallel to \( x \).
+A contrapositive route for \( (\Rightarrow) \) earns the same 7 points. It earns 2 for the setup: it assumes \( sx + ty = 0 \) with \( (s, t) \ne (0, 0) \), with the goal that \( x \) and \( y \) are parallel. It earns 3 for the case \( s \ne 0 \), writing \( x \) as a multiple of \( y \). It earns 2 for the case \( s = 0 \), \( t \ne 0 \), deducing \( y = 0 \) from \( ty = 0 \) by (j) and noting that \( 0 \) is parallel to \( x \).
 
 **Slips that lose the step** (0 for the step):
 

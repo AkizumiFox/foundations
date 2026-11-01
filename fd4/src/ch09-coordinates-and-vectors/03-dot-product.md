@@ -33,7 +33,7 @@ In words: pair the coordinates place by place, multiply each pair in \( \nR \), 
 
 *Signs.* \( \inner{(1, 2)}{(-2, 1)} = -2 + 2 = 0 \), and \( \inner{(1, 0)}{(-1, 0)} = -1 \). The dot product can be zero or negative even when neither point is \( 0 \).
 
-*On the line, \( n = 1 \).* A sum with one term is that term (\( \sum_{k=1}^{1} a_k = 0 + a_1 = a_1 \)), so for \( x, y \in \nR = \nR^1 \) the dot product is the ordinary product: \( \inner{x}{y} = xy \). This is why the definition deserves the name *product*. On the line, the dot product of a point with itself is \( x^2 \ge 0 \); in \( \nR^n \) it is a sum of such squares (law (c) below).
+*On the line, \( n = 1 \).* A sum with one term is that term (\( \sum_{k=1}^{1} a_k = 0 + a_1 = a_1 \)), so for \( x, y \in \nR = \nR^1 \) the dot product is the ordinary product: \( \inner{x}{y} = xy \). This is why the definition deserves the name *product*. On the line, the dot product of a point with itself is \( x^2 \ge 0 \); in \( \nR^n \) it is a sum of such squares, by law (c) below.
 
 **Change one sign.** On \( \nR^2 \), try \( B(x, y) \coloneqq x_1 y_1 - x_2 y_2 \). It is still symmetric, and it still respects sums and scalar multiples in each slot. So it satisfies laws (a) and (b) of the next proposition. Law (c) fails: \( B(e_2, e_2) = -1 < 0 \), and \( B((1, 1), (1, 1)) = 0 \) although \( (1, 1) \ne 0 \). So \( B \) cannot be the square of a length. The plus signs of the definition are what make \( \inner{x}{x} \) a sum of squares.
 
@@ -240,11 +240,11 @@ Prove that \( \inner{x - y}{x + y} = \inner{x}{x} - \inner{y}{y} \) for all \( x
 :::
 
 ::: {.solution}
-Write \( x - y = x + (-1)y \). By linearity in the first slot, and \( (-1)s = -s \) in \( \nR \),
+Write \( x - y = x + (-1)y \). In \( \nR \), \( (-1)s = -s \). So linearity in the first slot gives
 \[
 \inner{x - y}{x + y} = \inner{x}{x + y} - \inner{y}{x + y} .
 \]
-By linearity in the second slot, and \( -(s + t) = (-1)(s + t) = -s - t \) in \( \nR \) by the distributive law, this is
+In \( \nR \), \( -(s + t) = (-1)(s + t) = -s - t \) by the distributive law. So linearity in the second slot turns this into
 \[
 \inner{x}{x} + \inner{x}{y} - \inner{y}{x} - \inner{y}{y} .
 \]

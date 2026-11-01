@@ -355,7 +355,7 @@ Prove that \( \norm{x - y} = \norm{x + y} \) if and only if \( x \perp y \). You
 :::
 
 ::: {.solution}
-The method is to expand the square (@exm-method-expand-the-square). Both lengths are non-negative, so they are equal if and only if their squares are (comparing squares, Section 9.4). Subtracting the two expansions gives \( \norm{x + y}^2 - \norm{x - y}^2 = 4\inner{x}{y} \), which is @prp-polarization-rn (a) multiplied by \( 4 \). This is \( 0 \) if and only if \( \inner{x}{y} = 0 \). Indeed, if \( 4\inner{x}{y} = 0 \), then \( 4 = 0 \) or \( \inner{x}{y} = 0 \) (@fd3:lem-field-fraction-rules (d)), and \( 4 \ne 0 \) since \( 4 > 0 \) in the ordered field \( \nR \). By the definition of orthogonal vectors, that holds if and only if \( x \perp y \).
+The method is to expand the square (@exm-method-expand-the-square). Both lengths are non-negative, so they are equal if and only if their squares are (comparing squares, Section 9.4). Subtracting the two expansions gives \( \norm{x + y}^2 - \norm{x - y}^2 = 4\inner{x}{y} \), which is @prp-polarization-rn (a) multiplied by \( 4 \). This is \( 0 \) if and only if \( \inner{x}{y} = 0 \). Indeed, if \( 4\inner{x}{y} = 0 \), then \( 4 = 0 \) or \( \inner{x}{y} = 0 \) (@fd3:lem-field-fraction-rules (d)), and \( 4 \ne 0 \) since \( 4 > 0 \) in the ordered field \( \nR \). By the definition of orthogonal vectors, \( \inner{x}{y} = 0 \) holds if and only if \( x \perp y \).
 
 ::: {.uses}
 @prp-polarization-rn (a); @def-orthogonal-rn.
