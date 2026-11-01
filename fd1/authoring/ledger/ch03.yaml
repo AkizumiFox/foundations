@@ -57,8 +57,8 @@ items:
 - key: check:01-finding-derivations:1
   kind: check
   file: 01-finding-derivations.md
-  line: 130
-  hash: 5fb5bf6922ba
+  line: 137
+  hash: 6703c86fe832
   verdicts:
   - stage: S5a
     verdict: error
@@ -112,11 +112,18 @@ items:
     model: claude-opus-5-5
     evidence: '01:130-143. (a)-(c) match step 2. (d) LEM on P: in the case ¬P, a ¬I box on P∧Q gives P
       by ∧E, which clashes with ¬P. Checked.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-finding-derivations
+    hash: 6703c86fe832
+    date: '2026-11-01'
+    evidence: 'wording only vs 9f9dbb8: derivations, rules, line citations and numbers unchanged; sidecars
+      pass'
 - key: exm-search-distribute
   kind: exm
   file: 01-finding-derivations.md
-  line: 149
-  hash: 2daf328127da
+  line: 156
+  hash: e3bab2854352
   verdicts:
   - stage: S5a
     verdict: minor
@@ -171,10 +178,24 @@ items:
     evidence: 01:149-241. Derivation checked line by line. 'Nine of the fourteen lines' (2,6,7,8,9,11,12,13,14)
       and 'four, lines 3, 4, 5, and 10' both add up with the premise. Line 10 sits inside boxes 8 and
       9.
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-finding-derivations
+    hash: e3bab2854352
+    date: '2026-11-01'
+    evidence: 'wording only vs 9f9dbb8: derivations, rules, line citations and numbers unchanged; sidecars
+      pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: e3bab2854352
+    date: '2026-11-01'
+    evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
+      or equivalence checked against 9f9dbb8'
 - key: check:01-finding-derivations:2
   kind: check
   file: 01-finding-derivations.md
-  line: 245
+  line: 252
   hash: 41c25626bee6
   verdicts:
   - stage: S5a
@@ -215,8 +236,8 @@ items:
 - key: exm-search-cases
   kind: exm
   file: 01-finding-derivations.md
-  line: 257
-  hash: 839f0b7f2ee3
+  line: 264
+  hash: 23eff86d9f01
   verdicts:
   - stage: S5a
     verdict: correct
@@ -269,11 +290,18 @@ items:
     model: claude-opus-5-5
     evidence: 01:257-327. Derivation is legal. 'Skeleton of almost every proof by cases' matches ch01
       07:606. exm-cases-on-hypothesis is (P→R)∧(Q→R) ⊢ (P∨Q)→R, as described.
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-finding-derivations
+    hash: 23eff86d9f01
+    date: '2026-11-01'
+    evidence: 'wording only vs 9f9dbb8: derivations, rules, line citations and numbers unchanged; sidecars
+      pass'
 - key: exm-search-postpone-or
   kind: exm
   file: 01-finding-derivations.md
-  line: 333
-  hash: 173f4625582f
+  line: 340
+  hash: d51cc64154af
   verdicts:
   - stage: S5a
     verdict: correct
@@ -323,11 +351,18 @@ items:
     evidence: 01:333-425. Both breaking choices checked. The 14-line derivation is legal (DS 10,8). The
       fold's 22-line count for LEM on P was recounted. The method-vs-chart mismatch for LEM on Q is reported
       separately under key "".
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-finding-derivations
+    hash: d51cc64154af
+    date: '2026-11-01'
+    evidence: 'wording only vs 9f9dbb8: derivations, rules, line citations and numbers unchanged; sidecars
+      pass'
 - key: exm-search-raa
   kind: exm
   file: 01-finding-derivations.md
-  line: 435
-  hash: 90290a867dd2
+  line: 442
+  hash: ea2b6ffcdc70
   verdicts:
   - stage: S5a
     verdict: minor
@@ -401,10 +436,17 @@ items:
       is built by ∨I and clashes with line 2, then ⊥E. 01:442 no longer says a clash needs the goal ⊥;
       it says no clash can be found or manufactured. That is true at the top level, since ¬(P↔Q) is satisfiable.
       I checked '
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-finding-derivations
+    hash: ea2b6ffcdc70
+    date: '2026-11-01'
+    evidence: 'wording only vs 9f9dbb8: derivations, rules, line citations and numbers unchanged; sidecars
+      pass'
 - key: check:01-finding-derivations:3
   kind: check
   file: 01-finding-derivations.md
-  line: 577
+  line: 584
   hash: 873c97e0ab2a
   verdicts:
   - stage: S5a
@@ -425,7 +467,7 @@ items:
 - key: exm-search-free-lines
   kind: exm
   file: 01-finding-derivations.md
-  line: 594
+  line: 601
   hash: c6152cfe7e36
   verdicts:
   - stage: S5a
@@ -457,7 +499,7 @@ items:
 - key: check:01-finding-derivations:4
   kind: check
   file: 01-finding-derivations.md
-  line: 671
+  line: 678
   hash: b668e59d89da
   verdicts:
   - stage: S5a
@@ -478,7 +520,7 @@ items:
 - key: check:01-finding-derivations:5
   kind: check
   file: 01-finding-derivations.md
-  line: 685
+  line: 692
   hash: 4e0bfa29089b
   verdicts:
   - stage: S5a
@@ -498,7 +540,7 @@ items:
 - key: check:01-finding-derivations:6
   kind: check
   file: 01-finding-derivations.md
-  line: 726
+  line: 733
   hash: f4182a490e9e
   verdicts:
   - stage: S5a
@@ -519,8 +561,8 @@ items:
 - key: exm-skeleton-odd-product
   kind: exm
   file: 01-finding-derivations.md
-  line: 742
-  hash: 8066c2799632
+  line: 749
+  hash: cf5941316ce9
   verdicts:
   - stage: S5a
     verdict: correct
@@ -571,11 +613,18 @@ items:
       the case n = 2). That is the right chapter: thm-division-algorithm is in fd2/src/ch02-relations-and-induction/02-induction-in-practice.md:116,
       and F2.2 is fd2 Chapter 2. STATUS.md:95 has the promise row and lists ''F1.7 §01 exm-skeleton-odd-product''
       against F2.2 (paid). The argument is sound: m = 2k give'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-finding-derivations
+    hash: cf5941316ce9
+    date: '2026-11-01'
+    evidence: 'wording only vs 9f9dbb8: derivations, rules, line citations and numbers unchanged; sidecars
+      pass'
 - key: exr-finding-derivations-a1
   kind: exr
   file: 01-finding-derivations.md
-  line: 1006
-  hash: aa855e65ff73
+  line: 1033
+  hash: 1e1706ed4e07
   verdicts:
   - stage: S5a
     verdict: correct
@@ -630,11 +679,18 @@ items:
     evidence: '01:1000-1027. My answers agree with all six parts: (a) ->, ->I; (b) not, notI on ''n integer
       with 2n=7''; (c) and, andI; (d) iff, iffI; (e) ->E needs P and Q, built by andI; (f) notE needs
       P or Q, built by orI from Q. The RAA-versus-CP parenthetical in (a) is accurate.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-finding-derivations
+    hash: 1e1706ed4e07
+    date: '2026-11-01'
+    evidence: 'wording only vs 9f9dbb8: derivations, rules, line citations and numbers unchanged; sidecars
+      pass'
 - key: exr-finding-derivations-a2
   kind: exr
   file: 01-finding-derivations.md
-  line: 1035
-  hash: 2bfd7ffdaa47
+  line: 1062
+  hash: 845be4ff3056
   verdicts:
   - stage: S5a
     verdict: correct
@@ -671,11 +727,25 @@ items:
       ∨I). (i): the stem at 01:1049 is now plural (''Which refinements''), matching ''Two refinements''
       (detour at 7-8; line 7 rebuilds resource 3), and the replacement ''5 R, →E 3, 4'' is right. I solved
       the other parts mysel'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-finding-derivations
+    hash: 845be4ff3056
+    date: '2026-11-01'
+    evidence: 'wording only vs 9f9dbb8: derivations, rules, line citations and numbers unchanged; sidecars
+      pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 845be4ff3056
+    date: '2026-11-01'
+    evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
+      or equivalence checked against 9f9dbb8'
 - key: exr-finding-derivations-b1
   kind: exr
   file: 01-finding-derivations.md
-  line: 1084
-  hash: 61b24af8559b
+  line: 1111
+  hash: 570be06bbe39
   verdicts:
   - stage: S5a
     verdict: correct
@@ -734,11 +804,25 @@ items:
       P, Q, R; (b) RAA plus VI for P and notI for notQ; (c) LEM on P. The sequents are valid by truth
       table and check_fitch reports 0 errors. Count in (b): replacing line 3 by a 4-line box gives +3,
       so 15 lines, as stated. Each part has a worked example: exm-search-distribute, exm-search-raa, exm-search-postpone-or.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-finding-derivations
+    hash: 570be06bbe39
+    date: '2026-11-01'
+    evidence: 'wording only vs 9f9dbb8: derivations, rules, line citations and numbers unchanged; sidecars
+      pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 570be06bbe39
+    date: '2026-11-01'
+    evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
+      or equivalence checked against 9f9dbb8'
 - key: exr-finding-derivations-b2
   kind: exr
   file: 01-finding-derivations.md
-  line: 1170
-  hash: 87c40520423b
+  line: 1197
+  hash: 64b622b794a3
   verdicts:
   - stage: S5a
     verdict: correct
@@ -791,11 +875,18 @@ items:
     model: claude-opus-5-5
     evidence: '01:1164-1214. The only completion is ->I 3-8, giving P -> notR. Line 8 lies in the outer
       box itself. Valid by truth table. Worked example: exm-search-distribute.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-finding-derivations
+    hash: 64b622b794a3
+    date: '2026-11-01'
+    evidence: 'wording only vs 9f9dbb8: derivations, rules, line citations and numbers unchanged; sidecars
+      pass'
 - key: exr-finding-derivations-b3
   kind: exr
   file: 01-finding-derivations.md
-  line: 1222
-  hash: ad883bb6926f
+  line: 1249
+  hash: 8d4c7f9a882d
   verdicts:
   - stage: S5a
     verdict: correct
@@ -848,10 +939,17 @@ items:
     model: claude-opus-5-5
     evidence: 01:1216-1245. The 10-line derivation is correct (check_fitch 0 errors, sequent valid). The
       three-sentence description names the goal-directed and premise-directed steps accurately.
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-finding-derivations
+    hash: 8d4c7f9a882d
+    date: '2026-11-01'
+    evidence: 'wording only vs 9f9dbb8: derivations, rules, line citations and numbers unchanged; sidecars
+      pass'
 - key: exr-finding-derivations-b4
   kind: exr
   file: 01-finding-derivations.md
-  line: 1253
+  line: 1280
   hash: 1c8f61c551e9
   verdicts:
   - stage: S5a
@@ -891,8 +989,8 @@ items:
 - key: exr-finding-derivations-c1
   kind: exr
   file: 01-finding-derivations.md
-  line: 1311
-  hash: a85d1da4a997
+  line: 1338
+  hash: 6664885a47be
   verdicts:
   - stage: S5a
     verdict: correct
@@ -947,10 +1045,17 @@ items:
       andI. The solution matches it. Hint 1 names the tools and Hint 2 gives the first line, so neither
       executes the key idea. The cited exr-reductio-and-classical-rules-c2 is indeed the sibling-box error
       (05:1674).'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-finding-derivations
+    hash: 6664885a47be
+    date: '2026-11-01'
+    evidence: 'wording only vs 9f9dbb8: derivations, rules, line citations and numbers unchanged; sidecars
+      pass'
 - key: exr-finding-derivations-c2
   kind: exr
   file: 01-finding-derivations.md
-  line: 1379
+  line: 1406
   hash: 6b6e4dfaa1aa
   verdicts:
   - stage: S5a
@@ -1053,11 +1158,18 @@ items:
       uses RAA. The 2-point bullet and the RAA-route paragraph now accept VI (@prp-vacuous-implication,
       ¬P ⊢ P→Q), which applies correctly to ¬Q giving Q→P. I checked derivation lines 1-13: R 2; →I 3-4,
       8-10; ¬E 8'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-finding-derivations
+    hash: 6b6e4dfaa1aa
+    date: '2026-11-01'
+    evidence: 'wording only vs 9f9dbb8: derivations, rules, line citations and numbers unchanged; sidecars
+      pass'
 - key: exr-finding-derivations-c3
   kind: exr
   file: 01-finding-derivations.md
-  line: 1447
-  hash: 4ee7cef6777a
+  line: 1474
+  hash: 7b228af09f0b
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1163,11 +1275,18 @@ items:
       (d): ¬(φ∧ψ) ⊢ ¬φ∨¬ψ, with φ:=¬P) gives ¬¬P∨¬Q; ∨E with ¬¬E then ∨I in the first case and ∨I in the
       second gives the goal. The table marks both DM (d) and ¬¬E as classical, which matches the revised
       marking sentence. The marking points total 2+2+2+3+1=10. The fatal clauses fit every accepted route.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-finding-derivations
+    hash: 7b228af09f0b
+    date: '2026-11-01'
+    evidence: 'wording only vs 9f9dbb8: derivations, rules, line citations and numbers unchanged; sidecars
+      pass'
 - key: exr-finding-derivations-c4
   kind: exr
   file: 01-finding-derivations.md
-  line: 1506
-  hash: 9d788a0aa7ac
+  line: 1533
+  hash: de248a42a171
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1233,6 +1352,13 @@ items:
     model: claude-opus-5-5
     evidence: 01:1502-1550. (a) uses notI and (b) uses RAA; both are valid by truth table and check_fitch
       reports 0 errors. The explanation of notnotQ versus Q is accurate.
+  - stage: S5e
+    verdict: correct
+    by: s5e-01-finding-derivations
+    hash: de248a42a171
+    date: '2026-11-01'
+    evidence: 'wording only vs 9f9dbb8: derivations, rules, line citations and numbers unchanged; sidecars
+      pass'
 - key: check:02-four-kinds-of-task:1
   kind: check
   file: 02-four-kinds-of-task.md
@@ -1259,7 +1385,7 @@ items:
   kind: exm
   file: 02-four-kinds-of-task.md
   line: 37
-  hash: 57c011cfeaad
+  hash: 2867a7cf7ee7
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1277,11 +1403,18 @@ items:
     model: claude-opus-5-5
     evidence: 02:37-95. The step attributions (1, 2, 2, 3, 4) match 3.1's steps at 01:68-79. The two snapshots
       and the final derivation are consistent; check_fitch reports 0 errors.
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-four-kinds-of-task
+    hash: 2867a7cf7ee7
+    date: '2026-11-01'
+    evidence: 'wording only vs 9f9dbb8: same steps, statements and derivations; new instances true and
+      recorded; sidecars pass'
 - key: exm-equivalence-search
   kind: exm
   file: 02-four-kinds-of-task.md
   line: 101
-  hash: 6429d61b0a0f
+  hash: 614f78cbcc53
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1311,10 +1444,17 @@ items:
       ¬Q is not''. The S5b finding is resolved. I checked both derivations line by line: (⇒) ∧E 2, →E
       1,3, DS(5,4) on Q∨R and ¬Q, which is the DS form φ∨ψ, ¬φ ⟹ ψ (ch02/05:1055); (⇐) LEM 3, ∨E(3,4-5,6-9),
       ∧I 2,6, →E 1,7,'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-four-kinds-of-task
+    hash: 614f78cbcc53
+    date: '2026-11-01'
+    evidence: 'wording only vs 9f9dbb8: same steps, statements and derivations; new instances true and
+      recorded; sidecars pass'
 - key: def-inconsistent-set
   kind: def
   file: 02-four-kinds-of-task.md
-  line: 226
+  line: 234
   hash: 3148a0082c20
   verdicts:
   - stage: S5a
@@ -1333,10 +1473,17 @@ items:
     model: claude-opus-5-5
     evidence: '02:226-233 matches @def-derivable (02-derivations.md:214): premises "belong to" Γ, n ≥
       0. NOTATION:154 agrees (syntactic sense).'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-four-kinds-of-task
+    hash: 3148a0082c20
+    date: '2026-11-01'
+    evidence: 'wording only vs 9f9dbb8: same steps, statements and derivations; new instances true and
+      recorded; sidecars pass'
 - key: prp-inconsistent-derives-everything
   kind: prp
   file: 02-four-kinds-of-task.md
-  line: 237
+  line: 245
   hash: 41ea14193aeb
   verdicts:
   - stage: S5a
@@ -1356,10 +1503,17 @@ items:
     evidence: 02:237-249. The statement is true. @prp-ex-falso is P, ¬P ⊢ Q (01-contradiction:166), so
       "grown from two premises" is accurate. The proof is in the fold of the next subsection (02:391),
       as the text says.
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-four-kinds-of-task
+    hash: 41ea14193aeb
+    date: '2026-11-01'
+    evidence: 'wording only vs 9f9dbb8: same steps, statements and derivations; new instances true and
+      recorded; sidecars pass'
 - key: check:02-four-kinds-of-task:2
   kind: check
   file: 02-four-kinds-of-task.md
-  line: 251
+  line: 259
   hash: 64e6ff7b65e6
   verdicts:
   - stage: S5a
@@ -1379,8 +1533,8 @@ items:
 - key: exm-inconsistency-search
   kind: exm
   file: 02-four-kinds-of-task.md
-  line: 259
-  hash: 9b1b289433a0
+  line: 267
+  hash: 2824d83e96e5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1399,10 +1553,17 @@ items:
     evidence: 02:259-334. Derivation checked. n=6, 1, 3 and 12 each fail exactly (1), (2), (3) and (4)
       respectively; the sidecar passes. The quoted fold title "Logic permits; it does not choose" exists
       at 01:773, and the refinement it cites exists at 01:592.
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-four-kinds-of-task
+    hash: 2824d83e96e5
+    date: '2026-11-01'
+    evidence: 'wording only vs 9f9dbb8: same steps, statements and derivations; new instances true and
+      recorded; sidecars pass'
 - key: check:02-four-kinds-of-task:3
   kind: check
   file: 02-four-kinds-of-task.md
-  line: 336
+  line: 344
   hash: a1f738bed000
   verdicts:
   - stage: S5a
@@ -1424,8 +1585,8 @@ items:
 - key: exm-inconsistent-lists
   kind: exm
   file: 02-four-kinds-of-task.md
-  line: 346
-  hash: 3ef465e071fc
+  line: 354
+  hash: e1aadc2e638a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1444,10 +1605,17 @@ items:
     evidence: '02:349-356. Line counts recomputed: 7, 8 and 4. Row 2 has no detour, which is consistent
       with 01:679 ("an introduced line cited elsewhere stays"). The ''Not an instance'' list is true when
       P is false. The pointer to Section 3.3 matches 03:324.'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-four-kinds-of-task
+    hash: e1aadc2e638a
+    date: '2026-11-01'
+    evidence: 'wording only vs 9f9dbb8: same steps, statements and derivations; new instances true and
+      recorded; sidecars pass'
 - key: prp-derivable-iff-negation-inconsistent
   kind: prp
   file: 02-four-kinds-of-task.md
-  line: 376
+  line: 386
   hash: 5a7def1bf8d2
   verdicts:
   - stage: S5a
@@ -1478,10 +1646,17 @@ items:
       test of a form, try to break it, now has a partner on the same list: make the counterexample set
       true, or derive ⊥ from it''. That matches ch01/01:311-316, where the counterexample set is defined
       and the test is put in'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-four-kinds-of-task
+    hash: 5a7def1bf8d2
+    date: '2026-11-01'
+    evidence: 'wording only vs 9f9dbb8: same steps, statements and derivations; new instances true and
+      recorded; sidecars pass'
 - key: proof:prp-derivable-iff-negation-inconsistent
   kind: proof
   file: 02-four-kinds-of-task.md
-  line: 392
+  line: 402
   hash: 465662195e58
   verdicts:
   - stage: S5a
@@ -1504,8 +1679,8 @@ items:
 - key: proof:prp-derivable-iff-negation-inconsistent#2
   kind: proof
   file: 02-four-kinds-of-task.md
-  line: 396
-  hash: f835f4a7fa13
+  line: 406
+  hash: 0125b42b9b37
   verdicts:
   - stage: S5a
     verdict: minor
@@ -1538,10 +1713,17 @@ items:
       at a citing line stays available', which answers the S5a point that cited boxes were never checked.
       (b)(⇒) uses @lem-weakening-cut (a) and (c) with ¬E, and those parts say exactly that (ch02/03:224-226).
       (b
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-four-kinds-of-task
+    hash: 0125b42b9b37
+    date: '2026-11-01'
+    evidence: 'wording only vs 9f9dbb8: same steps, statements and derivations; new instances true and
+      recorded; sidecars pass'
 - key: check:02-four-kinds-of-task:4
   kind: check
   file: 02-four-kinds-of-task.md
-  line: 409
+  line: 423
   hash: 17c6920859d8
   verdicts:
   - stage: S5a
@@ -1562,8 +1744,8 @@ items:
 - key: exm-derive-or-break-search
   kind: exm
   file: 02-four-kinds-of-task.md
-  line: 449
-  hash: b13eb1edb54a
+  line: 463
+  hash: 4386beaee58c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1582,10 +1764,17 @@ items:
     evidence: 02:449-522. In (a) the forced attempt is right and the derivation is correct. In (b), x=2
       with x>0, x>1, x>3 makes all three members true; the sidecar passes. The pointers Section 1.5 (06-disjunction-introduction:474)
       and Section 1.1 'Where to look first' (01:335) are correct.
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-four-kinds-of-task
+    hash: 4386beaee58c
+    date: '2026-11-01'
+    evidence: 'wording only vs 9f9dbb8: same steps, statements and derivations; new instances true and
+      recorded; sidecars pass'
 - key: check:02-four-kinds-of-task:5
   kind: check
   file: 02-four-kinds-of-task.md
-  line: 545
+  line: 559
   hash: fb827f6c6c8d
   verdicts:
   - stage: S5a
@@ -1621,7 +1810,7 @@ items:
 - key: exr-four-kinds-of-task-a1
   kind: exr
   file: 02-four-kinds-of-task.md
-  line: 583
+  line: 597
   hash: 528911fdd767
   verdicts:
   - stage: S5a
@@ -1651,8 +1840,8 @@ items:
 - key: exr-four-kinds-of-task-a2
   kind: exr
   file: 02-four-kinds-of-task.md
-  line: 607
-  hash: 00fe8e660bd3
+  line: 621
+  hash: ecac80731ffe
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1678,11 +1867,25 @@ items:
     model: claude-opus-5-5
     evidence: '02:607-654. All 12 parts are correct. (f) lists both claims, which is consistent with def-counterexample-set
       (premises plus the negated conclusion). (k) and (l): both derivations are legal.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: ecac80731ffe
+    date: '2026-11-01'
+    evidence: 'checked vs 9f9dbb8: wording only; marking points, countermodel and cited parts of lem-weakening-cut
+      unchanged; (k),(l) same lines and rules'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: ecac80731ffe
+    date: '2026-11-01'
+    evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
+      or equivalence checked against 9f9dbb8'
 - key: exr-four-kinds-of-task-b1
   kind: exr
   file: 02-four-kinds-of-task.md
-  line: 656
-  hash: 3ad506bfec2b
+  line: 670
+  hash: 9719aa219a18
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1721,11 +1924,18 @@ items:
       text at ch03/01:78: make χ the new goal, ''starting again at step 2 for that goal'', and when building
       a disjunction ''either side may be chosen''. The S5b finding is resolved. I checked derivations
       (a), (b) and (c) line'
+  - stage: S5e
+    verdict: correct
+    by: s5e-02-four-kinds-of-task
+    hash: 9719aa219a18
+    date: '2026-11-01'
+    evidence: 'wording only vs 9f9dbb8: same steps, statements and derivations; new instances true and
+      recorded; sidecars pass'
 - key: exr-four-kinds-of-task-b2
   kind: exr
   file: 02-four-kinds-of-task.md
-  line: 753
-  hash: fe2d263f5da1
+  line: 767
+  hash: 0cb8da05842a
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1752,11 +1962,25 @@ items:
     evidence: '02:753-830. The scaffold''s gap (lines 3-8) has one reasonable completion, andE twice then
       the RAA box, and the solution gives it. The two sides are equivalent by truth table. (c) is correctly
       limited to ''our two derivations''. Worked example: exm-equivalence-search.'
+  - stage: S5e
+    verdict: minor
+    by: s5e-02-four-kinds-of-task
+    hash: 0cb8da05842a
+    date: '2026-11-01'
+    evidence: wording correct; figurative 'the resources wait for P -> Q' (B11) left in the remark after
+      the derivation
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 0cb8da05842a
+    date: '2026-11-01'
+    evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
+      or equivalence checked against 9f9dbb8'
 - key: exr-four-kinds-of-task-b3
   kind: exr
   file: 02-four-kinds-of-task.md
-  line: 832
-  hash: 85eedd6a9e83
+  line: 846
+  hash: 91ac4792795c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1804,10 +2028,23 @@ items:
       ''This is the first box of @exr-reductio-and-classical-rules-b5 (f)''; that box is lines 2-10 of
       ch02/05 B5 (f), with the same lines 3-10. The S8 finding is resolved. I re-solved every part. (c):
       LEM, then DS(8,3) o'
+  - stage: S5e
+    verdict: minor
+    by: s5e-02-four-kinds-of-task
+    hash: 91ac4792795c
+    date: '2026-11-01'
+    evidence: wording correct; figurative 'the premise waits for' (B11) left in (c) and (i)
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 91ac4792795c
+    date: '2026-11-01'
+    evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
+      or equivalence checked against 9f9dbb8'
 - key: exr-four-kinds-of-task-b4
   kind: exr
   file: 02-four-kinds-of-task.md
-  line: 969
+  line: 983
   hash: 9345506fac61
   verdicts:
   - stage: S5a
@@ -1848,8 +2085,8 @@ items:
 - key: exr-four-kinds-of-task-c1
   kind: exr
   file: 02-four-kinds-of-task.md
-  line: 1047
-  hash: 66d2b039c29d
+  line: 1061
+  hash: b7eb374b933b
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1894,11 +2131,25 @@ items:
     model: claude-opus-5-5
     evidence: 'ch04 S4 2026-10-19: diff is the title only (''[C1: Exit check: the counterexample set,
       used later]'', ch04-deepen §3.3); stem and solution unchanged'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: b7eb374b933b
+    date: '2026-11-01'
+    evidence: 'checked vs 9f9dbb8: wording only; marking points, countermodel and cited parts of lem-weakening-cut
+      unchanged; (k),(l) same lines and rules'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: b7eb374b933b
+    date: '2026-11-01'
+    evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
+      or equivalence checked against 9f9dbb8'
 - key: exr-four-kinds-of-task-c2
   kind: exr
   file: 02-four-kinds-of-task.md
-  line: 1105
-  hash: 76106349b9f3
+  line: 1123
+  hash: a2cc8dbeec64
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1948,6 +2199,20 @@ items:
       solution is right. (c) ''No'' is correct. The marking scheme (4/3/2/1 = 10) now accepts either symmetric
       route. The Section 4.10 pointer is ledgered at 02:1149 as a plain pointer marked optional. No remaining
       issues.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: a2cc8dbeec64
+    date: '2026-11-01'
+    evidence: 'checked vs 9f9dbb8: wording only; marking points, countermodel and cited parts of lem-weakening-cut
+      unchanged; (k),(l) same lines and rules'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: a2cc8dbeec64
+    date: '2026-11-01'
+    evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
+      or equivalence checked against 9f9dbb8'
 - key: check:03-from-argument-to-derivation:1
   kind: check
   file: 03-from-argument-to-derivation.md
@@ -1974,7 +2239,7 @@ items:
   kind: exm
   file: 03-from-argument-to-derivation.md
   line: 37
-  hash: f6751aabeb62
+  hash: 23e47a5751d5
   verdicts:
   - stage: S5a
     verdict: correct
@@ -1995,6 +2260,20 @@ items:
       ...) and the aftermath all check. ''as in Section 3.1'' matches exm-search-distribute, and ''Lines
       4–5 need nothing new ... (Section 3.1)'' matches 01:591. Ledgered as from-argument-to-derivation-key,
       and the sidecar passes.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 23e47a5751d5
+    date: '2026-11-01'
+    evidence: 'checked vs 9f9dbb8: wording only; G is line 5, D3 is repetition, F3 gives not-P, three
+      exercise-only library rows, sources moved to Uses lines, derivations unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 23e47a5751d5
+    date: '2026-11-01'
+    evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
+      or equivalence checked against 9f9dbb8'
 - key: check:03-from-argument-to-derivation:2
   kind: check
   file: 03-from-argument-to-derivation.md
@@ -2083,7 +2362,7 @@ items:
 - key: check:03-from-argument-to-derivation:4
   kind: check
   file: 03-from-argument-to-derivation.md
-  line: 313
+  line: 317
   hash: 19086b3c59a9
   verdicts:
   - stage: S5a
@@ -2105,7 +2384,7 @@ items:
 - key: exr-from-argument-to-derivation-a1
   kind: exr
   file: 03-from-argument-to-derivation.md
-  line: 331
+  line: 335
   hash: d9bc05e7bea0
   verdicts:
   - stage: S5a
@@ -2137,8 +2416,8 @@ items:
 - key: exr-from-argument-to-derivation-b1
   kind: exr
   file: 03-from-argument-to-derivation.md
-  line: 357
-  hash: a3678f8515eb
+  line: 361
+  hash: b483dcd43baa
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2178,11 +2457,25 @@ items:
       ∨I 4; ∧I 2,6; →E 1,7; ∨I 8; ∨E 3,4-5,6-9, all correct. Both earlier findings are resolved. The reason
       for the odd square is now given at 03:399 and ledgered at 03:1102. STATUS.md:97 has the F1.7 §03
       row for B1, B4,'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: b483dcd43baa
+    date: '2026-11-01'
+    evidence: 'checked vs 9f9dbb8: wording only; G is line 5, D3 is repetition, F3 gives not-P, three
+      exercise-only library rows, sources moved to Uses lines, derivations unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: b483dcd43baa
+    date: '2026-11-01'
+    evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
+      or equivalence checked against 9f9dbb8'
 - key: exr-from-argument-to-derivation-b2
   kind: exr
   file: 03-from-argument-to-derivation.md
-  line: 425
-  hash: f337209b7788
+  line: 429
+  hash: bec4b4fdcb25
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2220,11 +2513,25 @@ items:
       rests on 6|n ⇔ (2|n ∧ 3|n), which is now ledgered at 03:1103 and in the key line 03:1099. (c) now
       says to replace the assumption P∧G by P, drop line 3 and close by →I, which gives (E∧T)→¬P ⊢ P→¬(E∧T).
       All three earli'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: bec4b4fdcb25
+    date: '2026-11-01'
+    evidence: 'checked vs 9f9dbb8: wording only; G is line 5, D3 is repetition, F3 gives not-P, three
+      exercise-only library rows, sources moved to Uses lines, derivations unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: bec4b4fdcb25
+    date: '2026-11-01'
+    evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
+      or equivalence checked against 9f9dbb8'
 - key: exr-from-argument-to-derivation-b3
   kind: exr
   file: 03-from-argument-to-derivation.md
-  line: 493
-  hash: 97ce937a0949
+  line: 497
+  hash: 7b43913cadc5
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2273,11 +2580,25 @@ items:
       route also takes 7, so ''no shorter'' holds. This resolves the S8 error. Items 1, 2, 4-10, 12 and
       14 were checked line by line; DS 2,4 in item 9 uses DS with P:=¬T. The breaks at n=2, 15, 25 are
       right. The cl'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 7b43913cadc5
+    date: '2026-11-01'
+    evidence: 'checked vs 9f9dbb8: wording only; G is line 5, D3 is repetition, F3 gives not-P, three
+      exercise-only library rows, sources moved to Uses lines, derivations unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 7b43913cadc5
+    date: '2026-11-01'
+    evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
+      or equivalence checked against 9f9dbb8'
 - key: exr-from-argument-to-derivation-b4
   kind: exr
   file: 03-from-argument-to-derivation.md
-  line: 769
-  hash: 797448ca6081
+  line: 773
+  hash: cefa92a6e202
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2319,11 +2640,25 @@ items:
       the one before. This resolves the S5a finding. The derivation checks: DM 3 (law (a)), →E 1,4, ¬E
       2,5, RAA 3-6, →I 2-7. The distractor (iii) is refuted at a=0, b=3. (vii) is matched to the 3.1 warning
       at 01:770, '
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: cefa92a6e202
+    date: '2026-11-01'
+    evidence: 'checked vs 9f9dbb8: wording only; G is line 5, D3 is repetition, F3 gives not-P, three
+      exercise-only library rows, sources moved to Uses lines, derivations unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: cefa92a6e202
+    date: '2026-11-01'
+    evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
+      or equivalence checked against 9f9dbb8'
 - key: exr-from-argument-to-derivation-c1
   kind: exr
   file: 03-from-argument-to-derivation.md
-  line: 821
-  hash: 88844ce11c44
+  line: 825
+  hash: 4b3f8dfc2634
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2362,11 +2697,25 @@ items:
       ∨E 2,6-8,9-11 inside box 5; ¬E 1,12; ¬I 5-13. (e): the break at n=2 makes E∨T, F1, F2 and ¬¬P true.
       The scheme now gives 3 points to ''a correct derivation'', with the model''s features listed only
       as a description, and marks (d) against the reader''s own derivation. This resolves the S6 finding.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 4b3f8dfc2634
+    date: '2026-11-01'
+    evidence: 'checked vs 9f9dbb8: wording only; G is line 5, D3 is repetition, F3 gives not-P, three
+      exercise-only library rows, sources moved to Uses lines, derivations unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 4b3f8dfc2634
+    date: '2026-11-01'
+    evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
+      or equivalence checked against 9f9dbb8'
 - key: exr-from-argument-to-derivation-c2
   kind: exr
   file: 03-from-argument-to-derivation.md
-  line: 894
-  hash: 4d8d3bf35017
+  line: 898
+  hash: 3d043fbb9c60
   verdicts:
   - stage: S5a
     verdict: minor
@@ -2405,11 +2754,25 @@ items:
       as line 2, later lines shifted, last line ⊥ by ¬E citing Q and ¬Q). (c) is now correct (''forces
       Q''; no statement qualifies when Q is refutable). Q:=⊥ gives back the lemma at 02/04:367, using
       the ¬φ / φ→⊥ parallel '
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 3d043fbb9c60
+    date: '2026-11-01'
+    evidence: 'checked vs 9f9dbb8: wording only; G is line 5, D3 is repetition, F3 gives not-P, three
+      exercise-only library rows, sources moved to Uses lines, derivations unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 3d043fbb9c60
+    date: '2026-11-01'
+    evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
+      or equivalence checked against 9f9dbb8'
 - key: exr-finding-derivations-r1
   kind: exr
   file: 03-from-argument-to-derivation.md
-  line: 941
-  hash: b707573590ff
+  line: 945
+  hash: 9ed47e0fa36c
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2464,11 +2827,25 @@ items:
     evidence: 03:924-938. My proof (by cases on a>=b or a<b) is the same as the book's and is complete.
       The source is named with @def-rules-disjunction and @exm-abs-product-cases (ch01 07:25, 07:686),
       and the stem hides it.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 9ed47e0fa36c
+    date: '2026-11-01'
+    evidence: 'checked vs 9f9dbb8: wording only; G is line 5, D3 is repetition, F3 gives not-P, three
+      exercise-only library rows, sources moved to Uses lines, derivations unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 9ed47e0fa36c
+    date: '2026-11-01'
+    evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
+      or equivalence checked against 9f9dbb8'
 - key: exr-finding-derivations-r2
   kind: exr
   file: 03-from-argument-to-derivation.md
-  line: 957
-  hash: d8785ddb913f
+  line: 965
+  hash: cb828027207e
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2545,11 +2922,25 @@ items:
       the phrase book. The problem text does not name a source chapter. The R1/R2 order differs from STYLE
       §11.5 but is recorded as a deliberate deviation (ch03-deepen.md:1426), which the early-chapters
       rule allows.
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: cb828027207e
+    date: '2026-11-01'
+    evidence: 'checked vs 9f9dbb8: wording only; G is line 5, D3 is repetition, F3 gives not-P, three
+      exercise-only library rows, sources moved to Uses lines, derivations unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: cb828027207e
+    date: '2026-11-01'
+    evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
+      or equivalence checked against 9f9dbb8'
 - key: exr-finding-derivations-r3
   kind: exr
   file: 03-from-argument-to-derivation.md
-  line: 997
-  hash: c70e149018ce
+  line: 1005
+  hash: 77e6b38e71e9
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2615,11 +3006,25 @@ items:
       check_fitch; (D3) is repetition (ch01 05:382). For the converse, my truth table finds the refuting
       row P=Q=R=false, and the book''s choice (P, R false, Q either) checks out: the premise is true and
       the conclusion false. The Chapter 4 pointer is plain, as the blueprint requires.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: 77e6b38e71e9
+    date: '2026-11-01'
+    evidence: 'checked vs 9f9dbb8: wording only; G is line 5, D3 is repetition, F3 gives not-P, three
+      exercise-only library rows, sources moved to Uses lines, derivations unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: 77e6b38e71e9
+    date: '2026-11-01'
+    evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
+      or equivalence checked against 9f9dbb8'
 - key: exr-from-argument-to-derivation-r4
   kind: exr
   file: 03-from-argument-to-derivation.md
-  line: 1033
-  hash: 9c9e1745839b
+  line: 1041
+  hash: d5591d2f4b06
   verdicts:
   - stage: S5a
     verdict: correct
@@ -2679,3 +3084,17 @@ items:
       ch02/03:21); 9 ∧I 6,7; 10 ∧I 9,8. The reading of (¬N∧¬Z)∧¬B as 0<x<1 is justified and ledgered at
       1107. (c) Yes, the answer is enough. The solution names the tool (@exm-extract-argument, ch03/03:37)
       and says why the look-alike fails: →E needs N, and MT needs ¬¬L. check_fitch reports 0 errors.'
+  - stage: S5e
+    verdict: correct
+    by: coordinator
+    hash: d5591d2f4b06
+    date: '2026-11-01'
+    evidence: 'checked vs 9f9dbb8: wording only; G is line 5, D3 is repetition, F3 gives not-P, three
+      exercise-only library rows, sources moved to Uses lines, derivations unchanged; sidecars pass'
+  - stage: S8
+    verdict: correct
+    by: coordinator
+    hash: d5591d2f4b06
+    date: '2026-11-01'
+    evidence: 'coordinator: ''waits for'' reworded as ''needs'' (B11), line lists split into sentences,
+      or equivalence checked against 9f9dbb8'

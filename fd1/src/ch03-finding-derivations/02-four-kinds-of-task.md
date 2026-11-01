@@ -7,17 +7,17 @@ The method of Section 3.1 answers one kind of question: here are premises, here 
 - show that some conditions cannot all be met at once;
 - decide whether a conclusion follows at all, when nobody says whether it does.
 
-Each of these changes where a search starts and what counts as its end. This section takes the four tasks in turn. Underneath, it finds, they are one question.
+Each of these changes where a search starts and what counts as its end. This section takes the four tasks in turn, and shows that underneath they are one question.
 
 ## Four tasks, one method
 
-*Let the task choose the search.* The four tasks use the same rules and the same method. What differs is the first move and the finish line.
+*Let the task choose the search.* The kind of task decides where the search starts. The four tasks use the same rules and the same method; what differs is the first step and the place where the search ends.
 
 | Task | The claim | Where the search starts | What ends it |
 |---|---|---|---|
-| theorem | \( \vdash \varphi \) | step 2 on the goal; every resource is an assumption the goal asks for | the goal, reached outside every box |
+| theorem | \( \vdash \varphi \) | the goal-directed step (step 2) on the goal; every resource is an assumption the goal asks for | the goal, reached outside every box |
 | equivalence | \( \varphi \dashv\vdash \psi \) (@def-provable-equivalence) | two searches, one from each side | two derivations |
-| inconsistency | \( \Gamma \vdash \bot \) | step 4: the goal is \( \bot \); look for a clash partner already on a line | \( \bot \), outside every box |
+| inconsistency | \( \Gamma \vdash \bot \) | the clash step (step 4): the goal is \( \bot \); look for a clash partner already on a line | \( \bot \), outside every box |
 | derive or break | \( \Gamma \vdash \varphi \)? (verdict withheld) | try to break it first | a derivation, or statements that make the counterexample set true |
 
 Only the last task leaves open which way it ends. The other three state their claim: a failed search leaves the question open, as Section 3.1's failed search did, and a break ends the task against the claim.
@@ -43,7 +43,7 @@ In words: a statement that implies a contradiction is false. Every proof that be
 :::
 
 ::: {.solution}
-There are no premises, so step 1 writes only the goal. Step 2 opens a box on \( P \to (Q \wedge \neg Q) \) with the goal \( \neg P \), and then, inside it, a box on \( P \) with the goal \( \bot \):
+There are no premises, so setting up (step 1) writes only the goal. The goal-directed step opens a box on \( P \to (Q \wedge \neg Q) \) with the goal \( \neg P \), and then, inside it, a box on \( P \) with the goal \( \bot \):
 
 ```{=latex}
 % schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
@@ -72,7 +72,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Now there are two resources, both assumptions the goal asked for. Step 3 fires the first on the second, giving \( Q \wedge \neg Q \), and splits it by \( \rulename{\wedge E} \). Step 4 finds the clash.
+Now there are two resources, both assumptions the goal asked for. The premise-directed step (step 3) applies \( \rulename{{\to}E} \) to the first and the second, giving \( Q \wedge \neg Q \), and splits it by \( \rulename{\wedge E} \). The clash step finds the clash.
 
 ```{=latex}
 \begin{center}
@@ -107,7 +107,7 @@ This is how mathematics proves a disjunction: to show that \( ab = 0 \) implies 
 :::
 
 ::: {.solution}
-\( (\Rightarrow) \) The goal is an implication, so a box on \( P \wedge \neg Q \). \( \rulename{\wedge E} \) splits it, the premise fires on \( P \), and \( \rulename{DS} \) removes the refuted side.
+\( (\Rightarrow) \) The goal is an implication, so a box on \( P \wedge \neg Q \). \( \rulename{\wedge E} \) splits it, the premise gives \( Q \vee R \) from \( P \), and \( \rulename{DS} \) removes the refuted side.
 
 ```{=latex}
 % schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
@@ -153,7 +153,7 @@ $\begin{nd}
 \end{center}
 ```
 
-\( (\Leftarrow) \) The goal is an implication: a box on \( P \), with the goal \( Q \vee R \). That goal is a disjunction, so it is postponed (step 2). The premise waits for \( P \wedge \neg Q \): \( P \) is in hand, \( \neg Q \) is not, and nothing clashes. That is step 5, and the well-chosen statement is \( Q \), whose negation the premise waits for: \( \rulename{LEM} \) on \( Q \).
+\( (\Leftarrow) \) The goal is an implication: a box on \( P \), with the goal \( Q \vee R \). That goal is a disjunction, so the goal-directed step postpones it. The premise needs \( P \wedge \neg Q \): \( P \) is in hand, \( \neg Q \) is not, and nothing clashes. So the search is at the stuck step (step 5). The statement to split on is \( Q \), since the premise needs its negation: \( \rulename{LEM} \) on \( Q \).
 
 ```{=latex}
 % schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
@@ -217,11 +217,19 @@ $\begin{nd}
 ```
 :::
 
-An equivalence is two searches, and they need not be alike. The direction \( (\Rightarrow) \) used a derived rule and no classical step. The direction \( (\Leftarrow) \) reached step 5, because its goal was a disjunction with no side in hand. When one direction is easy, do it first: it checks that the statements are worth comparing, and its lines often suggest the other direction's split.
+An equivalence is two searches, and they need not be alike. The direction \( (\Rightarrow) \) used a derived rule and no classical step. The direction \( (\Leftarrow) \) reached the stuck step, because its goal was a disjunction with no side in hand. When one direction is easy, do it first: it checks that the statements are worth comparing, and its lines often suggest the other direction's split.
 
 ## Inconsistent lists
 
-Sometimes the task is not to reach a conclusion but to show that some statements cannot be accepted together: a puzzle's conditions that no number meets, the hypotheses of a lemma that contradict each other, or the assumption of a proof by contradiction together with what is given. Section 2.5 (@exr-reductio-and-classical-rules-b5) already read an \( \rulename{RAA} \) derivation as a derivation of \( \bot \) from the counterexample set. A derivation of \( \bot \) does this job, and the list it starts from gets a name.
+Sometimes the task is not to reach a conclusion but to show that some statements cannot be accepted together:
+
+- the conditions of a puzzle that no number meets;
+- the hypotheses of a lemma that contradict each other;
+- the assumption of a proof by contradiction, together with what is given.
+
+Section 2.5 (@exr-reductio-and-classical-rules-b5) already read an \( \rulename{RAA} \) derivation as a derivation of \( \bot \) from the counterexample set. A derivation of \( \bot \) does this job.
+
+Take the list \( P, \ \neg P \vee Q, \ \neg Q \) from the start of the section. Split \( \neg P \vee Q \) by \( \rulename{\vee E} \): the case \( \neg P \) clashes with \( P \), and the case \( Q \) clashes with \( \neg Q \). Both cases end in \( \bot \), so a derivation from these three premises ends with \( \bot \), outside every box. Lists like this one get a name.
 
 ::: {#def-inconsistent-set}
 [Inconsistent and Consistent Lists]
@@ -246,7 +254,7 @@ For a list of statements \( \Gamma \), the following are equivalent:
 :::
 :::
 
-*In words: an inconsistent list proves every statement, and a list that proves some statement and its negation is inconsistent.* This is @prp-ex-falso grown from two premises to any inconsistent list. Its proof is in the fold of the next subsection.
+*In words: an inconsistent list proves every statement, and a list that proves some statement and its negation is inconsistent.* It extends @prp-ex-falso from the two premises \( P, \neg P \) to any inconsistent list. The proof is short, and is given in the next subsection together with the proof of the proposition there.
 
 ::: {.check}
 Without writing a derivation, explain why \( P, \ \neg P \vdash Q \wedge \neg Q \).
@@ -274,7 +282,7 @@ With \( E \): "\( n \) is even", \( F \): "\( n \) is a multiple of \( 4 \)" and
 ::: {.solution}
 The goal is \( \bot \). Look first for a clash partner already on a line (Section 3.1): line 4 is \( \neg F \), so aim at \( F \).
 
-\( F \) is the conclusion of line 1, so the new goal is \( E \), a letter. Line 3 gives \( E \) from \( T \), but \( T \) is not in hand, and \( E \vee T \) does not say which side holds. So use line 2 by \( \rulename{\vee E} \), with both cases ending in \( E \). The case \( E \) is a one-line box; the case \( T \) fires line 3.
+\( F \) is the conclusion of line 1, so the new goal is \( E \), a letter. Line 3 gives \( E \) from \( T \), but \( T \) is not in hand, and \( E \vee T \) does not say which side holds. So use line 2 by \( \rulename{\vee E} \), with both cases ending in \( E \). The case \( E \) is a one-line box; the case \( T \) uses line 3 by \( \rulename{{\to}E} \).
 
 ```{=latex}
 % schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
@@ -330,7 +338,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Read as a proof about \( n \), the derivation shows that no integer meets all four conditions: by (2) and (3), \( n \) is even in either case; by (1) it is a multiple of \( 4 \); and (4) says it is not. Yet any three of the conditions can be met together: \( n = 6 \) meets all but (1), \( n = 1 \) all but (2), \( n = 3 \) all but (3), and \( n = 12 \) all but (4). The inconsistency belongs to the four together. The derivation does not say which condition to drop (the fold "Logic permits; it does not choose" in Section 3.1).
+Read as a proof about \( n \), the derivation shows that no integer meets all four conditions. By (2) and (3), \( n \) is even in either case. By (1) it is a multiple of \( 4 \), and (4) says it is not. Yet any three of the conditions can be met together: \( n = 6 \) meets all but (1), \( n = 1 \) all but (2), \( n = 3 \) all but (3), and \( n = 12 \) all but (4). The inconsistency belongs to the four together. The derivation does not say which condition to drop: logic shows that the four cannot all hold, and it does not choose among them (Section 3.1).
 :::
 
 ::: {.check}
@@ -348,30 +356,32 @@ Here are three more inconsistent lists, each with compound members, and one list
 
 | The list | The clash it reaches | The derivation of \( \bot \), in brief |
 |---|---|---|
-| \( (P \vee Q) \to R, \ P \wedge \neg R \) | \( R \), \( \neg R \) | \( P \) by \( \rulename{\wedge E} \); \( P \vee Q \) by \( \rulename{\vee I} \); \( R \) by \( \rulename{{\to}E} \); \( \neg R \) by \( \rulename{\wedge E} \); \( \bot \) by \( \rulename{\neg E} \) (7 lines) |
-| \( P \leftrightarrow \neg P \) | \( P \), \( \neg P \) | a box on \( P \): \( \neg P \) by \( \rulename{{\leftrightarrow}E} \), \( \bot \) by \( \rulename{\neg E} \); \( \neg P \) by \( \rulename{\neg I} \); then \( P \) by \( \rulename{{\leftrightarrow}E} \), and \( \neg P \) by \( \rulename{{\leftrightarrow}E} \) again from that \( P \); \( \bot \) by \( \rulename{\neg E} \) (8 lines) |
+| \( (P \vee Q) \to R, \ P \wedge \neg R \) | \( R \), \( \neg R \) | \( P \) by \( \rulename{\wedge E} \), then \( P \vee Q \) by \( \rulename{\vee I} \), then \( R \) by \( \rulename{{\to}E} \), then \( \neg R \) by \( \rulename{\wedge E} \), then \( \bot \) by \( \rulename{\neg E} \) (7 lines) |
+| \( P \leftrightarrow \neg P \) | \( P \), \( \neg P \) | a box on \( P \) gives \( \neg P \) by \( \rulename{{\leftrightarrow}E} \) and \( \bot \) by \( \rulename{\neg E} \), so \( \neg P \) by \( \rulename{\neg I} \). Then \( P \) by \( \rulename{{\leftrightarrow}E} \), and \( \neg P \) by \( \rulename{{\leftrightarrow}E} \) again from that \( P \). Last, \( \bot \) by \( \rulename{\neg E} \) (8 lines) |
 | \( \neg(P \to Q), \ \neg P \) | \( P \to Q \), \( \neg(P \to Q) \) | \( P \to Q \) by VI from \( \neg P \) (@prp-vacuous-implication); \( \bot \) by \( \rulename{\neg E} \) (4 lines) |
 
 **Not an instance.** \( P \to Q, \ P \to \neg Q \). The two members look opposed. But with \( P \) false (say \( P \): "\( 0 = 1 \)") both are true, whatever \( Q \) says, so the claim \( P \to Q, \ P \to \neg Q \vdash \bot \) breaks. What the list does derive is \( \neg P \): from \( P \) it would give \( Q \) and \( \neg Q \). This chapter does not call the list inconsistent, and it does not call it consistent either. Whether a break rules out every derivation of \( \bot \) is the question the chapter ends on (Section 3.3).
 :::
 
-The second row's derivation is written without a detour: the line \( \neg P \) built by \( \rulename{\neg I} \) is cited by \( \rulename{{\leftrightarrow}E} \), never taken apart at once by \( \rulename{\neg E} \), so it stays, as Section 3.1's detour paragraph allows ("an introduced line cited elsewhere stays").
+The derivation in the second row has no detour. The line \( \neg P \) built by \( \rulename{\neg I} \) is cited by \( \rulename{{\leftrightarrow}E} \), and it is never taken apart at once by \( \rulename{\neg E} \). Section 3.1 lets such a line stay: an introduced line that is cited elsewhere stays.
 
 ::: {.warning}
 [Not allowed: claims about inconsistency]
 
-Each claim below is wrong; the tag names what it misreads.
+Each claim below is wrong. The words in italics name the mistake.
 
-- "The list is inconsistent because one of its members is false." *Truth for derivation*: inconsistency is a derivation of \( \bot \) (@def-inconsistent-set), not a false member. The one-member list "\( 2 > 3 \)" has a false member, and no derivation of \( \bot \) is offered.
-- "\( P \to Q \) and \( P \to \neg Q \) contradict each other, so the list is inconsistent." *Looks for derivation*: nothing has been derived. Both members are true when \( P \) is false, and the claim of inconsistency breaks.
-- "Line 7, inside the box of the assumption \( P \), is \( \bot \); so the premises are inconsistent." *A boxed line*: that \( \bot \) depends on \( P \). It shows the list \( \Gamma, P \) inconsistent, and so \( \Gamma \vdash \neg P \). The last line must lie outside every box (@def-derivation).
-- "A search for \( \bot \) stalled, so the list is consistent." *A stall for a proof*: a stalled search proves nothing (Section 3.1). Consistency is the absence of **every** derivation of \( \bot \).
-- "The list is inconsistent, so its first member is false." *The list for a member*: inconsistency belongs to the list. It says that the members cannot all be accepted together, not which one fails (compare the four conditions above).
+- "The list is inconsistent because one of its members is false." *Mistaking truth for derivation*: inconsistency is a derivation of \( \bot \) (@def-inconsistent-set), not a false member. The one-member list "\( 2 > 3 \)" has a false member, and no derivation of \( \bot \) is offered.
+- "\( P \to Q \) and \( P \to \neg Q \) contradict each other, so the list is inconsistent." *Mistaking looks for a derivation*: nothing has been derived. Both members are true when \( P \) is false, and the claim of inconsistency breaks.
+- "Line 7, inside the box of the assumption \( P \), is \( \bot \); so the premises are inconsistent." *Ending inside a box*: that \( \bot \) depends on \( P \). It shows the list \( \Gamma, P \) inconsistent, and so \( \Gamma \vdash \neg P \). The last line must lie outside every box (@def-derivation).
+- "A search for \( \bot \) stalled, so the list is consistent." *Mistaking a stall for a proof*: a stalled search proves nothing (Section 3.1). Consistency is the absence of **every** derivation of \( \bot \).
+- "The list is inconsistent, so its first member is false." *Mistaking the list for a member*: inconsistency belongs to the list. It says that the members cannot all be accepted together, not which one fails (compare the four conditions above).
 :::
 
 ## The counterexample set, derived
 
 Proving and refuting meet in one list. The counterexample set of a claim \( \Gamma \vdash \varphi \) is the list \( \Gamma, \neg\varphi \) (@def-counterexample-set). Breaking the claim makes that list true. Deriving the claim, it turns out, is showing that list inconsistent.
+
+For example, take the claim \( P \wedge Q \vdash P \). Its counterexample set is \( P \wedge Q, \ \neg P \), and that list is inconsistent: \( \rulename{\wedge E} \) gives \( P \), which clashes with \( \neg P \).
 
 ::: {#prp-derivable-iff-negation-inconsistent}
 [Derivable Exactly When the Counterexample Set Is Inconsistent]
@@ -384,9 +394,9 @@ Let \( \Gamma \) be a list of statements and \( \varphi \) a statement.
 :::
 :::
 
-*In words: (b) says that a claim is derivable exactly when its counterexample set is inconsistent, and (a) says the same for a negated conclusion.* In the proofs, the box of (a) closes by \( \rulename{\neg I} \) and that of (b) by \( \rulename{RAA} \): Section 2.5's distinction between the two rules, stated about whole derivations. Section 1.1's test of a form, try to break it, now has a partner on the same list: make the counterexample set true, or derive \( \bot \) from it.
+*In words: (b) says that a claim is derivable exactly when its counterexample set is inconsistent, and (a) says the same for a negated conclusion.* In the proofs, the box of (a) closes by \( \rulename{\neg I} \) and that of (b) by \( \rulename{RAA} \): Section 2.5's distinction between the two rules, stated about whole derivations. Section 1.1 tested a form by trying to break it, that is, by making the counterexample set true. Now there is a second test on the same list: derive \( \bot \) from it.
 
-With \( \Gamma \) empty and \( \varphi \) the statement \( P \leftrightarrow \neg P \), part (a) says that the second row of @exm-inconsistent-lists and @lem-not-iff-own-negation, \( \vdash \neg(P \leftrightarrow \neg P) \), are the same fact.
+Take \( \Gamma \) empty and \( \varphi \) the statement \( P \leftrightarrow \neg P \). Then part (a) says that the second row of @exm-inconsistent-lists and the theorem \( \vdash \neg(P \leftrightarrow \neg P) \) are the same fact. That theorem is @lem-not-iff-own-negation.
 
 ::: {.second-reading title="The proofs: append a line, or copy a derivation into a box"}
 ::: {.proof}
@@ -398,12 +408,16 @@ With \( \Gamma \) empty and \( \varphi \) the statement \( P \leftrightarrow \ne
 
 (b), \( (\Leftarrow) \): let \( D \) be a derivation of \( \bot \) with premises in \( \Gamma, \neg\varphi \). If the last line of \( D \) is a premise in \( \Gamma \), then \( \bot \) is a member of \( \Gamma \), and \( \rulename{\bot E} \) gives \( \varphi \). (The last line cannot be the premise \( \neg\varphi \), since \( \neg\varphi \) is not \( \bot \).) Otherwise, write as premises those premises of \( D \) that belong to \( \Gamma \). Open a box with the assumption \( \neg\varphi \). Inside it, copy the lines of \( D \) that are not premises, in order, with their boxes, renumbering citations; a citation of the premise \( \neg\varphi \) now cites the assumption. Close the box after the copy of the last line of \( D \), and write \( \varphi \) by \( \rulename{RAA} \).
 
-Every copied citation is legal. A cited premise of \( \Gamma \) lies above the box, in no box. The assumption is available throughout the box. The boxes of \( D \) sit inside the new box as they sat in \( D \), so every line and every box that was available at a citing line stays available (the scope rule of @def-derivation). The last line of \( D \) lies in no box of \( D \), so its copy is a line of the new box itself, as \( \rulename{RAA} \) requires. If \( D \) never cites \( \neg\varphi \), nothing changes.
+Every copied citation is still allowed. A cited premise of \( \Gamma \) lies above the box, in no box. The assumption is available throughout the box. The boxes of \( D \) sit inside the new box as they sat in \( D \), so every line and every box that was available at a citing line stays available, by the scope rule for derivations. The last line of \( D \) lies in no box of \( D \), so its copy is a line of the new box itself, as \( \rulename{RAA} \) requires. If \( D \) never cites \( \neg\varphi \), nothing changes.
 
 Part (a) is the same, with \( \varphi \) in place of \( \neg\varphi \) and \( \rulename{\neg I} \) in place of \( \rulename{RAA} \). If the last line of \( D \) is the premise \( \varphi \) itself (possible only when \( \varphi \) is \( \bot \)), nothing is copied: the box is its one assumption line, and \( \rulename{\neg I} \) closes it at once. In \( (\Rightarrow) \), \( \Gamma, \varphi \vdash \varphi \) and, by weakening, \( \Gamma, \varphi \vdash \neg\varphi \); chaining with \( \rulename{\neg E} \) finishes.
+
+::: {.uses}
+@def-derivation (the scope rule).
+:::
 :::
 
-The copying is the move of Section 1.4's @exr-proving-an-implication-c4 (b), which turns open assumptions into premises, run backwards.
+The copying reverses what Section 1.4's @exr-proving-an-implication-c4 (b) does. That exercise turns open assumptions into premises; the copying turns a premise into an open assumption.
 :::
 
 ::: {.check}
@@ -436,15 +450,15 @@ Every task of this section is a claim that something is derivable, and by @prp-d
 | inconsistency | \( \Gamma \vdash \bot \) | the list \( \Gamma \) | every member of \( \Gamma \) true |
 | derive or break | \( \Gamma \vdash \varphi \) | the list \( \Gamma, \neg\varphi \) | every member of \( \Gamma, \neg\varphi \) true |
 
-An equivalence is also a theorem: \( \varphi \dashv\vdash \psi \) holds exactly when \( \vdash \varphi \leftrightarrow \psi \). Copy each of the two derivations into a box, as in the fold above, and close both boxes by \( \rulename{{\leftrightarrow}I} \). Conversely, add the premise \( \varphi \) to a derivation of \( \varphi \leftrightarrow \psi \) and write \( \psi \) by \( \rulename{{\leftrightarrow}E} \), and likewise for \( \psi \).
+An equivalence is also a theorem: \( \varphi \dashv\vdash \psi \) holds exactly when \( \vdash \varphi \leftrightarrow \psi \). Copy each of the two derivations into a box, as the proof of @prp-derivable-iff-negation-inconsistent does, and close both boxes by \( \rulename{{\leftrightarrow}I} \). Conversely, add the premise \( \varphi \) to a derivation of \( \varphi \leftrightarrow \psi \) and write \( \psi \) by \( \rulename{{\leftrightarrow}E} \), and likewise for \( \psi \).
 
-So the four tasks are one: is this list inconsistent? Each costume starts the search in a different place, which is why the task chooses the search. And each row has a second half, the last column: what to do when the list might instead be made true. That is the fourth task.
+So the four tasks are one: is this list inconsistent? Each form of the task starts the search in a different place, so the kind of task decides how to search. Each row also has a second half, given in the last column: what to do when the list might instead be made true. That is the fourth task.
 
 ## Derive or break
 
-Section 1.5 listed claims without a verdict ("Derive it or break it"). Here the format becomes a task with its own first move: **decide before you search**.
+Section 1.5 gave claims without saying whether they hold, under the heading "Derive it or break it". Such a claim is a task with its own first step: **decide before you search**.
 
-*Try to break it first.* Spend a few minutes trying to make the counterexample set true, starting where the conclusion is false (Section 1.1, "Where to look first"). Either some choice of statements works, and the claim breaks; or every attempt is forced into a clash. Then search for a derivation. The forced attempt usually suggests a plan for it: the statements the attempt had to make true suggest the assumptions of the derivation's boxes, and the clash it met suggests the derivation's \( \bot \).
+*Try to break it first.* Spend a few minutes trying to make the counterexample set true, starting where the conclusion is false (Section 1.1, "Where to look first"). Either some choice of statements works, and the claim breaks; or every attempt is forced into a clash. Then search for a derivation. The forced attempt usually suggests a plan for it. The statements the attempt had to make true suggest the assumptions of the derivation's boxes. The clash it met suggests the derivation's \( \bot \).
 
 ::: {#exm-derive-or-break-search}
 [Two claims, one connective apart]
@@ -460,7 +474,7 @@ Derive or break each claim.
 ::: {.solution}
 *(a), trying to break it.* The conclusion is false only with \( P \) true and \( \neg Q \) false, that is, \( Q \) true. Then the first premise needs \( Q \to R \) true, so \( R \) true. The second needs \( \neg R \) true, so \( R \) false. Every choice was forced, and the forcing ends in a clash. So we search.
 
-*(a), the derivation.* The attempt's plan: a box on \( P \) (the conclusion's hypothesis), a box on \( Q \) (the statement whose negation is wanted), and the clash \( R \), \( \neg R \). Before the box on \( Q \) opens, both premises fire on \( P \): lines that need nothing new (Section 3.1).
+*(a), the derivation.* The attempt gives the plan. Open a box on \( P \), the hypothesis of the conclusion, and inside it a box on \( Q \), the statement whose negation is wanted; then aim for the clash \( R \), \( \neg R \). Before the box on \( Q \) opens, both premises give a line from \( P \) by \( \rulename{{\to}E} \). These are lines that need nothing new (Section 3.1).
 
 ```{=latex}
 % schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
@@ -521,7 +535,7 @@ $\begin{nd}
 The two claims differ in one connective. Trying to break each found its verdict, and for (a) it also found the derivation. The method of Section 3.1 would have found (a) without the attempt. On (b) the method of Section 3.1 could only search, and a stall is not a verdict; the break is.
 :::
 
-The task as a chart. The loop at the bottom is honest: nothing in this chapter promises that it ends.
+The chart below shows the task. Nothing in this chapter promises that the loop at the bottom ever ends.
 
 ```{=latex}
 \begin{center}
@@ -646,9 +660,9 @@ The parts run from naming the task, through one step and a missing piece, to cla
 
 (j) Yes: @prp-inconsistent-derives-everything, (i) \( \Rightarrow \) (ii).
 
-(k) 5 \( Q \), \( \rulename{{\to}E} \) 1, 3; 6 \( R \), \( \rulename{{\to}E} \) 2, 5; 7 \( \bot \), \( \rulename{\neg E} \) 6, 4.
+(k) Line 5 is \( Q \), \( \rulename{{\to}E} \) 1, 3. Line 6 is \( R \), \( \rulename{{\to}E} \) 2, 5. Line 7 is \( \bot \), \( \rulename{\neg E} \) 6, 4.
 
-(l) 4 \( P \), assumption; 5 \( \bot \), \( \rulename{\neg E} \) 4, 2; 6 \( Q \), assumption; 7 \( \bot \), \( \rulename{\neg E} \) 6, 3; 8 \( \bot \), \( \rulename{\vee E} \) 1, 4–5, 6–7.
+(l) Line 4 is \( P \), assumption. Line 5 is \( \bot \), \( \rulename{\neg E} \) 4, 2. Line 6 is \( Q \), assumption. Line 7 is \( \bot \), \( \rulename{\neg E} \) 6, 3. Line 8 is \( \bot \), \( \rulename{\vee E} \) 1, 4–5, 6–7.
 :::
 
 ### B. Practice
@@ -695,7 +709,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Boxes 1 and 6 come from step 2: each goal is a negation. Box 7 comes from step 2 inside step 4: step 4 chooses to manufacture \( P \vee \neg P \) from its side \( \neg P \), so that it clashes with line 6, and the goal \( \neg P \), a negation, opens the box. The second conjunct needed no classical rule, although \( P \vee \neg P \) itself does in this book's derivation (@prp-excluded-middle).
+Boxes 1 and 6 come from step 2: each goal is a negation. Box 7 comes from step 2 inside step 4. The clash step chooses to manufacture \( P \vee \neg P \) from its side \( \neg P \), so that it clashes with line 6. Then the goal \( \neg P \), a negation, opens the box. The second conjunct needed no classical rule, although \( P \vee \neg P \) itself does in this book's derivation (@prp-excluded-middle).
 
 (b)
 
@@ -747,7 +761,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Boxes 1 and 2 come from step 2. Box 3 comes from step 5: the goal \( P \) is a letter, and the resources wait for \( P \to Q \), which nothing in hand gives.
+Boxes 1 and 2 come from step 2. Box 3 comes from step 5: the goal \( P \) is a letter, and the resources need \( P \to Q \), which nothing in hand gives.
 :::
 
 ::: {#exr-four-kinds-of-task-b2}
@@ -756,7 +770,7 @@ Boxes 1 and 2 come from step 2. Box 3 comes from step 5: the goal \( P \) is a l
 Show that \( (P \wedge Q) \to R \dashv\vdash (P \wedge \neg R) \to \neg Q \).
 
 ::: {.enumerate options="label=(\alph*)"}
-1. The search for \( (\Leftarrow) \) has reached the stage below. *Name the move, then complete it.*
+1. The search for \( (\Leftarrow) \) has reached the stage below. *Name the step of the method, then complete it.*
 2. Derive \( (\Rightarrow) \).
 3. Which direction used a classical rule, and why did the other not need one?
 :::
@@ -778,7 +792,7 @@ $\begin{nd}
 :::
 
 ::: {.solution}
-(a) First the lines that need nothing new, \( P \) and \( Q \) by \( \rulename{\wedge E} \). Then the move is step 5: the current goal \( R \) is a letter, no resource gives it, and nothing clashes, so assume \( \neg R \) for \( \rulename{RAA} \).
+(a) First the lines that need nothing new, \( P \) and \( Q \) by \( \rulename{\wedge E} \). Then comes the stuck step, step 5: the current goal \( R \) is a letter, no resource gives it, and nothing clashes, so assume \( \neg R \) for \( \rulename{RAA} \).
 
 ```{=latex}
 \begin{center}
@@ -850,7 +864,7 @@ For each claim, derive it or break it. Try to break it first. To break a claim, 
 ::: {.solution}
 The verdict comes first, then the derivation or the break. In every break, \( x \) is a real number.
 
-(a) Breaks. Take \( P \): "\( x > 2 \)", \( Q \): "\( x > 0 \)", at \( x = 1 \). \( \neg P \) is true, so \( \neg P \vee \neg Q \) is true; \( Q \) is true, so \( P \vee Q \) is true and \( \neg(P \vee Q) \) is false. (The De Morgan law with this premise is \( \neg P \vee \neg Q \vdash \neg(P \wedge Q) \), @prp-de-morgan (c); here the wrong connective sits inside the negation.)
+(a) Breaks. Take \( P \): "\( x > 2 \)", \( Q \): "\( x > 0 \)", at \( x = 1 \). \( \neg P \) is true, so \( \neg P \vee \neg Q \) is true; \( Q \) is true, so \( P \vee Q \) is true and \( \neg(P \vee Q) \) is false. The De Morgan law with this premise is \( \neg P \vee \neg Q \vdash \neg(P \wedge Q) \), part (c) of @prp-de-morgan. Here the wrong connective sits inside the negation.
 
 (b) Derive.
 
@@ -879,7 +893,7 @@ $\begin{nd}
 
 This is the first box of @exr-reductio-and-classical-rules-b5 (f).
 
-(c) Derive. Step 5: the goal \( Q \) is a letter, and the first two premises wait for \( P \) and for \( \neg P \), so \( \rulename{LEM} \) on \( P \). \( \rulename{DS} \) matches as stated in Section 2.3, refuting the **left** disjunct \( R \).
+(c) Derive. Step 5: the goal \( Q \) is a letter, and the first two premises can be used only once \( P \) or \( \neg P \) is in hand, so \( \rulename{LEM} \) on \( P \). \( \rulename{DS} \) matches as stated in Section 2.3, refuting the **left** disjunct \( R \).
 
 ```{=latex}
 \begin{center}
@@ -902,7 +916,7 @@ $\begin{nd}
 \end{center}
 ```
 
-(d) Breaks. Take \( P \): "\( x > 5 \)", \( Q \): "\( x > 0 \)", \( R \): "\( x > 10 \)", at \( x = 1 \). \( P \) is false, so \( P \to Q \) is true; \( \neg P \) and \( Q \) are true, so \( \neg P \to (R \vee Q) \) is true; \( \neg R \) is true; and \( P \) is false. Trying to break it first: with \( P \) false, the premises force \( Q \) true and \( R \) false, and nothing clashes. The tempting step from "\( P \) gives \( Q \)" and "\( Q \) holds", which (c) derives, to \( P \) is affirming the consequent (Section 1.3).
+(d) Breaks. Take \( P \): "\( x > 5 \)", \( Q \): "\( x > 0 \)", \( R \): "\( x > 10 \)", at \( x = 1 \). \( P \) is false, so \( P \to Q \) is true. \( \neg P \) and \( Q \) are true, so \( \neg P \to (R \vee Q) \) is true. \( \neg R \) is true, and \( P \) is false. Trying to break it first: with \( P \) false, the premises force \( Q \) true and \( R \) false, and nothing clashes. The tempting step goes from "\( P \) gives \( Q \)" and "\( Q \) holds" to \( P \). Here \( Q \) holds by (c), and the step is affirming the consequent (Section 1.3).
 
 (e) Derive.
 
@@ -944,7 +958,7 @@ $\begin{nd}
 \end{center}
 ```
 
-(i) Derive. Step 2 postpones the disjunction. The premise waits for \( \neg(P \vee Q) \), which \( \rulename{RAA} \) on the goal supplies; step 4 then manufactures the clash partner \( P \vee Q \) from line 3 by \( \rulename{\vee I} \), a manufactured clash and not a detour.
+(i) Derive. Step 2 postpones the disjunction. The premise needs \( \neg(P \vee Q) \), and \( \rulename{RAA} \) on the goal supplies it. Step 4 then manufactures the clash partner \( P \vee Q \) from line 3 by \( \rulename{\vee I} \). This is a manufactured clash, not a detour.
 
 ```{=latex}
 \begin{center}
@@ -961,7 +975,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Read aloud: a statement whose failure would force one of its own sides holds.
+Read aloud: if the failure of \( P \vee Q \) would force one of its sides, then \( P \vee Q \) holds.
 
 (c) and (d), and (e) and (f), are look-alike pairs: each pair has the same premises and differs in the conclusion. (h) is (g) repaired by "not both". (a) is a De Morgan look-alike with the wrong connective inside.
 :::
@@ -1045,7 +1059,7 @@ Section 4.7 shows that a list made true at once, as in (b), (d) and (f), is cons
 ### C. Going deeper
 
 ::: {#exr-four-kinds-of-task-c1}
-[C1: Exit check: the counterexample set, used later]
+[C1: Chapter check: the counterexample set, used later]
 
 Let \( \Gamma \) be the list \( P \to (Q \vee R), \ Q \to S, \ R \to S \).
 
@@ -1088,18 +1102,22 @@ $\begin{nd}
 \end{center}
 ```
 
-(c) By part (b) of the proposition, \( \Gamma \vdash P \to S \). The direct derivation is lines 1–3 and 5–12 of (b), renumbered: 11 lines. The route through the counterexample set adds the premise \( \neg(P \to S) \) and one \( \rulename{\neg E} \) line, and gains nothing here. It pays when the goal gives step 2 nothing (a letter, or a disjunction with no side in hand), and then it is step 5.
+(c) By part (b) of the proposition, \( \Gamma \vdash P \to S \). The direct derivation is lines 1–3 and 5–12 of (b), renumbered: 11 lines. The route through the counterexample set adds the premise \( \neg(P \to S) \) and one \( \rulename{\neg E} \) line, and gains nothing here. It helps when the goal gives the goal-directed step nothing to do, as with a letter or a disjunction with no side in hand. Then it is the stuck step, step 5.
 
-(d) For instance, replace \( R \to S \) by \( R \to T \). Take \( P \): "\( x > 0 \)", \( Q \): "\( x > 5 \)", \( R \): "\( x < 2 \)", \( S \): "\( x > 3 \)", \( T \): "\( x < 10 \)", at \( x = 1 \). \( P \) and \( R \) are true, so \( Q \vee R \) and \( P \to (Q \vee R) \) are true; \( Q \to S \) is true, since \( Q \) is false; \( R \to T \) is true, since \( T \) is true; and \( P \to S \) is false, since \( S \) is false. So every member of the new counterexample set is true. Any replacement that a choice of statements breaks is accepted.
+(d) For instance, replace \( R \to S \) by \( R \to T \). Take \( P \): "\( x > 0 \)", \( Q \): "\( x > 5 \)", \( R \): "\( x < 2 \)", \( S \): "\( x > 3 \)", \( T \): "\( x < 10 \)", at \( x = 1 \). \( P \) and \( R \) are true, so \( Q \vee R \) and \( P \to (Q \vee R) \) are true. \( Q \to S \) is true, since \( Q \) is false, and \( R \to T \) is true, since \( T \) is true. Last, \( P \to S \) is false, since \( S \) is false. So every member of the new counterexample set is true. Any replacement that a choice of statements breaks is accepted.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 2: the counterexample set, with \( \neg(P \to S) \), not \( \neg P \to S \) or \( P \to \neg S \).
-- 3: the derivation of \( \bot \): \( P \to S \) derived (by a box whose cases of \( Q \vee R \) both end in \( S \), or by @exm-cases-on-hypothesis and @prp-implication-transitive), and \( \rulename{\neg E} \) outside every box.
+- 3: the derivation of \( \bot \): \( P \to S \) derived (by a box whose cases of \( Q \vee R \) both end in \( S \), or by cases on a hypothesis and the transitivity of implication), and \( \rulename{\neg E} \) outside every box.
 - 2: the conclusion drawn by the proposition, and the direct derivation.
 - 3: (d), a changed premise, with statements checked against all four members of the new counterexample set.
 
-Fatal errors (0 for the step): \( \bot \) written inside the box of \( P \) and taken as the end; a "break" in (d) that leaves a premise false.
+Slips that lose the step (0 for it): \( \bot \) written inside the box of \( P \) and taken as the end; a "break" in (d) that leaves a premise false.
+
+::: {.uses}
+@exm-cases-on-hypothesis (cases on a hypothesis); @prp-implication-transitive (implication is transitive).
+:::
 :::
 
 ::: {#exr-four-kinds-of-task-c2}
@@ -1123,18 +1141,24 @@ Let \( \Gamma \) be a list and \( \varphi \) a statement.
 
 Section 4.10 (optional) adds statements to a consistent list one at a time, in exactly this way.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 4: (a) obtains \( \Gamma \vdash \neg\varphi \) by part (a) of the proposition or \( \Gamma \vdash \varphi \) by part (b), and combines it with the other inconsistency, directly (by Cut, @lem-weakening-cut (b)) or by the other part.
-- 3: (a) concludes by @prp-inconsistent-derives-everything, by @lem-weakening-cut (c) with one \( \rulename{\neg E} \), or by Cut (@lem-weakening-cut (b)).
+- 3: (a) concludes by @prp-inconsistent-derives-everything, by part (c) of the same lemma with one \( \rulename{\neg E} \), or by Cut, its part (b).
 - 2: (b) as the contrapositive.
 - 1: (c) "no".
 
-Fatal error: (b) claimed to show that a particular list is consistent.
+Slips that lose the step: (b) claimed to show that a particular list is consistent.
+
+::: {.uses}
+@lem-weakening-cut (Cut and chaining).
+:::
 :::
 
 <!-- dependency ledger
 exm-equivalence-search (example): ab = 0 and a != 0 give b = 0 (divide by a) | school algebra, AN1.1 (promised); a reading only, the derivations do not use it
+def-inconsistent-set (claim): in the instance before it, the list P, not-P or Q, not-Q derives bot outside every box, by or-E on not-P or Q, the case not-P clashing with P and the case Q with not-Q | inline (the derivation described in words); unlabelled, cites nothing later
+prp-derivable-iff-negation-inconsistent (claim): in the instance before it, the counterexample set P and Q, not-P of the claim that P and Q derives P is inconsistent, by and-E and not-E | inline; unlabelled, cites nothing later
 exm-inconsistency-search (example): parity and divisibility of 1, 3, 6, 12 (6 is even, a multiple of 3, not of 4; 12 a multiple of 4 and 3; 1, 3 odd; 3 a multiple of 3) | arithmetic; checked by verify/ch03/exm-inconsistency-search.py
 exm-inconsistency-search (example): the reading "no integer meets all four" follows the derivation line by line | inline (the derivation, read with the key)
 exm-inconsistency-search (claim): in the Quick check after it, 3 and 9 are the integers in 1..10 meeting (1), (2), (4) | arithmetic; checked by verify/ch03/exm-inconsistency-search.py

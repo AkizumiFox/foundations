@@ -28,7 +28,7 @@ To turn a paragraph into a sequent, work through five steps.
 
 1. *Find the conclusion.* Words such as *so*, *hence*, *therefore*, *thus* and *it follows that* introduce it.
 2. *Find the stated premises.* Words such as *since*, *because*, *for* and *given that* introduce them. A supposition ("suppose …", "let \( n \) be …") is a premise, or the assumption of a box.
-3. *Name the unstated facts.* Wherever a step does not follow by a rule from the lines before it, write the fact that would make it follow, as an implication, and check that the fact is true. Supply the weakest fact that closes the gap: a stronger one may prove more than the paragraph claims, or be false. (Compare Section 1.3, Exercise B5 (d), where a missing implication was written and checked.)
+3. *Name the unstated facts.* Wherever a step does not follow by a rule from the lines before it, write the fact that would make it follow, as an implication, and check that the fact is true. Supply the weakest fact that closes the gap: a stronger one may prove more than the paragraph claims, or be false. Section 1.3, Exercise B5 (d), wrote a missing implication in this way and checked it.
 4. *Translate on a key*, with Section 1.1's phrase book.
 5. *Derive the sequent, or break it.*
 
@@ -46,7 +46,7 @@ Extract the argument of this paragraph and derive it.
 We take the five steps in order.
 
 1. The conclusion follows "So": \( n \) is neither even nor a multiple of \( 3 \), that is, \( \neg E \wedge \neg T \) ("neither … nor" in the phrase book).
-2. The stated premise is the supposition, "\( n \) is a prime greater than \( 10 \)": \( P \wedge G \), since "a prime greater than \( 10 \)" is a conjunction. "\( n \) is odd" and "nor is \( n \) a multiple of \( 3 \)" are not premises. They are steps, each with a reason after "since" or "because".
+2. The stated premise is the supposition, "\( n \) is a prime greater than \( 10 \)". It is \( P \wedge G \), since "a prime greater than \( 10 \)" is a conjunction. "\( n \) is odd" and "nor is \( n \) a multiple of \( 3 \)" are not premises. They are steps, each with a reason after "since" or "because".
 3. The reasons are facts about numbers, but not in a form a rule can use. "The only even prime is \( 2 \)" is used as "an even prime is not greater than \( 10 \)", which is F1. The second reason is used as F2.
 4. The sequent is
    \[
@@ -95,7 +95,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Inside each box, the fact fires once the box's assumption is joined to \( P \), and its conclusion \( \neg G \) clashes with line 5.
+Inside each box, \( \rulename{\wedge I} \) joins the box's assumption to \( P \). The fact then gives \( \neg G \) by \( \rulename{{\to}E} \), and \( \neg G \) clashes with \( G \) on line 5.
 
 ```{=latex}
 \begin{center}
@@ -159,12 +159,12 @@ Line 10. The paragraph is silent on lines 4–5 and on the box, lines 6–9, tha
 ::: {.warning}
 [Not allowed: extracting an argument]
 
-Each entry names the step of the method it breaks.
+Each mistake below breaks one of the five steps; the step is named at the end.
 
 - "Writing '\( n \) is odd' among the premises": a step taken as a premise. The derivation then proves nothing about whether \( n \) is odd (step 2).
 - "Reading '\( n \) is odd, since \( n \) is a prime greater than \( 10 \)' with '\( n \) is odd' as the premise": *since* introduces the premise, not the conclusion (steps 1–2).
 - "Supplying 'every prime is odd' for the first step": the supplied fact must be true, and this one fails at \( n = 2 \) (step 3).
-- "Supplying \( \neg E \wedge \neg T \) itself as the unstated fact": the derivation is legal and proves nothing. Supply the weakest fact that closes the gap (step 3).
+- "Supplying \( \neg E \wedge \neg T \) itself as the unstated fact": the derivation is correct and proves nothing. Supply the weakest fact that closes the gap (step 3).
 - "Translating '\( n \) is a prime greater than \( 10 \)' as \( P \to G \)": a noun with an adjective is a conjunction, \( P \wedge G \), as "an even prime" was \( E \wedge P \) in Section 1.1 (step 4).
 :::
 
@@ -265,7 +265,7 @@ F1 replaces F3. The box of line 5 disappears: the goal \( \neg G \) is F1's conc
 
 ## A library of standard sequents
 
-Chapters 1 and 2 and Section 3.2 proved sequents that searches keep needing. Here they are grouped by what they are for: a searcher with a resource or a goal of a given shape looks up its row. Each row is a derived rule (@def-derived-rule). It is applied to **whole** available lines, never to a part of a line, and it is cited by the name in its middle column. "The rules in one place" in Section 3.1 lists the primitive rules and most of these derived rules on one card; this page regroups the derived rules, with those of Section 3.2, by use. The last group is different: it holds facts about derivations, which change the task rather than add a line.
+Chapters 1 and 2 and Section 3.2 proved sequents that searches keep needing. Here they are grouped by what they are for. If you hold a resource or want a goal of a given shape, look up its row. Each row is a derived rule (@def-derived-rule). It is applied to **whole** available lines, never to a part of a line. In a justification it is cited by the name in the middle column. Section 3.1 listed the primitive rules and most of these derived rules together, in "The rules in one place". Here the derived rules, with those of Section 3.2, are grouped by use. The last group is different. It holds facts about derivations, which change the task rather than add a line.
 
 | Sequent | In a justification | Proved in |
 |---|---|---|
@@ -275,8 +275,10 @@ Chapters 1 and 2 and Section 3.2 proved sequents that searches keep needing. Her
 | \( (P \wedge Q) \to R \dashv\vdash P \to (Q \to R) \) | (curry) | @prp-curry |
 | \( P \to Q \vdash \neg P \vee Q \) | (implication as disjunction) | @prp-implication-as-disjunction (b) |
 | **To use a disjunction** | | |
-| \( P \vee Q, \ \neg P \vdash Q \); \( P \vee Q, \ \neg Q \vdash P \) | \( \rulename{DS} \) | @prp-disjunctive-syllogism; @exr-derived-rules-b1 (a) |
-| \( (P \to R) \wedge (Q \to R) \dashv\vdash (P \vee Q) \to R \) | (cases on a hypothesis) | @exm-cases-on-hypothesis; @exm-or-hypothesis-split |
+| \( P \vee Q, \ \neg P \vdash Q \) | \( \rulename{DS} \) | @prp-disjunctive-syllogism |
+| \( P \vee Q, \ \neg Q \vdash P \) | \( \rulename{DS} \) | @exr-derived-rules-b1 (a) |
+| \( (P \to R) \wedge (Q \to R) \vdash (P \vee Q) \to R \) | (cases on a hypothesis) | @exm-cases-on-hypothesis |
+| \( (P \vee Q) \to R \vdash (P \to R) \wedge (Q \to R) \) | (cases on a hypothesis) | @exm-or-hypothesis-split |
 | \( (P \to R) \wedge (Q \to S), \ P \vee Q \vdash R \vee S \) | (constructive dilemma) | @exm-constructive-dilemma |
 | \( (P \to R) \wedge (Q \to S), \ \neg R \vee \neg S \vdash \neg P \vee \neg Q \) | (destructive dilemma) | @exr-derived-rules-b4 (b) |
 | \( \neg(P \wedge Q) \vdash P \to \neg Q \) | (*modus ponendo tollens*) | @exr-derived-rules-b4 (c) |
@@ -297,8 +299,10 @@ Chapters 1 and 2 and Section 3.2 proved sequents that searches keep needing. Her
 | \( \vdash P \vee \neg P \) | \( \rulename{LEM} \) | @prp-excluded-middle |
 | \( (P \wedge \neg Q) \to R \dashv\vdash P \to (Q \vee R) \) | (refute one side) | @exm-equivalence-search |
 | **To rearrange** | | |
-| \( P \wedge Q \vdash Q \wedge P \); \( P \vee Q \vdash Q \vee P \) | (and commutes); (or commutes) | @prp-and-commutes; @exm-disjunction-first-derivations |
-| \( (P \wedge Q) \wedge R \vdash P \wedge (Q \wedge R) \); \( P \vee (Q \vee R) \vdash (P \vee Q) \vee R \) | (and regroups); (or regroups) | @prp-and-associative; @exm-disjunction-regroup |
+| \( P \wedge Q \vdash Q \wedge P \) | (and commutes) | @prp-and-commutes |
+| \( P \vee Q \vdash Q \vee P \) | (or commutes) | @exm-disjunction-first-derivations |
+| \( (P \wedge Q) \wedge R \vdash P \wedge (Q \wedge R) \) | (and regroups) | @prp-and-associative |
+| \( P \vee (Q \vee R) \vdash (P \vee Q) \vee R \) | (or regroups) | @exm-disjunction-regroup |
 | \( P \wedge (Q \vee R) \dashv\vdash (P \wedge Q) \vee (P \wedge R) \) | (distributivity) | @prp-distributivity |
 | \( P \leftrightarrow Q \vdash Q \leftrightarrow P \) | (iff symmetric) | @exm-iff-symmetric |
 | \( P \leftrightarrow Q \dashv\vdash (P \to Q) \wedge (Q \to P) \) | (iff as two implications) | @prp-iff-two-implications |
@@ -308,7 +312,7 @@ Chapters 1 and 2 and Section 3.2 proved sequents that searches keep needing. Her
 | \( \Gamma \vdash \varphi \) exactly when \( \Gamma, \neg\varphi \) is inconsistent | — | @prp-derivable-iff-negation-inconsistent |
 | an inconsistent list derives every statement | — | @prp-inconsistent-derives-everything |
 
-Rows proved in exercises (the second form of \( \rulename{DS} \); the destructive dilemma and *modus ponendo tollens* rows, @exr-derived-rules-b4 (b), (c)) may be used by exercises, as in Section 3.1; the text's own derivations use only rows proved in the text.
+Three rows are proved only in exercises: the second form of \( \rulename{DS} \), the destructive dilemma and *modus ponendo tollens* (the last two in @exr-derived-rules-b4 (b), (c)). Exercises may use these rows, as in Section 3.1. The text's own derivations use only rows proved in the text.
 
 ::: {.check}
 Which row would you look up first? (i) The goal is \( \neg(P \vee Q) \). (ii) A resource is \( \neg(P \wedge Q) \), and the goal is \( \neg P \vee \neg Q \). (iii) The resources include \( P \to Q \) and \( \neg Q \).
@@ -357,7 +361,7 @@ We show that something is derivable by exhibiting a derivation; how could we eve
 ::: {#exr-from-argument-to-derivation-b1}
 [B1: Extract, then derive]
 
-For each paragraph, find the conclusion, the stated premises and any unstated fact; choose letters; write the sequent; derive it.
+For each paragraph, find the conclusion, the stated premises and any unstated fact. Then choose letters, write the sequent and derive it.
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Let \( x \) be a real number with \( x^2 \le x \). If \( x \) were greater than \( 1 \), then \( x^2 = x \cdot x \) would be greater than \( x \). If \( x \) were negative, \( x^2 \) would be positive, hence greater than \( x \). So \( x \) is at least \( 0 \) and at most \( 1 \).
@@ -398,7 +402,7 @@ $\begin{nd}
 
 The tempting wrong supply is "the square of an odd integer is odd", \( \neg E \to \neg S \). It is true, since \( (2k+1)^2 = 2(2k^2+2k)+1 \), but with the premise \( \neg S \) it gives nothing: concluding \( \neg E \) from it would be affirming the consequent (Section 1.3).
 
-(c) Take \( A \): "\( a = 0 \)", \( B \): "\( b = 0 \)", \( Z \): "\( ab = 0 \)". The stated fact is \( (Z \wedge \neg A) \to B \), dividing by \( a \): \( b = a^{-1}(ab) = 0 \). The premise is \( Z \) and the conclusion \( A \vee B \). Neither side of the goal is in hand, so we split on \( A \) by \( \rulename{LEM} \), Section 3.1's step 5, as in @exm-equivalence-search.
+(c) Take \( A \): "\( a = 0 \)", \( B \): "\( b = 0 \)", \( Z \): "\( ab = 0 \)". The stated fact is \( (Z \wedge \neg A) \to B \), dividing by \( a \): \( b = a^{-1}(ab) = 0 \). The premise is \( Z \) and the conclusion \( A \vee B \). Neither side of the goal is in hand. In that case the search of Section 3.1 splits on a letter by \( \rulename{LEM} \), so we split on \( A \), as in @exm-equivalence-search.
 
 ```{=latex}
 \begin{center}
@@ -430,7 +434,7 @@ Let \( n \) be an integer. Claim: if \( n \) is prime and \( n > 10 \), then \( 
 > *Proof.* Suppose \( n \) is prime and \( n > 10 \). If \( n \) were a multiple of \( 6 \), it would be an even multiple of \( 3 \), and no even multiple of \( 3 \) is prime; but \( n \) is prime. So \( n \) is not a multiple of \( 6 \).
 
 ::: {.enumerate options="label=(\alph*)"}
-1. On the key, "\( n \) is a multiple of \( 6 \)" is \( E \wedge T \). The derivation the proof mirrors has reached the stage below. *Name the move, then complete it.*
+1. On the key, "\( n \) is a multiple of \( 6 \)" is \( E \wedge T \). The derivation the proof mirrors has reached the stage below. *Say which rule comes next, then complete the derivation.*
 
     ```{=latex}
     % schema (partial derivations: the gap is unnumbered, lines carry their final numbers)
@@ -452,7 +456,7 @@ Let \( n \) be an integer. Claim: if \( n \) is prime and \( n > 10 \), then \( 
 :::
 
 ::: {.solution}
-(a) The goal \( \neg(E \wedge T) \) is a negation, so step 2 of the method opens a \( \rulename{\neg I} \) box on \( E \wedge T \). F3 fires on it, and the clash partner \( P \) comes from line 2.
+(a) The goal \( \neg(E \wedge T) \) is a negation, so, as in every search of Section 3.1, a \( \rulename{\neg I} \) box opens on \( E \wedge T \). F3 gives \( \neg P \) from it, and the \( P \) that clashes with \( \neg P \) comes from line 2.
 
 ```{=latex}
 \begin{center}
@@ -487,13 +491,13 @@ $\begin{nd}
 
 Line 4 already is \( E \wedge T \), so "an even multiple of \( 3 \)" is a rereading, not a step.
 
-(c) \( G \), that is, \( n > 10 \), is never cited: no line uses it. The same lines with \( P \) in place of \( P \wedge G \) as the assumption of the outer box (line 3 dropped), closed by \( \rulename{{\to}I} \), would derive \( (E \wedge T) \to \neg P \vdash P \to \neg(E \wedge T) \): no prime is a multiple of \( 6 \). That is true for every integer, by F3. The hypothesis \( n > 10 \) was idle.
+(c) \( G \), that is, \( n > 10 \), is never cited: no line uses it. The same lines with \( P \) in place of \( P \wedge G \) as the assumption of the outer box (line 3 dropped), closed by \( \rulename{{\to}I} \), would derive \( (E \wedge T) \to \neg P \vdash P \to \neg(E \wedge T) \): no prime is a multiple of \( 6 \). That is true for every integer, by F3. The hypothesis \( n > 10 \) was not needed.
 :::
 
 ::: {#exr-from-argument-to-derivation-b3}
 [B3: Fifteen items]
 
-Items 1–5: derive each sequent, using a row of the library where it shortens the derivation, and name the row; their letters are free, not the key. Items 6–10: translate on the key, using the facts F1–F3 as premises where needed, and derive. Items 11–15: derive or break, as in @exm-derive-or-break-search. The facts may be used as premises. A break is an integer \( n \) at which the premises are true and the conclusion false; since F1–F3 hold at every \( n \), such an \( n \) makes the whole counterexample set true.
+Items 1–5: derive each sequent, using a row of the library where it shortens the derivation, and name the row; their letters stand for any statements, not for the key. Items 6–10: translate on the key, using the facts F1–F3 as premises where needed, and derive. Items 11–15: derive or break, as in @exm-derive-or-break-search. The facts may be used as premises. A break is an integer \( n \) at which the premises are true and the conclusion false. Since F1–F3 hold at every \( n \), such an \( n \) makes the whole counterexample set true.
 
 *Derive, with the library.*
 
@@ -572,7 +576,7 @@ $\begin{nd}
 \end{center}
 ```
 
-Without the library, the goal \( Q \) inside the box is a letter, so \( \rulename{RAA} \) on \( \neg Q \), which clashes with the premise once \( P \wedge \neg Q \) is built: seven lines.
+Without the library, the goal \( Q \) inside the box is a letter, so we open an \( \rulename{RAA} \) box on \( \neg Q \). Once \( P \wedge \neg Q \) is built, it clashes with the premise. This takes seven lines.
 
 ```{=latex}
 \begin{center}
@@ -592,7 +596,7 @@ $\begin{nd}
 \end{center}
 ```
 
-The other library route (\( \rulename{DM} \) (d) on the premise, then \( \rulename{\neg\neg I} \), \( \rulename{DS} \) and \( \rulename{\neg\neg E} \) inside the box) is no shorter than the seven lines.
+The other route through the library is no shorter than the seven lines: \( \rulename{DM} \) (d) on the premise, then \( \rulename{\neg\neg I} \), \( \rulename{DS} \) and \( \rulename{\neg\neg E} \) inside the box.
 
 **4.** \( \rulename{MT} \), then \( \rulename{DM} \) (a), inside one box.
 
@@ -763,7 +767,7 @@ $\begin{nd}
 
 **15.** Breaks. The claim is \( \neg P \vdash E \vee T \), and at \( n = 25 \) the integer is not prime, odd, and not a multiple of \( 3 \).
 
-Items 11 and 12, and items 13 and 14, pair a break with a derivation on nearby words; item 15 tries to go back from "not prime" to "even or a multiple of \( 3 \)", which F3 does not give, and fails.
+Items 11 and 12, and items 13 and 14, pair a break with a derivation on nearby words. Item 15 tries to go back from "not prime" to "even or a multiple of \( 3 \)". F3 does not give that, and the claim fails.
 :::
 
 ::: {#exr-from-argument-to-derivation-b4}
@@ -808,7 +812,7 @@ $\begin{nd}
 :::
 
 ::: {.solution}
-(a) (ii), (vi), (viii), (iv), (i), (v). No other order is admissible: the supposition (ii) must open first, since the claim is an implication, the \( \rulename{RAA} \) supposition (vi) inside it, and each later sentence uses the one before it. The two distractors:
+(a) (ii), (vi), (viii), (iv), (i), (v). No other order is admissible: the supposition (ii) must open first, since the claim is an implication, the \( \rulename{RAA} \) supposition (vi) inside it, and each later sentence uses the one before it. The two sentences that do not belong:
 
 - (iii) does not follow: \( a = 0 \), \( b = 3 \) has \( a + b > 2 \) and \( a \le 1 \).
 - (vii) assumes the conclusion, a box opened on the goal (Section 3.1's warning "Do not assume what you want to prove").
@@ -819,7 +823,7 @@ $\begin{nd}
 ### C. Going deeper
 
 ::: {#exr-from-argument-to-derivation-c1}
-[C1: Exit check: from a paragraph to a derivation]
+[C1: Chapter check: from a paragraph to a derivation]
 
 > Let \( n \) be an integer greater than \( 10 \), and suppose \( n \) is even or a multiple of \( 3 \). Then \( n \) is not prime. Indeed, suppose \( n \) were prime. If \( n \) is even, \( n \) is an even prime, and every even prime is at most \( 10 \). If \( n \) is a multiple of \( 3 \), \( n \) is a prime multiple of \( 3 \), and every such number is at most \( 10 \). Either way \( n \) is at most \( 10 \), which is false. So \( n \) is not prime.
 
@@ -881,14 +885,14 @@ $\begin{nd}
 
 (e) It is needed. Without \( G \), the claim \( E \vee T, \ (P \wedge E) \to \neg G, \ (P \wedge T) \to \neg G \vdash \neg P \) breaks at \( n = 2 \): \( 2 \) is even, so \( E \vee T \) holds; F1 and F2 hold, as at every \( n \); and \( 2 \) is prime, so the negated conclusion \( \neg\neg P \) is true too.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
 - 2: (a)–(b), the sequent, with F1 and F2 named as the facts given as reasons, in implication form.
-- 3: (c), a correct derivation; the model has the \( \rulename{\neg I} \) box on \( P \), the two cases both ending in \( \neg G \), and the clash with \( G \) outside the cases. In (d), the table is marked against the reader's own derivation.
+- 3: (c), a correct derivation; our solution has the \( \rulename{\neg I} \) box on \( P \), the two cases both ending in \( \neg G \), and the clash with \( G \) outside the cases. In (d), the table is marked against the reader's own derivation.
 - 2: (d), every sentence placed, the two "suppose"s matched to their annotations.
 - 3: (e), "needed", with a break that makes every member of the new counterexample set true.
 
-Fatal errors (0 for the step): \( \neg P \) taken as a premise; the cases of \( \rulename{\vee E} \) ending in different statements; a "break" in (e) at an \( n \) where a premise fails. A derivation that splits \( E \vee T \) first and opens a \( \rulename{\neg I} \) box in each case earns full marks for (c).
+Slips that lose the step (0 for it): \( \neg P \) taken as a premise; the cases of \( \rulename{\vee E} \) ending in different statements; a "break" in (e) at an \( n \) where a premise fails. A derivation that splits \( E \vee T \) first and opens a \( \rulename{\neg I} \) box in each case earns full marks for (c).
 :::
 
 ::: {#exr-from-argument-to-derivation-c2}
@@ -925,15 +929,15 @@ The shorter ending 7 \( Q \), \( \rulename{{\to}E} \) 5, 6 is a detour: line 5 w
 
 (b) Read as an argument, the derivation proves \( 0 = 1 \) from the condition on \( C \); since \( 0 = 1 \) is false, no statement can meet the condition. In this chapter's words, the list \( C \leftrightarrow (C \to Q), \ \neg Q \) is inconsistent: add \( \neg Q \) as a second premise (line 2, the later lines shifting down by one) and a last line \( \bot \), \( \rulename{\neg E} \), citing \( Q \) and that premise.
 
-(c) Only \( \rulename{{\leftrightarrow}E} \), \( \rulename{{\to}I} \) and \( \rulename{{\to}E} \): no rule for \( \neg \) or \( \bot \), and no \( \rulename{RAA} \). @lem-not-iff-own-negation shows that no statement is equivalent to its own negation. This shows more: any statement equivalent to "if \( C \), then \( Q \)" forces \( Q \), whatever \( Q \) is. So when \( Q \) is refutable, as "\( 0 = 1 \)" is, no statement is equivalent to "if \( C \), then \( Q \)", and the argument uses no "not". (Taking \( Q \) to be \( \bot \) gives back @lem-not-iff-own-negation, since \( \neg C \) and \( C \to \bot \) are interderivable (Section 2.2).) The trouble is self-reference, not negation. This is known as Curry's paradox, after the logician whose name is also on the law @prp-curry. Section 5.6 meets the same shape with "for every", in the barber and Russell's theorem.
+(c) Only \( \rulename{{\leftrightarrow}E} \), \( \rulename{{\to}I} \) and \( \rulename{{\to}E} \): no rule for \( \neg \) or \( \bot \), and no \( \rulename{RAA} \). @lem-not-iff-own-negation shows that no statement is equivalent to its own negation. This shows more: any statement equivalent to "if \( C \), then \( Q \)" forces \( Q \), whatever \( Q \) is. So when \( Q \) is refutable, as "\( 0 = 1 \)" is, no statement is equivalent to "if \( C \), then \( Q \)", and the argument uses no "not". Taking \( Q \) to be \( \bot \) gives back @lem-not-iff-own-negation, since \( \neg C \) and \( C \to \bot \) are interderivable by Section 2.2. The trouble is self-reference, not negation. This is known as Curry's paradox, after the logician whose name is also on the law @prp-curry. Section 5.6 meets the same shape with "for every", in the barber and Russell's theorem.
 
-**Marking scheme.** (10 points)
+**What a complete answer needs.** (10 points)
 
-- 4: (a), any correct derivation; the model has the box on \( C \) (lines 2–4, with the assumption \( C \) cited twice), \( C \) recovered outside it by \( \rulename{{\leftrightarrow}E} \) (line 6), and \( Q \) reached outside every box. The 7-line ending \( \rulename{{\to}E} \) 5, 6 earns full marks; the detour remark is not required.
+- 4: (a), any correct derivation; our solution has the box on \( C \) (lines 2–4, with the assumption \( C \) cited twice), \( C \) recovered outside it by \( \rulename{{\leftrightarrow}E} \) (line 6), and \( Q \) reached outside every box. The 7-line ending \( \rulename{{\to}E} \) 5, 6 earns full marks; the detour remark is not required.
 - 3: (b), the conclusion that no statement meets the condition, with the inconsistency.
-- 3: (c), the rules of the reader's own derivation named correctly, and the point that a derivation using only \( \rulename{{\leftrightarrow}E} \), \( \rulename{{\to}I} \) and \( \rulename{{\to}E} \) exists (the model), so no negation rule is needed.
+- 3: (c), the rules of the reader's own derivation named correctly, and the point that a derivation using only \( \rulename{{\leftrightarrow}E} \), \( \rulename{{\to}I} \) and \( \rulename{{\to}E} \) exists (our solution), so no negation rule is needed.
 
-Fatal error (0 for (a)): \( Q \) obtained inside the box and carried out of it.
+Slips that lose the points for (a): obtaining \( Q \) inside the box and carrying it out of the box.
 :::
 
 ### R. Review
@@ -945,13 +949,17 @@ For real numbers \( a \) and \( b \), let \( \max(a, b) \coloneqq a \) and \( \m
 :::
 
 ::: {.solution}
-Since \( a \ge b \) or \( a < b \), and these two cases cover every pair of real numbers, we argue by cases (\( \rulename{\vee E} \), @def-rules-disjunction), as in @exm-abs-product-cases.
+Since \( a \ge b \) or \( a < b \), and these two cases cover every pair of real numbers, we argue by cases, \( \rulename{\vee E} \), as in @exm-abs-product-cases.
 
 *Case \( a \ge b \).* Then \( \max(a, b) = a \) and \( \min(a, b) = b \), so \( \max(a, b) + \min(a, b) = a + b \).
 
 *Case \( a < b \).* Then \( \max(a, b) = b \) and \( \min(a, b) = a \), so \( \max(a, b) + \min(a, b) = b + a = a + b \).
 
 In either case the equation holds, which proves it. Both cases end in the same statement, the goal, as \( \rulename{\vee E} \) requires.
+
+::: {.uses}
+@def-rules-disjunction (the rule ∨E).
+:::
 :::
 
 ::: {#exr-finding-derivations-r2}
@@ -963,11 +971,11 @@ Let \( x \) be a real number. Write \( N \) for "\( x < 0 \)", \( M \) for "\( x
 :::
 
 ::: {.solution}
-The phrase book (Section 1.1) gives "neither … nor" as \( \neg N \wedge \neg M \); equivalently (@prp-de-morgan (a), (b)) \( \neg(N \vee M) \), "\( N \vee M \) fails", which we use here as the premise. It is not \( \neg N \vee M \). The conclusion is a conjunction whose second part is an implication. The sequent (@def-sequent) is
+Section 1.1's phrase book gives "neither … nor" as \( \neg N \wedge \neg M \). By @prp-de-morgan (a), (b), this is interderivable with \( \neg(N \vee M) \), "\( N \vee M \) fails", which we use here as the premise. It is not \( \neg N \vee M \). The conclusion is a conjunction whose second part is an implication. The sequent (@def-sequent) is
 \[
 \neg(N \vee M) \vdash \neg N \wedge (M \to S).
 \]
-The goal is a conjunction; the first conjunct is a negation (a \( \rulename{\neg I} \) box on \( N \)), and the second an implication (a box on \( M \)). In both boxes \( \rulename{\vee I} \) builds \( N \vee M \), which clashes with the premise; in the second box \( \rulename{\bot E} \) then gives \( S \).
+The goal is a conjunction. Its first conjunct is a negation, so it gets a \( \rulename{\neg I} \) box on \( N \). Its second conjunct is an implication, so it gets a box on \( M \). In both boxes \( \rulename{\vee I} \) builds \( N \vee M \), which clashes with the premise; in the second box \( \rulename{\bot E} \) then gives \( S \).
 
 ```{=latex}
 \begin{center}
@@ -1025,7 +1033,7 @@ $\begin{nd}
 \end{center}
 ```
 
-The repetition at line 5 puts \( Q \) inside the box of line 4, as \( \rulename{{\to}I} \) requires (clause (D3) of @def-derivation). Two look-alike tools do not apply. @prp-curry moves a **conjunction** in and out of a hypothesis, \( (P \wedge Q) \to R \dashv\vdash P \to (Q \to R) \), and the premise here has \( P \to Q \), not \( P \wedge Q \), in that place. And @prp-implication-transitive chains two implications, which we do not have.
+Line 5 copies \( Q \) into the box of line 4 by repetition, clause (D3) of @def-derivation, since \( \rulename{{\to}I} \) needs that box to end in \( Q \). Two look-alike tools do not apply. @prp-curry moves a **conjunction** in and out of a hypothesis, \( (P \wedge Q) \to R \dashv\vdash P \to (Q \to R) \), and the premise here has \( P \to Q \), not \( P \wedge Q \), in that place. And @prp-implication-transitive chains two implications, which we do not have.
 
 The converse breaks: with \( P \) and \( R \) false (and \( Q \) either way), the premise \( P \to (Q \to R) \) is true because \( P \) is false, while \( P \to Q \) is true and \( R \) is false, so the conclusion is false. Chapter 4 proves that such a choice rules out every derivation, so that a search for it can only stall: the chapter's open question, in a new place.
 :::
@@ -1070,7 +1078,7 @@ The conclusion \( (\neg N \wedge \neg Z) \wedge \neg B \) reads as "\( x \ge 0 \
 N \to \neg L, \ Z \to \neg L, \ B \to \neg L, \ L \vdash (\neg N \wedge \neg Z) \wedge \neg B.
 \]
 
-For the derivation: \( \rulename{MT} \) (@prp-modus-tollens) needs the negation of each fact's conclusion, and that is \( \neg\neg L \), given by \( \rulename{\neg\neg I} \) (@prp-double-negation (a)); hence line 5.
+For the derivation, \( \rulename{MT} \) needs the negation of each fact's conclusion. That is \( \neg\neg L \), given by \( \rulename{\neg\neg I} \) (@prp-double-negation (a)), and it is line 5.
 
 ```{=latex}
 \begin{center}
@@ -1092,6 +1100,10 @@ $\begin{nd}
 (c) Yes: \( x \ge 1 \) gives \( x > 0 \), and multiplying \( x \ge 1 \) by the positive \( x \) gives \( x^2 \ge x \).
 
 The method is the extraction of this section (@exm-extract-argument), run on a dialogue; the rules are Chapter 2's. The look-alike, \( \neg N \) by \( \rulename{{\to}E} \) from line 1 and \( L \), fails: \( \rulename{{\to}E} \) needs the hypothesis \( N \) on a line, and \( \rulename{MT} \) needs \( \neg\neg L \), not \( L \), which is why line 5 is written.
+
+::: {.uses}
+@prp-modus-tollens (the rule MT).
+:::
 :::
 
 <!-- dependency ledger
