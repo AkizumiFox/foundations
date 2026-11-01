@@ -6,6 +6,8 @@ In the plane a line is the set of solutions of one equation \( ax + by = c \). I
 
 Chapter 9 gave every vector \( v \) of \( \nR^n \) its multiples \( tv \), and the multiples of a non-zero \( v \) form the line through the origin in the direction of \( v \) (Section 9.6). A line that misses the origin is the same picture moved: start at a point \( p \) and add the multiples of \( v \).
 
+For example, start at \( (1, 0, 0) \) and add the multiples \( t(-1, 1, 0) \): the points are \( (1 - t, t, 0) \) for \( t \in \nR \). The numbers \( t = 0 \) and \( t = 1 \) give \( (1, 0, 0) \) and \( (0, 1, 0) \), and every one of these points has third coordinate \( 0 \).
+
 *A line is a starting point plus all multiples of one non-zero direction.*
 
 ::: {#def-line-rn}
@@ -18,9 +20,7 @@ p + \nR v \coloneqq \{ p + tv : t \in \nR \} .
 A subset \( L \subseteq \nR^n \) is a **line** if \( L = p + \nR v \) for **some** \( p \in \nR^n \) and **some** \( v \ne 0 \). The map \( t \mapsto p + tv \) from \( \nR \) to \( L \) is a **parametrization** of \( L \), with **base point** \( p \) and **direction** \( v \); the number \( t \) is the **parameter** of the point \( p + tv \).
 :::
 
-In words: a line is any set of this form, and the pair \( (p, v) \) is a way of naming it, not part of it. The condition \( v \ne 0 \) is the one that bites. Without it, \( p + \nR 0 = \{p\} \), a single point. The sums and multiples are those of @def-vector-operations-rn.
-
-For example, \( (1, 0, 0) + \nR(-1, 1, 0) \) is the set of points \( (1 - t, t, 0) \). Its points with parameters \( 0 \) and \( 1 \) are \( (1, 0, 0) \) and \( (0, 1, 0) \), and every point of it has third coordinate \( 0 \).
+In words: a line is any set of this form, and the pair \( (p, v) \) is a way of naming it, not part of it. The condition \( v \ne 0 \) is the one that bites. Without it, \( p + \nR 0 = \{p\} \), a single point. We write \( \nR v \) for \( 0 + \nR v \), the line through \( 0 \) with direction \( v \). The sums and multiples are those of @def-vector-operations-rn. The example above is the line \( (1, 0, 0) + \nR(-1, 1, 0) \).
 
 :::: {.check}
 Decide each, using only the definition.
@@ -93,11 +93,11 @@ Since \( p \ne q \), the direction \( q - p \) is non-zero, so \( p + \nR(q - p)
 Points of \( \nR^n \) are **collinear** if **one** line contains them all.
 :::
 
-By @prp-line-through-two-points, any two points are collinear. Three need not be. The only line through \( (1, 0, 0) \) and \( (0, 1, 0) \) is \( (1, 0, 0) + \nR(-1, 1, 0) \), whose points all have third coordinate \( 0 \); so \( (0, 0, 1) \) is not on it, and the three points of the opening are not collinear. In particular the solution set of \( x_1 + x_2 + x_3 = 1 \), which contains all three, is not a line.
+By @prp-line-through-two-points, any two different points are collinear, and a single point \( p \) lies on the line \( p + \nR v \) for any \( v \ne 0 \). Three need not be. The only line through \( (1, 0, 0) \) and \( (0, 1, 0) \) is \( (1, 0, 0) + \nR(-1, 1, 0) \), whose points all have third coordinate \( 0 \); so \( (0, 0, 1) \) is not on it, and the three points of the opening are not collinear. In particular the solution set of \( x_1 + x_2 + x_3 = 1 \), which contains all three, is not a line.
 
 ## Meeting points
 
-Exercise B2 proves that two lines in the plane whose directions are not multiples of each other meet in exactly one point. In space this fails. Two lines of \( \nR^3 \) are **skew** if they have no common point and neither direction is a multiple of the other. (If \( v' = \lambda v \) with \( v' \ne 0 \), then \( \lambda \ne 0 \) and \( v = \lambda^{-1} v' \), so "neither" is the same as "the first is not a multiple of the second".)
+Exercise B2 proves that two lines in the plane whose directions are not multiples of each other meet in exactly one point. In space this fails. Two lines of \( \nR^3 \) are **skew** if they have no common point and neither direction is a multiple of the other. (If \( v' = \lambda v \) with \( v' \ne 0 \), then \( \lambda \ne 0 \) and \( v = \lambda^{-1} v' \), so "neither" is the same as "the first is not a multiple of the second". By @prp-line-parametrizations, any other parametrizations of the two lines have directions \( \lambda v \) and \( \mu v' \) with \( \lambda, \mu \ne 0 \). So whether one direction is a multiple of the other does not depend on which parametrizations are used.)
 
 ::: {#exm-two-lines-in-space}
 [Two Lines in Space]
@@ -155,7 +155,7 @@ Keep the pair \( L_1, L_2 \) in mind. Two lines in space can fail to meet althou
 
 ## Segments
 
-The part of a line between two of its points is used constantly in analysis: a function is examined along it, or a set is asked to contain it. Starting at \( p \) and moving towards \( q \), the points \( p + t(q - p) \) with \( t \) from \( 0 \) to \( 1 \) run from \( p \) to \( q \).
+The part of a line between two of its points is used constantly in analysis: a function is examined along it, or a set is asked to contain it. Starting at \( p \) and moving towards \( q \), the points \( p + t(q - p) \) with \( t \) from \( 0 \) to \( 1 \) run from \( p \) to \( q \). For \( p = (0, 0) \) and \( q = (2, 4) \) these points are \( (2t, 4t) \): the numbers \( t = 0 \), \( \frac12 \), \( 1 \) give \( (0, 0) \), \( (1, 2) \), \( (2, 4) \).
 
 *A segment is the part of the line from one point to another.*
 
@@ -207,7 +207,7 @@ No. A point of the segment is \( (1, -1, 2) + t(2, 1, -2) \) with \( t \in [0, 1
 
 ## Between by distances
 
-For any three points the triangle inequality gives \( \norm{p - q} \le \norm{p - x} + \norm{x - q} \): the detour through \( x \) is never shorter. A picture suggests that the detour costs nothing exactly when \( x \) lies on the segment \( [p, q] \). Chapter 9 found exactly when the triangle inequality is an equality: \( \norm{u + w} = \norm{u} + \norm{w} \) holds if and only if \( u = 0 \) or \( w = cu \) for some real \( c \ge 0 \) (@thm-triangle-inequality-rn (a)). That is all we need.
+For any three points the triangle inequality gives \( \norm{p - q} \le \norm{p - x} + \norm{x - q} \): the detour through \( x \) is never shorter. Take \( p = (0, 0) \) and \( q = (4, 0) \). The point \( x = (1, 0) \) gives \( 1 + 3 = 4 \), no loss. The point \( x = (1, 1) \) gives \( \sqrt 2 + \sqrt{10} > 4 \). A picture suggests that the detour costs nothing exactly when \( x \) lies on the segment \( [p, q] \). Chapter 9 found exactly when the triangle inequality is an equality: \( \norm{u + w} = \norm{u} + \norm{w} \) holds if and only if \( u = 0 \) or \( w = cu \) for some real \( c \ge 0 \) (@thm-triangle-inequality-rn (a)). That is all we need.
 
 ::: {#thm-betweenness}
 [Points Between Two Points]
@@ -234,7 +234,7 @@ The direction \( (\Rightarrow) \) is a computation: the two pieces of the segmen
 | \( u = 0 \), **or** \( w = cu \) with \( c \ge 0 \) (Chapter 9) | case \( u = 0 \): \( x = p \), \( t = 0 \) |
 | \( w = cu \), so \( q - p = (1 + c)u \) | \( u = \frac{1}{1 + c}(q - p) \): \( t = \frac{1}{1 + c} \in (0, 1] \) |
 
-The third row is the equality case of the triangle inequality. It turns one equation between numbers into a relation between vectors. The rest is solving for \( u \).
+The step from \( \norm{u} + \norm{w} = \norm{u + w} \) to "\( u = 0 \) or \( w = cu \) with \( c \ge 0 \)" is the equality case of the triangle inequality. It turns one equation between numbers into a relation between vectors. The rest is solving for \( u \).
 :::
 
 ::: {.proof}
@@ -251,13 +251,13 @@ Here \( \norm{p - x} = \norm{x - p} \) and \( \norm{q - x} = \norm{x - q} \) are
 *Case \( w = cu \) with \( c \ge 0 \).* Then \( q - p = u + cu = (1 + c)u \). Since \( 1 + c \ge 1 > 0 \), the number \( t \coloneqq 1/(1 + c) \) exists and \( t > 0 \). Taking reciprocals of the positive numbers in \( 1 \le 1 + c \) reverses the inequality, so \( t \le 1 \). Multiplying by \( t \) gives \( u = t(q - p) \). So \( x = p + u = p + t(q - p) = (1 - t)p + tq \) with \( t \in [0, 1] \). This proves the theorem.
 
 ::: {.uses}
-@prp-vector-space-laws-rn (vector algebra); @prp-norm-basic-rn (b) (\( \norm{cv} = \abs{c} \, \norm{v} \)); @fd3:prp-ordered-field-halves (c) (reciprocals reverse \( \le \)).
+@prp-vector-space-laws-rn (vector algebra); @prp-norm-basic-rn (b) (\( \norm{cv} = \abs{c} \, \norm{v} \)); @fd3:def-absolute-value-ordered-field (\( \abs{t} = t \) for \( t \ge 0 \)); @fd3:prp-ordered-ring-rules (b) (\( 1 + c \ge 1 \)); @fd3:prp-reciprocal-order (a) (\( 1/(1 + c) > 0 \)); @fd3:prp-ordered-field-halves (c) (reciprocals reverse \( \le \)).
 :::
 :::
 
-Where is \( c \ge 0 \) used? It makes \( 1 + c \) positive, so that \( t \) exists and lies in \( [0, 1] \). A negative multiplier would be a point of the line outside the segment, and the equality case rules it out.
+Where is \( c \ge 0 \) used? It gives \( 1 + c \ge 1 \). So \( t = 1/(1 + c) \) exists and is positive, and taking reciprocals gives \( t \le 1 \). A multiplier \( c < 0 \) with \( c \ne -1 \) gives \( t < 0 \) or \( t > 1 \), a point of the line outside the segment, and the equality case rules such multipliers out.
 
-The right side of the theorem mentions only distances, no sums of vectors and no parameters. That is the form of "between" that survives when \( \nR^n \) is replaced by any set with a distance, as in *Real Numbers, Metric Spaces, and Derivatives*. It is also why a map that preserves distances sends segments to segments, a fact proved in *Affine and Projective Geometry*.
+The right side of the theorem mentions only distances, no sums of vectors and no parameters. That is the form of "between" that survives when \( \nR^n \) is replaced by any set with a distance, as in *Real Numbers, Metric Spaces, and Derivatives*, Chapter 3. It is also why a map that preserves distances sends segments to segments, a fact to be proved in *Affine and Projective Geometry*.
 
 ::: {#exm-method-equality-case}
 [Method: use the equality case]
@@ -266,7 +266,7 @@ The right side of the theorem mentions only distances, no sums of vectors and no
 
 **When to use it.** A sum of distances equals a distance. Cauchy–Schwarz holds with equality. A question asks for all extreme cases of an inequality.
 
-**Common mistakes.** Dropping the sign condition loses the point: \( c \ge 0 \) is exactly what separates \( [p, q] \) from the rest of the line through \( p \) and \( q \). Forgetting the case \( u = 0 \) leaves a gap, because in that case no multiplier exists.
+**Common mistakes.** Dropping the sign condition loses the point: \( c \ge 0 \) is exactly what separates \( [p, q] \) from the rest of the line through \( p \) and \( q \). Forgetting the case \( u = 0 \) leaves a gap, because when \( u = 0 \) and \( w \ne 0 \) no multiplier exists.
 :::
 
 The moreover clause of the theorem also tells us where on the segment a point sits: its distance from \( p \) fixes it.
@@ -285,6 +285,10 @@ if \( p = q \), it is \( p \).
 Let \( p \ne q \), so \( \norm{p - q} > 0 \) (@prp-norm-basic-rn (a)), and put \( t \coloneqq s/\norm{p - q} \). From \( 0 \le s \le s + r = \norm{p - q} \), dividing by the positive number \( \norm{p - q} \) gives \( 0 \le t \le 1 \). So the point \( x \coloneqq p + t(q - p) = (1 - t)p + tq \) lies on \( [p, q] \). By the moreover clause of @thm-betweenness, \( \norm{p - x} = t\norm{p - q} = s \) and \( \norm{x - q} = (1 - t)\norm{p - q} = \norm{p - q} - s = r \).
 
 Now let \( y \) be any point with \( \norm{p - y} = s \) and \( \norm{y - q} = r \). Then \( \norm{p - y} + \norm{y - q} = \norm{p - q} \), so \( y \in [p, q] \) by @thm-betweenness, say \( y = (1 - t')p + t'q \) with \( t' \in [0, 1] \). The moreover clause gives \( s = t' \norm{p - q} \), so \( t' = t \) and \( y = x \). The case \( p = q \), where the formula would divide by \( 0 \), is treated next.
+
+::: {.uses}
+@prp-norm-basic-rn (a); @fd3:prp-ordered-ring-rules (b), (c) and @fd3:prp-reciprocal-order (a) (divide by a positive number); @fd3:lem-field-fraction-rules (cancel a non-zero factor).
+:::
 :::
 
 ::: {.second-reading title="The case p = q"}
@@ -315,6 +319,8 @@ Being the midpoint takes two equations, one for each distance. Keeping only "equ
 ::: {.enumerate options="label=(\alph*)"}
 1. Parametrize the line through \( (1, -1, 2) \) and \( (3, 0, 0) \). Is \( (5, 1, -2) \) on it?
 2. Find the midpoint of the segment between these two points.
+3. Show that \( (1, 2) \), \( (3, 5) \) and \( (7, 11) \) are collinear, and find one of them that lies on the segment between the other two.
+4. In the proof of @thm-betweenness, direction \( (\Leftarrow) \), where is \( c \ge 0 \) used? Take \( p = 0 \), \( q = (1, 0) \) and \( x = (2, 0) \), a point of the line through \( p \) and \( q \). Which hypothesis of the theorem fails, and what does the equality case of the triangle inequality say about \( u = x - p \) and \( w = q - x \)?
 :::
 ::::
 
@@ -322,21 +328,12 @@ Being the midpoint takes two equations, one for each distance. Keeping only "equ
 (a) By @prp-line-through-two-points, the line is \( (1, -1, 2) + \nR(2, 1, -2) \), since \( (3, 0, 0) - (1, -1, 2) = (2, 1, -2) \). For \( t = 2 \), \( (1, -1, 2) + 2(2, 1, -2) = (5, 1, -2) \), so yes, with parameter \( 2 \).
 
 (b) \( \frac12 \bigl( (1, -1, 2) + (3, 0, 0) \bigr) = \frac12 (4, -1, 2) = (2, -\frac12, 1) \).
-:::
 
-:::: {#exr-lines-and-segments-a2}
-[A2]
+(c) Put \( p = (1, 2) \) and \( v = (2, 3) \). Then \( (3, 5) = p + 1v \) and \( (7, 11) = p + 3v \), since \( (6, 9) = 3(2, 3) \). So all three lie on \( p + \nR v \), with parameters \( 0 \), \( 1 \), \( 3 \). The middle one is between the others: \( (3, 5) = (1, 2) + \frac13 \bigl( (7, 11) - (1, 2) \bigr) \), so \( (3, 5) \in [(1, 2), (7, 11)] \) with \( t = \frac13 \).
 
-::: {.enumerate options="label=(\alph*)"}
-1. Show that \( (1, 2) \), \( (3, 5) \) and \( (7, 11) \) are collinear, and find the one that lies between the other two.
-2. In the proof of @thm-betweenness, direction \( (\Leftarrow) \), where is \( c \ge 0 \) used? Take \( p = 0 \), \( q = (1, 0) \) and \( x = (2, 0) \), a point of the line through \( p \) and \( q \). Which hypothesis of the theorem fails, and what does the equality case of the triangle inequality say about \( u = x - p \) and \( w = q - x \)?
-:::
-::::
+(d) It is used twice. It gives \( 1 + c \ge 1 > 0 \), so \( t = 1/(1 + c) \) exists and \( t > 0 \). Taking reciprocals in \( 1 \le 1 + c \) gives \( t \le 1 \). Positivity alone would not do: with \( c = -\frac12 \), \( 1 + c > 0 \) but \( t = 2 > 1 \).
 
-::: {.solution}
-(a) Put \( p = (1, 2) \) and \( v = (2, 3) \). Then \( (3, 5) = p + 1v \) and \( (7, 11) = p + 3v \), since \( (6, 9) = 3(2, 3) \). So all three lie on \( p + \nR v \), with parameters \( 0 \), \( 1 \), \( 3 \). The middle one is between the others: \( (3, 5) = (1, 2) + \frac13 \bigl( (7, 11) - (1, 2) \bigr) \), so \( (3, 5) \in [(1, 2), (7, 11)] \) with \( t = \frac13 \).
-
-(b) It is used to see that \( 1 + c > 0 \), so that \( t = 1/(1 + c) \) is defined and lies in \( (0, 1] \). For \( x = (2, 0) \): \( \norm{p - x} + \norm{x - q} = 2 + 1 = 3 \ne 1 = \norm{p - q} \), so the hypothesis of \( (\Leftarrow) \) fails. Here \( u = (2, 0) \) and \( w = (-1, 0) = -\frac12 u \): \( w \) is a multiple of \( u \), but the multiplier is negative. The equality case of @thm-triangle-inequality-rn (a) needs \( c \ge 0 \), so it does not apply, in agreement with the strict inequality \( 1 < 3 \).
+For \( x = (2, 0) \): \( \norm{p - x} + \norm{x - q} = 2 + 1 = 3 \ne 1 = \norm{p - q} \), so the hypothesis of \( (\Leftarrow) \) fails. Here \( u = (2, 0) \) and \( w = (-1, 0) = -\frac12 u \). Since \( u \ne 0 \), the only \( c \) with \( w = cu \) is \( -\frac12 < 0 \). By the equality case of @thm-triangle-inequality-rn (a), equality fails, in agreement with \( 1 < 3 \). Indeed \( q - p = \frac12 u \), so \( x = p + 2(q - p) \) lies on the line beyond \( q \).
 :::
 
 ### B. Practice
@@ -354,7 +351,7 @@ Let \( p, v \in \nR^n \) with \( v \ne 0 \), and let \( a < b \) be real numbers
 \]
 so \( p + tv \in [p + av, p + bv] \).
 
-\( (\Rightarrow) \) Let \( p + tv = (1 - s)(p + av) + s(p + bv) \) with \( s \in [0, 1] \). The right side is \( p + (a + s(b - a))v \). A point of \( p + \nR v \) has only one parameter, as shown after @def-line-rn, so \( t = a + s(b - a) \). Since \( 0 \le s(b - a) \le b - a \) (@fd3:prp-ordered-field-halves (d)), adding \( a \) gives \( a \le t \le b \).
+\( (\Rightarrow) \) Let \( p + tv = (1 - s)(p + av) + s(p + bv) \) with \( s \in [0, 1] \). The right side is \( p + (a + s(b - a))v \). A point of \( p + \nR v \) has only one parameter (\( p + tv = p + uv \) forces \( t = u \)), so \( t = a + s(b - a) \). Since \( 0 \le s(b - a) \le b - a \) (@fd3:prp-ordered-field-halves (d)), adding \( a \) gives \( a \le t \le b \).
 :::
 
 :::: {#exr-lines-and-segments-b2}
@@ -409,9 +406,9 @@ Prove or disprove each statement, for points \( p, q, x \in \nR^n \) and directi
 ::::
 
 ::: {.solution}
-(a) **True.** This is the check that follows @cor-point-pinned-on-segment.
+(a) **True.** By @cor-point-pinned-on-segment with \( s = r = \frac12 \norm{p - q} \), exactly one point has these two distances, and the midpoint has them by the moreover clause of @thm-betweenness.
 
-(b) **False.** Equal distances do not make a midpoint: take \( p = (-1, 0) \), \( q = (1, 0) \), \( x = (0, 1) \), as in the warning at the end of the section.
+(b) **False.** Take \( p = (-1, 0) \), \( q = (1, 0) \), \( x = (0, 1) \). Then \( \norm{p - x} = \norm{x - q} = \sqrt 2 \), but \( x \) has second coordinate \( 1 \), while every point of \( [p, q] \) has second coordinate \( 0 \).
 
 (c) **False.** By @prp-line-through-two-points, the only line through \( (0, 0) \) and \( (1, 0) \) is \( \nR(1, 0) \), whose points have second coordinate \( 0 \); so \( (0, 1) \) is not on it.
 
@@ -439,8 +436,8 @@ Let the three points lie on the line \( p + \nR v \), \( v \ne 0 \). Each has on
 - 2: puts the three points on one parametrization, with distinct parameters, and says why they are distinct.
 - 2: orders the parameters.
 - 2: shows that the point with the middle parameter is between the others (by B1 or directly).
-- 2: uses that a point has only one parameter on the line, at the step where B1's \( (\Rightarrow) \) or its replacement needs it.
-- 2: excludes each of the two outer points.
+- 2: excludes \( x_1 \), either by B1's \( (\Rightarrow) \) (citing it suffices) or by comparing distances with @thm-betweenness.
+- 2: excludes \( x_3 \) in the same way.
 
 A route through @thm-betweenness (comparing \( \norm{x_1 - x_3} = (t_3 - t_1)\norm{v} \) with the sums of the other distances) earns the same points step for step.
 
@@ -448,29 +445,32 @@ Slips that lose the step (0 points for it): using one parameter for a point on t
 :::
 
 <!-- dependency ledger
-def-line-rn (example): (1,0,0) + t(-1,1,0) = (1 - t, t, 0) | def-vector-operations-rn (cited); verify/ch10/def-line-rn.py
+def-line-rn (example): instance before the definition, (1,0,0) + t(-1,1,0) = (1 - t, t, 0) | def-vector-operations-rn (cited); verify/ch10/def-line-rn.py
 def-line-rn (claim): Quick check (d): p + tv = p + uv gives (t - u)v = 0 | prp-vector-space-laws-rn (additive cancellation and (h)); inline
 def-line-rn (claim): Quick check (a)-(c): 0 + R*1 = R; (1,1,1) + 2(1,2,3) = (3,5,7) | verify/ch10/def-line-rn.py
 def-line-rn (claim): each point of a line has exactly one parameter, used without comment after the Quick check | proved in the Quick check's solution (d) on the page; inline
 prp-line-parametrizations (proof): p + sv + (t - s)v = p + tv; division by lambda != 0; u - s = 0 gives v' = 0 | prp-vector-space-laws-rn (e), (h), (i) (cited, Uses line); field axioms of R (fd3:def-commutative-ring-and-field)
 prp-line-through-two-points (proof): q - p != 0 when p != q; u != s because q != p | vector algebra in R^n (prp-vector-space-laws-rn, cited, Uses line); inline
+def-collinear (claim): two different points are collinear; a single point p lies on p + Rv for v != 0 | prp-line-through-two-points (cited); def-line-rn (t = 0); inline
 def-collinear (claim): (1,0,0), (0,1,0), (0,0,1) not collinear; they satisfy x1 + x2 + x3 = 1 | prp-line-through-two-points (cited); verify/ch10/def-line-rn.py
 def-collinear (claim): skew: v' = lambda v with v' != 0 forces lambda != 0, and v = lambda^{-1} v' | prp-vector-space-laws-rn (i), (e), (f); inline
+def-collinear (claim): skew does not depend on the parametrizations: other directions are lambda v, mu v' with lambda, mu != 0 | prp-line-parametrizations (cited); inline
 exm-two-lines-in-space (solution): the two systems and their solutions; meeting point (2,1,1); directions not multiples | verify/ch10/exm-two-lines-in-space.py
+def-segment-rn (example): instance before the definition, p = (0,0), q = (2,4): t = 0, 1/2, 1 give (0,0), (1,2), (2,4) | verify/ch10/def-segment-rn.py
 def-segment-rn (claim): [p,q] = [q,p] via t <-> 1 - t; [p,p] = {p}; (1 - t)p + tq = p + t(q - p) | prp-vector-space-laws-rn; inline
 def-segment-rn (claim): segments and intervals for n = 1: p + t(q - p) between p and q for t in [0,1]; t = (y - p)/(q - p) | fd3:prp-ordered-field-halves (d), fd3:prp-ordered-ring-rules (b), (c); inline (remark only, nothing depends on it)
 lem-subsegment (proof): (1 - t)x + ty = p + ((1 - t)s + tu)(q - p) | prp-vector-space-laws-rn (cited, Uses line); verify/ch10/lem-subsegment.py (identity, exact)
 lem-subsegment (proof): 0 <= (1 - t)s <= 1 - t, 0 <= tu <= t, adding | fd3:prp-ordered-field-halves (d), fd3:prp-ordered-ring-rules (b) (cited, Uses line)
 lem-subsegment (claim): Quick check: (1,1,-1) not a multiple of (2,1,-2) | verify/ch10/lem-subsegment.py
-thm-betweenness (proof): t >= 0 and 1 - t >= 0 for t in [0,1]; |t| = t for t >= 0; x - p = t(q - p) | fd3:def-absolute-value-ordered-field; fd3:prp-ordered-ring-rules (a); prp-vector-space-laws-rn and prp-norm-basic-rn (b) (cited, Uses line)
-thm-betweenness (proof): 1 + c >= 1 > 0 for c >= 0; 1/(1 + c) > 0 | fd3:prp-ordered-ring-rules (b), (e); positive reciprocal (fd3:prp-reciprocal-order); fd3:prp-ordered-field-halves (c) (cited, Uses line) for t <= 1
-thm-betweenness (claim): aftermath pointers to Real Numbers, Metric Spaces, and Derivatives (AN1) and Affine and Projective Geometry (GEO) | prose pointers by title (blueprint thread 1); nothing depends on them
-cor-point-pinned-on-segment (proof): 0 <= s <= s + r; dividing by ||p - q|| > 0 keeps <= | fd3:prp-ordered-ring-rules (b), (c) with a positive reciprocal (fd3:prp-reciprocal-order); inline
-cor-point-pinned-on-segment (proof): s = t' ||p - q|| with ||p - q|| > 0 gives t' = s/||p - q|| | field: cancel a non-zero factor (fd3:lem-field-fraction-rules); inline
+thm-betweenness (example): instance before the theorem, p = (0,0), q = (4,0); x = (1,0): 1 + 3 = 4; x = (1,1): sqrt 2 + sqrt 10 > 4 | verify/ch10/thm-betweenness.py
+thm-betweenness (proof): t >= 0 and 1 - t >= 0 for t in [0,1]; |t| = t for t >= 0; x - p = t(q - p) | fd3:def-absolute-value-ordered-field; fd3:prp-ordered-ring-rules (a); prp-vector-space-laws-rn and prp-norm-basic-rn (b) (cited, Uses line); fd3:def-absolute-value-ordered-field (cited, Uses line)
+thm-betweenness (proof): 1 + c >= 1 > 0 for c >= 0; 1/(1 + c) > 0 | fd3:prp-ordered-ring-rules (b), (e); fd3:prp-ordered-ring-rules (b), positive reciprocal fd3:prp-reciprocal-order (a), fd3:prp-ordered-field-halves (c) for t <= 1 (all cited, Uses line); remark after the proof: c < 0, c != -1 gives t < 0 or t > 1; inline
+thm-betweenness (claim): aftermath pointers to Real Numbers, Metric Spaces, and Derivatives, Chapter 3 (AN1) and, in the future tense, Affine and Projective Geometry (GEO) | prose pointers by title (blueprint thread 1); nothing depends on them
+cor-point-pinned-on-segment (proof): 0 <= s <= s + r; dividing by ||p - q|| > 0 keeps <= | fd3:prp-ordered-ring-rules (b), (c) with a positive reciprocal (fd3:prp-reciprocal-order (a)) (cited, Uses line)
+cor-point-pinned-on-segment (proof): s = t' ||p - q|| with ||p - q|| > 0 gives t' = s/||p - q|| | field: cancel a non-zero factor (fd3:lem-field-fraction-rules) (cited, Uses line)
 cor-point-pinned-on-segment (proof): fold, s + r = 0 with s, r >= 0 forces s = r = 0 | fd3:prp-ordered-ring-rules (b) (cited), total order (i); inline
 thm-betweenness (claim): warning, ||(-1,-1)|| = ||(-1,1)|| = sqrt 2; 2 sqrt 2 != 2 | verify/ch10/thm-betweenness.py
-exr-lines-and-segments-a1 (solution): direction (2,1,-2), t = 2, midpoint (2, -1/2, 1) | verify/ch10/exr-lines-and-segments-a1.py
-exr-lines-and-segments-a2 (solution): parameters 0, 1, 3; t = 1/3; distances 2, 1, 1; w = -u/2 | verify/ch10/exr-lines-and-segments-a2.py
+exr-lines-and-segments-a1 (solution): (a)-(b) direction (2,1,-2), t = 2, midpoint (2, -1/2, 1); (c) parameters 0, 1, 3, t = 1/3; (d) distances 2, 1, 1, w = -u/2, c = -1/2 gives t = 2, x = p + 2(q - p) | verify/ch10/exr-lines-and-segments-a1.py
 exr-lines-and-segments-b1 (solution): 0 <= t - a <= b - a, division by b - a > 0; affine identity | fd3:prp-ordered-ring-rules (b), (c); verify/ch10/exr-lines-and-segments-b1.py
 exr-lines-and-segments-b2 (solution): elimination formulas and back-substitution | verify/ch10/exr-lines-and-segments-b2.py (symbolic)
 exr-lines-and-segments-b3 (solution): coordinates compared | verify/ch10/exr-lines-and-segments-b3.py

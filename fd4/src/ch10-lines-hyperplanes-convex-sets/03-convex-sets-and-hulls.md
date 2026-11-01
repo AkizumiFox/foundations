@@ -37,7 +37,7 @@ The property tested above deserves a name.
 A subset \( C \subseteq \nR^n \) is **convex** if \( [p, q] \subseteq C \) **for all** \( p, q \in C \).
 :::
 
-In words: whenever \( p \) and \( q \) are in \( C \), so is \( (1 - t)p + tq \) **for every** \( t \in [0, 1] \) (@def-segment-rn). The quantifier over \( t \) covers the whole interval \( [0, 1] \), not just the midpoint \( t = 1/2 \). This matters: the rational points of the plane, at the end of this subsection, contain every midpoint and still do not form a convex set. The empty set is convex, since the condition has no instance to check. So is every one-point set \( \{p\} \), since \( [p, p] = \{p\} \). The ring and the axes tested above are not convex: in each, one pair of points already has a midpoint outside.
+In words: whenever \( p \) and \( q \) are in \( C \), so is \( (1 - t)p + tq \) **for every** \( t \in [0, 1] \) (@def-segment-rn). The quantifier over \( t \) covers the whole interval \( [0, 1] \), not just the midpoint \( t = 1/2 \). This matters: the set \( \nQ^2 \) of points of the plane with rational coordinates contains every midpoint of two of its points and still is not convex (see the warning on midpoints below). The empty set is convex, since the condition has no instance to check. So is every one-point set \( \{p\} \), since \( [p, p] = \{p\} \). The ring and the axes tested above are not convex: in each, one pair of points already has a midpoint outside.
 
 The sets of analysis on which estimates hold are balls. The words "open" and "closed" below are names for now. *Real Numbers, Metric Spaces, and Derivatives* explains them and defines balls for any distance.
 
@@ -98,7 +98,7 @@ Is the sphere \( S(0, 1) \subseteq \nR^2 \) convex?
 No. The points \( (1, 0) \) and \( (-1, 0) \) lie on it, and the midpoint \( (0, 0) \) of the segment between them has norm \( 0 \ne 1 \). Exercise B3 shows that no point strictly inside a segment between two different points of a sphere lies on the sphere.
 :::
 
-The proof of @prp-balls-convex is the pattern for almost every convexity proof in this book.
+The proof of @prp-balls-convex is the pattern for proving convexity from the definition.
 
 ::: {#exm-method-two-point-test}
 [Method: the two-point test]
@@ -121,7 +121,7 @@ The proof of @prp-balls-convex is the pattern for almost every convexity proof i
 
 ## Examples and operations
 
-The sets of Sections 10.1 and 10.2 are convex, and each passes the two-point test in one line.
+The sets of Sections 10.1 and 10.2 are convex: lines and half-spaces pass the two-point test with linearity.
 
 ::: {#prp-convex-examples}
 [Lines, Segments, Hyperplanes and Half-Spaces Are Convex]
@@ -155,7 +155,7 @@ If \( x, y \in H_{a,c} \), the right side is \( 0 \), so \( (1 - t)x + ty \in H_
 :::
 :::
 
-New convex sets come from old ones by intersecting, translating and scaling, but not by joining.
+New convex sets come from old ones by intersecting, translating and scaling, but not by joining. For example, \( (1, 0) + B\bigl( (0, 0), 1 \bigr) = B\bigl( (1, 0), 1 \bigr) \) and \( 2B\bigl( (0, 0), 1 \bigr) = B\bigl( (0, 0), 2 \bigr) \).
 
 ::: {#prp-convex-operations}
 [Operations on Convex Sets]
@@ -224,7 +224,7 @@ For \( k \ge 1 \), let \( P(k) \) be the statement: for all \( p_1, \dots, p_k \
 
 *Base case.* A convex combination of one point \( p_1 \in C \) has \( \lambda_1 = 1 \), so it is \( p_1 \in C \).
 
-*Inductive step.* Let \( k \ge 1 \) and assume \( P(k) \). Let \( p_1, \dots, p_{k+1} \in C \) and let \( x = \sum_{i=1}^{k+1} \lambda_i p_i \) be a convex combination of them. The case \( \lambda_{k+1} = 1 \), in which all the other weights are \( 0 \), is handled just after this proof. Suppose \( \lambda_{k+1} \ne 1 \). The weights \( \lambda_1, \dots, \lambda_k \) are non-negative, so \( \sum_{i=1}^{k} \lambda_i \ge 0 \) (@prp-sum-order (a)), and \( \sum_{i=1}^{k} \lambda_i = 1 - \lambda_{k+1} \) by the recursion for sums. Hence \( s \coloneqq 1 - \lambda_{k+1} \) satisfies \( s \ge 0 \) and \( s \ne 0 \), so \( s > 0 \), and \( \lambda_{k+1} = 1 - s \in [0, 1] \). The numbers \( \lambda_i / s \), for \( i \le k \), are non-negative and add up to \( s/s = 1 \), since the constant \( 1/s \) comes out of the sum. So
+*Inductive step.* Let \( k \ge 1 \) and assume \( P(k) \). Let \( p_1, \dots, p_{k+1} \in C \) and let \( x = \sum_{i=1}^{k+1} \lambda_i p_i \) be a convex combination of them. If \( \lambda_{k+1} = 1 \), then \( \sum_{i=1}^{k} \lambda_i = 0 \) with every \( \lambda_i \ge 0 \), so every \( \lambda_i \) with \( i \le k \) is \( 0 \) (@prp-sum-order (e)). Then \( 0\,p_i = 0 \) (@prp-vector-space-laws-rn (i)), and \( x = 1\,p_{k+1} = p_{k+1} \in C \). Suppose now \( \lambda_{k+1} \ne 1 \). The weights \( \lambda_1, \dots, \lambda_k \) are non-negative, so \( \sum_{i=1}^{k} \lambda_i \ge 0 \) (@prp-sum-order (a)), and \( \sum_{i=1}^{k} \lambda_i = 1 - \lambda_{k+1} \) by the recursion for sums. Hence \( s \coloneqq 1 - \lambda_{k+1} \) satisfies \( s \ge 0 \) and \( s \ne 0 \), so \( s > 0 \), and \( \lambda_{k+1} = 1 - s \in [0, 1] \). The numbers \( \lambda_i / s \), for \( i \le k \), are non-negative and add up to \( s/s = 1 \), since the constant \( 1/s \) comes out of the sum. So
 \[
 y \coloneqq \sum_{i=1}^{k} \frac{\lambda_i}{s} \, p_i
 \]
@@ -235,12 +235,8 @@ x = \sum_{i=1}^{k} \lambda_i p_i + \lambda_{k+1} p_{k+1} = s\,y + \lambda_{k+1} 
 a point of \( [y, p_{k+1}] \). Since \( y, p_{k+1} \in C \) and \( C \) is convex, \( x \in C \). This proves \( P(k + 1) \), and the theorem follows.
 
 ::: {.uses}
-@lem-ring-finite-sums (b): constants come out; @lem-vector-sums-coordinatewise (a): vector sums by coordinates.
+@lem-ring-finite-sums (b): constants come out; @lem-vector-sums-coordinatewise (a): vector sums by coordinates; @prp-sum-order (a), (e): sums of non-negatives; @prp-vector-space-laws-rn (i): \( 0\,p = 0 \).
 :::
-:::
-
-::: {.second-reading title="When the last weight is 1"}
-If \( \lambda_{k+1} = 1 \), then \( \sum_{i=1}^{k} \lambda_i = 0 \) with every \( \lambda_i \ge 0 \), so every \( \lambda_i \) with \( i \le k \) is \( 0 \) (@prp-sum-order (e)). Then \( 0\,p_i = 0 \) (@prp-vector-space-laws-rn (i)), and \( x = 1\,p_{k+1} = p_{k+1} \in C \). This completes the inductive step.
 :::
 
 Among all convex sets containing a given set \( S \), there is a smallest one. It is built the way *Sets and Functions* built the smallest closed set (@fd2:prp-smallest-closed-set): intersect all candidates. For the two points \( (0, 0) \) and \( (1, 0) \), every convex set containing both contains the segment between them. That segment is itself convex, so it is the smallest convex set containing the two points.
@@ -294,7 +290,7 @@ The same two rules, applied in each coordinate, give
 So \( (1 - t)x + ty \) is a convex combination of the points \( r_1, \dots, r_{k+m} \) of \( S \), and lies in \( K \). Thus \( K \) is a convex set containing \( S \). Since \( \operatorname{conv} S \) lies inside every such set, \( \operatorname{conv} S \subseteq K \). This proves \( \operatorname{conv} S = K \).
 
 ::: {.uses}
-@prp-sum-reindex (b): splitting a sum; @lem-ring-finite-sums (b): constants come out; @lem-vector-sums-coordinatewise (a): vector sums by coordinates.
+@prp-sum-reindex (b): splitting a sum; @lem-ring-finite-sums (b): constants come out; @lem-vector-sums-coordinatewise (a): vector sums by coordinates; @fd3:prp-ordered-field-halves (d): products of non-negatives.
 :::
 :::
 
@@ -313,7 +309,7 @@ Let \( p_1, p_2, p_3 \in \nR^2 \). (a) Show that \( \operatorname{conv}\{p_1, p_
 \]
 and the new weights are non-negative and add up to \( (1 - t) + t = 1 \). This is the proof of @thm-convex-hull-combinations-rn with the two lists kept equal instead of joined.
 
-(b) The weights \( \lambda_1 = \lambda_2 = \lambda_3 = 1/3 \) give \( \tfrac13(0, 0) + \tfrac13(3, 0) + \tfrac13(0, 3) = (1, 1) \), so \( (1, 1) \) is in the hull. For \( (2, 2) \): any weights with \( \lambda_1(0, 0) + \lambda_2(3, 0) + \lambda_3(0, 3) = (2, 2) \) have \( 3\lambda_2 = 2 \) and \( 3\lambda_3 = 2 \), so \( \lambda_2 + \lambda_3 = 4/3 \) and \( \lambda_1 = 1 - 4/3 < 0 \). No admissible weights exist, and \( (2, 2) \) is not in the hull. In this example the hull is \( \{ x_1 \ge 0, \ x_2 \ge 0, \ x_1 + x_2 \le 3 \} \). It is three times the triangle \( \{ x_1 \ge 0, \ x_2 \ge 0, \ x_1 + x_2 \le 1 \} \) shown convex earlier, and \( (2, 2) \) breaks the third inequality.
+(b) The weights \( \lambda_1 = \lambda_2 = \lambda_3 = 1/3 \) give \( \tfrac13(0, 0) + \tfrac13(3, 0) + \tfrac13(0, 3) = (1, 1) \), so \( (1, 1) \) is in the hull. For \( (2, 2) \): any weights with \( \lambda_1(0, 0) + \lambda_2(3, 0) + \lambda_3(0, 3) = (2, 2) \) have \( 3\lambda_2 = 2 \) and \( 3\lambda_3 = 2 \), so \( \lambda_2 + \lambda_3 = 4/3 \) and \( \lambda_1 = 1 - 4/3 < 0 \). No admissible weights exist, and \( (2, 2) \) is not in the hull. In this example the hull is \( \{ x_1 \ge 0, \ x_2 \ge 0, \ x_1 + x_2 \le 3 \} \): by (a) its points are \( (3\lambda_2, 3\lambda_3) \) with \( \lambda_2, \lambda_3 \ge 0 \) and \( \lambda_2 + \lambda_3 = 1 - \lambda_1 \le 1 \), and conversely a point \( x \) of the set has the weights \( \lambda_2 = x_1/3 \), \( \lambda_3 = x_2/3 \), \( \lambda_1 = 1 - (x_1 + x_2)/3 \ge 0 \). It is three times the triangle \( \{ x_1 \ge 0, \ x_2 \ge 0, \ x_1 + x_2 \le 1 \} \) shown convex earlier, and \( (2, 2) \) breaks the third inequality.
 :::
 
 ## Star-shaped sets
@@ -338,7 +334,7 @@ Let \( A \coloneqq \nR(1, 0) \cup \nR(0, 1) \subseteq \nR^2 \), the union of the
 For \( x = (s, 0) \in A \) and \( t \in [0, 1] \), \( (1 - t)\,0 + t(s, 0) = (ts, 0) \in A \); points of the other axis are handled the same way. So \( A \) is star-shaped about \( 0 \). The points \( (1, 0) \) and \( (0, 1) \) lie in \( A \), and the midpoint \( (1/2, 1/2) \) of the segment between them has both coordinates non-zero, so it lies on neither axis. This shows at once that \( A \) is not convex and that \( [(1, 0), (0, 1)] \not\subseteq A \), so \( A \) is not star-shaped about \( (1, 0) \).
 :::
 
-Convex and star-shaped sets return throughout the series. *Real Numbers, Metric Spaces, and Derivatives* uses segments inside convex sets for the mean value theorem in several variables. *Complex Analysis* proves Cauchy's theorem first on convex and star-shaped regions. *Analysis on Manifolds* proves the Poincaré lemma on star-shaped sets.
+Convex and star-shaped sets return throughout the series. *Real Numbers, Metric Spaces, and Derivatives* uses convex balls to join points by segments, for connectedness. *Analysis in Several Variables* uses segments inside convex sets for the mean value inequality. *Complex Analysis* proves Cauchy's theorem first on convex and star-shaped regions. *Analysis on Manifolds* proves the Poincaré lemma on star-shaped sets.
 
 ## Exercises
 
@@ -481,20 +477,20 @@ For \( x \) strictly between \( \alpha \) and \( \beta \), look for two points o
 ::: {.solution}
 [Hint 2]
 
-If \( C \) is bounded below, then \( x > \inf C \), so \( x \) is not a lower bound of \( C \); hence there is \( a \in C \) with \( a < x \).
+Since \( x > \inf C \), what can you say about \( x \) as a bound of \( C \)? Then ask what that says about the elements of \( C \).
 :::
 
 ::: {.solution}
-*The supremum and the infimum.* If \( C \) is bounded above, \( \sup C \) exists, since \( C \) is non-empty and \( \nR \) is complete (@fd3:thm-reals-complete-ordered-field). If \( C \) is bounded below, by \( \ell \) say, then \( -C \coloneqq \{ -c : c \in C \} \) is non-empty and bounded above by \( -\ell \), so \( \sigma \coloneqq \sup(-C) \) exists. Then \( -\sigma \) is a lower bound of \( C \) (from \( -c \le \sigma \)), and for every lower bound \( \ell' \) of \( C \), \( -\ell' \) is an upper bound of \( -C \), so \( \sigma \le -\ell' \) and \( \ell' \le -\sigma \) (@fd3:prp-ordered-ring-rules (a)). So \( -\sigma \) is the greatest lower bound: \( \inf C = -\sup(-C) \) exists.
+*The supremum and the infimum.* If \( C \) is bounded above, \( \sup C \) exists, since \( C \) is non-empty and \( \nR \) is complete (@fd3:thm-reals-complete-ordered-field). If \( C \) is bounded below, \( \inf C \) exists, again since \( C \) is non-empty (@prp-real-infimum (b)).
 
 *Two points around \( x \).* Let \( \alpha < x < \beta \). If \( C \) is bounded below, \( x > \inf C \), so \( x \) is not a lower bound of \( C \); if \( C \) is not bounded below, no real number is a lower bound. Either way there is \( a \in C \) with \( a < x \) (@fd3:prp-ordered-ring-rules (i)). In the same way, \( x \) is not an upper bound of \( C \), and there is \( b \in C \) with \( x < b \).
 
-*The segment is the interval.* For \( n = 1 \), \( (1 - t)a + tb = a + t(b - a) \). Let \( t \coloneqq (x - a)/(b - a) \), which is defined since \( b - a > 0 \). It lies in \( (0, 1) \): \( 0 < x - a < b - a \), and multiplying by \( 1/(b - a) > 0 \) keeps both inequalities (@fd3:prp-ordered-ring-rules (c)). With this \( t \), we get \( (1 - t)a + tb = x \). So \( x \in [a, b] \subseteq C \), by convexity.
+*The segment is the interval.* For \( n = 1 \), \( (1 - t)a + tb = a + t(b - a) \). Let \( t \coloneqq (x - a)/(b - a) \), which is defined since \( b - a > 0 \). It lies in \( (0, 1) \): \( 0 < x - a < b - a \), and multiplying by \( 1/(b - a) > 0 \) keeps both inequalities (@fd3:prp-ordered-ring-rules (c)); here \( 1/(b - a) > 0 \), since otherwise \( 1 = (b - a) \cdot 1/(b - a) \le 0 \) (@fd3:prp-ordered-ring-rules (c), (e)). With this \( t \), we get \( (1 - t)a + tb = x \). So \( x \in [a, b] \subseteq C \), by convexity.
 
 *Conclusion.* Every \( x \) with \( \alpha < x < \beta \) lies in \( C \). For \( c \in C \), \( \alpha \le c \) because \( \inf C \) is a lower bound (or \( \alpha = -\infty \)), and \( c \le \beta \) likewise. So \( C \) is one of the intervals \( (\alpha, \beta) \), \( [\alpha, \beta) \), \( (\alpha, \beta] \), \( [\alpha, \beta] \), where an infinite end is never included.
 
 **What a complete answer needs.** (10 points)
-- 3: handles the ends: \( \sup C \) by completeness when bounded above, \( \inf C \) obtained (for instance as \( -\sup(-C) \)) when bounded below, and the unbounded cases.
+- 3: handles the ends: \( \sup C \) by completeness when bounded above, \( \inf C \) when bounded below (@prp-real-infimum), and the unbounded cases.
 - 3: finds \( a, b \in C \) with \( a < x < b \), from "\( x \) is not a lower (upper) bound".
 - 2: shows \( x \in [a, b] \) by an explicit \( t \in [0, 1] \), or by the remark of Section 10.1 that a segment of \( \nR \) is an interval.
 - 2: concludes both inclusions.
@@ -532,7 +528,7 @@ f(t) = a + bt + ct^2 = \inner{(1, t, t^2)}{(a, b, c)} .
 \]
 So \( P_t \coloneqq \{ f : f(t) \ge 0 \} \) is the closed half-space \( \{ \inner{(1, t, t^2)}{y} \ge 0 \} \) of \( \nR^3 \). Its normal \( (1, t, t^2) \) is non-zero, since its first coordinate is \( 1 \). So \( P_t \) is convex by @prp-convex-examples. Then \( P = \bigcap_{t \in [0, 1]} P_t \) is convex by @prp-convex-operations (a).
 
-The two-point test also works directly: \( (1 - s)f(t) + sg(t) \ge 0 \) for \( s \in [0, 1] \), and by the displayed formula this is the value at \( t \) of the polynomial whose coefficient triple is \( (1 - s)(a, b, c) + s(a', b', c') \).
+The two-point test also works directly. Let \( f = a + bx + cx^2 \) and \( g = a' + b'x + c'x^2 \) be in \( P \) and \( s \in [0, 1] \). Then \( (1 - s)f(t) + sg(t) \ge 0 \) for \( s \in [0, 1] \), and by the displayed formula this is the value at \( t \) of the polynomial whose coefficient triple is \( (1 - s)(a, b, c) + s(a', b', c') \).
 
 ::: {.uses}
 @def-dot-product-rn (the dot product).
@@ -556,6 +552,8 @@ and \( z \in D \). Multiplying the plane by a unit complex number turns it about
 :::
 
 <!-- dependency ledger
+def-convex-set-rn (claim): warning: 1/2 < sqrt 2/2 < 1 from 1 < sqrt 2 < 2 | fd3:prp-ordered-ring-rules (c) with 1/2 > 0
+def-convex-set-rn (claim): warning: 2t in Q for t in Q | Q is closed under products (fd3, ordered field Q)
 def-ball-rn (claim): for n = 1 the balls are the intervals (c - r, c + r), [c - r, c + r] | prp-norm-basic-rn (d), fd3:prp-absolute-value-ordered-field (d), cited
 prp-balls-convex (proof): |t| = t and |1 - t| = 1 - t for t in [0, 1] | fd3:def-absolute-value-ordered-field (unlabelled use)
 prp-convex-examples (proof): a product of two non-negative reals is >= 0; of two positive reals is > 0 | fd3:prp-ordered-field-halves (d), fd3:prp-ordered-ring-rules (c), cited (Uses line)

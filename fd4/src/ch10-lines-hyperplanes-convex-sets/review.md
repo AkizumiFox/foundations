@@ -48,6 +48,7 @@ What is open: the words "open ball" and "closed ball" are only names here. *Real
 - Chapter 9, Section 9.5: the triangle inequality with its equality case (@thm-triangle-inequality-rn), which Section 10.1 rests on.
 - Chapter 9, Section 9.6: projection onto a line (@def-projection-rn) and the closest-point theorem (@thm-projection-closest-point), which give every nearest point of Section 10.2.
 - Chapter 1, Section 1.1: the rules for finite sums (@lem-ring-finite-sums, @prp-sum-reindex), in Section 10.3.
+- Chapter 8, Section 8.3: the infimum by reflection (@prp-real-infimum), in Exercise C1 of Section 10.3.
 - For the review exercises of Section 10.3 only:
   - the coordinate bounds for the norm (@prp-norm-coordinate-bounds) and the plane read as \( \nC \) (@prp-plane-is-complex-plane), from Section 9.4;
   - the modulus (@thm-conjugate-properties) and the unit circle (@prp-unit-circle), from Sections 3.2 and 3.5;

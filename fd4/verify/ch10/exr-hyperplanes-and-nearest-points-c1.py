@@ -5,13 +5,15 @@ sys.path.insert(0, __import__("os").path.dirname(__file__))
 from _hyperplanes_rn import Fr, vec, dot, sub, mul, nsq
 
 QUOTED = {"c1": 8, "c2": -6, "centre": (2, 1), "radius_sq": 5}
-p, q, r = vec(0, 0), vec(4, 0), vec(0, 2)
+p, q, s = vec(0, 0), vec(4, 0), vec(0, 2)
 c1 = (nsq(q) - nsq(p)) / 2
-c2 = (nsq(r) - nsq(q)) / 2
+c2 = (nsq(s) - nsq(q)) / 2
+# non-collinear: s is off the line x2 = 0 through p and q
+assert p[1] == q[1] == 0 and s[1] != 0
 assert (c1, c2) == (QUOTED["c1"], QUOTED["c2"])
 z = vec(*QUOTED["centre"])
-assert dot(sub(q, p), z) == c1 and dot(sub(r, q), z) == c2
-assert nsq(sub(z, p)) == nsq(sub(z, q)) == nsq(sub(z, r)) == QUOTED["radius_sq"]
+assert dot(sub(q, p), z) == c1 and dot(sub(s, q), z) == c2
+assert nsq(sub(z, p)) == nsq(sub(z, q)) == nsq(sub(z, s)) == QUOTED["radius_sq"]
 # D for rotated directions equals D for normals
 random.seed(4)
 for _ in range(100):

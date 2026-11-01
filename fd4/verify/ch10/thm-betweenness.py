@@ -1,4 +1,4 @@
-"""thm-betweenness: moreover clause (on squares, exact); off-segment points give a strict inequality; warning data."""
+"""thm-betweenness: moreover clause (on squares, exact); off-segment points give a strict inequality; warning data; instance before the theorem."""
 import random
 from fractions import Fraction as Fr
 from math import sqrt, isclose
@@ -18,6 +18,12 @@ p, q, x = (-1, 0), (1, 0), (0, 1)
 assert sq(comb(1, p, -1, x)) == QUOTED["warn_sq"] == sq(comb(1, x, -1, q))
 assert sq(comb(1, p, -1, q)) == QUOTED["pq"] ** 2
 assert (2 * sqrt(2)) != 2 and Fr(8) != 4  # (2 sqrt 2)^2 = 8 != 4 = 2^2
+# instance before the theorem: p = (0,0), q = (4,0)
+P0, Q0 = (0, 0), (4, 0)
+assert sq(comb(1, P0, -1, (1, 0))) == 1 and sq(comb(1, (1, 0), -1, Q0)) == 9 and 1 + 3 == 4
+assert sq(comb(1, P0, -1, (1, 1))) == 2 and sq(comb(1, (1, 1), -1, Q0)) == 10
+# sqrt 2 + sqrt 10 > 4 <=> 12 + 2 sqrt 20 > 16 <=> sqrt 20 > 2 <=> 20 > 4
+assert 20 > 4 and sqrt(2) + sqrt(10) > 4
 random.seed(5)
 for _ in range(300):
     n = random.randint(1, 4)
