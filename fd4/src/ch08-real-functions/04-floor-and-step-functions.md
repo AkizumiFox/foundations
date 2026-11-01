@@ -1,6 +1,6 @@
 # Floor, Distance to the Integers, and Step Functions
 
-*Number Systems: From \(\nN\) to \(\nR\)* gave every element of an Archimedean field an integer part (@fd3:prp-integer-part-ordered-field). Chapter 2 cited the integer part of a rational (@fd3:prp-rational-integer-part). Here the integer part becomes a function on all of \( \nR \), the book's first function that jumps. From it we build the distance to the nearest integer and the step functions. Section 8.6 builds its strange functions from these pieces.
+*Number Systems: From \(\nN\) to \(\nR\)* gave every element of an Archimedean field an integer part (@fd3:prp-integer-part-ordered-field). Here the integer part becomes a function on all of \( \nR \), one that jumps at every integer. From it we build the distance to the nearest integer and the step functions. Section 8.6 builds its strange functions from these pieces.
 
 ## The floor and the ceiling
 
@@ -12,7 +12,7 @@ For a number such as \( \sqrt 2 + \sqrt 3 \), with no decimal expansion handed t
 - a complete ordered field is Archimedean (@fd3:thm-cof-complete-archimedean);
 - in an Archimedean field every element lies in exactly one interval \( [m, m + 1) \) with \( m \in \nZ \) (@fd3:prp-integer-part-ordered-field).
 
-Throughout, integers are read inside \( \nR \), as in *Number Systems*. The embedding \( \iota_{\nR} \) respects sums and order and reflects order (@fd3:thm-rationals-embed-ordered-field). So a sum or comparison of integers means the same in \( \nZ \) and in \( \nR \).
+Throughout, integers are read inside \( \nR \), as in *Number Systems*. The embedding \( \iota_{\nR} \) respects sums, products and order and reflects order (@fd3:thm-rationals-embed-ordered-field). So a sum or comparison of integers means the same in \( \nZ \) and in \( \nR \).
 
 *The floor of \( x \) is the integer you reach by stepping down from \( x \) to the nearest integer at or below it.*
 
@@ -62,7 +62,7 @@ Compute \( \floor{-7/2} \), \( \ceil{-7/2} \) and \( \floor{7/2} + \floor{-7/2} 
 \( -4 \le -7/2 < -3 \), so \( \floor{-7/2} = -4 \). Next, \( 3 \le 7/2 < 4 \) gives \( \floor{7/2} = 3 \), so \( \ceil{-7/2} = -\floor{7/2} = -3 \). Finally \( \floor{7/2} + \floor{-7/2} = 3 - 4 = -1 \), not \( 0 \): the floor does not commute with negation.
 :::
 
-Every computation in the check used the definition the same way: name a candidate integer and verify the two inequalities. That is the whole method for floors.
+Each of these floors was found the same way: name a candidate integer and verify the two inequalities. That is the whole method for floors.
 
 ::: {#exm-method-floor-inequality}
 [Method: pin the floor by its inequality]
@@ -70,7 +70,7 @@ Every computation in the check used the definition the same way: name a candidat
 **How it goes.** To show \( \floor{A} = m \) for a real expression \( A \), use one of two forms.
 
 - *First form.* Check that \( m \) is an integer and that \( m \le A < m + 1 \). Uniqueness in @def-floor-ceiling does the rest.
-- *Second form.* Check that \( m \) is an integer and that **every** \( j \in \nZ \) satisfies \( j \le A \iff j \le m \). This form rests on rule (g) of the next proposition, and the paragraph after its proof shows why it works.
+- *Second form.* Check that \( m \) is an integer and that **every** \( j \in \nZ \) satisfies \( j \le A \iff j \le m \). This form rests on rule (g) of @prp-floor-rules, which turns \( j \le A \) into a statement about \( \floor{A} \).
 
 | We know | We want |
 |---|---|
@@ -81,7 +81,7 @@ Every computation in the check used the definition the same way: name a candidat
 **Common mistakes.** One mistake is to drop the decimals, as in the warning above. Another is to forget that \( m \) must be an integer. For example, \( x - \tfrac12 \le x < (x - \tfrac12) + 1 \) holds for every real \( x \), yet \( x - \tfrac12 \) is \( \floor{x} \) only when it is an integer.
 :::
 
-Here are the rules for the floor that later chapters use. Each is one application of the method.
+Here are the rules for the floor that later chapters use. Most of them are one application of the method; rule (g) is discreteness of \( \nZ \).
 
 ::: {#prp-floor-rules}
 [Rules for the Floor]
@@ -101,7 +101,7 @@ Let \( x, y \in \nR \), \( n \in \nZ \) and \( k \in \nZ_{>0} \).
 :::
 
 ::: {.idea}
-Parts (a), (b), (d), (e) and (f) use the first form of @exm-method-floor-inequality: write down the candidate and check two inequalities. Part (g) is discreteness of \( \nZ \): no integer lies strictly between \( \floor{x} \) and \( \floor{x} + 1 \). Part (c) is (g) applied once, and (h) is treated separately below.
+Parts (a), (b), (d), (e) and (f) use the first form of @exm-method-floor-inequality: write down the candidate and check two inequalities. Part (g) is discreteness of \( \nZ \): no integer lies strictly between \( \floor{x} \) and \( \floor{x} + 1 \). Part (c) is (g) applied once, and (h) needs a separate argument.
 :::
 
 ::: {.proof}
@@ -250,7 +250,7 @@ Rule (c) says that shifting by \( 1 \) changes nothing. For instance, \( \dist(0
 Let \( f \colon D \to \nR \) with \( D \subseteq \nR \), and let \( p \in \nR \) with \( p \ne 0 \). The number \( p \) is a **period** of \( f \) if, **for every** \( x \in D \), both \( x + p \) and \( x - p \) lie in \( D \) and \( f(x + p) = f(x) \). The function \( f \) is **periodic** if it has a period.
 :::
 
-The periods of \( f \) are closed under negation and under non-zero sums. Let \( p, q \) be periods and \( x \in D \). The domain condition for \( -p \) is the one for \( p \). With \( z \coloneqq x - p \in D \), we get \( f(x - p) = f(z) = f(z + p) = f(x) \). If \( p + q \ne 0 \), then \( x \pm (p + q) \in D \) in two steps, and \( f(x + p + q) = f(x + q) = f(x) \). So if \( 1 \) is a period, every non-zero integer is one.
+The periods of \( f \) are closed under negation and under non-zero sums. Let \( p, q \) be periods and \( x \in D \). The domain condition for \( -p \) is the one for \( p \). With \( z \coloneqq x - p \in D \), we get \( f(x - p) = f(z) = f(z + p) = f(x) \). If \( p + q \ne 0 \), then \( x \pm (p + q) \in D \) in two steps, and \( f(x + p + q) = f(x + q) = f(x) \). By induction on \( k \ge 1 \) (@fd2:thm-induction), \( kp \) is a period, since \( kp + p = (k + 1)p \ne 0 \); by negation so is \( -kp \). So if \( 1 \) is a period, every non-zero integer is one.
 
 **Examples.** The fractional part \( x \mapsto x - \floor{x} \) on \( \nR \) has period \( 1 \), by @prp-floor-rules (b) with \( n = 1 \): \( (x + 1) - \floor{x + 1} = x - \floor{x} \). The distance \( x \mapsto \dist(x, \nZ) \) has period \( 1 \), by @prp-distance-to-integer (c). A constant function on \( \nR \) has every \( p \ne 0 \) as a period. The identity on \( \nR \) has none, since \( x + p \ne x \).
 
@@ -294,7 +294,7 @@ Which of these functions on \( [0, 1] \) are step functions: \( \ind_{[0, 1/2]} 
 The first is, with the partition \( 0, \tfrac12, 1 \), as in the examples. The second is not. Take any partition \( 0 = x_0 < x_1 < \dots < x_n = 1 \). By @fd3:prp-archimedean-reciprocal there is \( n' \in \nZ_{>0} \) with \( 1/n' < x_1 \). The point \( 1/n' \) lies in the first open piece \( (0, x_1) \), and the indicator is \( 1 \) there. The midpoint \( c \) of \( 1/(n' + 1) \) and \( 1/n' \) also lies in \( (0, x_1) \). It is not of the form \( 1/k \), since larger denominators give smaller reciprocals (@fd3:prp-reciprocal-order (b)). For \( k \le n' \), \( 1/k \ge 1/n' > c \), and for \( k \ge n' + 1 \), \( 1/k \le 1/(n' + 1) < c \). So the indicator is \( 0 \) at \( c \), and it is not constant on \( (0, x_1) \).
 :::
 
-Combining two step functions point by point gives a step function again. The only work is to find one partition that serves both.
+Combining two step functions point by point gives a step function again. The only work is to find one partition that serves both. For instance, \( \ind_{[0, 1/2]} + \ind_{[0, 1/3]} \) on \( [0, 1] \) needs the merged cut points \( 0, \tfrac13, \tfrac12, 1 \); neither partition alone is adapted to it.
 
 ::: {#prp-step-function-algebra}
 [Step Functions Are Closed Under the Operations]
@@ -316,12 +316,10 @@ Let \( P \) and \( Q \) be the sets of cut points of partitions adapted to \( \v
 *Each piece of \( R \) lies in a piece of \( P \).* Let \( r < r' \) be consecutive in \( R \). Let \( p \) be the largest point of \( P \) with \( p \le r \) and \( p' \) the least with \( p' \ge r' \); both exist, since \( a, b \in P \) and \( P \) is finite. No point \( q \) of \( P \) lies in \( (p, p') \). If \( q \le r \), it would be a point of \( P \) at most \( r \) and larger than \( p \). If \( q \ge r' \), it would be a point of \( P \) at least \( r' \) and smaller than \( p' \). If \( r < q < r' \), it would be a point of \( R \) between the consecutive points \( r \) and \( r' \). So \( p, p' \) are consecutive in \( P \), and \( (r, r') \subseteq (p, p') \). The same holds for \( Q \).
 :::
 
-For instance, \( \ind_{[0, 1/2]} + \ind_{[0, 1/3]} \) on \( [0, 1] \) needs the merged cut points \( 0, \tfrac13, \tfrac12, 1 \); neither partition alone is adapted to it.
-
 ::: {.remark}
 [Looking ahead]
 
-*Analysis on the Real Line* builds a function that is continuous everywhere and differentiable nowhere by adding up the tents \( \dist(2^k x, \nZ)/2^k \), each a smaller copy of the graph above.
+*Integration, Series, and Function Spaces* builds a function that is continuous everywhere and differentiable nowhere by adding up the tents \( \dist(2^k x, \nZ)/2^k \), each a smaller copy of the graph above.
 :::
 
 ## Exercises
@@ -435,7 +433,7 @@ Take the partition \( 0, \tfrac12, 1, \tfrac32, 2 \). On each open piece both fl
 - on \( (1, \tfrac32) \): \( 2x \in (2, 3) \), \( x \in (1, 2) \), so \( \varphi = 2 - 2 = 0 \);
 - on \( (\tfrac32, 2) \): \( 2x \in (3, 4) \), \( x \in (1, 2) \), so \( \varphi = 3 - 2 = 1 \).
 
-So \( \varphi \) is constant on each open piece, as @def-step-function requires. At the cut points, \( \varphi(0) = 0 \), \( \varphi(\tfrac12) = 1 \), \( \varphi(1) = 0 \), \( \varphi(\tfrac32) = 1 \), \( \varphi(2) = 0 \). (Alternatively, \( \varphi \) is a combination of two step functions, by @prp-step-function-algebra.)
+So \( \varphi \) is constant on each open piece, as @def-step-function requires. At the cut points, \( \varphi(0) = 0 \), \( \varphi(\tfrac12) = 1 \), \( \varphi(1) = 0 \), \( \varphi(\tfrac32) = 1 \), \( \varphi(2) = 0 \).
 :::
 
 ### C. Going deeper
@@ -472,7 +470,7 @@ and \( \floor{x + 1} = \floor{x} + 1 \) by rule (b) of @prp-floor-rules. Since \
 
 *Step 2: \( F = 0 \) on \( [0, 1/n) \).* For \( 0 \le x < 1/n \) and \( 0 \le k \le n - 1 \), \( 0 \le x + k/n < 1/n + (n - 1)/n = 1 \), so each \( \floor{x + k/n} = 0 \). Also \( 0 \le nx < 1 \), so \( \floor{nx} = 0 \).
 
-*Step 3: every \( x \).* Let \( j \coloneqq \floor{nx} \) and \( y \coloneqq x - j/n \). From \( j \le nx < j + 1 \), dividing by \( n \), \( 0 \le y < 1/n \). If \( j \ne 0 \), then \( j/n \) is a period of \( F \), since the periods are closed under negation and non-zero sums; so \( F(x) = F(y + j/n) = F(y) = 0 \). If \( j = 0 \), then \( x = y \) and \( F(x) = 0 \) by Step 2. This proves the identity.
+*Step 3: every \( x \).* Let \( j \coloneqq \floor{nx} \) and \( y \coloneqq x - j/n \). From \( j \le nx < j + 1 \), dividing by \( n \), \( 0 \le y < 1/n \). If \( j \ne 0 \), then \( j/n \) is a period of \( F \), since integer multiples of a period are periods; so \( F(x) = F(y + j/n) = F(y) = 0 \). If \( j = 0 \), then \( x = y \) and \( F(x) = 0 \) by Step 2. This proves the identity.
 
 ::: {.uses}
 @fd2:def-sum-product (shifting the index).
@@ -487,7 +485,7 @@ and \( \floor{x + 1} = \floor{x} + 1 \) by rule (b) of @prp-floor-rules. Since \
 
 A direct count also earns full marks. Write \( t = x - \floor{x} \). The terms with \( t + k/n \ge 1 \) equal \( \floor{x} + 1 \), and the others equal \( \floor{x} \). Such a proof earns the 3, 2, 3 and 2 points for, in order: the count, each term's inequality, \( \floor{nx} \), and the comparison.
 
-Slips that lose the step (0 points for it): shifting only forward when \( x < 0 \) needs a backward shift; treating \( \floor{x + 1} \) as \( \floor{x} \).
+Slips that lose the step (0 points for it): shifting only forward, although \( x < 0 \) needs a backward shift; treating \( \floor{x + 1} \) as \( \floor{x} \).
 :::
 
 ::: {#exr-floor-and-step-functions-c2}
@@ -505,7 +503,7 @@ Let \( n \in \nZ_{>0} \).
 :::
 
 ::: {.solution}
-(a) By induction on \( n \ge 1 \) (@fd1:ax-induction). For \( n = 1 \) both sides are \( \dist(x, \nZ) \). If \( \dist(nx, \nZ) \le n \dist(x, \nZ) \), then subadditivity (@prp-distance-to-integer (d)) gives
+(a) By induction on \( n \ge 1 \) (@fd2:thm-induction, with base \( 1 \)). For \( n = 1 \) both sides are \( \dist(x, \nZ) \). If \( \dist(nx, \nZ) \le n \dist(x, \nZ) \), then subadditivity (@prp-distance-to-integer (d)) gives
 \[
 \dist((n + 1)x, \nZ) \le \dist(nx, \nZ) + \dist(x, \nZ) \le (n + 1)\dist(x, \nZ) .
 \]
@@ -518,17 +516,25 @@ So \( \abs{y - k} \) is the least of the numbers \( \abs{y - j} \), \( j \in \nZ
 
 Now let \( \dist(x, \nZ) \le 1/(2n) \). By @prp-distance-to-integer (a) there is \( k \in \nZ \) with \( \abs{x - k} = \dist(x, \nZ) \); put \( t \coloneqq x - k \). Then \( nx = nk + nt \) with \( nk \in \nZ \) and \( \abs{nx - nk} = n\abs{t} \le \tfrac12 \). By the hint, \( \dist(nx, \nZ) = n\abs{t} = n \dist(x, \nZ) \).
 
+::: {.uses}
+@fd3:prp-absolute-value-ordered-field (b) (\( \abs{nt} = n\abs{t} \), as \( n > 0 \)).
+:::
+
 (c) \( x = \tfrac12 \): \( \dist(1, \nZ) = 0 < 1 = 2 \dist(\tfrac12, \nZ) \). Here \( \dist(x, \nZ) = \tfrac12 > \tfrac14 = 1/(2n) \), so (b) does not apply. Exercise A2 (c) gave the inequality only; (b) adds where it is an equality.
 :::
 
 <!-- dependency ledger
 def-floor-ceiling (example): integer arithmetic and comparisons agree in Z and in R (embedding) | fd3:thm-rationals-embed-ordered-field, recalled in prose
 prp-floor-rules (proof): Z is closed under +, -, and products of integers are integers | fd3:thm-integers-ordered-ring (ring), standard
+def-floor-ceiling (example): products of integers agree in Z and in R (embedding) | fd3:thm-rationals-embed-ordered-field, recalled in prose
 prp-distance-to-integer (proof): a lower bound of a set that belongs to the set is its infimum and its minimum | fd2:def-order-supremum (dual), inline
 prp-distance-to-integer (proof): n -> n - 1 and n -> -n are bijections of Z | inline (ring laws of Z)
-def-periodic-function (claim): closure of periods under negation and non-zero sums | inline
+def-periodic-function (claim): closure of periods under negation and non-zero sums; integer multiples by induction on k | inline, fd2:thm-induction
 def-step-function (example): an integer in (u, v] with x_{i-1} < u < v < x_i lies in the open piece | inline (order)
+def-step-function (example): {m+1,...,M} has M-m elements via j -> m+j | inline
+def-step-function (example): listing a finite set of reals increasingly | fd2:prp-finite-max
 prp-step-function-algebra (proof): the merged partition lies in pieces of P and Q | inline, in the fold
 exr-floor-and-step-functions-b2 (solution): jk >= 1 iff j >= 1 for k in Z_{>0} | fd3:thm-integers-ordered-ring (c), inline
+exr-floor-and-step-functions-c2 (solution): |nt| = n|t| | fd3:prp-absolute-value-ordered-field (b), Uses line
 exr-floor-and-step-functions-c1 (solution): index shift in a finite sum | fd2:def-sum-product, Uses line
 -->

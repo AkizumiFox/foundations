@@ -15,14 +15,14 @@ For all \( a, b \in \nR \) with \( a < b \) there is an irrational \( x \) with 
 ::: {.proof}
 Let \( a < b \). The real numbers form a complete ordered field (@fd3:thm-reals-complete-ordered-field). So there is \( \sqrt 2 \ge 0 \) with \( (\sqrt 2)^2 = 2 \), and \( \nR \) is Archimedean. Since \( a - \sqrt 2 < b - \sqrt 2 \), the density of the rationals gives \( q \in \nQ \) with \( a - \sqrt 2 < q < b - \sqrt 2 \) (@fd3:thm-rationals-dense-ordered-field). Put \( x \coloneqq q + \sqrt 2 \); then \( a < x < b \).
 
-Suppose \( x \) were rational. Then \( r \coloneqq x - q \in \nQ \) and \( r = \sqrt 2 \), so \( r^2 = 2 \) in \( \nR \). The copy of \( \nQ \) inside \( \nR \) is injective and respects products, so \( r^2 = 2 \) already holds in \( \nQ \). No rational squares to \( 2 \) (@fd3:thm-no-rational-square-two), a contradiction. Hence \( x \) is irrational.
+Suppose \( x \) were rational. Then \( \sqrt 2 = x - q \) would be rational, as a difference of rationals. But \( \sqrt 2 \) is irrational, as Section 8.3 showed from @fd3:thm-no-rational-square-two and the copy of \( \nQ \) inside \( \nR \), a contradiction. Hence \( x \) is irrational.
 
 ::: {.uses}
 @fd3:prp-cof-square-roots (square roots exist); @fd3:thm-cof-complete-archimedean (\( \nR \) is Archimedean); @fd3:thm-rationals-embed-ordered-field (\( \nQ \) sits inside \( \nR \)).
 :::
 :::
 
-The argument for irrationality works for every rational \( q \): \( q + \sqrt 2 \) is irrational. With \( q = 0 \), \( \sqrt 2 \) itself is irrational.
+The argument for irrationality works for every rational \( q \): \( q + \sqrt 2 \) is irrational.
 
 ::: {.check}
 Why does the proof shift by \( \sqrt 2 \), and not by \( 1/2 \)?
@@ -113,7 +113,7 @@ Compute \( T(3/4) \), \( T(-6/8) \), \( T(0.6) \) and \( T(\sqrt 2/2) \).
 - \( T(3/4) = 1/4 \).
 - \( T(-6/8) = 1/4 \), since \( -6/8 = -3/4 \) and \( \gcd(-3, 4) = 1 \).
 - \( T(0.6) = 1/5 \), since \( 0.6 = 3/5 \).
-- \( T(\sqrt 2/2) = 0 \), since \( \sqrt 2/2 \) is irrational. Indeed, if \( \sqrt 2/2 = r \in \nQ \), then \( \sqrt 2 = 2r \in \nQ \). But \( \sqrt 2 \) is irrational, as shown just after @lem-irrationals-dense.
+- \( T(\sqrt 2/2) = 0 \), since \( \sqrt 2/2 \) is irrational. Indeed, if \( \sqrt 2/2 = r \in \nQ \), then \( \sqrt 2 = 2r \in \nQ \). But \( \sqrt 2 \) is irrational, as shown in Section 8.3.
 :::
 
 Large values of \( T \) are rare. On \( [0, 1] \), the points with \( T(x) \ge 1/3 \) have denominator \( 1 \), \( 2 \) or \( 3 \). They are \( 0 \), \( 1 \), \( 1/2 \), \( 1/3 \) and \( 2/3 \): only five.
@@ -133,7 +133,7 @@ A large value needs a small denominator: \( T(x) \ge \varepsilon \) forces \( q 
 :::
 
 ::: {.proof}
-(a) For \( x \notin \nQ \), also \( x + 1 \notin \nQ \), and both values are \( 0 \). Let \( x = p/q \) in lowest terms. Then \( x + 1 = (p + q)/q \). A positive common divisor of \( p + q \) and \( q \) divides \( (p + q) - q = p \), hence divides \( \gcd(p, q) = 1 \). So \( \gcd(p + q, q) = 1 \) and \( T(x + 1) = 1/q = T(x) \).
+(a) For \( x \notin \nQ \), also \( x + 1 \notin \nQ \), and both values are \( 0 \). Let \( x = p/q \) in lowest terms. Then \( x + 1 = (p + q)/q \). A positive common divisor of \( p + q \) and \( q \) divides \( (p + q) - q = p \). It divides \( q \) as well, so it is a common divisor of \( p \) and \( q \) and is at most their greatest common divisor \( \gcd(p, q) = 1 \); hence it equals \( 1 \). So \( \gcd(p + q, q) = 1 \) and \( T(x + 1) = 1/q = T(x) \).
 
 (b) Let \( \varepsilon > 0 \) and \( Q \coloneqq \floor{1/\varepsilon} \) (@def-floor-ceiling). For \( q \in \nZ_{>0} \) let
 \[
@@ -143,14 +143,14 @@ S_q \coloneqq \{ p/q : p \in \nZ,\ \floor{aq} \le p \le \floor{bq} \} .
 
 *Each \( S_q \) is finite.* If \( \floor{aq} > \floor{bq} \), then \( S_q = \emptyset \). Otherwise let \( m \coloneqq \floor{aq} \) and \( k \coloneqq \floor{bq} - m + 1 \). The map \( \{1, \dots, k\} \to S_q \), \( j \mapsto (m + j - 1)/q \), is onto by the definition of \( S_q \), and injective because \( q \ne 0 \). So \( S_q \) has \( k \) elements (@fd2:def-finite).
 
-*A finite union of finite sets is finite* (@fd2:exr-finite-sets-b3). Let \( A \) and \( B \) be finite sets. Then \( A \cup B \) is the union of the disjoint sets \( A \) and \( B \setminus A \). The second is finite, as a subset of \( B \). So \( A \cup B \) is finite by @fd2:prp-disjoint-union-count. Induction on the number of sets gives \( S_1 \cup \dots \cup S_Q \) finite.
+*A finite union of finite sets is finite.* Let \( A \) and \( B \) be finite sets. Then \( A \cup B \) is the union of the disjoint sets \( A \) and \( B \setminus A \). The second is finite, as a subset of \( B \). So \( A \cup B \) is finite by @fd2:prp-disjoint-union-count. Induction on the number of sets gives \( S_1 \cup \dots \cup S_Q \) finite.
 
 Hence \( E \), a subset of a finite set, is finite by @fd2:prp-subset-finite.
 
 (c) The interval \( (a, b) \) contains a rational, where \( T > 0 \) (@fd3:thm-rationals-dense-ordered-field). It also contains an irrational, where \( T = 0 \) (@lem-irrationals-dense).
 
 ::: {.uses}
-@prp-floor-rules (a) (the floor is at most the number); @fd2:prp-subset-finite (subsets of finite sets); @fd1:ax-induction (induction).
+@prp-floor-rules (a) (the floor is at most the number); @fd2:prp-subset-finite (subsets of finite sets); @fd2:prp-disjoint-union-count (a disjoint union of finite sets is finite); @fd1:ax-induction (induction).
 :::
 :::
 
@@ -204,7 +204,7 @@ Let \( s \colon [0, 1] \to \nR \), \( s(0) \coloneqq 0 \) and \( s(x) \coloneqq 
 ::: {.solution}
 For \( 0 < x \le 1 \) we have \( 1/x \ge 1 \), so \( \floor{1/x} \ge 1 \) by @prp-floor-rules (g), and \( s(x) \) is defined. For \( n \in \nZ_{>0} \),
 \[
-\floor{1/x} = n \iff n \le 1/x < n + 1 \iff \frac{1}{n + 1} < x \le \frac{1}{n} ,
+\floor{1/x} = n \iff n \le 1/x < n + 1 \iff \frac{1}{n + 1} < x \le \frac{1}{n} .
 \]
 The first equivalence is the definition of the floor. The second takes reciprocals of positive numbers, which reverses inequalities (@fd3:prp-reciprocal-order). So \( s = 1/n \) on \( (1/(n + 1), 1/n] \): a step at height \( 1/n \) whose right end lies on the line \( y = x \).
 
@@ -241,7 +241,7 @@ The first equivalence is the definition of the floor. The second takes reciproca
 ::: {.enumerate options="label=(\alph*)"}
 1. \( s \) is increasing on \( [0, 1] \).
 2. \( s \) takes infinitely many values.
-3. For \( 0 < x \le 1 \), \( 0 \le s(x) - x < 2x^2 \). (At \( x = 0 \) both sides are \( 0 \).)
+3. For \( 0 < x \le 1 \), \( 0 \le s(x) - x < 2x^2 \). (At \( x = 0 \) the left side is \( 0 \) and so is the right, so the strict inequality fails there.)
 :::
 :::
 
@@ -254,7 +254,7 @@ The first equivalence is the definition of the floor. The second takes reciproca
 \[
 \frac{1}{n} - x < \frac{1}{n} - \frac{1}{n + 1} = \frac{1}{n(n + 1)} \le \frac{2}{(n + 1)^2} < 2x^2 .
 \]
-The middle inequality is \( n + 1 \le 2n \), true for \( n \ge 1 \). The last holds because \( x > 1/(n + 1) > 0 \) gives \( x^2 > 1/(n + 1)^2 \) (@lem-reals-nth-root (a) with \( n = 2 \)).
+The middle inequality is \( n + 1 \le 2n \), true for \( n \ge 1 \). The last holds because \( x > 1/(n + 1) > 0 \) gives \( x^2 > 1/(n + 1)^2 \) (@lem-reals-nth-root (a) with exponent \( 2 \)).
 :::
 
 So near \( 0 \), \( s(x) \) agrees with \( x \) up to an error below \( 2x^2 \), although \( s \) is constant on each step.
@@ -351,16 +351,16 @@ Both \( R \) and \( M \) are defined everywhere on the closed bounded interval \
 ::: {#exm-strange-functions}
 [A Table of Strange Functions]
 
-Each row names a function, recalls its definition, lists what this section proved, and asks what the later volumes will answer.
+Each row names a function, recalls its definition, lists what has been proved about it, and asks what the later volumes will answer.
 
 | function | definition | proved here | question for later |
 |---|---|---|---|
 | \( D \) (@def-dirichlet-function) | \( 1 \) on \( \nQ \), \( 0 \) off \( \nQ \) | periods exactly the non-zero rationals; on every interval sup \( 1 \), inf \( 0 \), monotone nowhere | continuous at any point? integrable on \( [0, 1] \)? |
 | \( x D(x) \) | \( x \) on \( \nQ \), \( 0 \) off \( \nQ \) | at most \( \abs{x} \) in size; near each \( a \ne 0 \), points where it differs from its value at \( a \) by at least \( \abs{a}/2 \) | continuous exactly where? |
-| \( T \) (@def-thomae-function) | \( 1/q \) at \( p/q \) in lowest terms, \( 0 \) off \( \nQ \) | period \( 1 \); finitely many values \( \ge \varepsilon \) on \( [a, b] \); positive and zero points in every interval | continuous exactly where? integrable on \( [0, 1] \)? |
+| \( T \) (@def-thomae-function) | \( 1/q \) at \( p/q \) in lowest terms, \( 0 \) off \( \nQ \) | period \( 1 \); finitely many points of \( [a, b] \) where \( T \ge \varepsilon \); positive and zero points in every interval | continuous exactly where? integrable on \( [0, 1] \)? |
 | \( J \) (@exm-strange-involution) | \( x \) on \( \nQ \), \( -x \) off \( \nQ \) | \( J \circ J = \id \); a bijection; monotone on no interval | continuous at any point? |
 | \( H \) (@exm-strange-jump) | \( x \) for \( x < 0 \), \( x + 1 \) for \( x \ge 0 \) | strictly increasing; image skips \( [0, 1) \) | which property forces the image of an interval to be an interval? |
-| \( s \) (@exm-strange-staircase) | \( 1/\floor{1/x} \) on \( (0, 1] \), \( 0 \) at \( 0 \) | increasing; infinitely many values; \( 0 \le s(x) - x < 2x^2 \) | continuous at \( 0 \)? differentiable at \( 0 \)? integrable? |
+| \( s \) (@exm-strange-staircase) | \( 1/\floor{1/x} \) on \( (0, 1] \), \( 0 \) at \( 0 \) | increasing; infinitely many values; \( 0 \le s(x) - x < 2x^2 \) for \( 0 < x \le 1 \) | continuous at \( 0 \)? differentiable at \( 0 \)? integrable? |
 | \( Z \), \( x Z(x) \) (@exm-strange-zigzag) | \( \dist(1/x, \nZ) \) for \( x \ne 0 \), \( 0 \) at \( 0 \) | \( Z \) takes every value of \( [0, 1/2] \) on every \( (0, \delta) \); \( \abs{x Z(x)} \le \abs{x}/2 \) | \( Z \) continuous at \( 0 \)? \( x Z(x) \) continuous at \( 0 \)? differentiable there? |
 | \( R \) (@exm-strange-unbounded) | \( 1/x \) on \( (0, 1] \), \( 0 \) at \( 0 \) | not bounded above on \( [0, 1] \) | which hypothesis on a function on \( [a, b] \) forces it to be bounded? |
 | \( M \) (@exm-strange-sup-missed) | \( x \) on \( [0, 1) \), \( 0 \) at \( 1 \) | sup \( 1 \), not attained | which hypothesis forces the sup to be attained? |
@@ -369,7 +369,7 @@ Each row names a function, recalls its definition, lists what this section prove
 ::: {.remark}
 [Looking ahead]
 
-*Analysis on the Real Line* answers these questions. It settles the continuity and extreme-value questions once it has continuous functions, and the integrability questions once it has the integral. Once it has the sine, it replaces \( \dist(1/x, \nZ) \) in the zigzag by the sine. No proof in the main text of this section uses a limit, continuity or a derivative.
+The analysis volumes answer these questions. *Real Numbers, Metric Spaces, and Derivatives* settles the continuity and extreme-value questions once it has continuous functions. *Integration, Series, and Function Spaces* settles the integrability questions once it has the integral, and once it has the sine, it replaces \( \dist(1/x, \nZ) \) in the zigzag by the sine. No proof in the main text of this section uses a limit, continuity or a derivative.
 :::
 
 ## Exercises
@@ -383,7 +383,7 @@ Find the supremum and infimum of \( D \) on \( (0, 1) \) and of \( T \) on \( [0
 :::
 
 ::: {.solution}
-For \( D \) on \( (0, 1) \): supremum \( 1 \), infimum \( 0 \), both attained (@prp-dirichlet-properties (b)), for example at \( 1/2 \) and at the irrational \( \sqrt 2/2 \).
+For \( D \) on \( (0, 1) \): supremum \( 1 \), infimum \( 0 \), both attained (@prp-dirichlet-properties (b)), for example at \( 1/2 \) and at the irrational \( \sqrt 2/2 \) (irrational by the Quick check after @def-thomae-function, and \( (\sqrt 2/2)^2 = 1/2 < 1 \) gives \( \sqrt 2/2 < 1 \), and it is positive).
 
 For \( T \) on \( [0, 1] \): every value is at most \( 1 \), since \( q \ge 1 \), and \( T(0) = T(0/1) = 1 \), \( T(1) = T(1/1) = 1 \); so the supremum is \( 1 \), attained at \( 0 \) and \( 1 \). Every value is at least \( 0 \), and \( T(\sqrt 2/2) = 0 \); so the infimum is \( 0 \), attained at every irrational point of \( [0, 1] \).
 :::
@@ -433,7 +433,7 @@ Seven points; \( 2/4 \) is not new, since it is \( 1/2 \), with value \( 1/2 \).
 :::
 
 ::: {.solution}
-(a) True. If \( x \) and \( x + \sqrt 2 \) were both rational, so would be their difference \( \sqrt 2 \), which is irrational, as shown just after @lem-irrationals-dense. So at most one of the two values is \( 1 \).
+(a) True. If \( x \) and \( x + \sqrt 2 \) were both rational, so would be their difference \( \sqrt 2 \), which is irrational, as shown in Section 8.3. So at most one of the two values is \( 1 \).
 
 (b) True. On \( \nQ \), \( J \) is the identity, and \( q_1 < q_2 \) gives \( J(q_1) = q_1 < q_2 = J(q_2) \).
 
@@ -469,7 +469,7 @@ Exercise C1 of Section 8.1 gives \( f \) on \( \nQ \). Trap \( x \) between rati
 ::: {.solution}
 [Hint 2]
 
-Suppose \( c > 0 \) and \( f(x) > cx \) for some \( x \). Take a rational \( q \) with \( x < q < f(x)/c \).
+Suppose \( c > 0 \) and \( f(x) > cx \) for some \( x \). Where can a rational \( q \) sit so that monotonicity and \( f(q) = cq \) collide?
 :::
 
 ::: {.solution}
@@ -479,13 +479,14 @@ By @exr-real-functions-and-graphs-c1 (a) and (c), \( f(0) = 0 \) and \( f(q) = c
 
 *Case \( c = 0 \).* Take rationals \( p < x < q \) (@fd3:thm-rationals-dense-ordered-field, in \( (x - 1, x) \) and \( (x, x + 1) \)). Then \( 0 = f(p) \le f(x) \le f(q) = 0 \), so \( f(x) = 0 = cx \).
 
-Without "increasing", additivity alone does not force \( f(x) = cx \) in general. But an additive function that is not of this form cannot be written down without the axiom of choice. The other axioms of set theory do not prove that one exists, and this series builds none.
+Without "increasing", additivity alone does not force \( f(x) = cx \) in general. But an additive function that is not of this form cannot be written down without the axiom of choice. This series builds no such function, and it does not prove that none can be written down without choice.
 
 **What a complete answer needs.** (10 points)
 - 2: obtains \( f(q) = cq \) on \( \nQ \) and \( c \ge 0 \), each with its reason.
 - 4: for \( c > 0 \), refutes \( f(x) > cx \) with a rational between \( x \) and \( f(x)/c \), using monotonicity in the right direction.
 - 2: the symmetric case \( f(x) < cx \).
 - 2: the case \( c = 0 \).
+Another correct route earns the same points: a two-sided squeeze with rationals \( p < x < q \) closer than \( 1/n \), then Archimedes (2 for \( f = cq \) on \( \nQ \) and \( c \ge 0 \), 4 for \( cp \le f(x) \le cq \), 4 for closing the gap).
 Slips that lose the step: dividing by \( c \) without \( c > 0 \); assuming \( f \) continuous or taking a limit of rationals.
 :::
 
@@ -553,6 +554,7 @@ The tool is that a polynomial is fixed by finitely many values. Two look-alikes 
 
 <!-- dependency ledger
 lem-irrationals-dense (proof): Q is identified with its copy in R (q written for kappa(q)) | fd3 ch05 §04 identification remark (NOTATION row for \nQ, \nR)
+lem-irrationals-dense (proof): sqrt 2 is irrational; Q closed under differences | recalled from 8.3 (Quick check 3 solution, fd3:thm-no-rational-square-two with fd3:thm-rationals-embed-ordered-field); Q is a field (fd3 ch03)
 prp-dirichlet-properties (proof): Q is closed under sums and negatives | Q is a field (fd3 ch03)
 prp-dirichlet-properties (proof): an upper bound of a set that lies in the set is its supremum (and max) | @fd2:def-order-supremum, Uses line
 prp-thomae-large-values (proof): a common divisor of p + q and q divides p | inline (Ch2 divisibility)
@@ -563,5 +565,6 @@ exm-strange-involution (solution): x irrational implies -x irrational | Q closed
 exr-strange-functions-c1 (solution): f(0) = 0 and f(q) = cq on Q | @exr-real-functions-and-graphs-c1 (an exercise, cited in a solution only)
 exr-strange-functions-c2 (solution): an upper bound of a set that lies in the set is its supremum | @fd2:def-order-supremum, inline
 exr-strange-functions-r1 (solution): induction on n | @fd1:ax-induction
-exr-strange-functions-a2 (solution): sqrt(2)/2 is irrational | Quick check after @def-thomae-function, from the remark after @lem-irrationals-dense
+exr-strange-functions-a1 (solution): sqrt(2)/2 is irrational | Quick check after @def-thomae-function, from sqrt 2 irrational (8.3)
+exr-strange-functions-a2 (solution): sqrt(2)/2 is irrational | Quick check after @def-thomae-function, from sqrt 2 irrational (8.3)
 -->

@@ -1,12 +1,12 @@
 # Real Functions and Their Graphs
 
-Part II ended with polynomials as formal objects and with what their values can and cannot do. Part III turns to functions of a real variable, the objects that analysis adds, composes, inverts and bounds. This section fixes what a real function is, how two of them combine, how a graph moves when the formula changes, and how a function splits into an even and an odd part. Everything is proved from *Sets and Functions* and the complete ordered field \( \nR \); no limit appears.
+Part II of this volume (Chapters 4–7) ended with polynomials as formal objects and with what their values can and cannot do. Part III (Chapters 8–10) turns to functions of a real variable, the objects that analysis adds, composes, inverts and bounds. This section fixes what a real function is, how two of them combine, how a graph moves when the formula changes, and how a function splits into an even and an odd part. Everything is proved from *Sets and Functions*, the complete ordered field \( \nR \) and the polynomials of Chapters 6 and 7; no limit appears.
 
 ## A formula is not yet a function
 
 Let \( f(x) = x^2/x \). What is \( f(0) \)?
 
-The tempting answer cancels: \( x^2/x = x \), so \( f(0) = 0 \). But the formula \( x^2/x \) asks us to divide by \( 0 \) at \( 0 \), and no field rule allows that. Another reader says \( f(0) \) is undefined. Both readers have a function in mind, and they have different ones. In *Sets and Functions*, a function consists of a graph **and** a domain on which every input has exactly one value (@fd2:def-function). A formula supplies the values but not the domain. Until the domain is named, the question has no answer.
+The tempting answer cancels: \( x^2/x = x \), so \( f(0) = 0 \). But the formula \( x^2/x \) asks us to divide by \( 0 \) at \( 0 \), and no field rule allows that. Another reader says \( f(0) \) is undefined. Both readers have a function in mind, and they have different ones. In *Sets and Functions*, a function is given by a graph, in which every input of its domain has exactly one value, **together with** a codomain (@fd2:def-function). A formula supplies the values but not the domain. Until the domain is named, the question has no answer.
 
 Here is a small case. Take the inputs \( D = \{1, 2, 3\} \) and send each input to its square. The values are \( 1 \), \( 4 \) and \( 9 \), and the function is recorded by the three pairs \( (1, 1) \), \( (2, 4) \), \( (3, 9) \). With the inputs \( \{-1, 1\} \) and the same rule, the pairs are \( (-1, 1) \) and \( (1, 1) \): a different function.
 
@@ -99,7 +99,7 @@ Let \( D \subseteq \nR \) and \( G \subseteq \nR^2 \). Then \( G \) is the graph
 ::: {.proof}
 Let \( G = \operatorname{graph} f \) for \( f \colon D \to \nR \). Then (i) is the condition in the definition of a function. And (ii) holds because every element of \( G \) is a pair \( (x, f(x)) \) with \( x \in D \).
 
-Conversely, (ii) gives \( G \subseteq D \times \nR \). With (i), the pair \( f \coloneqq (G, \nR) \) is then a function \( D \to \nR \). Each \( (a, y) \in G \) has \( y = f(a) \) by the definition of the value, so \( G = \operatorname{graph} f \).
+Conversely, (ii) gives \( G \subseteq D \times \nR \). With (i), the pair \( f \coloneqq (G, \nR) \) is then a function \( D \to \nR \). Each \( (a, y) \in G \) has \( y = f(a) \) by the definition of the value, and each \( (x, f(x)) \) with \( x \in D \) lies in \( G \) by the same definition, so \( G = \operatorname{graph} f \).
 
 ::: {.uses}
 @fd2:def-function (one value for each input; the value \( f(a) \)).
@@ -133,11 +133,13 @@ Let \( f \colon D_f \to \nR \) and \( g \colon D_g \to \nR \) be real functions 
 \[
 (f + g)(x) \coloneqq f(x) + g(x), \quad (fg)(x) \coloneqq f(x) g(x),
 \]
-and \( \max(f, g)(x) \coloneqq \max(f(x), g(x)) \), likewise \( \min(f, g) \). On \( D_f \) define \( (cf)(x) \coloneqq c f(x) \) and \( \abs{f}(x) \coloneqq \abs{f(x)} \). The quotient \( f/g \), \( x \mapsto f(x)/g(x) \), has domain \( \{ x \in D_f \cap D_g : g(x) \ne 0 \} \). The **composite** \( g \circ f \), \( x \mapsto g(f(x)) \), has domain
+and \( \max(f, g)(x) \coloneqq \max(f(x), g(x)) \), likewise \( \min(f, g) \); here \( \max(a, b) \) is \( b \) if \( a \le b \) and \( a \) otherwise, and \( \min(a, b) \) is \( a \) if \( a \le b \) and \( b \) otherwise. On \( D_f \) define \( (cf)(x) \coloneqq c f(x) \), \( -f \coloneqq (-1) f \) and \( \abs{f}(x) \coloneqq \abs{f(x)} \); and \( f - g \coloneqq f + (-g) \) on \( D_f \cap D_g \). The quotient \( f/g \), \( x \mapsto f(x)/g(x) \), has domain \( \{ x \in D_f \cap D_g : g(x) \ne 0 \} \). The **composite** \( g \circ f \), \( x \mapsto g(f(x)) \), has domain
 \[
 \{ x \in D_f : f(x) \in D_g \} .
 \]
 :::
+
+For instance, \( \abs{f} = \max(f, -f) \) on \( D_f \). Fix \( x \in D_f \). If \( f(x) \ge 0 \), then \( -f(x) \le f(x) \), so \( \max(f(x), -f(x)) = f(x) = \abs{f(x)} \). If \( f(x) < 0 \), then \( f(x) < -f(x) \), so the maximum is \( -f(x) = \abs{f(x)} \).
 
 This composite is the composite of *Sets and Functions* (@fd2:def-composition), applied to a restriction of \( f \). Write \( E \) for its domain. Every value of \( f|_E \) lies in \( D_g \), so \( f|_E \) may be regarded as a function \( E \to D_g \), and \( g \) after it is a composite in that sense, with values \( g(f(x)) \). Composition stays associative. The functions \( h \circ (g \circ f) \) and \( (h \circ g) \circ f \) have the same domain and the same values \( h(g(f(x))) \), so they are equal. This is associativity of composition (@fd2:prp-composition-associative) for the restricted maps.
 
@@ -145,7 +147,7 @@ This composite is the composite of *Sets and Functions* (@fd2:def-composition), 
 Let \( h \colon D_h \to \nR \) as well. The domain of \( h \circ (g \circ f) \) is the set of \( x \) in the domain of \( g \circ f \) with \( g(f(x)) \in D_h \), that is, \( \{ x \in D_f : f(x) \in D_g, \ g(f(x)) \in D_h \} \). The domain of \( h \circ g \) is \( \{ y \in D_g : g(y) \in D_h \} \), so the domain of \( (h \circ g) \circ f \) is the set of \( x \in D_f \) with \( f(x) \) in it, which is the same set. On it both sides take the value \( h(g(f(x))) \), and @fd2:prp-function-equality gives equality.
 :::
 
-The domain of a composite can be empty. The square root after \( x \mapsto -x^2 - 1 \) has domain \( \{ x : -x^2 - 1 \ge 0 \} = \emptyset \): the composite is the empty function of @fd2:prp-empty-function, legal and useless.
+The domain of a composite can be empty. The square root after \( x \mapsto -x^2 - 1 \) has domain \( \{ x : -x^2 - 1 \ge 0 \} = \emptyset \), because \( x^2 \ge 0 \) gives \( -x^2 - 1 \le -1 < 0 \): the composite is the empty function of @fd2:prp-empty-function, legal and useless.
 
 ::: {.check}
 What is the domain of \( \sqrt{x} + 1/x \)? Of the composite of \( \sqrt{\cdot} \) after \( x \mapsto x - 1 \)?
@@ -162,10 +164,12 @@ Chapter 6 defined, for a polynomial \( p \in \nR[x] \), its polynomial function 
 ::: {#def-polynomial-rational-function}
 [Polynomial Function, Rational Function]
 
+For a first instance, the polynomial \( x^2 - 1 \) restricted to \( D = \{0, 1, 2\} \) has the values \( -1 \), \( 0 \), \( 3 \); and \( (x + 1)/(x - 1) \) is defined at every real number except \( 1 \), with value \( 3 \) at \( 2 \).
+
 Let \( D \subseteq \nR \). A **polynomial function on \( D \)** is the restriction to \( D \) of the polynomial function \( x \mapsto p(x) \) of some \( p \in \nR[x] \). For \( p, q \in \nR[x] \) with \( q \ne 0 \), the **rational function** \( p/q \) is \( x \mapsto p(x)/q(x) \) on \( \{ x \in \nR : q(x) \ne 0 \} \).
 :::
 
-Chapters 6 and 7 proved three facts about these functions over every field. Since \( \nR \) is a field, all three hold here.
+Chapters 6 and 7 proved what these functions need. Since \( \nR \) is a field, the following three facts hold here.
 
 - **Operations match.** The polynomial function of \( p + q \) is the sum of those of \( p \) and \( q \), and likewise for \( pq \). This is @prp-polynomial-function-map (b), and restricting to \( D \) keeps it.
 - **The function determines the polynomial on an infinite set.** Let \( D \) be infinite, with \( p(x) = q(x) \) for every \( x \in D \). Then \( p = q \). To see this, put \( n \coloneqq \max(\deg p, \deg q, 0) \). An infinite set contains \( n + 1 \) distinct points, as shown inside the proof of @thm-polynomial-identity-from-values. Choosing \( n + 1 \) distinct points of \( D \), part (a) of that theorem gives \( p = q \). So on an interval with more than one point, the **degree** and **leading coefficient** of a polynomial function are well defined.
@@ -285,8 +289,8 @@ The odd case uses the method of reading a graph as a set of pairs (@exm-method-g
 
 Some examples:
 
-- \( x^2 \), \( \abs{x} \) and the constants are even;
-- \( x \), \( x^3 \) and \( 1/x \) on \( \nR \setminus \{0\} \) are odd;
+- \( x^2 \), \( \abs{x} \) and the constants on \( \nR \) are even;
+- \( x \) and \( x^3 \) on \( \nR \), and \( 1/x \) on \( \nR \setminus \{0\} \), are odd;
 - \( x + 1 \) on \( \nR \) is neither, since its value \( 0 \) at \( -1 \) is neither its value \( 2 \) at \( 1 \) nor \( -2 \);
 - the zero function is both.
 
@@ -309,7 +313,7 @@ e(x) = \frac{f(x) + f(-x)}{2}, \qquad o(x) = \frac{f(x) - f(-x)}{2} .
 *Uniqueness.* Let \( f = e + o = e' + o' \) with \( e, e' \) even and \( o, o' \) odd, and put \( h \coloneqq e - e' = o' - o \). As a difference of even functions \( h \) is even, and as a difference of odd functions it is odd. So \( h(x) = h(-x) = -h(x) \), hence \( 2h(x) = 0 \). Since \( 2 \ne 0 \), \( h(x) = 0 \) for every \( x \in D \). Thus \( e = e' \) and \( o = o' \).
 :::
 
-For a polynomial function on \( \nR \), the even part keeps the even powers. For \( (x + 1)^2 = x^2 + 2x + 1 \), the formulas give the even part \( x^2 + 1 \) and the odd part \( 2x \), as found above.
+For a polynomial function on \( \nR \), the even part keeps the even powers, since \( (-x)^k = x^k \) for even \( k \) and \( -x^k \) for odd \( k \). For \( (x + 1)^2 = x^2 + 2x + 1 \), the formulas give the even part \( x^2 + 1 \) and the odd part \( 2x \), as found above.
 
 ## Exercises
 
@@ -329,7 +333,7 @@ Is each set a graph of a real function, and if so over which \( D \)?
 :::
 
 ::: {.solution}
-We use @prp-graph-vertical-line. (a) No: \( (-1, 1) \) and \( (-1, -1) \) lie in the set, so \( -1 \in D \) by (ii). There are two points above \( -1 \), so (i) fails. (b) Yes, over \( \nR \): it is \( \operatorname{graph} \abs{\cdot} \). (c) No: \( (2, 0) \) and \( (2, 1) \) lie in it. (d) Yes, over \( \nR \setminus \{0\} \): no pair has first coordinate \( 0 \), since \( 0 \cdot y = 0 \ne 1 \), and for \( a \ne 0 \) the only \( y \) with \( ay = 1 \) is \( 1/a \). It is the graph of \( 1/x \).
+We use @prp-graph-vertical-line. (a) No: \( (-1, 1) \) and \( (-1, -1) \) lie in the set, so \( -1 \in D \) by (ii). There are two points above \( -1 \), so (i) fails. (b) Yes, over \( \nR \): it is \( \operatorname{graph} \abs{\cdot} \). (c) No: \( (2, 0) \) and \( (2, 1) \) lie in it, so \( 2 \in D \) by (ii), and then there are two points above \( 2 \), so (i) fails, whatever \( D \) is. (d) Yes, over \( \nR \setminus \{0\} \): no pair has first coordinate \( 0 \), since \( 0 \cdot y = 0 \ne 1 \), and for \( a \ne 0 \) the only \( y \) with \( ay = 1 \) is \( 1/a \). It is the graph of \( 1/x \).
 :::
 
 ::: {#exr-real-functions-and-graphs-a2}
@@ -457,6 +461,11 @@ Slips that lose the step: using \( f(qx) = q f(x) \) for rational \( q \) before
 :::
 
 <!-- dependency ledger
+def-function-algebra (claim): |f| = max(f, -f) by the two cases f(x) >= 0, f(x) < 0 | fd3:def-absolute-value-ordered-field, order rules (fd3:prp-ordered-ring-rules), used silently
+def-function-algebra (claim): max(a, b), min(a, b) as the larger and the smaller | same case rule as fd3:exr-rules-and-absolute-value-c2, stated inline
+def-function-algebra (claim): -x^2 - 1 < 0 for every x | x^2 >= 0 (fd3:prp-ordered-ring-rules), used silently
+def-polynomial-rational-function (example): x^2 - 1 on {0, 1, 2} has values -1, 0, 3; (2+1)/(2-1) = 3 | arithmetic, unlabelled instance before the definition
+prp-even-odd-decomposition (claim): (-x)^k = x^k for even k, -x^k for odd k | fd3:prp-ring-algebra, used silently
 def-real-function (example): squares on {1, 2, 3} are 1, 4, 9 | arithmetic, unlabelled instance before the definition
 prp-graph-vertical-line (example): the three sets over D = {1, 2} | direct inspection, unlabelled instance before the proposition
 def-function-algebra (example): 1/2 + 1 = 3/2; 1/(1/2 - 1) = -2; 1/x = 1 iff x = 1 | field arithmetic, unlabelled instance before the definition

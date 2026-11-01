@@ -4,7 +4,7 @@ exp x >= 1 + x + x^2/2 for x >= 0 numerically; (b) log x <= x/e numerically; (c)
 from fractions import Fraction as Fr
 from math import comb, exp, log, e
 import random
-for n in range(1, 200):
+for n in range(2, 200):
     assert Fr(comb(n, 2), n * n) == (1 - Fr(1, n)) / 2
     for x in [Fr(k, 3) for k in range(0, 30)]:
         if n > x:

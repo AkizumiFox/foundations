@@ -4,18 +4,18 @@ Chapter 1 gave every non-negative real number its \( n \)-th roots (@lem-reals-n
 
 ## Powers that roots cannot reach
 
-A power \( a^{m/n} \) with \( a > 0 \) is the \( n \)-th root of \( a^m \). The exponent \( \sqrt 2 \) is not of the form \( m/n \). If \( \sqrt 2 = m/n \) with \( m, n \in \nZ \), then \( m/n \) would be a rational number whose square is \( 2 \), and @fd3:thm-no-rational-square-two rules that out in \( \nQ \). The rationals sit inside \( \nR \) with the same arithmetic (@fd3:thm-rationals-embed-ordered-field), so the same holds in \( \nR \). So \( 2^{\sqrt 2} \) is not a root of anything we know.
+A power \( a^{m/n} \) with \( a > 0 \) is a power of an \( n \)-th root, \( (\sqrt[n]{a})^m \). The exponent \( \sqrt 2 \) is not of the form \( m/n \), because \( \sqrt 2 \) is irrational, as Section 8.3 showed from @fd3:thm-no-rational-square-two. So \( 2^{\sqrt 2} \) is not a root of anything we know.
 
 The naive answer, "the limit of \( 2^q \) as rational \( q \) approach \( \sqrt 2 \)", needs limits of functions, which this volume does not have. Our route goes through one function, the exponential, and one rule, \( a^x \coloneqq \exp(x \log a) \). Constructing the exponential needs power series, so we borrow it: three facts, and everything else is proved.
 
 ## What this volume borrows about the exponential
 
-The exponential should turn sums into products, and near \( 0 \) it should look like \( 1 + x \). *Analysis on the Real Line*, Chapter 10 constructs it as a power series and proves the facts below. Its \( \nR \) is a complete ordered field, so by @fd3:thm-cof-uniqueness it is our \( \nR \), up to the one order-preserving field isomorphism, and the function carries over along it.
+The exponential should turn sums into products, and near \( 0 \) it should look like \( 1 + x \). *Integration, Series, and Function Spaces*, Chapter 7 constructs it as a power series and proves the facts below. Its \( \nR \) is a complete ordered field, so by @fd3:thm-cof-uniqueness it is our \( \nR \), up to the one order-preserving field isomorphism, and the function carries over along it.
 
 ::: {#ax-exponential}
 [What This Volume Borrows about the Exponential]
 
-There is a function \( \exp \colon \nR \to \nR \) with the following properties. They are **assumed here and proved in *Analysis on the Real Line*, Chapter 10**.
+There is a function \( \exp \colon \nR \to \nR \) with the following properties. They are **assumed here and proved in *Integration, Series, and Function Spaces*, Chapter 7**.
 
 ::: {.enumerate options="label=(E\arabic*)"}
 1. \( \exp(x + y) = \exp x \cdot \exp y \) **for all** \( x, y \in \nR \).
@@ -36,12 +36,12 @@ The three facts say nothing about continuity or derivatives. That \( \exp \) is 
 
 ## First consequences
 
-Negative integer exponents appear as soon as we divide. For a real \( u \ne 0 \) and \( n \in \nZ_{>0} \) we write \( u^{-n} \coloneqq 1/u^n \), alongside the powers \( u^n \), \( n \in \nN \), of @fd2:def-power. Then \( u^{-n} = (1/u)^n \), since \( u^n (1/u)^n = (u \cdot 1/u)^n = 1 \) by the rule for a power of a product (@fd2:prp-power-laws (c)). We also write \( \exp(t)^n \) for \( (\exp t)^n \).
+Negative integer exponents appear as soon as we divide. For a real \( u \ne 0 \) and \( n \in \nZ_{>0} \), the power \( u^{-n} = (u^{-1})^n = (1/u)^n \) is the integer power of Chapter 1 (@def-integer-power). By @prp-integer-power-laws (d), \( u^{-n} = 1/u^n \). We also write \( \exp(t)^n \) for \( (\exp t)^n \).
 
 The first proposition collects what the addition rule and the tangent-line bound say at once.
 
 ::: {#prp-exp-first-consequences}
-[First Consequences of (E1) and (E2)]
+[First Consequences of the Addition Rule and the Tangent-Line Bound]
 
 ::: {.enumerate options="label=(\alph*)"}
 1. \( \exp 0 = 1 \).
@@ -59,7 +59,7 @@ Part (a) is the addition rule at \( x = y = 0 \), with the tangent-line bound to
 ::: {.proof}
 (a) By the addition rule, \( \exp 0 = \exp(0 + 0) = (\exp 0)^2 \), so \( \exp 0 \cdot (\exp 0 - 1) = 0 \). By the tangent-line bound, \( \exp 0 \ge 1 + 0 = 1 \), so \( \exp 0 \ne 0 \). A product that is zero with one factor non-zero has its other factor zero, so \( \exp 0 - 1 = 0 \).
 
-(b) By the addition rule and (a), \( \exp x \cdot \exp(-x) = \exp 0 = 1 \). Hence \( \exp x \ne 0 \), and \( \exp(-x) = 1/\exp x \) because inverses are unique. By the addition rule, \( \exp x = \exp(x/2 + x/2) = (\exp(x/2))^2 \), which is \( \ge 0 \) because it is a square. A non-zero element that is \( \ge 0 \) is \( > 0 \).
+(b) By the addition rule and (a), \( \exp x \cdot \exp(-x) = \exp 0 = 1 \). Hence \( \exp x \ne 0 \), and \( \exp(-x) = 1/\exp x \) because inverses are unique. The same holds at \( x/2 \), so \( \exp(x/2) \ne 0 \). By the addition rule, \( \exp x = \exp(x/2 + x/2) = (\exp(x/2))^2 \), which is \( > 0 \) because it is the square of a non-zero number.
 
 (c) Let \( x < y \). By the addition rule, \( \exp y = \exp x \cdot \exp(y - x) \), so
 \[
@@ -76,7 +76,7 @@ The first inequality is the tangent-line bound at \( y - x \), multiplied by \( 
 For \( n \in \nZ_{>0} \), (b) and the case just proved give \( \exp(-nx) = 1/\exp(nx) = 1/(\exp x)^n = (\exp x)^{-n} \).
 
 ::: {.uses}
-@fd3:lem-field-fraction-rules (d) (zero products), (a) (inverses are unique). @fd3:prp-ordered-ring-rules (e) (squares are non-negative), (c) (multiplying by a positive number). @fd3:prp-ordered-field-halves (c) (reciprocals reverse order). @fd1:ax-induction.
+@fd3:lem-field-fraction-rules (d) (zero products), (a) (inverses are unique). @fd3:prp-ordered-ring-rules (e) (non-zero squares are positive), (c) (multiplying by a positive number). @fd3:prp-ordered-field-halves (c) (reciprocals reverse order). @prp-integer-power-laws (d) (\( 1/u^n = u^{-n} \)). @fd1:ax-induction.
 :::
 :::
 
@@ -120,20 +120,20 @@ So no \( L' < L \) is an upper bound, and \( L \) is the least upper bound.
 | \( L' < L \); \( \varepsilon \coloneqq (L - L')/C > 0 \); \( 1/n < \varepsilon \) for \( n \ge N \) | some \( s \in S \) with \( s > L' \): take \( s_n \), \( n \ge \max\{N, N_0\} \) |
 :::
 
-The real numbers form a complete ordered field (@fd3:thm-reals-complete-ordered-field). Every complete ordered field is Archimedean (@fd3:thm-cof-complete-archimedean), so step 3 is available in \( \nR \).
+The real numbers form a complete ordered field (@fd3:thm-reals-complete-ordered-field). Every complete ordered field is Archimedean (@fd3:thm-cof-complete-archimedean), so the Archimedean property, which the last step of the method uses, holds in \( \nR \).
 
 ## Two facts determine the exponential
 
 For a fixed \( x \), the numbers \( (1 + x/n)^n \) are built from \( x \) by arithmetic alone. At \( x = 1 \) and \( n = 2, 3, 4 \) they are \( 9/4 = 2.25 \), \( 64/27 \approx 2.370 \) and \( 625/256 \approx 2.441 \). The theorem says that these numbers squeeze \( \exp x \) from below, and that their supremum is \( \exp x \).
 
 ::: {#thm-exp-unique}
-[The Exponential Is Determined by (E1) and (E2)]
+[The Exponential Is Determined by Its Addition Rule and Tangent-Line Bound]
 
 Let \( x \in \nR \), and let
 \[
 S_x \coloneqq \Bigl\{ \Bigl(1 + \frac{x}{n}\Bigr)^{n} : n \in \nZ_{>0},\ n > \abs{x} \Bigr\} .
 \]
-Then \( S_x \) is non-empty and bounded above, and \( \exp x = \sup S_x \). Consequently, if \( E \colon \nR \to \nR \) is any function satisfying (E1) and (E2) with \( E \) in place of \( \exp \), then \( E = \exp \).
+Then \( S_x \) is non-empty and bounded above, and \( \exp x = \sup S_x \). Consequently, if \( E \colon \nR \to \nR \) is any function satisfying the addition rule (E1) and the tangent-line bound (E2) with \( E \) in place of \( \exp \), then \( E = \exp \).
 :::
 
 ::: {.idea}
@@ -201,7 +201,7 @@ By the proof of @thm-exp-unique at \( x = 1 \), for every integer \( n \ge 2 \),
 \]
 At \( n = 2 \) this reads \( 9/4 \le e \le 4 \), so \( e > 2 \). Exercise B1 below squeezes harder.
 
-Now we can say more about what fails without the tangent-line bound, beyond the constant function \( 1 \). The function \( F(x) \coloneqq \exp(2x) \) satisfies the addition rule, since \( F(x + y) = \exp(2x)\exp(2y) \). It also has the value property, since \( \exp t = y \) gives \( F(t/2) = y \). It is not \( \exp \): \( F(1) = \exp 2 = e^2 \ne e \) because \( e > 1 \). So, by @thm-exp-unique, it must fail the tangent-line bound. It does, at \( x = -1/2 \): \( F(-1/2) = \exp(-1) = 1/e < 1/2 = 1 + (-1/2) \), as \( e > 2 \). Without the tangent-line bound, the addition rule and the value property leave the speed of the function free.
+Now we can say more about what fails without the tangent-line bound, beyond the constant function \( 1 \). The function \( F(x) \coloneqq \exp(2x) \) satisfies the addition rule, since \( F(x + y) = \exp(2x)\exp(2y) \). It also has the value property, since \( \exp t = y \) gives \( F(t/2) = y \). It is not \( \exp \): \( F(1) = \exp 2 = (\exp 1)^2 = e \cdot e \) by @prp-exp-first-consequences (e), and \( e \cdot e \ne e \) because \( e > 1 \). So, by @thm-exp-unique, it must fail the tangent-line bound. It does, at \( x = -1/2 \): \( F(-1/2) = \exp(-1) = 1/e < 1/2 = 1 + (-1/2) \), as \( e > 2 \). Without the tangent-line bound, the addition rule and the value property leave the speed of the function free.
 
 ## The logarithm
 
@@ -321,24 +321,28 @@ No: base \( 0 \) is covered only for \( x > 0 \). The symbol \( 0^0 \) keeps its
 Let \( a \in \nR \) with \( a > 0 \).
 
 ::: {.enumerate options="label=(\alph*)"}
-1. For \( m \in \nZ \) and \( n \in \nZ_{>0} \), \( a^{m/n} = \sqrt[n]{a^m} \), where \( a^m \) is the power of @fd2:def-power for \( m \ge 0 \) and \( 1/a^{-m} \) for \( m < 0 \).
-2. In particular, for \( n = 1 \), the real power \( a^m \) is the integer power \( a^m \).
+1. For \( m \in \nZ \) and \( n \in \nZ_{>0} \), the real power \( a^{m/n} \) is \( (\sqrt[n]{a})^m \), the rational power of @def-rational-power, where \( (\sqrt[n]{a})^m \) is the integer power of Chapter 1.
+2. In particular, for \( n = 1 \), the real power \( a^m \) is the integer power \( a^m \) (for \( m \ge 0 \), the power of @fd2:def-power).
 3. \( e^x = \exp x \) for every \( x \in \nR \).
 :::
 :::
 
 ::: {.idea}
-Show that \( a^{m/n} \) is a non-negative number whose \( n \)-th power is \( a^m \); the uniqueness of roots does the rest.
+Show that \( a^{1/n} \) is a non-negative number whose \( n \)-th power is \( a \); the uniqueness of roots makes it \( \sqrt[n]{a} \). Then take the \( m \)-th power.
 :::
 
 ::: {.proof}
-(a) By the definition of real powers, \( b \coloneqq a^{m/n} = \exp((m/n) \log a) \), and \( b > 0 \) by @prp-exp-first-consequences (b). By part (e) of the same proposition, used twice,
+(a) By the definition of real powers, \( c \coloneqq a^{1/n} = \exp((1/n) \log a) \), and \( c > 0 \) by @prp-exp-first-consequences (b). By part (e) of the same proposition, with the integer \( n \),
 \[
-b^n = \exp\Bigl(n \cdot \frac mn \log a\Bigr) = \exp(m \log a) = \bigl(\exp(\log a)\bigr)^m = a^m ,
+c^n = \exp\Bigl(n \cdot \frac 1n \log a\Bigr) = \exp(\log a) = a .
 \]
-with \( a^m \) read as in the statement. Part (e) covers \( m < 0 \) with the convention \( u^{-k} = 1/u^k \). So \( b \ge 0 \) and \( b^n = a^m \), where \( a^m > 0 \). By the uniqueness in @lem-reals-nth-root (b), \( b = \sqrt[n]{a^m} \).
+So \( c \ge 0 \) and \( c^n = a \). By the uniqueness in @lem-reals-nth-root (b), \( c = \sqrt[n]{a} \). By part (e) again, now with \( (1/n) \log a \) in place of \( x \) and the integer \( m \),
+\[
+a^{m/n} = \exp\Bigl(m \cdot \frac 1n \log a\Bigr) = c^m = (\sqrt[n]{a})^m ,
+\]
+and part (e) states \( c^m \) with the integer powers of @def-integer-power when \( m < 0 \).
 
-(b) At \( n = 1 \), \( \sqrt[1]{a^m} \) is the unique \( b \ge 0 \) with \( b^1 = a^m \), which is \( a^m \) itself.
+(b) At \( n = 1 \), \( \sqrt[1]{a} \) is the unique \( b \ge 0 \) with \( b^1 = a \), which is \( a \) itself. So (a) gives \( a^{m/1} = a^m \).
 
 (c) By @prp-log-rules (a), \( e^x = \exp(x \log e) = \exp(x \cdot 1) = \exp x \).
 
@@ -354,7 +358,7 @@ Is \( 4^{1/2} = 2 \)? Answer from @prp-real-power-consistent.
 :::
 
 ::: {.solution}
-Yes. By (a) with \( m = 1 \), \( n = 2 \), \( 4^{1/2} = \sqrt{4^1} \), the unique non-negative real number whose square is \( 4 \). Since \( 2 \ge 0 \) and \( 2^2 = 4 \), that number is \( 2 \).
+Yes. By (a) with \( m = 1 \), \( n = 2 \), \( 4^{1/2} = (\sqrt 4)^1 = \sqrt 4 \), the unique non-negative real number whose square is \( 4 \). Since \( 2 \ge 0 \) and \( 2^2 = 4 \), that number is \( 2 \).
 :::
 
 The laws of exponents now come in one line each, because each is a law of \( \exp \) or of \( \log \) in disguise. For whole-number exponents they are school rules: \( 2^3 \cdot 2^2 = 8 \cdot 4 = 32 = 2^5 \), and \( (2^3)^2 = 64 = 2^6 \). The proposition says that they hold for every real exponent.
@@ -424,7 +428,7 @@ A small case first. Split \( 10 \) into two halves. By the addition rule, \( \ex
 :::
 
 ::: {.idea}
-For (a), split \( x \) into \( k + 1 \) equal parts and apply the tangent-line bound to each: \( \exp x = \exp(x/(k + 1))^{k+1} \ge (1 + x/(k + 1))^{k+1} \). Dropping the \( 1 \) costs only strictness. For (b), apply \( \log t \le t - 1 \) not at \( x \) but at \( x^{1/m} \), which is much smaller.
+For (a), split \( x \) into \( k + 1 \) equal parts and apply the tangent-line bound to each: \( \exp x = \exp(x/(k + 1))^{k+1} \ge (1 + x/(k + 1))^{k+1} \). Dropping the \( 1 \) loses a little, and gives a strict inequality. For (b), apply \( \log t \le t - 1 \) not at \( x \) but at \( x^{1/m} \), which is much smaller.
 :::
 
 ::: {.proof}
@@ -441,7 +445,7 @@ If \( M > 0 \) and \( x > M(k + 1)^{k+1} \), then \( x > 0 \), \( x^k > 0 \) and
 Now let \( \varepsilon > 0 \) and \( x > 4/\varepsilon^2 \), and take \( m = 2 \). Here \( x^{1/2} = \sqrt x \) by @prp-real-power-consistent (a). Since \( \sqrt x \ge 0 \) and \( (\sqrt x)^2 = x > (2/\varepsilon)^2 \), we get \( \sqrt x > 2/\varepsilon \), because squares of non-negative numbers keep order. So \( 2 < \varepsilon \sqrt x \) and \( 2\sqrt x < \varepsilon \sqrt x \sqrt x = \varepsilon x \). Hence \( \log x < 2\sqrt x < \varepsilon x \).
 
 ::: {.uses}
-@lem-reals-nth-root (a) (powers keep order). @fd2:prp-power-laws (c) (power of a quotient). @def-real-power (\( \log(a^x) = x \log a \)). @fd3:prp-ordered-ring-rules (g) (comparing squares).
+@lem-reals-nth-root (a) (powers keep order). @fd2:prp-power-laws (c) (power of a product). @def-integer-power, @prp-integer-power-laws (d) (\( (1/u)^n = 1/u^n \)). @def-real-power (\( \log(a^x) = x \log a \)). @fd3:prp-ordered-ring-rules (g) (comparing squares).
 :::
 :::
 
@@ -457,7 +461,7 @@ The thresholds are explicit: \( \exp x > 1000\, x^2 \) once \( x > 1000 \cdot 27
 These questions are about the proof of @thm-exp-unique.
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Which of (E1), (E2), (E3) does the proof use, including through @prp-exp-first-consequences?
+1. Which of the addition rule (E1), the tangent-line bound (E2) and the value property (E3) does the proof use, including through @prp-exp-first-consequences?
 2. Where does Bernoulli's inequality enter, and at which real number is it applied?
 3. Write out the two bounds on \( e \) that the proof gives at \( x = 1 \), \( n = 2 \).
 4. Take \( x = -3 \) and \( n = 2 \). Which step of the upper-bound argument fails? Is its conclusion \( (1 + x/n)^n \le \exp x \) still true for this pair?
@@ -516,7 +520,7 @@ because \( 2 \cdot 117649 = 235298 > 233280 = 5 \cdot 46656 \). The upper bound 
 \[
 e \le \Bigl(1 - \frac16\Bigr)^{-6} = \Bigl(\frac65\Bigr)^{6} = \frac{46656}{15625} < 3 ,
 \]
-because \( 46656 < 46875 = 3 \cdot 15625 \). Hence \( 2.5 < e < 3 \). Smaller \( n \) is not enough: at \( n = 5 \) the upper bound is \( (5/4)^5 = 3125/1024 > 3 \).
+because \( 46656 < 46875 = 3 \cdot 15625 \). Hence \( 2.5 < e < 3 \). Smaller \( n \) is not enough: at \( n = 2, 3, 4, 5 \) the upper bound \( (n/(n - 1))^n \) is \( 4 \), \( 27/8 \), \( 256/81 \), \( 3125/1024 \), all above \( 3 \).
 :::
 
 ::: {#exr-exponential-and-logarithm-b2}
@@ -533,11 +537,11 @@ Prove each true statement and give a counterexample to each false one.
 :::
 
 ::: {.solution}
-(a) **True.** Let \( x \ge 0 \) and \( n \in \nZ_{>0} \) with \( n > x \). By the binomial theorem in the commutative ring \( \nR \) (@thm-binomial-commutative-ring), \( (1 + x/n)^n \) is a sum of non-negative terms. Among them are \( 1 \), \( n \cdot x/n = x \) and \( \binom n2 x^2/n^2 = (1 - 1/n) x^2/2 \). Dropping the others,
+(a) **True.** Let \( x \ge 0 \) and \( n \in \nZ_{>0} \) with \( n > x \) and \( n \ge 2 \). By the binomial theorem in the commutative ring \( \nR \) (@thm-binomial-commutative-ring), \( (1 + x/n)^n \) is a sum of non-negative terms. Among them are \( 1 \), \( n \cdot x/n = x \) and \( \binom n2 x^2/n^2 = (1 - 1/n) x^2/2 \). Dropping the others,
 \[
 \exp x \ge \Bigl(1 + \frac xn\Bigr)^{n} \ge 1 + x + \frac{x^2}{2} - \frac{x^2}{2n} ,
 \]
-where the first inequality is the upper-bound half of @thm-exp-unique. Suppose \( \delta \coloneqq 1 + x + x^2/2 - \exp x > 0 \). Then \( x \ne 0 \), since at \( x = 0 \) we have \( \delta = 0 \). The display gives \( x^2/(2n) \ge \delta \) for every \( n > x \). By @fd3:prp-archimedean-reciprocal there is \( n > x \) with \( 1/n < 2\delta/x^2 \), a contradiction. So \( \delta \le 0 \).
+where the first inequality is the upper-bound half of @thm-exp-unique. Suppose \( \delta \coloneqq 1 + x + x^2/2 - \exp x > 0 \). Then \( x \ne 0 \), since at \( x = 0 \) we have \( \delta = 0 \). The display gives \( x^2/(2n) \ge \delta \) for every integer \( n \ge 2 \) with \( n > x \). By @fd3:prp-archimedean-reciprocal there is \( n \ge 2 \) with \( n > x \) and \( 1/n < 2\delta/x^2 \), a contradiction. So \( \delta \le 0 \).
 
 (b) **True.** By @prp-log-rules (b), (a) and (c), \( \log x = \log(e \cdot x/e) = 1 + \log(x/e) \le 1 + (x/e - 1) = x/e \).
 
@@ -563,7 +567,7 @@ Here are lines of the lower estimate in the proof of @thm-exp-unique, shuffled, 
 5. So \( (1 + x/n)^n \ge (1 - x^2/n^2)^n \exp x \).
 6. Bernoulli's inequality at \( -x^2/n^2 \ge -1 \) gives \( (1 - x^2/n^2)^n \ge 1 - x^2/n \).
 7. Hence \( (1 + x/n)^n \ge \exp x - x^2 \exp x / n \).
-8. (D1) By (E2), \( \exp x \ge 1 + x \), so \( (1 + x/n)^n \ge 1 + x \).
+8. (D1) By the tangent-line bound, \( \exp x \ge 1 + x \), so \( (1 + x/n)^n \ge 1 + x \).
 9. (D2) Bernoulli's inequality at \( x^2/n^2 \) gives \( (1 - x^2/n^2)^n \ge 1 + x^2/n \).
 :::
 :::
@@ -579,18 +583,18 @@ Each line may come only after the lines it uses. Line (ii) uses (i). Line (iii) 
 ::: {#exr-exponential-and-logarithm-c1}
 [C1: Find the error]
 
-Here is a proof that \( \exp \) is strictly increasing: "Let \( x < y \). By (E1), \( \exp y - \exp x = \exp(y - x) \), and by (E2), \( \exp(y - x) \ge 1 + (y - x) > 0 \). So \( \exp y > \exp x \)." Is the conclusion true? Does the argument prove it? Name the line that fails, and show that it fails with numbers.
+Here is a proof that \( \exp \) is strictly increasing: "Let \( x < y \). By the addition rule, \( \exp y - \exp x = \exp(y - x) \), and by the tangent-line bound, \( \exp(y - x) \ge 1 + (y - x) > 0 \). So \( \exp y > \exp x \)." Is the conclusion true? Does the argument prove it? Name the line that fails, and show that it fails with numbers.
 :::
 
 ::: {.solution}
-The conclusion is true: it is @prp-exp-first-consequences (c). The argument does not prove it. The first equality is false: the addition rule (E1) gives the **quotient** \( \exp y / \exp x = \exp(y - x) \), not the difference. At \( x = 0 \), \( y = 1 \): \( \exp 1 - \exp 0 = e - 1 \), while \( \exp(1 - 0) = e \), and \( e - 1 \ne e \). The correct line is \( \exp y - \exp x = \exp x \cdot (\exp(y - x) - 1) \). After it, the rest of the argument, with \( \exp x > 0 \), goes through.
+The conclusion is true: it is @prp-exp-first-consequences (c). The argument does not prove it. The first equality is false: the addition rule (E1) gives the **quotient** \( \exp y / \exp x = \exp(y - x) \), not the difference. At \( x = 0 \), \( y = 1 \): \( \exp 1 - \exp 0 = e - 1 \), while \( \exp(1 - 0) = e \), and \( e - 1 \ne e \). The correct line is \( \exp y - \exp x = \exp x \cdot (\exp(y - x) - 1) \). After it, the tangent-line bound gives \( \exp(y - x) - 1 \ge y - x > 0 \), and multiplying by \( \exp x > 0 \) finishes.
 :::
 
 ::: {#exr-exponential-and-logarithm-c2}
 [C2: Chapter check: the logarithm is slower than every root]
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Prove that for every \( \varepsilon > 0 \) there is \( X \) such that \( \log x < \varepsilon x \) for every \( x > X \).
+1. Prove that for every \( \varepsilon > 0 \) there is \( X \) such that \( \log x < \varepsilon \sqrt x \) for every \( x > X \).
 2. Let \( m \in \nZ_{>0} \). Prove that for every \( \varepsilon > 0 \) there is \( X \) such that \( \log x < \varepsilon x^{1/m} \) for every \( x > X \).
 :::
 :::
@@ -598,25 +602,28 @@ The conclusion is true: it is @prp-exp-first-consequences (c). The argument does
 ::: {.solution}
 [Hint 1]
 
-For (a), compare \( \log x \) with a root of \( x \), using the tangent-line bound through @prp-log-rules (c).
+For (a), compare \( \log x \) with a root of \( x \) smaller than \( \sqrt x \), using @prp-exp-beats-powers (b).
 :::
 
 ::: {.solution}
 [Hint 2]
 
-For (b), put \( y \coloneqq x^{1/m} \) and apply (a) to \( y \) with a smaller \( \varepsilon \).
+For (b), put \( y \coloneqq x^{2/m} \). What is \( \log x \) in terms of \( \log y \)?
 :::
 
 ::: {.solution}
-(a) Let \( \varepsilon > 0 \) and \( X \coloneqq 4/\varepsilon^2 \); it depends on \( \varepsilon \) only. For \( x > X \), @prp-exp-beats-powers (b) gives \( \log x < 2 \sqrt x < \varepsilon x \). The first inequality is \( \log x \le m(x^{1/m} - 1) \) at \( m = 2 \). That comes from \( \log t \le t - 1 \), which is @prp-log-rules (c), itself the tangent-line bound with \( \log \) applied. The second holds because \( \sqrt x > 2/\varepsilon \).
+(a) Let \( \varepsilon > 0 \) and \( X \coloneqq (4/\varepsilon)^4 = 256/\varepsilon^4 \); it depends on \( \varepsilon \) only. Let \( x > X \), and put \( s \coloneqq x^{1/4} \). By @prp-exp-beats-powers (b) with \( m = 4 \), \( \log x < 4s \). By @prp-real-power-consistent (a), \( s = \sqrt[4]{x} \), so \( s \ge 0 \) and \( s^4 = x > (4/\varepsilon)^4 \). Hence \( s > 4/\varepsilon \), because fourth powers of non-negative numbers keep order. So \( 4 < \varepsilon s \) and \( 4s < \varepsilon s \cdot s \). Finally \( s \cdot s = x^{1/4 + 1/4} = x^{1/2} = \sqrt x \), by the addition law for real powers and @prp-real-power-consistent (a). Hence \( \log x < 4s < \varepsilon \sqrt x \).
 
-(b) Let \( \varepsilon > 0 \). Put \( Y \coloneqq 4m^2/\varepsilon^2 \), the threshold of (a) for \( \varepsilon/m \), and \( X \coloneqq Y^m \); both depend on \( \varepsilon \) and \( m \) only. Let \( x > X \) and \( y \coloneqq x^{1/m} > 0 \). The map \( a \mapsto a^{1/m} \) is strictly increasing on \( (0, \infty) \) by @prp-real-power-laws (f). So \( y > X^{1/m} = (Y^m)^{1/m} = Y \), by part (b) of the same proposition for the last step. By (a) applied to \( y \) and \( \varepsilon/m \), \( \log y < (\varepsilon/m) y \). Also \( y^m = x^{(1/m) m} = x \), by the law \( (a^x)^y = a^{xy} \) and @prp-real-power-consistent (b). By the definition of real powers, \( \log x = \log(y^m) = m \log y \), so \( \log x < \varepsilon y = \varepsilon x^{1/m} \).
+(b) Let \( \varepsilon > 0 \) and put \( \delta \coloneqq 2\varepsilon/m \). Let \( Y \coloneqq 256/\delta^4 = 16m^4/\varepsilon^4 \), the threshold of (a) for \( \delta \), and \( X \coloneqq Y^{m/2} \); both depend on \( \varepsilon \) and \( m \) only. Let \( x > X \) and \( y \coloneqq x^{2/m} > 0 \). The map \( a \mapsto a^{2/m} \) is strictly increasing on \( (0, \infty) \) by @prp-real-power-laws (f). So \( y > X^{2/m} = Y^{(m/2)(2/m)} = Y^1 = Y \), by part (b) of the same proposition and @prp-real-power-consistent (b). By (a) applied to \( y \) and \( \delta \), \( \log y < \delta \sqrt y \). Here \( \sqrt y = y^{1/2} = x^{(2/m)(1/2)} = x^{1/m} \), by @prp-real-power-consistent (a) and the law \( (a^x)^y = a^{xy} \). By the definition of real powers, \( \log y = (2/m) \log x \), so
+\[
+\log x = \frac m2 \log y < \frac m2 \, \delta \, x^{1/m} = \varepsilon x^{1/m} .
+\]
 
 **What a complete answer needs** (10 points)
 
-- 3: a bound \( \log x \le c\sqrt x \) (or \( \le c\, x^{1/k} \)) with the borrowed fact or log rule it comes from named.
-- 3: an explicit \( X \) depending on \( \varepsilon \) only, and a check that \( x > X \) gives \( \log x < \varepsilon x \).
-- 2: the substitution \( y = x^{1/m} \) in (b), with the monotonicity of \( a \mapsto a^{1/m} \) cited to pass from \( x > X \) to \( y > Y \).
+- 3: a bound \( \log x \le c\, x^{1/k} \) with \( k > 2 \), with the result or log rule it comes from named.
+- 3: an explicit \( X \) depending on \( \varepsilon \) only, and a check that \( x > X \) gives \( \log x < \varepsilon \sqrt x \).
+- 2: passes from \( x > X \) to the bound in (b), for example by the substitution \( y = x^{2/m} \) with the monotonicity of \( a \mapsto a^{2/m} \) cited, or directly by @prp-exp-beats-powers (b) with \( 2m \) and \( X = (2m/\varepsilon)^{2m} \).
 - 2: the quantifiers in the order \( \varepsilon \), then \( X \), then every \( x > X \).
 
 A route through @prp-exp-beats-powers (a) (put \( x = \exp t \)) earns the same points step for step.
@@ -624,20 +631,20 @@ A route through @prp-exp-beats-powers (a) (put \( x = \exp t \)) earns the same 
 **Slips that lose the step** (0 for the step): \( X \) chosen depending on \( x \); any use of derivatives, l'Hôpital's rule or limits of functions.
 
 ::: {.uses}
-@prp-real-power-laws (b) (\( (a^x)^y = a^{xy} \)). @def-real-power (\( \log(a^x) = x \log a \)).
+@lem-reals-nth-root (a) (powers keep order). @prp-real-power-laws (a), (b) (\( a^{x+y} = a^x a^y \), \( (a^x)^y = a^{xy} \)). @def-real-power (\( \log(a^x) = x \log a \)).
 :::
 :::
 
 <!-- dependency ledger
-sec-exponential-and-logarithm (claim): sqrt 2 is not m/n with m, n in Z | fd3:thm-no-rational-square-two transported by fd3:thm-rationals-embed-ordered-field (cited in prose, one per sentence)
+sec-exponential-and-logarithm (claim): sqrt 2 is not m/n with m, n in Z | sqrt 2 irrational, recalled from 8.3 (Quick check 3 solution: fd3:thm-no-rational-square-two transported by fd3:thm-rationals-embed-ordered-field)
 sec-exponential-and-logarithm (claim): constant 1 satisfies (E1) not (E2); 1 + x satisfies (E2) not (E1) (3 vs 4) | inline arithmetic
 sec-exponential-and-logarithm (claim): Nothing in Sections 8.1-8.4, and nothing earlier in this section, uses ax-exponential | blueprint merged-ch08-f47.md ("What this chapter borrows"); checkable by grep for ax-exponential, exp, log, e in 8.1-8.4
 sec-exponential-and-logarithm (claim): exp is continuous and its own derivative (warning, not used) | AN1.10 (where the box is paid); nothing depends on it
 ax-exponential (claim): paid in AN1.10 (named in the box); its R is ours by fd3:thm-cof-uniqueness | AN1.10 (borrow)
 ax-exponential (claim): names in words: (E1) addition rule, (E2) tangent-line bound, (E3) value property; later proofs name the facts by these words | the sentence after the box
-sec-exponential-and-logarithm (claim): u^(-n) := 1/u^n for u != 0, n >= 1; u^(-n) = (1/u)^n | inline, fd2:prp-power-laws (c)
-prp-exp-first-consequences (proof): field and order rules (zero products, unique inverses, squares >= 0, multiplying by a positive, reciprocals reverse order), induction | Uses line: fd3:lem-field-fraction-rules (a), (d), fd3:prp-ordered-ring-rules (c), (e), fd3:prp-ordered-field-halves (c), fd1:ax-induction (moved from prose)
-prp-exp-first-consequences (proof): a non-zero element >= 0 is > 0; x/2 + x/2 = x | fd3:prp-ordered-field-halves (a), (b)
+sec-exponential-and-logarithm (claim): u^(-n) = (u^(-1))^n = (1/u)^n is Chapter 1's integer power; u^(-n) = 1/u^n | def-integer-power, prp-integer-power-laws (d) (cited in prose)
+prp-exp-first-consequences (proof): field and order rules (zero products, unique inverses, non-zero squares > 0, multiplying by a positive, reciprocals reverse order), 1/u^n = u^(-n) in (e), induction | Uses line: fd3:lem-field-fraction-rules (a), (d), fd3:prp-ordered-ring-rules (c), (e), fd3:prp-ordered-field-halves (c), prp-integer-power-laws (d), fd1:ax-induction (moved from prose)
+prp-exp-first-consequences (proof): x/2 + x/2 = x for every real x | inline field arithmetic (x/2 = x * 2^(-1), distributivity)
 prp-exp-first-consequences (proof): (O4) product of positives is positive | fd3 ordered-field axiom (O4)
 exm-method-archimedes-squeeze (claim): instance before the method: sup {1 - 1/n : n >= 1} = 1 | inline; Archimedean property as in step 3 (fd3:prp-archimedean-reciprocal)
 exm-method-archimedes-squeeze (proof): L upper bound and no smaller upper bound => L = sup S | fd2:def-order-supremum
@@ -648,28 +655,30 @@ thm-exp-unique (proof): (1 + x/n)^n = (1 - x^2/n^2)^n (1 - x/n)^(-n) | fd2:prp-p
 thm-exp-unique (proof): (1 + x/n)(1 - x/n) = 1 - x^2/n^2; 1 - x^2/n >= 1 - (x^2 + 1)/n | inline field arithmetic
 thm-exp-unique (proof): uniqueness: the proof of prp-exp-first-consequences uses only (E1), (E2) | inline (meta-claim checkable on the page: the proof of prp-exp-first-consequences names only the addition rule (E1) and the tangent-line bound (E2)); fd2:prp-function-equality (Uses line, moved from prose)
 def-euler-number (claim): (1 + 1/n)^n <= e <= (1 - 1/n)^(-n), n >= 2; 9/4, 4 at n = 2 | thm-exp-unique proof; verify/ch08/def-euler-number.py
-sec-exponential-and-logarithm (claim): exp(2x) satisfies (E1), (E3), fails (E2) at -1/2; e^2 != e since e > 1 | inline; def-euler-number bounds (e >= 9/4)
+sec-exponential-and-logarithm (claim): exp(2x) satisfies (E1), (E3), fails (E2) at -1/2; exp 2 = e * e != e since e > 1 | prp-exp-first-consequences (e) (cited in prose); def-euler-number bounds (e >= 9/4)
 def-logarithm (claim): exp: R -> (0, inf) bijective; inverse strictly increasing; graph reflection | thm-monotone-inverse (8.2), fd2:prp-strictly-monotone-injective
 prp-log-rules (proof): definitions of e and log; squaring keeps order between non-negatives; t^2 > 0 for t != 0 | Uses line: def-euler-number, def-logarithm, lem-reals-nth-root (a), fd3:prp-ordered-ring-rules (e) (moved from prose)
 prp-log-rules (proof): (1 + t/2)^2 = 1 + t + t^2/4 | inline arithmetic
 sec-exponential-and-logarithm (claim): 1/2 < log 2 < 1 | prp-log-rules (c) at x = 2; verify/ch08/prp-log-rules.py
 def-real-power (claim): instance before the definition: 2^sqrt2 := exp(sqrt2 log 2), 8^(1/3) := exp((1/3) log 8), the second is 2 | def-real-power (applied); prp-real-power-consistent (a) later in the section
-prp-real-power-consistent (proof): b = a^(m/n) = exp((m/n) log a) | def-real-power (Uses line, moved from prose)
+prp-real-power-consistent (proof): c = a^(1/n) = exp((1/n) log a), a^(m/n) = exp(m (1/n) log a) | def-real-power (Uses line, moved from prose)
+prp-real-power-consistent (proof): c^n = a so c = nth root of a; a^(m/n) = c^m, the rational power (sqrt[n]{a})^m with integer powers | prp-exp-first-consequences (e), lem-reals-nth-root (b), def-rational-power, def-integer-power (cited in prose)
 prp-real-power-laws (claim): school instance 2^3 2^2 = 32 = 2^5, (2^3)^2 = 64 = 2^6 | inline arithmetic
 prp-real-power-laws (proof): composite of strictly increasing / decreasing maps | prp-monotone-algebra (e) (8.2)
 prp-real-power-laws (proof): multiplying by a positive / negative number keeps / reverses order | fd3:prp-ordered-ring-rules (c), (d) (Uses line, moved from prose)
 prp-real-power-laws (proof): log strictly increasing, log 1 = 0 | def-logarithm, prp-log-rules (a)
 sec-exponential-and-logarithm (claim): check after prp-real-power-laws: sqrt 2 > 1 and sqrt 2 < 2 from squares | fd3:prp-ordered-ring-rules (g) (Uses line, moved from prose)
 prp-exp-beats-powers (claim): instance before the proposition: exp 10 = (exp 5)^2 >= 36, against exp 10 >= 11 | inline; prp-exp-first-consequences (e), lem-reals-nth-root (a); verify/ch08/prp-exp-beats-powers.py
-prp-exp-beats-powers (proof): t^(k+1) = x^(k+1)/(k+1)^(k+1) | fd2:prp-power-laws (c)
+prp-exp-beats-powers (proof): t^(k+1) = x^(k+1)/(k+1)^(k+1) | fd2:prp-power-laws (c) (power of a product), def-integer-power, prp-integer-power-laws (d) ((1/u)^n = 1/u^n) (Uses line)
 prp-exp-beats-powers (proof): powers keep order; log(x^(1/m)) = (1/m) log x; sqrt x > 2/eps from squares | Uses line: lem-reals-nth-root (a), def-real-power, fd3:prp-ordered-ring-rules (g) (moved from prose)
 sec-exponential-and-logarithm (claim): thresholds 27,000 for exp x > 1000 x^2 and 40,000 for log x < x/100 | verify/ch08/prp-exp-beats-powers.py
 exr-exponential-and-logarithm-a1 (solution): exp 3 > 4 strictly | proof of prp-log-rules (c), first step
-exr-exponential-and-logarithm-b1 (solution): (7/6)^6 = 117649/46656, (6/5)^6 = 46656/15625, (5/4)^5 = 3125/1024 and comparisons | verify/ch08/exr-exponential-and-logarithm-b1.py
+exr-exponential-and-logarithm-b1 (solution): (7/6)^6 = 117649/46656, (6/5)^6 = 46656/15625, upper bounds 4, 27/8, 256/81, 3125/1024 at n = 2..5 and comparisons | verify/ch08/exr-exponential-and-logarithm-b1.py
 exr-exponential-and-logarithm-b2 (solution): binomial terms of (1 + x/n)^n are >= 0 for x >= 0; C(n,2)/n^2 = (1 - 1/n)/2 | thm-binomial-commutative-ring; verify/ch08/exr-exponential-and-logarithm-b2.py
 exr-exponential-and-logarithm-b2 (solution): x^i <= x^d for x >= 1, i <= d | fd2:prp-power-laws (e) (Uses line, moved from prose)
 exr-exponential-and-logarithm-b2 (solution): triangle inequality for a finite sum; |a_i x^i| = |a_i| x^i for x >= 1 | fd3:prp-absolute-value-ordered-field (e) with induction on the number of terms (inline; Uses line, moved from prose)
 exr-exponential-and-logarithm-b2 (solution): p(x) = sum a_i x^i as the value of the polynomial function | def-polynomial-rational-function (8.1), def-polynomial-evaluation
 exr-exponential-and-logarithm-b3 (solution): partial order of lines and distractor (D2) sign | inline
-exr-exponential-and-logarithm-c2 (solution): x = y^m from y = x^(1/m) | prp-real-power-laws (b), prp-real-power-consistent (b); log(y^m) = m log y by def-real-power (Uses line, moved from prose)
+exr-exponential-and-logarithm-c2 (solution): (a) log x < 4 x^(1/4) and x^(1/4) > 4/eps for x > 256/eps^4; x^(1/4) x^(1/4) = sqrt x | prp-exp-beats-powers (b), prp-real-power-consistent (a) (cited in prose); prp-real-power-laws (a), lem-reals-nth-root (a) (Uses line)
+exr-exponential-and-logarithm-c2 (solution): (b) y = x^(2/m) > X^(2/m) = Y; sqrt y = x^(1/m); log y = (2/m) log x | prp-real-power-laws (b), (f), prp-real-power-consistent (a), (b) (cited in prose); prp-real-power-laws (b), def-real-power (Uses line); verify/ch08/exr-exponential-and-logarithm-c2.py
 -->

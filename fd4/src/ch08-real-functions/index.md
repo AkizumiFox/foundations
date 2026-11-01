@@ -2,9 +2,9 @@
 
 Analysis studies functions of a real variable, and it studies them with a short list of questions. Where does the function increase? What is the largest value it takes on a set? Does it have an inverse? What happens when it is combined with the integer part of a number, which jumps at every integer? This chapter fixes the objects and answers every such question that does not need a limit.
 
-A real function is a rule with a domain and a graph, and functions can be added, multiplied and composed. A strictly monotone function has an inverse, and the inverse is monotone too. When the values of a function on a set are bounded, they have a supremum, and there are rules for comparing suprema. The exponential, the logarithm and real powers are built from three facts about the exponential that *Analysis on the Real Line* proves. The last section collects strange functions on which later definitions of continuity and the integral will be tested.
+A real function is a rule with a domain and a graph, and functions can be added, multiplied and composed. A strictly monotone function has an inverse, and the inverse is monotone too. When the values of a function on a non-empty set are bounded, they have a supremum, and there are rules for comparing suprema. The exponential, the logarithm and real powers are built from three facts about the exponential that *Integration, Series, and Function Spaces* proves. The last section collects strange functions on which later definitions of continuity and the integral will be tested.
 
-Part III begins here. Its three chapters, 8, 9 and 10, are the tools that *Analysis on the Real Line* assumes on its first page. They use the algebra of Parts I and II only a little, mostly for polynomials.
+Part III of this volume begins here. Its three chapters, 8, 9 and 10, are the tools that *Real Numbers, Metric Spaces, and Derivatives* assumes on its first page. They use the algebra of Part II (Chapters 4–7) only a little, mostly for polynomials.
 
 **What you need.**
 
@@ -12,7 +12,7 @@ Part III begins here. Its three chapters, 8, 9 and 10, are the tools that *Analy
 - The supremum of an ordered set, from *Sets and Functions*, Chapter 5 (@fd2:def-order-supremum).
 - The real numbers as a complete ordered field, with the absolute value, the Archimedean property and the integer part, from *Number Systems: From \(\nN\) to \(\nR\)* (@fd3:thm-cof-complete-archimedean).
 - Roots and rational powers, from Chapter 1 (@def-rational-power).
-- Polynomial functions, from Chapters 6 and 7, mostly in Section 8.3 (@def-polynomial-evaluation).
+- Polynomial functions, from Chapters 6 and 7, in Sections 8.1, 8.3 and 8.6 (@def-polynomial-evaluation).
 
 **Time.** About 25 hours if you read the main text and do every A exercise and one B and one C exercise per section; about 40 hours for everything.
 

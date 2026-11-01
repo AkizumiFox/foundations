@@ -26,7 +26,7 @@ It is **monotone on \( A \)** if it is increasing on \( A \) or decreasing on \(
 \]
 :::
 
-In words: we pick two points of \( A \), name the smaller one \( x \), and ask that the values come in the same order (\( \le \) or \( < \)) or in the reverse order (\( \ge \) or \( > \)). Since \( x \le y \) means \( x < y \) or \( x = y \), an increasing function also satisfies \( x \le y \Rightarrow f(x) \le f(y) \), and likewise for the other three kinds.
+In words: we pick two points of \( A \), name the smaller one \( x \), and ask that the values come in the same order (\( \le \) or \( < \)) or in the reverse order (\( \ge \) or \( > \)). Since \( x \le y \) means \( x < y \) or \( x = y \), an increasing function also satisfies \( x \le y \Rightarrow f(x) \le f(y) \), and a decreasing one satisfies \( x \le y \Rightarrow f(x) \ge f(y) \). A strictly monotone function satisfies the same non-strict forms; the strict inequality fails at \( x = y \).
 
 Negating quantifier by quantifier (@fd1:prp-quantifier-negation), "\( f \) is **not** increasing on \( A \)" is
 \[
@@ -82,7 +82,7 @@ Quotients are brought over a common denominator first.
 | \( f(y) - f(x) = (y - x) \, Q(x, y) \) | \( Q(x, y) > 0 \): what is left to show |
 :::
 
-The first worked example is a quotient, where the obvious argument fails.
+For a quotient, the obvious argument fails.
 
 ::: {#exm-mobius-increasing}
 [A quotient of two increasing functions]
@@ -123,9 +123,7 @@ The numerator is positive since \( y - x > 0 \). The denominator is positive, si
 :::
 :::
 
-The scratch work found the factor \( 3(y - x) \); the proof starts from it and signs each piece once. Nothing in the proof mentions the naive attempt.
-
-The second example must split the domain into two pieces, and then also compare a point of one piece with a point of the other.
+When the formula changes at \( 0 \), the domain splits there into two pieces, and a point of one piece must also be compared with a point of the other.
 
 ::: {#exm-squash-function}
 [The squashing function]
@@ -161,6 +159,8 @@ Its image is \( (-1, 1) \). Every value satisfies \( \abs{\sigma(x)} = \abs{x}/(
 ## Building monotone functions from others
 
 The method handles one formula at a time. Most functions are built from simpler ones by the operations of @def-function-algebra, and monotonicity passes through some of them.
+
+A small case first. On \( \nR \), \( x \mapsto x \) and \( x \mapsto x^3 \) are strictly increasing. For \( x < y \) we have \( x < y \) and \( x^3 < y^3 \), and adding the two inequalities gives \( x + x^3 < y + y^3 \) (@fd3:prp-ordered-ring-rules (b)). So \( x \mapsto x + x^3 \) is strictly increasing, with no factoring at all. Rule (a) below says this for any two functions.
 
 ::: {#prp-monotone-algebra}
 [Rules for Monotone Functions]
@@ -234,9 +234,9 @@ The directions \( (\Rightarrow) \) are the definition. For the way back, suppose
 
 \( (\Leftarrow) \) of the first: let \( f(x) < f(y) \), and suppose \( x < y \) fails. Since \( \le \) is a total order with strict part \( < \) (@fd3:prp-ordered-field-halves (a)), \( y \le x \). By \( (\Rightarrow) \) of the second equivalence, \( f(y) \le f(x) \). With \( f(x) < f(y) \) this gives \( f(x) = f(y) \) by antisymmetry, against \( f(x) \ne f(y) \). So \( x < y \).
 
-\( (\Leftarrow) \) of the second: let \( f(x) \le f(y) \), and suppose \( x \le y \) fails. By totality, \( y \le x \) and \( y \ne x \), that is, \( y < x \); so \( f(y) < f(x) \), against \( f(x) \le f(y) \). So \( x \le y \).
+\( (\Leftarrow) \) of the second: let \( f(x) \le f(y) \), and suppose \( x \le y \) fails. By totality, \( y \le x \); and \( y \ne x \), since \( y = x \) would give \( x \le y \). So \( y < x \), and then \( f(y) < f(x) \), against \( f(x) \le f(y) \). So \( x \le y \).
 
-(b) By @prp-monotone-algebra (b), \( -f \) is strictly increasing on \( A \). Negating reverses inequalities, so \( f(x) > f(y) \iff -f(x) < -f(y) \), and likewise for \( \ge \). Apply (a) to \( -f \).
+(b) If \( u < v \) in \( A \), then \( f(u) > f(v) \), so \( -f(u) < -f(v) \), since negating reverses inequalities. Thus \( -f \) is strictly increasing on \( A \). By the same rule, \( f(x) > f(y) \iff -f(x) < -f(y) \), and likewise for \( \ge \). Apply (a) to \( -f \).
 
 ::: {.uses}
 @fd3:prp-ordered-ring-rules (a) (negating reverses inequalities).
@@ -311,9 +311,9 @@ The direct attempt applies \( f^{-1} \) to \( u < v \), but nothing is known abo
 Let \( f \) be strictly decreasing. Part (a) is proved word for word as above, since @fd2:prp-strictly-monotone-injective covers decreasing maps too. Part (c) used only \( f \circ f^{-1} = \id_{f(A)} \) and \( f^{-1} \circ f = \id_A \). For (b), let \( u < v \) in \( f(A) \) and \( x \coloneqq f^{-1}(u) \), \( y \coloneqq f^{-1}(v) \). Then \( f(y) = v > u = f(x) \), and @prp-strictly-monotone-order-reflecting (b), applied to the pair \( y, x \), gives \( y < x \), that is, \( f^{-1}(v) < f^{-1}(u) \). So \( f^{-1} \) is strictly decreasing.
 :::
 
-Where is totality used? Once, inside @prp-strictly-monotone-order-reflecting, where "not \( x < y \)" became \( y \le x \). Each hypothesis has a job. Without "strictly", (a) fails: a constant on \( [0, 1] \) is increasing and not injective. Without cutting the codomain to \( f(A) \), (a) fails as well: \( \sigma \colon \nR \to \nR \) has no inverse, because nothing goes back from \( 1 \).
+Where is totality used? In part (b), inside @prp-strictly-monotone-order-reflecting, where "not \( x < y \)" became \( y \le x \). The injectivity cited in (a) rests on it too: @fd2:prp-strictly-monotone-injective is proved by trichotomy. Each hypothesis has a job. Without "strictly", (a) fails: a constant on \( [0, 1] \) is increasing and not injective. Without cutting the codomain to \( f(A) \), (a) fails as well: \( \sigma \colon \nR \to \nR \) has no inverse, because nothing goes back from \( 1 \).
 
-Part (c) says that the graph of \( f^{-1} \) is the graph of \( f \) reflected in the line \( y = x \), the inverse relation of *Sets and Functions*. To draw an inverse, draw \( f \) and swap the axes.
+Part (c) says that the graph of \( f^{-1} \) is the graph of \( f \) reflected in the line \( y = x \), the inverse relation that *Sets and Functions* defined (@fd2:def-relation). To draw an inverse, draw \( f \) and swap the axes.
 
 ::: {.check}
 Find the image of \( g \) of @exm-mobius-increasing, and its inverse.
@@ -323,7 +323,7 @@ Find the image of \( g \) of @exm-mobius-increasing, and its inverse.
 Writing \( g(x) = 1 - 3/(x + 2) \) shows that \( g \) takes exactly the values in \( (-\infty, 1) \): as \( x \) runs over \( (-2, \infty) \), \( x + 2 \) runs over \( (0, \infty) \), and so does \( 3/(x + 2) \). Solving \( v = (x - 1)/(x + 2) \) gives \( g^{-1}(v) = (1 + 2v)/(1 - v) \) on \( (-\infty, 1) \). Check: with \( x = (1 + 2v)/(1 - v) \), \( x + 2 = 3/(1 - v) > 0 \) and \( x - 1 = 3v/(1 - v) \), so \( g(x) = v \). By @thm-monotone-inverse, \( g^{-1} \) is strictly increasing.
 :::
 
-The theorem turns the first half of @lem-reals-nth-root into the statement that roots form a monotone function, and extends roots to negative numbers when the exponent is odd.
+Chapter 1 proved directly that roots keep order (@lem-root-rules (d)). The theorem gives a second proof, with the root as an inverse function, and the new part is that roots extend to negative numbers when the exponent is odd.
 
 ::: {#exm-odd-roots}
 [Roots as inverse functions]
@@ -332,16 +332,16 @@ Let \( n \in \nN \) with \( n \ge 1 \), and let \( p_n \colon \nR \to \nR \), \(
 :::
 
 ::: {.solution}
-*On \( [0, \infty) \).* By @lem-reals-nth-root (a), \( p_n \) is strictly increasing on \( [0, \infty) \). Its image is \( [0, \infty) \): a power of a non-negative number is non-negative, and every \( a \ge 0 \) is \( b^n \) for \( b = \sqrt[n]{a} \ge 0 \) (@lem-reals-nth-root (b)). By @thm-monotone-inverse, applied to the restriction of \( p_n \) to \( [0, \infty) \), the inverse \( [0, \infty) \to [0, \infty) \) is strictly increasing, and it sends \( a \) to the unique \( b \ge 0 \) with \( b^n = a \), which is \( \sqrt[n]{a} \).
+*On \( [0, \infty) \).* By @lem-reals-nth-root (a), \( p_n \) is strictly increasing on \( [0, \infty) \). Its image is \( [0, \infty) \): a power of a non-negative number is non-negative (\( 0^n = 0 \), and \( 0 < t^n \) for \( t > 0 \) by @lem-reals-nth-root (a) with \( s = 0 \)), and every \( a \ge 0 \) is \( b^n \) for \( b = \sqrt[n]{a} \ge 0 \) (@lem-reals-nth-root (b)). By @thm-monotone-inverse, applied to the restriction of \( p_n \) to \( [0, \infty) \), the inverse \( [0, \infty) \to [0, \infty) \) is strictly increasing, and it sends \( a \) to the unique \( b \ge 0 \) with \( b^n = a \), which is \( \sqrt[n]{a} \).
 
-*Odd \( n \) on \( \nR \).* Let \( n = 2k + 1 \) with \( k \in \nN \). Then \( (-x)^n = \bigl((-x)^2\bigr)^k (-x) = -x^n \) for every real \( x \), by the power laws and \( (-x)^2 = x^2 \). Let \( x < y \). If \( 0 \le x \), then \( x^n < y^n \) by @lem-reals-nth-root (a). If \( y \le 0 \), then \( 0 \le -y < -x \), so \( -y^n = (-y)^n < (-x)^n = -x^n \). Negating reverses this inequality, so \( x^n < y^n \). If \( x < 0 < y \), then \( x^n = -(-x)^n < 0 < y^n \), since a power of a positive number is positive. So \( p_n \) is strictly increasing on \( \nR \). Its image is \( \nR \): \( a \ge 0 \) is \( (\sqrt[n]{a})^n \), and \( a < 0 \) is \( \bigl(-\sqrt[n]{-a}\bigr)^n = -(-a) \). By @thm-monotone-inverse, \( p_n \) is a bijection \( \nR \to \nR \) with a strictly increasing inverse. Its value at \( a \) is the **one** real \( s \) with \( s^n = a \); we write it \( \sqrt[n]{a} \), for every real \( a \) when \( n \) is odd. By the formula for the image, \( \sqrt[n]{-a} = -\sqrt[n]{a} \) for \( a \ge 0 \), and so for every real \( a \).
+*Odd \( n \) on \( \nR \).* Let \( n = 2k + 1 \) with \( k \in \nN \). Then \( (-x)^n = \bigl((-x)^2\bigr)^k (-x) = -x^n \) for every real \( x \), by the power laws and \( (-x)^2 = x^2 \). Let \( x < y \). If \( 0 \le x \), then \( x^n < y^n \) by @lem-reals-nth-root (a). If \( y \le 0 \), then \( 0 \le -y < -x \), so \( -y^n = (-y)^n < (-x)^n = -x^n \). Negating reverses this inequality, so \( x^n < y^n \). If \( x < 0 < y \), then \( x^n = -(-x)^n < 0 < y^n \), since a power of a positive number is positive (@lem-reals-nth-root (a) with \( s = 0 \)). So \( p_n \) is strictly increasing on \( \nR \). Its image is \( \nR \): \( a \ge 0 \) is \( (\sqrt[n]{a})^n \), and \( a < 0 \) is \( \bigl(-\sqrt[n]{-a}\bigr)^n = -(-a) \). By @thm-monotone-inverse, \( p_n \) is a bijection \( \nR \to \nR \) with a strictly increasing inverse. Its value at \( a \) is the **one** real \( s \) with \( s^n = a \); we write it \( \sqrt[n]{a} \), for every real \( a \) when \( n \) is odd. By the formula for the image, \( \sqrt[n]{-a} = -\sqrt[n]{a} \) for \( a \ge 0 \), and so for every real \( a \).
 
 ::: {.uses}
-@prp-power-laws-commutative-ring (a), (b) (power laws); @fd3:prp-ring-algebra (c) (\( (-x)^2 = x^2 \)); @fd3:prp-ordered-ring-rules (a) (negating reverses inequalities).
+@prp-power-laws-commutative-ring (a), (b) (power laws); @fd3:prp-ring-algebra (c) (\( (-x)^2 = x^2 \)); @fd3:prp-ordered-ring-rules (a) (negating reverses inequalities); @lem-reals-nth-root (a) with \( s = 0 \) (powers of positive numbers are positive).
 :::
 :::
 
-For even \( n \) the second half fails: \( p_2 \) is not injective on \( \nR \), since \( (-1)^2 = 1^2 \), and \( -1 \) is not a value. So \( \sqrt[n]{a} \) for \( a < 0 \) is defined **only for odd** \( n \).
+For even \( n = 2k \) the second half fails: \( (-1)^n = \bigl((-1)^2\bigr)^k = 1 = 1^n \), so \( p_n \) is not injective on \( \nR \), and \( x^n = (x^2)^k \ge 0 \) for every \( x \), so \( -1 \) is not a value. So \( \sqrt[n]{a} \) for \( a < 0 \) is defined **only for odd** \( n \).
 
 ```{=latex}
 \begin{center}
@@ -392,7 +392,7 @@ The image is \( (-\infty, 0) \cup [1, \infty) \): values at \( x < 0 \) are the 
 ::: {.remark}
 [Looking ahead]
 
-*Analysis on the Real Line* proves that a continuous injective function on an interval is strictly monotone. Both words are needed: the swap of @exm-injective-not-monotone lives on an interval but jumps, and \( 1/x \) does not jump but lives on \( \nR \setminus \{0\} \), which is not an interval. The function \( H \) shows that a strictly monotone function may still jump.
+*Real Numbers, Metric Spaces, and Derivatives*, Chapter 7 proves that a continuous injective function on an interval is strictly monotone. Both words are needed: the swap of @exm-injective-not-monotone lives on an interval but jumps, and \( 1/x \) does not jump but lives on \( \nR \setminus \{0\} \), which is not an interval. The function \( H \) shows that a strictly monotone function may still jump.
 :::
 
 ## Exercises
@@ -405,9 +405,9 @@ The image is \( (-\infty, 0) \cup [1, \infty) \): values at \( x < 0 \) are the 
 These parts are about the proof of @thm-monotone-inverse.
 
 ::: {.enumerate options="label=(\alph*)"}
-1. Run the proof for \( f(x) = x^2 \) on \( A = [0, 2] \): find \( f(A) \) and \( f^{-1} \), and say what \( x \), \( y \) are in part (b) for \( u = 1 \), \( v = 4 \).
-2. Which cited result gives the injectivity in part (a)?
-3. Give the idea of the proof of part (b) in two sentences.
+1. Run the proof for \( f(x) = x^2 \) on \( A = [0, 2] \): find \( f(A) \) and \( f^{-1} \), and say what \( x \), \( y \) are in part (b) of the theorem for \( u = 1 \), \( v = 4 \).
+2. Which cited result gives the injectivity in part (a) of the theorem?
+3. Give the idea of the proof of part (b) of the theorem in two sentences.
 :::
 :::
 
@@ -433,7 +433,7 @@ Classify each function as strictly increasing, strictly decreasing, or neither, 
 :::
 
 ::: {.solution}
-(a) Neither: \( -1 < 0 \) with \( 1 > 0 \), so not increasing; \( 0 < 1 \) with \( 0 < 1 \), so not decreasing.
+(a) Neither: \( -1 < 0 \) but \( f(-1) = 1 > 0 = f(0) \), so not increasing; \( 0 < 1 \) and \( f(0) = 0 < 1 = f(1) \), so not decreasing.
 
 (b) Strictly increasing, by @lem-reals-nth-root (a) with \( n = 2 \).
 
@@ -478,7 +478,7 @@ Prove each true statement and refute each false one with a counterexample.
 
 (c) False. Take \( x^3 \), strictly increasing (@fd2:exm-maps-from-calculus (a)), and \( -x \), strictly decreasing. The sum \( h(x) = x^3 - x \) has \( h(-1) = 0 \), \( h(-1/2) = 3/8 \), \( h(0) = 0 \): it goes up and then down, so it is neither increasing (\( -1/2 < 0 \), \( 3/8 > 0 \)) nor decreasing (\( -1 < -1/2 \), \( 0 < 3/8 \)).
 
-(d) False. The method gives
+(d) False. Let \( f(x) = x^3 - x \). The method gives
 \[
 f(y) - f(x) = (y - x)\bigl(x^2 + xy + y^2 - 1\bigr) ,
 \]
@@ -496,7 +496,7 @@ Let \( s \colon \nR \to \nR \), \( s(x) = x\abs{x} \). Prove that \( s \) is str
 \[
 s(y) - s(x) = -y^2 + x^2 = (x - y)(x + y) > 0 ,
 \]
-as both factors are negative. If \( x < 0 \le y \), then \( s(x) = -x^2 < 0 \le y^2 = s(y) \).
+as both factors are negative (@fd3:prp-ordered-ring-rules (d)). If \( x < 0 \le y \), then \( s(x) = -x^2 < 0 \le y^2 = s(y) \).
 
 *Image \( \nR \):* \( v \ge 0 \) is \( s(\sqrt v) \), and \( v < 0 \) is \( s(-\sqrt{-v}) = -(-v) \). So \( s^{-1}(v) = \sqrt v \) for \( v \ge 0 \) and \( s^{-1}(v) = -\sqrt{-v} \) for \( v < 0 \): this is the inverse whose two composites were checked in *Sets and Functions* (@fd2:exm-two-sided-inverses (c)). It is strictly increasing by @thm-monotone-inverse, with no further computation.
 :::
@@ -548,9 +548,9 @@ If \( x < f(x) \), then, \( f \) being increasing, \( f(x) \le f(f(x)) = x \), a
 Without "increasing" the claim fails: \( x \mapsto -x \) satisfies \( -(-x) = x \) for every \( x \), and it is not the identity, since it sends \( 1 \) to \( -1 \).
 
 **What a complete answer needs.** (10 points)
-- 2: fixes an arbitrary \( x \) and splits into the three cases of trichotomy.
-- 3: in the case \( f(x) > x \), applies the monotonicity of \( f \) to the inequality between \( x \) and \( f(x) \) and uses \( f(f(x)) = x \) to reach a contradiction.
-- 2: handles the case \( f(x) < x \), or says that it is symmetric with the reason.
+- 2: fixes an arbitrary \( x \) and compares \( x \) with \( f(x) \) (the three cases of trichotomy, or the two of totality).
+- 3: in one case (\( f(x) > x \), or \( x \le f(x) \)), applies the monotonicity of \( f \) to the inequality between \( x \) and \( f(x) \) and uses \( f(f(x)) = x \) to reach a contradiction or, by antisymmetry, \( f(x) = x \).
+- 2: handles the other case, or says that it is symmetric with the reason.
 - 1: concludes \( f = \id_{\nR} \) from equality at every point.
 - 2: gives a function with \( f \circ f = \id_{\nR} \), \( f \ne \id_{\nR} \), and checks both properties.
 
@@ -567,16 +567,23 @@ exm-mobius-increasing (example): a product of positive elements is positive | (O
 exm-mobius-increasing (example): common denominator; reciprocal of a positive is positive; positive difference | fd3:lem-field-fraction-rules, fd3:prp-reciprocal-order (a), fd3:prp-ordered-ring-rules (a), uses line
 exm-squash-function (example): the two difference formulas; sigma(v/(1 - |v|)) = v | verify/ch08/exm-squash-function.py; image cited from fd2:exm-fraction-map
 exm-squash-function (example): 1/((1 + x)(1 + y)) > 0 when x, y >= 0 | fd3:prp-reciprocal-order (a), (O4); inline
+exm-squash-function (example): |x| >= 0, so 1 + |x| >= 1 > 0 | fd3:prp-absolute-value-ordered-field (a), inline
+exm-squash-function (example): trichotomy on R, the three cases cover every pair | fd3:prp-ordered-field-halves (a), inline
+prp-monotone-algebra (claim): (small case) x + x^3 strictly increasing by adding inequalities | fd2:exm-maps-from-calculus (a), fd3:prp-ordered-ring-rules (b), cited
 prp-monotone-algebra (proof): increasing gives x <= y => f(x) <= f(y) (used in (e)) | remark after def-monotone-function, stated in words; def-monotone-function, uses line
 prp-monotone-algebra (proof): adding, scaling, negating, multiplying and inverting inequalities | fd3:prp-ordered-ring-rules (a)-(c), fd3:prp-ordered-field-halves (c), (d), fd3:prp-reciprocal-order (b); stated in words, uses line
 prp-strictly-monotone-order-reflecting (proof): f(x) < f(y) and f(y) <= f(x) is impossible | antisymmetry of the total order, fd3:prp-ordered-field-halves (a)
-prp-strictly-monotone-order-reflecting (proof): (b) f(x) > f(y) iff -f(x) < -f(y) | fd3:prp-ordered-ring-rules (a), stated in words, uses line
+prp-strictly-monotone-order-reflecting (proof): (b) f(x) > f(y) iff -f(x) < -f(y); -f strictly increasing when f strictly decreasing | fd3:prp-ordered-ring-rules (a), stated in words, uses line
+thm-monotone-inverse (claim): (aftermath) the injectivity in (a) rests on trichotomy | fd2:prp-strictly-monotone-injective, cited
 thm-monotone-inverse (proof): (a) f(A) is the image; two-sided inverse | fd2:def-image, fd2:def-inverse-function, named in words, uses line
 prp-strictly-monotone-order-reflecting (claim): (quick check) in a partial order elements may be incomparable | fd2:def-partial-order, prose only
 exm-injective-not-monotone (example): the swap satisfies f(f(x)) = x | inline (three cases)
-thm-monotone-inverse (claim): (aftermath) the graph of f^{-1} is the inverse relation | fd2 (Sets and Functions, the inverse relation of a bijection), named in prose; nothing rests on it
+thm-monotone-inverse (claim): (aftermath) the graph of f^{-1} is the inverse relation | fd2:def-relation, cited; nothing rests on it
 thm-monotone-inverse (claim): (quick check) image of g is (-oo, 1); g^{-1}(v) = (1 + 2v)/(1 - v) | verify/ch08/exm-mobius-increasing.py
-exm-odd-roots (example): a power of a non-negative (positive) real is non-negative (positive) | the first fact in the proof of lem-reals-nth-root (induction with fd3:prp-ordered-ring-rules (c)), cited
+exm-odd-roots (claim): (lead-in) Chapter 1 proved directly that roots keep order | lem-root-rules (d), cited in prose
+exm-odd-roots (example): a power of a non-negative (positive) real is non-negative (positive) | lem-reals-nth-root (a) with s = 0, and 0^n = 0 for n >= 1; cited, uses line
+exm-odd-roots (claim): (aftermath) for even n = 2k, (-1)^n = 1 = 1^n and x^n = (x^2)^k >= 0 | prp-power-laws-commutative-ring (b); x^2 >= 0 and lem-reals-nth-root (a) with s = 0; inline
+exm-strange-jump (claim): (looking ahead) a continuous injective function on an interval is strictly monotone | Real Numbers, Metric Spaces, and Derivatives, Chapter 7 (AN1.6), prose only
 exm-odd-roots (example): (-x)^(2k+1) = ((-x)^2)^k (-x) = -x^(2k+1); (-x)^2 = x^2 | prp-power-laws-commutative-ring (a), (b), fd3:prp-ring-algebra (c), uses line; verify/ch08/exm-odd-roots.py
 exm-odd-roots (example): negating reverses -y^n < -x^n | fd3:prp-ordered-ring-rules (a), stated in words, uses line
 exm-odd-roots (example): every n >= 1 odd is 2k + 1 with k in N | the meaning of "odd" (fd3:cor-integers-even-odd), inline
@@ -585,6 +592,7 @@ exr-monotone-functions-and-inverses-a1 (solution): f([0, 2]) = [0, 4] | lem-real
 exr-monotone-functions-and-inverses-b1 (solution): difference formula (y - x)(xy - 1)/(xy) | verify/ch08/exr-monotone-functions-and-inverses-b1.py
 exr-monotone-functions-and-inverses-b2 (solution): h(-1), h(-1/2), h(0); f(1/2) = -3/8, f(3/5) = -48/125; bracket 0.91 | verify/ch08/exr-monotone-functions-and-inverses-b2.py
 exr-monotone-functions-and-inverses-b3 (solution): s(-sqrt(-v)) = v; s difference on x < y <= 0 | verify/ch08/exr-monotone-functions-and-inverses-b3.py; inverse checks cited from fd2:exm-two-sided-inverses (c)
+exr-monotone-functions-and-inverses-b3 (solution): a product of two negatives is positive | fd3:prp-ordered-ring-rules (d), cited
 exr-monotone-functions-and-inverses-c1 (solution): f(y) - f(x) = (y - x)(y^2 + xy + x^2 - 3) | verify/ch08/exr-monotone-functions-and-inverses-c1.py
 exr-monotone-functions-and-inverses-c2 (solution): trichotomy on R | fd3:prp-ordered-field-halves (a), not cited by label in the solution; inline
 -->

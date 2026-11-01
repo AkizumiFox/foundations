@@ -1,6 +1,6 @@
 # Bounded Functions and Their Suprema
 
-*Number Systems* proved that \( \nR \) is a complete ordered field (@fd3:thm-reals-complete-ordered-field). By the definition of completeness (@fd3:def-complete-ordered-field), every non-empty set of real numbers that is bounded above has a supremum. A supremum is a least upper bound, as in *Sets and Functions* (@fd2:def-order-supremum). A real function \( f \colon D \to \nR \) hands us such sets, one for each \( A \subseteq D \): the set \( f(A) \) of its values on \( A \). This section asks when \( f(A) \) is bounded, names its supremum and infimum, and fixes one method for computing them: bound every value, then find a witness. It ends with rules for comparing suprema without computing them.
+*Number Systems* proved that \( \nR \) is a complete ordered field (@fd3:thm-reals-complete-ordered-field). By the definition of completeness (@fd3:def-complete-ordered-field), every non-empty set of real numbers that is bounded above has a supremum. A supremum is a least upper bound, as in *Sets and Functions* (@fd2:def-order-supremum). A real function \( f \colon D \to \nR \) hands us such sets, one for each \( A \subseteq D \): the set \( f(A) \) of its values on \( A \). This section asks when \( f(A) \) is bounded, names its supremum and infimum, and fixes one method for computing them: bound every value, then find a witness. It then gives rules for comparing suprema without computing them, measures the spread of values, and shows that non-constant polynomials are unbounded on \( \nR \).
 
 ## A least upper bound that is never reached
 
@@ -10,13 +10,15 @@ f(0) = 0 , \qquad f(1) = \frac12 , \qquad f(9) = \frac{9}{10} , \qquad f(99) = \
 \]
 Every value is below \( 1 \), since \( x < 1 + x \) and \( 1 + x > 0 \). The values creep toward \( 1 \) and never reach it.
 
-"Its maximum is \( 1 \)" is false: a maximum is a value, and \( 1 \) is not a value of \( f \). "Its least upper bound is \( 1 \)" is true, and proving it takes two halves. First, \( 1 \) bounds every value. Second, no number below \( 1 \) bounds every value. The first half is one line. The second half is the real work, and the first tool of this section turns it into a search for a single point.
+"Its maximum is \( 1 \)" is false: a maximum is a value, and \( 1 \) is not a value of \( f \). "Its least upper bound is \( 1 \)" is true, and proving it takes two halves. First, \( 1 \) bounds every value. Second, no number below \( 1 \) bounds every value. The first half is one line. The second half is the real work, and the epsilon test below turns it into a search for a single point.
 
 ## The infimum and the epsilon test
 
 Suprema come with a mirror image. *Sets and Functions* defined the infimum of a set as its greatest lower bound (@fd2:def-order-supremum), but completeness speaks only of suprema. Reflection in \( 0 \) turns one into the other. For \( A \subseteq \nR \), write \( -A \coloneqq \{ -a : a \in A \} \), the image of \( A \) under \( x \mapsto -x \) (@fd2:exm-sets-of-numbers-as-images).
 
 A small case first. Let \( A = \{ 1, 2, 3 \} \), so \( -A = \{ -1, -2, -3 \} \). The lower bound \( 1 \) of \( A \) becomes the upper bound \( -1 \) of \( -A \). The supremum of \( -A \) is \( -1 \), and \( \inf A = 1 = -(-1) \).
+
+*Number Systems* set part (b) of the next proposition as an exercise (@fd3:exr-the-least-upper-bound-property-b1). We prove it here so that later sections can cite it.
 
 ::: {#prp-real-infimum}
 [Infimum by Reflection]
@@ -39,7 +41,7 @@ Let \( A \subseteq \nR \).
 :::
 :::
 
-Every statement about suprema thus has a twin about infima; below we write out only the supremum half.
+Every statement about suprema thus has a twin about infima, obtained by reflection.
 
 The second half of "least upper bound" says that nothing smaller is an upper bound. In \( \nR \) "smaller" can be measured by a positive gap \( \varepsilon \), and "not an upper bound" means that some element sticks out above. That gives a test with an explicit witness.
 
@@ -61,6 +63,10 @@ Likewise, if \( i \) is a lower bound of \( A \), then \( i = \inf A \) if and o
 \( (\Leftarrow) \) Assume the condition, and let \( u \) be an upper bound of \( A \). Suppose \( u < s \), and put \( \varepsilon \coloneqq s - u > 0 \). The condition gives \( a \in A \) with \( a > s - \varepsilon = u \), against \( u \) being an upper bound. So \( s \le u \) by totality. Hence \( s \) is an upper bound, (S1), and is at most every upper bound, (S2): it is the supremum.
 
 For the infimum, apply the supremum statement to \( -A \) and the upper bound \( -i \) (@prp-real-infimum (a)). By the proof of @prp-real-infimum (b), \( i = \inf A \) if and only if \( -i = \sup(-A) \); and \( -a > -i - \varepsilon \) if and only if \( a < i + \varepsilon \).
+
+::: {.uses}
+@fd2:def-order-supremum (S1, S2).
+:::
 :::
 
 The element \( a \) is a **witness** for \( \varepsilon \). It may depend on \( \varepsilon \), and it usually does: a smaller \( \varepsilon \) asks for an element closer to the top.
@@ -96,7 +102,7 @@ Before the next definition, one more small case. On \( A = \{ 0, 1, 2 \} \) the 
 ::: {#def-sup-of-function}
 [Supremum and Infimum of a Function]
 
-Let \( f \colon D \to \nR \), let \( A \subseteq D \) be **non-empty**, and let \( f \) be bounded above on \( A \). The **supremum of \( f \) on \( A \)** is
+Let \( f \colon D \to \nR \) and let \( A \subseteq D \) be **non-empty**. If \( f \) is bounded above on \( A \), the **supremum of \( f \) on \( A \)** is
 \[
 \sup_A f \coloneqq \sup f(A) ,
 \]
@@ -165,7 +171,7 @@ The proof runs forwards: bound, then choose \( x \) from \( \varepsilon \), then
 :::
 
 ::: {.solution}
-*Bound every value.* Let \( x \ge 0 \). Then \( 1 + x > 0 \) and \( x < 1 + x \); multiplying by \( 1/(1 + x) > 0 \) (@fd3:prp-ordered-ring-rules (c)) gives \( f(x) < 1 \).
+*Bound every value.* Let \( x \ge 0 \). Then \( 1 + x > 0 \) and \( x < 1 + x \); multiplying by \( 1/(1 + x) > 0 \) (@fd3:prp-reciprocal-order (a), @fd3:prp-ordered-ring-rules (c)) gives \( f(x) < 1 \).
 
 *Find a witness.* Let \( \varepsilon > 0 \) and put \( x \coloneqq 1/\varepsilon \), which lies in \( A \). Then
 \[
@@ -204,7 +210,7 @@ Completing the square, \( x(1 - x) = \frac14 - \bigl( x - \frac12 \bigr)^2 \).
 Hence \( \sup_{[0, 1]} g = 1/4 \), attained at \( 1/2 \): it is \( \max_{[0, 1]} g \). For the infimum, on \( [0, 1] \) both \( x \ge 0 \) and \( 1 - x \ge 0 \), so \( g(x) \ge 0 \), and \( g(0) = 0 \): \( \min_{[0, 1]} g = 0 \).
 :::
 
-An attained value is its own witness, which is why no \( \varepsilon \) appears in the second solution.
+An attained value is its own witness, which is why the witness in the second solution does not depend on \( \varepsilon \).
 
 ::: {.check}
 Find \( \sup \) and \( \inf \) of \( x^2 \) on \( (-1, 2) \), and of \( \ind_{\nQ} \colon \nR \to \{0, 1\} \) (@fd2:def-indicator) on \( [0, 1] \). Which are attained?
@@ -213,12 +219,12 @@ Find \( \sup \) and \( \inf \) of \( x^2 \) on \( (-1, 2) \), and of \( \ind_{\n
 ::: {.solution}
 For \( x^2 \): the values on \( (-1, 2) \) form \( [0, 4) \), so \( \sup = 4 \), not attained (\( x^2 = 4 \) needs \( x = \pm 2 \)), and \( \inf = 0 \), attained at \( 0 \).
 
-For \( \ind_{\nQ} \): \( \sup = 1 \), attained at any rational point such as \( 0 \), and \( \inf = 0 \), attained at any irrational point of \( [0, 1] \). One is \( \sqrt2/2 \), with \( \sqrt2 \) from @fd3:prp-cof-square-roots: it lies in \( [0, 1] \) since \( 0 \le \sqrt 2 \le 2 \). If \( \sqrt2/2 = q \in \nQ \), then \( \sqrt2 = 2q \) would be rational with square \( 2 \). The copy of \( \nQ \) in \( \nR \) respects products and is injective (@fd3:thm-rationals-embed-ordered-field), so \( (2q)^2 = 2 \) would hold in \( \nQ \). That is impossible, since no rational number has square \( 2 \) (@fd3:thm-no-rational-square-two).
+For \( \ind_{\nQ} \): \( \sup = 1 \), attained at any rational point such as \( 0 \), and \( \inf = 0 \), attained at any irrational point of \( [0, 1] \). One is \( \sqrt2/2 \), with \( \sqrt2 \) from @fd3:prp-cof-square-roots: it lies in \( [0, 1] \) since \( 0 \le \sqrt 2 \le 2 \). First, \( \sqrt 2 \) is irrational. If \( \sqrt 2 = q \in \nQ \), then \( q^2 = 2 \) in \( \nR \). The copy of \( \nQ \) in \( \nR \) respects products and is injective (@fd3:thm-rationals-embed-ordered-field), so \( q^2 = 2 \) would hold in \( \nQ \). That is impossible, since no rational number has square \( 2 \) (@fd3:thm-no-rational-square-two). Then \( \sqrt2/2 \) is irrational too: \( \sqrt2/2 = q \in \nQ \) would make \( \sqrt 2 = 2q \) rational.
 :::
 
 ## Rules for suprema of functions
 
-Suprema are compared more often than they are computed. Each comparison below is one or both halves of the method.
+Suprema are compared more often than they are computed. Each comparison below, except (e), which is reflection, is one or both halves of the method.
 
 A small case first. On \( A = \{ 1, 2 \} \) let \( f \) take the values \( f(1) = 1 \), \( f(2) = 3 \), and let \( g \) take \( g(1) = 2 \), \( g(2) = 2 \). Then \( \sup f = 3 \) and \( \sup g = 2 \). The sum \( f + g \) takes the values \( 3 \) and \( 5 \), so \( \sup (f + g) = 5 = 3 + 2 \). The function \( 2f \) takes \( 2 \) and \( 6 \), so \( \sup (2f) = 6 = 2 \cdot 3 \).
 
@@ -399,7 +405,7 @@ If \( B = \{ b_0 \} \) is a singleton, the inner supremum is \( f(a, b_0) \), an
 ::: {.remark}
 [Looking ahead]
 
-*Analysis on the Real Line* calls the number \( \sup_A f - \inf_A f \) of @prp-sup-oscillation the oscillation of \( f \) on \( A \), and measures integrability with it.
+*Integration, Series, and Function Spaces*, Chapter 2, calls the number \( \sup_A f - \inf_A f \) of @prp-sup-oscillation the oscillation of \( f \) on \( A \), and measures integrability with it.
 :::
 
 ## Exercises
@@ -409,41 +415,30 @@ If \( B = \{ b_0 \} \) is a singleton, the inner supremum is \( f(a, b_0) \), an
 ::: {#exr-bounds-and-suprema-a1}
 [A1]
 
-This item is about the proof of @prp-sup-oscillation.
+Parts (a)–(c) are about the proof of @prp-sup-oscillation. Parts (d)–(f) are true or false: give a reason or a counterexample (here \( A \) is non-empty and \( f \) bounded on \( A \)).
 
 ::: {.enumerate options="label=(\alph*)"}
 1. Run the statement on \( f(x) = x^2 \) on \( A = [-1, 2) \): find \( \sup_A f \), \( \inf_A f \) and the supremum of \( \abs{f(x) - f(y)} \). Is that supremum attained?
 2. Which line of the proof uses that \( f \) is bounded below on \( A \)?
 3. State the idea of the proof in two sentences.
+4. \( \sup_A f \in f(A) \).
+5. \( \inf_A f \le \sup_A f \).
+6. \( \sup_A \abs{f} = \max\bigl( \abs{\sup_A f}, \abs{\inf_A f} \bigr) \).
 :::
 :::
 
 ::: {.solution}
 (a) The values of \( x^2 \) on \( [-1, 2) \) form \( [0, 4) \), so \( \sup_A f = 4 \) and \( \inf_A f = 0 \), and the supremum of \( \abs{f(x) - f(y)} \) is \( 4 - 0 = 4 \). It is not attained: both values lie in \( [0, 4) \), so \( \abs{f(x) - f(y)} < 4 \), and equality would need \( f(x) = 4 \), that is, \( x = \pm 2 \), neither of which lies in \( A \).
 
-(b) The choice of \( y \) with \( f(y) < I + \varepsilon/2 \). It needs \( I = \inf_A f \) to exist. @prp-real-infimum (b) supplies the infimum only for a function bounded below. The infimum version of @prp-real-sup-approximation then gives \( y \). (The bounding half also uses \( I \le f(y) \).)
+(b) The opening sentence, first: \( I = \inf_A f \) exists only because \( f \) is bounded below on \( A \) (@prp-real-infimum (b)). It is then used in the choice of \( y \) with \( f(y) < I + \varepsilon/2 \). The infimum version of @prp-real-sup-approximation then gives \( y \). (The bounding half also uses \( I \le f(y) \).)
 
 (c) A largest and a smallest value need not exist, so take points whose values are within \( \varepsilon/2 \) of the supremum and of the infimum. Their gap is within \( \varepsilon \) of \( \sup_A f - \inf_A f \), which also bounds every gap.
-:::
 
-::: {#exr-bounds-and-suprema-a2}
-[A2]
+(d) False: @exm-sup-not-attained.
 
-Let \( A \) be non-empty and \( f \) bounded on \( A \). True or false? Give a reason or a counterexample.
+(e) True: pick any \( x \in A \), possible since \( A \ne \emptyset \); then \( \inf_A f \le f(x) \le \sup_A f \).
 
-::: {.enumerate options="label=(\alph*)"}
-1. \( \sup_A f \in f(A) \).
-2. \( \inf_A f \le \sup_A f \).
-3. \( \sup_A \abs{f} = \max\bigl( \abs{\sup_A f}, \abs{\inf_A f} \bigr) \).
-:::
-:::
-
-::: {.solution}
-(a) False: @exm-sup-not-attained.
-
-(b) True: pick any \( x \in A \), possible since \( A \ne \emptyset \); then \( \inf_A f \le f(x) \le \sup_A f \).
-
-(c) True. Write \( S = \sup_A f \), \( I = \inf_A f \), \( m = \max(\abs{S}, \abs{I}) \). *Bound every value:* \( I \le f(x) \le S \) gives \( f(x) \le \abs{S} \le m \) and \( -f(x) \le -I \le \abs{I} \le m \), so \( \abs{f(x)} \le m \). *Find a witness*, for \( \varepsilon > 0 \). If \( S \ge 0 \) and \( m = \abs{S} = S \), take \( x \) with \( f(x) > S - \varepsilon \); then \( \abs{f(x)} \ge f(x) > m - \varepsilon \). If \( I \le 0 \) and \( m = \abs{I} = -I \), take \( x \) with \( f(x) < I + \varepsilon \); then \( \abs{f(x)} \ge -f(x) > m - \varepsilon \). No other case occurs: \( S < 0 \) forces \( I \le S < 0 \), so \( m = \abs{I} = -I \); and \( I > 0 \) forces \( S \ge I > 0 \), so \( m = \abs{S} = S \).
+(f) True. Write \( S = \sup_A f \), \( I = \inf_A f \), \( m = \max(\abs{S}, \abs{I}) \). *Bound every value:* \( I \le f(x) \le S \) gives \( f(x) \le \abs{S} \le m \) and \( -f(x) \le -I \le \abs{I} \le m \), so \( \abs{f(x)} \le m \). *Find a witness*, for \( \varepsilon > 0 \). If \( S \ge 0 \) and \( m = \abs{S} = S \), take \( x \) with \( f(x) > S - \varepsilon \); then \( \abs{f(x)} \ge f(x) > m - \varepsilon \). If \( I \le 0 \) and \( m = \abs{I} = -I \), take \( x \) with \( f(x) < I + \varepsilon \); then \( \abs{f(x)} \ge -f(x) > m - \varepsilon \). No other case occurs: \( S < 0 \) forces \( I \le S < 0 \), so \( m = \abs{I} = -I \); and \( I > 0 \) forces \( S \ge I > 0 \), so \( m = \abs{S} = S \).
 :::
 
 ### B. Practice
@@ -570,7 +565,7 @@ The hypothesis \( f \ge 0 \) is needed: \( f(x) = x \) on \( [-2, 1] \) has \( \
 - 3: chooses the witness tolerance from \( \varepsilon \) (and \( s \)) before taking the witness, and verifies \( f(x)^2 > s^2 - \varepsilon \).
 - 2: handles the cases the choice leaves open (\( s = 0 \), and \( s - \delta < 0 \) or its equivalent in another route).
 
-A route that writes \( f(x)^2 - s^2 = (f(x) - s)(f(x) + s) \) and bounds \( \abs{f(x) + s} \le 2s \) earns the same points for the same steps.
+A route that writes \( f(x)^2 - s^2 = (f(x) - s)(f(x) + s) \) and bounds \( \abs{f(x) + s} \le 2s \) earns the same points for the same steps. A route that bounds \( s \) by \( \sqrt{\sup_A f^2} \), using the least-upper-bound property and squaring non-negative numbers (@fd3:prp-ordered-ring-rules (g)), earns the 3 + 2 points of the witness bullets for those steps.
 
 Slips that lose the step (0 points for it): squaring an inequality between numbers that may be negative; a witness that does not depend on \( \varepsilon \); dividing by \( s \) without treating \( s = 0 \).
 :::
@@ -599,18 +594,19 @@ So \( L(b - a) \) is an upper bound of \( \{ \abs{f(x) - f(y)} : x, y \in [a, b]
 
 <!-- dependency ledger
 prp-real-infimum (proof): l <= a iff -a <= -l (the case of equality added to the strict rule) | fd3:prp-ordered-ring-rules (a) (cited)
-prp-real-sup-approximation (proof): not (a <= t) implies a > t | totality, fd3:prp-ordered-ring-rules (i) (cited)
+prp-real-sup-approximation (proof): not (a <= t) implies a > t | totality, fd3:prp-ordered-ring-rules (i) (cited); fd2:def-order-supremum (S1), (S2) (Uses line)
 def-bounded-function (claim): from L <= f(x) <= U on A, M = max(|L|, |U|) bounds |f| | fd3:prp-absolute-value-ordered-field (c), (d); fd3:prp-ordered-ring-rules (a)
 def-bounded-function (example): 1/(|M| + 1) lies in (0, 1] and its reciprocal is |M| + 1 > M | |M| >= 0 (fd3:prp-absolute-value-ordered-field (a)), fd3:prp-ordered-field-halves (c)
 prp-real-infimum (example): small case A = {1, 2, 3}, -A = {-1, -2, -3}, inf A = 1 = -sup(-A) | inline
+prp-real-infimum (claim): *Number Systems* set (b) as an exercise; proved here so later sections can cite it | fd3:exr-the-least-upper-bound-property-b1 (an exercise, cited in prose only)
 prp-real-sup-approximation (example): small case [0, 1), eps = 1/10 and 1/100: 0.95 > 0.9, 0.995 > 0.99 | inline arithmetic
 def-bounded-function (example): small case x^2 on [-1, 2] lies in [0, 4]; x^2 on {0, 1, 2} takes 0, 1, 4 | |x| <= 2 gives x^2 <= 4 (fd3:prp-ordered-field-halves (d)), squares >= 0 (fd3:prp-ordered-ring-rules (e))
 def-sup-of-function (claim): an attained supremum is the largest value and conversely | fd2:def-order-supremum (S1), (S2), inline
-exm-sup-not-attained (solution): (1/eps)/(1 + 1/eps) = 1/(1 + eps); (1 - eps)(1 + eps) = 1 - eps^2; dividing an inequality by 1 + eps > 0 | fd3:lem-field-fraction-rules; fd3:prp-ordered-ring-rules (c); verify/ch08/exm-sup-not-attained.py
+exm-sup-not-attained (solution): (1/eps)/(1 + 1/eps) = 1/(1 + eps); (1 - eps)(1 + eps) = 1 - eps^2; dividing an inequality by 1 + eps > 0 | fd3:lem-field-fraction-rules; fd3:prp-reciprocal-order (a) (positive reciprocal); fd3:prp-ordered-ring-rules (c); verify/ch08/exm-sup-not-attained.py
 exm-sup-not-attained (example): the hook values f(0), f(1), f(9), f(99), the scratch-work equivalence x > 1/eps - 1, and Quick check 2 (f(1/2) = 1/3) | verify/ch08/exm-sup-not-attained.py
 exm-sup-attained-parabola (solution): x(1 - x) = 1/4 - (x - 1/2)^2; squares are >= 0 | fd3:prp-ordered-ring-rules (e); verify/ch08/exm-sup-attained-parabola.py
 exm-sup-attained-parabola (claim): Quick check 3: x^2 on (-1, 2) takes exactly the values [0, 4) | x^2 = t for t in [0, 4) by sqrt t in [0, 2) (fd3:prp-cof-square-roots); x^2 < 4 by fd3:prp-ordered-ring-rules (g) applied to |x| < 2, with |x|^2 = x^2 (fd3:prp-absolute-value-ordered-field (b)); verify/ch08/exm-sup-attained-parabola.py
-exm-sup-attained-parabola (claim): Quick check 3: 0 <= sqrt 2 <= 2, and sqrt2 = 2q with q rational would give (2q)^2 = 2 in Q | fd3:prp-ordered-ring-rules (g) (sqrt2^2 = 2 <= 4 = 2^2); fd3:thm-rationals-embed-ordered-field (cited)
+exm-sup-attained-parabola (claim): Quick check 3: 0 <= sqrt 2 <= 2; sqrt 2 is irrational (q^2 = 2 in R would give q^2 = 2 in Q), the one place the chapter proves it (8.5 and 8.6 recall it); sqrt2/2 = q would make sqrt 2 = 2q rational | fd3:prp-ordered-ring-rules (g) (sqrt2^2 = 2 <= 4 = 2^2); fd3:thm-rationals-embed-ordered-field (cited)
 thm-sup-function-rules (proof): (d) multiplying an inequality by c > 0 keeps it, also for <= | fd3:prp-ordered-ring-rules (c) (cited), equality case inline
 thm-sup-function-rules (proof): (e) the values of -f on A form -f(A) | fd2:exm-sets-of-numbers-as-images (definition of -A), inline
 thm-sup-function-rules (proof): (g) |g - f| = |f - g| | fd3:prp-absolute-value-ordered-field (b) (cited, Uses line)
@@ -629,7 +625,7 @@ exm-polynomial-unbounded (claim): Quick check 5: |x^3 - 100x| <= 8000 + 2000 on 
 prp-iterated-sup (example): small case, table rows 1, 5 and 3, 2: row tops 5, 3; column tops 3, 5 | inline arithmetic
 prp-iterated-sup (proof): A x B non-empty when A, B are | fd2:def-cartesian-product (cited in 8.1), inline
 exr-bounds-and-suprema-a1 (solution): values of x^2 on [-1, 2) are [0, 4); a difference of two numbers in [0, 4) has absolute value < 4 | as in Quick check 3; fd3:prp-absolute-value-ordered-field (d); verify/ch08/exr-bounds-and-suprema-a1.py
-exr-bounds-and-suprema-a2 (solution): (c) case analysis on the signs of S and I | inline; verify/ch08/exr-bounds-and-suprema-a2.py (sample functions)
+exr-bounds-and-suprema-a1 (solution): (f) case analysis on the signs of S and I | inline; verify/ch08/exr-bounds-and-suprema-a1.py (sample functions)
 exr-bounds-and-suprema-b2 (solution): (c) x(1 - x) <= 1/4 on (0, 1), attained at 1/2 | exm-sup-attained-parabola (cited); verify/ch08/exr-bounds-and-suprema-b2.py
 exr-bounds-and-suprema-b3 (solution): 1/2 - x/(x^2+1) = (x-1)^2/(2(x^2+1)), x/(x^2+1) + 1/2 = (x+1)^2/(2(x^2+1)); h(1) = 1/2, h(-1) = -1/2 | verify/ch08/exr-bounds-and-suprema-b3.py
 exr-bounds-and-suprema-b4 (solution): f(1) + g(0) = 2, f + g = 1 on [0, 1] | inline; verify/ch08/thm-sup-function-rules.py
