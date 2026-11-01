@@ -290,6 +290,8 @@ by the definition, @thm-group-basic-properties (3), the commuting just shown, th
 
 Part (d) needs \( gh = hg \): without it the law fails, and Section 5.4 exhibits a failure with two permutations of \( \{1, 2, 3\} \).
 
+For the group \( F \setminus \{0\} \) of a field \( F \), the two definitions of \( g^n \) use the same recursion and the same rule \( g^{-m} = (g^{-1})^m \), so these powers are the integer powers of Chapter 1 (@def-integer-power). There parts (a), (c) and (d) are parts (a), (b) and (c) of @prp-integer-power-laws.
+
 ::: {.second-reading title="Multiples in Chapters 4 and 5 agree"}
 ::: {.remark}
 For \( n = -m < 0 \), part (b) in additive notation reads \( m \cdot (-a) = -(m \cdot a) \), so the multiple \( (-m) \cdot a = m \cdot (-a) \) of @def-group-integer-power equals \( -(m \cdot a) \). That is how Section 4.5 defines \( n \cdot a \) for \( n < 0 \) in a commutative ring. So "\( n \cdot a \)" means the same thing in Chapters 4 and 5 for every \( n \in \nZ \), and the identities of @lem-integer-multiples apply to the multiples of the group \( (R, +) \). No proof in this chapter rests on this comparison; Exercise R1 of Section 5.5 needs only part (e).
@@ -511,7 +513,8 @@ def-group-list-product (claim): recursion on N for a list extended by e; indepen
 prp-group-list-product-laws (proof): (b) concatenating (g_1..g_k) with the re-indexed rest (g_{k+1}..g_r) gives (g_1..g_r) | definition of the concatenated list (entry r + i is h_i), inline
 prp-group-list-product-laws (proof): strong induction with the property "r >= 1 implies ..." | fd1:thm-strong-induction read on omega (opening line above)
 prp-group-power-laws (proof): exponent arithmetic in Z (m - k + k = m, n - j = m + n, (-m)k = m(-k), mn + m = m(n + 1)); m - k in N for m >= k, k - m in N for m < k | fd3:thm-integers-commutative-ring and fd3:prp-ring-algebra (cited); fd3:thm-integers-ordered-ring (b) for membership in N, used silently
-prp-group-power-laws (proof): (e) n . a = na in Z for n in N | F3.2 §03 paragraph "Multiples" (cited by position, as the blueprint allows)
+prp-group-power-laws (proof): (e) n . a = na in Z for n in N | F3.2 §04 paragraph "Multiples" (cited by position, as the blueprint allows)
+prp-group-power-laws (claim): (remark) on F \ {0} the group powers are def-integer-power's, and (a), (c), (d) are prp-integer-power-laws (a), (b), (c) | F4.6 §05 def-integer-power and prp-integer-power-laws (cited), F4.6 §01 recursion before prp-power-laws-commutative-ring; comparison only, no proof rests on it
 prp-group-power-laws (claim): (sentence after) Section 5.4 exhibits (st)^2 != s^2 t^2 | F5.3 §04 warning (prose pointer within the chapter); nothing here depends on it
 prp-group-power-laws (claim): (remark) F5.2 Section 4.5 defines n . a := -((-n) . a) for n < 0; lem-integer-multiples applies | F5.2 blueprint, its section 5 (lem-integer-multiples (d)); comparison only, no proof rests on it
 prp-units-form-group (claim): Z^x = {1, -1}; [3]^2 = [5]^2 = [7]^2 = [1] in Z/8Z; F^x = F \ {0} | def-ring-unit examples (cited), thm-units-mod-n (cited); verify/ch03/prp-units-form-group.py; (F8) and fd3:prp-ring-algebra (b) (cited)

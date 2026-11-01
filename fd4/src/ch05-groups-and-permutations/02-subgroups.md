@@ -58,7 +58,7 @@ kn - ln = kn + (-l)n = (k - l)n \in n\nZ ,
 \]
 by @fd3:prp-ring-algebra (c), then (F9) with (F6). In the same way \( 0 = a0 + b0 \in a\nZ + b\nZ \), and \( (ax + by) - (ax' + by') = a(x - x') + b(y - y') \). So both are subgroups, by the additive form of the test. For instance \( 2\nZ \) is the set of even integers, and \( 0\nZ = \{0\} \).
 
-*(c)* For \( \{1, -1\} \): \( (-1)(-1) = 1 \) (@fd3:prp-ring-algebra (c)), so each of \( 1, -1 \) is its own inverse, and the products \( 1 \cdot 1 = 1 \), \( 1 \cdot (-1) = -1 \), \( (-1)(-1) = 1 \) lie in the set; so it is a subgroup by the definition. For \( \nQ_{>0} \): it contains \( 1 \), which is positive (@fd3:prp-ordered-ring-rules (e)). Let \( a, b > 0 \). Then \( b^{-1} > 0 \) by @fd3:prp-reciprocal-order (a). So \( ab^{-1} > 0 \) by (O4), \( \nQ \) being an ordered field (@fd3:thm-rationals-ordered-field).
+*(c)* For \( \{1, -1\} \): \( (-1)(-1) = 1 \) (@fd3:prp-ring-algebra (c)), so each of \( 1, -1 \) is its own inverse, and the products \( 1 \cdot 1 = 1 \), \( 1 \cdot (-1) = -1 \), \( (-1)(-1) = 1 \) lie in the set; so it is a subgroup by the definition. For \( \nQ_{>0} \): it contains \( 1 \), which is positive (@fd3:prp-ordered-ring-rules (e)). Let \( a, b > 0 \). Then \( b^{-1} > 0 \) by @fd3:prp-reciprocal-order (a). So \( ab^{-1} > 0 \) by (O4), \( \nQ \) being an ordered field (@fd3:thm-rationals-ordered-field). A positive rational is non-zero, since \( 0 > 0 \) is false by trichotomy, so \( \nQ_{>0} \subseteq \nQ \setminus \{0\} \).
 
 *(d)* For classes, \( [a] - [b] = [a - b] \) (@thm-quotient-ring-by-ideal (b)). For \( a, b \in \{0, 2, 4\} \), the difference \( a - b \) is one of \( 0, \pm 2, \pm 4 \), and \( [-2] = [4] \), \( [-4] = [2] \) in \( \nZ/6\nZ \) (since \( 6 \mid -2 - 4 \) and \( 6 \mid -4 - 2 \)). So every difference lies in \( \{[0], [2], [4]\} \). For \( \{[1], [3]\} \): \( [3]^{-1} = [3] \), since \( [3][3] = [9] = [1] \), so the four quotients \( [1][1]^{-1} = [1] \), \( [1][3]^{-1} = [3] \), \( [3][1]^{-1} = [3] \), \( [3][3]^{-1} = [1] \) lie in the set.
 
@@ -70,7 +70,7 @@ For \( \{1, i, -1, -i\} \): products of two of \( \pm 1 \) are \( \pm 1 \), prod
 
 For \( \nT = \{ u \in \nC : \abs{u} = 1 \} \): by @prp-unit-circle (a), which rests on the modulus rule \( \abs{zw} = \abs{z}\abs{w} \) of @thm-conjugate-properties (d), \( 1 \in \nT \), \( uv \in \nT \) for \( u, v \in \nT \), and each \( u \in \nT \) is non-zero with \( u^{-1} = \conj{u} \in \nT \). So \( \nT \subseteq \nC \setminus \{0\} \), and \( \nT \) is a subgroup by the definition.
 
-For \( \mu_n \), the set of \( z \in \nC \) with \( z^n = 1 \) (Chapter 3's notation, after @exm-roots-of-unity): \( 0 \notin \mu_n \), since \( 0^n = 0^{n-1} \cdot 0 = 0 \ne 1 \) for \( n \ge 1 \); so \( \mu_n \subseteq \nC \setminus \{0\} \), and there \( z^n \) is the power of @def-group-integer-power, defined by the same recursion; for the group \( F \setminus \{0\} \) of a field \( F \) it agrees with the integer power of @def-integer-power. Also \( 1 \in \mu_n \). For \( \zeta, \eta \in \mu_n \), since \( \nC \setminus \{0\} \) is abelian,
+For \( \mu_n \), the set of \( z \in \nC \) with \( z^n = 1 \) (Chapter 3's notation, after @exm-roots-of-unity): \( 0 \notin \mu_n \), since \( 0^n = 0^{n-1} \cdot 0 = 0 \ne 1 \) for \( n \ge 1 \); so \( \mu_n \subseteq \nC \setminus \{0\} \), and there \( z^n \) is the power of @def-group-integer-power, defined by the same recursion as the ring power of Section 1.1 (before @prp-power-laws-commutative-ring). Also \( 1 \in \mu_n \). For \( \zeta, \eta \in \mu_n \), since \( \nC \setminus \{0\} \) is abelian,
 \[
 (\zeta \eta^{-1})^n = \zeta^n (\eta^{-1})^n = \zeta^n (\eta^n)^{-1} = 1 \cdot 1^{-1} = 1 ,
 \]
@@ -400,10 +400,10 @@ Fatal errors (0 for the step): (b) applies @thm-subgroups-of-integers without ch
 def-subgroup (claim): (opening) F5.1 answered the question for ideals | thm-integer-ideals-principal (cited)
 def-subgroup (claim): H is a group with the restricted operation; its identity and inverses are those of G | inline (G1)-(G3) restricted; thm-group-basic-properties (1), (2) (cited)
 exm-subgroups (solution): (a) G is non-empty and closed under a b^{-1} | def-group (cited implicitly through "binary operation"), used silently
-exm-subgroups (solution): (d) 6 | -2 - 4, 6 | -4 - 2; [3][3] = [9] = [1] in Z/8Z | numerals; verify/ch03/exm-subgroups.py; class test of F5.1 §04 (thm-quotient-ring-by-ideal (a), (d)), used silently
-exm-subgroups (solution): (f) i^2 = -1; signs of products of +-1, +-i | def-complex-numbers, prp-reals-embed-complex (F4.1, cited; example only); fd3:prp-ring-algebra (c) in the field C; verify/ch03/exm-subgroups.py
-exm-subgroups (solution): (f) z^n in C (Chapter 3's ring power) is the group power of def-group-integer-power on C \ {0} | same recursion z^0 = 1, z^{k+1} = z^k z; uniqueness in fd2:thm-recursion, used silently; 0^n = 0 for n >= 1 by the recursion and fd3:prp-ring-algebra (b)
-exm-subgroups (claim): (f) mu_n subset of T; Section 3.6 Exercise R2 is an isomorphism | F4.1 blueprint ch01.md (F4.1 §06 B3, R2; prose, no claim rests on them)
+exm-subgroups (solution): (d) 6 | -2 - 4, 6 | -4 - 2; [3][3] = [9] = [1] in Z/8Z | numerals; verify/ch05/exm-subgroups.py; class test of F5.1 §03 (thm-quotient-ring-by-ideal (b) cited; (a) used silently for [-2] = [4])
+exm-subgroups (solution): (f) i^2 = -1; signs of products of +-1, +-i | def-complex-numbers, prp-reals-embed-complex (F4.1, cited; example only); fd3:prp-ring-algebra (c) in the field C; verify/ch05/exm-subgroups.py
+exm-subgroups (solution): (f) z^n in C (Chapter 3's ring power, F4.6 §01's recursion before prp-power-laws-commutative-ring, cited) is the group power of def-group-integer-power on C \ {0} | same recursion z^0 = 1, z^{k+1} = z^k z; uniqueness in fd2:thm-recursion, used silently; 0^n = 0 for n >= 1 by the recursion and fd3:prp-ring-algebra (b)
+exm-subgroups (claim): (f) mu_n subset of T; Section 3.6 Exercise R2 is an isomorphism | F4.1 blueprint ch03.md (F4.1 §06 B3, R2; prose, no claim rests on them)
 exm-subgroups (claim): (e) reused in Section 5.4 | F5.3 §04 lem-permutations-fixing-last-point (prose pointer within the chapter)
 exm-subgroups (claim): (non-examples) 0 - 1 = -1 not in N; 1/2 not in Z | fd3:thm-integers-ordered-ring (b) (N = {x >= 0}) and -1 < 0, used silently; 2m = 1 in Q gives 2m = 1 in Z by the identification of F3.11 §01 (fd3:prp-integers-embed-rationals), used silently; fd3:cor-integers-even-odd (a) (cited)
 exm-subgroups (solution): (c) b > 0 gives b^{-1} > 0 | fd3:prp-reciprocal-order (a) (cited), Q an ordered field by fd3:thm-rationals-ordered-field
@@ -413,19 +413,19 @@ prp-subgroup-intersection (claim): the intersection over the empty family, taken
 prp-subgroup-intersection (proof): e in G, ab^{-1} in G for membership in the intersection taken inside G | def-group (binary operation, (G2)), used silently
 def-subgroup-generated-by-element (claim): <n> = nZ in Z | prp-group-power-laws (e) (cited) with def-integer-linear-combinations
 prp-subgroup-generated-by-element (claim): (remark) cyclic groups in Groups, the chapter "Cyclic Groups" | AL1.2 (prose pointer); nothing depends on it
-prp-subgroup-generated-by-element (claim): (examples) powers of [2] in Z/6Z and of [2], [3] in (Z/7Z)^x; 18 = 2*7 + 4 | numerals; verify/ch03/prp-subgroup-generated-by-element.py
+prp-subgroup-generated-by-element (claim): (examples) powers of [2] in Z/6Z and of [2], [3] in (Z/7Z)^x; 18 = 2*7 + 4 | numerals; verify/ch05/prp-subgroup-generated-by-element.py
 prp-subgroup-generated-by-element (claim): (examples) k . [2] = [2k] and 5 . [5] = [1]: group multiples equal ring multiples | prp-group-power-laws (e) (cited) with thm-integers-mod-n-ring (d) (cited); also in exr-subgroups-b2
 prp-subgroup-generated-by-element (claim): (examples) (Z/7Z)^x = (Z/7Z) \ {[0]} | thm-integers-mod-prime-field (cited); def-ring-unit and its paragraph 'Why this definition' (cited; 0 is never a unit when 1 != 0, fd3:prp-ring-algebra (b))
 prp-subgroup-generated-by-element (claim): (examples) n = qm + r gives mq + r and g^{mq} = (g^m)^q | prp-group-power-laws (a), (c) (cited); ring arithmetic in Z
 thm-subgroups-of-integers (proof): -a in H; r = a - qn in H; 1 . n = n; n Z = m Z gives n | m | subgroup axioms in additive notation; fd2:def-divides read on the constructed Z (as in fd3 Ch 3), used silently
-thm-subgroups-of-integers (claim): (try it first, idea) 15 - 6 = 9, 9 - 6 = 3; the smallest subgroup containing 6 and 15 is 3Z | numerals; verify/ch03/thm-subgroups-of-integers.py
+thm-subgroups-of-integers (claim): (try it first, idea) 15 - 6 = 9, 9 - 6 = 3; the smallest subgroup containing 6 and 15 is 3Z | numerals; verify/ch05/thm-subgroups-of-integers.py
 thm-subgroups-of-integers (claim): (answer to prompt) m - n < m for n > 0 | fd3:prp-ordered-ring-rules (a), used silently
 thm-subgroups-of-integers (claim): (remark) statement of exr-quotient-rings-c2; additive half of thm-integer-ideals-principal (b); every subgroup of Z is an ideal | meta-claim checked against F5.1 §03 C2 (same statement) and the theorem's (b); k(jn) = (kj)n by (F5)
-thm-subgroups-of-integers (claim): (check) 30 = 5*6 = 2*15, 15 = 2*6 + 3; only 15 is a positive multiple of 15 below 30 | numerals; discreteness fd3:thm-integers-ordered-ring (c), used silently; verify/ch03/thm-subgroups-of-integers.py
-exr-subgroups-a1 (solution): 4x + 6y = 2(2x + 3y); 6 = 3*2 + 0 | ring arithmetic; verify/ch03/exr-subgroups-a1.py
+thm-subgroups-of-integers (claim): (check) 30 = 5*6 = 2*15, 15 = 2*6 + 3; only 15 is a positive multiple of 15 below 30 | numerals; discreteness fd3:thm-integers-ordered-ring (c), used silently; verify/ch05/thm-subgroups-of-integers.py
+exr-subgroups-a1 (solution): 4x + 6y = 2(2x + 3y); 6 = 3*2 + 0 | ring arithmetic; verify/ch05/exr-subgroups-a1.py
 exr-subgroups-a1 (solution): (c) a non-zero a in N is positive | fd3:thm-integers-ordered-ring (b) (N = {x >= 0}), used silently
 exr-subgroups-b1 (solution): the dependency chain of the seven lines | the solution's own analysis
-exr-subgroups-b2 (solution): differences mod 12; 25 = 2*12 + 1 | numerals; verify/ch03/exr-subgroups-b2.py
+exr-subgroups-b2 (solution): differences mod 12; 25 = 2*12 + 1 | numerals; verify/ch05/exr-subgroups-b2.py
 exr-subgroups-b3 (solution): comparison with the proof of thm-integers-bezout | meta-claim checked against F5.1 §01 (proof of (b) divides a and b by d; (e) from (b))
 exr-subgroups-c1 (solution): {1, ..., k + 1} has k + 1 elements | fd2:def-finite with the identity bijection, read on omega (F3.1 §04 citing rule, group (i))
 exr-subgroups-c3 (solution): mn > 0 by (O4); comparison with exr-unique-factorization-b2 | fd3:thm-integers-ordered-ring (cited through (O4)); meta-claim checked against F5.1 §02 B2 (divides c by L)
