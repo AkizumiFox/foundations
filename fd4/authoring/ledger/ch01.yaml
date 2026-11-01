@@ -4,672 +4,2519 @@ items:
 - key: prp-power-laws-commutative-ring
   kind: prp
   file: 01-finite-sums.md
-  line: 19
+  line: 31
   hash: e47085cd0348
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/01
+    hash: e47085cd0348
+    date: '2026-11-01'
+    evidence: 'L31-41: four parts checked against L53-70; (d) cites @fd3:lem-field-fraction-rules (d)
+      = no zero divisors, which matches'
+  - stage: S5b
+    verdict: correct
+    by: B:01/01
+    hash: e47085cd0348
+    date: '2026-11-01'
+    evidence: 01:31-42; statement checked against fd2:prp-power-laws (a)-(c) and fd3:lem-field-fraction-rules
+      (d) (no zero divisors); line 77 meta-claim true
 - key: proof:prp-power-laws-commutative-ring
   kind: proof
   file: 01-finite-sums.md
-  line: 36
-  hash: 14fe0700da3e
-  verdicts: []
+  line: 53
+  hash: 51f5b407dad6
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/01
+    hash: 51f5b407dad6
+    date: '2026-11-01'
+    evidence: 'L56-70: each base case and step checked. The facts (m+n)+1=m+(n+1) and m(n+1)=mn+m are
+      recorded in the ledger (L632). (b) uses (a) and (c) uses F5/F6. Uses line omits the field facts
+      for (d), but they are cited inline'
+  - stage: S5b
+    verdict: correct
+    by: B:01/01
+    hash: 51f5b407dad6
+    date: '2026-11-01'
+    evidence: 01:53-75; each induction checked; N-arithmetic (m+(n+1)=(m+n)+1, m(n+1)=mn+m) is in ledger
+      01:632; Uses line covers (F5)-(F7)
+  - stage: S8
+    verdict: minor
+    by: S8:01
+    hash: 51f5b407dad6
+    date: '2026-11-01'
+    evidence: 01-finite-sums.md:27, 73 and 116 use ω for the set ℕ = ω. NOTATION.md:277 says that fd4
+      never uses that ω, and in fd4 Chapter 3 (F4.1 §06) ω means e^{2πi/n}.
 - key: lem-natural-multiples
   kind: lem
   file: 01-finite-sums.md
-  line: 60
+  line: 83
   hash: 4ac42f9a5f14
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/01
+    hash: 4ac42f9a5f14
+    date: '2026-11-01'
+    evidence: 'L83-95: all five laws hold in any commutative ring'
+  - stage: S5b
+    verdict: correct
+    by: B:01/01
+    hash: 4ac42f9a5f14
+    date: '2026-11-01'
+    evidence: 01:83-97; (a) = fd3:prp-ordered-ring-rules (h), whose proof (fd3 04-ordered-rings:220) indeed
+      uses no order; multiples are fd3 Section 2.4 (04-ordered-rings:164)
 - key: proof:lem-natural-multiples
   kind: proof
   file: 01-finite-sums.md
-  line: 77
-  hash: 62dc270daa69
-  verdicts: []
+  line: 100
+  hash: f2a9ae917a65
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/01
+    hash: f2a9ae917a65
+    date: '2026-11-01'
+    evidence: 'L101-113. (a) cites fd3:prp-ordered-ring-rules (h), which is stated for ordered rings,
+      but its proof (fd3 04-ordered-rings.md:220) uses only the definition of multiples, F2, F3 and 0·a=0,
+      so ''whose proof uses no order'' is true. (c) base: 0b=0 by fd3:prp-ring-algebra (b) with F6. The
+      (d) step uses (a) with mk, k'
+  - stage: S5b
+    verdict: correct
+    by: B:01/01
+    hash: f2a9ae917a65
+    date: '2026-11-01'
+    evidence: 01:100-118; (b)-(e) inductions checked; base of (c) uses fd3:prp-ring-algebra (b) a*0=0
+      correctly; (m+1)k=mk+k ledgered 01:633
 - key: lem-ring-finite-sums
   kind: lem
   file: 01-finite-sums.md
-  line: 98
+  line: 125
   hash: 66c156f0703e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:01/01
+    hash: 66c156f0703e
+    date: '2026-11-01'
+    evidence: 'L142-147: the Idea says each step is ''a single axiom'', then lists two for (a). See findings'
+  - stage: S5b
+    verdict: minor
+    by: B:01/01
+    hash: 66c156f0703e
+    date: '2026-11-01'
+    evidence: '01:143-147 Idea says each step is ''a single axiom'' but lists two for (a): ''(F1), (F2)'''
 - key: proof:lem-ring-finite-sums
   kind: proof
   file: 01-finite-sums.md
-  line: 120
-  hash: b759c04f0dc2
-  verdicts: []
+  line: 153
+  hash: 92b549094cef
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/01
+    hash: 92b549094cef
+    date: '2026-11-01'
+    evidence: 'L154-174: (a),(b),(d),(e),(f) inductions checked, including the case split j<=n, j=n+1,
+      j>n+1 in (d). (e) cites fd3:prp-ring-algebra (a), uniqueness of negatives, correctly. (c) via lem-natural-multiples
+      (e)'
+  - stage: S5b
+    verdict: correct
+    by: B:01/01
+    hash: 92b549094cef
+    date: '2026-11-01'
+    evidence: 01:153-180; (a)-(f) checked, incl. case split in (d) and the base a_0+a_1 of (f); one-term
+      sum ledgered 01:634
 - key: check:01-finite-sums:1
   kind: check
   file: 01-finite-sums.md
-  line: 145
+  line: 182
   hash: 8f63c778d8c9
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/01
+    hash: 8f63c778d8c9
+    date: '2026-11-01'
+    evidence: 'L183-187: -1+1+3+5=8; sum_{4}^{3} is empty since 4<=3+1; prod_{1}^{0} is empty = 1'
+  - stage: S5b
+    verdict: correct
+    by: B:01/01
+    hash: 8f63c778d8c9
+    date: '2026-11-01'
+    evidence: 01:182-188; -1+1+3+5=8; sum_{4}^{3} empty (4<=3+1); empty product 1
 - key: prp-sum-reindex
   kind: prp
   file: 01-finite-sums.md
-  line: 157
+  line: 197
   hash: c427888f35c1
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/01
+    hash: c427888f35c1
+    date: '2026-11-01'
+    evidence: 'L197-209: statement fine, -1<=m<=n'
+  - stage: S5b
+    verdict: correct
+    by: B:01/01
+    hash: c427888f35c1
+    date: '2026-11-01'
+    evidence: 01:197-213; statement and Idea agree with proof
 - key: proof:prp-sum-reindex
   kind: proof
   file: 01-finite-sums.md
-  line: 176
-  hash: 5b198e962b75
-  verdicts: []
+  line: 216
+  hash: 4703a60dc508
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/01
+    hash: 4703a60dc508
+    date: '2026-11-01'
+    evidence: 'L217-235: (b) uses induction from base m (fd2:thm-induction, on N via cor-omega-identification
+      (b)). (a) inducts for all lists at once; c_{n-k}=a_{n+1-k} is correct, and lem (f) closes it. Uses
+      line omits induction, but it is cited inline'
+  - stage: S5b
+    verdict: minor
+    by: B:01/01
+    hash: 4703a60dc508
+    date: '2026-11-01'
+    evidence: 01:227 part (a) is an induction on n but neither its Uses line (01:238, only (F1)-(F3))
+      nor the ledger records the induction source (part (b) cites fd2:thm-induction; other proofs list
+      @fd1:ax-induction)
 - key: check:01-finite-sums:2
   kind: check
   file: 01-finite-sums.md
-  line: 200
+  line: 243
   hash: 022d1f492f74
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/01
+    hash: 022d1f492f74
+    date: '2026-11-01'
+    evidence: 'L244-248: pieces checked'
+  - stage: S5b
+    verdict: correct
+    by: B:01/01
+    hash: 022d1f492f74
+    date: '2026-11-01'
+    evidence: 01:243-249; pieces correct at m=2 and m=-1
 - key: exm-odd-sum-reversal
   kind: exm
   file: 01-finite-sums.md
-  line: 210
-  hash: c1808122bca9
-  verdicts: []
+  line: 253
+  hash: eb0c2595c2f3
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/01
+    hash: eb0c2595c2f3
+    date: '2026-11-01'
+    evidence: 'L256-266: reversal gives 2S=sum(2n+2)=(n+1)(2n+2). The constant-sum induction is correct,
+      and n=2 gives 9'
+  - stage: S5b
+    verdict: correct
+    by: B:01/01
+    hash: eb0c2595c2f3
+    date: '2026-11-01'
+    evidence: 01:253-267; reversal, termwise sum 2n+2, constant-sum induction (1*c=c, (n+1)*c+c=(n+2)*c),
+      n=2 check 9 all correct; ledger 01:637-638
 - key: prp-sum-order
   kind: prp
   file: 01-finite-sums.md
-  line: 228
+  line: 271
   hash: 174796b27c36
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/01
+    hash: 174796b27c36
+    date: '2026-11-01'
+    evidence: 'L271-282: each part true in an ordered field; strictness needs j<=n, which is implicit'
+  - stage: S5b
+    verdict: minor
+    by: B:01/01
+    hash: 174796b27c36
+    date: '2026-11-01'
+    evidence: '01:309 meta-claim ''Parts (b) and (c) are the two estimates of Section 1.4'' is not checkable:
+      Section 1.4 never cites prp-sum-order and never ''replaces each term by the largest'' (it ''drops
+      or absorbs'', 04:107); fd2:prp-finite-max is for reals only while (c) is in an ordered field F;
+      (c) writes (n+1)M in F though 01:121 drops the dot only in R'
+  - stage: S8
+    verdict: minor
+    by: S8:01
+    hash: 174796b27c36
+    date: '2026-11-01'
+    evidence: 01-finite-sums.md:309 says that parts (b) and (c) are the two estimates of Section 1.4,
+      but 04-estimates-for-limits.md never cites @prp-sum-order. The parts are actually used in 1.2 (cor-binomial-real)
+      and in Chapter 9 (04-length-and-distance.md:446).
 - key: proof:prp-sum-order
   kind: proof
   file: 01-finite-sums.md
-  line: 246
-  hash: f7d1821dba1e
-  verdicts: []
+  line: 289
+  hash: 2bf543b56d19
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:01/01
+    hash: 2bf543b56d19
+    date: '2026-11-01'
+    evidence: 'L290-302: inductions on n for data given only on 0..n (see finding). In (c), (n+1)M in
+      F is identified with the natural multiple (n+1)·M only for R (L121). The cited labels fd3:prp-ordered-ring-rules
+      (b) (strict if one hypothesis is strict), (i) (total order, hence antisymmetry) and fd3:prp-absolute-value-ordered-field
+      (e) say what is claimed'
+  - stage: S5b
+    verdict: minor
+    by: B:01/01
+    hash: 2bf543b56d19
+    date: '2026-11-01'
+    evidence: 01:289-307; math correct ((a) strict case via fd3:prp-ordered-ring-rules (b), (b) two splits,
+      (e) antisymmetry (i)), but (a) and (d) are inductions with no induction source in the Uses line
+      (01:305) or ledger
 - key: prp-double-sum
   kind: prp
   file: 01-finite-sums.md
-  line: 270
+  line: 321
   hash: ce461f2326c1
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/01
+    hash: ce461f2326c1
+    date: '2026-11-01'
+    evidence: 'L321-331: true statements'
+  - stage: S5b
+    verdict: correct
+    by: B:01/01
+    hash: ce461f2326c1
+    date: '2026-11-01'
+    evidence: 01:321-336; statement and Idea fine
 - key: proof:prp-double-sum
   kind: proof
   file: 01-finite-sums.md
-  line: 288
-  hash: 8cb76d12e277
-  verdicts: []
+  line: 339
+  hash: 8388f6c8561f
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/01
+    hash: 8388f6c8561f
+    date: '2026-11-01'
+    evidence: 'L340-347: the induction ''for every array'' is correct. The product form is checked by
+      commutativity and lem (b) twice'
+  - stage: S5b
+    verdict: correct
+    by: B:01/01
+    hash: 8388f6c8561f
+    date: '2026-11-01'
+    evidence: 01:339-353; induction step and product form via lem-ring-finite-sums (b) twice checked;
+      induction 'for every array' ledgered 01:639
 - key: thm-telescoping
   kind: thm
   file: 01-finite-sums.md
-  line: 328
+  line: 383
   hash: f0f4e099791e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/01
+    hash: f0f4e099791e
+    date: '2026-11-01'
+    evidence: 'L383-391: true. In (b), b_{n+1}!=0 is assumed but not needed; that is harmless'
+  - stage: S5b
+    verdict: correct
+    by: B:01/01
+    hash: f0f4e099791e
+    date: '2026-11-01'
+    evidence: 01:383-392
 - key: proof:thm-telescoping
   kind: proof
   file: 01-finite-sums.md
-  line: 339
-  hash: 659ecab39bcb
-  verdicts: []
+  line: 394
+  hash: 66d944816677
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:01/01
+    hash: 66d944816677
+    date: '2026-11-01'
+    evidence: 'L395-397: ''Induction on n'' over a list b_0..b_{n+1} fixed with n. The step needs b_{n+2},
+      which is not given. See finding'
+  - stage: S5b
+    verdict: correct
+    by: B:01/01
+    hash: 66d944816677
+    date: '2026-11-01'
+    evidence: 01:394-402; both inductions checked; Uses line covers (F1)-(F8)
 - key: exm-telescoping-reciprocals
   kind: exm
   file: 01-finite-sums.md
-  line: 345
-  hash: a9e8bb780337
-  verdicts: []
+  line: 404
+  hash: 1e7db84f58a6
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/01
+    hash: 1e7db84f58a6
+    date: '2026-11-01'
+    evidence: 'L411: b_j=-1/(j+1), b_{j+1}-b_j=1/(j+1)-1/(j+2), b_n-b_0=1-1/(n+1)'
+  - stage: S5b
+    verdict: correct
+    by: B:01/01
+    hash: 1e7db84f58a6
+    date: '2026-11-01'
+    evidence: 01:404-412; b_j=-1/(j+1), b_{j+1}-b_j=1/((j+1)(j+2)), b_n-b_0=n/(n+1)
 - key: exm-method-telescoping
   kind: exm
   file: 01-finite-sums.md
-  line: 355
-  hash: 248cbfd98fc3
-  verdicts: []
+  line: 414
+  hash: 32118f0f8010
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/01
+    hash: 32118f0f8010
+    date: '2026-11-01'
+    evidence: 'L417: verification form gives a_0+F(n)-F(0)=F(n); for n=0 the telescoped range is empty,
+      which is consistent'
+  - stage: S5b
+    verdict: minor
+    by: B:01/01
+    hash: 32118f0f8010
+    date: '2026-11-01'
+    evidence: 01:417 'write a_k = b_{k+1}-b_k, or b_k-b_{k+1} ... Then the sum is the last b minus the
+      first' is false for the second form (sum = b_0 - b_{n+1}); 01:421 Common mistakes item is a fragment
+      ('Using a difference ... that skips a step.'), STYLE §13 B4 requires full sentences
 - key: lem-difference-of-powers
   kind: lem
   file: 01-finite-sums.md
-  line: 367
+  line: 426
   hash: fa87e5d4b8bb
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/01
+    hash: fa87e5d4b8bb
+    date: '2026-11-01'
+    evidence: L426-433; n=2 gives (z-w)(w+z) (L424)
+  - stage: S5b
+    verdict: correct
+    by: B:01/01
+    hash: fa87e5d4b8bb
+    date: '2026-11-01'
+    evidence: 01:426-438; n=2 instance (z-w)(w+z) matches sum w+z
 - key: proof:lem-difference-of-powers
   kind: proof
   file: 01-finite-sums.md
-  line: 381
-  hash: 5aa61e212438
-  verdicts: []
+  line: 440
+  hash: 6c3d7c6a19f9
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/01
+    hash: 6c3d7c6a19f9
+    date: '2026-11-01'
+    evidence: 'L441-445: b_{k+1}=z^{k+1}w^{n-1-k} and b_k=z^k w^{n-k} checked. Telescoping with n-1 in
+      N, and b_n-b_0=z^n-w^n'
+  - stage: S5b
+    verdict: minor
+    by: B:01/01
+    hash: 6c3d7c6a19f9
+    date: '2026-11-01'
+    evidence: '01:445 ''since 1^j = 1 for every j in N'' has no @ref and no ledger line (needs a one-line
+      induction or prp-power-laws-commutative-ring (c) with z=w=1... not directly); rest of proof checked:
+      b_{k+1}=z^{k+1}w^{n-1-k}, b_n-b_0=z^n-w^n'
 - key: exm-telescoping-squares
   kind: exm
   file: 01-finite-sums.md
-  line: 391
-  hash: 8522505c835c
-  verdicts: []
+  line: 454
+  hash: 1a155655a27d
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/01
+    hash: 1a155655a27d
+    date: '2026-11-01'
+    evidence: 'L461-472: (n+1)^3-(n+1)-3n(n+1)/2=(n+1)(n^2+n/2)=n(n+1)(2n+1)/2; the n=0 case is handled;
+      n=3 gives 14'
+  - stage: S5b
+    verdict: correct
+    by: B:01/01
+    hash: 1a155655a27d
+    date: '2026-11-01'
+    evidence: 01:454-473; (n+1)^3-1=3S+3n(n+1)/2+n solved to n(n+1)(2n+1)/6; n=0 case and n=3 check (14)
+      correct; expansion ledgered 01:642
 - key: check:01-finite-sums:3
   kind: check
   file: 01-finite-sums.md
-  line: 420
+  line: 483
   hash: ff94e002b08c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/01
+    hash: ff94e002b08c
+    date: '2026-11-01'
+    evidence: 'L488: b_{k+1}-b_k=-1/(2(2k+1))+1/(2(2k-1))=1/((2k-1)(2k+1))'
+  - stage: S5b
+    verdict: correct
+    by: B:01/01
+    hash: ff94e002b08c
+    date: '2026-11-01'
+    evidence: 01:483-489; b_{k+1}-b_k = -1/(2(2k+1)) + 1/(2(2k-1)) = 1/((2k-1)(2k+1))
 - key: exr-finite-sums-a1
   kind: exr
   file: 01-finite-sums.md
-  line: 444
+  line: 507
   hash: b8964b254586
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/01
+    hash: b8964b254586
+    date: '2026-11-01'
+    evidence: 'L519-525: 0, 24, sum_{j=0}^4 (j+2)^2, b_k=k^2 all checked'
+  - stage: S5b
+    verdict: correct
+    by: B:01/01
+    hash: b8964b254586
+    date: '2026-11-01'
+    evidence: 01:507-526; 0, 24, False (2 vs 4), sum_{j=0}^4 (j+2)^2, b_k=k^2 all correct
+  - stage: S6
+    verdict: minor
+    by: S6:01a
+    hash: b8964b254586
+    date: '2026-11-01'
+    evidence: '01-finite-sums.md:513-525. (a) 0 and 24, (c) j=k-2 gives sum_{j=0}^4 (j+2)^2, (d) b_k=k^2:
+      all correct and checked by script. (b) The statement does not quantify n; at n=0 the identity is
+      true (a_0 b_0 = a_0 b_0), so ''true or false'' depends on reading n as universal. Reported as a
+      finding.'
 - key: exr-finite-sums-b1
   kind: exr
   file: 01-finite-sums.md
-  line: 467
-  hash: 25efc92a11df
-  verdicts: []
+  line: 530
+  hash: 55c340ac8196
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/01
+    hash: 55c340ac8196
+    date: '2026-11-01'
+    evidence: 'L537-541: n/(2n+1); k·k!=(k+1)!-k!, sum=(n+1)!-1, n=2 gives 5'
+  - stage: S5b
+    verdict: correct
+    by: B:01/01
+    hash: 55c340ac8196
+    date: '2026-11-01'
+    evidence: '01:530-542; (a) b_{n+1}-b_1 = n/(2n+1); (b) (n+1)!-1, n=2: 5'
+  - stage: S6
+    verdict: correct
+    by: S6:01a
+    hash: 55c340ac8196
+    date: '2026-11-01'
+    evidence: '01-finite-sums.md:530-541. I solved it first: (a) n/(2n+1), (b) (n+1)!-1, which matches
+      the book. My script checks n=1..29 exactly with Fractions. The c_j=b_{j+1} endpoint b_{n+1}-b_1
+      is right. Worked examples: exm-telescoping-reciprocals and the Quick check at l.484.'
 - key: exr-finite-sums-b2
   kind: exr
   file: 01-finite-sums.md
-  line: 481
-  hash: 77821ab1e7c7
-  verdicts: []
+  line: 544
+  hash: 3a4018438af9
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/01
+    hash: 3a4018438af9
+    date: '2026-11-01'
+    evidence: 'L558-568: (d) n=2 gives 11/24 vs 9/24; the corrected closed form also gives 11/24 at n=2'
+  - stage: S5b
+    verdict: correct
+    by: B:01/01
+    hash: 3a4018438af9
+    date: '2026-11-01'
+    evidence: '01:544-569; (d) n=2: 11/24 vs 9/24; corrected formula (1/2)(3/2-1/(n+1)-1/(n+2)) gives
+      1/3 at n=1 and 11/24 at n=2'
+  - stage: S6
+    verdict: correct
+    by: S6:01a
+    hash: 3a4018438af9
+    date: '2026-11-01'
+    evidence: '01-finite-sums.md:544-569. My verdicts T,F,T,F match the book. (d): 11/24 vs 9/24 at n=2.
+      The corrected closed form 1/2(3/2-1/(n+1)-1/(n+2)) checks for n=1..29, and the false formula holds
+      only at n=1. (c) reversal is applied correctly to c_k=a_k b_{n-k}.'
 - key: exr-finite-sums-b3
   kind: exr
   file: 01-finite-sums.md
-  line: 508
-  hash: 1aac71ccc7ff
-  verdicts: []
+  line: 571
+  hash: eb7cf98d96af
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/01
+    hash: eb7cf98d96af
+    date: '2026-11-01'
+    evidence: 'L581-585: (k+1)^2-k^2=2k+1; b_1-b_{n+1}; n=0 gives 0=0'
+  - stage: S5b
+    verdict: minor
+    by: B:01/01
+    hash: eb7cf98d96af
+    date: '2026-11-01'
+    evidence: '01:574 prompt reads ''*Name the method, then complete it.*''; STYLE §11.4/§13 B4 fix the
+      printed prompt as ''*Say which method this is, then complete it.*'' (as in ch08 03:458). Math correct:
+      b_1-b_{n+1}=1-1/(n+1)^2, n=0 both 0'
+  - stage: S6
+    verdict: correct
+    by: S6:01a
+    hash: eb7cf98d96af
+    date: '2026-11-01'
+    evidence: 01-finite-sums.md:571-585. b_k=1/k^2, b_1-b_{n+1}=1-1/(n+1)^2. The n=0 case is handled.
+      Script check for n=0..29. Method named (telescoping), and the method box exm-method-telescoping
+      is the worked example.
 - key: exr-finite-sums-b4
   kind: exr
   file: 01-finite-sums.md
-  line: 525
+  line: 588
   hash: 9d2b006ff008
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/01
+    hash: 9d2b006ff008
+    date: '2026-11-01'
+    evidence: 'L599: c_n-c_0=b_{n+1}-b_1; counterexample b_k=k, n=1 gives 1 vs 0'
+  - stage: S5b
+    verdict: correct
+    by: B:01/01
+    hash: 9d2b006ff008
+    date: '2026-11-01'
+    evidence: '01:588-600; c_j=b_{j+1}, result b_{n+1}-b_1; counterexample b_k=k, n=1: 1 vs 0'
+  - stage: S6
+    verdict: correct
+    by: S6:01a
+    hash: 9d2b006ff008
+    date: '2026-11-01'
+    evidence: '01-finite-sums.md:588-601. The only flaw is reading the endpoint as b_n: with c_j=b_{j+1},
+      thm-telescoping(a) at n-1 gives c_n-c_0=b_{n+1}-b_1. The shift itself is right. The counterexample
+      b_k=k, n=1 gives 1 vs 0, which defeats the claim and the step.'
 - key: exr-finite-sums-c1
   kind: exr
   file: 01-finite-sums.md
-  line: 541
-  hash: 372a3719bbd7
-  verdicts: []
+  line: 604
+  hash: f23046370786
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/01
+    hash: f23046370786
+    date: '2026-11-01'
+    evidence: 'L611-619: F(k)-F(k-1)=k^2/4·4k=k^3, F(0)=0, telescoping to F(n)-F(0); n=3 gives 36'
+  - stage: S5b
+    verdict: correct
+    by: B:01/01
+    hash: f23046370786
+    date: '2026-11-01'
+    evidence: 01:604-629; F(k)-F(k-1)=k^3, F(0)=0, endpoints F(n)-F(0); rubric sums to 10 and has 'Slips
+      that lose the step'
+  - stage: S6
+    verdict: correct
+    by: S6:01a
+    hash: f23046370786
+    date: '2026-11-01'
+    evidence: 01-finite-sums.md:604-629. F(k)-F(k-1)=k^2/4*4k=k^3. Telescoping to F(n)-F(0) and the n=0
+      case are correct. Script check for n=0..29. The scheme fits the book's proof and my induction alternative,
+      which the scheme covers explicitly.
 - key: def-binomial-coefficients
   kind: def
   file: 02-the-binomial-theorem.md
-  line: 9
+  line: 15
   hash: 294012de380b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/02
+    hash: 294012de380b
+    date: '2026-11-01'
+    evidence: '02:15-33: recursion via fd2:thm-recursion with X = N^N is well-formed; the three inline
+      inductions (C(n,k)=0 for k>n, C(n,n)=1, C(n,1)=n) check line by line; table rows 0-6 verified (sidecar
+      ok).'
+  - stage: S5b
+    verdict: correct
+    by: B:01/02
+    hash: 294012de380b
+    date: '2026-11-01'
+    evidence: 02:15-45 recursion via @fd2:thm-recursion with X = functions N->N; three facts' inductions
+      (31-33) checked; table rows 0-6 correct; sidecar def-binomial-coefficients.py exists
 - key: prp-binomial-absorption
   kind: prp
   file: 02-the-binomial-theorem.md
-  line: 43
+  line: 49
   hash: 11abdb064ae9
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/02
+    hash: 11abdb064ae9
+    date: '2026-11-01'
+    evidence: '02:49-56: identity has no hypotheses; checked numerically by sidecar.'
+  - stage: S5b
+    verdict: correct
+    by: B:01/02
+    hash: 11abdb064ae9
+    date: '2026-11-01'
+    evidence: 02:49-56 statement true; idea instances 1*3=3*1, 2*6=4*3 checked (C(4,2)=6, C(3,1)=3)
 - key: proof:prp-binomial-absorption
   kind: proof
   file: 02-the-binomial-theorem.md
-  line: 56
+  line: 62
   hash: 9532358a19e1
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/02
+    hash: 9532358a19e1
+    date: '2026-11-01'
+    evidence: '02:62-77: induction on n over all k. Base k>=1 uses fact 1 (k+1>1). Step k=0 uses facts
+      3 and Pascal row start. Step k=j+1: lines 70-73 use Pascal, split (j+2)=(j+1)+1, the IH at k=j and
+      k=j+1, then Pascal again. Each line checked.'
+  - stage: S5b
+    verdict: correct
+    by: B:01/02
+    hash: 9532358a19e1
+    date: '2026-11-01'
+    evidence: 02:62-77 base k=0, k>=1 via fact 1; step lines 70-73 use hypothesis at k=j and k=j+1, Pascal
+      twice; arithmetic of N ledgered (ledger 400)
 - key: prp-binomial-factorial
   kind: prp
   file: 02-the-binomial-theorem.md
-  line: 77
+  line: 83
   hash: f893f01c979d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/02
+    hash: f893f01c979d
+    date: '2026-11-01'
+    evidence: '02:83-95: k<=n is needed so that n-k is in N; (a)-(c) and the formula in R are all true.'
+  - stage: S5b
+    verdict: correct
+    by: B:01/02
+    hash: f893f01c979d
+    date: '2026-11-01'
+    evidence: 02:83-95 (a)-(c) true for k<=n; division in R by a positive real
 - key: proof:prp-binomial-factorial
   kind: proof
   file: 02-the-binomial-theorem.md
-  line: 97
-  hash: c788ab187242
-  verdicts: []
+  line: 103
+  hash: 71baf96f7361
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:01/02
+    hash: 71baf96f7361
+    date: '2026-11-01'
+    evidence: '02:104-125: (a) induction is correct (the IH at j<=n, absorption at (n,j), factorial recursion).
+      The R reading uses fd3:prp-naturals-in-ordered-field (a),(b), which state the product law and n*1>=1.
+      (b) cancels in Z via ordered-ring-rules (f). For (c), the auxiliary induction on k is correct. One
+      minor wording point at 02:113: the sentence ''their proofs come after this one'' is about the page
+      layout (STYLE §13 B3).'
+  - stage: S5b
+    verdict: minor
+    by: B:01/02
+    hash: 71baf96f7361
+    date: '2026-11-01'
+    evidence: Math correct (02:104-125; cancellation via @fd3:prp-ordered-ring-rules (f) in Uses, positivity
+      of factorials ledgered 403-405). 02:113 'their proofs come after this one' is a sentence locating
+      a second-reading block (STYLE §13 B3)
 - key: thm-binomial-commutative-ring
   kind: thm
   file: 02-the-binomial-theorem.md
-  line: 128
+  line: 142
   hash: f39530cc74b3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/02
+    hash: f39530cc74b3
+    date: '2026-11-01'
+    evidence: '02:142-151: statement fine; commutativity hypothesis is needed (the matrix fold at 02:191-197
+      gives X,Y with (X+Y)^2=I but X^2+2XY+Y^2=diag(2,0); verified).'
+  - stage: S5b
+    verdict: minor
+    by: B:01/02
+    hash: f39530cc74b3
+    date: '2026-11-01'
+    evidence: 'Statement 02:142-151 correct. Remark 02:189 ''For matrices the expansion holds only for
+      pairs that commute'' is false for a fixed n>=3: X=E12, Y=E23 (3x3) do not commute (XY=E13, YX=0),
+      yet (X+Y)^3=0 and every X^kY^{3-k}=0'
 - key: proof:thm-binomial-commutative-ring
   kind: proof
   file: 02-the-binomial-theorem.md
-  line: 145
-  hash: a3d5b99f752b
-  verdicts: []
+  line: 159
+  hash: be96d66302dc
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/02
+    hash: be96d66302dc
+    date: '2026-11-01'
+    evidence: '02:159-187: base uses 1*a=a. In the step, the IH times x and y uses finite-sums (b) plus
+      F6. lem-natural-multiples (c) is correct. u_{k+1} = C(n,k)*z_{k+1}, because n+1-(k+1) = n-k. w_{n+1}=0
+      by fact 1. Splitting off u_0 uses finite-sums (f), and dropping w_{n+1} uses the sum recursion.
+      Termwise addition uses finite-sums (a). The sum rule is natural-multiples (a), followed by Pascal.
+      Every index range checked.'
+  - stage: S5b
+    verdict: minor
+    by: B:01/02
+    hash: be96d66302dc
+    date: '2026-11-01'
+    evidence: Math correct (02:159-187). Splitting off the last term w_{n+1} (02:174) is the sum recursion
+      of @fd2:def-sum-product, not in Uses (which cites only lem-ring-finite-sums (f), first term) nor
+      in ledger; the idea prompt 02:156 asks about w_{n+1}, a symbol defined only at 02:172
 - key: exm-binomial-expansions
   kind: exm
   file: 02-the-binomial-theorem.md
-  line: 181
+  line: 199
   hash: ed872c0c188b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/02
+    hash: ed872c0c188b
+    date: '2026-11-01'
+    evidence: '02:199-221: (a) row 4; (b) signs (-1)^{5-k} correct for k=4,2,0 negative; result x^5-5x^4+10x^3-10x^2+5x-1;
+      (c) 11^4=14641. Sidecar ok.'
+  - stage: S5b
+    verdict: correct
+    by: B:01/02
+    hash: ed872c0c188b
+    date: '2026-11-01'
+    evidence: 02:199-221 (a) row 4; (b) signs (-1)^{5-k}=-1 for k=4,2,0 correct, result x^5-5x^4+10x^3-10x^2+5x-1;
+      (c) 14641; sidecar exists
 - key: check:02-the-binomial-theorem:1
   kind: check
   file: 02-the-binomial-theorem.md
-  line: 205
+  line: 223
   hash: 640598f63f19
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/02
+    hash: 640598f63f19
+    date: '2026-11-01'
+    evidence: '02:223-229: row 7 = 1,7,21,35,35,21,7,1; 5040/144 = 35.'
+  - stage: S5b
+    verdict: correct
+    by: B:01/02
+    hash: 640598f63f19
+    date: '2026-11-01'
+    evidence: 02:223-229 row 7 = 1,7,21,35,35,21,7,1; 5040/144=35
 - key: cor-binomial-real
   kind: cor
   file: 02-the-binomial-theorem.md
-  line: 221
+  line: 239
   hash: dbed144985c5
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/02
+    hash: dbed144985c5
+    date: '2026-11-01'
+    evidence: '02:239-249: (a) the n>=1 hypothesis is needed (at n=0 the alternating sum is 1). (b) x>=0
+      is needed: k=0, x=-1/2 gives 1/2^n < 1. (c) is true.'
+  - stage: S5b
+    verdict: correct
+    by: B:01/02
+    hash: dbed144985c5
+    date: '2026-11-01'
+    evidence: 02:239-249 (a),(b),(c) true; (c) needs n>=2 only for C(n,2) closed form via prp-binomial-factorial
+      (c)
 - key: proof:cor-binomial-real
   kind: proof
   file: 02-the-binomial-theorem.md
-  line: 233
-  hash: 1a295489be03
-  verdicts: []
+  line: 251
+  hash: 3b0ef598a4a8
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/02
+    hash: 3b0ef598a4a8
+    date: '2026-11-01'
+    evidence: '02:251-261: (a) uses x=y=1 and x=-1, y=1, with 0^n=0 for n>=1. (b),(c): nonnegativity of
+      each term uses power-laws (e), the case x=0, and ordered-field-halves (d) with a=0, c=0. prp-sum-order
+      (b) applies (single term; m=2<=n). C(n,2)*2 = n(n-1) is factorial (c) at k=2<=n.'
+  - stage: S5b
+    verdict: minor
+    by: B:01/02
+    hash: 3b0ef598a4a8
+    date: '2026-11-01'
+    evidence: 02:256 'C(n,j) >= 0 is a natural number' and 'C(n,2)*2 = n(n-1), so C(n,2)=n(n-1)/2' read
+      naturals in R (nonnegativity, products, division by 2) without citing @fd3:prp-naturals-in-ordered-field
+      (a),(b) in Uses or ledger; 02:254 writes '0^{n-1} \cdot 0', a product of ring elements with a dot,
+      against NOTATION's rule that a dot with a non-natural on the left is not a ring product
 - key: check:02-the-binomial-theorem:2
   kind: check
   file: 02-the-binomial-theorem.md
-  line: 243
+  line: 265
   hash: 38c5b9de9aba
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/02
+    hash: 38c5b9de9aba
+    date: '2026-11-01'
+    evidence: '02:265-271: C(5,k)2^k = 1,10,40,80,80,32; 3^5 = 243.'
+  - stage: S5b
+    verdict: correct
+    by: B:01/02
+    hash: 38c5b9de9aba
+    date: '2026-11-01'
+    evidence: 02:265-271 C(5,k)2^k = 1,10,40,80,80,32; 3^5=243
 - key: exm-binomial-bound
   kind: exm
   file: 02-the-binomial-theorem.md
-  line: 251
+  line: 273
   hash: 22e4501a0ef6
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:01/02
+    hash: 22e4501a0ef6
+    date: '2026-11-01'
+    evidence: '02:273-283: the mathematics is correct (2^n >= C(n,2); the inversion uses ordered-field-halves
+      (c) with n(n-1) >= 2 > 0, then multiplication by n). But the title ''Powers of two beat n squared''
+      claims 2^n >= n^2, which is false at n=3 (8 < 9) and is not what the example shows.'
+  - stage: S5b
+    verdict: correct
+    by: B:01/02
+    hash: 22e4501a0ef6
+    date: '2026-11-01'
+    evidence: 02:273-283 cor (b) x=1,k=2; inversion by @fd3:prp-ordered-field-halves (c); 5/32 <= 1/2;
+      Section 1.4 (04:189) indeed continues it
 - key: exr-binomial-theorem-a1
   kind: exr
   file: 02-the-binomial-theorem.md
-  line: 267
-  hash: 2b892ac9bc7b
-  verdicts: []
+  line: 289
+  hash: 87cec652179b
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/02
+    hash: 87cec652179b
+    date: '2026-11-01'
+    evidence: '02:289-308: (a) the roles of u_0, finite-sums (f) and (a) are correct. (b) F6 use correct.
+      (c) u_0..u_2 = 0, xy, x^2 and w_0..w_2 = y^2, xy, 0 sum to row 2. (d) is factorial (b).'
+  - stage: S5b
+    verdict: correct
+    by: B:01/02
+    hash: 87cec652179b
+    date: '2026-11-01'
+    evidence: 02:289-308 u_0..u_2, w_0..w_2 for n=1 computed correctly (z_1=xy, z_2=x^2, w_2=0); (a) via
+      lem-ring-finite-sums (f),(a) matches proof
+  - stage: S6
+    verdict: correct
+    by: S6:01a
+    hash: 87cec652179b
+    date: '2026-11-01'
+    evidence: 02-the-binomial-theorem.md:289-309. (a) matches the proof at l.170-175. (b) moving x past
+      y^{n-k} is (F6). (c) u=(0,xy,x^2), w=(y^2,xy,0), sum y^2+2.xy+x^2, which I checked against the definitions
+      at l.170. (d) is prp-binomial-factorial(b).
 - key: exr-binomial-theorem-b1
   kind: exr
   file: 02-the-binomial-theorem.md
-  line: 290
-  hash: 89c682f5e7e6
-  verdicts: []
+  line: 312
+  hash: 069804907b44
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:01/02
+    hash: 069804907b44
+    date: '2026-11-01'
+    evidence: '02:315-326: the coefficient 80 and the identity 4^n are correct. But the question asks
+      to write (2x-1)^5 ''as a sum of six terms'', and the solution gives only the Sigma form, never the
+      six terms 32x^5 - 80x^4 + 80x^3 - 40x^2 + 10x - 1.'
+  - stage: S5b
+    verdict: minor
+    by: B:01/02
+    hash: 069804907b44
+    date: '2026-11-01'
+    evidence: 02:315 asks to 'Write (2x-1)^5 ... as a sum of six terms', solution 02:319-323 gives only
+      the Sigma form and the x^3 coefficient; the six terms 32x^5-80x^4+80x^3-40x^2+10x-1 are never written
+  - stage: S6
+    verdict: gap
+    by: S6:01a
+    hash: 069804907b44
+    date: '2026-11-01'
+    evidence: '02-the-binomial-theorem.md:312-325. The coefficient 80 and 4^n are correct (script: coefficients
+      -1,10,-40,80,-80,32). However, part (a) asks to ''Write (2x-1)^5 as a sum of six terms'', and the
+      solution leaves it as a Sigma expression: the six terms are never written. Reported as a finding.'
 - key: exr-binomial-theorem-b2
   kind: exr
   file: 02-the-binomial-theorem.md
-  line: 306
-  hash: 1f14acea1f6c
-  verdicts: []
+  line: 328
+  hash: 6ffc8ce016ad
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/02
+    hash: 6ffc8ce016ad
+    date: '2026-11-01'
+    evidence: '02:328-346: index shift (fd2 def-sum-product ''Shifting the index''); absorption at (n-1,
+      j); constant out; row sum for n-1. Check n=3 gives 12.'
+  - stage: S5b
+    verdict: minor
+    by: B:01/02
+    hash: 6ffc8ce016ad
+    date: '2026-11-01'
+    evidence: '02:328-346 solution correct (n=3 check 12). STYLE §9 checklist ''Every B-type task has
+      a worked example in the text'': no example in the section absorbs a factor k inside a binomial sum
+      and re-indexes'
+  - stage: S6
+    verdict: minor
+    by: S6:01a
+    hash: 6ffc8ce016ad
+    date: '2026-11-01'
+    evidence: '02-the-binomial-theorem.md:328-345. Correct: absorption at (n-1,j) gives (j+1)C(n,j+1)=nC(n-1,j),
+      and the row sum gives n2^{n-1}. Script check for n=1..19. But no worked example in Section 1.2 applies
+      absorption inside a sum; absorption is used only in the proof of prp-binomial-factorial(a), l.106.
+      Reported as a finding.'
 - key: exr-binomial-theorem-b3
   kind: exr
   file: 02-the-binomial-theorem.md
-  line: 322
+  line: 348
   hash: b9a40cccdb5b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/02
+    hash: b9a40cccdb5b
+    date: '2026-11-01'
+    evidence: '02:348-359: cor (c) with x=0.01, n=10: 1 + 0.1 + 0.0045 = 1.1045.'
+  - stage: S5b
+    verdict: correct
+    by: B:01/02
+    hash: b9a40cccdb5b
+    date: '2026-11-01'
+    evidence: '02:348-359 cor (c) with x=0.01, n=10: 1+0.1+0.0045=1.1045 (true value 1.10462)'
+  - stage: S6
+    verdict: correct
+    by: S6:01a
+    hash: b9a40cccdb5b
+    date: '2026-11-01'
+    evidence: '02-the-binomial-theorem.md:348-360. cor-binomial-real(c) with x=0.01, n=10, C(10,2)=45
+      gives 1.1045. The true value is 1.104622 (script). Worked example: exm-binomial-bound.'
 - key: exr-binomial-theorem-c1
   kind: exr
   file: 02-the-binomial-theorem.md
-  line: 337
-  hash: f37cf49e5209
-  verdicts: []
+  line: 363
+  hash: 4a60f4aab512
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:01/02
+    hash: 4a60f4aab512
+    date: '2026-11-01'
+    evidence: '02:363-396: proof correct (split by prp-sum-reindex (b) m=1, absorption twice with ranges
+      stated, shift j=k-2, row sum n-2; n=3 check 12). Minor: the summand k(k-1) at k=0 involves 0-1,
+      undefined in N under the book''s natural subtraction; the statement does not say the sum is read
+      in Z (or R).'
+  - stage: S5b
+    verdict: correct
+    by: B:01/02
+    hash: 4a60f4aab512
+    date: '2026-11-01'
+    evidence: '02:363-396 two absorptions with ranges correct, prp-sum-reindex (b) m=1, shift j=k-2, n=3
+      check 12; rubric matches solution; title follows §13 B4 ''C1: Chapter check'''
+  - stage: S6
+    verdict: minor
+    by: S6:01a
+    hash: 4a60f4aab512
+    date: '2026-11-01'
+    evidence: '02-the-binomial-theorem.md:363-396. The proof is correct: both absorptions have valid ranges,
+      the split at m=1 needs n>=2, and the n=3 check gives 12. Script check for n=2..19. However, the
+      marking scheme has no place for a valid induction proof via Pascal''s rule and B2. Reported as a
+      finding.'
 - key: lem-bernoulli-strict
   kind: lem
   file: 03-inequalities-for-sums-and-products.md
   line: 9
   hash: 37122bca0e25
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/03
+    hash: 37122bca0e25
+    date: '2026-11-01'
+    evidence: '03:12 x>=-1, x!=0, n>=2; both exclusions needed (x=0 or n=1 give equality, check at 03:47);
+      x>=-1 needed (x=-3,n=3: -8 > -8 fails). Sidecar ok.'
+  - stage: S5b
+    verdict: correct
+    by: B:01/03
+    hash: 37122bca0e25
+    date: '2026-11-01'
+    evidence: '03:12 statement checked at boundaries: x=-1 gives 0>1-n for n>=2 (03:40); x=0 and n=1 give
+      equality (check 1). Hypotheses are complete.'
 - key: proof:lem-bernoulli-strict
   kind: proof
   file: 03-inequalities-for-sums-and-products.md
   line: 19
-  hash: 087b81d00068
-  verdicts: []
+  hash: '703063432322'
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/03
+    hash: '703063432322'
+    date: '2026-11-01'
+    evidence: 03:20-33 base n=2 via x^2>0 (fd3:prp-ordered-ring-rules (e)); step multiplies by 1+x>=0
+      with zero case split (rules (c), prp-ring-algebra (b)); nx^2>0 from n·1>0 (h) and (c). All hypotheses
+      used; fd2:thm-induction base 2 matches.
+  - stage: S5b
+    verdict: correct
+    by: B:01/03
+    hash: '703063432322'
+    date: '2026-11-01'
+    evidence: '03:20-37: base n=2 uses x^2>0, which is fd3 ordered-ring-rules (e). The step multiplies
+      by 1+x>=0 with the zero case handled, and nx^2>0 uses (h). The Uses line and ledger 03:372-373 cover
+      these. The sentence at 03:7 about the fd2 proof checks out against fd2 03-recursion.md:333-339,
+      which discards nx^2.'
 - key: check:03-inequalities-for-sums-and-products:1
   kind: check
   file: 03-inequalities-for-sums-and-products.md
-  line: 38
+  line: 42
   hash: 6f333e9f769e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/03
+    hash: 6f333e9f769e
+    date: '2026-11-01'
+    evidence: 03:42-48 both cases give equality; computations right.
+  - stage: S5b
+    verdict: correct
+    by: B:01/03
+    hash: 6f333e9f769e
+    date: '2026-11-01'
+    evidence: '03:43-48: both excluded cases give equality, and the n=0 remark is true.'
 - key: prp-weierstrass-product
   kind: prp
   file: 03-inequalities-for-sums-and-products.md
-  line: 48
+  line: 52
   hash: 49d082f5ca3c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/03
+    hash: 49d082f5ca3c
+    date: '2026-11-01'
+    evidence: '03:55-58; n=0 gives 1>=1. Dropping a_k<=1: a1=a2=a3=10 gives -729 >= -29 false, so the
+      hypothesis is needed; a_k>=0 used for s>=0 and s·a_{n+1}>=0.'
+  - stage: S5b
+    verdict: correct
+    by: B:01/03
+    hash: 49d082f5ca3c
+    date: '2026-11-01'
+    evidence: '03:55-58: n in N with base n=0 (empty product 1 >= 1 - 0) is correct, and the hypotheses
+      0<=a_k<=1 are sufficient.'
 - key: proof:prp-weierstrass-product
   kind: proof
   file: 03-inequalities-for-sums-and-products.md
-  line: 61
-  hash: 0f0abbde8fb7
-  verdicts: []
+  line: 65
+  hash: bcbfb8d7be83
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:01/03
+    hash: bcbfb8d7be83
+    date: '2026-11-01'
+    evidence: 03:66-75 math correct (IH quantified over all lists, applied to the first n entries). Uses
+      line 03:78 cites @lem-bernoulli-strict for 'multiplying by non-negatives', which that lemma's statement
+      does not say.
+  - stage: S5b
+    verdict: minor
+    by: B:01/03
+    hash: bcbfb8d7be83
+    date: '2026-11-01'
+    evidence: '03:68-78: the math is right. The Uses line cites @lem-bernoulli-strict for ''multiplying
+      by non-negatives'', but that is a step inside its proof (fd3 prp-ordered-ring-rules (c) plus the
+      zero case), not the lemma''s statement.'
+  - stage: S8
+    verdict: minor
+    by: S8:01
+    hash: bcbfb8d7be83
+    date: '2026-11-01'
+    evidence: '03-inequalities-for-sums-and-products.md:78: the Uses line credits ''multiplying by non-negatives''
+      to @lem-bernoulli-strict. The lemma does not state that fact; it is fd3:prp-ordered-field-halves
+      (d) / prp-ordered-ring-rules (c).'
 - key: check:03-inequalities-for-sums-and-products:2
   kind: check
   file: 03-inequalities-for-sums-and-products.md
-  line: 76
+  line: 84
   hash: 3c06c23ad42c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/03
+    hash: 3c06c23ad42c
+    date: '2026-11-01'
+    evidence: 03:89 0.99·0.98·0.97·0.96 = 0.90345..., bound 0.90.
+  - stage: S5b
+    verdict: correct
+    by: B:01/03
+    hash: 3c06c23ad42c
+    date: '2026-11-01'
+    evidence: '03:85-90: 0.99*0.98*0.97*0.96 = 0.903450 (about 0.9035), the sum is 0.10, and the bound
+      is 0.90.'
 - key: thm-am-gm
   kind: thm
   file: 03-inequalities-for-sums-and-products.md
-  line: 96
+  line: 104
   hash: 38a1aa441089
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/03
+    hash: 38a1aa441089
+    date: '2026-11-01'
+    evidence: 03:107-112; n>=1 needed for A; a_k>=0 needed (warning -1,-1,1). Sidecar ok.
+  - stage: S5b
+    verdict: correct
+    by: B:01/03
+    hash: 38a1aa441089
+    date: '2026-11-01'
+    evidence: '03:107-112: n>=1, a_k>=0. (a) and (b) are true, including the cases with zeros. The warning
+      at 03:247 checks out: (-1)(-1)(1)=1 and (-1/3)^3=-1/27.'
 - key: proof:thm-am-gm
   kind: proof
   file: 03-inequalities-for-sums-and-products.md
-  line: 141
-  hash: 7bb6449474eb
-  verdicts: []
+  line: 149
+  hash: 64e97ccff8ea
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:01/03
+    hash: 64e97ccff8ea
+    date: '2026-11-01'
+    evidence: '03:150-162 zero case and positive induction checked: (n+1)x=(a_{n+1}-A_n)/A_n verified,
+      x>-1 from A_{n+1}/A_n>0, multiply by A_n^{n+1}>0; fold 03:174-190 Case 1/Case 2 correct, n+1>=2
+      for lem-bernoulli-strict, x!=0 from (n+1)x!=0. Only wording: 03:166 ''The details follow under *The
+      equality case of the means*.'' is a sentence about the page (STYLE §13 B3).'
+  - stage: S5b
+    verdict: minor
+    by: B:01/03
+    hash: 64e97ccff8ea
+    date: '2026-11-01'
+    evidence: '03:150-195: (a) and the fold for (b) are correct. Case 2 at 03:188 checks out: x!=0, x>-1,
+      and n+1>=2 lets lem-bernoulli-strict apply. Bookkeeping gap: ''A >= 0 since ... 1/n > 0'' (03:150)
+      and ''A_n > 0 as means of positive numbers'' (03:154) both use the positivity of 1/n, which is neither
+      in the Uses line nor in the ledger. The meta-sentence at 03:166, which points to the fold by its
+      title, is reported separately.'
 - key: exm-method-am-gm
   kind: exm
   file: 03-inequalities-for-sums-and-products.md
-  line: 183
-  hash: 137588375ae7
-  verdicts: []
+  line: 199
+  hash: cbf36bf330bf
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/03
+    hash: cbf36bf330bf
+    date: '2026-11-01'
+    evidence: 03:202-206 advice consistent with thm-am-gm hypotheses.
+  - stage: S5b
+    verdict: correct
+    by: B:01/03
+    hash: cbf36bf330bf
+    date: '2026-11-01'
+    evidence: '03:202-206: the method agrees with the theorem (non-negative factors, strictness by (b)).
+      Both worked examples follow it.'
 - key: exm-am-gm-factorial
   kind: exm
   file: 03-inequalities-for-sums-and-products.md
-  line: 195
+  line: 211
   hash: 55ae8317961c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/03
+    hash: 55ae8317961c
+    date: '2026-11-01'
+    evidence: 03:218-220 sum n(n+1)/2 by fd2:prp-sum-first-n; strict for n>=2 since 1!=2; 03:223 (n+1)/(2n)<=3/4
+      for n>=2 correct.
+  - stage: S5b
+    verdict: correct
+    by: B:01/03
+    hash: 55ae8317961c
+    date: '2026-11-01'
+    evidence: '03:214-223: the mean (n+1)/2 comes from fd2:prp-sum-first-n. Equality holds only at n=1,
+      and 2<9/4. (n+1)/(2n)<=3/4 for n>=2 is true.'
 - key: exm-am-gm-compound
   kind: exm
   file: 03-inequalities-for-sums-and-products.md
-  line: 211
+  line: 227
   hash: d483ccfd0617
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/03
+    hash: d483ccfd0617
+    date: '2026-11-01'
+    evidence: '03:234-241 sum n+2, mean 1+1/(n+1), not all equal; 03:244 pointers: 1.5 C2 proves <3 (05:548),
+      AN1 Ch4 = AN1.2 sequences per series.py show.'
+  - stage: S5b
+    verdict: minor
+    by: B:01/03
+    hash: d483ccfd0617
+    date: '2026-11-01'
+    evidence: '03:234-244: the math is right (sum n+2, mean 1+1/(n+1), not all equal). The pointer ''*Analysis
+      on the Real Line*, Chapter 4'' matches series.py, where an1 Ch 4 = AN1.2. However, STATUS has no
+      promise row for F4.6 §03 -> AN1.2 (03:244), although blueprint §8 records it as an opened promise.'
 - key: check:03-inequalities-for-sums-and-products:3
   kind: check
   file: 03-inequalities-for-sums-and-products.md
-  line: 234
+  line: 250
   hash: c40f8eb10d8d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/03
+    hash: c40f8eb10d8d
+    date: '2026-11-01'
+    evidence: 03:255 x, 2-x >=0 on [0,2], mean 1, equality iff x=1 by (b).
+  - stage: S5b
+    verdict: correct
+    by: B:01/03
+    hash: c40f8eb10d8d
+    date: '2026-11-01'
+    evidence: '03:251-256: x and 2-x are non-negative on [0,2] with mean 1, so the product is at most
+      1, with equality at x=1.'
 - key: exr-inequalities-for-sums-and-products-a1
   kind: exr
   file: 03-inequalities-for-sums-and-products.md
-  line: 252
+  line: 268
   hash: b9c7ee51c8e6
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/03
+    hash: b9c7ee51c8e6
+    date: '2026-11-01'
+    evidence: 03:282-288 x defined, A_1=1, A_2=5/2, x=3/2, chain 4<=4<=25/4; (d) counterexample correct.
+  - stage: S5b
+    verdict: correct
+    by: B:01/03
+    hash: b9c7ee51c8e6
+    date: '2026-11-01'
+    evidence: '03:271-289: (a) matches the proof at 03:154. (b): dividing by A_n is the step that needs
+      positivity. (c): A_1=1, A_2=5/2, x=3/2, and the chain 4<=4<=25/4 with Bernoulli 25/4>=4 are all
+      correct. (d): the counterexample (-1,-1,1) is correct. This also meets the proof-comprehension requirement
+      of STYLE §11.2.'
+  - stage: S6
+    verdict: correct
+    by: S6:01a
+    hash: b9c7ee51c8e6
+    date: '2026-11-01'
+    evidence: '03-inequalities-for-sums-and-products.md:268-290. (a) x=A_{n+1}/A_n-1, and x>-1 because
+      the quotient of positive numbers is positive. (b) The division by A_n needs a_k>0. (c) A_1=1, A_2=5/2,
+      x=3/2, chain 4<=4<=25/4, Bernoulli 25/4>=4: all recomputed. (d) a=b=-1, c=1 gives 1 > -1/27.'
 - key: exr-inequalities-for-sums-and-products-b1
   kind: exr
   file: 03-inequalities-for-sums-and-products.md
-  line: 277
+  line: 293
   hash: 77ffd78073bc
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/03
+    hash: 77ffd78073bc
+    date: '2026-11-01'
+    evidence: 03:300-304 prp-ordered-field-halves (d) needs 0<=4ab etc. (given); (g) with P,8abc>=0 gives
+      the contradiction.
+  - stage: S5b
+    verdict: correct
+    by: B:01/03
+    hash: 77ffd78073bc
+    date: '2026-11-01'
+    evidence: '03:296-305: multiplying the three inequalities uses fd3:prp-ordered-field-halves (d), whose
+      hypotheses 0<=4ab<=(a+b)^2 hold. The square comparison uses fd3:prp-ordered-ring-rules (g), whose
+      non-negativity hypotheses hold.'
+  - stage: S6
+    verdict: correct
+    by: S6:01a
+    hash: 77ffd78073bc
+    date: '2026-11-01'
+    evidence: '03-...:293-304. AM-GM with n=2 three times, multiplied using ordered-field-halves(d), then
+      the square-root step by fd3:prp-ordered-ring-rules (g) (a,b>=0: a<b iff a^2<b^2, verified at fd3/src/ch02-integers/04-ordered-rings.md:182).
+      My alternative identity P-8abc=a(b-c)^2+b(c-a)^2+c(a-b)^2 agrees. Random test passes.'
 - key: exr-inequalities-for-sums-and-products-b2
   kind: exr
   file: 03-inequalities-for-sums-and-products.md
-  line: 291
+  line: 307
   hash: 7374bb1d2b54
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:01/03
+    hash: 7374bb1d2b54
+    date: '2026-11-01'
+    evidence: 03:321 first route stops at 1 <= ((x/y+y/x)/2)^2 without the step to x/y+y/x>=2; the 'Directly'
+      route completes it. (b),(c),(d) correct.
+  - stage: S5b
+    verdict: minor
+    by: B:01/03
+    hash: 7374bb1d2b54
+    date: '2026-11-01'
+    evidence: '03:321: the first route in (a) stops at 1 <= ((x/y+y/x)/2)^2 and never concludes that the
+      sum is >= 2, which needs u>0 and u^2>=1 => u>=1 (ordered-ring-rules (g)). The ''Directly'' computation
+      completes the proof. (b), (c) and (d) are correct: x=-1 gives 0 vs 1, and the claim holds iff x^3>=0.'
+  - stage: S6
+    verdict: minor
+    by: S6:01a
+    hash: 7374bb1d2b54
+    date: '2026-11-01'
+    evidence: '03-...:307-327. My verdicts T,F,F,T match. Counterexamples recomputed: (b) gives 1/4>0,
+      (c) at x=-1 gives 0<1. The ''Directly'' proof in (a) is complete. The first AM-GM sentence stops
+      at 1<=((x/y+y/x)/2)^2 without the square-root step that B1 spells out. Reported as a finding.'
 - key: exr-inequalities-for-sums-and-products-b3
   kind: exr
   file: 03-inequalities-for-sums-and-products.md
-  line: 314
+  line: 330
   hash: d94dd8a0998d
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/03
+    hash: d94dd8a0998d
+    date: '2026-11-01'
+    evidence: 03:337 sum 55/100, bound 0.45; actual product 0.565 (sidecar).
+  - stage: S5b
+    verdict: correct
+    by: B:01/03
+    hash: d94dd8a0998d
+    date: '2026-11-01'
+    evidence: '03:333-338: sum of 1..10 = 55, each a_k lies in [0,1], and the bound 0.45 follows from
+      prp-weierstrass-product.'
+  - stage: S6
+    verdict: correct
+    by: S6:01a
+    hash: d94dd8a0998d
+    date: '2026-11-01'
+    evidence: '03-...:330-339. The a_k lie in [0,1] and sum to 0.55, so prp-weierstrass-product gives
+      >=0.45. The actual product is 0.56534 (script). Worked example: the Quick check at l.88-94.'
 - key: exr-inequalities-for-sums-and-products-c1
   kind: exr
   file: 03-inequalities-for-sums-and-products.md
-  line: 326
-  hash: beb539f733ae
-  verdicts: []
+  line: 342
+  hash: a3b3ac4e2680
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/03
+    hash: a3b3ac4e2680
+    date: '2026-11-01'
+    evidence: 03:355-360 counterexamples (2,1) and (1,2) right; A_{n+1} lies between A_n and a_{n+1},
+      so both halves force equality; rubric consistent.
+  - stage: S5b
+    verdict: correct
+    by: B:01/03
+    hash: a3b3ac4e2680
+    date: '2026-11-01'
+    evidence: '03:345-369: (2,1) gives A_1=2>A_2=3/2 and (1,2) gives a_2=2>3/2, which are valid counterexamples
+      to the step. The betweenness argument and the 3+3+4=10 rubric are correct. It follows STYLE §11.3
+      (a counterexample to the step, not to the conclusion).'
+  - stage: S6
+    verdict: minor
+    by: S6:01a
+    hash: a3b3ac4e2680
+    date: '2026-11-01'
+    evidence: '03-...:342-369. The flaw is exactly the line ''A_n<=A_{n+1}; a_{n+1}<=A_{n+1}''. The rest
+      is valid given that line: base case, multiplication by a_{n+1}>0, and monotone product of non-negatives.
+      The counterexamples (2,1) and (1,2) are correct. The ''dull case'' argument via (n+1)A_{n+1}=nA_n+a_{n+1}
+      is correct. The scheme wording may penalise an answer that names only one false half. Reported as
+      a finding.'
 - key: exm-first-estimate
   kind: exm
   file: 04-estimates-for-limits.md
-  line: 11
-  hash: d637cfcf0436
-  verdicts: []
+  line: 22
+  hash: ef0aab43e8ca
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/04
+    hash: ef0aab43e8ca
+    date: '2026-11-01'
+    evidence: 04:28-50. n>=3 gives n+3<=2n; n^2>=1 gives 2n^2-1>=n^2>0; product via fd3 halves (d), inversion
+      via (c); N=max{3,N'} depends on eps only. Line 52 claims (fails at n=2; holds from n=1) checked.
+  - stage: S5b
+    verdict: correct
+    by: B:01/04
+    hash: ef0aab43e8ca
+    date: '2026-11-01'
+    evidence: '04:22-50 checked: n+3<=2n needs n>=3 (fails at n=2, as l.52 says); 2n^2-1>=n^2 from n=1;
+      bound 2/n; N=max{3,N''} said to depend on eps only; Uses cites halves (c),(d); N'' existence ledgered
+      (l.452).'
 - key: exm-method-dominant-term
   kind: exm
   file: 04-estimates-for-limits.md
-  line: 43
-  hash: 693d493208ea
-  verdicts: []
+  line: 58
+  hash: ae4cca858e96
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/04
+    hash: ae4cca858e96
+    date: '2026-11-01'
+    evidence: 04:58-66. 5<=n^2/2 iff n>=4 (n=3 gives 4.5); n^2-5>=n^2/2 false for n<=3, as the text says.
+      Terms follow STYLE B4 (How it goes / When to use it / Common mistakes).
+  - stage: S5b
+    verdict: correct
+    by: B:01/04
+    hash: ae4cca858e96
+    date: '2026-11-01'
+    evidence: '04:58-66: 5<=n^2/2 iff n>=4 (n=3 gives 4.5); n^2-5>=n^2/2 false for n<=3, true at n=4 (11>=8).
+      Matches blueprint §5 item 2.'
 - key: exm-dominant-term
   kind: exm
   file: 04-estimates-for-limits.md
-  line: 53
-  hash: 8cced70e33c8
-  verdicts: []
+  line: 68
+  hash: 421e44916d45
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/04
+    hash: 421e44916d45
+    date: '2026-11-01'
+    evidence: 04:68-93. a_n-2=(3n+10)/(n^2-5), checked algebraically; for n>=4, 3n+10<=6n and n^2-5>=n^2/2,
+      giving 12/n; N=max{4,N'}; no natural number has square 5, so every a_n is defined.
+  - stage: S5b
+    verdict: minor
+    by: B:01/04
+    hash: 421e44916d45
+    date: '2026-11-01'
+    evidence: 04:75-88 math checked (a_n-2=(3n+10)/(n^2-5), bound 12/n for n>=4, l.95 thresholds both
+      4). Step (3) l.86 does not say what N depends on (STYLE §9 checklist), unlike exm-first-estimate
+      l.39.
 - key: check:04-estimates-for-limits:1
   kind: check
   file: 04-estimates-for-limits.md
-  line: 78
+  line: 97
   hash: dd41ecabba39
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/04
+    hash: dd41ecabba39
+    date: '2026-11-01'
+    evidence: '04:97-103. n^2-7n>=n^2/2 iff n(n/2-7)>=0: true at n=0 and for n>=14, false for 1..13.'
+  - stage: S5b
+    verdict: correct
+    by: B:01/04
+    hash: dd41ecabba39
+    date: '2026-11-01'
+    evidence: '04:97-103: n^2/2>=7n iff n=0 or n>=14; n=13: 84.5<91, n=14: 98=98.'
 - key: prp-power-null
   kind: prp
   file: 04-estimates-for-limits.md
-  line: 92
+  line: 111
   hash: 7cd4fa10f74f
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/04
+    hash: 7cd4fa10f74f
+    date: '2026-11-01'
+    evidence: '04:111-120. Both hypotheses are used: |r|<1 gives h>0, and r!=0 gives h. Dropping |r|<1
+      (r=1) leaves r^n=1, which does not tend to 0. Bound checked at n=1: |r|<1/h=|r|/(1-|r|), which holds
+      since 1-|r|<1.'
+  - stage: S5b
+    verdict: correct
+    by: B:01/04
+    hash: 7cd4fa10f74f
+    date: '2026-11-01'
+    evidence: '04:111-120: (a) h=1/|r|-1>0, |r|^n<1/(nh) for n>=1 follows from fd2:thm-bernoulli (stated
+      for real x>=-1, fd2 03-recursion.md:321); (b) true. Preceded by the r=1/2 instance (l.109), §13
+      B5.'
 - key: proof:prp-power-null
   kind: proof
   file: 04-estimates-for-limits.md
-  line: 123
-  hash: eeddb94239d8
-  verdicts: []
+  line: 142
+  hash: d3d320eb0c75
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:01/04
+    hash: d3d320eb0c75
+    date: '2026-11-01'
+    evidence: 04:142-158. fd2:thm-bernoulli (x>=-1, n in N) and fd3:prp-archimedean-reciprocal (N in Z>0,
+      all n>=N) are cited correctly, and N depends only on eps and r. In the r=0 case of (b), no threshold
+      is ever named (see the finding).
+  - stage: S5b
+    verdict: correct
+    by: B:01/04
+    hash: d3d320eb0c75
+    date: '2026-11-01'
+    evidence: '04:142-158: each step cited in Uses or ledger (l.445-448): |r|>0, reciprocal-order (b),
+      power-laws, |r^n|=|r|^n, 0^n=0, archimedean-reciprocal with eps''=h*eps; 1/(nh)<h*eps/h correct.'
 - key: check:04-estimates-for-limits:2
   kind: check
   file: 04-estimates-for-limits.md
-  line: 139
-  hash: 729cb4f190ff
-  verdicts: []
+  line: 162
+  hash: 2cc19fcbcf59
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/04
+    hash: 2cc19fcbcf59
+    date: '2026-11-01'
+    evidence: 04:162-168. h=1/9, bound 9/n, 9/n<=1/100 iff n>=900. 0.9^44=0.0097<0.01 and 0.9^43=0.0108,
+      so the remark that 44 suffices is correct.
+  - stage: S5b
+    verdict: correct
+    by: B:01/04
+    hash: 2cc19fcbcf59
+    date: '2026-11-01'
+    evidence: '04:162-168: h=1/9, bound 9/n, 9/n<=0.01 iff n>=900; 0.9^44=0.00970<0.01 (0.9^43=0.0108),
+      so the claim that the bound is wasteful is true.'
 - key: exm-method-power-lower-bound
   kind: exm
   file: 04-estimates-for-limits.md
-  line: 149
-  hash: 384d7368c7c9
-  verdicts: []
+  line: 172
+  hash: a44a2a0ba9fb
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:01/04
+    hash: a44a2a0ba9fb
+    date: '2026-11-01'
+    evidence: '04:172-187. The mathematics is right: cor-binomial-real (b) needs x>=0 and k<=n, and the
+      box warns against h<0. Line 170 says the method has ''three steps'' but the box lists four (see
+      the finding).'
+  - stage: S5b
+    verdict: correct
+    by: B:01/04
+    hash: a44a2a0ba9fb
+    date: '2026-11-01'
+    evidence: '04:172-187: steps consistent with prp-power-null (k=1, constant numerator), prp-linear-over-power-null
+      (k=2), B1, C2 (k=3); ''n-th roots of Section 1.5'' true (05:380 uses the method); l.186 mistake
+      confirmed by l.217.'
 - key: prp-linear-over-power-null
   kind: prp
   file: 04-estimates-for-limits.md
-  line: 161
+  line: 191
   hash: cc1d455286e4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/04
+    hash: cc1d455286e4
+    date: '2026-11-01'
+    evidence: '04:191-195. Checked at n=2: 2/r^2<=2/h^2, true because r^2>h^2. Dropping r>1 (r=1) gives
+      n, which does not tend to 0; the hypothesis is used through h>0.'
+  - stage: S5b
+    verdict: correct
+    by: B:01/04
+    hash: cc1d455286e4
+    date: '2026-11-01'
+    evidence: '04:191-195: n/r^n <= 4/(nh^2) for n>=2 holds (binom(n,2)h^2 >= n^2h^2/4). l.189 matches
+      exm-binomial-bound (02:273: n/2^n<=2/(n-1), n>=2).'
 - key: proof:prp-linear-over-power-null
   kind: proof
   file: 04-estimates-for-limits.md
-  line: 171
-  hash: 5b94f45e21a3
-  verdicts: []
+  line: 201
+  hash: fba8ea8218c4
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/04
+    hash: fba8ea8218c4
+    date: '2026-11-01'
+    evidence: 04:201-215. cor-binomial-real (b) with x=h>=0, k=2<=n; prp-binomial-factorial (c) gives
+      binom(n,2)*2=n(n-1); n-1>=n/2 for n>=2; product by halves (d), inversion by (c); N=max{2,N'} depends
+      on eps and r.
+  - stage: S5b
+    verdict: correct
+    by: B:01/04
+    hash: fba8ea8218c4
+    date: '2026-11-01'
+    evidence: '04:201-215: cor-binomial-real (b) needs x>=0, k<=n (02:239), both stated; prp-binomial-factorial
+      (c) with k=2 gives binom(n,2)*2=n(n-1); n-1>=n/2 iff n>=2; N=max{2,N''} with dependence on eps and
+      r stated.'
 - key: exm-geometric-comparison
   kind: exm
   file: 04-estimates-for-limits.md
-  line: 187
-  hash: d7aefcea959e
-  verdicts: []
+  line: 221
+  hash: 5440330cf9f8
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:01/04
+    hash: 5440330cf9f8
+    date: '2026-11-01'
+    evidence: 04:221-244. The induction n!>=2^{n-1} and the step 2(1/2)^n<2/n via prp-power-null (a) with
+      h=1 are correct. The inversions use fd3 halves (c), which needs both sides positive, and positivity
+      of 2^{n-1} and n! is never stated (see the finding).
+  - stage: S5b
+    verdict: minor
+    by: B:01/04
+    hash: 5440330cf9f8
+    date: '2026-11-01'
+    evidence: '04:221-244 math checked (induction n!>=2^{n-1}, prp-power-null (a) with r=1/2, h=1). ''The
+      limit'' l.239 chooses N>2/eps without saying it depends on eps only (STYLE §9 checklist: every chosen
+      constant says what it depends on).'
 - key: exr-estimates-for-limits-a1
   kind: exr
   file: 04-estimates-for-limits.md
-  line: 220
-  hash: 8b99a54b8876
-  verdicts: []
+  line: 258
+  hash: 1a8803b7a2ae
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/04
+    hash: 1a8803b7a2ae
+    date: '2026-11-01'
+    evidence: 04:258-277. The negation in (a) matches fd3 03-limits.md:62-64 with a=0; (b), (c) and (d)
+      are correct.
+  - stage: S5b
+    verdict: minor
+    by: B:01/04
+    hash: 1a8803b7a2ae
+    date: '2026-11-01'
+    evidence: '04:258-277: (a) matches fd3 negation (03-limits.md:61); (b),(d) correct. (c) ''Name the
+      method used'' for n/(n^3+7)<=1/n^2 also fits the section''s own ''keep the dominant term'' (keep
+      n^3, drop 7), but the solution gives only fd3 step (2).'
+  - stage: S6
+    verdict: correct
+    by: S6:01b
+    hash: 1a8803b7a2ae
+    date: '2026-11-01'
+    evidence: 04:258-277. (a) agrees with the negation printed after fd3:def-sequence-limit-ordered-field
+      (fd3 03-limits.md:62) with a=0. (b) N=max{3,N'} with N'>2/eps depends on eps only. (c) and (d) are
+      correct; (d) uses N=max{10,N'}.
 - key: exr-estimates-for-limits-b1
   kind: exr
   file: 04-estimates-for-limits.md
-  line: 243
-  hash: 1337c025bf3f
-  verdicts: []
+  line: 281
+  hash: 07a121e1f727
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/04
+    hash: 07a121e1f727
+    date: '2026-11-01'
+    evidence: 04:281-299. For n>=5, n+5<=2n and 2^n>=n^2/4, giving 8/n; N=max{5,N'}.
+  - stage: S5b
+    verdict: minor
+    by: B:01/04
+    hash: 07a121e1f727
+    date: '2026-11-01'
+    evidence: '04:281-299 math correct (n>=5: n+5<=2n, 2^n>=n^2/4, bound 8/n). The faded prompt reads
+      ''*Name the method, then complete it.*'' and the title ''[B1: Name the method, then complete it]'',
+      but STYLE §11.4 fixes the line as ''*Say which method this is, then complete it.*'''
+  - stage: S6
+    verdict: correct
+    by: S6:01b
+    hash: 07a121e1f727
+    date: '2026-11-01'
+    evidence: '04:281-299. Solved before reading: n+5<=2n for n>=5, and 2^n>=n^2/4 for n>=2 (cor-binomial-real
+      (b), x=1, k=2<=n), so a_n<=8/n. Same as the book. Script checked n=5..199. The worked examples are
+      prp-linear-over-power-null and exm-method-power-lower-bound. Minor issue: a_n undefined in the statement
+      (finding).'
 - key: exr-estimates-for-limits-b2
   kind: exr
   file: 04-estimates-for-limits.md
-  line: 259
-  hash: dc9f73e9952d
-  verdicts: []
+  line: 301
+  hash: 8951b2b501ef
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/04
+    hash: 8951b2b501ef
+    date: '2026-11-01'
+    evidence: 04:301-324. Line (ii) uses 1/(n+1)<1/n, which needs n>=1; N>=1 from (iii) ensures it. Both
+      orders are valid, and (iv) correctly fails because it makes N depend on n.
+  - stage: S5b
+    verdict: correct
+    by: B:01/04
+    hash: 8951b2b501ef
+    date: '2026-11-01'
+    evidence: '04:301-324: lines (i),(iii),(vi),(ii),(v) prove the claim; (ii) needs n>=1, ensured by
+      N>=1; distractor (iv) explained; 6 lines with 1 distractor fits §11.4.'
+  - stage: S6
+    verdict: correct
+    by: S6:01b
+    hash: 8951b2b501ef
+    date: '2026-11-01'
+    evidence: '04:301-324. The order (i),(iii),(vi),(ii),(v) is admissible. (vi) is valid for every n
+      in N: |(2n+1)-2(n+1)|=1, checked by script. (ii) needs n>=1 for 1/(n+1)<1/n, and N>=1 from (iii)
+      gives it. The distractor (iv) makes N depend on n, so it fails, and it is the only bad line. The
+      alternative orders mentioned are admissible too.'
 - key: exr-estimates-for-limits-b3
   kind: exr
   file: 04-estimates-for-limits.md
-  line: 280
-  hash: 4c08814478d4
-  verdicts: []
+  line: 326
+  hash: f8dd16c886ba
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:01/04
+    hash: f8dd16c886ba
+    date: '2026-11-01'
+    evidence: '04:326-358. All five verdicts are right. (e) at n=3: 4/3<=4/3. The Uses line does not cite
+      the product rewriting in (e) (see the finding).'
+  - stage: S5b
+    verdict: minor
+    by: B:01/04
+    hash: f8dd16c886ba
+    date: '2026-11-01'
+    evidence: '04:326-358: all five verdicts correct. (e) rewrites 2^n/n! as prod_{k=1}^n (2/k) and splits
+      off k=1,2 and k=n. Quotient of products = product of quotients is neither @ref''d nor in the ledger
+      (l.451 lists only the (0,1] product fact); fd2 def-sum-product gives only ''splitting off the last
+      term''.'
+  - stage: S6
+    verdict: minor
+    by: S6:01b
+    hash: f8dd16c886ba
+    date: '2026-11-01'
+    evidence: '04:326-358. My verdicts agree: T,F,T,F,T. (d): eps=1, n=1 gives 1/n^2=1, not <1. (e): 2^n/n!<=4/n
+      for n>=3, with the empty middle product at n=3 equal to 1. Script checked n up to 199. But the solutions
+      write a_n in (a),(b),(c),(e) although the problem never defines a_n.'
 - key: exr-estimates-for-limits-c1
   kind: exr
   file: 04-estimates-for-limits.md
-  line: 312
-  hash: a37e51ccfcd1
-  verdicts: []
+  line: 362
+  hash: a2aea9827b9b
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/04
+    hash: a2aea9827b9b
+    date: '2026-11-01'
+    evidence: 04:362-397. a_n-3=-(n+12)/(n^2+4); n+12<=13n for n>=1; 13/n; N>13/eps>0 gives N>=1.
+  - stage: S5b
+    verdict: correct
+    by: B:01/04
+    hash: a2aea9827b9b
+    date: '2026-11-01'
+    evidence: '04:362-397: a_n-3=-(n+12)/(n^2+4); bound 13/n for n>=1; N depends on eps only; scheme 2+3+3+2=10
+      with slips; title ''Chapter check'' per §13 B4; blueprint names it an exit check.'
+  - stage: S6
+    verdict: minor
+    by: S6:01b
+    hash: a2aea9827b9b
+    date: '2026-11-01'
+    evidence: '04:362-397. The math is correct: a_n-3=-(n+12)/(n^2+4) and (n+12)/(n^2+4)<=13/n for n>=1,
+      both checked by script. The marking scheme ties the bound step to ''C/n with the range n>=1'' (line
+      389), which the alternative proofs below do not meet (finding).'
 - key: exr-estimates-for-limits-c2
   kind: exr
   file: 04-estimates-for-limits.md
-  line: 343
-  hash: cffe36a37076
-  verdicts: []
+  line: 399
+  hash: 01af2f056964
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/04
+    hash: 01af2f056964
+    date: '2026-11-01'
+    evidence: 04:399-442. n-1>=3n/4 iff n>=4; n-2>=n/2 iff n>=4; product 3n^3/8, divided by 6 gives n^3/16;
+      n^2/r^n<=16/(nh^3); N=max{4,N'}.
+  - stage: S5b
+    verdict: minor
+    by: B:01/04
+    hash: 01af2f056964
+    date: '2026-11-01'
+    evidence: '04:399-442 math correct (n>=4: n-1>=3n/4, n-2>=n/2, product 3n^3/8, /6 -> n^3/16; bound
+      16/(nh^3)); scheme sums to 6. Hint 2 (l.414) gives both bounds and the result r^n>=n^3h^3/16, i.e.
+      all of step (3), against §11.7 (''neither executes the key idea''); prompt wording ''Name the method''
+      as in B1.'
+  - stage: S6
+    verdict: minor
+    by: S6:01b
+    hash: 01af2f056964
+    date: '2026-11-01'
+    evidence: '04:399-442. The math is correct: r^n>=n^3h^3/16 for n>=4 and n^2/r^n<=16/(nh^3), checked
+      by script for h in {1/10,1/2,1,3}. Two problems (findings): Hint 2 carries out the key step, and
+      the scheme requires the range n>=4 and gives no point for naming the method.'
 - key: lem-reals-nth-root
   kind: lem
   file: 05-roots-and-rational-powers.md
-  line: 9
+  line: 11
   hash: 99b8b6a98ce5
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: 99b8b6a98ce5
+    date: '2026-11-01'
+    evidence: '05:11-20. n>=1 is needed: for n=0, b^0=1 has no solution when a!=1. (a) is used for uniqueness.'
+  - stage: S5b
+    verdict: correct
+    by: B:01/05
+    hash: 99b8b6a98ce5
+    date: '2026-11-01'
+    evidence: 05:11-20 statement checked; (b) matches @fd3:prp-cof-square-roots for n=2 (fd3 ch06/01:214).
 - key: proof:lem-reals-nth-root
   kind: proof
   file: 05-roots-and-rational-powers.md
-  line: 30
-  hash: 9893f4024f41
-  verdicts: []
+  line: 32
+  hash: d347cf9525dc
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: d347cf9525dc
+    date: '2026-11-01'
+    evidence: 05:32-86. lem-difference-of-powers (01:426) needs n>=1, which the statement gives. m=min{1,a}
+      lies in S by fact (ii). M=max{1,a} is an upper bound because y^n>=y. s>=m>0, so ns^{n-1}>0 in case
+      2. In case 1, h<=1 gives each term <=(s+1)^{n-1}, so (s+h)^n<=s^n+(a-s^n)/2<a. In case 2, h<s/n<=s,
+      each term <=s^{n-1}, so (s-h)^n>=a and s-h is a smaller upper bound. h depends only on a,n,s. Completeness
+      is used once, via fd3:thm-reals-complete-ordered-field. The n=2 identification uses fd3:prp-cof-square-roots
+      uniqueness (fd3 ch06:214).
+  - stage: S5b
+    verdict: minor
+    by: B:01/05
+    hash: d347cf9525dc
+    date: '2026-11-01'
+    evidence: '05:45 ''So the sum is >= t^{n-1}'' and 05:63 ''A sum of n terms, each at most (s+1)^{n-1},
+      is at most n(s+1)^{n-1}'' (again 05:73) use @prp-sum-order (b) and (c). They are not cited and not
+      in the ledger (05:638-639). The rest of the mathematics checks: m^n <= m <= a, the upper bound M,
+      both choices of h, s-h > 0 from s^n-a < n s^n.'
 - key: lem-root-rules
   kind: lem
   file: 05-roots-and-rational-powers.md
-  line: 80
+  line: 92
   hash: 3c0e47d3ec97
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: 3c0e47d3ec97
+    date: '2026-11-01'
+    evidence: 05:92-103. All four parts follow from uniqueness and lem-reals-nth-root (a).
+  - stage: S5b
+    verdict: minor
+    by: B:01/05
+    hash: 3c0e47d3ec97
+    date: '2026-11-01'
+    evidence: 05:90 'Every rule for roots follows this way from a rule for powers' is false for (d), which
+      the proof (05:122) and the Idea (05:106) obtain by contradiction from @lem-reals-nth-root (a), not
+      by candidate + uniqueness.
 - key: proof:lem-root-rules
   kind: proof
   file: 05-roots-and-rational-powers.md
-  line: 97
+  line: 109
   hash: 82d6398f3f24
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: 82d6398f3f24
+    date: '2026-11-01'
+    evidence: 05:109-123. prp-power-laws-commutative-ring (b),(c) (01:31) are cited correctly. In (c),
+      z^{mn}=(z^m)^n with mn>=1. (d) is a correct contradiction using lem (a) with 0<=y.
+  - stage: S5b
+    verdict: correct
+    by: B:01/05
+    hash: 82d6398f3f24
+    date: '2026-11-01'
+    evidence: '05:110-122: (a)-(c) by uniqueness with prp-power-laws-commutative-ring (b),(c); (d) case
+      split on y=x / y<x is valid.'
 - key: check:05-roots-and-rational-powers:1
   kind: check
   file: 05-roots-and-rational-powers.md
-  line: 115
+  line: 127
   hash: 1ab23eba73d0
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: 1ab23eba73d0
+    date: '2026-11-01'
+    evidence: 05:127-133. 2^6=64, 8^2=64, 2^3=8.
+  - stage: S5b
+    verdict: correct
+    by: B:01/05
+    hash: 1ab23eba73d0
+    date: '2026-11-01'
+    evidence: '05:127-133: lem-root-rules (c) with m=3,n=2 gives the sixth root of 64, which is 2; sqrt
+      64=8 and cbrt 8=2; sidecar lem-root-rules.py asserts these values.'
 - key: def-integer-power
   kind: def
   file: 05-roots-and-rational-powers.md
-  line: 127
+  line: 139
   hash: f3ab2c77f6b3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: f3ab2c77f6b3
+    date: '2026-11-01'
+    evidence: 05:139-149. The overlap at n=0 and the agreement at n=1 with the inverse are addressed explicitly.
+  - stage: S5b
+    verdict: minor
+    by: B:01/05
+    hash: f3ab2c77f6b3
+    date: '2026-11-01'
+    evidence: NOTATION.md has no row for a^{-n}, n in Z, in a field (grep '{-n}' finds only sigma^{-n},
+      l.87), though blueprint merged-ch01-f46.md §7 'Notation additions' requires one. Also 05:149 says
+      the definition 'gives a new symbol a meaning and changes no old one' for n>=1, but a^{-1} already
+      meant the inverse, and the next sentence concedes this.
 - key: prp-integer-power-laws
   kind: prp
   file: 05-roots-and-rational-powers.md
-  line: 139
+  line: 151
   hash: 807151ad2e3e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: 807151ad2e3e
+    date: '2026-11-01'
+    evidence: 05:151-164. Each hypothesis (a,b!=0, ordered, a>1, m<n) is used in its part.
+  - stage: S5b
+    verdict: minor
+    by: B:01/05
+    hash: 807151ad2e3e
+    date: '2026-11-01'
+    evidence: '05:170 ''Recall (d) for natural exponents ... which is the first of the sign cases proved
+      below'' recalls something not yet proved. 05:178 ''Both computations use only ... parts (a) and
+      (c) of @prp-power-laws-commutative-ring'' is false: the first also uses (d) of this proposition
+      for natural exponents, a^k(a^k)^{-1}=1, and 1^m=1.'
 - key: proof:prp-integer-power-laws
   kind: proof
   file: 05-roots-and-rational-powers.md
-  line: 168
-  hash: a25787cdeafa
-  verdicts: []
+  line: 181
+  hash: 0dbe267da93c
+  verdicts:
+  - stage: S5a
+    verdict: minor
+    by: A:01/05
+    hash: 0dbe267da93c
+    date: '2026-11-01'
+    evidence: '05:170-206. All sign cases check out: (*) for n<0, mixed signs in (a), (b) via (a^m)^{-1}=a^{-m},
+      (e) via fd3:prp-reciprocal-order (a), (f) via a^l>1. fd3:lem-field-fraction-rules (a) does give
+      uniqueness of the inverse and (b^{-1})^{-1}=b. Line 178 misstates which laws the sketch uses (see
+      findings). Lines 170 and 290 point to the location of a fold (B3).'
+  - stage: S5b
+    verdict: correct
+    by: B:01/05
+    hash: 0dbe267da93c
+    date: '2026-11-01'
+    evidence: '05:182-205: all sign cases checked. (b) with n=-k uses the definition with base a^m and
+      then (d). (e) and (f) are valid in any ordered field. The citations match fd3 lem-field-fraction-rules
+      (a) and prp-reciprocal-order (a).'
 - key: check:05-roots-and-rational-powers:2
   kind: check
   file: 05-roots-and-rational-powers.md
-  line: 196
+  line: 209
   hash: c95f519e62cb
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: c95f519e62cb
+    date: '2026-11-01'
+    evidence: 05:209-215. 16/8=2, 2^{-3}2^4=2, (3/2)^2=9/4.
+  - stage: S5b
+    verdict: correct
+    by: B:01/05
+    hash: c95f519e62cb
+    date: '2026-11-01'
+    evidence: '05:214: 2^{-3}*16 = 2 and (2/3)^{-2} = 9/4 are correct.'
 - key: def-rational-power
   kind: def
   file: 05-roots-and-rational-powers.md
-  line: 210
+  line: 223
   hash: 43328e476ded
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: 43328e476ded
+    date: '2026-11-01'
+    evidence: 05:223-232. a>0 is required, which allows negative m.
+  - stage: S5b
+    verdict: correct
+    by: B:01/05
+    hash: 43328e476ded
+    date: '2026-11-01'
+    evidence: '05:223-232: the definition is well posed after prp-rational-power-well-defined; positive
+      base needed for negative m.'
 - key: prp-rational-power-well-defined
   kind: prp
   file: 05-roots-and-rational-powers.md
-  line: 223
+  line: 236
   hash: f148177677aa
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: f148177677aa
+    date: '2026-11-01'
+    evidence: 05:236-244. The m/n=p/q hypothesis is used as mq=pn.
+  - stage: S5b
+    verdict: correct
+    by: B:01/05
+    hash: f148177677aa
+    date: '2026-11-01'
+    evidence: '05:236-244: statement and both special cases are correct.'
 - key: proof:prp-rational-power-well-defined
   kind: proof
   file: 05-roots-and-rational-powers.md
-  line: 239
+  line: 252
   hash: c2ead3051a1b
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: c2ead3051a1b
+    date: '2026-11-01'
+    evidence: 05:252-260. u^{nq}=(x^m)^{nq}=x^{mnq}=(x^n)^{mq}=a^{mq} by integer law (b), and likewise
+      v^{nq}=a^{pn}. Uniqueness with exponent nq>=1 applies to u,v>0. The special cases use the representative
+      m/1 with sqrt[1]{a}=a.
+  - stage: S5b
+    verdict: correct
+    by: B:01/05
+    hash: c2ead3051a1b
+    date: '2026-11-01'
+    evidence: '05:253-259: u^{nq}=a^{mq}, v^{nq}=a^{pn}, mq=pn, and uniqueness with exponent nq>=1.'
 - key: prp-rational-power-laws
   kind: prp
   file: 05-roots-and-rational-powers.md
-  line: 257
+  line: 270
   hash: 0c7d9d9138d4
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: 0c7d9d9138d4
+    date: '2026-11-01'
+    evidence: 05:270-283. Dropping a>1 in (e) gives a=1, all powers equal. Dropping r>0 in (f) gives r=0,
+      both sides 1. Both counterexamples are noted at 05:326.
+  - stage: S5b
+    verdict: minor
+    by: B:01/05
+    hash: 0c7d9d9138d4
+    date: '2026-11-01'
+    evidence: 05:268 'Then everything is a statement about integer powers of a single root' (repeated
+      in the Idea, 05:286) is false for (c) and (f), which use two roots of a and b, and for (b), whose
+      proof (05:307) uses a separate denominator q and the q-th root of w.
 - key: proof:prp-rational-power-laws
   kind: proof
   file: 05-roots-and-rational-powers.md
-  line: 276
-  hash: 6d537c84137b
-  verdicts: []
+  line: 289
+  hash: e44c9c0c64e5
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: e44c9c0c64e5
+    date: '2026-11-01'
+    evidence: 05:289-299. The common denominator n=n'q'. (a) uses c^{m+p}. (e) shows c>1 by contradiction
+      via lem (a) with 0<=c, and r<s gives m<p by multiplying by n>0.
+  - stage: S5b
+    verdict: minor
+    by: B:01/05
+    hash: e44c9c0c64e5
+    date: '2026-11-01'
+    evidence: 'The mathematics checks: the common denominator; (e) via c>1 and m<p. But 05:290 ''We prove
+      (a) and (e) here; the other parts are proved right after this proof'' is a sentence about the page''s
+      devices, which STYLE §13 B3 forbids.'
 - key: proof:prp-rational-power-laws#2
   kind: proof
   file: 05-roots-and-rational-powers.md
-  line: 285
-  hash: 7dce9e02632b
-  verdicts: []
+  line: 302
+  hash: 1f6d60d35dee
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: 1f6d60d35dee
+    date: '2026-11-01'
+    evidence: 05:301-324. In (b), u^q=w^p and w^n=a^m give u^{nq}=a^{mp}=v^{nq}, using the representative
+      mp/(nq) for rs, so uniqueness applies. (c) uses lem-root-rules (a). In (f), m>=1 because m/n>0 with
+      n>0, and c<d by lem-root-rules (d).
+  - stage: S5b
+    verdict: correct
+    by: B:01/05
+    hash: 1f6d60d35dee
+    date: '2026-11-01'
+    evidence: '05:303-322: (b) u^{nq}=a^{mp}=v^{nq}; (c) via lem-root-rules (a); (d) by prp-integer-power-laws
+      (e); (f) m>=1 and c<d.'
 - key: exm-rational-power-computations
   kind: exm
   file: 05-roots-and-rational-powers.md
-  line: 311
+  line: 328
   hash: b4ea635c6e4c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: b4ea635c6e4c
+    date: '2026-11-01'
+    evidence: 05:328-340. 27^{2/3}*9^{-1/2}=9/3=3, (2/3)^4=16/81 gives 27/8, and 8<9 gives sqrt2<cbrt3,
+      with the contrapositive via lem (a).
+  - stage: S5b
+    verdict: correct
+    by: B:01/05
+    hash: b4ea635c6e4c
+    date: '2026-11-01'
+    evidence: '05:335-339: 9*(1/3)=3; the fourth root of 16/81 is 2/3, so the power is (3/2)^3=27/8; the
+      sixth powers 8<9 give 2^{1/2}<3^{1/3}. A sidecar exists.'
 - key: cor-am-gm-roots
   kind: cor
   file: 05-roots-and-rational-powers.md
-  line: 329
+  line: 346
   hash: ee1eaa32fe11
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: ee1eaa32fe11
+    date: '2026-11-01'
+    evidence: 05:346-354. Matches thm-am-gm (03:104), which needs a_k>=0 and n>=1.
+  - stage: S5b
+    verdict: correct
+    by: B:01/05
+    hash: ee1eaa32fe11
+    date: '2026-11-01'
+    evidence: '05:346-354: matches thm-am-gm (03:104) with a root taken.'
 - key: proof:cor-am-gm-roots
   kind: proof
   file: 05-roots-and-rational-powers.md
-  line: 343
+  line: 364
   hash: 94f2939f5a75
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: 94f2939f5a75
+    date: '2026-11-01'
+    evidence: 05:364-366. G>A gives G^n>A^n by lem (a) with A>=0. Equality goes both ways through thm-am-gm
+      (b) (an iff), then uniqueness gives G=A.
+  - stage: S5b
+    verdict: correct
+    by: B:01/05
+    hash: 94f2939f5a75
+    date: '2026-11-01'
+    evidence: '05:365: G<=A by contradiction via lem-reals-nth-root (a); the equality case uses thm-am-gm
+      (b) both ways and uniqueness.'
 - key: prp-root-estimates
   kind: prp
   file: 05-roots-and-rational-powers.md
-  line: 349
+  line: 370
   hash: 4e06c2519d50
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: 4e06c2519d50
+    date: '2026-11-01'
+    evidence: '05:370-377. Dropping a>=1 in (a): for a=1/4, n=2, sqrt a=1/2<1, so the left inequality
+      fails. n>=2 in (b) is needed for n-1>0.'
+  - stage: S5b
+    verdict: correct
+    by: B:01/05
+    hash: 4e06c2519d50
+    date: '2026-11-01'
+    evidence: '05:370-377: both bounds are true; the example bound 10/3 at 05:368 is correct.'
 - key: proof:prp-root-estimates
   kind: proof
   file: 05-roots-and-rational-powers.md
-  line: 362
-  hash: 585590d6e2c4
-  verdicts: []
+  line: 383
+  hash: 2ac9a1ad0a36
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: 2ac9a1ad0a36
+    date: '2026-11-01'
+    evidence: '05:383-397. fd2:thm-bernoulli (x>=-1) applies. cor-binomial-real (b) (02:239) needs x>=0
+      and k<=n, and both hold. fd3:prp-ordered-ring-rules (g) (a,b>=0: a<b iff a^2<b^2) is cited correctly.'
+  - stage: S5b
+    verdict: correct
+    by: B:01/05
+    hash: 2ac9a1ad0a36
+    date: '2026-11-01'
+    evidence: '05:384-392: Bernoulli (fd2 thm-bernoulli, x>=-1); cor-binomial-real (b) with k=2; fd3 prp-ordered-ring-rules
+      (g) is the square-order rule for non-negatives.'
 - key: exm-root-limits
   kind: exm
   file: 05-roots-and-rational-powers.md
-  line: 376
-  hash: 1e7495d86bbf
-  verdicts: []
+  line: 401
+  hash: 1c8792a4fff4
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: 1c8792a4fff4
+    date: '2026-11-01'
+    evidence: 05:401-411. N depends only on epsilon (and a). From n-1>2/eps^2, reciprocal-order (b) and
+      doubling give 2/(n-1)<eps^2, and sqrt preserves order.
+  - stage: S5b
+    verdict: minor
+    by: B:01/05
+    hash: 1c8792a4fff4
+    date: '2026-11-01'
+    evidence: '05:408 ''choose an integer N > (a-1)/ε'' does not say that N depends on a and ε, while
+      the second limit (05:410) does say so (STYLE §9: every chosen constant says what it depends on).
+      The mathematics is correct.'
 - key: check:05-roots-and-rational-powers:3
   kind: check
   file: 05-roots-and-rational-powers.md
-  line: 388
+  line: 413
   hash: 5839039ab48c
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: 5839039ab48c
+    date: '2026-11-01'
+    evidence: '05:413-419. 4/n<1/100 iff n>400. Computed check: 162*ln1.01=1.61195>ln5=1.60944, so the
+      claim sqrt[162]{5}<1.01 is true.'
+  - stage: S5b
+    verdict: correct
+    by: B:01/05
+    hash: 5839039ab48c
+    date: '2026-11-01'
+    evidence: '05:418: 1+4/n<1.01 iff n>400, so N=401. 1.01^162≈5.013>5 and 1.01^161<5, so the claim about
+      the 162nd root is true. Sidecar prp-root-estimates.py asserts 401 and 162.'
 - key: exr-roots-and-rational-powers-a1
   kind: exr
   file: 05-roots-and-rational-powers.md
-  line: 406
+  line: 431
   hash: f1581c5071ac
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: f1581c5071ac
+    date: '2026-11-01'
+    evidence: '05:431-453. For n=3, a=8: m=1, M=8, s=2. 8^{-2/3}=1/4.'
+  - stage: S5b
+    verdict: correct
+    by: B:01/05
+    hash: f1581c5071ac
+    date: '2026-11-01'
+    evidence: '05:431-453: (a)-(c) agree with the proof (m=1, M=8, s=2); (d) 1/4; (e) true by law (b).'
+  - stage: S6
+    verdict: correct
+    by: S6:01b
+    hash: f1581c5071ac
+    date: '2026-11-01'
+    evidence: 05:431-453. (a) Completeness is used only for sup S. (b) is correct. (c) m=1, M=8, s=2.
+      (d) 8^{-2/3}=1/4. (e) True, by prp-rational-power-laws (b).
 - key: exr-roots-and-rational-powers-b1
   kind: exr
   file: 05-roots-and-rational-powers.md
-  line: 432
+  line: 457
   hash: 477b7aa2cb56
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: 477b7aa2cb56
+    date: '2026-11-01'
+    evidence: 05:457-475. 32^{3/5}=8, a^3 b^{-2}, 8/4=2.
+  - stage: S5b
+    verdict: correct
+    by: B:01/05
+    hash: 477b7aa2cb56
+    date: '2026-11-01'
+    evidence: '05:470-474: 8, a^3 b^{-2}, 2 are correct.'
+  - stage: S6
+    verdict: correct
+    by: S6:01b
+    hash: 477b7aa2cb56
+    date: '2026-11-01'
+    evidence: 05:457-475. 32^{3/5}=8, (a^{1/2}b^{-1/3})^6=a^3b^{-2}, and 4^{3/2}/8^{2/3}=8/4=2. These
+      agree with my own answers. The worked example is exm-rational-power-computations.
 - key: exr-roots-and-rational-powers-b2
   kind: exr
   file: 05-roots-and-rational-powers.md
-  line: 452
-  hash: 980d5d5ade40
-  verdicts: []
+  line: 477
+  hash: 23fb078311f5
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: 23fb078311f5
+    date: '2026-11-01'
+    evidence: 05:477-493. 3^10=59049, 2^15=32768, 5^6=15625. The order 5^{1/5}<2^{1/2}<3^{1/3} is correct.
+  - stage: S5b
+    verdict: correct
+    by: B:01/05
+    hash: 23fb078311f5
+    date: '2026-11-01'
+    evidence: '05:486-488: 59049 > 32768 > 15625 gives 5^{1/5} < 2^{1/2} < 3^{1/3}.'
+  - stage: S6
+    verdict: correct
+    by: S6:01b
+    hash: 23fb078311f5
+    date: '2026-11-01'
+    evidence: 05:477-493. 3^10=59049 > 2^15=32768 > 5^6=15625, from my own script. The order 5^{1/5}<2^{1/2}<3^{1/3}
+      is correct. Taking x^30 back to x is justified by contraposition from lem-reals-nth-root (a). The
+      worked example is the 2^{1/2} vs 3^{1/3} comparison.
 - key: exr-roots-and-rational-powers-b3
   kind: exr
   file: 05-roots-and-rational-powers.md
-  line: 466
-  hash: 6ceafc28217a
-  verdicts: []
+  line: 495
+  hash: f42da9daffc4
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: f42da9daffc4
+    date: '2026-11-01'
+    evidence: 05:495-507. 2/(n-1)<0.01 iff n-1>200, so N=202 works.
+  - stage: S5b
+    verdict: correct
+    by: B:01/05
+    hash: f42da9daffc4
+    date: '2026-11-01'
+    evidence: '05:502: the condition is n-1>200, so N=202 works.'
+  - stage: S6
+    verdict: correct
+    by: S6:01b
+    hash: f42da9daffc4
+    date: '2026-11-01'
+    evidence: '05:495-507. At n=201, 2/(n-1)=0.01 is not <0.01. At n=202 it is, so N=202 is the least
+      N from this bound. Script: n^{1/n}<1.1 for every n in 202..99999 (the true least N is 39). The worked
+      example is exm-root-limits plus the check at line 414.'
 - key: exr-roots-and-rational-powers-c1
   kind: exr
   file: 05-roots-and-rational-powers.md
-  line: 478
-  hash: 3a62e7d650da
-  verdicts: []
+  line: 511
+  hash: 10e003687e6e
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: 10e003687e6e
+    date: '2026-11-01'
+    evidence: 05:511-543. b=1/a>1 by reciprocal-order (b), 1^t=1, a^t=(b^t)^{-1}, then the order reverses
+      under reciprocals. (ii) follows from (i) with a^0=1.
+  - stage: S5b
+    verdict: correct
+    by: B:01/05
+    hash: 10e003687e6e
+    date: '2026-11-01'
+    evidence: '05:523-542: b=1/a>1, 1^t=1, a^t=(b^t)^{-1}, reciprocal reversal; the marking scheme''s
+      points sum to 10 and the title follows §13 B4.'
+  - stage: S6
+    verdict: minor
+    by: S6:01b
+    hash: 10e003687e6e
+    date: '2026-11-01'
+    evidence: '05:511-543. The proof is correct: b=1/a>1, 1^t=1, a^t=(b^t)^{-1}, (e) applied to b, then
+      reciprocals reverse <, and (ii) from (i) with a^0=1. The scheme (lines 537-541) gives 7 of its 10
+      points to steps of this one route (finding).'
 - key: exr-roots-and-rational-powers-c2
   kind: exr
   file: 05-roots-and-rational-powers.md
-  line: 512
+  line: 545
   hash: 9d612e25dfc3
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: 9d612e25dfc3
+    date: '2026-11-01'
+    evidence: 05:545-590. Binomial expansion, then prp-binomial-factorial (c), product of factors in (0,1],
+      1/k!<=1/2^{k-1} (exm-geometric-comparison, 04:221), and the sum 3-2/2^n<3.
+  - stage: S5b
+    verdict: correct
+    by: B:01/05
+    hash: 9d612e25dfc3
+    date: '2026-11-01'
+    evidence: '05:564-589: term bound 1/k! <= 1/2^{k-1}; sum = 3-2/2^n < 3; the marking scheme sums to
+      10.'
+  - stage: S6
+    verdict: minor
+    by: S6:01b
+    hash: 9d612e25dfc3
+    date: '2026-11-01'
+    evidence: '05:545-590. The proof is correct: the expansion equals (1+1/n)^n exactly and the sum is
+      <=3-2/2^n<3, both checked by script for n=1..299. The hints name a tool and give the first line,
+      which is acceptable. The scheme gives 5 points to the 1/2^{k-1} geometric route only (finding).'
 - key: exr-roots-and-rational-powers-r1
   kind: exr
   file: 05-roots-and-rational-powers.md
-  line: 557
+  line: 594
   hash: 72783bc379ea
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: 72783bc379ea
+    date: '2026-11-01'
+    evidence: 05:594-609. b_j=sqrt(j+1), and thm-telescoping (a) with upper index n-1>=0 gives sqrt(n+1)-1.
+  - stage: S5b
+    verdict: minor
+    by: B:01/05
+    hash: 72783bc379ea
+    date: '2026-11-01'
+    evidence: 05:601 'sqrt k + sqrt(k+1) >= 1' uses sqrt(k+1) >= sqrt 1 = 1 (lem-root-rules (d)). It is
+      neither cited nor in the ledger (05:653 lists only the product identity). The answer sqrt(n+1)-1
+      is correct.
+  - stage: S6
+    verdict: correct
+    by: S6:01b
+    hash: 72783bc379ea
+    date: '2026-11-01'
+    evidence: 05:594-609. sqrt(n+1)-1, checked numerically for n<=49. The re-indexing with b_j=sqrt(j+1)
+      is correct. The problem hides its source, and the solution names @exm-method-telescoping and @thm-telescoping.
 - key: exr-roots-and-rational-powers-r2
   kind: exr
   file: 05-roots-and-rational-powers.md
-  line: 574
+  line: 611
   hash: 7b55530e4b8e
-  verdicts: []
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: 7b55530e4b8e
+    date: '2026-11-01'
+    evidence: 05:611-619. The theorem (02:142) has x^k y^{n-k}, so with y=1 the sum is (-1)^n.
+  - stage: S5b
+    verdict: correct
+    by: B:01/05
+    hash: 7b55530e4b8e
+    date: '2026-11-01'
+    evidence: '05:618: (-2+1)^n=(-1)^n, correct also for n=0.'
+  - stage: S6
+    verdict: correct
+    by: S6:01b
+    hash: 7b55530e4b8e
+    date: '2026-11-01'
+    evidence: 05:611-619. (-1)^n, checked for n=0..29 including n=0. The source is hidden in the problem
+      and named in the solution as @thm-binomial-commutative-ring.
 - key: exr-roots-and-rational-powers-r3
   kind: exr
   file: 05-roots-and-rational-powers.md
-  line: 584
-  hash: eb0f070a3d27
-  verdicts: []
+  line: 621
+  hash: 9e4887a6a9b2
+  verdicts:
+  - stage: S5a
+    verdict: correct
+    by: A:01/05
+    hash: 9e4887a6a9b2
+    date: '2026-11-01'
+    evidence: 05:621-635. sqrt n<=n for n>=1, so the term is at most 2n/n^2=2/n, and N>2/eps works.
+  - stage: S5b
+    verdict: minor
+    by: B:01/05
+    hash: 9e4887a6a9b2
+    date: '2026-11-01'
+    evidence: 05:632 'choose an integer N > 2/ε' does not say that N depends only on ε (STYLE §9 checklist).
+      The bound 2/n is correct.
+  - stage: S6
+    verdict: correct
+    by: S6:01b
+    hash: 9e4887a6a9b2
+    date: '2026-11-01'
+    evidence: 05:621-635. sqrt n<=n for n>=1 and denominator >=n^2 give <=2/n, checked by script. The
+      source is hidden; the solution names @exm-method-dominant-term and says why the quotient rule does
+      not apply.
