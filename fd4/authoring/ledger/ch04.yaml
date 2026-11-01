@@ -1298,6 +1298,31 @@ items:
       (b), inside L. The three conditions of prp-subfield-test (c) are each checked member by member.
       (b): 𝒦_S is a set by Separation applied to the power set; it is non-empty because L ∈ 𝒦_S; minimality
       and uniqueness (mutual containment) are both argued correctly.'
+  - stage: S5a
+    verdict: correct
+    by: A:04/03
+    hash: 6efbf8fa1345
+    date: '2026-11-01'
+    evidence: '03-subfields.md:176-180. In (a), the intersection is defined for a non-empty subset of
+      P(L) (fd2:def-family-union-intersection, last sentence at fd2 03-set-operations.md:271), and ''non-empty''
+      is used there. Each K in the family satisfies test (c) by the forward direction (⇒), which gives
+      1 ∈ ⋂𝒦 and closure under a−b and ab^{-1} (b≠0); test (c) (⇐) then applies to ⋂𝒦 ⊆ L. In (b), 𝒦_S
+      = {K ∈ P(L) : K subfield, S ⊆ K} comes from fd2:def-power-set and fd2:def-set-builder. It is non-empty
+      because L is a subfield of itself (def-subfield examples), so (a) applies. S ⊆ K_S, K_S is contained
+      in every K ∈ 𝒦_S, and uniqueness follows from mutual inclusion. Quantifier order: a and b are fixed
+      before K ranges over 𝒦, so nothing depends on an object chosen later. Dropping ''non-empty'' leaves
+      ⋂∅ undefined, which is exactly the case fd2 rules out. No exercise or optional result is used.'
+  - stage: S5b
+    verdict: correct
+    by: B:04/03
+    hash: 6efbf8fa1345
+    date: '2026-11-01'
+    evidence: '03-subfields.md:176-180. (a) cites @fd2:def-family-union-intersection, which defines ⋂𝒮
+      for a non-empty 𝒮 ⊆ P(X) (fd2 03-set-operations.md:255-272), so the citation fits. All three conditions
+      of @prp-subfield-test (c) are checked for every K, and the operations are those of L, so ab^{-1}
+      is the same element in every K. (b): 𝒦_S is a set by @fd2:def-power-set and @fd2:def-set-builder
+      (ledger line 375); it is non-empty because L ∈ 𝒦_S; minimality and uniqueness follow. No fact is
+      used without a citation.'
 - key: def-prime-subfield
   kind: def
   file: 03-subfields.md
@@ -1842,6 +1867,13 @@ items:
     model: claude-opus-5-5
     evidence: '04:195-202. Same as my proof: φ(b)≠0 by (b), then multiply by φ(b)^{-1}. The move is named,
       and exm-field-homomorphism-obstructions (i) works the same move in full.'
+  - stage: S8
+    verdict: minor
+    by: S8:04
+    hash: 4c0cdc084b30
+    date: '2026-11-01'
+    evidence: 04-field-homomorphisms.md:190,196 print 'Name the move, then complete it' and '*The move*
+      is'. These are §13 B4 forbidden wordings.
 - key: exr-field-homomorphisms-b2
   kind: exr
   file: 04-field-homomorphisms.md
@@ -1882,6 +1914,12 @@ items:
       are different maps, since conjugation sends i ∈ ℚ(i) to -i ≠ i (@exm-complex-conjugation-automorphism
       (i))'; that example proves -i ≠ i at 04:122. The rest checks out. 'At most two' follows from @cor-field-squares-equal
       applied to σ(i)²=i². Rationals are fixed by (f), (a), B1 and @fd3:prp-integers-embed-ration
+  - stage: S8
+    verdict: minor
+    by: S8:04
+    hash: 44a9a93bfe94
+    date: '2026-11-01'
+    evidence: 04-field-homomorphisms.md:208,214 have the same 'Name the move' / '*The move*' wording (B4).
 - key: exr-field-homomorphisms-b3
   kind: exr
   file: 04-field-homomorphisms.md
@@ -2094,6 +2132,28 @@ items:
       (rule (iii) called a distributive law) is resolved. Checked line by line: (i)-(iv) inductions (lines
       52-69); (a)-(c) at line 71; the fold''s Steps 1-5 (lines 80-106), including the four-row sign table,
       x·0 = 0 ob'
+  - stage: S5a
+    verdict: minor
+    by: A:04/05
+    hash: b65c57186159
+    date: '2026-11-01'
+    evidence: '05-characteristic-and-prime-subfield.md:49-53. Every step checks out. (a) is lem-natural-multiples
+      (a) with a=1. (c) is lem-natural-multiples (e), and (e) there has the same content as (c) here.
+      (b): (m·1)(k·1) = m·(1(k·1)) is (c) of lem-natural-multiples with a=1 and b=k·1. Then 1(k·1) = k·1
+      by (F6) and (F7); fd3:def-commutative-ring-and-field gives a commutative ring (F1)-(F7) with the
+      same clause names, so these citations are valid for a ring. Finally m·(k·1) = (mk)·1 by (d). Both
+      hypotheses (R is a commutative ring, m and k are natural) are used, and (d) is deferred to the fold.
+      The only problem is the first-person voice on line 50 (see the finding).'
+  - stage: S5b
+    verdict: minor
+    by: B:04/05
+    hash: b65c57186159
+    date: '2026-11-01'
+    evidence: 05:49-53. The mathematics checks out. Rules (i)-(iv) match @lem-natural-multiples (a)-(d)
+      at fd4 ch01/01-finite-sums.md:89-92. (c) is (e) there (line 93). (b) follows from rule (iii) with
+      a=1, b=k·1, then (F6)+(F7), then rule (iv). (a) is rule (i) with a=1. 'Chapter 1' is the correct
+      local pointer. The one problem is at line 50, which uses the first-person 'I write them below',
+      against the no-first-person house manner (STYLE §1 line 33, §12 line 626).
 - key: proof:lem-integer-multiples#2
   kind: proof
   file: 05-characteristic-and-prime-subfield.md
@@ -2952,6 +3012,14 @@ items:
       (a), lem-integer-multiples (c) and thm-field-basic-properties (d). The decomposition t_k=b_k+c_k
       uses p≠0, and lem (a),(d) then apply. (b) follows from prp-field-homomorphism-properties (a). (c)
       follows from fd2:thm-finite-no-proper-copy (no bijection A→B for B a proper subset of A) and def-field-homomorphism
+  - stage: S8
+    verdict: gap
+    by: S8:04
+    hash: 1a0aa6ef23c9
+    date: '2026-11-01'
+    evidence: 06-frobenius-and-fermat.md:80 cites (xy)^p = x^p y^p as 'the third power law of this section's
+      opening paragraph (@fd2:prp-power-laws (c), read in F)'. The opening paragraph no longer recalls
+      power laws, because they moved to Ch1. 1^p = 1 is also asserted with no reason.
 - key: thm-fermat-little
   kind: thm
   file: 06-frobenius-and-fermat.md
@@ -3367,6 +3435,14 @@ items:
       the S5b and S6 findings. 2 != 0 in Q follows from char Q = 0 (exm-characteristics) with prp-characteristic-divides
       (b): 2 is invertible, so it is non-zero. thm-field-basic-properties (f) is then applied twice. Unique
       representation is fd3:prp-cof-sqrt2-field-archimedean (a). The claim stated with fd3:prp-cof-sq'
+  - stage: S8
+    verdict: gap
+    by: S8:04
+    hash: 5350c8b74c8c
+    date: '2026-11-01'
+    evidence: 06-frobenius-and-fermat.md:308 rests on @prp-cof-sqrt2-field-archimedean (a) and @prp-cof-sqrt2-field-incomplete,
+      which exist in no src/. It also credits the method to 'Number Systems, Chapter 6', which no longer
+      contains it.
 - key: exr-frobenius-and-fermat-r3
   kind: exr
   file: 06-frobenius-and-fermat.md
