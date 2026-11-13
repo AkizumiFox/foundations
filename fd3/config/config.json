@@ -139,30 +139,35 @@
     "fd1": {
       "title": "Logic and Proof",
       "short": "F1",
+      "format": "{short} {ref}",
       "url": "https://akizumifox.github.io/math-atlas/fd1/",
       "labels": "../fd1/_build/crossref_labels.json"
     },
     "fd2": {
       "title": "Sets and Functions",
       "short": "F2",
+      "format": "{short} {ref}",
       "url": "https://akizumifox.github.io/math-atlas/fd2/",
       "labels": "../fd2/_build/crossref_labels.json"
     },
     "fd4": {
       "title": "Preliminaries for Analysis and Algebra",
       "short": "F4",
+      "format": "{short} {ref}",
       "url": "https://akizumifox.github.io/math-atlas/fd4/",
       "labels": "../fd4/_build/crossref_labels.json"
     },
     "an1": {
       "title": "Analysis on the Real Line",
       "short": "AN1",
+      "format": "{short} {ref}",
       "url": "https://akizumifox.github.io/math-atlas/an1/",
       "labels": "../../analysis-series/an1/_build/crossref_labels.json"
     },
     "la": {
       "title": "Linear Algebra",
       "short": "LA",
+      "format": "{short} {ref}",
       "url": "https://linear-algebra.akizumifox.com/",
       "labels": "../../linear-algebra/_build/crossref_labels.json"
     }

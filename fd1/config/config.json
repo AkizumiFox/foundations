@@ -142,24 +142,28 @@
     "fd2": {
       "title": "Sets and Functions",
       "short": "F2",
+      "format": "{short} {ref}",
       "url": "https://akizumifox.github.io/math-atlas/fd2/",
       "labels": "../fd2/_build/crossref_labels.json"
     },
     "fd3": {
       "title": "Number Systems: From \\(\\nN\\) to \\(\\nR\\)",
       "short": "F3",
+      "format": "{short} {ref}",
       "url": "https://akizumifox.github.io/math-atlas/fd3/",
       "labels": "../fd3/_build/crossref_labels.json"
     },
     "an1": {
       "title": "Analysis on the Real Line",
       "short": "AN1",
+      "format": "{short} {ref}",
       "url": "https://akizumifox.github.io/math-atlas/an1/",
       "labels": "../../analysis-series/an1/_build/crossref_labels.json"
     },
     "la": {
       "title": "Linear Algebra",
       "short": "LA",
+      "format": "{short} {ref}",
       "url": "https://linear-algebra.akizumifox.com/",
       "labels": "../../linear-algebra/_build/crossref_labels.json"
     }
